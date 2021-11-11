@@ -31,7 +31,7 @@ namespace CapaPresentacion
             else btnIniciarSesion.Enabled = false;
         }
 
-        private void bunifuButton21_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
