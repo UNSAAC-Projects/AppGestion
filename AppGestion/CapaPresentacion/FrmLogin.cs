@@ -16,5 +16,19 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
+
+        private void tbUsuario_TextChange(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text != "" && tbUsuario.Text != "") 
+                btnIniciarSesion.Enabled = true;
+            else btnIniciarSesion.Enabled = false;
+        }
+
+        private void tbContraseña_TextChange(object sender, EventArgs e)
+        {
+            if (tbContraseña.Text != "" && tbUsuario.Text != "")
+                btnIniciarSesion.Enabled = true;
+            else btnIniciarSesion.Enabled = false;
+        }
     }
 }
