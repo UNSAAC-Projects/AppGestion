@@ -203,5 +203,8 @@
   <ItemGroup>
     <None Include="Resources\lock-alt-regular-24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-regular-24.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
