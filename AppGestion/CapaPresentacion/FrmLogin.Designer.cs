@@ -30,6 +30,7 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -39,20 +40,21 @@ namespace CapaPresentacion
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dcPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnLogo = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.pbLogo = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbContraseña = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tbUsuario = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnIniciarSesion = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCerrar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.pnShadow = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pnShadow.SuspendLayout();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -67,30 +69,6 @@ namespace CapaPresentacion
             this.dcPanel.TargetControl = this.pnLogo;
             this.dcPanel.Vertical = true;
             // 
-            // dcPicture
-            // 
-            this.dcPicture.Fixed = true;
-            this.dcPicture.Horizontal = true;
-            this.dcPicture.TargetControl = this.pbLogo;
-            this.dcPicture.Vertical = true;
-            // 
-            // lblInicieSesion
-            // 
-            this.lblInicieSesion.AllowParentOverrides = false;
-            this.lblInicieSesion.AutoEllipsis = false;
-            this.lblInicieSesion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblInicieSesion.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblInicieSesion.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblInicieSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.lblInicieSesion.Location = new System.Drawing.Point(85, 247);
-            this.lblInicieSesion.Name = "lblInicieSesion";
-            this.lblInicieSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblInicieSesion.Size = new System.Drawing.Size(141, 32);
-            this.lblInicieSesion.TabIndex = 4;
-            this.lblInicieSesion.Text = "Inicie sesión";
-            this.lblInicieSesion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblInicieSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // pnLogo
             // 
             this.pnLogo.BackColor = System.Drawing.Color.Transparent;
@@ -102,7 +80,7 @@ namespace CapaPresentacion
             this.pnLogo.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
             this.pnLogo.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
             this.pnLogo.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.pnLogo.Location = new System.Drawing.Point(-1, -1);
+            this.pnLogo.Location = new System.Drawing.Point(10, 11);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Quality = 10;
             this.pnLogo.Size = new System.Drawing.Size(320, 231);
@@ -123,6 +101,30 @@ namespace CapaPresentacion
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             this.pbLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // dcPicture
+            // 
+            this.dcPicture.Fixed = true;
+            this.dcPicture.Horizontal = true;
+            this.dcPicture.TargetControl = this.pbLogo;
+            this.dcPicture.Vertical = true;
+            // 
+            // lblInicieSesion
+            // 
+            this.lblInicieSesion.AllowParentOverrides = false;
+            this.lblInicieSesion.AutoEllipsis = false;
+            this.lblInicieSesion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblInicieSesion.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblInicieSesion.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblInicieSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.lblInicieSesion.Location = new System.Drawing.Point(79, 251);
+            this.lblInicieSesion.Name = "lblInicieSesion";
+            this.lblInicieSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblInicieSesion.Size = new System.Drawing.Size(151, 32);
+            this.lblInicieSesion.TabIndex = 4;
+            this.lblInicieSesion.Text = "Iniciar sesión";
+            this.lblInicieSesion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblInicieSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // tbContraseña
             // 
@@ -379,7 +381,7 @@ namespace CapaPresentacion
             this.btnCerrar.AutoSizeLeftIcon = true;
             this.btnCerrar.AutoSizeRightIcon = true;
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnCerrar.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCerrar.BackgroundImage")));
             this.btnCerrar.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnCerrar.ButtonText = "Cerrar";
@@ -411,7 +413,7 @@ namespace CapaPresentacion
             this.btnCerrar.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.btnCerrar.IdleBorderRadius = 20;
             this.btnCerrar.IdleBorderThickness = 1;
-            this.btnCerrar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnCerrar.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnCerrar.IdleIconLeftImage = null;
             this.btnCerrar.IdleIconRightImage = null;
             this.btnCerrar.IndicateFocus = false;
@@ -437,7 +439,7 @@ namespace CapaPresentacion
             this.btnCerrar.OnIdleState.BorderRadius = 20;
             this.btnCerrar.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnCerrar.OnIdleState.BorderThickness = 1;
-            this.btnCerrar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.btnCerrar.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.btnCerrar.OnIdleState.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.OnIdleState.IconLeftImage = null;
             this.btnCerrar.OnIdleState.IconRightImage = null;
@@ -458,24 +460,49 @@ namespace CapaPresentacion
             this.btnCerrar.UseDefaultRadiusAndThickness = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // pnShadow
+            // 
+            this.pnShadow.BackColor = System.Drawing.Color.Transparent;
+            this.pnShadow.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.pnShadow.BorderRadius = 20;
+            this.pnShadow.BorderThickness = 1;
+            this.pnShadow.Controls.Add(this.pnLogo);
+            this.pnShadow.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.pnShadow.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.pnShadow.Location = new System.Drawing.Point(-11, -12);
+            this.pnShadow.Name = "pnShadow";
+            this.pnShadow.PanelColor = System.Drawing.Color.White;
+            this.pnShadow.PanelColor2 = System.Drawing.Color.White;
+            this.pnShadow.ShadowColor = System.Drawing.Color.DimGray;
+            this.pnShadow.ShadowDept = 2;
+            this.pnShadow.ShadowDepth = 10;
+            this.pnShadow.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.pnShadow.ShadowTopLeftVisible = false;
+            this.pnShadow.Size = new System.Drawing.Size(340, 255);
+            this.pnShadow.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.pnShadow.TabIndex = 6;
+            this.pnShadow.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.bunifuShadowPanel1_ControlAdded);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(319, 502);
+            this.Controls.Add(this.pnShadow);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblInicieSesion);
-            this.Controls.Add(this.pnLogo);
             this.Controls.Add(this.tbContraseña);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.btnIniciarSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pnShadow.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +519,6 @@ namespace CapaPresentacion
         private Bunifu.Framework.UI.BunifuDragControl dcPicture;
         private Bunifu.UI.WinForms.BunifuLabel lblInicieSesion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCerrar;
+        private Bunifu.UI.WinForms.BunifuShadowPanel pnShadow;
     }
 }
