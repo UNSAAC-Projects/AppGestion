@@ -30,29 +30,31 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties81 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties82 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties83 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties84 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties85 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties86 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties87 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties88 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges21 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.dcPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnLogo = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.pbLogo = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbContraseña = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tbUsuario = new Bunifu.UI.WinForms.BunifuTextBox();
             this.btnIniciarSesion = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btnCerrar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.pnShadow = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.pnLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pnShadow.SuspendLayout();
             this.SuspendLayout();
             // 
             // elipseForm
@@ -67,30 +69,6 @@ namespace CapaPresentacion
             this.dcPanel.TargetControl = this.pnLogo;
             this.dcPanel.Vertical = true;
             // 
-            // dcPicture
-            // 
-            this.dcPicture.Fixed = true;
-            this.dcPicture.Horizontal = true;
-            this.dcPicture.TargetControl = this.pbLogo;
-            this.dcPicture.Vertical = true;
-            // 
-            // lblInicieSesion
-            // 
-            this.lblInicieSesion.AllowParentOverrides = false;
-            this.lblInicieSesion.AutoEllipsis = false;
-            this.lblInicieSesion.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblInicieSesion.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lblInicieSesion.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblInicieSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.lblInicieSesion.Location = new System.Drawing.Point(85, 247);
-            this.lblInicieSesion.Name = "lblInicieSesion";
-            this.lblInicieSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblInicieSesion.Size = new System.Drawing.Size(141, 32);
-            this.lblInicieSesion.TabIndex = 4;
-            this.lblInicieSesion.Text = "Inicie sesión";
-            this.lblInicieSesion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lblInicieSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // pnLogo
             // 
             this.pnLogo.BackColor = System.Drawing.Color.Transparent;
@@ -102,7 +80,7 @@ namespace CapaPresentacion
             this.pnLogo.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
             this.pnLogo.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
             this.pnLogo.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.pnLogo.Location = new System.Drawing.Point(-1, -1);
+            this.pnLogo.Location = new System.Drawing.Point(10, 11);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Quality = 10;
             this.pnLogo.Size = new System.Drawing.Size(320, 231);
@@ -123,6 +101,30 @@ namespace CapaPresentacion
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             this.pbLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // dcPicture
+            // 
+            this.dcPicture.Fixed = true;
+            this.dcPicture.Horizontal = true;
+            this.dcPicture.TargetControl = this.pbLogo;
+            this.dcPicture.Vertical = true;
+            // 
+            // lblInicieSesion
+            // 
+            this.lblInicieSesion.AllowParentOverrides = false;
+            this.lblInicieSesion.AutoEllipsis = false;
+            this.lblInicieSesion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblInicieSesion.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lblInicieSesion.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblInicieSesion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.lblInicieSesion.Location = new System.Drawing.Point(79, 251);
+            this.lblInicieSesion.Name = "lblInicieSesion";
+            this.lblInicieSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblInicieSesion.Size = new System.Drawing.Size(151, 32);
+            this.lblInicieSesion.TabIndex = 4;
+            this.lblInicieSesion.Text = "Iniciar sesión";
+            this.lblInicieSesion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lblInicieSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // tbContraseña
             // 
@@ -159,26 +161,26 @@ namespace CapaPresentacion
             this.tbContraseña.Modified = false;
             this.tbContraseña.Multiline = false;
             this.tbContraseña.Name = "tbContraseña";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbContraseña.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.tbContraseña.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbContraseña.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.White;
-            stateProperties4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbContraseña.OnIdleState = stateProperties4;
+            stateProperties81.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
+            stateProperties81.FillColor = System.Drawing.Color.Empty;
+            stateProperties81.ForeColor = System.Drawing.Color.Empty;
+            stateProperties81.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbContraseña.OnActiveState = stateProperties81;
+            stateProperties82.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties82.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties82.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties82.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.tbContraseña.OnDisabledState = stateProperties82;
+            stateProperties83.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
+            stateProperties83.FillColor = System.Drawing.Color.Empty;
+            stateProperties83.ForeColor = System.Drawing.Color.Empty;
+            stateProperties83.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbContraseña.OnHoverState = stateProperties83;
+            stateProperties84.BorderColor = System.Drawing.Color.Silver;
+            stateProperties84.FillColor = System.Drawing.Color.White;
+            stateProperties84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            stateProperties84.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbContraseña.OnIdleState = stateProperties84;
             this.tbContraseña.Padding = new System.Windows.Forms.Padding(3);
             this.tbContraseña.PasswordChar = '\0';
             this.tbContraseña.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(94)))));
@@ -236,26 +238,26 @@ namespace CapaPresentacion
             this.tbUsuario.Modified = false;
             this.tbUsuario.Multiline = false;
             this.tbUsuario.Name = "tbUsuario";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
-            stateProperties5.FillColor = System.Drawing.Color.Empty;
-            stateProperties5.ForeColor = System.Drawing.Color.Empty;
-            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbUsuario.OnActiveState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.tbUsuario.OnDisabledState = stateProperties6;
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
-            stateProperties7.FillColor = System.Drawing.Color.Empty;
-            stateProperties7.ForeColor = System.Drawing.Color.Empty;
-            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbUsuario.OnHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.Silver;
-            stateProperties8.FillColor = System.Drawing.Color.White;
-            stateProperties8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.tbUsuario.OnIdleState = stateProperties8;
+            stateProperties85.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
+            stateProperties85.FillColor = System.Drawing.Color.Empty;
+            stateProperties85.ForeColor = System.Drawing.Color.Empty;
+            stateProperties85.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbUsuario.OnActiveState = stateProperties85;
+            stateProperties86.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties86.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties86.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties86.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.tbUsuario.OnDisabledState = stateProperties86;
+            stateProperties87.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(76)))), ((int)(((byte)(97)))));
+            stateProperties87.FillColor = System.Drawing.Color.Empty;
+            stateProperties87.ForeColor = System.Drawing.Color.Empty;
+            stateProperties87.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbUsuario.OnHoverState = stateProperties87;
+            stateProperties88.BorderColor = System.Drawing.Color.Silver;
+            stateProperties88.FillColor = System.Drawing.Color.White;
+            stateProperties88.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            stateProperties88.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.tbUsuario.OnIdleState = stateProperties88;
             this.tbUsuario.Padding = new System.Windows.Forms.Padding(3);
             this.tbUsuario.PasswordChar = '\0';
             this.tbUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(94)))));
@@ -297,11 +299,11 @@ namespace CapaPresentacion
             this.btnIniciarSesion.ColorContrastOnClick = 45;
             this.btnIniciarSesion.ColorContrastOnHover = 45;
             this.btnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = false;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = false;
-            borderEdges2.TopRight = true;
-            this.btnIniciarSesion.CustomizableEdges = borderEdges2;
+            borderEdges22.BottomLeft = false;
+            borderEdges22.BottomRight = true;
+            borderEdges22.TopLeft = false;
+            borderEdges22.TopRight = true;
+            this.btnIniciarSesion.CustomizableEdges = borderEdges22;
             this.btnIniciarSesion.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnIniciarSesion.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(197)))));
             this.btnIniciarSesion.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(197)))));
@@ -387,11 +389,11 @@ namespace CapaPresentacion
             this.btnCerrar.ColorContrastOnClick = 45;
             this.btnCerrar.ColorContrastOnHover = 45;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = false;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = false;
-            this.btnCerrar.CustomizableEdges = borderEdges1;
+            borderEdges21.BottomLeft = true;
+            borderEdges21.BottomRight = false;
+            borderEdges21.TopLeft = true;
+            borderEdges21.TopRight = false;
+            this.btnCerrar.CustomizableEdges = borderEdges21;
             this.btnCerrar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnCerrar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCerrar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -458,24 +460,49 @@ namespace CapaPresentacion
             this.btnCerrar.UseDefaultRadiusAndThickness = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // pnShadow
+            // 
+            this.pnShadow.BackColor = System.Drawing.Color.Transparent;
+            this.pnShadow.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.pnShadow.BorderRadius = 20;
+            this.pnShadow.BorderThickness = 1;
+            this.pnShadow.Controls.Add(this.pnLogo);
+            this.pnShadow.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
+            this.pnShadow.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
+            this.pnShadow.Location = new System.Drawing.Point(-11, -12);
+            this.pnShadow.Name = "pnShadow";
+            this.pnShadow.PanelColor = System.Drawing.Color.White;
+            this.pnShadow.PanelColor2 = System.Drawing.Color.White;
+            this.pnShadow.ShadowColor = System.Drawing.Color.DimGray;
+            this.pnShadow.ShadowDept = 2;
+            this.pnShadow.ShadowDepth = 10;
+            this.pnShadow.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
+            this.pnShadow.ShadowTopLeftVisible = false;
+            this.pnShadow.Size = new System.Drawing.Size(340, 256);
+            this.pnShadow.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
+            this.pnShadow.TabIndex = 6;
+            this.pnShadow.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.bunifuShadowPanel1_ControlAdded);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(319, 502);
+            this.Controls.Add(this.pnShadow);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblInicieSesion);
-            this.Controls.Add(this.pnLogo);
             this.Controls.Add(this.tbContraseña);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.btnIniciarSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
             this.pnLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pnShadow.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,5 +519,6 @@ namespace CapaPresentacion
         private Bunifu.Framework.UI.BunifuDragControl dcPicture;
         private Bunifu.UI.WinForms.BunifuLabel lblInicieSesion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCerrar;
+        private Bunifu.UI.WinForms.BunifuShadowPanel pnShadow;
     }
 }

@@ -19,6 +19,7 @@ namespace CapaPresentacion
 
         private void tbUsuario_TextChange(object sender, EventArgs e)
         {
+            //Activar o desactivar boton de iniciar sesión
             if (tbContraseña.Text != "" && tbUsuario.Text != "") 
                 btnIniciarSesion.Enabled = true;
             else btnIniciarSesion.Enabled = false;
@@ -26,14 +27,26 @@ namespace CapaPresentacion
 
         private void tbContraseña_TextChange(object sender, EventArgs e)
         {
+            //Activar o desactivar boton de iniciar sesión
             if (tbContraseña.Text != "" && tbUsuario.Text != "")
                 btnIniciarSesion.Enabled = true;
             else btnIniciarSesion.Enabled = false;
+
+            //Cambiar caracter a *
+            if (tbContraseña.Text != "")
+                tbContraseña.PasswordChar = '*';
+            else tbContraseña.PasswordChar = '\0';
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bunifuShadowPanel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+
         }
     }
 }
