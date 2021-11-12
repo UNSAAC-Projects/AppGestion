@@ -42,8 +42,8 @@ namespace CapaPresentacion
                    
                     MessageBox.Show("Login exitoso.");
                    
-                    //M.labelUsuario.Text = txtusuario.Text;
-                    //M.labelCategoriaU.Text = dt.Rows[0][2].ToString();
+                    M.lblusuario.Text = dt.Rows[0][1].ToString();
+                    M.lblcategoria.Text = dt.Rows[0][3].ToString();
 
 
 
