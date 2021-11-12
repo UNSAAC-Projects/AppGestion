@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace CapaPresentacion
 {
     public partial class FrmLogin : Form
     {
+        SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
         public FrmLogin()
         {
             InitializeComponent();
@@ -45,6 +48,11 @@ namespace CapaPresentacion
         }
 
         private void bunifuShadowPanel1_ControlAdded(object sender, ControlEventArgs e)
+        {
+
+        }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
 
         }
