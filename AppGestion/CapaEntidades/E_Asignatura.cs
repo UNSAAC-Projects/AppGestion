@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    public class E_Docente: E_Tabla
+    public class E_Asignatura : E_Tabla
     {
         //==============ATRIBUTOS================
         //---   Todos heredados de cEntidad   ---
@@ -14,14 +14,13 @@ namespace CapaEntidades
         //===============METODOS=================
         //-----------Constructores---------------
         //base: Se pasa como parametro el nombre de la tabla de la BD
-        public E_Docente() : base("Docente")
+        public E_Asignatura() : base("TAsignatura")
         {
         }
         //--Implementacion de metodos abstractos
         public override string[] NombresAtributos()
         {
-            return new string[] {"CodDocente","APaterno", "AMaterno","Nombres","Direccion",
-                "TituloAcademico","Estado"};
+            return new string[] { "CodAsignatura", "Nombre", "Creditos", "Categoria","Requisitos","NroSemestre"};
         }
     }
 }

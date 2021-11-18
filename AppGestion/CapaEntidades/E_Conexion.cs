@@ -48,7 +48,7 @@ namespace CapaEntidades
             return aDatos;
         }
         //--------------------------------------------------------------------
-        //--- Metodo para ejecutasr instrucciones DML. No retorna resultados
+        //--- Metodo para ejecutar instrucciones DML. No retorna resultados
         //--------------------------------------------------------------------
         public virtual void EjecutarComando(string pComando)
         {   //metodo para ejecutar consultas del tipo INSERT, UPDATE, DELETE
