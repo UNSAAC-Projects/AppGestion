@@ -136,5 +136,10 @@ namespace CapaPresentacion
                 M.Show();
             }
         }
+
+        private void pnLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
