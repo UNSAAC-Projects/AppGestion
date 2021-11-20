@@ -171,7 +171,7 @@ namespace CapaEntidades
                 return "";
         }
         //------------------------------------------------------------------------
-        public DataTable ListaGeneral()
+        public DataTable ListaGeneral() 
         {   //retorna una tabla con la lista completa de libros 
             string Consulta = "select * from " + aNombreTabla;
 

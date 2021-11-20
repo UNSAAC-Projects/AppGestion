@@ -19,7 +19,7 @@ namespace CapaEntidades
             aDatos = new DataSet();
             aAdaptador = new SqlDataAdapter();
             // realizar la conexion
-            string CadenaConexion = "Data Source=.;Initial Catalog=BDTutoria;Integrated Security=True";
+            string CadenaConexion = @"Data Source=DESKTOP-104NIAI\SQLEXPRESS;Initial Catalog=AppGestion;Integrated Security=True";
             aConexion = new SqlConnection(CadenaConexion);
         }
         //-------------Propiedades---------------

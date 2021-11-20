@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 
 namespace CapaEntidades
 {
-    class E_AsistenciaDocentes : E_Tabla
+    public class E_AsistenciaDocente : E_Tabla
     {
         //==============ATRIBUTOS================
-        //---   Todos heredados de cEntidad   ---
+        //---   Todos heredados de E_Tabla   ---
 
         //===============METODOS=================
         //-----------Constructores---------------
-        public E_AsistenciaDocentes() : base("TAsistenciaDocentes")
+        public E_AsistenciaDocente() : base("TAsistenciaDocente")
         {
         }
         //--Implementacion de metodos abstractos
         public override string[] NombresAtributos()
         {
-            return new string[] {"CodAsistenciaDocentes","CodDocente", "CodAsignatura",
-                "Horario","Hora","Fecha","Dia"};
+            return new string[] {"Id","IdAsistencia", "CodDocente", "MarcarAsistencia","Observacion"};
         }
     }
 }
