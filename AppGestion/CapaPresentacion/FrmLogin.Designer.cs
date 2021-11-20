@@ -41,11 +41,8 @@ namespace CapaPresentacion
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            this.elipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.dcPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnLogo = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.pbLogo = new Bunifu.UI.WinForms.BunifuPictureBox();
-            //this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbContraseña = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tbUsuario = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -56,21 +53,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnShadow.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // elipseForm
-            // 
-            //this.elipseForm.ElipseRadius = 30;
-            //this.elipseForm.TargetControl = this;
-            // 
-            // dcPanel
-            // 
-            //this.dcPanel.Fixed = true;
-           // this.dcPanel.Horizontal = true;
-            //this.dcPanel.TargetControl = this.pnLogo;
-            //this.dcPanel.Vertical = true;
-            // 
-            // pnLogo
-            // 
             this.pnLogo.BackColor = System.Drawing.Color.Transparent;
             this.pnLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnLogo.BackgroundImage")));
             this.pnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -101,13 +83,6 @@ namespace CapaPresentacion
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             this.pbLogo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // dcPicture
-            // 
-            //this.dcPicture.Fixed = true;
-            //this.dcPicture.Horizontal = true;
-            //this.dcPicture.TargetControl = this.pbLogo;
-            //this.dcPicture.Vertical = true;
             // 
             // lblInicieSesion
             // 
@@ -515,10 +490,7 @@ namespace CapaPresentacion
         private Bunifu.UI.WinForms.BunifuTextBox tbUsuario;
         private Bunifu.UI.WinForms.BunifuTextBox tbContraseña;
         private Bunifu.UI.WinForms.BunifuGradientPanel pnLogo;
-        //private Bunifu.Framework.UI.BunifuElipse elipseForm;
         private Bunifu.UI.WinForms.BunifuPictureBox pbLogo;
-        //private Bunifu.Framework.UI.BunifuDragControl dcPanel;
-        //private Bunifu.Framework.UI.BunifuDragControl dcPicture;
         private Bunifu.UI.WinForms.BunifuLabel lblInicieSesion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCerrar;
         private Bunifu.UI.WinForms.BunifuShadowPanel pnShadow;
