@@ -45,7 +45,7 @@ namespace CapaPresentacion
             this.dcPanel = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnLogo = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.pbLogo = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            //this.dcPicture = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.lblInicieSesion = new Bunifu.UI.WinForms.BunifuLabel();
             this.tbContraseña = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tbUsuario = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -59,15 +59,15 @@ namespace CapaPresentacion
             // 
             // elipseForm
             // 
-            this.elipseForm.ElipseRadius = 30;
-            this.elipseForm.TargetControl = this;
+            //this.elipseForm.ElipseRadius = 30;
+            //this.elipseForm.TargetControl = this;
             // 
             // dcPanel
             // 
-            this.dcPanel.Fixed = true;
-            this.dcPanel.Horizontal = true;
-            this.dcPanel.TargetControl = this.pnLogo;
-            this.dcPanel.Vertical = true;
+            //this.dcPanel.Fixed = true;
+           // this.dcPanel.Horizontal = true;
+            //this.dcPanel.TargetControl = this.pnLogo;
+            //this.dcPanel.Vertical = true;
             // 
             // pnLogo
             // 
@@ -104,10 +104,10 @@ namespace CapaPresentacion
             // 
             // dcPicture
             // 
-            this.dcPicture.Fixed = true;
-            this.dcPicture.Horizontal = true;
-            this.dcPicture.TargetControl = this.pbLogo;
-            this.dcPicture.Vertical = true;
+            //this.dcPicture.Fixed = true;
+            //this.dcPicture.Horizontal = true;
+            //this.dcPicture.TargetControl = this.pbLogo;
+            //this.dcPicture.Vertical = true;
             // 
             // lblInicieSesion
             // 
@@ -122,7 +122,7 @@ namespace CapaPresentacion
             this.lblInicieSesion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblInicieSesion.Size = new System.Drawing.Size(151, 32);
             this.lblInicieSesion.TabIndex = 4;
-            this.lblInicieSesion.Text = "Iniciar sesión";
+            this.lblInicieSesion.Text = "Iniciar \r\nsesión";
             this.lblInicieSesion.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lblInicieSesion.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -279,6 +279,7 @@ namespace CapaPresentacion
             this.tbUsuario.UseSystemPasswordChar = false;
             this.tbUsuario.WordWrap = true;
             this.tbUsuario.TextChange += new System.EventHandler(this.tbUsuario_TextChange);
+            this.tbUsuario.TextChanged += new System.EventHandler(this.tbUsuario_TextChanged);
             // 
             // btnIniciarSesion
             // 
@@ -514,10 +515,10 @@ namespace CapaPresentacion
         private Bunifu.UI.WinForms.BunifuTextBox tbUsuario;
         private Bunifu.UI.WinForms.BunifuTextBox tbContraseña;
         private Bunifu.UI.WinForms.BunifuGradientPanel pnLogo;
-        private Bunifu.Framework.UI.BunifuElipse elipseForm;
+        //private Bunifu.Framework.UI.BunifuElipse elipseForm;
         private Bunifu.UI.WinForms.BunifuPictureBox pbLogo;
-        private Bunifu.Framework.UI.BunifuDragControl dcPanel;
-        private Bunifu.Framework.UI.BunifuDragControl dcPicture;
+        //private Bunifu.Framework.UI.BunifuDragControl dcPanel;
+        //private Bunifu.Framework.UI.BunifuDragControl dcPicture;
         private Bunifu.UI.WinForms.BunifuLabel lblInicieSesion;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton2 btnCerrar;
         private Bunifu.UI.WinForms.BunifuShadowPanel pnShadow;

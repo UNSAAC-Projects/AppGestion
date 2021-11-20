@@ -136,5 +136,10 @@ namespace CapaPresentacion
                 M.Show();
             }
         }
+
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
