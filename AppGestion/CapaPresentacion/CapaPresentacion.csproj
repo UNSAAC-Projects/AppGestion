@@ -159,6 +159,24 @@
     <Compile Include="EditAsignaturas.Designer.cs">
       <DependentUpon>EditAsignaturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAsistenciaDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsistenciaDocentes.Designer.cs">
+      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDiecDepAcade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiecDepAcade.Designer.cs">
+      <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaDocentes.Designer.cs">
+      <DependentUpon>FormListaDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +199,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EditAsignaturas.resx">
       <DependentUpon>EditAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsistenciaDocentes.resx">
+      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiecDepAcade.resx">
+      <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaDocentes.resx">
+      <DependentUpon>FormListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
@@ -237,6 +264,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrador.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarForm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Sistemas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imprimir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lista-de-verificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-descargar-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

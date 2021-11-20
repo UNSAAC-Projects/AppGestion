@@ -141,5 +141,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void pnLogo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
