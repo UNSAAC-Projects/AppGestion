@@ -45,7 +45,6 @@
     <Compile Include="E_AsistenciaDocente.cs" />
     <Compile Include="E_Conexion.cs" />
     <Compile Include="E_Asignatura.cs" />
-    <Compile Include="E_Categoria.cs" />
     <Compile Include="E_CursoCatalogo.cs" />
     <Compile Include="E_Docente.cs" />
     <Compile Include="E_Login.cs" />
