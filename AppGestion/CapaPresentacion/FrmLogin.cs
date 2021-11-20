@@ -137,6 +137,11 @@ namespace CapaPresentacion
             }
         }
 
+        private void tbUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnLogo_Click(object sender, EventArgs e)
         {
 
