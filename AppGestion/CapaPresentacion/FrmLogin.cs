@@ -74,6 +74,7 @@ namespace CapaPresentacion
                         tbContraseña.Text = "";
                        
                     }
+                    conexion.Close();
                     return false;
                 }
                 //return false;
