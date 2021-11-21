@@ -153,11 +153,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditAsignaturas.cs">
+    <Compile Include="EditCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditAsignaturas.Designer.cs">
-      <DependentUpon>EditAsignaturas.cs</DependentUpon>
+    <Compile Include="EditCatalogo.Designer.cs">
+      <DependentUpon>EditCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -171,6 +171,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaCatalogo.Designer.cs">
+      <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainDirectorEscuela.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,14 +185,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EditAsignaturas.resx">
-      <DependentUpon>EditAsignaturas.cs</DependentUpon>
+    <EmbeddedResource Include="EditCatalogo.resx">
+      <DependentUpon>EditCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaCatalogo.resx">
+      <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainDirectorEscuela.resx">
       <DependentUpon>mainDirectorEscuela.cs</DependentUpon>
@@ -237,6 +246,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar_icono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar_icono.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

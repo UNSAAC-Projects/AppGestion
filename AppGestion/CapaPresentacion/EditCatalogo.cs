@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class EditAsignaturas : Form
+    public partial class EditCatalogo : Form
     {
-        public EditAsignaturas()
+        public EditCatalogo()
         {
             InitializeComponent();
         }
@@ -46,5 +46,12 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -11,9 +11,11 @@ namespace CapaNegocio
 {
     public class N_CursoCatalogo
     {
+        
         D_CursoCatalogo data = new D_CursoCatalogo();
         E_CursoCatalogo entities = new E_CursoCatalogo();
-        public DataTable ListandoCursosCatalogo()
+        
+        public DataTable ListandoCursoCatalogo()
         {
             return data.ListarCursosCatalogo();
         }
@@ -30,9 +32,11 @@ namespace CapaNegocio
         {
             data.EditarCursoCatalogo(curso);
         }
-        public void EliminandoCursoCatalogo(int id)
+        public void EliminandoCursoCatalogo(string id)
         {
-            data.BorrarCursoCatalogo(id);
+            data.EliminarCursoCatalogo(id);
         }
+        
+
     }
 }
