@@ -12,12 +12,12 @@ using System.Data.SqlClient;
 
 namespace CapaPresentacion
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLoginDel : Form
     {
         SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
         FrmMain M = new FrmMain();
         DataTable dt = new DataTable();
-        public FrmLogin()
+        public FrmLoginDel()
         {
             InitializeComponent();
         }

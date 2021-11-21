@@ -35,8 +35,6 @@ namespace CapaPresentacion
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.bunifuTileButtonImprimir = new Bunifu.Framework.UI.BunifuTileButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,44 +104,6 @@ namespace CapaPresentacion
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // bunifuTileButton1
-            // 
-            this.bunifuTileButton1.BackColor = System.Drawing.Color.Brown;
-            this.bunifuTileButton1.color = System.Drawing.Color.DodgerBlue;
-            this.bunifuTileButton1.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton1.Image = global::CapaPresentacion.Properties.Resources.Guardar;
-            this.bunifuTileButton1.ImagePosition = 3;
-            this.bunifuTileButton1.ImageZoom = 20;
-            this.bunifuTileButton1.LabelPosition = 33;
-            this.bunifuTileButton1.LabelText = "GUARDAR";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(440, 593);
-            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButton1.Name = "bunifuTileButton1";
-            this.bunifuTileButton1.Size = new System.Drawing.Size(116, 64);
-            this.bunifuTileButton1.TabIndex = 3;
-            // 
-            // bunifuTileButtonImprimir
-            // 
-            this.bunifuTileButtonImprimir.BackColor = System.Drawing.Color.Brown;
-            this.bunifuTileButtonImprimir.color = System.Drawing.Color.DodgerBlue;
-            this.bunifuTileButtonImprimir.colorActive = System.Drawing.Color.MediumSeaGreen;
-            this.bunifuTileButtonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTileButtonImprimir.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuTileButtonImprimir.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButtonImprimir.Image = global::CapaPresentacion.Properties.Resources.Imprimir;
-            this.bunifuTileButtonImprimir.ImagePosition = 3;
-            this.bunifuTileButtonImprimir.ImageZoom = 20;
-            this.bunifuTileButtonImprimir.LabelPosition = 33;
-            this.bunifuTileButtonImprimir.LabelText = "IMPRIMIR";
-            this.bunifuTileButtonImprimir.Location = new System.Drawing.Point(221, 594);
-            this.bunifuTileButtonImprimir.Margin = new System.Windows.Forms.Padding(6);
-            this.bunifuTileButtonImprimir.Name = "bunifuTileButtonImprimir";
-            this.bunifuTileButtonImprimir.Size = new System.Drawing.Size(116, 63);
-            this.bunifuTileButtonImprimir.TabIndex = 2;
-            // 
             // FormListaDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -153,8 +113,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.bunifuTileButton1);
-            this.Controls.Add(this.bunifuTileButtonImprimir);
             this.Controls.Add(this.labelLISTADOCENTE);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -171,8 +129,6 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelLISTADOCENTE;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButtonImprimir;
-        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;

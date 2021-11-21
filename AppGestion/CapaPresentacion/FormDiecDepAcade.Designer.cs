@@ -40,14 +40,14 @@ namespace CapaPresentacion
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBoxDescargar = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButtonImprimir = new Bunifu.Framework.UI.BunifuThinButton2();
+            //this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
+            //this.bunifuThinButtonImprimir = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButtoNDocentes = new Bunifu.Framework.UI.BunifuThinButton2();
+            //this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            //this.bunifuThinButtoNDocentes = new Bunifu.Framework.UI.BunifuThinButton2();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -72,8 +72,6 @@ namespace CapaPresentacion
             this.pnlLateral.Controls.Add(this.label4);
             this.pnlLateral.Controls.Add(this.pictureBox7);
             this.pnlLateral.Controls.Add(this.pictureBox4);
-            this.pnlLateral.Controls.Add(this.bunifuThinButton21);
-            this.pnlLateral.Controls.Add(this.bunifuThinButtoNDocentes);
             this.pnlLateral.Controls.Add(this.pictureBox3);
             this.pnlLateral.Controls.Add(this.panel2);
             this.pnlLateral.Controls.Add(this.panel1);
@@ -176,57 +174,6 @@ namespace CapaPresentacion
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
             // 
-            // bunifuThinButton22
-            // 
-            this.bunifuThinButton22.ActiveBorderThickness = 1;
-            this.bunifuThinButton22.ActiveCornerRadius = 20;
-            this.bunifuThinButton22.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton22.ActiveLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton22.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButton22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton22.BackgroundImage")));
-            this.bunifuThinButton22.ButtonText = "DESCARGAR";
-            this.bunifuThinButton22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton22.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButton22.IdleBorderThickness = 1;
-            this.bunifuThinButton22.IdleCornerRadius = 20;
-            this.bunifuThinButton22.IdleFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButton22.IdleForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButton22.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton22.Location = new System.Drawing.Point(786, 551);
-            this.bunifuThinButton22.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton22.Name = "bunifuThinButton22";
-            this.bunifuThinButton22.Size = new System.Drawing.Size(287, 76);
-            this.bunifuThinButton22.TabIndex = 5;
-            this.bunifuThinButton22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton22.Click += new System.EventHandler(this.bunifuThinButton22_Click);
-            // 
-            // bunifuThinButtonImprimir
-            // 
-            this.bunifuThinButtonImprimir.ActiveBorderThickness = 1;
-            this.bunifuThinButtonImprimir.ActiveCornerRadius = 20;
-            this.bunifuThinButtonImprimir.ActiveFillColor = System.Drawing.Color.Black;
-            this.bunifuThinButtonImprimir.ActiveForecolor = System.Drawing.Color.Silver;
-            this.bunifuThinButtonImprimir.ActiveLineColor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButtonImprimir.BackColor = System.Drawing.SystemColors.Control;
-            this.bunifuThinButtonImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButtonImprimir.BackgroundImage")));
-            this.bunifuThinButtonImprimir.ButtonText = "IMPRIMIR";
-            this.bunifuThinButtonImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButtonImprimir.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButtonImprimir.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuThinButtonImprimir.IdleBorderThickness = 1;
-            this.bunifuThinButtonImprimir.IdleCornerRadius = 20;
-            this.bunifuThinButtonImprimir.IdleFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButtonImprimir.IdleForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButtonImprimir.IdleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButtonImprimir.Location = new System.Drawing.Point(453, 551);
-            this.bunifuThinButtonImprimir.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButtonImprimir.Name = "bunifuThinButtonImprimir";
-            this.bunifuThinButtonImprimir.Size = new System.Drawing.Size(235, 76);
-            this.bunifuThinButtonImprimir.TabIndex = 4;
-            this.bunifuThinButtonImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pictureBox6
             // 
             this.pictureBox6.Image = global::CapaPresentacion.Properties.Resources.CerrarForm11;
@@ -268,57 +215,6 @@ namespace CapaPresentacion
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Brown;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.LightGray;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "ASISTENCIA DOCENTES";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Poor Richard", 9F);
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.Brown;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(13, 507);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(262, 63);
-            this.bunifuThinButton21.TabIndex = 4;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
-            // 
-            // bunifuThinButtoNDocentes
-            // 
-            this.bunifuThinButtoNDocentes.ActiveBorderThickness = 1;
-            this.bunifuThinButtoNDocentes.ActiveCornerRadius = 20;
-            this.bunifuThinButtoNDocentes.ActiveFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButtoNDocentes.ActiveForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButtoNDocentes.ActiveLineColor = System.Drawing.Color.Brown;
-            this.bunifuThinButtoNDocentes.BackColor = System.Drawing.Color.LightGray;
-            this.bunifuThinButtoNDocentes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButtoNDocentes.BackgroundImage")));
-            this.bunifuThinButtoNDocentes.ButtonText = "IMPORTAR  DOCENTES";
-            this.bunifuThinButtoNDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButtoNDocentes.Font = new System.Drawing.Font("Poor Richard", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButtoNDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuThinButtoNDocentes.IdleBorderThickness = 1;
-            this.bunifuThinButtoNDocentes.IdleCornerRadius = 20;
-            this.bunifuThinButtoNDocentes.IdleFillColor = System.Drawing.Color.Brown;
-            this.bunifuThinButtoNDocentes.IdleForecolor = System.Drawing.Color.DarkGray;
-            this.bunifuThinButtoNDocentes.IdleLineColor = System.Drawing.Color.Brown;
-            this.bunifuThinButtoNDocentes.Location = new System.Drawing.Point(13, 437);
-            this.bunifuThinButtoNDocentes.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButtoNDocentes.Name = "bunifuThinButtoNDocentes";
-            this.bunifuThinButtoNDocentes.Size = new System.Drawing.Size(262, 60);
-            this.bunifuThinButtoNDocentes.TabIndex = 3;
-            this.bunifuThinButtoNDocentes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -368,8 +264,6 @@ namespace CapaPresentacion
             this.ClientSize = new System.Drawing.Size(1264, 627);
             this.Controls.Add(this.pictureBoxDescargar);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.bunifuThinButton22);
-            this.Controls.Add(this.bunifuThinButtonImprimir);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlCabecera);
@@ -405,13 +299,9 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtoNDocentes;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButtonImprimir;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton22;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
