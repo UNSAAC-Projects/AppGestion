@@ -33,7 +33,7 @@ namespace CapaPresentacion
             // 
             // FormAsistenciaDocentes
             // 
-            this.ClientSize = new System.Drawing.Size(1056, 709);
+            this.ClientSize = new System.Drawing.Size(773, 488);
             this.Name = "FormAsistenciaDocentes";
             this.ResumeLayout(false);
 

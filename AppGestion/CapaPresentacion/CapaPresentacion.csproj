@@ -171,6 +171,12 @@
     <Compile Include="FormDiecDepAcade.Designer.cs">
       <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDistDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDistDocente.Designer.cs">
+      <DependentUpon>FormDistDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiecDepAcade.resx">
       <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDistDocente.resx">
+      <DependentUpon>FormDistDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormListaDocentes.resx">
       <DependentUpon>FormListaDocentes.cs</DependentUpon>
@@ -321,6 +330,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-solid-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
