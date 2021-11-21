@@ -19,8 +19,8 @@ namespace CapaPresentacion
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
-            FormAsistenciaDocentes form = new FormAsistenciaDocentes();
-            form.Show();
+            
+            
         }
 
         private void label3_Click(object sender, EventArgs e)
