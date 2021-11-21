@@ -14,11 +14,12 @@ namespace CapaDatos
     public class D_CursoCatalogo
     {
         SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
+        
         public DataTable ListarCursosCatalogo()
         {
             DataTable table = new DataTable();
             SqlDataReader readRows;
-            SqlCommand cmd = new SqlCommand("SP_LISTARCURSOSCATALOGO", conexion);
+            SqlCommand cmd = new SqlCommand("SP_LISTARCATALOGO", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
 
@@ -45,13 +46,13 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
-        public void BorrarCursoCatalogo(int id)
+        public void EliminarCursoCatalogo(string idCatalogo)
         {
-            SqlCommand cmd = new SqlCommand("SP_ELIMINAR", conexion);
+            SqlCommand cmd = new SqlCommand("SP_ELIMINARCATALOGO", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
 
-            cmd.Parameters.AddWithValue("@ID", id);
+            cmd.Parameters.AddWithValue("@IDCatalogo", idCatalogo);
 
             cmd.ExecuteNonQuery();
             conexion.Close();
@@ -60,19 +61,16 @@ namespace CapaDatos
         public void CrearCursoCatalogo(E_CursoCatalogo curso)
         {
 
-            SqlCommand cmd = new SqlCommand("SP_INSERTAR", conexion);
+            SqlCommand cmd = new SqlCommand("SP_INSERTARCATALOGO", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
-            cmd.Parameters.AddWithValue("@CODASIGNATURAGRUPO", curso.CodAsignaturaGrupo);
-            cmd.Parameters.AddWithValue("@CODASIGNATURA", curso.CodAsignatura);
-            cmd.Parameters.AddWithValue("@DIA", curso.Dia);
-            cmd.Parameters.AddWithValue("@HORASTEORICAS", curso.HorasTeoricas);
-            cmd.Parameters.AddWithValue("@HORASPRACTICAS", curso.HorasPracticas);
-            cmd.Parameters.AddWithValue("@HORAINICIO", curso.HoraInicio);
-            cmd.Parameters.AddWithValue("@HORAFIN", curso.HoraFin);
-            cmd.Parameters.AddWithValue("@GRUPO", curso.Grupo);
-            cmd.Parameters.AddWithValue("@AULA", curso.Aula);
-
+            cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
+            cmd.Parameters.AddWithValue("@NroSemestre", curso.NroSemestre);
+            cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
+            cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
+            cmd.Parameters.AddWithValue("@Aula", curso.Aula);
+            cmd.Parameters.AddWithValue("@CodDocente", curso.CodDocente);
+            
 
             cmd.ExecuteNonQuery();
             conexion.Close();
@@ -80,18 +78,15 @@ namespace CapaDatos
 
         public void EditarCursoCatalogo(E_CursoCatalogo curso)
         {
-            SqlCommand cmd = new SqlCommand("SP_EDITAR", conexion);
+            SqlCommand cmd = new SqlCommand("SP_EDITARCATALOGO", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
-            //cmd.Parameters.AddWithValue("@CODASIGNATURAGRUPO", curso.CodAsignaturaGrupo);
-            //cmd.Parameters.AddWithValue("@CODASIGNATURA", curso.CodAsignatura);
-            cmd.Parameters.AddWithValue("@DIA", curso.Dia);
-            cmd.Parameters.AddWithValue("@HORASTEORICAS", curso.HorasTeoricas);
-            cmd.Parameters.AddWithValue("@HORASPRACTICAS", curso.HorasPracticas);
-            cmd.Parameters.AddWithValue("@HORAINICIO", curso.HoraInicio);
-            cmd.Parameters.AddWithValue("@HORAFIN", curso.HoraFin);
-            //cmd.Parameters.AddWithValue("@GRUPO", curso.Grupo);
-            cmd.Parameters.AddWithValue("@AULA", curso.Aula);
+            //cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
+            cmd.Parameters.AddWithValue("@NroSemestre", curso.NroSemestre);
+            cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
+            cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
+            cmd.Parameters.AddWithValue("@Aula", curso.Aula);
+            cmd.Parameters.AddWithValue("@CodDocente", curso.CodDocente);
             cmd.ExecuteNonQuery();
             conexion.Close();
         }

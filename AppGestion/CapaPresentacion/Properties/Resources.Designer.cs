@@ -172,6 +172,27 @@ namespace CapaPresentacion.Properties {
         
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar_icono {
+            get {
+                object obj = ResourceManager.GetObject("editar_icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminar_icono {
+            get {
+                object obj = ResourceManager.GetObject("eliminar_icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap lock_alt_regular_24 {
             get {
@@ -211,6 +232,7 @@ namespace CapaPresentacion.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Logo_unsaac1 {
@@ -256,6 +278,17 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap table_regular_241 {
             get {
                 object obj = ResourceManager.GetObject("table-regular-241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_24px {
+            get {
+                object obj = ResourceManager.GetObject("plus_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
