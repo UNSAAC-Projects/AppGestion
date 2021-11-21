@@ -171,6 +171,12 @@
     <Compile Include="FormDiecDepAcade.Designer.cs">
       <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDistDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDistDocente.Designer.cs">
+      <DependentUpon>FormDistDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="FormDiecDepAcade.resx">
       <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDistDocente.resx">
+      <DependentUpon>FormDistDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormListaDocentes.resx">
       <DependentUpon>FormListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,19 +239,19 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -309,6 +318,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-descargar-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-check-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM %281%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group-solid-24.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus_24px.png" />
