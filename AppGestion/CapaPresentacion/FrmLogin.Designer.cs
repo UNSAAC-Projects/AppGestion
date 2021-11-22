@@ -72,7 +72,7 @@ namespace CapaPresentacion
             // panelLinea
             // 
             this.panelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.panelLinea.Location = new System.Drawing.Point(9, 151);
+            this.panelLinea.Location = new System.Drawing.Point(9, 154);
             this.panelLinea.Margin = new System.Windows.Forms.Padding(2);
             this.panelLinea.Name = "panelLinea";
             this.panelLinea.Size = new System.Drawing.Size(188, 4);
@@ -103,6 +103,7 @@ namespace CapaPresentacion
             // buttonDirEscuela
             // 
             this.buttonDirEscuela.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDirEscuela.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDirEscuela.FlatAppearance.BorderSize = 0;
             this.buttonDirEscuela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDirEscuela.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,6 +122,7 @@ namespace CapaPresentacion
             // buttonDirDep
             // 
             this.buttonDirDep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDirDep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDirDep.FlatAppearance.BorderSize = 0;
             this.buttonDirDep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDirDep.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +141,7 @@ namespace CapaPresentacion
             // buttonDocente
             // 
             this.buttonDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonDocente.FlatAppearance.BorderSize = 0;
             this.buttonDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDocente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -186,6 +189,7 @@ namespace CapaPresentacion
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(222, 20);
             this.textBoxUsuario.TabIndex = 2;
+            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxContraseña
             // 
@@ -197,10 +201,13 @@ namespace CapaPresentacion
             this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(221, 20);
             this.textBoxContraseña.TabIndex = 2;
+            this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
             // 
             // buttonIniciarSesion
             // 
             this.buttonIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonIniciarSesion.Enabled = false;
             this.buttonIniciarSesion.FlatAppearance.BorderSize = 0;
             this.buttonIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIniciarSesion.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,10 +219,12 @@ namespace CapaPresentacion
             this.buttonIniciarSesion.TabIndex = 3;
             this.buttonIniciarSesion.Text = "Iniciar Sesion";
             this.buttonIniciarSesion.UseVisualStyleBackColor = false;
+            this.buttonIniciarSesion.EnabledChanged += new System.EventHandler(this.buttonIniciarSesion_EnabledChanged);
             // 
             // buttonCerrar
             // 
             this.buttonCerrar.BackColor = System.Drawing.Color.White;
+            this.buttonCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCerrar.FlatAppearance.BorderSize = 0;
             this.buttonCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -324,6 +333,7 @@ namespace CapaPresentacion
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.pnlLateral.ResumeLayout(false);
             this.panelOpciones.ResumeLayout(false);
             this.panelOpciones.PerformLayout();
