@@ -30,6 +30,9 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.panelLinea = new System.Windows.Forms.Panel();
+            this.panelOpciones = new System.Windows.Forms.Panel();
+            this.labelTipo = new System.Windows.Forms.Label();
             this.buttonDirEscuela = new System.Windows.Forms.Button();
             this.buttonDirDep = new System.Windows.Forms.Button();
             this.buttonDocente = new System.Windows.Forms.Button();
@@ -39,9 +42,6 @@ namespace CapaPresentacion
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.buttonIniciarSesion = new System.Windows.Forms.Button();
             this.buttonCerrar = new System.Windows.Forms.Button();
-            this.labelTipo = new System.Windows.Forms.Label();
-            this.panelOpciones = new System.Windows.Forms.Panel();
-            this.panelLinea = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLinea2 = new System.Windows.Forms.Panel();
@@ -50,8 +50,8 @@ namespace CapaPresentacion
             this.panelLinea5 = new System.Windows.Forms.Panel();
             this.panelLinea3 = new System.Windows.Forms.Panel();
             this.pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.panelOpciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,37 @@ namespace CapaPresentacion
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(206, 361);
             this.pnlLateral.TabIndex = 0;
+            // 
+            // panelLinea
+            // 
+            this.panelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
+            this.panelLinea.Location = new System.Drawing.Point(9, 151);
+            this.panelLinea.Margin = new System.Windows.Forms.Padding(2);
+            this.panelLinea.Name = "panelLinea";
+            this.panelLinea.Size = new System.Drawing.Size(188, 4);
+            this.panelLinea.TabIndex = 4;
+            // 
+            // panelOpciones
+            // 
+            this.panelOpciones.Controls.Add(this.labelTipo);
+            this.panelOpciones.Controls.Add(this.buttonDirEscuela);
+            this.panelOpciones.Controls.Add(this.buttonDirDep);
+            this.panelOpciones.Controls.Add(this.buttonDocente);
+            this.panelOpciones.Location = new System.Drawing.Point(0, 161);
+            this.panelOpciones.Name = "panelOpciones";
+            this.panelOpciones.Size = new System.Drawing.Size(206, 184);
+            this.panelOpciones.TabIndex = 3;
+            // 
+            // labelTipo
+            // 
+            this.labelTipo.AutoSize = true;
+            this.labelTipo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipo.ForeColor = System.Drawing.Color.White;
+            this.labelTipo.Location = new System.Drawing.Point(12, 8);
+            this.labelTipo.Name = "labelTipo";
+            this.labelTipo.Size = new System.Drawing.Size(111, 20);
+            this.labelTipo.TabIndex = 4;
+            this.labelTipo.Text = "Ingresar como:";
             // 
             // buttonDirEscuela
             // 
@@ -103,6 +134,7 @@ namespace CapaPresentacion
             this.buttonDirDep.Text = "Director de Departamento Académico\r\n";
             this.buttonDirDep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDirDep.UseVisualStyleBackColor = false;
+            this.buttonDirDep.Click += new System.EventHandler(this.buttonDirDep_Click);
             // 
             // buttonDocente
             // 
@@ -197,46 +229,15 @@ namespace CapaPresentacion
             this.buttonCerrar.UseVisualStyleBackColor = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
-            // labelTipo
-            // 
-            this.labelTipo.AutoSize = true;
-            this.labelTipo.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipo.ForeColor = System.Drawing.Color.White;
-            this.labelTipo.Location = new System.Drawing.Point(12, 8);
-            this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(111, 20);
-            this.labelTipo.TabIndex = 4;
-            this.labelTipo.Text = "Ingresar como:";
-            // 
-            // panelOpciones
-            // 
-            this.panelOpciones.Controls.Add(this.labelTipo);
-            this.panelOpciones.Controls.Add(this.buttonDirEscuela);
-            this.panelOpciones.Controls.Add(this.buttonDirDep);
-            this.panelOpciones.Controls.Add(this.buttonDocente);
-            this.panelOpciones.Location = new System.Drawing.Point(0, 161);
-            this.panelOpciones.Name = "panelOpciones";
-            this.panelOpciones.Size = new System.Drawing.Size(206, 184);
-            this.panelOpciones.TabIndex = 3;
-            // 
-            // panelLinea
-            // 
-            this.panelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.panelLinea.Location = new System.Drawing.Point(9, 151);
-            this.panelLinea.Margin = new System.Windows.Forms.Padding(2);
-            this.panelLinea.Name = "panelLinea";
-            this.panelLinea.Size = new System.Drawing.Size(188, 4);
-            this.panelLinea.TabIndex = 4;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(233, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Usuario";
+            this.label1.Text = "Usuario:";
             // 
             // label2
             // 
@@ -244,9 +245,9 @@ namespace CapaPresentacion
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(233, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña";
+            this.label2.Text = "Contraseña:";
             // 
             // panelLinea2
             // 
@@ -323,11 +324,10 @@ namespace CapaPresentacion
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.pnlLateral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.panelOpciones.ResumeLayout(false);
             this.panelOpciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
