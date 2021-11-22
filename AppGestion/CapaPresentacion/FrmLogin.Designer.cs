@@ -220,6 +220,7 @@ namespace CapaPresentacion
             this.buttonIniciarSesion.Text = "Iniciar Sesion";
             this.buttonIniciarSesion.UseVisualStyleBackColor = false;
             this.buttonIniciarSesion.EnabledChanged += new System.EventHandler(this.buttonIniciarSesion_EnabledChanged);
+            this.buttonIniciarSesion.Click += new System.EventHandler(this.buttonIniciarSesion_Click);
             // 
             // buttonCerrar
             // 

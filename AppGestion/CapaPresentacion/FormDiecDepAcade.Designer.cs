@@ -71,8 +71,9 @@ namespace CapaPresentacion
             this.pnlLateral.Controls.Add(this.pictureBoxlogo);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
+            this.pnlLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(304, 644);
+            this.pnlLateral.Size = new System.Drawing.Size(228, 523);
             this.pnlLateral.TabIndex = 0;
             // 
             // buttonDISTRIBUCION
@@ -81,9 +82,10 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonDISTRIBUCION.Image = global::CapaPresentacion.Properties.Resources.group_solid_24;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(35, 570);
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(26, 463);
+            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
-            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(202, 45);
+            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(152, 37);
             this.buttonDISTRIBUCION.TabIndex = 11;
             this.buttonDISTRIBUCION.Text = "DISTRIBUCION POR DOCENTE";
             this.buttonDISTRIBUCION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -98,9 +100,10 @@ namespace CapaPresentacion
             this.buttonIMPORTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIMPORTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonIMPORTAR.Image = global::CapaPresentacion.Properties.Resources.export_regular_24;
-            this.buttonIMPORTAR.Location = new System.Drawing.Point(35, 456);
+            this.buttonIMPORTAR.Location = new System.Drawing.Point(26, 370);
+            this.buttonIMPORTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonIMPORTAR.Name = "buttonIMPORTAR";
-            this.buttonIMPORTAR.Size = new System.Drawing.Size(202, 45);
+            this.buttonIMPORTAR.Size = new System.Drawing.Size(152, 37);
             this.buttonIMPORTAR.TabIndex = 10;
             this.buttonIMPORTAR.Text = "IMPORTAR DOCENTES";
             this.buttonIMPORTAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -114,9 +117,10 @@ namespace CapaPresentacion
             this.buttonLISTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLISTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLISTAR.Image = global::CapaPresentacion.Properties.Resources.list_check_regular_241;
-            this.buttonLISTAR.Location = new System.Drawing.Point(35, 507);
+            this.buttonLISTAR.Location = new System.Drawing.Point(26, 412);
+            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLISTAR.Name = "buttonLISTAR";
-            this.buttonLISTAR.Size = new System.Drawing.Size(202, 45);
+            this.buttonLISTAR.Size = new System.Drawing.Size(152, 37);
             this.buttonLISTAR.TabIndex = 3;
             this.buttonLISTAR.Text = "LISTA DOCENTE";
             this.buttonLISTAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,9 +132,10 @@ namespace CapaPresentacion
             this.labelLAURO.AutoSize = true;
             this.labelLAURO.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLAURO.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelLAURO.Location = new System.Drawing.Point(54, 358);
+            this.labelLAURO.Location = new System.Drawing.Point(32, 290);
+            this.labelLAURO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLAURO.Name = "labelLAURO";
-            this.labelLAURO.Size = new System.Drawing.Size(193, 17);
+            this.labelLAURO.Size = new System.Drawing.Size(158, 14);
             this.labelLAURO.TabIndex = 9;
             this.labelLAURO.Text = "LAURO ENCISO RODAS";
             this.labelLAURO.Click += new System.EventHandler(this.labelLAURO_Click);
@@ -140,9 +145,10 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(22, 147);
+            this.label4.Location = new System.Drawing.Point(6, 119);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(274, 17);
+            this.label4.Size = new System.Drawing.Size(220, 14);
             this.label4.TabIndex = 8;
             this.label4.Text = "Director de Departamento Academico";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -150,9 +156,10 @@ namespace CapaPresentacion
             // pictureBoxAdmi
             // 
             this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
-            this.pictureBoxAdmi.Location = new System.Drawing.Point(68, 182);
+            this.pictureBoxAdmi.Location = new System.Drawing.Point(51, 148);
+            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxAdmi.Name = "pictureBoxAdmi";
-            this.pictureBoxAdmi.Size = new System.Drawing.Size(142, 142);
+            this.pictureBoxAdmi.Size = new System.Drawing.Size(106, 115);
             this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAdmi.TabIndex = 0;
             this.pictureBoxAdmi.TabStop = false;
@@ -160,17 +167,19 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(25, 414);
+            this.panel2.Location = new System.Drawing.Point(19, 336);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(250, 5);
+            this.panel2.Size = new System.Drawing.Size(188, 4);
             this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(25, 95);
+            this.panel1.Location = new System.Drawing.Point(19, 77);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 5);
+            this.panel1.Size = new System.Drawing.Size(188, 4);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -178,9 +187,10 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(111, 55);
+            this.label2.Location = new System.Drawing.Point(83, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.Size = new System.Drawing.Size(89, 14);
             this.label2.TabIndex = 0;
             this.label2.Text = "Y DE SISTEMAS";
             // 
@@ -189,18 +199,20 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(91, 28);
+            this.label1.Location = new System.Drawing.Point(68, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 17);
+            this.label1.Size = new System.Drawing.Size(154, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "INGENERIA INFORMATICA ";
             // 
             // pictureBoxlogo
             // 
             this.pictureBoxlogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxlogo.Location = new System.Drawing.Point(3, 12);
+            this.pictureBoxlogo.Location = new System.Drawing.Point(2, 10);
+            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxlogo.Name = "pictureBoxlogo";
-            this.pictureBoxlogo.Size = new System.Drawing.Size(82, 72);
+            this.pictureBoxlogo.Size = new System.Drawing.Size(62, 58);
             this.pictureBoxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxlogo.TabIndex = 0;
             this.pictureBoxlogo.TabStop = false;
@@ -208,11 +220,12 @@ namespace CapaPresentacion
             // dataGridViewIMPORTAR
             // 
             this.dataGridViewIMPORTAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIMPORTAR.Location = new System.Drawing.Point(304, 124);
+            this.dataGridViewIMPORTAR.Location = new System.Drawing.Point(228, 101);
+            this.dataGridViewIMPORTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewIMPORTAR.Name = "dataGridViewIMPORTAR";
             this.dataGridViewIMPORTAR.RowHeadersWidth = 51;
             this.dataGridViewIMPORTAR.RowTemplate.Height = 24;
-            this.dataGridViewIMPORTAR.Size = new System.Drawing.Size(953, 428);
+            this.dataGridViewIMPORTAR.Size = new System.Drawing.Size(715, 348);
             this.dataGridViewIMPORTAR.TabIndex = 3;
             this.dataGridViewIMPORTAR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIMPORTAR_CellContentClick);
             // 
@@ -220,9 +233,10 @@ namespace CapaPresentacion
             // 
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(1167, 0);
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(875, 0);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
-            this.btnMINIMIZAR.Size = new System.Drawing.Size(42, 41);
+            this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMINIMIZAR.TabIndex = 6;
             this.btnMINIMIZAR.TabStop = false;
@@ -232,9 +246,10 @@ namespace CapaPresentacion
             // 
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
-            this.btnCERRAR.Location = new System.Drawing.Point(1215, 0);
+            this.btnCERRAR.Location = new System.Drawing.Point(911, 0);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCERRAR.Name = "btnCERRAR";
-            this.btnCERRAR.Size = new System.Drawing.Size(42, 41);
+            this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCERRAR.TabIndex = 4;
             this.btnCERRAR.TabStop = false;
@@ -249,9 +264,10 @@ namespace CapaPresentacion
             this.buttonIMPRIMIR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
             this.buttonIMPRIMIR.ForeColor = System.Drawing.Color.White;
             this.buttonIMPRIMIR.Image = global::CapaPresentacion.Properties.Resources.printer_regular_242;
-            this.buttonIMPRIMIR.Location = new System.Drawing.Point(804, 570);
+            this.buttonIMPRIMIR.Location = new System.Drawing.Point(603, 463);
+            this.buttonIMPRIMIR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonIMPRIMIR.Name = "buttonIMPRIMIR";
-            this.buttonIMPRIMIR.Size = new System.Drawing.Size(215, 45);
+            this.buttonIMPRIMIR.Size = new System.Drawing.Size(161, 37);
             this.buttonIMPRIMIR.TabIndex = 5;
             this.buttonIMPRIMIR.Text = "IMPRIMIR";
             this.buttonIMPRIMIR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -268,9 +284,10 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(588, 570);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(441, 463);
+            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
-            this.buttonDESCARGAR.Size = new System.Drawing.Size(190, 45);
+            this.buttonDESCARGAR.Size = new System.Drawing.Size(142, 37);
             this.buttonDESCARGAR.TabIndex = 4;
             this.buttonDESCARGAR.Text = "DESCARGAR";
             this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -284,17 +301,18 @@ namespace CapaPresentacion
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
             this.label6.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
-            this.label6.Location = new System.Drawing.Point(583, 72);
+            this.label6.Location = new System.Drawing.Point(437, 58);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(363, 25);
+            this.label6.Size = new System.Drawing.Size(293, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "DOCENTES 2021-2-INFORMATICA";
             // 
             // FormDiecDepAcade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 644);
+            this.ClientSize = new System.Drawing.Size(943, 523);
             this.Controls.Add(this.btnMINIMIZAR);
             this.Controls.Add(this.btnCERRAR);
             this.Controls.Add(this.buttonIMPRIMIR);
@@ -303,6 +321,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pnlLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormDiecDepAcade";
             this.Text = "FormDiecDepAcade";
             this.Load += new System.EventHandler(this.FormDiecDepAcade_Load);
