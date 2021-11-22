@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class FormDiecDepAcade
+    partial class FormDirecDepAcade
     {
         /// <summary>
         /// Required designer variable.

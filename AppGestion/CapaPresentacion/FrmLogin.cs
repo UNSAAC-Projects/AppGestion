@@ -1,12 +1,19 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
 using System.Runtime.InteropServices; //Para usar librerias nativas del sistema operativo (dll)(can drag form)
+
 
 namespace CapaPresentacion
 {
     public partial class FrmLogin : Form
     {
+        //Inicializando variables
+        SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
+        DataTable tabla = new DataTable();
+        SqlDataAdapter adapter = new SqlDataAdapter();
 
         private bool OpcionDocente;
         private bool OpcionDirEscuela;
@@ -17,6 +24,49 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
+        #region Módulos
+        bool VerificarLogin(string usuario, string contraseña, out string mensaje)
+        {
+            //-- Verifica si se inició correctamente el login. Se guarda el mensaje en la variable "mensaje".
+
+            try
+            {              
+                //-- Determinar tipo de usuario
+                string categoria;
+                if (OpcionDocente) categoria = "Docente";
+                else if (OpcionDirEscuela) categoria = "DirectorEscuela";
+                else categoria = "DirectorAcademico";
+
+                //-- Realizando consulta en la BD
+                conexion.Open();
+                string consulta = $@"
+                    SELECT * from TLogin  
+	                WHERE Usuario= '{usuario}' AND Contrasenia = '{contraseña}' and Categoria = '{categoria}'";
+
+                adapter.SelectCommand = new SqlCommand(consulta, conexion);
+                adapter.Fill(tabla); //Rellenando tabla
+
+                //-- Verificando si usuario existe
+                if (tabla.Rows.Count == 1)
+                {
+                    mensaje = "Sesión iniciada correctamente";
+                    conexion.Close();
+                    return true;
+                }
+                else
+                {
+                    mensaje = "Usuario y/o contraseña incorrecta, intente de nuevo";
+                    conexion.Close();
+                    return false;
+                } 
+            }
+            catch (System.Exception e)
+            {
+                mensaje = e.ToString();
+                return false;
+            }
+        }
+        #endregion
 
         #region Eventos
         private void buttonDocente_Click(object sender, System.EventArgs e)
@@ -110,9 +160,36 @@ namespace CapaPresentacion
 
         private void buttonIniciarSesion_Click(object sender, System.EventArgs e)
         {
+            string mensaje;
+            
+            //Verificar si datos del login son correctos
+            if(VerificarLogin(textBoxUsuario.Text, textBoxContraseña.Text, out mensaje)) //Si inicio es correcto
+            {
+                MessageBox.Show(mensaje);
 
+                //Dirigir a su formulario correspondiente
+                if (OpcionDocente)
+                {
+
+                }
+                else if (OpcionDirEscuela)
+                {
+                    mainDirectorEscuela formDirEs = new mainDirectorEscuela();
+                    formDirEs.Show();
+                }
+                else //DirDepartamento
+                {
+                    FormDirecDepAcade formDirDep = new FormDirecDepAcade();
+                    formDirDep.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+                textBoxContraseña.Text = "";
+                textBoxUsuario.Text = "";
+            }
         }
-
         #endregion
 
         #region Procedure to drag form
@@ -132,9 +209,5 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
-
-      
-
-        
     }
 }
