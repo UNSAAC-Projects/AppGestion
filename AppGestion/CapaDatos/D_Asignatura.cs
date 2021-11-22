@@ -46,5 +46,52 @@ namespace CapaDatos
             return tabla;
         }
 
+        public void EliminarAsignatura(string codAsignatura)
+        {
+            SqlCommand cmd = new SqlCommand("SP_ELIMINARASIGNATURA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CodAsignatura", codAsignatura);
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public void CrearAsignatura(E_Asignatura curso)
+        {
+
+            SqlCommand cmd = new SqlCommand("SP_INSERTARASIGNATURA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@CodAsignatura", curso.codAsigantura);
+            cmd.Parameters.AddWithValue("@IDPlan", curso.idPlan);
+            cmd.Parameters.AddWithValue("@Nombre", curso.nombre);
+            cmd.Parameters.AddWithValue("@Creditos", curso.creditos);
+            cmd.Parameters.AddWithValue("@Categoria", curso.categoria);
+            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
+            cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
+            cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public void EditarAsignatura(E_Asignatura curso)
+        {
+            SqlCommand cmd = new SqlCommand("SP_EDITARASIGNATURA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@CodAsignatura", curso.codAsigantura);
+            cmd.Parameters.AddWithValue("@IDPlan", curso.idPlan);
+            cmd.Parameters.AddWithValue("@Nombre", curso.nombre);
+            cmd.Parameters.AddWithValue("@Creditos", curso.creditos);
+            cmd.Parameters.AddWithValue("@Categoria", curso.categoria);
+            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
+            cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
+            cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

@@ -11,12 +11,26 @@ namespace CapaPresentacion
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        /// 
+
+        public static ApplicationContext AppContext { get; set; }
+
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormDirecDepAcade());
+            AppContext = new ApplicationContext(new FrmLogin());
+            Application.Run(AppContext);
+        }
+
+        //Método para intercambiar formularios
+        public static void SwitchMainForm(Form newForm)
+        {
+            var oldMainForm = AppContext.MainForm;
+            AppContext.MainForm = newForm;
+            oldMainForm?.Close();
+            newForm.Show();
         }
     }
 }

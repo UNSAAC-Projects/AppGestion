@@ -7,14 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
+using CapaEntidades;
+
 
 namespace CapaPresentacion
 {
     public partial class mainDirectorEscuela : Form
     {
+        N_Asignatura oAsignatura = new N_Asignatura();
         public mainDirectorEscuela()
         {
             InitializeComponent();
+            MostrarTablaAsignatura();
+            OcultarMoverAncharColumnas();
+        }
+        public void OcultarMoverAncharColumnas()
+        {
+            dgvAsignaturas.Columns[0].DisplayIndex =10;
+            dgvAsignaturas.Columns[1].DisplayIndex = 10;
+            dgvAsignaturas.Columns[2].DisplayIndex = 10;//0
+
+            dgvAsignaturas.Columns[0].Width = 30;
+            dgvAsignaturas.Columns[1].Width = 30;
+            dgvAsignaturas.Columns[2].Width = 40;
+            dgvAsignaturas.Columns[3].Width = 40;
+            dgvAsignaturas.Columns[4].Width = 70;
+            dgvAsignaturas.Columns[5].Width = 200;
+            dgvAsignaturas.Columns[6].Width = 50;
+            dgvAsignaturas.Columns[7].Width = 70;
+            dgvAsignaturas.Columns[8].Width = 80;
+            dgvAsignaturas.Columns[9].Width = 60;
+            
+        }
+        public void MostrarTablaAsignatura()
+        {
+            N_Asignatura oAsignatura = new N_Asignatura();
+            dgvAsignaturas.DataSource = oAsignatura.ListandoAsignaturas();
+
         }
 
         private void mainDirectorEscuela_Load(object sender, EventArgs e)
@@ -45,6 +75,62 @@ namespace CapaPresentacion
         private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void BuscarAsignatura(string search)
+        {
+            N_Asignatura oAsignatura = new N_Asignatura();
+            dgvAsignaturas.DataSource = oAsignatura.BuscandoAsignatura(search);
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            BuscarAsignatura(txtBuscar.Text);
+        }
+
+        private void dgvAsignaturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["CrearGrupo"].Selected)
+            {
+                EditCatalogo frm = new EditCatalogo();
+
+                N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                
+                frm.Show();
+            }
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
+            {
+                string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                oAsignatura.EliminandoAsignatura(delete);
+                
+                MostrarTablaAsignatura();
+            }
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
+            {
+                frmMantAsignatura frm = new frmMantAsignatura();
+                frm.Update = true;
+                frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
+                frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                frm.cmbCategoria.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
+                frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
+                frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
+                frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
+
+                frm.ShowDialog();
+                MostrarTablaAsignatura();
+            }
+        }
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmMantAsignatura frm = new frmMantAsignatura();
+            frm.ShowDialog();
+            frm.Update = false;
+            MostrarTablaAsignatura();
         }
     }
 }
