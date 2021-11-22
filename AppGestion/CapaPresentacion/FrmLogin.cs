@@ -108,5 +108,10 @@ namespace CapaPresentacion
         }
 
         #endregion
+
+        private void buttonIniciarSesion_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
