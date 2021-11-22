@@ -146,6 +146,14 @@ namespace CapaPresentacion
             else buttonIniciarSesion.Enabled = false;
         }
 
+        private void textBoxContraseña_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                buttonIniciarSesion.PerformClick();
+            }
+        }
+
         private void FrmLogin_Load(object sender, System.EventArgs e)
         {
             //Inicializando boton
@@ -170,17 +178,15 @@ namespace CapaPresentacion
                 //Dirigir a su formulario correspondiente
                 if (OpcionDocente)
                 {
-
+                    Program.SwitchMainForm(new FormDocente());
                 }
                 else if (OpcionDirEscuela)
                 {
-                    mainDirectorEscuela formDirEs = new mainDirectorEscuela();
-                    formDirEs.Show();
+                    Program.SwitchMainForm(new mainDirectorEscuela());
                 }
                 else //DirDepartamento
                 {
-                    FormDirecDepAcade formDirDep = new FormDirecDepAcade();
-                    formDirDep.Show();
+                    Program.SwitchMainForm(new FormDirecDepAcade());
                 }
             }
             else

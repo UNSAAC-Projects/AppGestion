@@ -185,6 +185,7 @@ namespace CapaPresentacion
             // textBoxUsuario
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsuario.Location = new System.Drawing.Point(278, 116);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
@@ -204,6 +205,7 @@ namespace CapaPresentacion
             this.textBoxContraseña.Size = new System.Drawing.Size(221, 20);
             this.textBoxContraseña.TabIndex = 2;
             this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
+            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxContraseña_KeyDown);
             // 
             // buttonIniciarSesion
             // 

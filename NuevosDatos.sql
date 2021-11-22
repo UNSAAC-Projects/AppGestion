@@ -42,7 +42,7 @@ INSERT INTO TLogin VALUES
 ('lauro', 'lauro', 'Docente','D003'),
 ('zonia','zonia' ,'DirectorEscuela','D002'),
 ('zonia','zonia' ,'Docente','D002'),
-('boris','zonia','Docente'	,'D001')
+('boris','boris','Docente'	,'D001')
 GO
 
 INSERT INTO THorario VALUES

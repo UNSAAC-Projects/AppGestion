@@ -72,6 +72,12 @@
     <Compile Include="FormDistDocente.Designer.cs">
       <DependentUpon>FormDistDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDocente.Designer.cs">
+      <DependentUpon>FormDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormListaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
