@@ -82,6 +82,7 @@ namespace CapaDatos
             SqlCommand cmd = new SqlCommand("SP_EDITARASIGNATURA", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
+            cmd.Parameters.AddWithValue("@CodAsignatura", curso.codAsigantura);
             cmd.Parameters.AddWithValue("@IDPlan", curso.idPlan);
             cmd.Parameters.AddWithValue("@Nombre", curso.nombre);
             cmd.Parameters.AddWithValue("@Creditos", curso.creditos);
