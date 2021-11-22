@@ -94,11 +94,43 @@ namespace CapaPresentacion
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["CrearGrupo"].Selected)
             {
                 EditCatalogo frm = new EditCatalogo();
-                //----------- EXCLUISVAMENTE EL NUEVO CODIGO ASIGNATURA ---------------------------
+
                 N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 
                 frm.Show();
             }
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
+            {
+                string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                oAsignatura.EliminandoAsignatura(delete);
+                
+                MostrarTablaAsignatura();
+            }
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
+            {
+                frmMantAsignatura frm = new frmMantAsignatura();
+                frm.Update = true;
+                frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
+                frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                frm.cmbCategoria.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
+                frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
+                frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
+                frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
+
+                frm.ShowDialog();
+                MostrarTablaAsignatura();
+            }
+        }
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            frmMantAsignatura frm = new frmMantAsignatura();
+            frm.ShowDialog();
+            frm.Update = false;
+            MostrarTablaAsignatura();
         }
     }
 }

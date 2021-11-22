@@ -22,5 +22,17 @@ namespace CapaNegocio
             entities.Buscar = search;
             return data.BuscarAsignatura(entities);
         }
+        public void CreandoAsignatura(E_Asignatura curso)
+        {
+            data.CrearAsignatura(curso);
+        }
+        public void EditandoAsignatura(E_Asignatura curso)
+        {
+            data.EditarAsignatura(curso);
+        }
+        public void EliminandoAsignatura(string id)
+        {
+            data.EliminarAsignatura(id);
+        }
     }
 }
