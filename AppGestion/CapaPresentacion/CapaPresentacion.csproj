@@ -165,11 +165,11 @@
     <Compile Include="FormAsistenciaDocentes.Designer.cs">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDiecDepAcade.cs">
+    <Compile Include="FormDirecDepAcade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDiecDepAcade.Designer.cs">
-      <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
+    <Compile Include="FormDirecDepAcade.Designer.cs">
+      <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDistDocente.cs">
       <SubType>Form</SubType>
@@ -209,8 +209,8 @@
     <EmbeddedResource Include="FormAsistenciaDocentes.resx">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDiecDepAcade.resx">
-      <DependentUpon>FormDiecDepAcade.cs</DependentUpon>
+    <EmbeddedResource Include="FormDirecDepAcade.resx">
+      <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDistDocente.resx">
       <DependentUpon>FormDistDocente.cs</DependentUpon>

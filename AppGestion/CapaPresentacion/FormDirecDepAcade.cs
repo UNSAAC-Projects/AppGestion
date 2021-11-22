@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,17 +11,27 @@ using System.Windows.Forms;
 
 namespace CapaPresentacion
 {
-    public partial class FormDiecDepAcade : Form
+    public partial class FormDirecDepAcade : Form
     {
-        public FormDiecDepAcade()
+        public FormDirecDepAcade()
         {
             InitializeComponent();
         }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        DataView ImportarDatos(string nombrearchivo)
         {
-            
-            
+            string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;DataSource={0}; Extended Properties'Excel 12.0;'", nombrearchivo);
+            OleDbConnection conector = default (OleDbConnection);
+            conector = new OleDbConnection(conexion);
+            conector.Open();
+            OleDbCommand consulta = new OleDbCommand("Select *  from [Hoja1$]", conector);
+            OleDbDataAdapter adaptador = new OleDbDataAdapter();
+            adaptador.SelectCommand = consulta;
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds);
+            conector.Close();
+            return ds.Tables[0].DefaultView;
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -87,6 +98,15 @@ namespace CapaPresentacion
         private void buttonIMPORTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = " Excel | * .xls;*.xlsx;";
+            openFileDialog.Title = "Selecionar Archivo ";
+            if(openFileDialog.ShowDialog()== DialogResult.OK)
+            {
+                dataGridViewIMPORTAR.DataSource = ImportarDatos(openFileDialog.FileName);
+            }
+
         }
 
         private void labelLAURO_Click(object sender, EventArgs e)

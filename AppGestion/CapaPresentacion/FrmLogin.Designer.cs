@@ -68,10 +68,11 @@ namespace CapaPresentacion
             this.pnLogo.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
             this.pnLogo.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(13)))), ((int)(((byte)(15)))));
             this.pnLogo.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.pnLogo.Location = new System.Drawing.Point(10, 11);
+            this.pnLogo.Location = new System.Drawing.Point(13, 14);
+            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Quality = 10;
-            this.pnLogo.Size = new System.Drawing.Size(320, 231);
+            this.pnLogo.Size = new System.Drawing.Size(427, 284);
             this.pnLogo.TabIndex = 3;
             this.pnLogo.Click += new System.EventHandler(this.pnLogo_Click);
             // 
@@ -80,12 +81,13 @@ namespace CapaPresentacion
             this.pbLogo.AllowFocused = false;
             this.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLogo.AutoSizeHeight = true;
-            this.pbLogo.BorderRadius = 101;
+            this.pbLogo.BorderRadius = 134;
             this.pbLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_unsaac1;
             this.pbLogo.IsCircle = true;
-            this.pbLogo.Location = new System.Drawing.Point(58, 13);
+            this.pbLogo.Location = new System.Drawing.Point(77, 16);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(202, 202);
+            this.pbLogo.Size = new System.Drawing.Size(269, 269);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
@@ -120,7 +122,8 @@ namespace CapaPresentacion
             this.tbContraseña.IconRight = null;
             this.tbContraseña.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbContraseña.Lines = new string[0];
-            this.tbContraseña.Location = new System.Drawing.Point(25, 364);
+            this.tbContraseña.Location = new System.Drawing.Point(33, 414);
+            this.tbContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbContraseña.MaxLength = 16;
             this.tbContraseña.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbContraseña.Modified = false;
@@ -146,7 +149,7 @@ namespace CapaPresentacion
             stateProperties4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbContraseña.OnIdleState = stateProperties4;
-            this.tbContraseña.Padding = new System.Windows.Forms.Padding(3);
+            this.tbContraseña.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbContraseña.PasswordChar = '\0';
             this.tbContraseña.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(94)))));
             this.tbContraseña.PlaceholderText = "Contraseña";
@@ -156,7 +159,7 @@ namespace CapaPresentacion
             this.tbContraseña.SelectionLength = 0;
             this.tbContraseña.SelectionStart = 0;
             this.tbContraseña.ShortcutsEnabled = true;
-            this.tbContraseña.Size = new System.Drawing.Size(269, 40);
+            this.tbContraseña.Size = new System.Drawing.Size(359, 49);
             this.tbContraseña.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbContraseña.TabIndex = 2;
             this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -197,7 +200,8 @@ namespace CapaPresentacion
             this.tbUsuario.IconRight = null;
             this.tbUsuario.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbUsuario.Lines = new string[0];
-            this.tbUsuario.Location = new System.Drawing.Point(25, 302);
+            this.tbUsuario.Location = new System.Drawing.Point(33, 357);
+            this.tbUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbUsuario.MaxLength = 10;
             this.tbUsuario.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbUsuario.Modified = false;
@@ -223,7 +227,7 @@ namespace CapaPresentacion
             stateProperties8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbUsuario.OnIdleState = stateProperties8;
-            this.tbUsuario.Padding = new System.Windows.Forms.Padding(3);
+            this.tbUsuario.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbUsuario.PasswordChar = '\0';
             this.tbUsuario.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(89)))), ((int)(((byte)(94)))));
             this.tbUsuario.PlaceholderText = "Usuario";
@@ -233,7 +237,7 @@ namespace CapaPresentacion
             this.tbUsuario.SelectionLength = 0;
             this.tbUsuario.SelectionStart = 0;
             this.tbUsuario.ShortcutsEnabled = true;
-            this.tbUsuario.Size = new System.Drawing.Size(269, 40);
+            this.tbUsuario.Size = new System.Drawing.Size(359, 49);
             this.tbUsuario.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbUsuario.TabIndex = 1;
             this.tbUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -277,7 +281,7 @@ namespace CapaPresentacion
             this.btnIniciarSesion.Enabled = false;
             this.btnIniciarSesion.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnIniciarSesion.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIniciarSesion.IconLeftCursor = System.Windows.Forms.Cursors.Default;
             this.btnIniciarSesion.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
@@ -294,7 +298,8 @@ namespace CapaPresentacion
             this.btnIniciarSesion.IdleIconLeftImage = null;
             this.btnIniciarSesion.IdleIconRightImage = null;
             this.btnIniciarSesion.IndicateFocus = false;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(127, 436);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(169, 537);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(193)))), ((int)(((byte)(197)))));
             this.btnIniciarSesion.OnDisabledState.BorderRadius = 20;
@@ -317,7 +322,7 @@ namespace CapaPresentacion
             this.btnIniciarSesion.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderStyles.Solid;
             this.btnIniciarSesion.OnIdleState.BorderThickness = 1;
             this.btnIniciarSesion.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(12)))), ((int)(((byte)(46)))));
-            this.btnIniciarSesion.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.OnIdleState.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnIniciarSesion.OnIdleState.IconLeftImage = null;
             this.btnIniciarSesion.OnIdleState.IconRightImage = null;
             this.btnIniciarSesion.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
@@ -328,7 +333,7 @@ namespace CapaPresentacion
             this.btnIniciarSesion.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnIniciarSesion.OnPressedState.IconLeftImage = null;
             this.btnIniciarSesion.OnPressedState.IconRightImage = null;
-            this.btnIniciarSesion.Size = new System.Drawing.Size(167, 39);
+            this.btnIniciarSesion.Size = new System.Drawing.Size(223, 48);
             this.btnIniciarSesion.TabIndex = 3;
             this.btnIniciarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnIniciarSesion.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -384,7 +389,8 @@ namespace CapaPresentacion
             this.btnCerrar.IdleIconLeftImage = null;
             this.btnCerrar.IdleIconRightImage = null;
             this.btnCerrar.IndicateFocus = false;
-            this.btnCerrar.Location = new System.Drawing.Point(25, 436);
+            this.btnCerrar.Location = new System.Drawing.Point(33, 537);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnCerrar.OnDisabledState.BorderRadius = 20;
@@ -418,7 +424,7 @@ namespace CapaPresentacion
             this.btnCerrar.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.OnPressedState.IconLeftImage = null;
             this.btnCerrar.OnPressedState.IconRightImage = null;
-            this.btnCerrar.Size = new System.Drawing.Size(96, 39);
+            this.btnCerrar.Size = new System.Drawing.Size(128, 48);
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCerrar.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -436,7 +442,8 @@ namespace CapaPresentacion
             this.pnShadow.Controls.Add(this.pnLogo);
             this.pnShadow.FillStyle = Bunifu.UI.WinForms.BunifuShadowPanel.FillStyles.Solid;
             this.pnShadow.GradientMode = Bunifu.UI.WinForms.BunifuShadowPanel.GradientModes.Vertical;
-            this.pnShadow.Location = new System.Drawing.Point(-11, -12);
+            this.pnShadow.Location = new System.Drawing.Point(-15, -15);
+            this.pnShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnShadow.Name = "pnShadow";
             this.pnShadow.PanelColor = System.Drawing.Color.White;
             this.pnShadow.PanelColor2 = System.Drawing.Color.White;
@@ -445,7 +452,7 @@ namespace CapaPresentacion
             this.pnShadow.ShadowDepth = 10;
             this.pnShadow.ShadowStyle = Bunifu.UI.WinForms.BunifuShadowPanel.ShadowStyles.Surrounded;
             this.pnShadow.ShadowTopLeftVisible = false;
-            this.pnShadow.Size = new System.Drawing.Size(340, 255);
+            this.pnShadow.Size = new System.Drawing.Size(453, 314);
             this.pnShadow.Style = Bunifu.UI.WinForms.BunifuShadowPanel.BevelStyles.Flat;
             this.pnShadow.TabIndex = 6;
             this.pnShadow.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.bunifuShadowPanel1_ControlAdded);
@@ -454,9 +461,10 @@ namespace CapaPresentacion
             // 
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBienvenido.Location = new System.Drawing.Point(89, 256);
+            this.lblBienvenido.Location = new System.Drawing.Point(123, 303);
+            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(143, 32);
+            this.lblBienvenido.Size = new System.Drawing.Size(176, 41);
             this.lblBienvenido.TabIndex = 7;
             this.lblBienvenido.Text = "Bienvenido";
             // 
@@ -481,10 +489,10 @@ namespace CapaPresentacion
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(319, 502);
+            this.ClientSize = new System.Drawing.Size(425, 618);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.pnShadow);
             this.Controls.Add(this.btnCerrar);
@@ -492,7 +500,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.btnIniciarSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";

@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class FormDiecDepAcade
+    partial class FormDirecDepAcade
     {
         /// <summary>
         /// Required designer variable.
@@ -208,11 +208,11 @@ namespace CapaPresentacion
             // dataGridViewIMPORTAR
             // 
             this.dataGridViewIMPORTAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIMPORTAR.Location = new System.Drawing.Point(304, 124);
+            this.dataGridViewIMPORTAR.Location = new System.Drawing.Point(304, 84);
             this.dataGridViewIMPORTAR.Name = "dataGridViewIMPORTAR";
             this.dataGridViewIMPORTAR.RowHeadersWidth = 51;
             this.dataGridViewIMPORTAR.RowTemplate.Height = 24;
-            this.dataGridViewIMPORTAR.Size = new System.Drawing.Size(953, 428);
+            this.dataGridViewIMPORTAR.Size = new System.Drawing.Size(953, 468);
             this.dataGridViewIMPORTAR.TabIndex = 3;
             this.dataGridViewIMPORTAR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIMPORTAR_CellContentClick);
             // 
@@ -284,7 +284,7 @@ namespace CapaPresentacion
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
             this.label6.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
-            this.label6.Location = new System.Drawing.Point(583, 72);
+            this.label6.Location = new System.Drawing.Point(568, 20);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(363, 25);
             this.label6.TabIndex = 2;
