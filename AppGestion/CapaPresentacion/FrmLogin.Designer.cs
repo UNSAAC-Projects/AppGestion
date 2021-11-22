@@ -68,6 +68,7 @@ namespace CapaPresentacion
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(206, 361);
             this.pnlLateral.TabIndex = 0;
+            this.pnlLateral.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLateral_MouseDown);
             // 
             // panelLinea
             // 
@@ -167,6 +168,7 @@ namespace CapaPresentacion
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 2;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLogo_MouseDown);
             // 
             // labelBienvenido
             // 

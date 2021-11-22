@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices; //Para usar librerias nativas del sistema operativo (dll)(can drag form)
 
 namespace CapaPresentacion
 {
@@ -107,11 +108,33 @@ namespace CapaPresentacion
             buttonIniciarSesion.BackColor = Color.Silver;
         }
 
-        #endregion
-
         private void buttonIniciarSesion_Click(object sender, System.EventArgs e)
         {
 
         }
+
+        #endregion
+
+        #region Procedure to drag form
+        //Añadir using System.Runtime.InteropServices para usar
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWind, int wMsg, int wParam, int lParam);
+        private void pnlLateral_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        private void pictureBoxLogo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        #endregion
+
+      
+
+        
     }
 }
