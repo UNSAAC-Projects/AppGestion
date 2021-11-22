@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuTop = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.CrearGrupo = new System.Windows.Forms.DataGridViewImageColumn();
@@ -51,7 +52,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.MenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -74,19 +74,19 @@
             this.MenuTop.Controls.Add(this.pictureBox1);
             this.MenuTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.MenuTop.Location = new System.Drawing.Point(0, 0);
-            this.MenuTop.Margin = new System.Windows.Forms.Padding(2);
+            this.MenuTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MenuTop.Name = "MenuTop";
-            this.MenuTop.Size = new System.Drawing.Size(1084, 39);
+            this.MenuTop.Size = new System.Drawing.Size(1445, 48);
             this.MenuTop.TabIndex = 0;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(32, 2);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Location = new System.Drawing.Point(43, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(34, 35);
+            this.pictureBox6.Size = new System.Drawing.Size(45, 43);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 3;
             this.pictureBox6.TabStop = false;
@@ -95,10 +95,10 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Location = new System.Drawing.Point(12, 5);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(26, 32);
+            this.pictureBox7.Size = new System.Drawing.Size(35, 39);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
@@ -107,10 +107,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(950, 8);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(1267, 10);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox3.Size = new System.Drawing.Size(37, 34);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -119,10 +119,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(982, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(1309, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(37, 34);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -134,20 +134,19 @@
             this.ContenedorLogin.Controls.Add(this.label1);
             this.ContenedorLogin.Controls.Add(this.pictureBox2);
             this.ContenedorLogin.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ContenedorLogin.Location = new System.Drawing.Point(0, 39);
-            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.ContenedorLogin.Location = new System.Drawing.Point(0, 48);
+            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorLogin.Name = "ContenedorLogin";
-            this.ContenedorLogin.Size = new System.Drawing.Size(207, 489);
+            this.ContenedorLogin.Size = new System.Drawing.Size(276, 602);
             this.ContenedorLogin.TabIndex = 1;
             this.ContenedorLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorLogin_Paint);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 313);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(104, 330);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
@@ -156,10 +155,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(45, 228);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(60, 281);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
+            this.label1.Size = new System.Drawing.Size(172, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "ADMINISTRADOR";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -167,10 +165,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(47, 37);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(63, 46);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(131, 136);
+            this.pictureBox2.Size = new System.Drawing.Size(175, 167);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -185,18 +183,29 @@
             this.panelPrinciapl.Controls.Add(this.pictureBox5);
             this.panelPrinciapl.Controls.Add(this.pictureBox4);
             this.panelPrinciapl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrinciapl.Location = new System.Drawing.Point(207, 39);
-            this.panelPrinciapl.Margin = new System.Windows.Forms.Padding(2);
+            this.panelPrinciapl.Location = new System.Drawing.Point(276, 48);
+            this.panelPrinciapl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelPrinciapl.Name = "panelPrinciapl";
-            this.panelPrinciapl.Size = new System.Drawing.Size(877, 489);
+            this.panelPrinciapl.Size = new System.Drawing.Size(1169, 602);
             this.panelPrinciapl.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(699, 34);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(131, 55);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Agregar...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(413, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(551, 540);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 39);
+            this.button1.Size = new System.Drawing.Size(132, 48);
             this.button1.TabIndex = 6;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -217,16 +226,16 @@
             this.CrearGrupo,
             this.Editar,
             this.Eliminar});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(24, 95);
-            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAsignaturas.Location = new System.Drawing.Point(32, 117);
+            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAsignaturas.RowHeadersVisible = false;
@@ -234,7 +243,7 @@
             this.dgvAsignaturas.RowTemplate.Height = 24;
             this.dgvAsignaturas.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvAsignaturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(842, 327);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(1123, 402);
             this.dgvAsignaturas.TabIndex = 5;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
             // 
@@ -242,18 +251,21 @@
             // 
             this.CrearGrupo.HeaderText = "CrearGrupo";
             this.CrearGrupo.Image = global::CapaPresentacion.Properties.Resources.plus_24px;
+            this.CrearGrupo.MinimumWidth = 6;
             this.CrearGrupo.Name = "CrearGrupo";
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
+            this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             // 
             // txtBuscar
@@ -261,20 +273,20 @@
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(80, 33);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar.Location = new System.Drawing.Point(107, 41);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(393, 30);
+            this.txtBuscar.Size = new System.Drawing.Size(524, 38);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(40, 37);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(53, 46);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox5.Size = new System.Drawing.Size(37, 34);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 3;
             this.pictureBox5.TabStop = false;
@@ -282,10 +294,10 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(34, 28);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(45, 34);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(455, 45);
+            this.pictureBox4.Size = new System.Drawing.Size(607, 55);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
@@ -294,6 +306,7 @@
             // 
             this.dataGridViewImageColumn1.HeaderText = "CrearGrupo";
             this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.plus_24px;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 547;
             // 
@@ -301,6 +314,7 @@
             // 
             this.dataGridViewImageColumn2.HeaderText = "Editar";
             this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 237;
             // 
@@ -308,29 +322,20 @@
             // 
             this.dataGridViewImageColumn3.HeaderText = "Eliminar";
             this.dataGridViewImageColumn3.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.dataGridViewImageColumn3.MinimumWidth = 6;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(524, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Agregar...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // mainDirectorEscuela
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 528);
+            this.ClientSize = new System.Drawing.Size(1445, 650);
             this.Controls.Add(this.panelPrinciapl);
             this.Controls.Add(this.ContenedorLogin);
             this.Controls.Add(this.MenuTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "mainDirectorEscuela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainDirectorEscuela";
