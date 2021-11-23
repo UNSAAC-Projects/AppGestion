@@ -303,7 +303,7 @@ namespace CapaPresentacion
             this.label6.TabIndex = 2;
             this.label6.Text = "DOCENTES 2021-2-INFORMATICA";
             // 
-            // FormDiecDepAcade
+            // FormDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

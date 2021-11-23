@@ -64,10 +64,12 @@ CREATE TABLE TCatalogo
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
 	Aula varchar(6),
-	CodDocente varchar(6),
+	CodDocentePractico varchar(6),
+	CodDocenteTeorico varchar(6),
 	PRIMARY KEY (IDCatalogo),
 	FOREIGN KEY (CodAsignatura) REFERENCES TAsignatura,
-	FOREIGN KEY (CodDocente) REFERENCES TDocente
+	FOREIGN KEY (CodDocentePractico) REFERENCES TDocente,
+	FOREIGN KEY (CodDocenteTeorico) REFERENCES TDocente
 )
 GO
 
@@ -78,6 +80,7 @@ CREATE TABLE THorario
 	HoraInicio varchar(2),
 	HoraFin varchar(2),
 	IDCatalogo varchar(6),
+	Tipo varchar(10), --(teorico o práctico)
 	PRIMARY KEY (IDHorario),
 	FOREIGN KEY (IDCatalogo) REFERENCES TCatalogo
 )
