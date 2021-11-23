@@ -95,7 +95,14 @@ namespace CapaPresentacion
                 N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
                 frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                
+                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                {
+                    frm.cmbDia3.Enabled = false;
+                    frm.textHInicio3.Enabled = false;
+                    frm.textHFin3.Enabled = false;
+                    frm.cmbTipo3.Enabled = false;
+                }
                 frm.Show();
             }
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
@@ -159,6 +166,14 @@ namespace CapaPresentacion
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void btnVerCatalogo_Click_1(object sender, EventArgs e)
+        {
+            frmVistaCatalogo frm = new frmVistaCatalogo();
+            frm.ShowDialog();
         }
     }
 }

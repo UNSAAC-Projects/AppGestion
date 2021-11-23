@@ -12,8 +12,8 @@ namespace CapaEntidades
         private string _NroSemestre;
         private string _CodAsignatura;
         private string _Grupo;
-        //private string _IdPlan;
-        private string _CodDocente;
+        private string _CodDocenteTeorico;
+        private string _CodDocentePractico;
         private string _Aula;
         private string search;
         public E_CursoCatalogo()
@@ -21,13 +21,14 @@ namespace CapaEntidades
 
         }
         public E_CursoCatalogo(string idCatalogo, string nroSemestre, string codAsignatura, 
-            string grupo, string codDocente, string aula)
+            string grupo, string codDocenteTeorico, string codDocentePractico, string aula)
         {
             _IdCatalogo = idCatalogo;
             _NroSemestre = nroSemestre;
             _CodAsignatura = codAsignatura;
             _Grupo = grupo;
-            _CodDocente = codDocente;
+            _CodDocenteTeorico = codDocenteTeorico;
+            _CodDocentePractico = codDocentePractico;
             _Aula = aula;
             
         }
@@ -35,8 +36,8 @@ namespace CapaEntidades
         public string NroSemestre { get => _NroSemestre; set => _NroSemestre = value; }
         public string CodAsignatura { get => _CodAsignatura; set => _CodAsignatura = value; }
         public string Grupo { get => _Grupo; set => _Grupo = value; }
-        //public string IdPlan { get => _IdPlan; set => _IdPlan = value; }
-        public string CodDocente { get => _CodDocente; set => _CodDocente = value; }
+        public string CodDocenteTeorico { get => _CodDocenteTeorico; set => _CodDocenteTeorico = value; }
+        public string CodDocentePractico { get => _CodDocentePractico; set => _CodDocentePractico = value; }
         public string Aula { get => _Aula; set => _Aula = value; }
         public string Search { get => search; set => search = value; }
     }

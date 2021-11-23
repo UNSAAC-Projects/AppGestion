@@ -257,3 +257,9 @@ from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 where A.Nombre like @BUSCAR + '%'
 go
 
+------- LISTAR HORARIO -------------
+create proc SP_VISTAHORARIOS
+as
+select C.CodAsignatura, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin
+from TCatalogo C inner join THorario H on C.IDCatalogo=H.IDCatalogo
+go
