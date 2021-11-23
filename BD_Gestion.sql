@@ -1,8 +1,8 @@
 GO
 use master
 go
-DROP DATABASE AppGestion
-GO
+--DROP DATABASE AppGestion
+--GO
 create database AppGestion
 go
 

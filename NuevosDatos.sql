@@ -1,5 +1,15 @@
-
 use AppGestion
+go
+
+/*ELIMINAR TODOS LOS DATOS DE LAS TABLAS*/
+--Desactivar limitaciones de todas las tablas
+EXEC sys.sp_msforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL' 
+
+--Eliminar elementos de todas las tablas
+EXEC sys.sp_msforeachtable 'DELETE FROM ?'
+
+--Activar limitaciones de todas las tablas
+EXEC sys.sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 go
 
 /***************************************************************
@@ -18,7 +28,8 @@ GO
 
 INSERT INTO TDocente values
 ('D001','BORIS' ,	'CHULLO LLAVE',		'Ingeniero Informatico', 	'Activo'),
-('D002','ZONIA','ACURIO USCA'	,'Magister en Ciencias con Mencion en Informatica'	,'Activo')
+('D002','ZONIA','ACURIO USCA'	,'Magister en Ciencias con Mencion en Informatica'	,'Activo'),
+('D003','LAURO','ENCISO RODAS'	,'Doctor en Ingenieria de Sistemas'	,'Activo')
 GO
 
 INSERT INTO TCatalogo VALUES
@@ -27,15 +38,18 @@ INSERT INTO TCatalogo VALUES
 GO
 
 INSERT INTO TLogin VALUES
-('zonia','zonia' ,'Administrador','D002'),
-('boris','zonia','Docente'	,'D001')
+('lauro', 'lauro', 'DirectorAcademico','D003'),
+('lauro', 'lauro', 'Docente','D003'),
+('zonia','zonia' ,'DirectorEscuela','D002'),
+('zonia','zonia' ,'Docente','D002'),
+('boris','boris','Docente'	,'D001')
 GO
 
 INSERT INTO THorario VALUES
-('H0001','28/05/21' ,'7','9','C001'),
-('H0002','14/04/21','7'	,'9','C001'),
-('H0003','28/05/21' ,'9','11','C002'),
-('H0004','14/04/21','9'	,'11','C002')
+('H0001','LUNES' ,'7','9','C001'),
+('H0002','MARTES','7'	,'9','C001'),
+('H0003','JUEVES' ,'9','11','C002'),
+('H0004','VIERNES','9'	,'11','C002')
 GO
 
 INSERT INTO TAsistencia VALUES
