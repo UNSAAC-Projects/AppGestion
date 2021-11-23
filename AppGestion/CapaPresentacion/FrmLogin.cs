@@ -113,5 +113,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void panelLinea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

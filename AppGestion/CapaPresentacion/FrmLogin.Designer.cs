@@ -77,6 +77,7 @@ namespace CapaPresentacion
             this.panelLinea.Name = "panelLinea";
             this.panelLinea.Size = new System.Drawing.Size(188, 4);
             this.panelLinea.TabIndex = 4;
+            this.panelLinea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLinea_Paint);
             // 
             // panelOpciones
             // 
@@ -96,7 +97,7 @@ namespace CapaPresentacion
             this.labelTipo.ForeColor = System.Drawing.Color.White;
             this.labelTipo.Location = new System.Drawing.Point(12, 8);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(111, 20);
+            this.labelTipo.Size = new System.Drawing.Size(140, 25);
             this.labelTipo.TabIndex = 4;
             this.labelTipo.Text = "Ingresar como:";
             // 
@@ -176,7 +177,7 @@ namespace CapaPresentacion
             this.labelBienvenido.Location = new System.Drawing.Point(241, 24);
             this.labelBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBienvenido.Name = "labelBienvenido";
-            this.labelBienvenido.Size = new System.Drawing.Size(143, 32);
+            this.labelBienvenido.Size = new System.Drawing.Size(176, 41);
             this.labelBienvenido.TabIndex = 1;
             this.labelBienvenido.Text = "Bienvenido";
             // 
@@ -187,7 +188,7 @@ namespace CapaPresentacion
             this.textBoxUsuario.Location = new System.Drawing.Point(278, 116);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(222, 20);
+            this.textBoxUsuario.Size = new System.Drawing.Size(222, 25);
             this.textBoxUsuario.TabIndex = 2;
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
@@ -199,7 +200,7 @@ namespace CapaPresentacion
             this.textBoxContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxContraseña.Name = "textBoxContraseña";
             this.textBoxContraseña.PasswordChar = '*';
-            this.textBoxContraseña.Size = new System.Drawing.Size(221, 20);
+            this.textBoxContraseña.Size = new System.Drawing.Size(221, 25);
             this.textBoxContraseña.TabIndex = 2;
             this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
             // 
@@ -245,7 +246,7 @@ namespace CapaPresentacion
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(233, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.Size = new System.Drawing.Size(82, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Usuario:";
             // 
@@ -255,7 +256,7 @@ namespace CapaPresentacion
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(233, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Contraseña:";
             // 
@@ -311,7 +312,7 @@ namespace CapaPresentacion
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(546, 361);
