@@ -168,7 +168,9 @@ namespace CapaPresentacion
 
         }
 
-        private void btnVerCatalogo_Click(object sender, EventArgs e)
+
+
+        private void btnVerCatalogo_Click_1(object sender, EventArgs e)
         {
             frmVistaCatalogo frm = new frmVistaCatalogo();
             frm.ShowDialog();
