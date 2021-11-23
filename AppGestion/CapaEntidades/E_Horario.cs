@@ -11,21 +11,24 @@ namespace CapaEntidades
         private string _Dia;
         private string _HoraInicio;
         private string _HoraFin;
+        private string _Tipo;
         private string _IdCatalogo;
 
         public E_Horario() 
         {
         }
-        public E_Horario(string dia, string horaInicio, string horaFin, string idCatalogo) 
+        public E_Horario(string dia, string horaInicio, string tipo ,string horaFin, string idCatalogo) 
         {
             _Dia = dia;
             _HoraInicio = horaInicio;
             _HoraFin = horaFin;
+            _Tipo = tipo;
             _IdCatalogo = idCatalogo;
         }
         public string Dia { get => _Dia; set => _Dia = value; }
         public string HoraInicio { get => _HoraInicio; set => _HoraInicio = value; }
         public string HoraFin { get => _HoraFin; set => _HoraFin = value; }
+        public string Tipo { get => _Tipo; set => _Tipo = value; }
         public string IdCatalogo { get => _IdCatalogo; set => _IdCatalogo = value; }
     }
 }

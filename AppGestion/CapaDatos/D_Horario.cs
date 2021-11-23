@@ -22,10 +22,27 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Dia", horario.Dia);
             cmd.Parameters.AddWithValue("@HoraInicio", horario.HoraInicio);
             cmd.Parameters.AddWithValue("@HoraFin", horario.HoraFin);
+            cmd.Parameters.AddWithValue("@Tipo", horario.Tipo);
             cmd.Parameters.AddWithValue("@IDCatalogo", horario.IdCatalogo);
 
             cmd.ExecuteNonQuery();
             conexion.Close();
+        }
+        public DataTable ListarHorario()
+        {
+            DataTable table = new DataTable();
+            SqlDataReader readRows;
+            SqlCommand cmd = new SqlCommand("SP_VISTAHORARIOS", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            readRows = cmd.ExecuteReader();
+            table.Load(readRows);
+
+            readRows.Close();
+            conexion.Close();
+
+            return table;
         }
     }
 }

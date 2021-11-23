@@ -73,7 +73,7 @@ GO
 
 CREATE TABLE THorario
 (
-	IDHorario varchar(6),
+	IDHorario int identity,
 	Dia varchar(100),
 	HoraInicio varchar(2),
 	HoraFin varchar(2),
@@ -89,7 +89,7 @@ CREATE TABLE TAsistencia
 	Fecha varchar(10),
 	Hora varchar(2),
 	Tipo varchar(100),
-	IDHorario varchar(6),
+	IDHorario int,
 	PRIMARY KEY (IDAsistencia),
 	FOREIGN KEY (IDHorario) REFERENCES THorario
 )
@@ -262,11 +262,50 @@ update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grup
 where IDCatalogo =@IDCatalogo
 go
 
----
 create proc SP_ELIMINARCATALOGO
 @IDCatalogo varchar(10)
 as
-delete TCatalogo
-where IDCatalogo=@IDCatalogo
+delete from THorario where IDCatalogo=@IDCatalogo
+delete from TCatalogo where IDCatalogo=@IDCatalogo
 go
 
+
+
+/***************************************************************
+				PROCEDIMIENTOS ALMACENADOS DE VISTA CATALOGO
+****************************************************************/
+CREATE PROC SP_VISTACATALOGO
+--@BUSCAR varchar(20)
+as
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre,  A.Creditos , A.Categoria, C.NroSemestre
+from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura --inner join TDocente D on C.CodDocente=D.CodDocente
+go
+
+CREATE PROC SP_BUSCARVISTACATALOGO
+@BUSCAR varchar(20)
+as
+select C.IDCatalogo, C.CodAsignatura,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre,  A.Creditos , A.Categoria, C.NroSemestre
+from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+where A.Nombre like @BUSCAR + '%'
+go
+/***************************************************************
+				PROCEDIMIENTOS ALMACENADOS DE HORARIO
+****************************************************************/
+CREATE PROC SP_INSERTARHORARIO
+	@Dia varchar(100),
+	@HoraInicio varchar(2),
+	@HoraFin varchar(2),
+	@IDCatalogo varchar(6)
+AS INSERT INTO THorario values (
+	@Dia,
+	@HoraInicio,
+	@HoraFin,
+	@IDCatalogo )
+go
+
+------- LISTAR HORARIO -------------
+create proc SP_VISTAHORARIOS
+as
+select C.CodAsignatura, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin
+from TCatalogo C inner join THorario H on C.IDCatalogo=H.IDCatalogo
+go

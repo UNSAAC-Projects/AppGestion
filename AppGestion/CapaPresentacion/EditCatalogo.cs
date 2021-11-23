@@ -64,38 +64,99 @@ namespace CapaPresentacion
         {
             if (Update == false)
             {
-                
-                    entities.IdCatalogo = textIdCatalogo.Text;
-                    entities.NroSemestre = textNroSemestre.Text;
-                    entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
-                    entities.Grupo = cmbGrupo.Text;
-                    entities.Aula = textAula.Text;
-                    entities.CodDocente = "D001";
-                    business.CreandoCursoCatalogo(entities);
+                entities.IdCatalogo = textIdCatalogo.Text;
+                entities.NroSemestre = textNroSemestre.Text;
+                entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
+                entities.Grupo = cmbGrupo.Text;
+                entities.Aula = textAula.Text;
+                entities.CodDocenteTeorico = "D000";
+                entities.CodDocentePractico = "D000";
+                business.CreandoCursoCatalogo(entities);
 
-
-                    // HORARIO
-                    ComboBox[] Dias = { cmbDia1, cmbDia2, cmbDia3 };
-                    TextBox[] HInicio = {textHInicio1, textHInicio2, textHInicio3};
-                    TextBox[] HFin = { textHFin1, textHFin2, textHFin3 };
+                // HORARIO
+                ComboBox[] Dias = { cmbDia1, cmbDia2, cmbDia3 };
+                TextBox[] HInicio = {textHInicio1, textHInicio2, textHInicio3};
+                TextBox[] HFin = { textHFin1, textHFin2, textHFin3 };
+                ComboBox[] Tipo = { cmbTipo1,cmbTipo2,cmbTipo3};
                     
-                    int i = 0;
-                    entitiesHorario.IdCatalogo = textIdCatalogo.Text;
-                    while (i<3)
+                int i = 0;
+                int creditos = Convert.ToInt32(textCreditos.Text);
+                entitiesHorario.IdCatalogo = textIdCatalogo.Text;
+                if (creditos > 3)
+                {
+                    while (i < 3)
                     {
                         entitiesHorario.Dia = Dias[i].Text;
                         entitiesHorario.HoraInicio = HInicio[i].Text;
                         entitiesHorario.HoraFin = HFin[i].Text;
+                        entitiesHorario.Tipo = Tipo[i].Text;
                         businessHorario.CreandoHorario(entitiesHorario);
                         i++;
                     }
-                    Close();
-               /*
-                catch (Exception ex)
+                }
+                if (creditos < 4)
                 {
-                    MessageBox.Show("No se peuede agregar");
-                }*/
+                    while (i < 2)
+                    {
+                        entitiesHorario.Dia = Dias[i].Text;
+                        entitiesHorario.HoraInicio = HInicio[i].Text;
+                        entitiesHorario.HoraFin = HFin[i].Text;
+                        entitiesHorario.Tipo = Tipo[i].Text;
+                        businessHorario.CreandoHorario(entitiesHorario);
+                        i++;
+                    }
+                }
+                Close();
+
             }
+            if (Update == true) 
+            {
+                entities.IdCatalogo = textIdCatalogo.Text;
+                textIdCatalogo.Enabled = false;
+                entities.NroSemestre = textNroSemestre.Text;
+                entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
+                entities.Grupo = cmbGrupo.Text;
+                entities.Aula = textAula.Text;
+                entities.CodDocenteTeorico = "D000";
+                entities.CodDocentePractico = "D000";
+                business.EditandoCursoCatalogo(entities);
+
+                // HORARIO
+                ComboBox[] Dias = { cmbDia1, cmbDia2, cmbDia3 };
+                TextBox[] HInicio = { textHInicio1, textHInicio2, textHInicio3 };
+                TextBox[] HFin = { textHFin1, textHFin2, textHFin3 };
+                ComboBox[] Tipo = { cmbTipo1, cmbTipo2, cmbTipo3 };
+
+                int i = 0;
+                int creditos = Convert.ToInt32(textCreditos.Text);
+                entitiesHorario.IdCatalogo = textIdCatalogo.Text;
+                if (creditos > 3)
+                {
+                    while (i < 3)
+                    {
+                        entitiesHorario.Dia = Dias[i].Text;
+                        entitiesHorario.HoraInicio = HInicio[i].Text;
+                        entitiesHorario.HoraFin = HFin[i].Text;
+                        entitiesHorario.Tipo = Tipo[i].Text;
+                        businessHorario.CreandoHorario(entitiesHorario);
+                        i++;
+                    }
+                }
+                if (creditos < 4)
+                {
+                    while (i < 2)
+                    {
+                        entitiesHorario.Dia = Dias[i].Text;
+                        entitiesHorario.HoraInicio = HInicio[i].Text;
+                        entitiesHorario.HoraFin = HFin[i].Text;
+                        entitiesHorario.Tipo = Tipo[i].Text;
+                        businessHorario.CreandoHorario(entitiesHorario);
+                        i++;
+                    }
+                }
+                Close();
+            }
+            
         }
     }
 }

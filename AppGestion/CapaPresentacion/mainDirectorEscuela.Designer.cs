@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuTop = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.CrearGrupo = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
@@ -51,7 +51,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVerCatalogo = new System.Windows.Forms.Button();
             this.MenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -107,7 +107,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(950, 8);
+            this.pictureBox3.Location = new System.Drawing.Point(1013, 4);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(28, 28);
@@ -119,7 +119,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(982, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(1045, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(28, 28);
@@ -178,8 +178,8 @@
             // panelPrinciapl
             // 
             this.panelPrinciapl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelPrinciapl.Controls.Add(this.btnVerCatalogo);
             this.panelPrinciapl.Controls.Add(this.button2);
-            this.panelPrinciapl.Controls.Add(this.button1);
             this.panelPrinciapl.Controls.Add(this.dgvAsignaturas);
             this.panelPrinciapl.Controls.Add(this.txtBuscar);
             this.panelPrinciapl.Controls.Add(this.pictureBox5);
@@ -191,15 +191,15 @@
             this.panelPrinciapl.Size = new System.Drawing.Size(877, 489);
             this.panelPrinciapl.TabIndex = 1;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(413, 439);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 39);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(524, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 45);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Agregar...";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // dgvAsignaturas
             // 
@@ -217,14 +217,14 @@
             this.CrearGrupo,
             this.Editar,
             this.Eliminar});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(99)))), ((int)(((byte)(177)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAsignaturas.Location = new System.Drawing.Point(24, 95);
             this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
@@ -311,15 +311,15 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
-            // button2
+            // btnVerCatalogo
             // 
-            this.button2.Location = new System.Drawing.Point(524, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Agregar...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnVerCatalogo.Location = new System.Drawing.Point(389, 443);
+            this.btnVerCatalogo.Name = "btnVerCatalogo";
+            this.btnVerCatalogo.Size = new System.Drawing.Size(100, 34);
+            this.btnVerCatalogo.TabIndex = 8;
+            this.btnVerCatalogo.Text = "VER CATALOGO";
+            this.btnVerCatalogo.UseVisualStyleBackColor = true;
+            this.btnVerCatalogo.Click += new System.EventHandler(this.btnVerCatalogo_Click);
             // 
             // mainDirectorEscuela
             // 
@@ -370,7 +370,6 @@
         //private BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn CrearGrupo;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
@@ -378,5 +377,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVerCatalogo;
     }
 }
