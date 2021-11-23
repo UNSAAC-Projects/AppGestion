@@ -1,8 +1,8 @@
 GO
 use master
 go
-DROP DATABASE AppGestion
-GO
+--DROP DATABASE AppGestion
+--GO
 create database AppGestion
 go
 
@@ -143,11 +143,11 @@ GO
 
 CREATE TABLE TLogin
 (
-	Usuario varchar(60),
+	Usuario varchar(60) NOT NULL, 
 	Contrasenia varchar(60),
-	Categoria varchar(100),
+	Categoria varchar(100) NOT NULL,
 	CodDocente varchar(6),
-	PRIMARY KEY (Usuario) ,
+	PRIMARY KEY (Usuario, Categoria),
 	FOREIGN KEY (CodDocente) REFERENCES TDocente
 )
 GO

@@ -68,6 +68,7 @@ namespace CapaPresentacion
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(206, 361);
             this.pnlLateral.TabIndex = 0;
+            this.pnlLateral.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlLateral_MouseDown);
             // 
             // panelLinea
             // 
@@ -88,7 +89,7 @@ namespace CapaPresentacion
             this.panelOpciones.Location = new System.Drawing.Point(0, 161);
             this.panelOpciones.Name = "panelOpciones";
             this.panelOpciones.Size = new System.Drawing.Size(206, 184);
-            this.panelOpciones.TabIndex = 3;
+            this.panelOpciones.TabIndex = 9;
             // 
             // labelTipo
             // 
@@ -97,8 +98,8 @@ namespace CapaPresentacion
             this.labelTipo.ForeColor = System.Drawing.Color.White;
             this.labelTipo.Location = new System.Drawing.Point(12, 8);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(140, 25);
-            this.labelTipo.TabIndex = 4;
+            this.labelTipo.Size = new System.Drawing.Size(111, 20);
+            this.labelTipo.TabIndex = 8;
             this.labelTipo.Text = "Ingresar como:";
             // 
             // buttonDirEscuela
@@ -114,7 +115,7 @@ namespace CapaPresentacion
             this.buttonDirEscuela.Name = "buttonDirEscuela";
             this.buttonDirEscuela.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonDirEscuela.Size = new System.Drawing.Size(206, 49);
-            this.buttonDirEscuela.TabIndex = 5;
+            this.buttonDirEscuela.TabIndex = 8;
             this.buttonDirEscuela.Text = "Director de Escuela Profesional";
             this.buttonDirEscuela.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDirEscuela.UseVisualStyleBackColor = false;
@@ -133,7 +134,7 @@ namespace CapaPresentacion
             this.buttonDirDep.Name = "buttonDirDep";
             this.buttonDirDep.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonDirDep.Size = new System.Drawing.Size(206, 47);
-            this.buttonDirDep.TabIndex = 4;
+            this.buttonDirDep.TabIndex = 9;
             this.buttonDirDep.Text = "Director de Departamento Académico\r\n";
             this.buttonDirDep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDirDep.UseVisualStyleBackColor = false;
@@ -152,7 +153,7 @@ namespace CapaPresentacion
             this.buttonDocente.Name = "buttonDocente";
             this.buttonDocente.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.buttonDocente.Size = new System.Drawing.Size(206, 40);
-            this.buttonDocente.TabIndex = 8;
+            this.buttonDocente.TabIndex = 7;
             this.buttonDocente.Text = "Docente";
             this.buttonDocente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDocente.UseVisualStyleBackColor = false;
@@ -168,6 +169,7 @@ namespace CapaPresentacion
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 2;
             this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLogo_MouseDown);
             // 
             // labelBienvenido
             // 
@@ -184,12 +186,13 @@ namespace CapaPresentacion
             // textBoxUsuario
             // 
             this.textBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsuario.Location = new System.Drawing.Point(278, 116);
             this.textBoxUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsuario.Name = "textBoxUsuario";
-            this.textBoxUsuario.Size = new System.Drawing.Size(222, 25);
-            this.textBoxUsuario.TabIndex = 2;
+            this.textBoxUsuario.Size = new System.Drawing.Size(222, 20);
+            this.textBoxUsuario.TabIndex = 1;
             this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxContraseña
@@ -203,6 +206,7 @@ namespace CapaPresentacion
             this.textBoxContraseña.Size = new System.Drawing.Size(221, 25);
             this.textBoxContraseña.TabIndex = 2;
             this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
+            this.textBoxContraseña.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxContraseña_KeyDown);
             // 
             // buttonIniciarSesion
             // 
@@ -235,7 +239,7 @@ namespace CapaPresentacion
             this.buttonCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCerrar.Name = "buttonCerrar";
             this.buttonCerrar.Size = new System.Drawing.Size(185, 30);
-            this.buttonCerrar.TabIndex = 3;
+            this.buttonCerrar.TabIndex = 10;
             this.buttonCerrar.Text = "Cerrar";
             this.buttonCerrar.UseVisualStyleBackColor = false;
             this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
