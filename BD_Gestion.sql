@@ -287,25 +287,24 @@ drop proc SP_INSERTARHORARIO
 CREATE PROC SP_VISTACATALOGO
 --@BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre
-from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura 
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo, C.CodAsignatura,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre,  A.Creditos , A.Categoria, C.NroSemestre
-from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
-
 
 ------- LISTAR HORARIO -------------
 
 create proc SP_VISTAHORARIOS
 as
-select C.CodAsignatura, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
-from TCatalogo C inner join THorario H on C.IDCatalogo=H.IDCatalogo
+select C.CodAsignatura,A.Nombre, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
+from THorario h inner join TCatalogo c on h.IDCatalogo = c.IDCatalogo inner join TAsignatura A ON c.CodAsignatura=A.CodAsignatura
 go
 
 INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
