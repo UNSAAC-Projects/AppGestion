@@ -158,5 +158,32 @@ namespace CapaPresentacion
             }
             
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureCancelAsignaturas_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureMinAsignaturas_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }
