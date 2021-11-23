@@ -71,7 +71,7 @@ namespace CapaPresentacion
             this.pnlLateral.Controls.Add(this.pictureBoxlogo);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLateral.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(228, 523);
             this.pnlLateral.TabIndex = 0;
@@ -83,7 +83,7 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonDISTRIBUCION.Image = global::CapaPresentacion.Properties.Resources.group_solid_24;
             this.buttonDISTRIBUCION.Location = new System.Drawing.Point(26, 463);
-            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
             this.buttonDISTRIBUCION.Size = new System.Drawing.Size(152, 37);
             this.buttonDISTRIBUCION.TabIndex = 11;
@@ -101,7 +101,7 @@ namespace CapaPresentacion
             this.buttonIMPORTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonIMPORTAR.Image = global::CapaPresentacion.Properties.Resources.export_regular_24;
             this.buttonIMPORTAR.Location = new System.Drawing.Point(26, 370);
-            this.buttonIMPORTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonIMPORTAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonIMPORTAR.Name = "buttonIMPORTAR";
             this.buttonIMPORTAR.Size = new System.Drawing.Size(152, 37);
             this.buttonIMPORTAR.TabIndex = 10;
@@ -118,7 +118,7 @@ namespace CapaPresentacion
             this.buttonLISTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLISTAR.Image = global::CapaPresentacion.Properties.Resources.list_check_regular_241;
             this.buttonLISTAR.Location = new System.Drawing.Point(26, 412);
-            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLISTAR.Name = "buttonLISTAR";
             this.buttonLISTAR.Size = new System.Drawing.Size(152, 37);
             this.buttonLISTAR.TabIndex = 3;
@@ -157,7 +157,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
             this.pictureBoxAdmi.Location = new System.Drawing.Point(51, 148);
-            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxAdmi.Name = "pictureBoxAdmi";
             this.pictureBoxAdmi.Size = new System.Drawing.Size(106, 115);
             this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,7 +168,7 @@ namespace CapaPresentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel2.Location = new System.Drawing.Point(19, 336);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 4);
             this.panel2.TabIndex = 1;
@@ -177,7 +177,7 @@ namespace CapaPresentacion
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel1.Location = new System.Drawing.Point(19, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(188, 4);
             this.panel1.TabIndex = 0;
@@ -209,10 +209,10 @@ namespace CapaPresentacion
             // pictureBoxlogo
             // 
             this.pictureBoxlogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxlogo.Location = new System.Drawing.Point(2, 10);
-            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxlogo.Location = new System.Drawing.Point(7, 9);
+            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxlogo.Name = "pictureBoxlogo";
-            this.pictureBoxlogo.Size = new System.Drawing.Size(62, 58);
+            this.pictureBoxlogo.Size = new System.Drawing.Size(56, 58);
             this.pictureBoxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxlogo.TabIndex = 0;
             this.pictureBoxlogo.TabStop = false;
@@ -221,7 +221,7 @@ namespace CapaPresentacion
             // 
             this.dataGridViewIMPORTAR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIMPORTAR.Location = new System.Drawing.Point(228, 101);
-            this.dataGridViewIMPORTAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewIMPORTAR.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewIMPORTAR.Name = "dataGridViewIMPORTAR";
             this.dataGridViewIMPORTAR.RowHeadersWidth = 51;
             this.dataGridViewIMPORTAR.RowTemplate.Height = 24;
@@ -234,7 +234,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
             this.btnMINIMIZAR.Location = new System.Drawing.Point(875, 0);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +247,7 @@ namespace CapaPresentacion
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
             this.btnCERRAR.Location = new System.Drawing.Point(911, 0);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,7 +265,7 @@ namespace CapaPresentacion
             this.buttonIMPRIMIR.ForeColor = System.Drawing.Color.White;
             this.buttonIMPRIMIR.Image = global::CapaPresentacion.Properties.Resources.printer_regular_242;
             this.buttonIMPRIMIR.Location = new System.Drawing.Point(603, 463);
-            this.buttonIMPRIMIR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonIMPRIMIR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonIMPRIMIR.Name = "buttonIMPRIMIR";
             this.buttonIMPRIMIR.Size = new System.Drawing.Size(161, 37);
             this.buttonIMPRIMIR.TabIndex = 5;
@@ -285,7 +285,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
             this.buttonDESCARGAR.Location = new System.Drawing.Point(441, 463);
-            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
             this.buttonDESCARGAR.Size = new System.Drawing.Size(142, 37);
             this.buttonDESCARGAR.TabIndex = 4;
@@ -308,10 +308,11 @@ namespace CapaPresentacion
             this.label6.TabIndex = 2;
             this.label6.Text = "DOCENTES 2021-2-INFORMATICA";
             // 
-            // FormDiecDepAcade
+            // FormDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(943, 523);
             this.Controls.Add(this.btnMINIMIZAR);
             this.Controls.Add(this.btnCERRAR);
@@ -321,8 +322,9 @@ namespace CapaPresentacion
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pnlLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FormDiecDepAcade";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FormDirecDepAcade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiecDepAcade";
             this.Load += new System.EventHandler(this.FormDiecDepAcade_Load);
             this.pnlLateral.ResumeLayout(false);

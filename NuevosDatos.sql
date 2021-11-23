@@ -46,10 +46,10 @@ INSERT INTO TLogin VALUES
 GO
 
 INSERT INTO THorario VALUES
-('H0001','28/05/21' ,'7','9','C001'),
-('H0002','14/04/21','7'	,'9','C001'),
-('H0003','28/05/21' ,'9','11','C002'),
-('H0004','14/04/21','9'	,'11','C002')
+('H0001','LUNES' ,'7','9','C001'),
+('H0002','MARTES','7'	,'9','C001'),
+('H0003','JUEVES' ,'9','11','C002'),
+('H0004','VIERNES','9'	,'11','C002')
 GO
 
 INSERT INTO TAsistencia VALUES
