@@ -78,7 +78,7 @@ namespace CapaPresentacion
             this.panelLinea.Name = "panelLinea";
             this.panelLinea.Size = new System.Drawing.Size(188, 4);
             this.panelLinea.TabIndex = 4;
-            this.panelLinea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLinea_Paint);
+            //this.panelLinea.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLinea_Paint);
             // 
             // panelOpciones
             // 
