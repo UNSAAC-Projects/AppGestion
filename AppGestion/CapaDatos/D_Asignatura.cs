@@ -85,8 +85,8 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Nombre", curso.nombre);
             cmd.Parameters.AddWithValue("@Creditos", curso.creditos);
             cmd.Parameters.AddWithValue("@Categoria", curso.categoria);
-            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
+            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
 
             cmd.ExecuteNonQuery();
@@ -103,8 +103,8 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@Nombre", curso.nombre);
             cmd.Parameters.AddWithValue("@Creditos", curso.creditos);
             cmd.Parameters.AddWithValue("@Categoria", curso.categoria);
-            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
+            cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
             cmd.ExecuteNonQuery();
             conexion.Close();
