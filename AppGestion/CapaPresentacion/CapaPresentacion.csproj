@@ -60,10 +60,10 @@
     <Compile Include="FormAsistenciaDocentes.Designer.cs">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDirecDepAcade.cs">
+    <Compile Include="FormsDirDep\FormDirecDepAcade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDirecDepAcade.Designer.cs">
+    <Compile Include="FormsDirDep\FormDirecDepAcade.Designer.cs">
       <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDistDocente.cs">
@@ -128,7 +128,7 @@
     <EmbeddedResource Include="FormAsistenciaDocentes.resx">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDirecDepAcade.resx">
+    <EmbeddedResource Include="FormsDirDep\FormDirecDepAcade.resx">
       <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDistDocente.resx">
@@ -305,5 +305,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

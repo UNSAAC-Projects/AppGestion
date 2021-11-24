@@ -309,3 +309,28 @@ go
 
 INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
 GO
+
+
+/***************************************************************
+		PROCEDIMIENTOS DIRECTOR DEPARTAMENTO ACADÉMICO
+****************************************************************/
+CREATE PROC SP_LISTACATALOGO --ver lista del catálogo
+AS
+select (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre as CURSO,
+	A.Creditos as CRED,
+	H.Tipo as TIPO,
+	C.Grupo as GRUPO,
+	A.HorasTeoricas as HT,
+	A.HorasPracticas as HP,
+	H.Dia as DIA,
+	H.HoraInicio as 'HR/INICIO',
+	H.HoraFin as 'HR/FIN',
+	C.Aula as AULA,
+	case when H.Tipo = 'T' then (DT.Nombres +' '+ DT.Apellidos) else (DP.Nombres +' '+ DP.Apellidos) end as DOCENTE
+from TAsignatura A 
+inner join TCatalogo C on A.CodAsignatura = C.CodAsignatura
+inner join THorario H on C.IDCatalogo = H.IDCatalogo
+inner join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
+inner join TDocente DP on C.CodDocentePractico = DP.CodDocente
+GO
