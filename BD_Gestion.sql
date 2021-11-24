@@ -171,8 +171,9 @@ GO
 ------------------------------- PROCEDIMIENTO ALMACENADOS DE ASIGNATURA
 create proc SP_LISTARASIGNATURA
 as
-select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasTeoricas, HorasPracticas, Prerrequisitos from TAsignatura
+select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos from TAsignatura
 go
+
 
 CREATE PROC SP_BUSCARASIGNATURA
 @BUSCAR varchar(20)
