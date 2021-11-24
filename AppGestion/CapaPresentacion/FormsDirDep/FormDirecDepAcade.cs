@@ -24,6 +24,10 @@ namespace CapaPresentacion
 
         private void MoverModificarColumnas()
         {
+            // Mover columnas editar y eliminar
+            dgvCatalogo.Columns[0].DisplayIndex = 13;
+            dgvCatalogo.Columns[1].DisplayIndex = 13;
+
         }
 
         private void MostrarTablaCatalogo()
@@ -100,5 +104,26 @@ namespace CapaPresentacion
             WindowState = FormWindowState.Minimized;
         }
         #endregion
+
+        private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if (dgvCatalogo.Rows[e.RowIndex].Cells["ELIMINAR"].Selected)
+            //{
+            //    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Some Title", MessageBoxButtons.YesNo);
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        //do something
+            //    }
+            //    else if (dialogResult == DialogResult.No)
+            //    {
+            //        //do something else
+            //    }
+
+            //}
+            if (dgvCatalogo.Rows[e.RowIndex].Cells["EDITAR"].Selected)
+            {
+
+            }
+        }
     }
 }
