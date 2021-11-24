@@ -18,12 +18,15 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             MostrarVistaCatalogo();
+            //OcultarMoverAncharColumnas();
         }
+        
         public void MostrarVistaCatalogo()
         {
             N_Horario ovista = new N_Horario();
             dgvHorarios.DataSource = ovista.ListandoHorarios();
 
         }
+        
     }
 }

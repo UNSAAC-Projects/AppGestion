@@ -34,7 +34,7 @@ namespace CapaPresentacion
                     entities.creditos = textCreditos.Text;
                     entities.categoria = cmbCategoria.Text;
                     entities.horasPracticas = textHorasPracticas.Text;
-                    entities.horasTeoricas = textNombre.Text;
+                    entities.horasTeoricas = textHorasTeoricas.Text;
                     entities.prerrequisitos = textPrerrequisitos.Text;
                     business.CreandoAsignatura(entities);
                     
@@ -56,7 +56,7 @@ namespace CapaPresentacion
                     entities.creditos = textCreditos.Text;
                     entities.categoria = cmbCategoria.Text;
                     entities.horasPracticas = textHorasPracticas.Text;
-                    entities.horasTeoricas = textNombre.Text;
+                    entities.horasTeoricas = textHorasTeoricas.Text;
                     entities.prerrequisitos = textPrerrequisitos.Text;
 
                     business.EditandoAsignatura(entities);

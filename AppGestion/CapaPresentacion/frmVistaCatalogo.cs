@@ -23,8 +23,8 @@ namespace CapaPresentacion
         }
         public void OcultarMoverAncharColumnas()
         {
-            dgvCatalogo.Columns[0].DisplayIndex = 8;
-            dgvCatalogo.Columns[1].DisplayIndex = 8;
+            dgvCatalogo.Columns[0].DisplayIndex = 10;
+            dgvCatalogo.Columns[1].DisplayIndex = 10;
 
             dgvCatalogo.Columns[0].Width = 50;
             dgvCatalogo.Columns[1].Width = 50;
@@ -34,6 +34,8 @@ namespace CapaPresentacion
             dgvCatalogo.Columns[5].Width = 270;
             dgvCatalogo.Columns[6].Width = 70;
             dgvCatalogo.Columns[7].Width = 70;
+            dgvCatalogo.Columns[8].Width = 70;
+          
         }
         public void MostrarVistaCatalogo()
         {
@@ -54,7 +56,7 @@ namespace CapaPresentacion
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
-
+            ExportarDatos(dgvCatalogo);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -64,14 +66,6 @@ namespace CapaPresentacion
 
         private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
-            {
-                N_CursoCatalogo oVista = new N_CursoCatalogo();
-                string delete = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
-                oVista.EliminandoCursoCatalogo(delete);
-
-                MostrarVistaCatalogo();
-            }
             if (dgvCatalogo.Rows[e.RowIndex].Cells["Editar"].Selected)
             {
                 EditCatalogo frm = new EditCatalogo();
@@ -96,12 +90,51 @@ namespace CapaPresentacion
                 frm.ShowDialog();
                 MostrarVistaCatalogo();
             }
+            if (dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                N_CursoCatalogo oVista = new N_CursoCatalogo();
+                string delete = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
+                oVista.EliminandoCursoCatalogo(delete);
+
+                MostrarVistaCatalogo();
+            }
         }
 
         private void btnHorarios_Click(object sender, EventArgs e)
         {
             frmVistaHorarios frm = new frmVistaHorarios();
             frm.ShowDialog();
+        }
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+
+                }
+            }
+            int indexfila = 0;
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                    {
+                        indexColumn++;
+                        exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                    }
+                }
+            }
+            exportarCatalogo.Visible = true;
+
         }
     }
 }
