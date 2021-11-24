@@ -206,7 +206,7 @@ create proc SP_EDITARASIGNATURA
 	@Prerrequisitos varchar(100)
 as 
 update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categoria=@Categoria,HorasPracticas=@HorasPracticas,
-		@HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
+		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
 where CodAsignatura =@CodAsignatura
 go
 
