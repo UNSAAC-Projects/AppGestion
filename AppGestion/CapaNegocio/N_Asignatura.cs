@@ -22,6 +22,11 @@ namespace CapaNegocio
             entities.Buscar = search;
             return data.BuscarAsignatura(entities);
         }
+        public DataTable BuscandoVistaCatalogo(string search)
+        {
+            entities.Buscar = search;
+            return data.BuscarVistaCatalogo(entities);
+        }
         public void CreandoAsignatura(E_Asignatura curso)
         {
             data.CrearAsignatura(curso);

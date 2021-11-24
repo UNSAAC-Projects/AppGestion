@@ -28,17 +28,16 @@ namespace CapaPresentacion
             dgvAsignaturas.Columns[1].DisplayIndex = 10;
             dgvAsignaturas.Columns[2].DisplayIndex = 10;//0
 
-            dgvAsignaturas.Columns[0].Width = 30;
-            dgvAsignaturas.Columns[1].Width = 30;
-            dgvAsignaturas.Columns[2].Width = 40;
-            dgvAsignaturas.Columns[3].Width = 40;
-            dgvAsignaturas.Columns[4].Width = 70;
-            dgvAsignaturas.Columns[5].Width = 200;
+            dgvAsignaturas.Columns[0].Width = 70;
+            dgvAsignaturas.Columns[1].Width = 50;
+            dgvAsignaturas.Columns[2].Width = 50;
+            dgvAsignaturas.Columns[3].Width = 80;
+            dgvAsignaturas.Columns[4].Width = 60;
+            dgvAsignaturas.Columns[5].Width = 250;
             dgvAsignaturas.Columns[6].Width = 50;
             dgvAsignaturas.Columns[7].Width = 70;
-            dgvAsignaturas.Columns[8].Width = 80;
-            dgvAsignaturas.Columns[9].Width = 60;
-            
+            dgvAsignaturas.Columns[8].Width = 90;
+            dgvAsignaturas.Columns[9].Width = 90;
         }
         public void MostrarTablaAsignatura()
         {
@@ -95,7 +94,14 @@ namespace CapaPresentacion
                 N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
                 frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                
+                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                {
+                    frm.cmbDia3.Enabled = false;
+                    frm.textHInicio3.Enabled = false;
+                    frm.textHFin3.Enabled = false;
+                    frm.cmbTipo3.Enabled = false;
+                }
                 frm.Show();
             }
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
@@ -159,6 +165,14 @@ namespace CapaPresentacion
         private void pictureBoxLogo_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+
+        private void btnVerCatalogo_Click_1(object sender, EventArgs e)
+        {
+            frmVistaCatalogo frm = new frmVistaCatalogo();
+            frm.ShowDialog();
         }
     }
 }

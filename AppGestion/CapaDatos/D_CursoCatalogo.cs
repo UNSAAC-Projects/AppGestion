@@ -31,6 +31,23 @@ namespace CapaDatos
 
             return table;
         }
+        public DataTable ListarVistaCatalogo()
+        {
+            DataTable table = new DataTable();
+            SqlDataReader readRows;
+            SqlCommand cmd = new SqlCommand("SP_VISTACATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            readRows = cmd.ExecuteReader();
+            table.Load(readRows);
+
+            readRows.Close();
+            conexion.Close();
+
+            return table;
+        }
+        
         public DataTable BuscarCursoCatalogo(E_CursoCatalogo curso)
         {
             DataTable tabla = new DataTable();
@@ -69,8 +86,8 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
             cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
             cmd.Parameters.AddWithValue("@Aula", curso.Aula);
-            cmd.Parameters.AddWithValue("@CodDocente", curso.CodDocente);
-            
+            cmd.Parameters.AddWithValue("@CodDocenteTeorico", curso.CodDocenteTeorico);
+            cmd.Parameters.AddWithValue("@CodDocentePractico", curso.CodDocentePractico);
 
             cmd.ExecuteNonQuery();
             conexion.Close();
@@ -86,9 +103,11 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
             cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
             cmd.Parameters.AddWithValue("@Aula", curso.Aula);
-            cmd.Parameters.AddWithValue("@CodDocente", curso.CodDocente);
+            cmd.Parameters.AddWithValue("@CodDocenteTeorico", curso.CodDocenteTeorico);
+            cmd.Parameters.AddWithValue("@CodDocentePractico", curso.CodDocentePractico);
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
+        
     }
 }
