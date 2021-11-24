@@ -1,8 +1,7 @@
-GO
 use master
 go
-DROP DATABASE AppGestion
-GO
+--DROP DATABASE AppGestion
+--GO
 create database AppGestion
 go
 
@@ -159,7 +158,7 @@ CREATE TABLE TMatriculado
 (
 	IDMatriculado varchar(6),
 	CodAlumno varchar(6),
-	Semestre varchar(2),
+	Semestre varchar(7),
 	Grupo varchar(1),
 	IDCatalogo varchar(6),
 	PRIMARY KEY (IDMatriculado),
@@ -282,7 +281,7 @@ AS INSERT INTO THorario values (
 	@Tipo )
 go
 drop proc SP_INSERTARHORARIO
-
+go
 
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
