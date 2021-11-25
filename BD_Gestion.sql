@@ -1,8 +1,8 @@
 GO
 use master
 go
---DROP DATABASE AppGestion
---GO
+DROP DATABASE AppGestion
+GO
 create database AppGestion
 go
 
@@ -64,20 +64,23 @@ CREATE TABLE TCatalogo
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
 	Aula varchar(6),
-	CodDocente varchar(6),
+	CodDocentePractico varchar(6),
+	CodDocenteTeorico varchar(6),
 	PRIMARY KEY (IDCatalogo),
 	FOREIGN KEY (CodAsignatura) REFERENCES TAsignatura,
-	FOREIGN KEY (CodDocente) REFERENCES TDocente
+	FOREIGN KEY (CodDocentePractico) REFERENCES TDocente,
+	FOREIGN KEY (CodDocenteTeorico) REFERENCES TDocente
 )
 GO
 
 CREATE TABLE THorario
 (
-	IDHorario varchar(6),
+	IDHorario INT IDENTITY,
 	Dia varchar(100),
 	HoraInicio varchar(2),
 	HoraFin varchar(2),
 	IDCatalogo varchar(6),
+	Tipo varchar(10), --(teorico o práctico)
 	PRIMARY KEY (IDHorario),
 	FOREIGN KEY (IDCatalogo) REFERENCES TCatalogo
 )
@@ -89,7 +92,7 @@ CREATE TABLE TAsistencia
 	Fecha varchar(10),
 	Hora varchar(2),
 	Tipo varchar(100),
-	IDHorario varchar(6),
+	IDHorario INT IDENTITY,
 	PRIMARY KEY (IDAsistencia),
 	FOREIGN KEY (IDHorario) REFERENCES THorario
 )
@@ -165,16 +168,12 @@ CREATE TABLE TMatriculado
 )
 GO
 
-/***************************************************************
-				PROCEDIMIENTOS ALMACENADOS DE ASIGNATURA
-****************************************************************/
-
-CREATE PROC SP_LISTARASIGNATURA
+------------------------------- PROCEDIMIENTO ALMACENADOS DE ASIGNATURA
+create proc SP_LISTARASIGNATURA
 as
-select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos from TAsignatura
+select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasTeoricas, HorasPracticas, Prerrequisitos from TAsignatura
+go
 
-GO
----
 CREATE PROC SP_BUSCARASIGNATURA
 @BUSCAR varchar(20)
 as
@@ -182,7 +181,6 @@ select * from TAsignatura
 where CodAsignatura like @BUSCAR + '%' or  Nombre like @BUSCAR + '%'
 go
 
----
 create proc SP_INSERTARASIGNATURA
 	@CodAsignatura varchar(6),
 	@IDPlan varchar(6),
@@ -196,7 +194,6 @@ as
 insert into TAsignatura values(@CodAsignatura,@IDPlan,@Nombre,@Creditos,@Categoria,@HorasPracticas,@HorasTeoricas,@Prerrequisitos)
 go
 
----
 create proc SP_EDITARASIGNATURA
 @CodAsignatura varchar(6),
 	@IDPlan varchar(6),
@@ -212,7 +209,6 @@ update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categor
 where CodAsignatura =@CodAsignatura
 go
 
---- 
 create proc SP_ELIMINARASIGNATURA
 @CodAsignatura varchar(10)
 as
@@ -220,16 +216,14 @@ delete TAsignatura
 where CodAsignatura=@CodAsignatura
 go
 
----
-
-/***************************************************************
-				PROCEDIMIENTOS ALMACENADOS DE CURSO CATALOGO
-****************************************************************/
+------------------------------ PROCEDIMIENTO ALMACENADOS DE CURSO CATALOGO
 
 create proc SP_LISTARCATALOGO
 as
-select NroSemestre, CodAsignatura, Grupo, Aula ,CodDocente from TCatalogo
+select NroSemestre, CodAsignatura, Grupo, Aula ,CodDocenteTeorico, CodDocentePractico from TCatalogo
 go
+
+
 CREATE PROC SP_BUSCARCATALOGO
 @BUSCAR varchar(20)
 as
@@ -237,36 +231,82 @@ select * from TCatalogo
 where NroSemestre like @BUSCAR + '%' or  CodAsignatura like @BUSCAR + '%' 
 go
 
----
+
 create proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
 	@Aula varchar(6),
-	@CodDocente varchar(6)
+	@CodDocenteTeorico varchar(6),
+	@CodDocentePractico varchar(6)
 as
-insert into TCatalogo values(@IDCatalogo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocente)
+insert into TCatalogo values(@IDCatalogo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
 go
 
----
 create proc SP_EDITARCATALOGO
 	@IDCatalogo varchar(6),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
 	@Aula varchar(6),
-	@CodDocente varchar(6)
+	@CodDocenteTeorico varchar(6),
+	@CodDocentePractico varchar(6)
 as 
-update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocente=@CodDocente
+update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
 where IDCatalogo =@IDCatalogo
 go
 
----
 create proc SP_ELIMINARCATALOGO
 @IDCatalogo varchar(10)
 as
-delete TCatalogo
-where IDCatalogo=@IDCatalogo
+delete from THorario where IDCatalogo=@IDCatalogo
+delete from TCatalogo where IDCatalogo=@IDCatalogo
 go
 
+
+
+----------------------  PROC.  HORARIO -----------------
+CREATE PROC SP_INSERTARHORARIO
+	@Dia varchar(100),
+	@HoraInicio varchar(2),
+	@HoraFin varchar(2),
+	@Tipo varchar(10),
+	@IDCatalogo varchar(6)
+AS INSERT INTO THorario values (
+	@Dia,
+	@HoraInicio,
+	@HoraFin,
+	@IDCatalogo,
+	@Tipo )
+go
+drop proc SP_INSERTARHORARIO
+
+
+----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
+CREATE PROC SP_VISTACATALOGO
+--@BUSCAR varchar(20)
+as
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre
+from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura 
+go
+
+CREATE PROC SP_BUSCARVISTACATALOGO
+@BUSCAR varchar(20)
+as
+select C.IDCatalogo, C.CodAsignatura,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre,  A.Creditos , A.Categoria, C.NroSemestre
+from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+where A.Nombre like @BUSCAR + '%'
+go
+
+
+------- LISTAR HORARIO -------------
+
+create proc SP_VISTAHORARIOS
+as
+select C.CodAsignatura, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
+from TCatalogo C inner join THorario H on C.IDCatalogo=H.IDCatalogo
+go
+
+INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
+GO

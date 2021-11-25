@@ -14,9 +14,14 @@ namespace CapaNegocio
     {
         D_Horario data = new D_Horario();
         E_Horario entities = new E_Horario();
+        
         public void CreandoHorario(E_Horario horario)
         {
             data.CrearHorario(horario);
+        }
+        public DataTable ListandoHorarios()
+        {
+            return data.ListarHorario();
         }
     }
 }

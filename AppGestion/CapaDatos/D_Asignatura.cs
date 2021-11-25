@@ -46,6 +46,22 @@ namespace CapaDatos
             return tabla;
         }
 
+        public DataTable BuscarVistaCatalogo(E_Asignatura asignatura)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_BUSCARVISTACATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@BUSCAR", asignatura.Buscar);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
+
         public void EliminarAsignatura(string codAsignatura)
         {
             SqlCommand cmd = new SqlCommand("SP_ELIMINARASIGNATURA", conexion);

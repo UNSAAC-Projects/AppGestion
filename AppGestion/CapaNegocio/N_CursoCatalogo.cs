@@ -19,6 +19,10 @@ namespace CapaNegocio
         {
             return data.ListarCursosCatalogo();
         }
+        public DataTable ListandoVistaCatalogo()
+        {
+            return data.ListarVistaCatalogo();
+        }
         public DataTable BuscandoCursoCatalogo(string search)
         {
             entities.Search = search;
@@ -36,7 +40,6 @@ namespace CapaNegocio
         {
             data.EliminarCursoCatalogo(id);
         }
-        
 
     }
 }
