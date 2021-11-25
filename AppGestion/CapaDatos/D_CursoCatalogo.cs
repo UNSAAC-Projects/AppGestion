@@ -127,6 +127,22 @@ namespace CapaDatos
             return table;
         }
 
+        public DataTable MostrarHorarioCurso(string CodCursoCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_OBTENER_HORARIO_CURSOCATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
+
 
     }
 }
