@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAUpJREFUaEPt
         mkFSwkAQRXMMlAtRhccBPABeCw+DJxBdyGr8P/3ZQEWmIHG69L+qXmSmw7xfSVZNZ4y5jVLKE2qH+kS1
@@ -129,7 +129,7 @@
         dePpE7iBT4av2Wk42pLb/jBgjBFd9w1GpMAkW+94IwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAfJJREFUaEPt
         mk1OwzAUhHsJED9HKheh6xYOUK5VDgELzkFhASszkzeWIiI3jhMnLviTnkicGeuNHJJW7qpSqaThnLtD

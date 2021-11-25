@@ -44,8 +44,8 @@ namespace CapaPresentacion
             this.labelDocente = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.pictureMinimizar = new System.Windows.Forms.PictureBox();
-            this.pictureCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.textBoxCurso = new System.Windows.Forms.TextBox();
@@ -54,12 +54,8 @@ namespace CapaPresentacion
             this.textBoxHT = new System.Windows.Forms.TextBox();
             this.textBoxHP = new System.Windows.Forms.TextBox();
             this.textBoxDia1 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBoxHoraInicio1 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBoxHoraInicio2 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBoxHoraInicio3 = new System.Windows.Forms.TextBox();
             this.textBoxDocente1 = new System.Windows.Forms.TextBox();
             this.textBoxDocente3 = new System.Windows.Forms.TextBox();
@@ -80,8 +76,8 @@ namespace CapaPresentacion
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCodigo
@@ -222,8 +218,8 @@ namespace CapaPresentacion
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.panel1.Controls.Add(this.pictureBoxLogo);
-            this.panel1.Controls.Add(this.pictureMinimizar);
-            this.panel1.Controls.Add(this.pictureCerrar);
+            this.panel1.Controls.Add(this.pictureBoxMinimizar);
+            this.panel1.Controls.Add(this.pictureBoxCerrar);
             this.panel1.Controls.Add(this.labelTitulo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -242,27 +238,27 @@ namespace CapaPresentacion
             this.pictureBoxLogo.TabIndex = 54;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // pictureMinimizar
+            // pictureBoxMinimizar
             // 
-            this.pictureMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureMinimizar.Image")));
-            this.pictureMinimizar.Location = new System.Drawing.Point(633, 6);
-            this.pictureMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureMinimizar.Name = "pictureMinimizar";
-            this.pictureMinimizar.Size = new System.Drawing.Size(31, 28);
-            this.pictureMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureMinimizar.TabIndex = 52;
-            this.pictureMinimizar.TabStop = false;
+            this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
+            this.pictureBoxMinimizar.Location = new System.Drawing.Point(633, 6);
+            this.pictureBoxMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
+            this.pictureBoxMinimizar.Size = new System.Drawing.Size(31, 28);
+            this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMinimizar.TabIndex = 52;
+            this.pictureBoxMinimizar.TabStop = false;
             // 
-            // pictureCerrar
+            // pictureBoxCerrar
             // 
-            this.pictureCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pictureCerrar.Image")));
-            this.pictureCerrar.Location = new System.Drawing.Point(669, 6);
-            this.pictureCerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureCerrar.Name = "pictureCerrar";
-            this.pictureCerrar.Size = new System.Drawing.Size(31, 28);
-            this.pictureCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureCerrar.TabIndex = 53;
-            this.pictureCerrar.TabStop = false;
+            this.pictureBoxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCerrar.Image")));
+            this.pictureBoxCerrar.Location = new System.Drawing.Point(669, 6);
+            this.pictureBoxCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCerrar.Name = "pictureBoxCerrar";
+            this.pictureBoxCerrar.Size = new System.Drawing.Size(31, 28);
+            this.pictureBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCerrar.TabIndex = 53;
+            this.pictureBoxCerrar.TabStop = false;
             // 
             // labelTitulo
             // 
@@ -278,6 +274,7 @@ namespace CapaPresentacion
             // 
             // textBoxCodigo
             // 
+            this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Location = new System.Drawing.Point(37, 82);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(100, 23);
@@ -286,6 +283,7 @@ namespace CapaPresentacion
             // 
             // textBoxCurso
             // 
+            this.textBoxCurso.Enabled = false;
             this.textBoxCurso.Location = new System.Drawing.Point(245, 82);
             this.textBoxCurso.Name = "textBoxCurso";
             this.textBoxCurso.Size = new System.Drawing.Size(418, 23);
@@ -293,6 +291,7 @@ namespace CapaPresentacion
             // 
             // textBoxCreditos
             // 
+            this.textBoxCreditos.Enabled = false;
             this.textBoxCreditos.Location = new System.Drawing.Point(38, 216);
             this.textBoxCreditos.Name = "textBoxCreditos";
             this.textBoxCreditos.Size = new System.Drawing.Size(100, 23);
@@ -301,6 +300,7 @@ namespace CapaPresentacion
             // 
             // textBoxAula
             // 
+            this.textBoxAula.Enabled = false;
             this.textBoxAula.Location = new System.Drawing.Point(282, 216);
             this.textBoxAula.Name = "textBoxAula";
             this.textBoxAula.Size = new System.Drawing.Size(100, 23);
@@ -308,6 +308,7 @@ namespace CapaPresentacion
             // 
             // textBoxHT
             // 
+            this.textBoxHT.Enabled = false;
             this.textBoxHT.Location = new System.Drawing.Point(37, 149);
             this.textBoxHT.Name = "textBoxHT";
             this.textBoxHT.Size = new System.Drawing.Size(100, 23);
@@ -315,6 +316,7 @@ namespace CapaPresentacion
             // 
             // textBoxHP
             // 
+            this.textBoxHP.Enabled = false;
             this.textBoxHP.Location = new System.Drawing.Point(245, 149);
             this.textBoxHP.Name = "textBoxHP";
             this.textBoxHP.Size = new System.Drawing.Size(100, 23);
@@ -322,55 +324,31 @@ namespace CapaPresentacion
             // 
             // textBoxDia1
             // 
+            this.textBoxDia1.Enabled = false;
             this.textBoxDia1.Location = new System.Drawing.Point(32, 363);
             this.textBoxDia1.Name = "textBoxDia1";
             this.textBoxDia1.Size = new System.Drawing.Size(85, 23);
             this.textBoxDia1.TabIndex = 12;
             // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(-434, 540);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 23);
-            this.textBox10.TabIndex = 12;
-            // 
             // textBoxHoraInicio1
             // 
+            this.textBoxHoraInicio1.Enabled = false;
             this.textBoxHoraInicio1.Location = new System.Drawing.Point(140, 363);
             this.textBoxHoraInicio1.Name = "textBoxHoraInicio1";
             this.textBoxHoraInicio1.Size = new System.Drawing.Size(50, 23);
             this.textBoxHoraInicio1.TabIndex = 12;
             // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(-313, 586);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 23);
-            this.textBox13.TabIndex = 12;
-            // 
             // textBoxHoraInicio2
             // 
+            this.textBoxHoraInicio2.Enabled = false;
             this.textBoxHoraInicio2.Location = new System.Drawing.Point(139, 405);
             this.textBoxHoraInicio2.Name = "textBoxHoraInicio2";
             this.textBoxHoraInicio2.Size = new System.Drawing.Size(51, 23);
             this.textBoxHoraInicio2.TabIndex = 12;
             // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(-193, 540);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 23);
-            this.textBox15.TabIndex = 12;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(-639, 787);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 23);
-            this.textBox16.TabIndex = 12;
-            // 
             // textBoxHoraInicio3
             // 
+            this.textBoxHoraInicio3.Enabled = false;
             this.textBoxHoraInicio3.Location = new System.Drawing.Point(140, 449);
             this.textBoxHoraInicio3.Name = "textBoxHoraInicio3";
             this.textBoxHoraInicio3.Size = new System.Drawing.Size(50, 23);
@@ -378,6 +356,7 @@ namespace CapaPresentacion
             // 
             // textBoxDocente1
             // 
+            this.textBoxDocente1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDocente1.Location = new System.Drawing.Point(376, 363);
             this.textBoxDocente1.Name = "textBoxDocente1";
             this.textBoxDocente1.Size = new System.Drawing.Size(296, 23);
@@ -385,6 +364,7 @@ namespace CapaPresentacion
             // 
             // textBoxDocente3
             // 
+            this.textBoxDocente3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDocente3.Location = new System.Drawing.Point(376, 449);
             this.textBoxDocente3.Name = "textBoxDocente3";
             this.textBoxDocente3.Size = new System.Drawing.Size(296, 23);
@@ -392,6 +372,7 @@ namespace CapaPresentacion
             // 
             // textBoxDocente2
             // 
+            this.textBoxDocente2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDocente2.Location = new System.Drawing.Point(376, 403);
             this.textBoxDocente2.Name = "textBoxDocente2";
             this.textBoxDocente2.Size = new System.Drawing.Size(296, 23);
@@ -399,6 +380,7 @@ namespace CapaPresentacion
             // 
             // textBoxGrupo
             // 
+            this.textBoxGrupo.Enabled = false;
             this.textBoxGrupo.Location = new System.Drawing.Point(518, 216);
             this.textBoxGrupo.Name = "textBoxGrupo";
             this.textBoxGrupo.Size = new System.Drawing.Size(100, 23);
@@ -426,6 +408,7 @@ namespace CapaPresentacion
             // 
             // textBoxDia2
             // 
+            this.textBoxDia2.Enabled = false;
             this.textBoxDia2.Location = new System.Drawing.Point(32, 405);
             this.textBoxDia2.Name = "textBoxDia2";
             this.textBoxDia2.Size = new System.Drawing.Size(85, 23);
@@ -433,6 +416,7 @@ namespace CapaPresentacion
             // 
             // textBoxDia3
             // 
+            this.textBoxDia3.Enabled = false;
             this.textBoxDia3.Location = new System.Drawing.Point(32, 449);
             this.textBoxDia3.Name = "textBoxDia3";
             this.textBoxDia3.Size = new System.Drawing.Size(85, 23);
@@ -440,6 +424,7 @@ namespace CapaPresentacion
             // 
             // textBoxHoraFin3
             // 
+            this.textBoxHoraFin3.Enabled = false;
             this.textBoxHoraFin3.Location = new System.Drawing.Point(217, 449);
             this.textBoxHoraFin3.Name = "textBoxHoraFin3";
             this.textBoxHoraFin3.Size = new System.Drawing.Size(50, 23);
@@ -447,6 +432,7 @@ namespace CapaPresentacion
             // 
             // textBoxHoraFin2
             // 
+            this.textBoxHoraFin2.Enabled = false;
             this.textBoxHoraFin2.Location = new System.Drawing.Point(216, 405);
             this.textBoxHoraFin2.Name = "textBoxHoraFin2";
             this.textBoxHoraFin2.Size = new System.Drawing.Size(51, 23);
@@ -454,6 +440,7 @@ namespace CapaPresentacion
             // 
             // textBoxHoraFin1
             // 
+            this.textBoxHoraFin1.Enabled = false;
             this.textBoxHoraFin1.Location = new System.Drawing.Point(217, 363);
             this.textBoxHoraFin1.Name = "textBoxHoraFin1";
             this.textBoxHoraFin1.Size = new System.Drawing.Size(50, 23);
@@ -461,6 +448,7 @@ namespace CapaPresentacion
             // 
             // textBoxTipo1
             // 
+            this.textBoxTipo1.Enabled = false;
             this.textBoxTipo1.Location = new System.Drawing.Point(294, 363);
             this.textBoxTipo1.Name = "textBoxTipo1";
             this.textBoxTipo1.Size = new System.Drawing.Size(50, 23);
@@ -468,6 +456,7 @@ namespace CapaPresentacion
             // 
             // textBoxTipo2
             // 
+            this.textBoxTipo2.Enabled = false;
             this.textBoxTipo2.Location = new System.Drawing.Point(294, 405);
             this.textBoxTipo2.Name = "textBoxTipo2";
             this.textBoxTipo2.Size = new System.Drawing.Size(51, 23);
@@ -475,6 +464,7 @@ namespace CapaPresentacion
             // 
             // textBoxTipo3
             // 
+            this.textBoxTipo3.Enabled = false;
             this.textBoxTipo3.Location = new System.Drawing.Point(294, 449);
             this.textBoxTipo3.Name = "textBoxTipo3";
             this.textBoxTipo3.Size = new System.Drawing.Size(50, 23);
@@ -537,11 +527,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.textBoxAula);
             this.Controls.Add(this.textBoxHT);
             this.Controls.Add(this.textBoxHP);
-            this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBoxDia1);
-            this.Controls.Add(this.textBox16);
-            this.Controls.Add(this.textBox15);
-            this.Controls.Add(this.textBox13);
             this.Controls.Add(this.textBoxHoraFin1);
             this.Controls.Add(this.textBoxHoraFin2);
             this.Controls.Add(this.textBoxHoraInicio1);
@@ -575,8 +561,8 @@ namespace CapaPresentacion
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,8 +584,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelDocente;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.PictureBox pictureMinimizar;
-        private System.Windows.Forms.PictureBox pictureCerrar;
+        private System.Windows.Forms.PictureBox pictureBoxMinimizar;
+        private System.Windows.Forms.PictureBox pictureBoxCerrar;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.TextBox textBoxCurso;
@@ -608,12 +594,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.TextBox textBoxHT;
         private System.Windows.Forms.TextBox textBoxHP;
         private System.Windows.Forms.TextBox textBoxDia1;
-        private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBoxHoraInicio1;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBoxHoraInicio2;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox textBoxHoraInicio3;
         private System.Windows.Forms.TextBox textBoxDocente1;
         private System.Windows.Forms.TextBox textBoxDocente3;
