@@ -1,8 +1,7 @@
-GO
 use master
 go
-DROP DATABASE AppGestion
-GO
+--DROP DATABASE AppGestion
+--GO
 create database AppGestion
 go
 
@@ -10,9 +9,9 @@ use AppGestion
 go
 
 
-/***************************************************************
+/***********************************************************************************
 						CREACION TABLAS
-****************************************************************/
+********************************************************************/
 
 CREATE TABLE TPlanDeEstudios
 (
@@ -159,7 +158,7 @@ CREATE TABLE TMatriculado
 (
 	IDMatriculado varchar(6),
 	CodAlumno varchar(6),
-	Semestre varchar(2),
+	Semestre varchar(7),
 	Grupo varchar(1),
 	IDCatalogo varchar(6),
 	PRIMARY KEY (IDMatriculado),
@@ -171,8 +170,9 @@ GO
 ------------------------------- PROCEDIMIENTO ALMACENADOS DE ASIGNATURA
 create proc SP_LISTARASIGNATURA
 as
-select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasTeoricas, HorasPracticas, Prerrequisitos from TAsignatura
+select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos from TAsignatura
 go
+
 
 CREATE PROC SP_BUSCARASIGNATURA
 @BUSCAR varchar(20)
@@ -205,7 +205,7 @@ create proc SP_EDITARASIGNATURA
 	@Prerrequisitos varchar(100)
 as 
 update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categoria=@Categoria,HorasPracticas=@HorasPracticas,
-		@HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
+		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
 where CodAsignatura =@CodAsignatura
 go
 
@@ -281,32 +281,56 @@ AS INSERT INTO THorario values (
 	@Tipo )
 go
 drop proc SP_INSERTARHORARIO
-
+go
 
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
 --@BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre
-from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura 
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo, C.CodAsignatura,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre,  A.Creditos , A.Categoria, C.NroSemestre
-from TCatalogo C inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
-
 
 ------- LISTAR HORARIO -------------
 
 create proc SP_VISTAHORARIOS
 as
-select C.CodAsignatura, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
-from TCatalogo C inner join THorario H on C.IDCatalogo=H.IDCatalogo
+select C.CodAsignatura,A.Nombre, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
+from THorario h inner join TCatalogo c on h.IDCatalogo = c.IDCatalogo inner join TAsignatura A ON c.CodAsignatura=A.CodAsignatura
 go
 
 INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
+GO
+
+
+/***************************************************************
+		PROCEDIMIENTOS DIRECTOR DEPARTAMENTO ACADÉMICO
+****************************************************************/
+CREATE PROC SP_LISTACATALOGO --ver lista del catálogo
+AS
+select (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre as CURSO,
+	A.Creditos as CRED,
+	H.Tipo as TIPO,
+	C.Grupo as GRUPO,
+	A.HorasTeoricas as HT,
+	A.HorasPracticas as HP,
+	H.Dia as DIA,
+	H.HoraInicio as 'HR/INICIO',
+	H.HoraFin as 'HR/FIN',
+	C.Aula as AULA,
+	case when H.Tipo = 'T' then (DT.Nombres +' '+ DT.Apellidos) else (DP.Nombres +' '+ DP.Apellidos) end as DOCENTE
+from TAsignatura A 
+inner join TCatalogo C on A.CodAsignatura = C.CodAsignatura
+inner join THorario H on C.IDCatalogo = H.IDCatalogo
+inner join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
+inner join TDocente DP on C.CodDocentePractico = DP.CodDocente
 GO

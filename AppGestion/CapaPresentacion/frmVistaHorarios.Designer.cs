@@ -64,7 +64,7 @@ namespace CapaPresentacion
             this.dgvHorarios.RowTemplate.Height = 24;
             this.dgvHorarios.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvHorarios.Size = new System.Drawing.Size(754, 327);
+            this.dgvHorarios.Size = new System.Drawing.Size(832, 327);
             this.dgvHorarios.TabIndex = 6;
             // 
             // label1
@@ -72,7 +72,7 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(360, 37);
+            this.label1.Location = new System.Drawing.Point(399, 38);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 20);
@@ -83,7 +83,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(864, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvHorarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -60,11 +60,11 @@
     <Compile Include="FormAsistenciaDocentes.Designer.cs">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDirecDepAcade.cs">
+    <Compile Include="FormsDirDep\frmDirecDepAcade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDirecDepAcade.Designer.cs">
-      <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
+    <Compile Include="FormsDirDep\frmDirecDepAcade.Designer.cs">
+      <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDistDocente.cs">
       <SubType>Form</SubType>
@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="FormListaDocentes.Designer.cs">
       <DependentUpon>FormListaDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsDirDep\frmAsignarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsDirDep\frmAsignarDocente.Designer.cs">
+      <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -128,8 +134,11 @@
     <EmbeddedResource Include="FormAsistenciaDocentes.resx">
       <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDirecDepAcade.resx">
-      <DependentUpon>FormDirecDepAcade.cs</DependentUpon>
+    <EmbeddedResource Include="FormsDirDep\frmAsignarDocente.resx">
+      <DependentUpon>frmAsignarDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmDirecDepAcade.resx">
+      <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDistDocente.resx">
       <DependentUpon>FormDistDocente.cs</DependentUpon>
@@ -276,5 +285,35 @@
   <ItemGroup>
     <None Include="Resources\editar_icono.png" />
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
