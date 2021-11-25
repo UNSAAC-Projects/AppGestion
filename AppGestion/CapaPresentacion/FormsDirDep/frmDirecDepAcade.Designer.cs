@@ -50,7 +50,6 @@ namespace CapaPresentacion
             this.buttonDESCARGAR = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
@@ -240,8 +239,7 @@ namespace CapaPresentacion
             this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDITAR,
-            this.ELIMINAR});
+            this.EDITAR});
             this.dgvCatalogo.Cursor = System.Windows.Forms.Cursors.Default;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -348,13 +346,6 @@ namespace CapaPresentacion
             this.EDITAR.Name = "EDITAR";
             this.EDITAR.Width = 54;
             // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.ELIMINAR.Name = "ELIMINAR";
-            this.ELIMINAR.Width = 69;
-            // 
             // FormDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +396,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnCERRAR;
         private System.Windows.Forms.PictureBox btnMINIMIZAR;
         private System.Windows.Forms.DataGridViewImageColumn EDITAR;
-        private System.Windows.Forms.DataGridViewImageColumn ELIMINAR;
     }
 }

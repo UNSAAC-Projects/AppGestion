@@ -42,7 +42,7 @@ namespace CapaPresentacion
             this.labelHoraFin = new System.Windows.Forms.Label();
             this.labelAula = new System.Windows.Forms.Label();
             this.labelDocente = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
@@ -74,7 +74,7 @@ namespace CapaPresentacion
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonCancelar = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).BeginInit();
@@ -179,7 +179,6 @@ namespace CapaPresentacion
             this.labelHoraInicio.Size = new System.Drawing.Size(60, 40);
             this.labelHoraInicio.TabIndex = 8;
             this.labelHoraInicio.Text = " HORA \r\nINICIO";
-            this.labelHoraInicio.Click += new System.EventHandler(this.label8_Click);
             // 
             // labelHoraFin
             // 
@@ -214,19 +213,20 @@ namespace CapaPresentacion
             this.labelDocente.TabIndex = 9;
             this.labelDocente.Text = "DOCENTE";
             // 
-            // panel1
+            // panelBarraTitulo
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.pictureBoxLogo);
-            this.panel1.Controls.Add(this.pictureBoxMinimizar);
-            this.panel1.Controls.Add(this.pictureBoxCerrar);
-            this.panel1.Controls.Add(this.labelTitulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(707, 39);
-            this.panel1.TabIndex = 11;
+            this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.panelBarraTitulo.Controls.Add(this.pictureBoxLogo);
+            this.panelBarraTitulo.Controls.Add(this.pictureBoxMinimizar);
+            this.panelBarraTitulo.Controls.Add(this.pictureBoxCerrar);
+            this.panelBarraTitulo.Controls.Add(this.labelTitulo);
+            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
+            this.panelBarraTitulo.Name = "panelBarraTitulo";
+            this.panelBarraTitulo.Size = new System.Drawing.Size(707, 39);
+            this.panelBarraTitulo.TabIndex = 11;
+            this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
             // pictureBoxLogo
             // 
@@ -248,6 +248,7 @@ namespace CapaPresentacion
             this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMinimizar.TabIndex = 52;
             this.pictureBoxMinimizar.TabStop = false;
+            this.pictureBoxMinimizar.Click += new System.EventHandler(this.pictureBoxMinimizar_Click);
             // 
             // pictureBoxCerrar
             // 
@@ -259,6 +260,7 @@ namespace CapaPresentacion
             this.pictureBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCerrar.TabIndex = 53;
             this.pictureBoxCerrar.TabStop = false;
+            this.pictureBoxCerrar.Click += new System.EventHandler(this.pictureBoxCerrar_Click);
             // 
             // labelTitulo
             // 
@@ -279,7 +281,6 @@ namespace CapaPresentacion
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(100, 23);
             this.textBoxCodigo.TabIndex = 12;
-            this.textBoxCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxCurso
             // 
@@ -296,7 +297,6 @@ namespace CapaPresentacion
             this.textBoxCreditos.Name = "textBoxCreditos";
             this.textBoxCreditos.Size = new System.Drawing.Size(100, 23);
             this.textBoxCreditos.TabIndex = 12;
-            this.textBoxCreditos.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxAula
             // 
@@ -504,6 +504,7 @@ namespace CapaPresentacion
             this.buttonCancelar.TabIndex = 58;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // frmAsignarDocente
             // 
@@ -538,7 +539,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.textBoxCurso);
             this.Controls.Add(this.textBoxCreditos);
             this.Controls.Add(this.textBoxCodigo);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.labelAula);
             this.Controls.Add(this.labelDocente);
             this.Controls.Add(this.labelHoraFin);
@@ -558,8 +559,8 @@ namespace CapaPresentacion
             this.Name = "frmAsignarDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAsignarDocente";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelBarraTitulo.ResumeLayout(false);
+            this.panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).EndInit();
@@ -582,37 +583,37 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelHoraFin;
         private System.Windows.Forms.Label labelAula;
         private System.Windows.Forms.Label labelDocente;
-        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.PictureBox pictureBoxMinimizar;
         private System.Windows.Forms.PictureBox pictureBoxCerrar;
         private System.Windows.Forms.Label labelTitulo;
-        private System.Windows.Forms.TextBox textBoxCodigo;
-        private System.Windows.Forms.TextBox textBoxCurso;
-        private System.Windows.Forms.TextBox textBoxCreditos;
-        private System.Windows.Forms.TextBox textBoxAula;
-        private System.Windows.Forms.TextBox textBoxHT;
-        private System.Windows.Forms.TextBox textBoxHP;
-        private System.Windows.Forms.TextBox textBoxDia1;
-        private System.Windows.Forms.TextBox textBoxHoraInicio1;
-        private System.Windows.Forms.TextBox textBoxHoraInicio2;
-        private System.Windows.Forms.TextBox textBoxHoraInicio3;
-        private System.Windows.Forms.TextBox textBoxDocente1;
-        private System.Windows.Forms.TextBox textBoxDocente3;
-        private System.Windows.Forms.TextBox textBoxDocente2;
-        private System.Windows.Forms.TextBox textBoxGrupo;
         private System.Windows.Forms.Label labelHorario;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBoxDia2;
-        private System.Windows.Forms.TextBox textBoxDia3;
-        private System.Windows.Forms.TextBox textBoxHoraFin3;
-        private System.Windows.Forms.TextBox textBoxHoraFin2;
-        private System.Windows.Forms.TextBox textBoxHoraFin1;
-        private System.Windows.Forms.TextBox textBoxTipo1;
-        private System.Windows.Forms.TextBox textBoxTipo2;
-        private System.Windows.Forms.TextBox textBoxTipo3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonCancelar;
+        public System.Windows.Forms.TextBox textBoxCodigo;
+        public System.Windows.Forms.TextBox textBoxCurso;
+        public System.Windows.Forms.TextBox textBoxCreditos;
+        public System.Windows.Forms.TextBox textBoxAula;
+        public System.Windows.Forms.TextBox textBoxHT;
+        public System.Windows.Forms.TextBox textBoxHP;
+        public System.Windows.Forms.TextBox textBoxDia1;
+        public System.Windows.Forms.TextBox textBoxHoraInicio1;
+        public System.Windows.Forms.TextBox textBoxHoraInicio2;
+        public System.Windows.Forms.TextBox textBoxHoraInicio3;
+        public System.Windows.Forms.TextBox textBoxDocente1;
+        public System.Windows.Forms.TextBox textBoxDocente3;
+        public System.Windows.Forms.TextBox textBoxDocente2;
+        public System.Windows.Forms.TextBox textBoxGrupo;
+        public System.Windows.Forms.TextBox textBoxDia2;
+        public System.Windows.Forms.TextBox textBoxDia3;
+        public System.Windows.Forms.TextBox textBoxHoraFin3;
+        public System.Windows.Forms.TextBox textBoxHoraFin2;
+        public System.Windows.Forms.TextBox textBoxHoraFin1;
+        public System.Windows.Forms.TextBox textBoxTipo1;
+        public System.Windows.Forms.TextBox textBoxTipo2;
+        public System.Windows.Forms.TextBox textBoxTipo3;
     }
 }

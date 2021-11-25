@@ -22,11 +22,12 @@ namespace CapaPresentacion
             MoverModificarColumnas();
         }
 
+        #region Módulos
         private void MoverModificarColumnas()
         {
             // Mover columnas editar y eliminar
-            dgvCatalogo.Columns[0].DisplayIndex = 13;
-            dgvCatalogo.Columns[1].DisplayIndex = 13;
+            //dgvCatalogo.Columns[0].DisplayIndex = 13;
+            dgvCatalogo.Columns[0].DisplayIndex = 12;
 
         }
 
@@ -37,7 +38,6 @@ namespace CapaPresentacion
             dgvCatalogo.DataSource = oCursoCatalogo.ListarCatalogoDA(); //DA: director académico
         }
 
-        #region Módulos
         DataView ImportarDatos(string nombrearchivo)
         {
             string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;DataSource={0}; Extended Properties'Excel 12.0;'", nombrearchivo);
@@ -123,6 +123,15 @@ namespace CapaPresentacion
             if (dgvCatalogo.Rows[e.RowIndex].Cells["EDITAR"].Selected)
             {
                 frmAsignarDocente form = new frmAsignarDocente();
+                //Recuperar información de la tabla
+                form.textBoxCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                form.textBoxCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CURSO"].Value.ToString();
+                form.textBoxHT.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HT"].Value.ToString();
+                form.textBoxHP.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HP"].Value.ToString();
+                form.textBoxCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CRED"].Value.ToString();
+                form.textBoxAula.Text = dgvCatalogo.Rows[e.RowIndex].Cells["AULA"].Value.ToString();
+                form.textBoxGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["GRUPO"].Value.ToString();
+                //Horarios....
                 form.ShowDialog();
             }
         }
