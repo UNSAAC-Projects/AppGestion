@@ -122,7 +122,8 @@ namespace CapaPresentacion
             //}
             if (dgvCatalogo.Rows[e.RowIndex].Cells["EDITAR"].Selected)
             {
-
+                frmAsignarDocente form = new frmAsignarDocente();
+                form.ShowDialog();
             }
         }
     }
