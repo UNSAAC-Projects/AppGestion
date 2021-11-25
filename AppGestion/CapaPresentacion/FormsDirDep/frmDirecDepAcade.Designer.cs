@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class FormDirecDepAcade
+    partial class frmDirecDepAcade
     {
         /// <summary>
         /// Required designer variable.
@@ -44,12 +44,12 @@ namespace CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
+            this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.btnCERRAR = new System.Windows.Forms.PictureBox();
             this.buttonIMPRIMIR = new System.Windows.Forms.Button();
             this.buttonDESCARGAR = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
@@ -245,7 +245,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(171)))), ((int)(((byte)(80)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
@@ -259,6 +259,13 @@ namespace CapaPresentacion
             this.dgvCatalogo.Size = new System.Drawing.Size(678, 348);
             this.dgvCatalogo.TabIndex = 3;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
+            // 
+            // EDITAR
+            // 
+            this.EDITAR.HeaderText = "EDITAR";
+            this.EDITAR.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
+            this.EDITAR.Name = "EDITAR";
+            this.EDITAR.Width = 54;
             // 
             // btnMINIMIZAR
             // 
@@ -339,14 +346,7 @@ namespace CapaPresentacion
             this.label6.TabIndex = 2;
             this.label6.Text = "DOCENTES 2021-2-INFORMATICA";
             // 
-            // EDITAR
-            // 
-            this.EDITAR.HeaderText = "EDITAR";
-            this.EDITAR.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.EDITAR.Name = "EDITAR";
-            this.EDITAR.Width = 54;
-            // 
-            // FormDirecDepAcade
+            // frmDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,7 +360,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pnlLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FormDirecDepAcade";
+            this.Name = "frmDirecDepAcade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiecDepAcade";
             this.pnlLateral.ResumeLayout(false);

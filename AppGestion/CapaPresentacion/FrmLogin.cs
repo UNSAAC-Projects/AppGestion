@@ -186,7 +186,7 @@ namespace CapaPresentacion
                 }
                 else //DirDepartamento
                 {
-                    Program.SwitchMainForm(new FormDirecDepAcade());
+                    Program.SwitchMainForm(new frmDirecDepAcade());
                 }
             }
             else

@@ -13,9 +13,9 @@ using CapaEntidades;
 
 namespace CapaPresentacion
 {
-    public partial class FormDirecDepAcade : Form
+    public partial class frmDirecDepAcade : Form
     {
-        public FormDirecDepAcade()
+        public frmDirecDepAcade()
         {
             InitializeComponent();
             MostrarTablaCatalogo();
