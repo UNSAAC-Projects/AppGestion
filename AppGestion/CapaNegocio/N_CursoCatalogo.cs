@@ -41,5 +41,11 @@ namespace CapaNegocio
             data.EliminarCursoCatalogo(id);
         }
 
+        //Módulos para director académico
+        public DataTable ListarCatalogoDA()
+        {
+            return data.ListarCatalogoDA();  //DA: director académico
+        }
+
     }
 }
