@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 
 namespace CapaPresentacion
 {
-    public partial class frmAsignarDocente : Form
+    public partial class frmAsignarDocentev2 : Form
     {
-        public frmAsignarDocente()
+        public frmAsignarDocentev2()
         {
             InitializeComponent();
         }

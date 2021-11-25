@@ -8,16 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CapaNegocio;
+using CapaEntidades;
 
 
 namespace CapaPresentacion
 {
     public partial class frmAsignarDocente : Form
     {
-        public frmAsignarDocente()
+        public frmAsignarDocente(string CodCursoCatalogo ) //Ex: IF345AIN
         {
             InitializeComponent();
+            MostrarTablaHorario(CodCursoCatalogo);
         }
+
+        private void MostrarTablaHorario(string CodCursoCatalogo)
+        {
+            // Modulo para mostrar el horario de un curso
+            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+            dgvHorarioCurso.DataSource = oCursoCatalogo.MostrarHorarioCurso(CodCursoCatalogo); //DA: director académico
+
+        }
+
 
         #region Eventos
         private void pictureBoxCerrar_Click(object sender, EventArgs e) => Close();
