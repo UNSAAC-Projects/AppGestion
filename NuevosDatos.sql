@@ -2,7 +2,7 @@
 use AppGestion
 go
 
-/***************************************************************
+/**************************************************************
 						INSERTAR DATOS
 ****************************************************************/
 
@@ -56,8 +56,8 @@ INSERT INTO TAsistenciaAlumno VALUES
 GO
 
 INSERT INTO TAlumno VALUES
-('113572','EDWAR','AUCAPI—A SUVIZARRETA'),
-('160542','ADHAIR EDHINO','C¡CERES-HUANCA'),
+('113572','EDWAR','AUCAPI√ëA SUVIZARRETA'),
+('160542','ADHAIR EDHINO','C√ÅCERES-HUANCA'),
 ('170428','YURI','CASSA LIPA EDWAR'),
 ('182898','FIORELLA','CERATI CERRILLO')
 GO
