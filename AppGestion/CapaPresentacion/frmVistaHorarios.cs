@@ -27,6 +27,16 @@ namespace CapaPresentacion
             dgvHorarios.DataSource = ovista.ListandoHorarios();
 
         }
-        
+
+        private void btnMinVistaHorario_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaxVistaHorario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
