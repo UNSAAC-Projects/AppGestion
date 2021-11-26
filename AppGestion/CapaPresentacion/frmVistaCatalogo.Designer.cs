@@ -34,10 +34,10 @@ namespace CapaPresentacion
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.btnHorarios = new System.Windows.Forms.Button();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.btnHorarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,9 +105,21 @@ namespace CapaPresentacion
             this.dgvCatalogo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCatalogo.RowHeadersVisible = false;
             this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCatalogo.Size = new System.Drawing.Size(804, 247);
+            this.dgvCatalogo.Size = new System.Drawing.Size(845, 247);
             this.dgvCatalogo.TabIndex = 47;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.Eliminar.Name = "Eliminar";
             // 
             // txtBuscar
             // 
@@ -131,23 +143,11 @@ namespace CapaPresentacion
             this.btnHorarios.UseVisualStyleBackColor = true;
             this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.Eliminar.Name = "Eliminar";
-            // 
             // frmVistaCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 450);
+            this.ClientSize = new System.Drawing.Size(892, 450);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dgvCatalogo);

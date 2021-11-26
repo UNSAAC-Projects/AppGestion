@@ -98,7 +98,7 @@ namespace CapaDatos
             SqlCommand cmd = new SqlCommand("SP_EDITARCATALOGO", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
-            //cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
+            cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
             cmd.Parameters.AddWithValue("@NroSemestre", curso.NroSemestre);
             cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
             cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
