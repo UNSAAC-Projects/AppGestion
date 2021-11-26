@@ -31,5 +31,16 @@ namespace CapaPresentacion
         //{
         //    dgvHorarios.Columns[0].Width = 60;
         //}
+
+        private void btnMinVistaHorario_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaxVistaHorario_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

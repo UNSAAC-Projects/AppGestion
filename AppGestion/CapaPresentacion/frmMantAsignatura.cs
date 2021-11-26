@@ -71,5 +71,20 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void btnMinMantAsignatura_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaxMantAsignatura_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmMantAsignatura_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
