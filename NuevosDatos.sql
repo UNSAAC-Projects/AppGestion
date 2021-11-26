@@ -107,7 +107,7 @@ INSERT INTO TDocente VALUES
 ('D0034','WILLIAN','ZAMALLOA PARO','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO'),
 ('D0035','BORIS','CHULLO LLAVE','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO');
 GO
-
+--*************************************************************************************************************************
 INSERT INTO TCatalogo VALUES
 ('C001','10','IF662','A','202IN','D0035','D0030'),
 ('C002','10','IF459','B','103IN','D0025','D0025'),
