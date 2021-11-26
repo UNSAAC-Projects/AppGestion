@@ -17,7 +17,7 @@ namespace CapaPresentacion
 
         private bool OpcionDocente;
         private bool OpcionDirEscuela;
-        private bool OpcionDirDepartamento;
+        //private bool OpcionDirDepartamento;
 
         public FrmLogin()
         {
@@ -73,7 +73,7 @@ namespace CapaPresentacion
         {
             OpcionDocente = true;
             OpcionDirEscuela = false;
-            OpcionDirDepartamento = false;
+            //OpcionDirDepartamento = false;
 
             //Restaurar backcolors
             buttonDocente.BackColor = Color.White;       
@@ -90,7 +90,7 @@ namespace CapaPresentacion
         {
             OpcionDocente = false;
             OpcionDirEscuela = true;
-            OpcionDirDepartamento = false;
+            //OpcionDirDepartamento = false;
 
             //Restaurar backcolors
             buttonDocente.BackColor = Color.FromArgb(33, 47, 60);
@@ -107,7 +107,7 @@ namespace CapaPresentacion
         {
             OpcionDocente = false;
             OpcionDirEscuela = false;
-            OpcionDirDepartamento = true;
+            //OpcionDirDepartamento = true;
 
             //Restaurar backcolors
             buttonDocente.BackColor = Color.FromArgb(33, 47, 60);
@@ -120,7 +120,11 @@ namespace CapaPresentacion
             buttonDirEscuela.ForeColor = Color.White;
         }
 
-        private void buttonCerrar_Click(object sender, System.EventArgs e) => Close();
+        private void buttonCerrar_Click(object sender, System.EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea salir?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) Close(); //Cerrar ventana
+        }
 
         private void buttonIniciarSesion_EnabledChanged(object sender, System.EventArgs e)
         {
