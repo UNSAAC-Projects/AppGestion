@@ -8,7 +8,9 @@
 - YUREMA LISBETH TINTAYA TACO----------174454<br>
 - LUCERO QUISPE PUMA------------------151780<br>
 - KATHERYNE SHARMELLY FLORES ROBLES---182910<br>
-<h3 align="left"> Implementado 💻🖱</h2> 
-
+************************************************
+<h3 align="left"> Implementado 💻🖱</h2>        
+                                                 
 - Lenguaje:C# 
 -  Base de datos: SQL Sever
+************************************************
