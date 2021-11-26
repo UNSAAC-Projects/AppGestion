@@ -106,7 +106,7 @@ namespace CapaPresentacion
             this.buttonIMPORTAR.Location = new System.Drawing.Point(26, 370);
             this.buttonIMPORTAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonIMPORTAR.Name = "buttonIMPORTAR";
-            this.buttonIMPORTAR.Size = new System.Drawing.Size(152, 37);
+            this.buttonIMPORTAR.Size = new System.Drawing.Size(181, 37);
             this.buttonIMPORTAR.TabIndex = 10;
             this.buttonIMPORTAR.Text = "IMPORTAR DOCENTES";
             this.buttonIMPORTAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

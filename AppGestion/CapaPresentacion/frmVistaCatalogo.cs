@@ -31,10 +31,10 @@ namespace CapaPresentacion
             dgvCatalogo.Columns[2].Visible = false;
             dgvCatalogo.Columns[3].Visible = false;
             dgvCatalogo.Columns[4].Width = 100;
-            dgvCatalogo.Columns[5].Width = 270;
+            dgvCatalogo.Columns[5].Width = 240;
             dgvCatalogo.Columns[6].Width = 70;
-            dgvCatalogo.Columns[7].Width = 70;
-            dgvCatalogo.Columns[8].Width = 70;
+            dgvCatalogo.Columns[7].Width = 90;
+            dgvCatalogo.Columns[8].Width = 90;
           
         }
         public void MostrarVistaCatalogo()
@@ -69,10 +69,7 @@ namespace CapaPresentacion
             if (dgvCatalogo.Rows[e.RowIndex].Cells["Editar"].Selected)
             {
                 EditCatalogo frm = new EditCatalogo();
-                
-                string id= dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
-                
-                N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                frm.Update = true;
                 frm.textIdCatalogo.Text=dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
                 frm.textIdCatalogo.Enabled = false;
                 frm.textCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
@@ -85,12 +82,10 @@ namespace CapaPresentacion
                     frm.textHFin3.Enabled = false;
                     frm.cmbTipo3.Enabled = false;
                 }
-
-                oAsignatura.EliminandoCursoCatalogo(id);
                 frm.ShowDialog();
                 MostrarVistaCatalogo();
             }
-            if (dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            else if(dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
             {
                 N_CursoCatalogo oVista = new N_CursoCatalogo();
                 string delete = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
@@ -136,5 +131,16 @@ namespace CapaPresentacion
             exportarCatalogo.Visible = true;
 
         }
+
+        private void btnMinVistaCatalogo_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btonCerrarVistaCatalogo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
