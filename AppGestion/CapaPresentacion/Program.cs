@@ -18,10 +18,10 @@ namespace CapaPresentacion
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //AppContext = new ApplicationContext(new frmDirecDepAcade());
-            Application.Run(new frmDirecDepAcade());
+            AppContext = new ApplicationContext(new mainDirectorEscuela());
+            Application.Run(AppContext);
         }
 
         //Método para intercambiar formularios

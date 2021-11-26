@@ -334,3 +334,17 @@ inner join THorario H on C.IDCatalogo = H.IDCatalogo
 inner join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
 inner join TDocente DP on C.CodDocentePractico = DP.CodDocente
 GO
+
+CREATE PROC SP_OBTENER_HORARIO_CURSOCATALOGO --ver horario y docente de un curso catalogo (ex: 'IF450BIN')
+@CURSOCATALOGO varchar(10)
+AS
+select H.Dia, H.HoraInicio, H.HoraFin, H.Tipo, 
+	case when H.Tipo = 'T' then (DT.Nombres) else (DP.Nombres) end as Nombre,
+	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as Apellido
+from TCatalogo C
+inner join THorario H on H.IDCatalogo = C.IDCatalogo
+inner join TDocente DT on DT.CodDocente = C.CodDocenteTeorico
+inner join TDocente DP on DP.CodDocente = C.CodDocentePractico
+where C.CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
+and C.Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
+GO

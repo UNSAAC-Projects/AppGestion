@@ -128,9 +128,12 @@ namespace CapaPresentacion
             //}
             if (dgvCatalogo.Rows[e.RowIndex].Cells["EDITAR"].Selected)
             {
-                frmAsignarDocente form = new frmAsignarDocente();
+                //Obtener cod curso
+                string CodCursoCatalogo = dgvCatalogo.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+
+                frmAsignarDocente form = new frmAsignarDocente(CodCursoCatalogo);
                 //Recuperar información de la tabla
-                form.textBoxCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                form.textBoxCodigo.Text = CodCursoCatalogo;
                 form.textBoxCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CURSO"].Value.ToString();
                 form.textBoxHT.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HT"].Value.ToString();
                 form.textBoxHP.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HP"].Value.ToString();
