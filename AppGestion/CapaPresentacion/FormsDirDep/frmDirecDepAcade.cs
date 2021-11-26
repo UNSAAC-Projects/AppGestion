@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidades;
@@ -40,13 +41,18 @@ namespace CapaPresentacion
 
         DataView ImportarDatos(string nombrearchivo)
         {
-            string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;DataSource={0}; Extended Properties'Excel 12.0;'", nombrearchivo);
-            OleDbConnection conector = default(OleDbConnection);
-            conector = new OleDbConnection(conexion);
+            string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0}; Extended Properties'Excel 12.0;'",nombrearchivo);
+           
+            OleDbConnection conector = new OleDbConnection(conexion);
             conector.Open();
-            OleDbCommand consulta = new OleDbCommand("Select *  from [Hoja1$]", conector);
-            OleDbDataAdapter adaptador = new OleDbDataAdapter();
-            adaptador.SelectCommand = consulta;
+
+
+            OleDbCommand consulta = new OleDbCommand("select *  from [Hoja1$]", conector);
+            OleDbDataAdapter adaptador = new OleDbDataAdapter
+            {
+                SelectCommand = consulta
+            };
+            
 
             DataSet ds = new DataSet();
             adaptador.Fill(ds);
