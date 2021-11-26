@@ -25,8 +25,9 @@ namespace CapaPresentacion
         #region Módulos
         private void MoverModificarColumnas()
         {
+            //Mostrar encabezado
+            dgvCatalogo.ColumnHeadersVisible = true;
             // Mover columnas editar y eliminar
-            //dgvCatalogo.Columns[0].DisplayIndex = 13;
             dgvCatalogo.Columns[0].DisplayIndex = 12;
 
         }
@@ -134,9 +135,32 @@ namespace CapaPresentacion
                 form.textBoxCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CRED"].Value.ToString();
                 form.textBoxAula.Text = dgvCatalogo.Rows[e.RowIndex].Cells["AULA"].Value.ToString();
                 form.textBoxGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["GRUPO"].Value.ToString();
-                //Horarios....
                 form.ShowDialog();
             }
+        }
+
+        private void buttonActualizar_Click(object sender, EventArgs e)
+        {
+            //Verificar si existen todos los cursos del catálogo
+            int nroRows = dgvCatalogo.Rows.Count;
+            bool existeCodCursoCatalogo;
+            string codAsignatura, grupo, nombre, codCursoCatalogo;
+            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+
+            for (int i = 0; i < nroRows; i++)
+            {
+                codAsignatura = dgvCatalogo.Rows[i].Cells["CODIGO"].Value.ToString();
+                grupo = dgvCatalogo.Rows[i].Cells["GRUPO"].Value.ToString();
+                nombre = dgvCatalogo.Rows[i].Cells["CURSO"].Value.ToString();
+                codCursoCatalogo = $"{codAsignatura}{grupo}IN";
+                existeCodCursoCatalogo = oCursoCatalogo.ExisteCursoCatalogo(codCursoCatalogo);
+                if (!existeCodCursoCatalogo) //Si no existe
+                {
+                    MessageBox.Show($"El curso {codCursoCatalogo} - {nombre} no existe. Verifique la información e intente de nuevo.", "Alerta");
+                    break;
+                }
+            }
+
         }
     }
 }

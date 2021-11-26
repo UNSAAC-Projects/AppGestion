@@ -142,6 +142,25 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+        // Verificar si existe un curso del catalogo
+        public bool ExisteCursoCatalogo(string CodCursoCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_EXISTE_CURSOCATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            bool existeCod = false;
+            //-- Verificando si CodCursoCatalogo existe
+            if (tabla.Rows.Count == 1) existeCod = true;
+            conexion.Close();
+            return existeCod;
+        }
 
 
     }

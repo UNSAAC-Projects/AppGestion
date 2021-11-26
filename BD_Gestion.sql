@@ -348,3 +348,23 @@ inner join TDocente DP on DP.CodDocente = C.CodDocentePractico
 where C.CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
 and C.Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
 GO
+
+--Insertar un docente
+CREATE PROC SP_INSERT_DOCENTE
+	@CodDocente varchar(6),
+	@Nombres varchar(100),
+	@Apellidos varchar(100),
+	@TituloAcademico varchar(100),
+	@Estado varchar (100)
+as
+insert into TDocente values(@CodDocente,@Nombres,@Apellidos,@TituloAcademico,@Estado)
+go
+
+-- Verificar si existe un curso en el catalogo (ex: IF324AIN)
+CREATE PROC SP_EXISTE_CURSOCATALOGO
+	@CURSOCATALOGO varchar(10)
+AS
+SELECT * FROM TCatalogo
+WHERE CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
+	and Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
+GO

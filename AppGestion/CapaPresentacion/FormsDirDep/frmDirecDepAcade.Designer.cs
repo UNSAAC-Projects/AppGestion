@@ -32,30 +32,31 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLateral = new System.Windows.Forms.Panel();
-            this.buttonDISTRIBUCION = new System.Windows.Forms.Button();
-            this.buttonIMPORTAR = new System.Windows.Forms.Button();
-            this.buttonLISTAR = new System.Windows.Forms.Button();
             this.labelLAURO = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBoxAdmi = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
-            this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonActualizar = new System.Windows.Forms.Button();
             this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.btnCERRAR = new System.Windows.Forms.PictureBox();
-            this.buttonIMPRIMIR = new System.Windows.Forms.Button();
             this.buttonDESCARGAR = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.buttonDISTRIBUCION = new System.Windows.Forms.Button();
+            this.buttonIMPORTAR = new System.Windows.Forms.Button();
+            this.buttonLISTAR = new System.Windows.Forms.Button();
+            this.pictureBoxAdmi = new System.Windows.Forms.PictureBox();
+            this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
             this.pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -78,6 +79,199 @@ namespace CapaPresentacion
             this.pnlLateral.Name = "pnlLateral";
             this.pnlLateral.Size = new System.Drawing.Size(228, 523);
             this.pnlLateral.TabIndex = 0;
+            // 
+            // labelLAURO
+            // 
+            this.labelLAURO.AutoSize = true;
+            this.labelLAURO.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLAURO.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelLAURO.Location = new System.Drawing.Point(32, 290);
+            this.labelLAURO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLAURO.Name = "labelLAURO";
+            this.labelLAURO.Size = new System.Drawing.Size(158, 14);
+            this.labelLAURO.TabIndex = 9;
+            this.labelLAURO.Text = "LAURO ENCISO RODAS";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label4.Location = new System.Drawing.Point(6, 119);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(220, 14);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Director de Departamento Academico";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.panel2.Location = new System.Drawing.Point(19, 336);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(188, 4);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.panel1.Location = new System.Drawing.Point(19, 74);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(188, 4);
+            this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(83, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 14);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Y DE SISTEMAS";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(68, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(154, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "INGENERIA INFORMATICA ";
+            // 
+            // dgvCatalogo
+            // 
+            this.dgvCatalogo.AllowUserToDeleteRows = false;
+            this.dgvCatalogo.AllowUserToResizeRows = false;
+            this.dgvCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCatalogo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCatalogo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCatalogo.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(171)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCatalogo.GridColor = System.Drawing.Color.Silver;
+            this.dgvCatalogo.Location = new System.Drawing.Point(251, 76);
+            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCatalogo.Name = "dgvCatalogo";
+            this.dgvCatalogo.RowHeadersVisible = false;
+            this.dgvCatalogo.RowHeadersWidth = 51;
+            this.dgvCatalogo.RowTemplate.Height = 24;
+            this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvCatalogo.Size = new System.Drawing.Size(678, 348);
+            this.dgvCatalogo.TabIndex = 3;
+            this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
+            this.label3.Location = new System.Drawing.Point(429, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(304, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "CATÁLOGO 2021-II   INFORMÁTICA";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "EDITAR";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 5;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "EDITAR";
+            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 5;
+            // 
+            // buttonActualizar
+            // 
+            this.buttonActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonActualizar.FlatAppearance.BorderSize = 0;
+            this.buttonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonActualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonActualizar.ForeColor = System.Drawing.Color.White;
+            this.buttonActualizar.Image = global::CapaPresentacion.Properties.Resources.refresh_regular_24;
+            this.buttonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonActualizar.Location = new System.Drawing.Point(729, 462);
+            this.buttonActualizar.Name = "buttonActualizar";
+            this.buttonActualizar.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.buttonActualizar.Size = new System.Drawing.Size(128, 37);
+            this.buttonActualizar.TabIndex = 8;
+            this.buttonActualizar.Text = "Actualizar";
+            this.buttonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonActualizar.UseVisualStyleBackColor = false;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            // 
+            // btnMINIMIZAR
+            // 
+            this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
+            this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(875, 0);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMINIMIZAR.Name = "btnMINIMIZAR";
+            this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
+            this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMINIMIZAR.TabIndex = 6;
+            this.btnMINIMIZAR.TabStop = false;
+            this.btnMINIMIZAR.Click += new System.EventHandler(this.btnMINIMIZAR_Click);
+            // 
+            // btnCERRAR
+            // 
+            this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
+            this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
+            this.btnCERRAR.Location = new System.Drawing.Point(911, 0);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCERRAR.Name = "btnCERRAR";
+            this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
+            this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCERRAR.TabIndex = 4;
+            this.btnCERRAR.TabStop = false;
+            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
+            // 
+            // buttonDESCARGAR
+            // 
+            this.buttonDESCARGAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDESCARGAR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
+            this.buttonDESCARGAR.FlatAppearance.BorderSize = 0;
+            this.buttonDESCARGAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.buttonDESCARGAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.buttonDESCARGAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
+            this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(326, 463);
+            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDESCARGAR.Name = "buttonDESCARGAR";
+            this.buttonDESCARGAR.Size = new System.Drawing.Size(142, 37);
+            this.buttonDESCARGAR.TabIndex = 4;
+            this.buttonDESCARGAR.Text = "DESCARGAR";
+            this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDESCARGAR.UseVisualStyleBackColor = false;
             // 
             // buttonDISTRIBUCION
             // 
@@ -130,30 +324,6 @@ namespace CapaPresentacion
             this.buttonLISTAR.UseVisualStyleBackColor = true;
             this.buttonLISTAR.Click += new System.EventHandler(this.buttonLISTAR_Click);
             // 
-            // labelLAURO
-            // 
-            this.labelLAURO.AutoSize = true;
-            this.labelLAURO.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLAURO.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelLAURO.Location = new System.Drawing.Point(32, 290);
-            this.labelLAURO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelLAURO.Name = "labelLAURO";
-            this.labelLAURO.Size = new System.Drawing.Size(158, 14);
-            this.labelLAURO.TabIndex = 9;
-            this.labelLAURO.Text = "LAURO ENCISO RODAS";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(6, 119);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 14);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Director de Departamento Academico";
-            // 
             // pictureBoxAdmi
             // 
             this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
@@ -164,48 +334,6 @@ namespace CapaPresentacion
             this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAdmi.TabIndex = 0;
             this.pictureBoxAdmi.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(19, 336);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 4);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(19, 74);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 4);
-            this.panel1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(83, 45);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 14);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Y DE SISTEMAS";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(68, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "INGENERIA INFORMATICA ";
             // 
             // pictureBoxlogo
             // 
@@ -218,145 +346,17 @@ namespace CapaPresentacion
             this.pictureBoxlogo.TabIndex = 0;
             this.pictureBoxlogo.TabStop = false;
             // 
-            // dgvCatalogo
-            // 
-            this.dgvCatalogo.AllowUserToAddRows = false;
-            this.dgvCatalogo.AllowUserToDeleteRows = false;
-            this.dgvCatalogo.AllowUserToOrderColumns = true;
-            this.dgvCatalogo.AllowUserToResizeRows = false;
-            this.dgvCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCatalogo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCatalogo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EDITAR});
-            this.dgvCatalogo.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(171)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCatalogo.GridColor = System.Drawing.Color.Silver;
-            this.dgvCatalogo.Location = new System.Drawing.Point(243, 101);
-            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvCatalogo.Name = "dgvCatalogo";
-            this.dgvCatalogo.RowHeadersVisible = false;
-            this.dgvCatalogo.RowHeadersWidth = 51;
-            this.dgvCatalogo.RowTemplate.Height = 24;
-            this.dgvCatalogo.Size = new System.Drawing.Size(678, 348);
-            this.dgvCatalogo.TabIndex = 3;
-            this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
-            // 
-            // EDITAR
-            // 
-            this.EDITAR.HeaderText = "EDITAR";
-            this.EDITAR.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.EDITAR.Name = "EDITAR";
-            this.EDITAR.Width = 54;
-            // 
-            // btnMINIMIZAR
-            // 
-            this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
-            this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(875, 0);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMINIMIZAR.Name = "btnMINIMIZAR";
-            this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
-            this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMINIMIZAR.TabIndex = 6;
-            this.btnMINIMIZAR.TabStop = false;
-            this.btnMINIMIZAR.Click += new System.EventHandler(this.btnMINIMIZAR_Click);
-            // 
-            // btnCERRAR
-            // 
-            this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
-            this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
-            this.btnCERRAR.Location = new System.Drawing.Point(911, 0);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCERRAR.Name = "btnCERRAR";
-            this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
-            this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCERRAR.TabIndex = 4;
-            this.btnCERRAR.TabStop = false;
-            this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
-            // 
-            // buttonIMPRIMIR
-            // 
-            this.buttonIMPRIMIR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonIMPRIMIR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
-            this.buttonIMPRIMIR.FlatAppearance.BorderSize = 0;
-            this.buttonIMPRIMIR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.buttonIMPRIMIR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.buttonIMPRIMIR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIMPRIMIR.ForeColor = System.Drawing.Color.White;
-            this.buttonIMPRIMIR.Image = global::CapaPresentacion.Properties.Resources.printer_regular_242;
-            this.buttonIMPRIMIR.Location = new System.Drawing.Point(626, 463);
-            this.buttonIMPRIMIR.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonIMPRIMIR.Name = "buttonIMPRIMIR";
-            this.buttonIMPRIMIR.Size = new System.Drawing.Size(161, 37);
-            this.buttonIMPRIMIR.TabIndex = 5;
-            this.buttonIMPRIMIR.Text = "IMPRIMIR";
-            this.buttonIMPRIMIR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonIMPRIMIR.UseVisualStyleBackColor = false;
-            // 
-            // buttonDESCARGAR
-            // 
-            this.buttonDESCARGAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonDESCARGAR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
-            this.buttonDESCARGAR.FlatAppearance.BorderSize = 0;
-            this.buttonDESCARGAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.buttonDESCARGAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.buttonDESCARGAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
-            this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(409, 463);
-            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDESCARGAR.Name = "buttonDESCARGAR";
-            this.buttonDESCARGAR.Size = new System.Drawing.Size(142, 37);
-            this.buttonDESCARGAR.TabIndex = 4;
-            this.buttonDESCARGAR.Text = "DESCARGAR";
-            this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDESCARGAR.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(143)))));
-            this.label6.Image = global::CapaPresentacion.Properties.Resources.Nuevo;
-            this.label6.Location = new System.Drawing.Point(437, 58);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(293, 20);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "DOCENTES 2021-2-INFORMATICA";
-            // 
             // frmDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 523);
+            this.Controls.Add(this.buttonActualizar);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnMINIMIZAR);
             this.Controls.Add(this.btnCERRAR);
-            this.Controls.Add(this.buttonIMPRIMIR);
             this.Controls.Add(this.buttonDESCARGAR);
             this.Controls.Add(this.dgvCatalogo);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.pnlLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -365,11 +365,11 @@ namespace CapaPresentacion
             this.Text = "FormDiecDepAcade";
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,13 +388,14 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelLAURO;
         private System.Windows.Forms.Button buttonLISTAR;
         private System.Windows.Forms.Button buttonIMPORTAR;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvCatalogo;
         private System.Windows.Forms.Button buttonDESCARGAR;
-        private System.Windows.Forms.Button buttonIMPRIMIR;
         private System.Windows.Forms.Button buttonDISTRIBUCION;
         private System.Windows.Forms.PictureBox btnCERRAR;
         private System.Windows.Forms.PictureBox btnMINIMIZAR;
-        private System.Windows.Forms.DataGridViewImageColumn EDITAR;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Button buttonActualizar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

@@ -323,6 +323,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pencil_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-regular-36.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
