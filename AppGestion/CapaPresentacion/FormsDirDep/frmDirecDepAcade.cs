@@ -33,8 +33,30 @@ namespace CapaPresentacion
         {
             //Mostrar encabezado
             dgvCatalogo.ColumnHeadersVisible = true;
+
             // Mover columnas editar y eliminar
             dgvCatalogo.Columns[0].DisplayIndex = 13;
+
+            //Modificar ancho de columnas
+            dgvCatalogo.Columns["CURSO"].Width = 250;
+            dgvCatalogo.Columns["CRED"].Width = 50;
+            dgvCatalogo.Columns["TIPO"].Width = 40;
+            dgvCatalogo.Columns["GRUPO"].Width = 60;
+            dgvCatalogo.Columns["HT"].Width = 40;
+            dgvCatalogo.Columns["HP"].Width = 40;
+            dgvCatalogo.Columns["DIA"].Width = 60;
+            dgvCatalogo.Columns["HORA INICIO"].Width = 50;
+            dgvCatalogo.Columns["HORA FIN"].Width = 50;
+            dgvCatalogo.Columns["AULA"].Width = 50;
+            dgvCatalogo.Columns["NOMBRES"].Width = 100;
+            dgvCatalogo.Columns["APELLIDOS"].Width =150;
+            dgvCatalogo.Columns["EDITAR"].Width = 50;
+
+
+
+
+
+
 
         }
 
@@ -248,5 +270,17 @@ namespace CapaPresentacion
         }
 
         private void buttonDESCARGAR_Click(object sender, EventArgs e) => ExportarDatos(dgvCatalogo);
+
+        private void pictureBoxMaxRest_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }
