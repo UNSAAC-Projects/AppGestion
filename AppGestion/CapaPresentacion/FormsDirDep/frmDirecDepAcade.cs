@@ -31,7 +31,7 @@ namespace CapaPresentacion
             //Mostrar encabezado
             dgvCatalogo.ColumnHeadersVisible = true;
             // Mover columnas editar y eliminar
-            dgvCatalogo.Columns[0].DisplayIndex = 12;
+            dgvCatalogo.Columns[0].DisplayIndex = 13;
 
         }
 
