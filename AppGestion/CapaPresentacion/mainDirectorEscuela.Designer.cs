@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContenedorLogin = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panelMainDirEscuela = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -65,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelMainDirEscuela.SuspendLayout();
             this.SuspendLayout();
             // 
             // ContenedorLogin
@@ -90,7 +92,7 @@
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,13 +180,12 @@
             // 
             this.panelPrinciapl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelPrinciapl.Controls.Add(this.btnVerCatalogo);
-            this.panelPrinciapl.Controls.Add(this.pictureCANCEL1);
-            this.panelPrinciapl.Controls.Add(this.pictureMINIMIZE1);
             this.panelPrinciapl.Controls.Add(this.button2);
             this.panelPrinciapl.Controls.Add(this.dgvAsignaturas);
             this.panelPrinciapl.Controls.Add(this.txtBuscar);
             this.panelPrinciapl.Controls.Add(this.pictureBox5);
             this.panelPrinciapl.Controls.Add(this.pictureBox4);
+            this.panelPrinciapl.Controls.Add(this.panelMainDirEscuela);
             this.panelPrinciapl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrinciapl.Location = new System.Drawing.Point(311, 0);
             this.panelPrinciapl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -196,23 +197,30 @@
             // btnVerCatalogo
             // 
             this.btnVerCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerCatalogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.BackgroundImage")));
-            this.btnVerCatalogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnVerCatalogo.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCatalogo.ForeColor = System.Drawing.Color.Silver;
-            this.btnVerCatalogo.Location = new System.Drawing.Point(545, 583);
-            this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCatalogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVerCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnVerCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnVerCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCatalogo.ForeColor = System.Drawing.Color.White;
+            this.btnVerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.Image")));
+            this.btnVerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerCatalogo.Location = new System.Drawing.Point(557, 569);
+            this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCatalogo.Name = "btnVerCatalogo";
-            this.btnVerCatalogo.Size = new System.Drawing.Size(240, 54);
+            this.btnVerCatalogo.Size = new System.Drawing.Size(181, 54);
             this.btnVerCatalogo.TabIndex = 10;
             this.btnVerCatalogo.Text = "VER CATALOGO";
+            this.btnVerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVerCatalogo.UseVisualStyleBackColor = false;
             this.btnVerCatalogo.Click += new System.EventHandler(this.btnVerCatalogo_Click_1);
             // 
             // pictureCANCEL1
             // 
+            this.pictureCANCEL1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureCANCEL1.Image = ((System.Drawing.Image)(resources.GetObject("pictureCANCEL1.Image")));
-            this.pictureCANCEL1.Location = new System.Drawing.Point(1229, 2);
+            this.pictureCANCEL1.Location = new System.Drawing.Point(1214, 2);
             this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureCANCEL1.Name = "pictureCANCEL1";
             this.pictureCANCEL1.Size = new System.Drawing.Size(39, 34);
@@ -223,8 +231,9 @@
             // 
             // pictureMINIMIZE1
             // 
+            this.pictureMINIMIZE1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureMINIMIZE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureMINIMIZE1.Image")));
-            this.pictureMINIMIZE1.Location = new System.Drawing.Point(1189, 2);
+            this.pictureMINIMIZE1.Location = new System.Drawing.Point(1174, 2);
             this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureMINIMIZE1.Name = "pictureMINIMIZE1";
             this.pictureMINIMIZE1.Size = new System.Drawing.Size(39, 34);
@@ -235,18 +244,24 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.button2.Location = new System.Drawing.Point(661, 68);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(661, 62);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 46);
+            this.button2.Size = new System.Drawing.Size(132, 54);
             this.button2.TabIndex = 7;
-            this.button2.Text = "Agregar...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "AGREGAR";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // dgvAsignaturas
@@ -260,27 +275,27 @@
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CrearGrupo,
             this.Editar,
             this.Eliminar});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvAsignaturas.Location = new System.Drawing.Point(5, 149);
             this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
@@ -389,6 +404,16 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
+            // panelMainDirEscuela
+            // 
+            this.panelMainDirEscuela.Controls.Add(this.pictureMINIMIZE1);
+            this.panelMainDirEscuela.Controls.Add(this.pictureCANCEL1);
+            this.panelMainDirEscuela.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMainDirEscuela.Location = new System.Drawing.Point(0, 0);
+            this.panelMainDirEscuela.Name = "panelMainDirEscuela";
+            this.panelMainDirEscuela.Size = new System.Drawing.Size(1270, 45);
+            this.panelMainDirEscuela.TabIndex = 11;
+            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -413,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelMainDirEscuela.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -443,5 +469,6 @@
         private System.Windows.Forms.PictureBox pictureCANCEL1;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnVerCatalogo;
+        private System.Windows.Forms.Panel panelMainDirEscuela;
     }
 }

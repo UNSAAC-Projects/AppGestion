@@ -34,15 +34,15 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaHorarios));
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
             this.panelVistaHorario = new System.Windows.Forms.Panel();
-            this.btnMinVistaHorario = new System.Windows.Forms.PictureBox();
-            this.btnMaxVistaHorario = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.btnMaxVistaHorario = new System.Windows.Forms.PictureBox();
+            this.btnMinVistaHorario = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.panelVistaHorario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaHorario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxVistaHorario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxVistaHorario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaHorario)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvHorarios
@@ -98,27 +98,16 @@ namespace CapaPresentacion
             this.panelVistaHorario.Size = new System.Drawing.Size(1152, 43);
             this.panelVistaHorario.TabIndex = 8;
             // 
-            // btnMinVistaHorario
+            // label11
             // 
-            this.btnMinVistaHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaHorario.Image")));
-            this.btnMinVistaHorario.Location = new System.Drawing.Point(1069, 3);
-            this.btnMinVistaHorario.Name = "btnMinVistaHorario";
-            this.btnMinVistaHorario.Size = new System.Drawing.Size(36, 35);
-            this.btnMinVistaHorario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinVistaHorario.TabIndex = 0;
-            this.btnMinVistaHorario.TabStop = false;
-            this.btnMinVistaHorario.Click += new System.EventHandler(this.btnMinVistaHorario_Click);
-            // 
-            // btnMaxVistaHorario
-            // 
-            this.btnMaxVistaHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxVistaHorario.Image")));
-            this.btnMaxVistaHorario.Location = new System.Drawing.Point(1111, 3);
-            this.btnMaxVistaHorario.Name = "btnMaxVistaHorario";
-            this.btnMaxVistaHorario.Size = new System.Drawing.Size(36, 35);
-            this.btnMaxVistaHorario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMaxVistaHorario.TabIndex = 1;
-            this.btnMaxVistaHorario.TabStop = false;
-            this.btnMaxVistaHorario.Click += new System.EventHandler(this.btnMaxVistaHorario_Click);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label11.Location = new System.Drawing.Point(49, 8);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(136, 30);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "HORARIOS";
             // 
             // pictureBoxLogo
             // 
@@ -131,16 +120,29 @@ namespace CapaPresentacion
             this.pictureBoxLogo.TabIndex = 55;
             this.pictureBoxLogo.TabStop = false;
             // 
-            // label11
+            // btnMaxVistaHorario
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label11.Location = new System.Drawing.Point(49, 8);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(136, 30);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "HORARIOS";
+            this.btnMaxVistaHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaxVistaHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxVistaHorario.Image")));
+            this.btnMaxVistaHorario.Location = new System.Drawing.Point(1111, 3);
+            this.btnMaxVistaHorario.Name = "btnMaxVistaHorario";
+            this.btnMaxVistaHorario.Size = new System.Drawing.Size(36, 35);
+            this.btnMaxVistaHorario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMaxVistaHorario.TabIndex = 1;
+            this.btnMaxVistaHorario.TabStop = false;
+            this.btnMaxVistaHorario.Click += new System.EventHandler(this.btnMaxVistaHorario_Click);
+            // 
+            // btnMinVistaHorario
+            // 
+            this.btnMinVistaHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinVistaHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaHorario.Image")));
+            this.btnMinVistaHorario.Location = new System.Drawing.Point(1069, 3);
+            this.btnMinVistaHorario.Name = "btnMinVistaHorario";
+            this.btnMinVistaHorario.Size = new System.Drawing.Size(36, 35);
+            this.btnMinVistaHorario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinVistaHorario.TabIndex = 0;
+            this.btnMinVistaHorario.TabStop = false;
+            this.btnMinVistaHorario.Click += new System.EventHandler(this.btnMinVistaHorario_Click);
             // 
             // frmVistaHorarios
             // 
@@ -151,15 +153,15 @@ namespace CapaPresentacion
             this.Controls.Add(this.panelVistaHorario);
             this.Controls.Add(this.dgvHorarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVistaHorarios";
             this.Text = "frmVistaHorarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.panelVistaHorario.ResumeLayout(false);
             this.panelVistaHorario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaHorario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxVistaHorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxVistaHorario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaHorario)).EndInit();
             this.ResumeLayout(false);
 
         }
