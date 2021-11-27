@@ -29,8 +29,8 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.labelLAURO = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,9 +76,9 @@ namespace CapaPresentacion
             this.pnlLateral.Controls.Add(this.pictureBoxlogo);
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlLateral.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLateral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(228, 523);
+            this.pnlLateral.Size = new System.Drawing.Size(304, 644);
             this.pnlLateral.TabIndex = 0;
             // 
             // labelLAURO
@@ -86,10 +86,9 @@ namespace CapaPresentacion
             this.labelLAURO.AutoSize = true;
             this.labelLAURO.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLAURO.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelLAURO.Location = new System.Drawing.Point(32, 290);
-            this.labelLAURO.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelLAURO.Location = new System.Drawing.Point(43, 357);
             this.labelLAURO.Name = "labelLAURO";
-            this.labelLAURO.Size = new System.Drawing.Size(158, 14);
+            this.labelLAURO.Size = new System.Drawing.Size(193, 17);
             this.labelLAURO.TabIndex = 9;
             this.labelLAURO.Text = "LAURO ENCISO RODAS";
             // 
@@ -98,29 +97,28 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(6, 119);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(8, 146);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 14);
+            this.label4.Size = new System.Drawing.Size(274, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Director de Departamento Academico";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(19, 336);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(25, 414);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 4);
+            this.panel2.Size = new System.Drawing.Size(251, 5);
             this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(19, 74);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(25, 91);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 4);
+            this.panel1.Size = new System.Drawing.Size(251, 5);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -128,10 +126,9 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(83, 45);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(111, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 14);
+            this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Y DE SISTEMAS";
             // 
@@ -140,10 +137,9 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poor Richard", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(68, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(91, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 14);
+            this.label1.Size = new System.Drawing.Size(190, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "INGENERIA INFORMATICA ";
             // 
@@ -194,10 +190,10 @@ namespace CapaPresentacion
             // 
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(875, 0);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(1167, 0);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
-            this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
+            this.btnMINIMIZAR.Size = new System.Drawing.Size(43, 41);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMINIMIZAR.TabIndex = 6;
             this.btnMINIMIZAR.TabStop = false;
@@ -207,10 +203,10 @@ namespace CapaPresentacion
             // 
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
-            this.btnCERRAR.Location = new System.Drawing.Point(911, 0);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCERRAR.Location = new System.Drawing.Point(1215, 0);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCERRAR.Name = "btnCERRAR";
-            this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
+            this.btnCERRAR.Size = new System.Drawing.Size(43, 41);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCERRAR.TabIndex = 4;
             this.btnCERRAR.TabStop = false;
@@ -229,7 +225,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Location = new System.Drawing.Point(326, 463);
             this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
-            this.buttonDESCARGAR.Size = new System.Drawing.Size(142, 37);
+            this.buttonDESCARGAR.Size = new System.Drawing.Size(189, 46);
             this.buttonDESCARGAR.TabIndex = 4;
             this.buttonDESCARGAR.Text = "DESCARGAR";
             this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -358,7 +354,7 @@ namespace CapaPresentacion
             // 
             // frmDirecDepAcade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 523);
             this.Controls.Add(this.buttonActualizar);
@@ -369,7 +365,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.dgvCatalogo);
             this.Controls.Add(this.pnlLateral);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDirecDepAcade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiecDepAcade";

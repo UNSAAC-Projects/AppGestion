@@ -29,9 +29,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaCatalogo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaCatalogo));
             this.btnDescargar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
@@ -40,26 +40,37 @@ namespace CapaPresentacion
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnHorarios = new System.Windows.Forms.Button();
             this.panelVistaCatalogo = new System.Windows.Forms.Panel();
-            this.btnMinVistaCatalogo = new System.Windows.Forms.PictureBox();
-            this.btonCerrarVistaCatalogo = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.btonCerrarVistaCatalogo = new System.Windows.Forms.PictureBox();
+            this.btnMinVistaCatalogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             this.panelVistaCatalogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaCatalogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btonCerrarVistaCatalogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btonCerrarVistaCatalogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDescargar
             // 
-            this.btnDescargar.Location = new System.Drawing.Point(315, 500);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDescargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnDescargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDescargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDescargar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnDescargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDescargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDescargar.ForeColor = System.Drawing.Color.White;
+            this.btnDescargar.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargar.Image")));
+            this.btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDescargar.Location = new System.Drawing.Point(371, 481);
+            this.btnDescargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(171, 39);
+            this.btnDescargar.Size = new System.Drawing.Size(192, 51);
             this.btnDescargar.TabIndex = 1;
             this.btnDescargar.Text = "EXPORTAR EXCEL";
-            this.btnDescargar.UseVisualStyleBackColor = true;
+            this.btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDescargar.UseVisualStyleBackColor = false;
             this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // label13
@@ -105,7 +116,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCatalogo.Location = new System.Drawing.Point(33, 139);
-            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCatalogo.Name = "dgvCatalogo";
             this.dgvCatalogo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCatalogo.RowHeadersVisible = false;
@@ -133,23 +144,33 @@ namespace CapaPresentacion
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(171, 71);
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(162, 82);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(524, 38);
+            this.txtBuscar.Size = new System.Drawing.Size(477, 23);
             this.txtBuscar.TabIndex = 48;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnHorarios
             // 
-            this.btnHorarios.Location = new System.Drawing.Point(630, 502);
-            this.btnHorarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHorarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnHorarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHorarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorarios.ForeColor = System.Drawing.Color.White;
+            this.btnHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnHorarios.Image")));
+            this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHorarios.Location = new System.Drawing.Point(583, 481);
+            this.btnHorarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(147, 39);
+            this.btnHorarios.Size = new System.Drawing.Size(176, 51);
             this.btnHorarios.TabIndex = 49;
             this.btnHorarios.Text = "VER HORARIOS";
-            this.btnHorarios.UseVisualStyleBackColor = true;
+            this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHorarios.UseVisualStyleBackColor = false;
             this.btnHorarios.Click += new System.EventHandler(this.btnHorarios_Click);
             // 
             // panelVistaCatalogo
@@ -165,39 +186,6 @@ namespace CapaPresentacion
             this.panelVistaCatalogo.Size = new System.Drawing.Size(1127, 41);
             this.panelVistaCatalogo.TabIndex = 50;
             // 
-            // btnMinVistaCatalogo
-            // 
-            this.btnMinVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaCatalogo.Image")));
-            this.btnMinVistaCatalogo.Location = new System.Drawing.Point(1046, 3);
-            this.btnMinVistaCatalogo.Name = "btnMinVistaCatalogo";
-            this.btnMinVistaCatalogo.Size = new System.Drawing.Size(35, 32);
-            this.btnMinVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinVistaCatalogo.TabIndex = 51;
-            this.btnMinVistaCatalogo.TabStop = false;
-            this.btnMinVistaCatalogo.Click += new System.EventHandler(this.btnMinVistaCatalogo_Click);
-            // 
-            // btonCerrarVistaCatalogo
-            // 
-            this.btonCerrarVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btonCerrarVistaCatalogo.Image")));
-            this.btonCerrarVistaCatalogo.Location = new System.Drawing.Point(1085, 3);
-            this.btonCerrarVistaCatalogo.Name = "btonCerrarVistaCatalogo";
-            this.btonCerrarVistaCatalogo.Size = new System.Drawing.Size(35, 32);
-            this.btonCerrarVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btonCerrarVistaCatalogo.TabIndex = 51;
-            this.btonCerrarVistaCatalogo.TabStop = false;
-            this.btonCerrarVistaCatalogo.Click += new System.EventHandler(this.btonCerrarVistaCatalogo_Click);
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 0);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(34, 35);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 65;
-            this.pictureBoxLogo.TabStop = false;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -208,6 +196,41 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(152, 30);
             this.label11.TabIndex = 51;
             this.label11.Text = "CATALOGO";
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 2);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(34, 35);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 65;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // btonCerrarVistaCatalogo
+            // 
+            this.btonCerrarVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btonCerrarVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btonCerrarVistaCatalogo.Image")));
+            this.btonCerrarVistaCatalogo.Location = new System.Drawing.Point(1085, 3);
+            this.btonCerrarVistaCatalogo.Name = "btonCerrarVistaCatalogo";
+            this.btonCerrarVistaCatalogo.Size = new System.Drawing.Size(35, 32);
+            this.btonCerrarVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btonCerrarVistaCatalogo.TabIndex = 51;
+            this.btonCerrarVistaCatalogo.TabStop = false;
+            this.btonCerrarVistaCatalogo.Click += new System.EventHandler(this.btonCerrarVistaCatalogo_Click);
+            // 
+            // btnMinVistaCatalogo
+            // 
+            this.btnMinVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaCatalogo.Image")));
+            this.btnMinVistaCatalogo.Location = new System.Drawing.Point(1046, 3);
+            this.btnMinVistaCatalogo.Name = "btnMinVistaCatalogo";
+            this.btnMinVistaCatalogo.Size = new System.Drawing.Size(35, 32);
+            this.btnMinVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinVistaCatalogo.TabIndex = 51;
+            this.btnMinVistaCatalogo.TabStop = false;
+            this.btnMinVistaCatalogo.Click += new System.EventHandler(this.btnMinVistaCatalogo_Click);
             // 
             // frmVistaCatalogo
             // 
@@ -222,16 +245,16 @@ namespace CapaPresentacion
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnDescargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVistaCatalogo";
             this.Text = "frmVistaCatalogo";
             this.Load += new System.EventHandler(this.frmVistaCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();
             this.panelVistaCatalogo.ResumeLayout(false);
             this.panelVistaCatalogo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaCatalogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btonCerrarVistaCatalogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btonCerrarVistaCatalogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinVistaCatalogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
