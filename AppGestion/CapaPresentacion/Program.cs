@@ -18,9 +18,9 @@ namespace CapaPresentacion
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AppContext = new ApplicationContext(new mainDirectorEscuela());
+            AppContext = new ApplicationContext(new frmDirecDepAcade());
             Application.Run(AppContext);
         }
 
