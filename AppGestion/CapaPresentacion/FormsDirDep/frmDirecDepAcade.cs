@@ -7,9 +7,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
 using CapaNegocio;
+using Excel;
 using CapaEntidades;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -40,13 +43,18 @@ namespace CapaPresentacion
 
         DataView ImportarDatos(string nombrearchivo)
         {
-            string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;DataSource={0}; Extended Properties'Excel 12.0;'", nombrearchivo);
-            OleDbConnection conector = default(OleDbConnection);
-            conector = new OleDbConnection(conexion);
+            string conexion = string.Format("Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0}; Extended Properties'Excel 12.0;'",nombrearchivo);
+           
+            OleDbConnection conector = new OleDbConnection(conexion);
             conector.Open();
-            OleDbCommand consulta = new OleDbCommand("Select *  from [Hoja1$]", conector);
-            OleDbDataAdapter adaptador = new OleDbDataAdapter();
-            adaptador.SelectCommand = consulta;
+
+
+            OleDbCommand consulta = new OleDbCommand("select *  from [Hoja1$]", conector);
+            OleDbDataAdapter adaptador = new OleDbDataAdapter
+            {
+                SelectCommand = consulta
+            };
+            
 
             DataSet ds = new DataSet();
             adaptador.Fill(ds);
@@ -79,17 +87,30 @@ namespace CapaPresentacion
             FormListaDocentes p = new FormListaDocentes();
             p.Show();
         }
-
+        DataSet result;
         private void buttonIMPORTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            openFileDialog.Filter = " Excel | * .xls;*.xlsx;";
-            openFileDialog.Title = "Selecionar Archivo ";
-            if(openFileDialog.ShowDialog()== DialogResult.OK)
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
             {
-                dgvCatalogo.DataSource = ImportarDatos(openFileDialog.FileName);
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    if (ofd.FilterIndex == 1)
+                    {
+                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                    }
+                    else
+                    {
+                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                    }
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    dgvCatalogo.DataSource = result.Tables[0];
+                    reader.Close();
+
+                }
             }
 
         }
