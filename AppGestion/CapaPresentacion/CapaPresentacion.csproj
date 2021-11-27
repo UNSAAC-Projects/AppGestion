@@ -60,12 +60,6 @@
     <Compile Include="EditCatalogo.Designer.cs">
       <DependentUpon>EditCatalogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAsistenciaDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAsistenciaDocentes.Designer.cs">
-      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsDirDep\frmAsignarDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +102,6 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMantAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,9 +131,6 @@
     <EmbeddedResource Include="EditCatalogo.resx">
       <DependentUpon>EditCatalogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAsistenciaDocentes.resx">
-      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmAsignarDocente.resx">
       <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantAsignatura.resx">
       <DependentUpon>frmMantAsignatura.cs</DependentUpon>

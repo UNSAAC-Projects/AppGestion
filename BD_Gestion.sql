@@ -332,8 +332,8 @@ select (C.CodAsignatura + C.Grupo + 'IN') as CODIGO,
 from TAsignatura A 
 inner join TCatalogo C on A.CodAsignatura = C.CodAsignatura
 inner join THorario H on C.IDCatalogo = H.IDCatalogo
-inner join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
-inner join TDocente DP on C.CodDocentePractico = DP.CodDocente
+left join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
+left join TDocente DP on C.CodDocentePractico = DP.CodDocente
 GO
 
 CREATE PROC SP_OBTENER_HORARIO_CURSOCATALOGO --ver horario y docente de un curso catalogo (ex: 'IF450BIN')
@@ -344,8 +344,8 @@ select H.Dia as DIA, H.HoraInicio as 'HORA INICIO', H.HoraFin as'HORA FIN', H.Ti
 	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as APELLIDO
 from TCatalogo C
 inner join THorario H on H.IDCatalogo = C.IDCatalogo
-inner join TDocente DT on DT.CodDocente = C.CodDocenteTeorico
-inner join TDocente DP on DP.CodDocente = C.CodDocentePractico
+left join TDocente DT on DT.CodDocente = C.CodDocenteTeorico
+left join TDocente DP on DP.CodDocente = C.CodDocentePractico
 where C.CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
 and C.Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
 GO
@@ -366,6 +366,37 @@ CREATE PROC SP_EXISTE_CURSOCATALOGO
 	@CURSOCATALOGO varchar(10)
 AS
 SELECT * FROM TCatalogo
+WHERE CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
+	and Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
+GO
+
+-- Recuperar el codigo de un docente a partir de sus nombres y apellidos
+CREATE PROC SP_RECUPERAR_CODDOCENTE
+	@Nombres varchar(100),
+	@Apellidos varchar(100)
+AS
+select CodDocente from TDocente
+where Nombres = @Nombres and Apellidos = @Apellidos
+GO
+
+--Editar docente teorico
+CREATE PROC SP_EDITAR_DOCENTETEORICO
+	@CURSOCATALOGO varchar(10),
+	@CodDocenteTeorico varchar(6)
+AS
+UPDATE TCatalogo SET
+	CodDocenteTeorico=@CodDocenteTeorico
+WHERE CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
+	and Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
+GO
+
+--Editar docente práctico
+CREATE PROC SP_EDITAR_DOCENTEPRACTICO
+	@CURSOCATALOGO varchar(10),
+	@CodDocentePractico varchar(6)
+AS
+UPDATE TCatalogo SET
+	CodDocentePractico=@CodDocentePractico
 WHERE CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
 	and Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
 GO

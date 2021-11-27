@@ -310,6 +310,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Text = "DESCARGAR";
             this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDESCARGAR.UseVisualStyleBackColor = false;
+            this.buttonDESCARGAR.Click += new System.EventHandler(this.buttonDESCARGAR_Click);
             // 
             // EDITAR
             // 

@@ -18,6 +18,9 @@ namespace CapaPresentacion
 {
     public partial class frmDirecDepAcade : Form
     {
+        //Declaracion variables
+        DataSet result;
+
         public frmDirecDepAcade()
         {
             InitializeComponent();
@@ -40,6 +43,37 @@ namespace CapaPresentacion
             // Modulo para mostrar el catalogo en el formulario principal del director de escuela
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
             dgvCatalogo.DataSource = oCursoCatalogo.ListarCatalogoDA(); //DA: director académico
+        }
+
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+
+                }
+            }
+            int indexfila = 0;
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                    {
+                        indexColumn++;
+                        exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                    }
+                }
+            }
+            exportarCatalogo.Visible = true;
         }
 
         DataView ImportarDatos(string nombrearchivo)
@@ -88,7 +122,7 @@ namespace CapaPresentacion
             FormListaDocentes p = new FormListaDocentes();
             p.Show();
         }
-        DataSet result;
+        
         private void buttonIMPORTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
@@ -162,25 +196,57 @@ namespace CapaPresentacion
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
-            //Verificar si existen todos los cursos del catálogo
-            int nroRows = dgvCatalogo.Rows.Count;
-            bool existeCodCursoCatalogo;
-            string codAsignatura, grupo, nombre, codCursoCatalogo;
+            //Definiendo variables
+            string codCurso, nombreCurso, tipo;
+            string codDocente, nombresDocente, apellidosDocente;
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+            N_Docente oDocente = new N_Docente();
 
-            for (int i = 0; i < nroRows; i++)
+            //Recorrer filas del dgvCatalogo
+            foreach (DataGridViewRow row in dgvCatalogo.Rows)
             {
-                codAsignatura = dgvCatalogo.Rows[i].Cells["CODIGO"].Value.ToString();
-                grupo = dgvCatalogo.Rows[i].Cells["GRUPO"].Value.ToString();
-                nombre = dgvCatalogo.Rows[i].Cells["CURSO"].Value.ToString();
-                codCursoCatalogo = $"{codAsignatura}{grupo}IN";
-                existeCodCursoCatalogo = oCursoCatalogo.ExisteCursoCatalogo(codCursoCatalogo);
-                if (!existeCodCursoCatalogo) //Si no existe
+                //Recuperar codigo del curso (ex: IF340AIN)
+                codCurso = row.Cells["CODIGO"].Value.ToString();
+
+                //Verificar si existe codigo del curso
+                if (oCursoCatalogo.ExisteCursoCatalogo(codCurso)) //Si existe curso
                 {
-                    MessageBox.Show($"El curso {codCursoCatalogo} - {nombre} no existe. Verifique la información e intente de nuevo.", "Alerta");
-                    break;
+                    //Recuperar nombres y apellidos del docente
+                    nombresDocente = row.Cells["NOMBRES"].Value.ToString();
+                    apellidosDocente = row.Cells["APELLIDOS"].Value.ToString();
+                    
+                    //Recuperar el tipo de curso
+                    tipo = row.Cells["TIPO"].Value.ToString();
+
+                    //Recuperar código del docente
+                    codDocente = oDocente.RecuperarCodDocente(nombresDocente, apellidosDocente);
+                    if(codDocente!= null) //Si codDocente existe
+                    {
+                        //Verificar si es docente teorico o práctico
+                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, codDocente);
+                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, codDocente);
+                    }
+                    else //Si codDocente no existe
+                    {
+                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, "");   // "" vacio que se convertira a NULL
+                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, "");   // "" vacio que se convertira a NULL
+                        MessageBox.Show($"El docente {nombresDocente} {apellidosDocente} no se encuentra registrado. Verifique si sus datos están correctos.", "Alerta");
+                    }
+                }
+                else  // No existe curso
+                {
+                    //Recuperar nombre del curso
+                    nombreCurso = row.Cells["CURSO"].Value.ToString();
+                    MessageBox.Show($"El curso {codCurso} - {nombreCurso} no se encuentra registrado en el catálogo.");
                 }
             }
+            //Reiniciar tabla de catalogo
+            MostrarTablaCatalogo();
+
+            //Mensaje de confirmación
+            MessageBox.Show("El catálogo se actualizó correctamente.","Mensaje de confirmación");
         }
+
+        private void buttonDESCARGAR_Click(object sender, EventArgs e) => ExportarDatos(dgvCatalogo);
     }
 }

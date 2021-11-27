@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="E_Asignatura.cs" />
     <Compile Include="E_CursoCatalogo.cs" />
+    <Compile Include="E_Docente.cs" />
     <Compile Include="E_Horario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

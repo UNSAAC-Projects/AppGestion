@@ -56,5 +56,15 @@ namespace CapaNegocio
         {
             return data.ExisteCursoCatalogo(CodCursoCatalogo);
         }
+
+        public void EditarDocenteTeorico(string CodCursoCatalogo, string CodDocenteT)
+        {
+            data.EditarDocenteTeorico(CodCursoCatalogo, CodDocenteT);
+        }
+
+        public void EditarDocentePractico(string CodCursoCatalogo, string CodDocenteP)
+        {
+            data.EditarDocentePractico(CodCursoCatalogo, CodDocenteP);
+        }
     }
 }

@@ -129,7 +129,6 @@ namespace CapaPresentacion
                 }
             }
             exportarCatalogo.Visible = true;
-
         }
 
         private void btnMinVistaCatalogo_Click(object sender, EventArgs e)

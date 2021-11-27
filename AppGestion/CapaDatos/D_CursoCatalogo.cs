@@ -162,6 +162,39 @@ namespace CapaDatos
             return existeCod;
         }
 
+        // Editar el codigo de un docente Teorico en el catálogo
+        public void EditarDocenteTeorico(string CodCursoCatalogo, string CodDocenteT)
+        {
+            SqlCommand cmd = new SqlCommand("SP_EDITAR_DOCENTETEORICO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
 
+            if (CodDocenteT != "") //Si no es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocenteTeorico", CodDocenteT);
+            else //Si es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocenteTeorico", DBNull.Value); //Pasando NULL como parametro
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        // Editar el codigo de un docente Práctico en el catálogo
+        public void EditarDocentePractico(string CodCursoCatalogo, string CodDocenteP)
+        {
+            SqlCommand cmd = new SqlCommand("SP_EDITAR_DOCENTEPRACTICO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
+            if(CodDocenteP != "") //Si no es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocentePractico", CodDocenteP);
+            else //Si es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocentePractico", DBNull.Value); //Pasando NULL como parametro
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+        
     }
 }
