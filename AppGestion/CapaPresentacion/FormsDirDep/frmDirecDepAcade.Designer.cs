@@ -38,7 +38,6 @@ namespace CapaPresentacion
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvCatalogo = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -51,12 +50,14 @@ namespace CapaPresentacion
             this.buttonLISTAR = new System.Windows.Forms.Button();
             this.pictureBoxAdmi = new System.Windows.Forms.PictureBox();
             this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
+            this.EDITAR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvCatalogo = new System.Windows.Forms.DataGridView();
             this.pnlLateral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -145,45 +146,6 @@ namespace CapaPresentacion
             this.label1.Size = new System.Drawing.Size(154, 14);
             this.label1.TabIndex = 1;
             this.label1.Text = "INGENERIA INFORMATICA ";
-            // 
-            // dgvCatalogo
-            // 
-            this.dgvCatalogo.AllowUserToDeleteRows = false;
-            this.dgvCatalogo.AllowUserToResizeRows = false;
-            this.dgvCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvCatalogo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCatalogo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCatalogo.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(171)))), ((int)(((byte)(80)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCatalogo.GridColor = System.Drawing.Color.Silver;
-            this.dgvCatalogo.Location = new System.Drawing.Point(251, 76);
-            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvCatalogo.Name = "dgvCatalogo";
-            this.dgvCatalogo.RowHeadersVisible = false;
-            this.dgvCatalogo.RowHeadersWidth = 51;
-            this.dgvCatalogo.RowTemplate.Height = 24;
-            this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCatalogo.Size = new System.Drawing.Size(678, 348);
-            this.dgvCatalogo.TabIndex = 3;
-            this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
             // 
             // label3
             // 
@@ -346,6 +308,54 @@ namespace CapaPresentacion
             this.pictureBoxlogo.TabIndex = 0;
             this.pictureBoxlogo.TabStop = false;
             // 
+            // EDITAR
+            // 
+            this.EDITAR.HeaderText = "EDITAR";
+            this.EDITAR.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.EDITAR.Name = "EDITAR";
+            this.EDITAR.Width = 54;
+            // 
+            // dgvCatalogo
+            // 
+            this.dgvCatalogo.AllowUserToAddRows = false;
+            this.dgvCatalogo.AllowUserToDeleteRows = false;
+            this.dgvCatalogo.AllowUserToResizeRows = false;
+            this.dgvCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCatalogo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCatalogo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EDITAR});
+            this.dgvCatalogo.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(171)))), ((int)(((byte)(80)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCatalogo.GridColor = System.Drawing.Color.Silver;
+            this.dgvCatalogo.Location = new System.Drawing.Point(251, 76);
+            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCatalogo.Name = "dgvCatalogo";
+            this.dgvCatalogo.RowHeadersVisible = false;
+            this.dgvCatalogo.RowHeadersWidth = 51;
+            this.dgvCatalogo.RowTemplate.Height = 24;
+            this.dgvCatalogo.Size = new System.Drawing.Size(678, 348);
+            this.dgvCatalogo.TabIndex = 3;
+            this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
+            // 
             // frmDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,11 +375,11 @@ namespace CapaPresentacion
             this.Text = "FormDiecDepAcade";
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,7 +398,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelLAURO;
         private System.Windows.Forms.Button buttonLISTAR;
         private System.Windows.Forms.Button buttonIMPORTAR;
-        private System.Windows.Forms.DataGridView dgvCatalogo;
         private System.Windows.Forms.Button buttonDESCARGAR;
         private System.Windows.Forms.Button buttonDISTRIBUCION;
         private System.Windows.Forms.PictureBox btnCERRAR;
@@ -397,5 +406,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.Button buttonActualizar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn EDITAR;
+        private System.Windows.Forms.DataGridView dgvCatalogo;
     }
 }
