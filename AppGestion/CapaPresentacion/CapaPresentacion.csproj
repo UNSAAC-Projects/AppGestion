@@ -39,14 +39,6 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.3.3.11, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.3.3\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel1">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel2">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -67,12 +59,6 @@
     </Compile>
     <Compile Include="EditCatalogo.Designer.cs">
       <DependentUpon>EditCatalogo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormAsistenciaDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAsistenciaDocentes.Designer.cs">
-      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsDirDep\frmAsignarDocente.cs">
       <SubType>Form</SubType>
@@ -116,12 +102,6 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMantAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,9 +131,6 @@
     <EmbeddedResource Include="EditCatalogo.resx">
       <DependentUpon>EditCatalogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAsistenciaDocentes.resx">
-      <DependentUpon>FormAsistenciaDocentes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmAsignarDocente.resx">
       <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantAsignatura.resx">
       <DependentUpon>frmMantAsignatura.cs</DependentUpon>
@@ -338,6 +312,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pencil_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh-regular-36.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,6 +31,7 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsignarDocente));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelCodigo = new System.Windows.Forms.Label();
             this.labelCurso = new System.Windows.Forms.Label();
             this.labelCreditos = new System.Windows.Forms.Label();
@@ -149,7 +150,7 @@ namespace CapaPresentacion
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(781, 39);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(773, 39);
             this.panelBarraTitulo.TabIndex = 11;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
@@ -261,7 +262,7 @@ namespace CapaPresentacion
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(577, 484);
+            this.buttonGuardar.Location = new System.Drawing.Point(586, 437);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(152, 33);
             this.buttonGuardar.TabIndex = 58;
@@ -274,7 +275,7 @@ namespace CapaPresentacion
             this.buttonCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonCancelar.Location = new System.Drawing.Point(408, 484);
+            this.buttonCancelar.Location = new System.Drawing.Point(403, 437);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(136, 33);
             this.buttonCancelar.TabIndex = 58;
@@ -294,21 +295,30 @@ namespace CapaPresentacion
             this.dgvHorarioCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHorarioCurso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHorarioCurso.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvHorarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHorarioCurso.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvHorarioCurso.Location = new System.Drawing.Point(33, 286);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioCurso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHorarioCurso.ColumnHeadersHeight = 40;
+            this.dgvHorarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHorarioCurso.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHorarioCurso.Location = new System.Drawing.Point(31, 260);
             this.dgvHorarioCurso.Name = "dgvHorarioCurso";
             this.dgvHorarioCurso.RowHeadersVisible = false;
             this.dgvHorarioCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvHorarioCurso.Size = new System.Drawing.Size(707, 154);
+            this.dgvHorarioCurso.Size = new System.Drawing.Size(707, 162);
             this.dgvHorarioCurso.TabIndex = 59;
             // 
             // frmAsignarDocente
@@ -316,7 +326,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(781, 535);
+            this.ClientSize = new System.Drawing.Size(773, 491);
             this.Controls.Add(this.dgvHorarioCurso);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardar);
