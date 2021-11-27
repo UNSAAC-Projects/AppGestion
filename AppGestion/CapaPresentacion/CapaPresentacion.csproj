@@ -321,5 +321,8 @@
   <ItemGroup>
     <None Include="Resources\refresh-regular-36.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-up-square-solid-36.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
