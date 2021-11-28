@@ -34,7 +34,7 @@ namespace CapaPresentacion
             //Mostrar encabezado
             dgvCatalogo.ColumnHeadersVisible = true;
 
-            // Mover columnas editar y eliminar
+            // Mover columnas editar
             dgvCatalogo.Columns[0].DisplayIndex = 13;
 
             //Modificar ancho de columnas
@@ -51,12 +51,6 @@ namespace CapaPresentacion
             dgvCatalogo.Columns["NOMBRES"].Width = 100;
             dgvCatalogo.Columns["APELLIDOS"].Width =150;
             dgvCatalogo.Columns["EDITAR"].Width = 50;
-
-
-
-
-
-
 
         }
 
@@ -134,7 +128,7 @@ namespace CapaPresentacion
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            FormDistDocente c = new FormDistDocente();
+            frmDistDocentes c = new frmDistDocentes();
             c.Show();
         }
 

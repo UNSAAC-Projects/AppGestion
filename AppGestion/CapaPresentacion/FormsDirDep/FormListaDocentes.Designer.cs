@@ -44,8 +44,9 @@ namespace CapaPresentacion
             this.panel1.BackColor = System.Drawing.Color.Brown;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(827, 48);
+            this.panel1.Size = new System.Drawing.Size(620, 39);
             this.panel1.TabIndex = 0;
             // 
             // labelLISTADOCENTE
@@ -53,21 +54,23 @@ namespace CapaPresentacion
             this.labelLISTADOCENTE.AutoSize = true;
             this.labelLISTADOCENTE.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLISTADOCENTE.ForeColor = System.Drawing.Color.Brown;
-            this.labelLISTADOCENTE.Location = new System.Drawing.Point(95, 68);
+            this.labelLISTADOCENTE.Location = new System.Drawing.Point(71, 55);
+            this.labelLISTADOCENTE.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLISTADOCENTE.Name = "labelLISTADOCENTE";
-            this.labelLISTADOCENTE.Size = new System.Drawing.Size(531, 69);
+            this.labelLISTADOCENTE.Size = new System.Drawing.Size(438, 54);
             this.labelLISTADOCENTE.TabIndex = 1;
-            this.labelLISTADOCENTE.Text = "                            LISTA DE DOCENTES\n          Departamento Academico de" +
-    ": Ingeneria Inofrmatica\n                Fecha y Hora:";
+            this.labelLISTADOCENTE.Text = "                            LISTA DE DOCENTES\r\n          Departamento Academico d" +
+    "e: Ingeneria Inofrmatica\r\n                Fecha y Hora:";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Brown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(221, 170);
+            this.button1.Location = new System.Drawing.Point(166, 138);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 29);
+            this.button1.Size = new System.Drawing.Size(87, 24);
             this.button1.TabIndex = 6;
             this.button1.Text = "Marcar todos";
             this.button1.UseVisualStyleBackColor = false;
@@ -77,9 +80,10 @@ namespace CapaPresentacion
             this.button2.BackColor = System.Drawing.Color.Brown;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(389, 170);
+            this.button2.Location = new System.Drawing.Point(292, 138);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(167, 29);
+            this.button2.Size = new System.Drawing.Size(125, 24);
             this.button2.TabIndex = 7;
             this.button2.Text = "Desmarcar todos";
             this.button2.UseVisualStyleBackColor = false;
@@ -87,9 +91,10 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Logo_unsaac11;
-            this.pictureBox2.Location = new System.Drawing.Point(688, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(516, 55);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 69);
+            this.pictureBox2.Size = new System.Drawing.Size(75, 56);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -97,18 +102,19 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 68);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 55);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(75, 56);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // FormListaDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 684);
+            this.ClientSize = new System.Drawing.Size(620, 556);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
@@ -116,8 +122,12 @@ namespace CapaPresentacion
             this.Controls.Add(this.labelLISTADOCENTE);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormListaDocentes";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -72,11 +72,11 @@
     <Compile Include="FormsDirDep\frmDirecDepAcade.Designer.cs">
       <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDistDocente.cs">
+    <Compile Include="FormsDirDep\frmDistDocente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDistDocente.Designer.cs">
-      <DependentUpon>FormDistDocente.cs</DependentUpon>
+    <Compile Include="FormsDirDep\frmDistDocente.Designer.cs">
+      <DependentUpon>frmDistDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDocente.cs">
       <SubType>Form</SubType>
@@ -84,10 +84,10 @@
     <Compile Include="FormDocente.Designer.cs">
       <DependentUpon>FormDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormListaDocentes.cs">
+    <Compile Include="FormsDirDep\FormListaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListaDocentes.Designer.cs">
+    <Compile Include="FormsDirDep\FormListaDocentes.Designer.cs">
       <DependentUpon>FormListaDocentes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsDirDep\frmAsignarDocentev2.cs">
@@ -95,6 +95,12 @@
     </Compile>
     <Compile Include="FormsDirDep\frmAsignarDocentev2.Designer.cs">
       <DependentUpon>frmAsignarDocentev2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsDirDep\frmHorarioDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsDirDep\frmHorarioDocente.Designer.cs">
+      <DependentUpon>frmHorarioDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
@@ -140,11 +146,14 @@
     <EmbeddedResource Include="FormsDirDep\frmDirecDepAcade.resx">
       <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDistDocente.resx">
-      <DependentUpon>FormDistDocente.cs</DependentUpon>
+    <EmbeddedResource Include="FormsDirDep\frmDistDocente.resx">
+      <DependentUpon>frmDistDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormListaDocentes.resx">
+    <EmbeddedResource Include="FormsDirDep\FormListaDocentes.resx">
       <DependentUpon>FormListaDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmHorarioDocente.resx">
+      <DependentUpon>frmHorarioDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
