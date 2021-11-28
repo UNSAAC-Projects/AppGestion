@@ -26,7 +26,7 @@ namespace CapaPresentacion
             dgvCargaAcademica.ColumnHeadersVisible = true;
 
             // Mover columnas editar
-            dgvCargaAcademica.Columns[0].DisplayIndex = 4;
+            dgvCargaAcademica.Columns[0].DisplayIndex = 5;
 
         }
 

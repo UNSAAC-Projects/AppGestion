@@ -31,18 +31,20 @@ namespace CapaPresentacion
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelcabeceratentativa = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvCargaAcademica = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.VER = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBoxCerrarTENTATIVA = new System.Windows.Forms.PictureBox();
             this.pictureBoxLOGO1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMINIMIZARTENTATIVA = new System.Windows.Forms.PictureBox();
-            this.dgvCargaAcademica = new System.Windows.Forms.DataGridView();
-            this.VER = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelcabeceratentativa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrarTENTATIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLOGO1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMINIMIZARTENTATIVA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).BeginInit();
             this.SuspendLayout();
             // 
             // panelcabeceratentativa
@@ -70,6 +72,61 @@ namespace CapaPresentacion
             this.label1.Size = new System.Drawing.Size(309, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "CARGA ACADEMICA TENTATIVA DE DOCENTES";
+            // 
+            // dgvCargaAcademica
+            // 
+            this.dgvCargaAcademica.AllowUserToAddRows = false;
+            this.dgvCargaAcademica.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvCargaAcademica.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCargaAcademica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCargaAcademica.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCargaAcademica.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCargaAcademica.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCargaAcademica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCargaAcademica.ColumnHeadersHeight = 30;
+            this.dgvCargaAcademica.ColumnHeadersVisible = false;
+            this.dgvCargaAcademica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VER});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCargaAcademica.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCargaAcademica.Location = new System.Drawing.Point(22, 65);
+            this.dgvCargaAcademica.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCargaAcademica.Name = "dgvCargaAcademica";
+            this.dgvCargaAcademica.ReadOnly = true;
+            this.dgvCargaAcademica.RowHeadersVisible = false;
+            this.dgvCargaAcademica.RowHeadersWidth = 51;
+            this.dgvCargaAcademica.RowTemplate.Height = 24;
+            this.dgvCargaAcademica.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvCargaAcademica.Size = new System.Drawing.Size(722, 374);
+            this.dgvCargaAcademica.TabIndex = 3;
+            this.dgvCargaAcademica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargaAcademica_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "VER";
+            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // VER
+            // 
+            this.VER.HeaderText = "VER";
+            this.VER.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.VER.Name = "VER";
+            this.VER.ReadOnly = true;
             // 
             // pictureBoxCerrarTENTATIVA
             // 
@@ -106,47 +163,6 @@ namespace CapaPresentacion
             this.pictureBoxMINIMIZARTENTATIVA.TabStop = false;
             this.pictureBoxMINIMIZARTENTATIVA.Click += new System.EventHandler(this.pictureBoxMINIMIZARTENTATIVA_Click);
             // 
-            // dgvCargaAcademica
-            // 
-            this.dgvCargaAcademica.AllowUserToAddRows = false;
-            this.dgvCargaAcademica.AllowUserToDeleteRows = false;
-            this.dgvCargaAcademica.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCargaAcademica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCargaAcademica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargaAcademica.ColumnHeadersVisible = false;
-            this.dgvCargaAcademica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.VER});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCargaAcademica.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCargaAcademica.Location = new System.Drawing.Point(22, 59);
-            this.dgvCargaAcademica.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvCargaAcademica.Name = "dgvCargaAcademica";
-            this.dgvCargaAcademica.RowHeadersVisible = false;
-            this.dgvCargaAcademica.RowHeadersWidth = 51;
-            this.dgvCargaAcademica.RowTemplate.Height = 24;
-            this.dgvCargaAcademica.Size = new System.Drawing.Size(722, 374);
-            this.dgvCargaAcademica.TabIndex = 3;
-            this.dgvCargaAcademica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargaAcademica_CellContentClick);
-            // 
-            // VER
-            // 
-            this.VER.HeaderText = "VER";
-            this.VER.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
-            this.VER.Name = "VER";
-            // 
             // frmDistDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,10 +177,10 @@ namespace CapaPresentacion
             this.Text = "FormDistDocente";
             this.panelcabeceratentativa.ResumeLayout(false);
             this.panelcabeceratentativa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrarTENTATIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLOGO1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMINIMIZARTENTATIVA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,5 +193,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvCargaAcademica;
         private System.Windows.Forms.DataGridViewImageColumn VER;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
