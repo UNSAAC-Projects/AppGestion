@@ -280,8 +280,7 @@ AS INSERT INTO THorario values (
 	@IDCatalogo,
 	@Tipo )
 go
-drop proc SP_INSERTARHORARIO
-go
+
 
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
