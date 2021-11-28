@@ -1,6 +1,6 @@
 ﻿
-namespace CapaPresentacion.FormsDirDep
-{
+namespace CapaPresentacion 
+{ 
     partial class frmHorarioDocente
     {
         /// <summary>
@@ -30,15 +30,19 @@ namespace CapaPresentacion.FormsDirDep
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHorarioDocente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureBoxMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBoxCerrar = new System.Windows.Forms.PictureBox();
             this.labelTitulo = new System.Windows.Forms.Label();
+            this.dgvHorarioDocente = new System.Windows.Forms.DataGridView();
             this.panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarioDocente)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarraTitulo
@@ -86,6 +90,7 @@ namespace CapaPresentacion.FormsDirDep
             this.pictureBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCerrar.TabIndex = 53;
             this.pictureBoxCerrar.TabStop = false;
+            this.pictureBoxCerrar.Click += new System.EventHandler(this.pictureBoxCerrar_Click);
             // 
             // labelTitulo
             // 
@@ -99,11 +104,50 @@ namespace CapaPresentacion.FormsDirDep
             this.labelTitulo.TabIndex = 31;
             this.labelTitulo.Text = "Horario docente\r\n";
             // 
+            // dgvHorarioDocente
+            // 
+            this.dgvHorarioDocente.AllowUserToAddRows = false;
+            this.dgvHorarioDocente.AllowUserToDeleteRows = false;
+            this.dgvHorarioDocente.AllowUserToResizeColumns = false;
+            this.dgvHorarioDocente.AllowUserToResizeRows = false;
+            this.dgvHorarioDocente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHorarioDocente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvHorarioDocente.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvHorarioDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvHorarioDocente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvHorarioDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHorarioDocente.ColumnHeadersHeight = 40;
+            this.dgvHorarioDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHorarioDocente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvHorarioDocente.Location = new System.Drawing.Point(31, 263);
+            this.dgvHorarioDocente.Name = "dgvHorarioDocente";
+            this.dgvHorarioDocente.RowHeadersVisible = false;
+            this.dgvHorarioDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvHorarioDocente.Size = new System.Drawing.Size(707, 162);
+            this.dgvHorarioDocente.TabIndex = 60;
+            // 
             // frmHorarioDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 468);
+            this.Controls.Add(this.dgvHorarioDocente);
             this.Controls.Add(this.panelBarraTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHorarioDocente";
@@ -114,6 +158,7 @@ namespace CapaPresentacion.FormsDirDep
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarioDocente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -125,5 +170,6 @@ namespace CapaPresentacion.FormsDirDep
         private System.Windows.Forms.PictureBox pictureBoxMinimizar;
         private System.Windows.Forms.PictureBox pictureBoxCerrar;
         private System.Windows.Forms.Label labelTitulo;
+        private System.Windows.Forms.DataGridView dgvHorarioDocente;
     }
 }

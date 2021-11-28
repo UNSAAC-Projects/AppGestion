@@ -59,5 +59,21 @@ namespace CapaDatos
             return table;
         }
 
+        public DataTable MostrarHorarioDocente(string CodDocente)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_HORARIO_DOCENTE", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CodDocente", CodDocente);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;   
+        }
+
     }
 }

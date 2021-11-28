@@ -7,14 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace CapaPresentacion.FormsDirDep
+using CapaNegocio;
+namespace CapaPresentacion
 {
     public partial class frmHorarioDocente : Form
     {
-        public frmHorarioDocente()
+        public frmHorarioDocente(string CodDocente)
         {
             InitializeComponent();
+            MostrarTablaHorarioDocente(CodDocente);
+        }
+
+        private void MostrarTablaHorarioDocente(string codDocente)
+        {
+            N_Docente oDocente = new N_Docente();
+            dgvHorarioDocente.DataSource = oDocente.MostrarHorarioDocente(codDocente);
+        }
+
+        private void pictureBoxCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

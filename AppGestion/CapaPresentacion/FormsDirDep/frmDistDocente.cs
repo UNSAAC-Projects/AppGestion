@@ -63,6 +63,9 @@ namespace CapaPresentacion
                 //form.textBoxAula.Text = dgvCatalogo.Rows[e.RowIndex].Cells["AULA"].Value.ToString();
                 //form.textBoxGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["GRUPO"].Value.ToString();
                 //form.ShowDialog();
+                string codDocente = dgvCargaAcademica.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                frmHorarioDocente form = new frmHorarioDocente(codDocente);
+                form.ShowDialog();
             }
         }
     }

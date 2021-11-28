@@ -34,17 +34,17 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelcabeceratentativa = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvCargaAcademica = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.VER = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBoxCerrarTENTATIVA = new System.Windows.Forms.PictureBox();
             this.pictureBoxLOGO1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxMINIMIZARTENTATIVA = new System.Windows.Forms.PictureBox();
+            this.dgvCargaAcademica = new System.Windows.Forms.DataGridView();
+            this.VER = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelcabeceratentativa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrarTENTATIVA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLOGO1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMINIMIZARTENTATIVA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).BeginInit();
             this.SuspendLayout();
             // 
             // panelcabeceratentativa
@@ -72,6 +72,41 @@ namespace CapaPresentacion
             this.label1.Size = new System.Drawing.Size(309, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "CARGA ACADEMICA TENTATIVA DE DOCENTES";
+            // 
+            // pictureBoxCerrarTENTATIVA
+            // 
+            this.pictureBoxCerrarTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_531;
+            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(739, 10);
+            this.pictureBoxCerrarTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCerrarTENTATIVA.Name = "pictureBoxCerrarTENTATIVA";
+            this.pictureBoxCerrarTENTATIVA.Size = new System.Drawing.Size(27, 29);
+            this.pictureBoxCerrarTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCerrarTENTATIVA.TabIndex = 0;
+            this.pictureBoxCerrarTENTATIVA.TabStop = false;
+            this.pictureBoxCerrarTENTATIVA.Click += new System.EventHandler(this.pictureBoxCerrarTENTATIVA_Click);
+            // 
+            // pictureBoxLOGO1
+            // 
+            this.pictureBoxLOGO1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas2;
+            this.pictureBoxLOGO1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBoxLOGO1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLOGO1.Name = "pictureBoxLOGO1";
+            this.pictureBoxLOGO1.Size = new System.Drawing.Size(39, 39);
+            this.pictureBoxLOGO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLOGO1.TabIndex = 3;
+            this.pictureBoxLOGO1.TabStop = false;
+            // 
+            // pictureBoxMINIMIZARTENTATIVA
+            // 
+            this.pictureBoxMINIMIZARTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_532;
+            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(710, 10);
+            this.pictureBoxMINIMIZARTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMINIMIZARTENTATIVA.Name = "pictureBoxMINIMIZARTENTATIVA";
+            this.pictureBoxMINIMIZARTENTATIVA.Size = new System.Drawing.Size(24, 29);
+            this.pictureBoxMINIMIZARTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMINIMIZARTENTATIVA.TabIndex = 1;
+            this.pictureBoxMINIMIZARTENTATIVA.TabStop = false;
+            this.pictureBoxMINIMIZARTENTATIVA.Click += new System.EventHandler(this.pictureBoxMINIMIZARTENTATIVA_Click);
             // 
             // dgvCargaAcademica
             // 
@@ -115,12 +150,6 @@ namespace CapaPresentacion
             this.dgvCargaAcademica.TabIndex = 3;
             this.dgvCargaAcademica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargaAcademica_CellContentClick);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "VER";
-            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
             // VER
             // 
             this.VER.HeaderText = "VER";
@@ -128,40 +157,11 @@ namespace CapaPresentacion
             this.VER.Name = "VER";
             this.VER.ReadOnly = true;
             // 
-            // pictureBoxCerrarTENTATIVA
+            // dataGridViewImageColumn1
             // 
-            this.pictureBoxCerrarTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_531;
-            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(739, 10);
-            this.pictureBoxCerrarTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxCerrarTENTATIVA.Name = "pictureBoxCerrarTENTATIVA";
-            this.pictureBoxCerrarTENTATIVA.Size = new System.Drawing.Size(27, 29);
-            this.pictureBoxCerrarTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxCerrarTENTATIVA.TabIndex = 0;
-            this.pictureBoxCerrarTENTATIVA.TabStop = false;
-            this.pictureBoxCerrarTENTATIVA.Click += new System.EventHandler(this.pictureBoxCerrarTENTATIVA_Click);
-            // 
-            // pictureBoxLOGO1
-            // 
-            this.pictureBoxLOGO1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas2;
-            this.pictureBoxLOGO1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBoxLOGO1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxLOGO1.Name = "pictureBoxLOGO1";
-            this.pictureBoxLOGO1.Size = new System.Drawing.Size(39, 39);
-            this.pictureBoxLOGO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLOGO1.TabIndex = 3;
-            this.pictureBoxLOGO1.TabStop = false;
-            // 
-            // pictureBoxMINIMIZARTENTATIVA
-            // 
-            this.pictureBoxMINIMIZARTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_532;
-            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(710, 10);
-            this.pictureBoxMINIMIZARTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxMINIMIZARTENTATIVA.Name = "pictureBoxMINIMIZARTENTATIVA";
-            this.pictureBoxMINIMIZARTENTATIVA.Size = new System.Drawing.Size(24, 29);
-            this.pictureBoxMINIMIZARTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMINIMIZARTENTATIVA.TabIndex = 1;
-            this.pictureBoxMINIMIZARTENTATIVA.TabStop = false;
-            this.pictureBoxMINIMIZARTENTATIVA.Click += new System.EventHandler(this.pictureBoxMINIMIZARTENTATIVA_Click);
+            this.dataGridViewImageColumn1.HeaderText = "VER";
+            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // frmDistDocentes
             // 
@@ -174,13 +174,14 @@ namespace CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDistDocentes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDistDocente";
             this.panelcabeceratentativa.ResumeLayout(false);
             this.panelcabeceratentativa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCerrarTENTATIVA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLOGO1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMINIMIZARTENTATIVA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargaAcademica)).EndInit();
             this.ResumeLayout(false);
 
         }
