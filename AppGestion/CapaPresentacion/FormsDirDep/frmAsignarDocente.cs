@@ -20,6 +20,15 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             MostrarTablaHorario(CodCursoCatalogo);
+            MoverModificarColumnas();
+        }
+
+        private void MoverModificarColumnas()
+        {
+            // Modificar ancho columnas
+            dgvHorarioCurso.Columns["DIA"].Width = 100;
+            dgvHorarioCurso.Columns["HORA INICIO"].Width = 50;
+            dgvHorarioCurso.Columns["HORA FIN"].Width = 50;
         }
 
         private void MostrarTablaHorario(string CodCursoCatalogo)
