@@ -195,6 +195,9 @@ namespace CapaPresentacion
                 form.textBoxAula.Text = row.Cells["AULA"].Value.ToString();
                 form.textBoxGrupo.Text = row.Cells["GRUPO"].Value.ToString();
                 form.ShowDialog();
+
+                //Actualizar tabla catalogo
+                MostrarTablaCatalogo();
             }
         }
 

@@ -340,8 +340,8 @@ CREATE PROC SP_OBTENER_HORARIO_CURSOCATALOGO --ver horario y docente de un curso
 @CURSOCATALOGO varchar(10)
 AS
 select H.Dia as DIA, H.HoraInicio as 'HORA INICIO', H.HoraFin as'HORA FIN', H.Tipo as TIPO, 
-	case when H.Tipo = 'T' then (DT.Nombres) else (DP.Nombres) end as NOMBRE,
-	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as APELLIDO
+	case when H.Tipo = 'T' then (DT.Nombres) else (DP.Nombres) end as NOMBRES,
+	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as APELLIDOS
 from TCatalogo C
 inner join THorario H on H.IDCatalogo = C.IDCatalogo
 left join TDocente DT on DT.CodDocente = C.CodDocenteTeorico
