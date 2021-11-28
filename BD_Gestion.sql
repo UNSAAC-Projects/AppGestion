@@ -400,3 +400,28 @@ UPDATE TCatalogo SET
 WHERE CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
 	and Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
 GO
+
+--Mostrar horario de un docente
+CREATE PROC SP_HORARIO_DOCENTE
+	@CodDocente varchar(6)
+AS
+select (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre AS NOMBRE, H.Tipo AS TIPO, C.Grupo AS GRUPO, 
+	H.Dia AS DIA, H.HoraInicio AS 'HORA INICIO', H.HoraFin AS 'HORA FIN',
+	(CONVERT(int, H.HoraFin) - CONVERT(int, H.HoraInicio)) as HORAS,
+	C.Aula AS 'AULA'
+from THorario H
+inner join TCatalogo C on H.IDCatalogo = C.IDCatalogo
+inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
+where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
+(C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
+GO
+
+-- Lista docentes con sus horas de dictado
+CREATE PROC SP_DISTRIBUCION_DOCENTES
+AS
+select CodDocente as CODIGO, Nombres as NOMBRES, 
+	Apellidos as APELLIDOS, Estado as ESTADO,
+	'5' as 'HORAS DICTADO' --(actualizar)
+from TDocente
+GO
