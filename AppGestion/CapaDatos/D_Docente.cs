@@ -42,5 +42,22 @@ namespace CapaDatos
             }
         }
 
+        public DataTable ListarDistribucionDocentes()
+        {
+            DataTable table = new DataTable();
+            SqlDataReader readRows;
+            SqlCommand cmd = new SqlCommand("SP_DISTRIBUCION_DOCENTES", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            readRows = cmd.ExecuteReader();
+            table.Load(readRows);
+
+            readRows.Close();
+            conexion.Close();
+
+            return table;
+        }
+
     }
 }

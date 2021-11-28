@@ -18,5 +18,10 @@ namespace CapaNegocio
         {
             return data.RecuperarCodDocente(nombres, apellidos);
         }
+
+        public DataTable ListarDistribucionDocentes()
+        {
+            return data.ListarDistribucionDocentes();
+        }
     }
 }
