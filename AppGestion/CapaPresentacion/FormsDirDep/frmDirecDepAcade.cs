@@ -68,11 +68,10 @@ namespace CapaPresentacion
             int indexColumn = 0;
             foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
             {
-                if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                if (columna.Name != "EDITAR")
                 {
                     indexColumn++;
                     exportarCatalogo.Cells[1, indexColumn] = columna.Name;
-
                 }
             }
             int indexfila = 0;
@@ -82,7 +81,7 @@ namespace CapaPresentacion
                 indexColumn = 0;
                 foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
                 {
-                    if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                    if (columna.Name != "EDITAR")
                     {
                         indexColumn++;
                         exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
