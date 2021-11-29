@@ -15,6 +15,8 @@ namespace CapaPresentacion
         SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
         DataTable tabla = new DataTable();
         SqlDataAdapter adapter = new SqlDataAdapter();
+        N_Login oLogin = new N_Login();
+        E_Login login = new E_Login();
 
         private bool OpcionDocente;
         private bool OpcionDirEscuela;
@@ -26,7 +28,7 @@ namespace CapaPresentacion
         }
 
         #region Módulos
-        bool VerificarLogin(string usuario, string contraseña, out string mensaje)
+        bool VerificarLogin(string usuario, string contraseña, out string mensaje, out string codDocente)
         {
             //-- Verifica si se inició correctamente el login. Se guarda el mensaje en la variable "mensaje".
 
@@ -37,28 +39,34 @@ namespace CapaPresentacion
                 if (OpcionDocente) categoria = "Docente";
                 else if (OpcionDirEscuela) categoria = "DirectorEscuela";
                 else categoria = "DirectorAcademico";
+             
+                login.Usuario = usuario;
+                login.Contrasenia = contraseña;
+                login.Categoria = categoria;
 
-                N_Login oLogin = new N_Login();
+                tabla = oLogin.ObtenerDatosUsuario(login);
                 //oLogin.ObtenerNombreUsuario();
 
                 //-- Realizando consulta en la BD
-                conexion.Open();
-                string consulta = $@"
-                    SELECT * from TLogin  
-	                WHERE Usuario= '{usuario}' AND Contrasenia = '{contraseña}' and Categoria = '{categoria}'";
+                //conexion.Open();
+                //string consulta = $@"
+                //    SELECT * from TLogin  
+	               // WHERE Usuario= '{usuario}' AND Contrasenia = '{contraseña}' and Categoria = '{categoria}'";
 
-                adapter.SelectCommand = new SqlCommand(consulta, conexion);
-                adapter.Fill(tabla); //Rellenando tabla
+                //adapter.SelectCommand = new SqlCommand(consulta, conexion);
+                //adapter.Fill(tabla); //Rellenando tabla
 
                 //-- Verificando si usuario existe
                 if (tabla.Rows.Count == 1)
                 {
+                    codDocente = tabla.Rows[0]["CodDocente"].ToString();
                     mensaje = "Sesión iniciada correctamente";
                     conexion.Close();
                     return true;
                 }
                 else
                 {
+                    codDocente = "";
                     mensaje = "Usuario y/o contraseña incorrecta, intente de nuevo";
                     conexion.Close();
                     return false;
@@ -67,8 +75,8 @@ namespace CapaPresentacion
             catch (System.Exception e)
             {
                 //mensaje = e.ToString();
+                codDocente = "";
                 mensaje = "Hubo un problema en conectar con la base de datos. Intente de nuevo.";
-
                 return false;
             }
         }
@@ -179,24 +187,24 @@ namespace CapaPresentacion
         private void buttonIniciarSesion_Click(object sender, System.EventArgs e)
         {
             string mensaje;
-            
+            string codDocente;
             //Verificar si datos del login son correctos
-            if(VerificarLogin(textBoxUsuario.Text, textBoxContraseña.Text, out mensaje)) //Si inicio es correcto
+            if(VerificarLogin(textBoxUsuario.Text, textBoxContraseña.Text, out mensaje, out codDocente)) //Si inicio es correcto
             {
                 MessageBox.Show(mensaje);
 
                 //Dirigir a su formulario correspondiente
                 if (OpcionDocente)
                 {
-                    Program.SwitchMainForm(new FormDocente());
+                    Program.SwitchMainForm(new frmDocente(codDocente));
                 }
                 else if (OpcionDirEscuela)
                 {
-                   // Program.SwitchMainForm(new mainDirectorEscuela());
+                    Program.SwitchMainForm(new mainDirectorEscuela(codDocente));
                 }
                 else //DirDepartamento
                 {
-                    Program.SwitchMainForm(new frmDirecDepAcade());
+                    Program.SwitchMainForm(new frmDirecDepAcade(codDocente));
                 }
             }
             else

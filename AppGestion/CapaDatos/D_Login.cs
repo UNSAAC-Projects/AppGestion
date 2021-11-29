@@ -32,7 +32,7 @@ namespace CapaDatos
             if (tabla.Rows.Count == 1)
             {
                 nombreUsuario = tabla.Rows[0][0].ToString();
-                return CodDocente;
+                return nombreUsuario;
             }
             else
             {
