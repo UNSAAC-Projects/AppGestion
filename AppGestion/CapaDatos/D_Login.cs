@@ -39,5 +39,23 @@ namespace CapaDatos
                 return null;
             }
         }
+
+        public DataTable ObtenerDatosUsuario(E_Login login)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_OBTENER_DATOSUSUARIO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@Usuario", login.Usuario);
+            cmd.Parameters.AddWithValue("@Contrasenia", login.Contrasenia);
+            cmd.Parameters.AddWithValue("@Categoria", login.Categoria);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            conexion.Close();
+
+            return tabla;
+        }
     }
 }

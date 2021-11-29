@@ -4,7 +4,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Runtime.InteropServices; //Para usar librerias nativas del sistema operativo (dll)(can drag form)
-
+using CapaNegocio;
+using CapaEntidades;
 
 namespace CapaPresentacion
 {
@@ -36,6 +37,9 @@ namespace CapaPresentacion
                 if (OpcionDocente) categoria = "Docente";
                 else if (OpcionDirEscuela) categoria = "DirectorEscuela";
                 else categoria = "DirectorAcademico";
+
+                N_Login oLogin = new N_Login();
+                //oLogin.ObtenerNombreUsuario();
 
                 //-- Realizando consulta en la BD
                 conexion.Open();
@@ -188,7 +192,7 @@ namespace CapaPresentacion
                 }
                 else if (OpcionDirEscuela)
                 {
-                    Program.SwitchMainForm(new mainDirectorEscuela());
+                   // Program.SwitchMainForm(new mainDirectorEscuela());
                 }
                 else //DirDepartamento
                 {
