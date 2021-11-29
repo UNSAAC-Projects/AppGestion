@@ -93,7 +93,8 @@ CREATE TABLE TAsistencia
 	Tipo varchar(100),
 	IDHorario INT IDENTITY,
 	PRIMARY KEY (IDAsistencia),
-	FOREIGN KEY (IDHorario) REFERENCES THorario
+	FOREIGN KEY (IDHorario) REFERENCES THorario,
+	--DELETE ON CASCADE
 )
 GO
 
@@ -451,4 +452,37 @@ select CodDocente as CODIGO, Nombres as NOMBRES,
 	Apellidos as APELLIDOS, TituloAcademico as 'TITULO ACADEMICO',
 	Estado as ESTADO
 from TDocente
+GO
+
+-- Obtener el nombre de un docente
+CREATE PROC SP_OBTENER_NOMBREUSUARIO
+	@CodDocente varchar(6)
+AS
+select (Nombres + ' ' + Apellidos) as 'NOMBRE USUARIO'
+from TDocente
+where CodDocente = @CodDocente
+GO
+
+-- Crear nueva ID
+CREATE FUNCTION NuevoCatalogo()
+RETURNS varchar(6)
+AS
+BEGIN
+	declare @Codigo varchar(4)
+	
+	set @Codigo=((select MAX(IDCatalogo)  from TCatalogo))
+	set @Codigo='C' + RIGHT('000' + LTRIM(right(isnull(@Codigo,'000'),3)+1 ),3)
+   RETURN (@codigo)
+END
+GO
+
+-- Obtener los datos de un usuario
+CREATE PROC SP_OBTENER_DATOSUSUARIO
+	@Usuario varchar(60), 
+	@Contrasenia varchar(60),
+	@Categoria varchar(100)
+AS
+select * 
+from TLogin
+where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
