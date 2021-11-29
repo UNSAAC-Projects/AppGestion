@@ -16,10 +16,32 @@ namespace CapaPresentacion
 {
     public partial class frmAsignarDocente : Form
     {
+        string nombreDocenteP, apellidoDocenteP;
+        string nombreDocenteT, apellidoDocenteT;
+
         public frmAsignarDocente(string CodCursoCatalogo ) //Ex: IF345AIN
         {
             InitializeComponent();
             MostrarTablaHorario(CodCursoCatalogo);
+            MoverModificarColumnas();
+        }
+
+        private void MoverModificarColumnas()
+        {
+            // Modificar ancho columnas
+            dgvHorarioCurso.Columns["DIA"].Width = 100;
+            dgvHorarioCurso.Columns["HORA INICIO"].Width = 70;
+            dgvHorarioCurso.Columns["HORA FIN"].Width = 60;
+            dgvHorarioCurso.Columns["TIPO"].Width = 50;
+            dgvHorarioCurso.Columns["NOMBRES"].Width = 150;
+
+            //Inhabilitar columnas (onlyread)
+            //dgvHorarioCurso.Columns[""]
+            dgvHorarioCurso.Columns["DIA"].ReadOnly = true;
+            dgvHorarioCurso.Columns["HORA INICIO"].ReadOnly = true;
+            dgvHorarioCurso.Columns["HORA FIN"].ReadOnly = true;
+            dgvHorarioCurso.Columns["TIPO"].ReadOnly = true;
+
         }
 
         private void MostrarTablaHorario(string CodCursoCatalogo)
@@ -59,5 +81,67 @@ namespace CapaPresentacion
         }
         #endregion
 
+        private void dgvHorarioCurso_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+             * DataGridViewRow row = dgvCatalogo.Rows[e.RowIndex];
+            if (row.Cells["EDITAR"].Selected)
+             */
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            //Definiendo variables
+            string codCurso, nombreCurso, tipo;
+            string codDocente, nombresDocente, apellidosDocente;
+            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+            N_Docente oDocente = new N_Docente();
+
+            //Recorrer filas del dgvCatalogo
+            foreach (DataGridViewRow row in dgvHorarioCurso.Rows)
+            {
+                //Recuperar codigo del curso (ex: IF340AIN)
+                //codCurso = row.Cells["CODIGO"].Value.ToString();
+                codCurso = textBoxCodigo.Text;
+
+                //Verificar si existe codigo del curso
+                if (oCursoCatalogo.ExisteCursoCatalogo(codCurso)) //Si existe curso
+                {
+                    //Recuperar nombres y apellidos del docente
+                    nombresDocente = row.Cells["NOMBRES"].Value.ToString();
+                    apellidosDocente = row.Cells["APELLIDOS"].Value.ToString();
+
+                    //Recuperar el tipo de curso
+                    tipo = row.Cells["TIPO"].Value.ToString();
+
+                    //Recuperar código del docente
+                    codDocente = oDocente.RecuperarCodDocente(nombresDocente, apellidosDocente);
+                    if (codDocente != null) //Si codDocente existe
+                    {
+                        //Verificar si es docente teorico o práctico
+                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, codDocente);
+                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, codDocente);
+                    }
+                    else //Si codDocente no existe
+                    {
+                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, "");   // "" vacio que se convertira a NULL
+                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, "");   // "" vacio que se convertira a NULL
+                        MessageBox.Show($"El docente {nombresDocente} {apellidosDocente} no se encuentra registrado. Verifique si sus datos están correctos.", "Alerta");
+                        return; //Cancelar operacion
+                    }
+                }
+                else  // No existe curso
+                {
+                    //Recuperar nombre del curso
+                    nombreCurso = textBoxCurso.Text;
+                    MessageBox.Show($"El curso {codCurso} - {nombreCurso} no se encuentra registrado en el catálogo.");
+                    return; //Cancelar operacion
+                }
+            }
+
+            //Mensaje de confirmación
+            MessageBox.Show("Asignado correctamente", "Mensaje de confirmación");
+            Close(); //Cerrar formulario.
+        }
     }
 }

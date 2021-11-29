@@ -51,5 +51,20 @@ namespace CapaNegocio
         {
             return data.MostrarHorarioCurso(CodCursoCatalogo); 
         }
+
+        public bool ExisteCursoCatalogo(string CodCursoCatalogo)
+        {
+            return data.ExisteCursoCatalogo(CodCursoCatalogo);
+        }
+
+        public void EditarDocenteTeorico(string CodCursoCatalogo, string CodDocenteT)
+        {
+            data.EditarDocenteTeorico(CodCursoCatalogo, CodDocenteT);
+        }
+
+        public void EditarDocentePractico(string CodCursoCatalogo, string CodDocenteP)
+        {
+            data.EditarDocentePractico(CodCursoCatalogo, CodDocenteP);
+        }
     }
 }

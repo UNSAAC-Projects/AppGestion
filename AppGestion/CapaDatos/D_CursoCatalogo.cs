@@ -142,7 +142,59 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+        // Verificar si existe un curso del catalogo
+        public bool ExisteCursoCatalogo(string CodCursoCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_EXISTE_CURSOCATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
 
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
 
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            bool existeCod = false;
+            //-- Verificando si CodCursoCatalogo existe
+            if (tabla.Rows.Count == 1) existeCod = true;
+            conexion.Close();
+            return existeCod;
+        }
+
+        // Editar el codigo de un docente Teorico en el catálogo
+        public void EditarDocenteTeorico(string CodCursoCatalogo, string CodDocenteT)
+        {
+            SqlCommand cmd = new SqlCommand("SP_EDITAR_DOCENTETEORICO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
+
+            if (CodDocenteT != "") //Si no es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocenteTeorico", CodDocenteT);
+            else //Si es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocenteTeorico", DBNull.Value); //Pasando NULL como parametro
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        // Editar el codigo de un docente Práctico en el catálogo
+        public void EditarDocentePractico(string CodCursoCatalogo, string CodDocenteP)
+        {
+            SqlCommand cmd = new SqlCommand("SP_EDITAR_DOCENTEPRACTICO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", CodCursoCatalogo);
+            if(CodDocenteP != "") //Si no es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocentePractico", CodDocenteP);
+            else //Si es una cadena vacia
+                cmd.Parameters.AddWithValue("@CodDocentePractico", DBNull.Value); //Pasando NULL como parametro
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+        
     }
 }

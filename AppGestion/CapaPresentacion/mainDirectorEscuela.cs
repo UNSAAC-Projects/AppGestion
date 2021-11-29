@@ -174,5 +174,22 @@ namespace CapaPresentacion
             frmVistaCatalogo frm = new frmVistaCatalogo();
             frm.ShowDialog();
         }
+
+        private void pictureMaxDirectorEscuela_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }
