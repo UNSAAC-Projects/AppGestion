@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
 using CapaEntidades;
+using System.Runtime.InteropServices;
 
 
 namespace CapaPresentacion
@@ -24,40 +25,6 @@ namespace CapaPresentacion
         public EditCatalogo()
         {
             InitializeComponent();
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuFlatButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -174,19 +141,9 @@ namespace CapaPresentacion
             
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pictureCancelAsignaturas_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void pictureMinAsignaturas_Click(object sender, EventArgs e)
@@ -194,10 +151,18 @@ namespace CapaPresentacion
             WindowState = FormWindowState.Minimized;
         }
 
-        private void pictureBoxLogo_Click(object sender, EventArgs e)
+        #region Procedure to drag form
+        //Añadir using System.Runtime.InteropServices para usar
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWind, int wMsg, int wParam, int lParam);
+        private void panelTitle_MouseDown(object sender, MouseEventArgs e)
         {
-
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        #endregion
 
         /*private void BtnCancelarEditAsignatura_Click(object sender, EventArgs e)
         {

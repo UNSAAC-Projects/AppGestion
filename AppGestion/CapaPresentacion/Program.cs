@@ -21,7 +21,7 @@ namespace CapaPresentacion
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //
-            AppContext = new ApplicationContext(new frmDirecDepAcade());
+            AppContext = new ApplicationContext(new mainDirectorEscuela());
             Application.Run(AppContext);
         }
 

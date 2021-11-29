@@ -62,7 +62,9 @@ namespace CapaPresentacion
             }
             catch (System.Exception e)
             {
-                mensaje = e.ToString();
+                //mensaje = e.ToString();
+                mensaje = "Hubo un problema en conectar con la base de datos. Intente de nuevo.";
+
                 return false;
             }
         }
