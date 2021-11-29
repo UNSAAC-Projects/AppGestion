@@ -199,6 +199,10 @@ namespace CapaPresentacion
 
         }
 
-      
+        /*private void BtnCancelarEditAsignatura_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea cancelar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) Close(); //Cerrar ventana
+        }*/
     }
 }

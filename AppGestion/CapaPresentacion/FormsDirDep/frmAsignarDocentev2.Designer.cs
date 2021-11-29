@@ -29,7 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsignarDocente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsignarDocentev2));
             this.labelCodigo = new System.Windows.Forms.Label();
             this.labelCurso = new System.Windows.Forms.Label();
             this.labelCreditos = new System.Windows.Forms.Label();
@@ -92,10 +92,10 @@ namespace CapaPresentacion
             this.labelCodigo.AutoSize = true;
             this.labelCodigo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelCodigo.Location = new System.Drawing.Point(49, 52);
+            this.labelCodigo.Location = new System.Drawing.Point(49, 67);
             this.labelCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(80, 20);
+            this.labelCodigo.Size = new System.Drawing.Size(100, 22);
             this.labelCodigo.TabIndex = 0;
             this.labelCodigo.Text = "CÓDIGO:";
             // 
@@ -104,9 +104,9 @@ namespace CapaPresentacion
             this.labelCurso.AutoSize = true;
             this.labelCurso.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCurso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelCurso.Location = new System.Drawing.Point(245, 52);
+            this.labelCurso.Location = new System.Drawing.Point(245, 67);
             this.labelCurso.Name = "labelCurso";
-            this.labelCurso.Size = new System.Drawing.Size(164, 20);
+            this.labelCurso.Size = new System.Drawing.Size(204, 22);
             this.labelCurso.TabIndex = 1;
             this.labelCurso.Text = "NOMBRE DEL CURSO:";
             // 
@@ -115,9 +115,9 @@ namespace CapaPresentacion
             this.labelCreditos.AutoSize = true;
             this.labelCreditos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCreditos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelCreditos.Location = new System.Drawing.Point(50, 188);
+            this.labelCreditos.Location = new System.Drawing.Point(452, 158);
             this.labelCreditos.Name = "labelCreditos";
-            this.labelCreditos.Size = new System.Drawing.Size(83, 20);
+            this.labelCreditos.Size = new System.Drawing.Size(105, 22);
             this.labelCreditos.TabIndex = 2;
             this.labelCreditos.Text = "CRÉDITOS:";
             // 
@@ -126,9 +126,9 @@ namespace CapaPresentacion
             this.labelTipo.AutoSize = true;
             this.labelTipo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTipo.ForeColor = System.Drawing.Color.Gray;
-            this.labelTipo.Location = new System.Drawing.Point(266, 307);
+            this.labelTipo.Location = new System.Drawing.Point(328, 298);
             this.labelTipo.Name = "labelTipo";
-            this.labelTipo.Size = new System.Drawing.Size(41, 20);
+            this.labelTipo.Size = new System.Drawing.Size(51, 22);
             this.labelTipo.TabIndex = 3;
             this.labelTipo.Text = "TIPO";
             // 
@@ -137,9 +137,9 @@ namespace CapaPresentacion
             this.labelGrupo.AutoSize = true;
             this.labelGrupo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGrupo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelGrupo.Location = new System.Drawing.Point(517, 188);
+            this.labelGrupo.Location = new System.Drawing.Point(770, 158);
             this.labelGrupo.Name = "labelGrupo";
-            this.labelGrupo.Size = new System.Drawing.Size(68, 20);
+            this.labelGrupo.Size = new System.Drawing.Size(84, 22);
             this.labelGrupo.TabIndex = 4;
             this.labelGrupo.Text = "GRUPO:";
             // 
@@ -148,9 +148,9 @@ namespace CapaPresentacion
             this.labelHT.AutoSize = true;
             this.labelHT.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelHT.Location = new System.Drawing.Point(49, 121);
+            this.labelHT.Location = new System.Drawing.Point(45, 158);
             this.labelHT.Name = "labelHT";
-            this.labelHT.Size = new System.Drawing.Size(137, 20);
+            this.labelHT.Size = new System.Drawing.Size(177, 22);
             this.labelHT.TabIndex = 5;
             this.labelHT.Text = "HORAS TEÓRICAS:";
             // 
@@ -159,9 +159,9 @@ namespace CapaPresentacion
             this.labelHP.AutoSize = true;
             this.labelHP.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelHP.Location = new System.Drawing.Point(283, 121);
+            this.labelHP.Location = new System.Drawing.Point(240, 158);
             this.labelHP.Name = "labelHP";
-            this.labelHP.Size = new System.Drawing.Size(148, 20);
+            this.labelHP.Size = new System.Drawing.Size(191, 22);
             this.labelHP.TabIndex = 6;
             this.labelHP.Text = "HORAS PRÁCTICAS:";
             // 
@@ -170,9 +170,9 @@ namespace CapaPresentacion
             this.labelDia.AutoSize = true;
             this.labelDia.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDia.ForeColor = System.Drawing.Color.Gray;
-            this.labelDia.Location = new System.Drawing.Point(55, 307);
+            this.labelDia.Location = new System.Drawing.Point(117, 298);
             this.labelDia.Name = "labelDia";
-            this.labelDia.Size = new System.Drawing.Size(36, 20);
+            this.labelDia.Size = new System.Drawing.Size(44, 22);
             this.labelDia.TabIndex = 7;
             this.labelDia.Text = "DÍA";
             // 
@@ -181,9 +181,9 @@ namespace CapaPresentacion
             this.labelHoraInicio.AutoSize = true;
             this.labelHoraInicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHoraInicio.ForeColor = System.Drawing.Color.Gray;
-            this.labelHoraInicio.Location = new System.Drawing.Point(127, 297);
+            this.labelHoraInicio.Location = new System.Drawing.Point(189, 288);
             this.labelHoraInicio.Name = "labelHoraInicio";
-            this.labelHoraInicio.Size = new System.Drawing.Size(60, 40);
+            this.labelHoraInicio.Size = new System.Drawing.Size(77, 44);
             this.labelHoraInicio.TabIndex = 8;
             this.labelHoraInicio.Text = " HORA \r\nINICIO";
             // 
@@ -192,9 +192,9 @@ namespace CapaPresentacion
             this.labelHoraFin.AutoSize = true;
             this.labelHoraFin.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHoraFin.ForeColor = System.Drawing.Color.Gray;
-            this.labelHoraFin.Location = new System.Drawing.Point(200, 297);
+            this.labelHoraFin.Location = new System.Drawing.Point(262, 288);
             this.labelHoraFin.Name = "labelHoraFin";
-            this.labelHoraFin.Size = new System.Drawing.Size(52, 40);
+            this.labelHoraFin.Size = new System.Drawing.Size(67, 44);
             this.labelHoraFin.TabIndex = 9;
             this.labelHoraFin.Text = "HORA\r\n  FIN";
             // 
@@ -203,9 +203,9 @@ namespace CapaPresentacion
             this.labelAula.AutoSize = true;
             this.labelAula.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.labelAula.Location = new System.Drawing.Point(281, 188);
+            this.labelAula.Location = new System.Drawing.Point(615, 158);
             this.labelAula.Name = "labelAula";
-            this.labelAula.Size = new System.Drawing.Size(53, 20);
+            this.labelAula.Size = new System.Drawing.Size(66, 22);
             this.labelAula.TabIndex = 10;
             this.labelAula.Text = "AULA:";
             // 
@@ -214,9 +214,9 @@ namespace CapaPresentacion
             this.labelDocente.AutoSize = true;
             this.labelDocente.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDocente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
-            this.labelDocente.Location = new System.Drawing.Point(528, 265);
+            this.labelDocente.Location = new System.Drawing.Point(609, 258);
             this.labelDocente.Name = "labelDocente";
-            this.labelDocente.Size = new System.Drawing.Size(77, 18);
+            this.labelDocente.Size = new System.Drawing.Size(96, 23);
             this.labelDocente.TabIndex = 9;
             this.labelDocente.Text = "DOCENTE";
             // 
@@ -231,7 +231,7 @@ namespace CapaPresentacion
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(781, 39);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(932, 41);
             this.panelBarraTitulo.TabIndex = 11;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
@@ -248,10 +248,10 @@ namespace CapaPresentacion
             // pictureBoxMinimizar
             // 
             this.pictureBoxMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMinimizar.Image")));
-            this.pictureBoxMinimizar.Location = new System.Drawing.Point(698, 6);
+            this.pictureBoxMinimizar.Location = new System.Drawing.Point(855, 3);
             this.pictureBoxMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxMinimizar.Name = "pictureBoxMinimizar";
-            this.pictureBoxMinimizar.Size = new System.Drawing.Size(31, 28);
+            this.pictureBoxMinimizar.Size = new System.Drawing.Size(35, 32);
             this.pictureBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMinimizar.TabIndex = 52;
             this.pictureBoxMinimizar.TabStop = false;
@@ -260,10 +260,10 @@ namespace CapaPresentacion
             // pictureBoxCerrar
             // 
             this.pictureBoxCerrar.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCerrar.Image")));
-            this.pictureBoxCerrar.Location = new System.Drawing.Point(734, 6);
+            this.pictureBoxCerrar.Location = new System.Drawing.Point(891, 3);
             this.pictureBoxCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCerrar.Name = "pictureBoxCerrar";
-            this.pictureBoxCerrar.Size = new System.Drawing.Size(31, 28);
+            this.pictureBoxCerrar.Size = new System.Drawing.Size(35, 32);
             this.pictureBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCerrar.TabIndex = 53;
             this.pictureBoxCerrar.TabStop = false;
@@ -274,123 +274,123 @@ namespace CapaPresentacion
             this.labelTitulo.AutoSize = true;
             this.labelTitulo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelTitulo.Location = new System.Drawing.Point(38, 8);
+            this.labelTitulo.Location = new System.Drawing.Point(37, 3);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(234, 22);
+            this.labelTitulo.Size = new System.Drawing.Size(305, 30);
             this.labelTitulo.TabIndex = 31;
             this.labelTitulo.Text = "Asignación de docentes";
             // 
             // textBoxCodigo
             // 
             this.textBoxCodigo.Enabled = false;
-            this.textBoxCodigo.Location = new System.Drawing.Point(49, 82);
+            this.textBoxCodigo.Location = new System.Drawing.Point(49, 97);
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(100, 23);
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 27);
             this.textBoxCodigo.TabIndex = 12;
             // 
             // textBoxCurso
             // 
             this.textBoxCurso.Enabled = false;
-            this.textBoxCurso.Location = new System.Drawing.Point(244, 82);
+            this.textBoxCurso.Location = new System.Drawing.Point(244, 97);
             this.textBoxCurso.Name = "textBoxCurso";
-            this.textBoxCurso.Size = new System.Drawing.Size(483, 23);
+            this.textBoxCurso.Size = new System.Drawing.Size(630, 27);
             this.textBoxCurso.TabIndex = 12;
             // 
             // textBoxCreditos
             // 
             this.textBoxCreditos.Enabled = false;
-            this.textBoxCreditos.Location = new System.Drawing.Point(50, 216);
+            this.textBoxCreditos.Location = new System.Drawing.Point(457, 192);
             this.textBoxCreditos.Name = "textBoxCreditos";
-            this.textBoxCreditos.Size = new System.Drawing.Size(100, 23);
+            this.textBoxCreditos.Size = new System.Drawing.Size(100, 27);
             this.textBoxCreditos.TabIndex = 12;
             // 
             // textBoxAula
             // 
             this.textBoxAula.Enabled = false;
-            this.textBoxAula.Location = new System.Drawing.Point(281, 216);
+            this.textBoxAula.Location = new System.Drawing.Point(619, 192);
             this.textBoxAula.Name = "textBoxAula";
-            this.textBoxAula.Size = new System.Drawing.Size(100, 23);
+            this.textBoxAula.Size = new System.Drawing.Size(100, 27);
             this.textBoxAula.TabIndex = 12;
             // 
             // textBoxHT
             // 
             this.textBoxHT.Enabled = false;
-            this.textBoxHT.Location = new System.Drawing.Point(49, 149);
+            this.textBoxHT.Location = new System.Drawing.Point(49, 192);
             this.textBoxHT.Name = "textBoxHT";
-            this.textBoxHT.Size = new System.Drawing.Size(100, 23);
+            this.textBoxHT.Size = new System.Drawing.Size(100, 27);
             this.textBoxHT.TabIndex = 12;
             // 
             // textBoxHP
             // 
             this.textBoxHP.Enabled = false;
-            this.textBoxHP.Location = new System.Drawing.Point(283, 149);
+            this.textBoxHP.Location = new System.Drawing.Point(244, 192);
             this.textBoxHP.Name = "textBoxHP";
-            this.textBoxHP.Size = new System.Drawing.Size(100, 23);
+            this.textBoxHP.Size = new System.Drawing.Size(100, 27);
             this.textBoxHP.TabIndex = 12;
             // 
             // textBoxDia1
             // 
             this.textBoxDia1.Enabled = false;
-            this.textBoxDia1.Location = new System.Drawing.Point(32, 363);
+            this.textBoxDia1.Location = new System.Drawing.Point(94, 354);
             this.textBoxDia1.Name = "textBoxDia1";
-            this.textBoxDia1.Size = new System.Drawing.Size(85, 23);
+            this.textBoxDia1.Size = new System.Drawing.Size(85, 27);
             this.textBoxDia1.TabIndex = 12;
             // 
             // textBoxHoraInicio1
             // 
             this.textBoxHoraInicio1.Enabled = false;
-            this.textBoxHoraInicio1.Location = new System.Drawing.Point(131, 363);
+            this.textBoxHoraInicio1.Location = new System.Drawing.Point(193, 354);
             this.textBoxHoraInicio1.Name = "textBoxHoraInicio1";
-            this.textBoxHoraInicio1.Size = new System.Drawing.Size(50, 23);
+            this.textBoxHoraInicio1.Size = new System.Drawing.Size(50, 27);
             this.textBoxHoraInicio1.TabIndex = 12;
             // 
             // textBoxHoraInicio2
             // 
             this.textBoxHoraInicio2.Enabled = false;
-            this.textBoxHoraInicio2.Location = new System.Drawing.Point(130, 402);
+            this.textBoxHoraInicio2.Location = new System.Drawing.Point(192, 393);
             this.textBoxHoraInicio2.Name = "textBoxHoraInicio2";
-            this.textBoxHoraInicio2.Size = new System.Drawing.Size(51, 23);
+            this.textBoxHoraInicio2.Size = new System.Drawing.Size(51, 27);
             this.textBoxHoraInicio2.TabIndex = 12;
             // 
             // textBoxHoraInicio3
             // 
             this.textBoxHoraInicio3.Enabled = false;
-            this.textBoxHoraInicio3.Location = new System.Drawing.Point(131, 439);
+            this.textBoxHoraInicio3.Location = new System.Drawing.Point(193, 430);
             this.textBoxHoraInicio3.Name = "textBoxHoraInicio3";
-            this.textBoxHoraInicio3.Size = new System.Drawing.Size(50, 23);
+            this.textBoxHoraInicio3.Size = new System.Drawing.Size(50, 27);
             this.textBoxHoraInicio3.TabIndex = 12;
             // 
             // textBoxDocente1
             // 
             this.textBoxDocente1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxDocente1.Location = new System.Drawing.Point(343, 363);
+            this.textBoxDocente1.Location = new System.Drawing.Point(424, 356);
             this.textBoxDocente1.Name = "textBoxDocente1";
-            this.textBoxDocente1.Size = new System.Drawing.Size(179, 23);
+            this.textBoxDocente1.Size = new System.Drawing.Size(179, 27);
             this.textBoxDocente1.TabIndex = 12;
             // 
             // textBoxDocente3
             // 
             this.textBoxDocente3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxDocente3.Location = new System.Drawing.Point(343, 439);
+            this.textBoxDocente3.Location = new System.Drawing.Point(424, 432);
             this.textBoxDocente3.Name = "textBoxDocente3";
-            this.textBoxDocente3.Size = new System.Drawing.Size(179, 23);
+            this.textBoxDocente3.Size = new System.Drawing.Size(179, 27);
             this.textBoxDocente3.TabIndex = 13;
             // 
             // textBoxDocente2
             // 
             this.textBoxDocente2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxDocente2.Location = new System.Drawing.Point(343, 400);
+            this.textBoxDocente2.Location = new System.Drawing.Point(424, 393);
             this.textBoxDocente2.Name = "textBoxDocente2";
-            this.textBoxDocente2.Size = new System.Drawing.Size(179, 23);
+            this.textBoxDocente2.Size = new System.Drawing.Size(179, 27);
             this.textBoxDocente2.TabIndex = 14;
             // 
             // textBoxGrupo
             // 
             this.textBoxGrupo.Enabled = false;
-            this.textBoxGrupo.Location = new System.Drawing.Point(517, 216);
+            this.textBoxGrupo.Location = new System.Drawing.Point(774, 192);
             this.textBoxGrupo.Name = "textBoxGrupo";
-            this.textBoxGrupo.Size = new System.Drawing.Size(100, 23);
+            this.textBoxGrupo.Size = new System.Drawing.Size(100, 27);
             this.textBoxGrupo.TabIndex = 15;
             // 
             // labelHorario
@@ -398,16 +398,16 @@ namespace CapaPresentacion
             this.labelHorario.AutoSize = true;
             this.labelHorario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
-            this.labelHorario.Location = new System.Drawing.Point(147, 264);
+            this.labelHorario.Location = new System.Drawing.Point(209, 255);
             this.labelHorario.Name = "labelHorario";
-            this.labelHorario.Size = new System.Drawing.Size(80, 19);
+            this.labelHorario.Size = new System.Drawing.Size(103, 23);
             this.labelHorario.TabIndex = 16;
             this.labelHorario.Text = "HORARIO";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(36, 294);
+            this.panel2.Location = new System.Drawing.Point(98, 285);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(280, 2);
@@ -416,71 +416,71 @@ namespace CapaPresentacion
             // textBoxDia2
             // 
             this.textBoxDia2.Enabled = false;
-            this.textBoxDia2.Location = new System.Drawing.Point(32, 402);
+            this.textBoxDia2.Location = new System.Drawing.Point(94, 393);
             this.textBoxDia2.Name = "textBoxDia2";
-            this.textBoxDia2.Size = new System.Drawing.Size(85, 23);
+            this.textBoxDia2.Size = new System.Drawing.Size(85, 27);
             this.textBoxDia2.TabIndex = 53;
             // 
             // textBoxDia3
             // 
             this.textBoxDia3.Enabled = false;
-            this.textBoxDia3.Location = new System.Drawing.Point(32, 439);
+            this.textBoxDia3.Location = new System.Drawing.Point(94, 430);
             this.textBoxDia3.Name = "textBoxDia3";
-            this.textBoxDia3.Size = new System.Drawing.Size(85, 23);
+            this.textBoxDia3.Size = new System.Drawing.Size(85, 27);
             this.textBoxDia3.TabIndex = 53;
             // 
             // textBoxHoraFin3
             // 
             this.textBoxHoraFin3.Enabled = false;
-            this.textBoxHoraFin3.Location = new System.Drawing.Point(197, 439);
+            this.textBoxHoraFin3.Location = new System.Drawing.Point(259, 430);
             this.textBoxHoraFin3.Name = "textBoxHoraFin3";
-            this.textBoxHoraFin3.Size = new System.Drawing.Size(50, 23);
+            this.textBoxHoraFin3.Size = new System.Drawing.Size(50, 27);
             this.textBoxHoraFin3.TabIndex = 12;
             // 
             // textBoxHoraFin2
             // 
             this.textBoxHoraFin2.Enabled = false;
-            this.textBoxHoraFin2.Location = new System.Drawing.Point(196, 402);
+            this.textBoxHoraFin2.Location = new System.Drawing.Point(258, 393);
             this.textBoxHoraFin2.Name = "textBoxHoraFin2";
-            this.textBoxHoraFin2.Size = new System.Drawing.Size(51, 23);
+            this.textBoxHoraFin2.Size = new System.Drawing.Size(51, 27);
             this.textBoxHoraFin2.TabIndex = 12;
             // 
             // textBoxHoraFin1
             // 
             this.textBoxHoraFin1.Enabled = false;
-            this.textBoxHoraFin1.Location = new System.Drawing.Point(197, 363);
+            this.textBoxHoraFin1.Location = new System.Drawing.Point(259, 354);
             this.textBoxHoraFin1.Name = "textBoxHoraFin1";
-            this.textBoxHoraFin1.Size = new System.Drawing.Size(50, 23);
+            this.textBoxHoraFin1.Size = new System.Drawing.Size(50, 27);
             this.textBoxHoraFin1.TabIndex = 12;
             // 
             // textBoxTipo1
             // 
             this.textBoxTipo1.Enabled = false;
-            this.textBoxTipo1.Location = new System.Drawing.Point(262, 363);
+            this.textBoxTipo1.Location = new System.Drawing.Point(324, 354);
             this.textBoxTipo1.Name = "textBoxTipo1";
-            this.textBoxTipo1.Size = new System.Drawing.Size(50, 23);
+            this.textBoxTipo1.Size = new System.Drawing.Size(50, 27);
             this.textBoxTipo1.TabIndex = 54;
             // 
             // textBoxTipo2
             // 
             this.textBoxTipo2.Enabled = false;
-            this.textBoxTipo2.Location = new System.Drawing.Point(262, 402);
+            this.textBoxTipo2.Location = new System.Drawing.Point(324, 393);
             this.textBoxTipo2.Name = "textBoxTipo2";
-            this.textBoxTipo2.Size = new System.Drawing.Size(51, 23);
+            this.textBoxTipo2.Size = new System.Drawing.Size(51, 27);
             this.textBoxTipo2.TabIndex = 55;
             // 
             // textBoxTipo3
             // 
             this.textBoxTipo3.Enabled = false;
-            this.textBoxTipo3.Location = new System.Drawing.Point(262, 439);
+            this.textBoxTipo3.Location = new System.Drawing.Point(324, 430);
             this.textBoxTipo3.Name = "textBoxTipo3";
-            this.textBoxTipo3.Size = new System.Drawing.Size(50, 23);
+            this.textBoxTipo3.Size = new System.Drawing.Size(50, 27);
             this.textBoxTipo3.TabIndex = 56;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Location = new System.Drawing.Point(35, 340);
+            this.panel3.Location = new System.Drawing.Point(97, 331);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(280, 2);
@@ -492,7 +492,7 @@ namespace CapaPresentacion
             this.buttonGuardar.FlatAppearance.BorderSize = 0;
             this.buttonGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGuardar.ForeColor = System.Drawing.Color.White;
-            this.buttonGuardar.Location = new System.Drawing.Point(577, 484);
+            this.buttonGuardar.Location = new System.Drawing.Point(687, 502);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(152, 33);
             this.buttonGuardar.TabIndex = 58;
@@ -505,7 +505,7 @@ namespace CapaPresentacion
             this.buttonCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonCancelar.Location = new System.Drawing.Point(408, 484);
+            this.buttonCancelar.Location = new System.Drawing.Point(545, 502);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(136, 33);
             this.buttonCancelar.TabIndex = 58;
@@ -516,25 +516,25 @@ namespace CapaPresentacion
             // textBox1
             // 
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(535, 363);
+            this.textBox1.Location = new System.Drawing.Point(616, 356);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 23);
+            this.textBox1.Size = new System.Drawing.Size(225, 27);
             this.textBox1.TabIndex = 12;
             // 
             // textBox2
             // 
             this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(535, 439);
+            this.textBox2.Location = new System.Drawing.Point(616, 432);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 23);
+            this.textBox2.Size = new System.Drawing.Size(225, 27);
             this.textBox2.TabIndex = 13;
             // 
             // textBox3
             // 
             this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Location = new System.Drawing.Point(535, 400);
+            this.textBox3.Location = new System.Drawing.Point(616, 393);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 23);
+            this.textBox3.Size = new System.Drawing.Size(225, 27);
             this.textBox3.TabIndex = 14;
             // 
             // label1
@@ -542,9 +542,9 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(404, 307);
+            this.label1.Location = new System.Drawing.Point(485, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(100, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "NOMBRES";
             // 
@@ -553,16 +553,16 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(597, 307);
+            this.label2.Location = new System.Drawing.Point(678, 300);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(109, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "APELLIDOS";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(363, 340);
+            this.panel1.Location = new System.Drawing.Point(444, 333);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(370, 2);
@@ -571,18 +571,18 @@ namespace CapaPresentacion
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(364, 294);
+            this.panel4.Location = new System.Drawing.Point(445, 287);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(370, 2);
             this.panel4.TabIndex = 59;
             // 
-            // frmAsignarDocente
+            // frmAsignarDocentev2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(781, 535);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(932, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.buttonCancelar);
@@ -634,7 +634,7 @@ namespace CapaPresentacion
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmAsignarDocente";
+            this.Name = "frmAsignarDocentev2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAsignarDocente";
             this.panelBarraTitulo.ResumeLayout(false);

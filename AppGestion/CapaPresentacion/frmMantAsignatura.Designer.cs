@@ -67,88 +67,95 @@ namespace CapaPresentacion
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label13.Location = new System.Drawing.Point(92, 82);
+            this.label13.Location = new System.Drawing.Point(77, 82);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label13.Size = new System.Drawing.Size(172, 21);
+            this.label13.Size = new System.Drawing.Size(195, 23);
             this.label13.TabIndex = 45;
             this.label13.Text = "COD ASIGNATURA:";
             // 
             // textCodAsignatura
             // 
-            this.textCodAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCodAsignatura.Location = new System.Drawing.Point(303, 78);
+            this.textCodAsignatura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textCodAsignatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCodAsignatura.Location = new System.Drawing.Point(306, 84);
             this.textCodAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCodAsignatura.Name = "textCodAsignatura";
-            this.textCodAsignatura.Size = new System.Drawing.Size(229, 27);
+            this.textCodAsignatura.Size = new System.Drawing.Size(229, 24);
             this.textCodAsignatura.TabIndex = 46;
             // 
             // textNombre
             // 
-            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombre.Location = new System.Drawing.Point(306, 162);
+            this.textNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombre.Location = new System.Drawing.Point(306, 165);
             this.textNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNombre.Name = "textNombre";
-            this.textNombre.Size = new System.Drawing.Size(582, 27);
+            this.textNombre.Size = new System.Drawing.Size(582, 24);
             this.textNombre.TabIndex = 48;
             // 
             // textIDPlan
             // 
-            this.textIDPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textIDPlan.Location = new System.Drawing.Point(691, 78);
+            this.textIDPlan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIDPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textIDPlan.Location = new System.Drawing.Point(694, 84);
             this.textIDPlan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textIDPlan.Name = "textIDPlan";
-            this.textIDPlan.Size = new System.Drawing.Size(197, 27);
+            this.textIDPlan.Size = new System.Drawing.Size(197, 24);
             this.textIDPlan.TabIndex = 49;
             // 
             // textHorasTeoricas
             // 
-            this.textHorasTeoricas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHorasTeoricas.Location = new System.Drawing.Point(661, 312);
+            this.textHorasTeoricas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textHorasTeoricas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textHorasTeoricas.Location = new System.Drawing.Point(734, 315);
             this.textHorasTeoricas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHorasTeoricas.Name = "textHorasTeoricas";
-            this.textHorasTeoricas.Size = new System.Drawing.Size(112, 27);
+            this.textHorasTeoricas.Size = new System.Drawing.Size(154, 24);
             this.textHorasTeoricas.TabIndex = 50;
             // 
             // textHorasPracticas
             // 
-            this.textHorasPracticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHorasPracticas.Location = new System.Drawing.Point(303, 312);
+            this.textHorasPracticas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textHorasPracticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textHorasPracticas.Location = new System.Drawing.Point(306, 315);
             this.textHorasPracticas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHorasPracticas.Name = "textHorasPracticas";
-            this.textHorasPracticas.Size = new System.Drawing.Size(123, 27);
+            this.textHorasPracticas.Size = new System.Drawing.Size(168, 24);
             this.textHorasPracticas.TabIndex = 51;
             // 
             // textCreditos
             // 
-            this.textCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCreditos.Location = new System.Drawing.Point(306, 238);
+            this.textCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCreditos.Location = new System.Drawing.Point(306, 242);
             this.textCreditos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCreditos.Name = "textCreditos";
-            this.textCreditos.Size = new System.Drawing.Size(226, 27);
+            this.textCreditos.Size = new System.Drawing.Size(226, 24);
             this.textCreditos.TabIndex = 52;
             // 
             // textPrerrequisitos
             // 
-            this.textPrerrequisitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textPrerrequisitos.Location = new System.Drawing.Point(306, 385);
+            this.textPrerrequisitos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textPrerrequisitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPrerrequisitos.Location = new System.Drawing.Point(306, 388);
             this.textPrerrequisitos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textPrerrequisitos.Name = "textPrerrequisitos";
-            this.textPrerrequisitos.Size = new System.Drawing.Size(582, 27);
+            this.textPrerrequisitos.Size = new System.Drawing.Size(582, 24);
             this.textPrerrequisitos.TabIndex = 53;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label1.Location = new System.Drawing.Point(92, 388);
+            this.label1.Location = new System.Drawing.Point(77, 386);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(149, 21);
+            this.label1.Size = new System.Drawing.Size(170, 23);
             this.label1.TabIndex = 54;
             this.label1.Text = "PRERREQUISITOS:";
             // 
@@ -156,12 +163,12 @@ namespace CapaPresentacion
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label3.Location = new System.Drawing.Point(92, 315);
+            this.label3.Location = new System.Drawing.Point(77, 313);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(168, 21);
+            this.label3.Size = new System.Drawing.Size(193, 23);
             this.label3.TabIndex = 56;
             this.label3.Text = "HORAS PRACTICAS";
             // 
@@ -169,12 +176,12 @@ namespace CapaPresentacion
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label4.Location = new System.Drawing.Point(572, 241);
+            this.label4.Location = new System.Drawing.Point(559, 240);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(117, 21);
+            this.label4.Size = new System.Drawing.Size(132, 23);
             this.label4.TabIndex = 57;
             this.label4.Text = "CATEGORIA:";
             // 
@@ -182,12 +189,12 @@ namespace CapaPresentacion
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(92, 165);
+            this.label5.Location = new System.Drawing.Point(30, 163);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label5.Size = new System.Drawing.Size(204, 21);
+            this.label5.Size = new System.Drawing.Size(232, 23);
             this.label5.TabIndex = 58;
             this.label5.Text = "NOMBRE ASIGNATURA:";
             // 
@@ -195,12 +202,12 @@ namespace CapaPresentacion
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label6.Location = new System.Drawing.Point(92, 246);
+            this.label6.Location = new System.Drawing.Point(77, 240);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label6.Size = new System.Drawing.Size(97, 21);
+            this.label6.Size = new System.Drawing.Size(109, 23);
             this.label6.TabIndex = 59;
             this.label6.Text = "CREDITOS:";
             // 
@@ -208,22 +215,25 @@ namespace CapaPresentacion
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label7.Location = new System.Drawing.Point(596, 82);
+            this.label7.Location = new System.Drawing.Point(586, 82);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label7.Size = new System.Drawing.Size(82, 21);
+            this.label7.Size = new System.Drawing.Size(92, 23);
             this.label7.TabIndex = 60;
             this.label7.Text = "ID PLAN:";
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(691, 238);
+            this.cmbCategoria.Location = new System.Drawing.Point(729, 241);
             this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(197, 24);
+            this.cmbCategoria.Size = new System.Drawing.Size(162, 26);
             this.cmbCategoria.TabIndex = 61;
             // 
             // btnGuardar
@@ -238,10 +248,10 @@ namespace CapaPresentacion
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(422, 449);
+            this.btnGuardar.Location = new System.Drawing.Point(773, 456);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(147, 56);
+            this.btnGuardar.Size = new System.Drawing.Size(167, 46);
             this.btnGuardar.TabIndex = 62;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -331,23 +341,24 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(233, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(331, 125);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(478, 459);
+            this.pictureBox1.Size = new System.Drawing.Size(304, 258);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label2.Location = new System.Drawing.Point(480, 315);
+            this.label2.Location = new System.Drawing.Point(507, 313);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(160, 21);
+            this.label2.Size = new System.Drawing.Size(184, 23);
             this.label2.TabIndex = 55;
             this.label2.Text = "HORAS TEORICAS:";
             // 
@@ -355,7 +366,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(985, 528);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
