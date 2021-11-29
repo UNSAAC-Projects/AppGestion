@@ -125,7 +125,7 @@ namespace CapaPresentacion
         private void buttonLISTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            FormListaDocentes p = new FormListaDocentes();
+            frmListaDocentes p = new frmListaDocentes();
             p.Show();
         }
         

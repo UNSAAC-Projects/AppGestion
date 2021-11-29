@@ -25,12 +25,12 @@ namespace CapaPresentacion
             //Mostrar encabezado
             dgvCargaAcademica.ColumnHeadersVisible = true;
 
-            // Mover columnas editar
+            //Mover columnas editar
             dgvCargaAcademica.Columns[0].DisplayIndex = 5;
 
-            //
-            dgvCargaAcademica.Columns["HORAS DICTADO"].Visible = false;
-
+            //Ocultar columnas
+            //dgvCargaAcademica.Columns["HORAS DICTADO"].Visible = false;
+            dgvCargaAcademica.Columns["TITULO ACADEMICO"].Visible = false;
         }
 
         private void MostrarTablaDocentes()
@@ -39,10 +39,7 @@ namespace CapaPresentacion
             dgvCargaAcademica.DataSource =  oDocente.ListarDistribucionDocentes();
         }
 
-        private void pictureBoxCerrarTENTATIVA_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void pictureBoxCerrarTENTATIVA_Click(object sender, EventArgs e) => Close();
 
         private void pictureBoxMINIMIZARTENTATIVA_Click(object sender, EventArgs e)
         {
@@ -51,25 +48,25 @@ namespace CapaPresentacion
 
         private void dgvCargaAcademica_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCargaAcademica.Rows[e.RowIndex].Cells["VER"].Selected)
+            DataGridViewRow row = dgvCargaAcademica.Rows[e.RowIndex];
+            if (row.Cells["VER"].Selected)
             {
-                ////Obtener cod curso
-                //string CodCursoCatalogo = dgvCargaAcademica.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                // Recuperando el código del docente
+                string codDocente = row.Cells["CODIGO"].Value.ToString();
 
-                //frmAsignarDocente form = new frmAsignarDocente(CodCursoCatalogo);
-                ////Recuperar información de la tabla
-                //form.textBoxCodigo.Text = CodCursoCatalogo;
-                //form.textBoxCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CURSO"].Value.ToString();
-                //form.textBoxHT.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HT"].Value.ToString();
-                //form.textBoxHP.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HP"].Value.ToString();
-                //form.textBoxCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CRED"].Value.ToString();
-                //form.textBoxAula.Text = dgvCatalogo.Rows[e.RowIndex].Cells["AULA"].Value.ToString();
-                //form.textBoxGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["GRUPO"].Value.ToString();
-                //form.ShowDialog();
-                string codDocente = dgvCargaAcademica.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
+                // Creando nuevo formulario
                 frmHorarioDocente form = new frmHorarioDocente(codDocente);
+
+                // Obtener datos de las columnas
+                form.textBoxCodigo.Text = codDocente;
+                form.textBoxNombres.Text = row.Cells["NOMBRES"].Value.ToString();
+                form.textBoxApellidos.Text = row.Cells["APELLIDOS"].Value.ToString();
+                form.textBoxEstado.Text = row.Cells["ESTADO"].Value.ToString();
+                //form.textBoxHDictado.Text = row.Cells["HORAS DICTADO"].Value.ToString();
                 form.ShowDialog();
             }
         }
+
+        private void buttonCerrar_Click(object sender, EventArgs e) => Close();
     }
 }

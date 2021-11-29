@@ -84,11 +84,11 @@
     <Compile Include="FormDocente.Designer.cs">
       <DependentUpon>FormDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsDirDep\FormListaDocentes.cs">
+    <Compile Include="FormsDirDep\frmListaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsDirDep\FormListaDocentes.Designer.cs">
-      <DependentUpon>FormListaDocentes.cs</DependentUpon>
+    <Compile Include="FormsDirDep\frmListaDocentes.Designer.cs">
+      <DependentUpon>frmListaDocentes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsDirDep\frmAsignarDocentev2.cs">
       <SubType>Form</SubType>
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="FormsDirDep\frmDistDocente.resx">
       <DependentUpon>frmDistDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsDirDep\FormListaDocentes.resx">
-      <DependentUpon>FormListaDocentes.cs</DependentUpon>
+    <EmbeddedResource Include="FormsDirDep\frmListaDocentes.resx">
+      <DependentUpon>frmListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmHorarioDocente.resx">
       <DependentUpon>frmHorarioDocente.cs</DependentUpon>
