@@ -92,8 +92,8 @@ namespace CapaPresentacion
                 EditCatalogo frm = new EditCatalogo();
 
                 N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
-                frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                 frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
                 frm.textIdCatalogo.Text = oAsignatura.New();
                 if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
@@ -106,13 +106,13 @@ namespace CapaPresentacion
                 }
                 frm.Show();
 
-                
+
             }
-            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected)
             {
                 string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 oAsignatura.EliminandoAsignatura(delete);
-                
+
                 MostrarTablaAsignatura();
             }
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
