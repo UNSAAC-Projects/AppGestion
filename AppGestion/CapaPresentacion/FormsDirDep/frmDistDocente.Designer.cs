@@ -29,6 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDistDocentes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -56,9 +57,9 @@ namespace CapaPresentacion
             this.panelcabeceratentativa.Controls.Add(this.pictureBoxMINIMIZARTENTATIVA);
             this.panelcabeceratentativa.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelcabeceratentativa.Location = new System.Drawing.Point(0, 0);
-            this.panelcabeceratentativa.Margin = new System.Windows.Forms.Padding(2);
+            this.panelcabeceratentativa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelcabeceratentativa.Name = "panelcabeceratentativa";
-            this.panelcabeceratentativa.Size = new System.Drawing.Size(768, 45);
+            this.panelcabeceratentativa.Size = new System.Drawing.Size(1024, 49);
             this.panelcabeceratentativa.TabIndex = 2;
             // 
             // label1
@@ -66,20 +67,19 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(227, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(303, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 15);
+            this.label1.Size = new System.Drawing.Size(382, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "CARGA ACADEMICA TENTATIVA DE DOCENTES";
             // 
             // pictureBoxCerrarTENTATIVA
             // 
-            this.pictureBoxCerrarTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_531;
-            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(739, 10);
-            this.pictureBoxCerrarTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxCerrarTENTATIVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCerrarTENTATIVA.Image")));
+            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(983, 3);
+            this.pictureBoxCerrarTENTATIVA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxCerrarTENTATIVA.Name = "pictureBoxCerrarTENTATIVA";
-            this.pictureBoxCerrarTENTATIVA.Size = new System.Drawing.Size(27, 29);
+            this.pictureBoxCerrarTENTATIVA.Size = new System.Drawing.Size(36, 36);
             this.pictureBoxCerrarTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCerrarTENTATIVA.TabIndex = 0;
             this.pictureBoxCerrarTENTATIVA.TabStop = false;
@@ -88,21 +88,21 @@ namespace CapaPresentacion
             // pictureBoxLOGO1
             // 
             this.pictureBoxLOGO1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas2;
-            this.pictureBoxLOGO1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBoxLOGO1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxLOGO1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxLOGO1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLOGO1.Name = "pictureBoxLOGO1";
-            this.pictureBoxLOGO1.Size = new System.Drawing.Size(39, 39);
+            this.pictureBoxLOGO1.Size = new System.Drawing.Size(43, 37);
             this.pictureBoxLOGO1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLOGO1.TabIndex = 3;
             this.pictureBoxLOGO1.TabStop = false;
             // 
             // pictureBoxMINIMIZARTENTATIVA
             // 
-            this.pictureBoxMINIMIZARTENTATIVA.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_532;
-            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(710, 10);
-            this.pictureBoxMINIMIZARTENTATIVA.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMINIMIZARTENTATIVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMINIMIZARTENTATIVA.Image")));
+            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(939, 2);
+            this.pictureBoxMINIMIZARTENTATIVA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMINIMIZARTENTATIVA.Name = "pictureBoxMINIMIZARTENTATIVA";
-            this.pictureBoxMINIMIZARTENTATIVA.Size = new System.Drawing.Size(24, 29);
+            this.pictureBoxMINIMIZARTENTATIVA.Size = new System.Drawing.Size(38, 37);
             this.pictureBoxMINIMIZARTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMINIMIZARTENTATIVA.TabIndex = 1;
             this.pictureBoxMINIMIZARTENTATIVA.TabStop = false;
@@ -138,15 +138,15 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCargaAcademica.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCargaAcademica.Location = new System.Drawing.Point(22, 65);
-            this.dgvCargaAcademica.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvCargaAcademica.Location = new System.Drawing.Point(29, 80);
+            this.dgvCargaAcademica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCargaAcademica.Name = "dgvCargaAcademica";
             this.dgvCargaAcademica.ReadOnly = true;
             this.dgvCargaAcademica.RowHeadersVisible = false;
             this.dgvCargaAcademica.RowHeadersWidth = 51;
             this.dgvCargaAcademica.RowTemplate.Height = 24;
             this.dgvCargaAcademica.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCargaAcademica.Size = new System.Drawing.Size(722, 374);
+            this.dgvCargaAcademica.Size = new System.Drawing.Size(963, 460);
             this.dgvCargaAcademica.TabIndex = 3;
             this.dgvCargaAcademica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargaAcademica_CellContentClick);
             // 
@@ -154,6 +154,7 @@ namespace CapaPresentacion
             // 
             this.VER.HeaderText = "VER";
             this.VER.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.VER.MinimumWidth = 6;
             this.VER.Name = "VER";
             this.VER.ReadOnly = true;
             // 
@@ -161,18 +162,20 @@ namespace CapaPresentacion
             // 
             this.dataGridViewImageColumn1.HeaderText = "VER";
             this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.pencil_16px;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
             // 
             // frmDistDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(768, 486);
+            this.ClientSize = new System.Drawing.Size(1024, 598);
             this.Controls.Add(this.dgvCargaAcademica);
             this.Controls.Add(this.panelcabeceratentativa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDistDocentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDistDocente";

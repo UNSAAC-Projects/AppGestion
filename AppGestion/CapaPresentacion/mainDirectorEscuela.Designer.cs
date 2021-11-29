@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContenedorLogin = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,8 +43,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
             this.btnVerCatalogo = new System.Windows.Forms.Button();
-            this.pictureCANCEL1 = new System.Windows.Forms.PictureBox();
-            this.pictureMINIMIZE1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
             this.CrearGrupo = new System.Windows.Forms.DataGridViewImageColumn();
@@ -52,21 +51,25 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelMainDirEscuela = new System.Windows.Forms.Panel();
+            this.pictureMINIMIZE1 = new System.Windows.Forms.PictureBox();
+            this.pictureCANCEL1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panelMainDirEscuela = new System.Windows.Forms.Panel();
+            this.pictureMaxDirectorEscuela = new System.Windows.Forms.PictureBox();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorLogin
@@ -178,7 +181,7 @@
             // 
             // panelPrinciapl
             // 
-            this.panelPrinciapl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelPrinciapl.BackColor = System.Drawing.Color.White;
             this.panelPrinciapl.Controls.Add(this.btnVerCatalogo);
             this.panelPrinciapl.Controls.Add(this.button2);
             this.panelPrinciapl.Controls.Add(this.dgvAsignaturas);
@@ -196,6 +199,7 @@
             // 
             // btnVerCatalogo
             // 
+            this.btnVerCatalogo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnVerCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnVerCatalogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVerCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -206,7 +210,7 @@
             this.btnVerCatalogo.ForeColor = System.Drawing.Color.White;
             this.btnVerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.Image")));
             this.btnVerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCatalogo.Location = new System.Drawing.Point(557, 569);
+            this.btnVerCatalogo.Location = new System.Drawing.Point(1058, 572);
             this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCatalogo.Name = "btnVerCatalogo";
             this.btnVerCatalogo.Size = new System.Drawing.Size(181, 54);
@@ -215,32 +219,6 @@
             this.btnVerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVerCatalogo.UseVisualStyleBackColor = false;
             this.btnVerCatalogo.Click += new System.EventHandler(this.btnVerCatalogo_Click_1);
-            // 
-            // pictureCANCEL1
-            // 
-            this.pictureCANCEL1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureCANCEL1.Image = ((System.Drawing.Image)(resources.GetObject("pictureCANCEL1.Image")));
-            this.pictureCANCEL1.Location = new System.Drawing.Point(1214, 2);
-            this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureCANCEL1.Name = "pictureCANCEL1";
-            this.pictureCANCEL1.Size = new System.Drawing.Size(39, 34);
-            this.pictureCANCEL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureCANCEL1.TabIndex = 9;
-            this.pictureCANCEL1.TabStop = false;
-            this.pictureCANCEL1.Click += new System.EventHandler(this.pictureCANCEL1_Click);
-            // 
-            // pictureMINIMIZE1
-            // 
-            this.pictureMINIMIZE1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureMINIMIZE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureMINIMIZE1.Image")));
-            this.pictureMINIMIZE1.Location = new System.Drawing.Point(1174, 2);
-            this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureMINIMIZE1.Name = "pictureMINIMIZE1";
-            this.pictureMINIMIZE1.Size = new System.Drawing.Size(39, 34);
-            this.pictureMINIMIZE1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureMINIMIZE1.TabIndex = 8;
-            this.pictureMINIMIZE1.TabStop = false;
-            this.pictureMINIMIZE1.Click += new System.EventHandler(this.pictureMINIMIZE1_Click);
             // 
             // button2
             // 
@@ -269,33 +247,40 @@
             this.dgvAsignaturas.AllowUserToAddRows = false;
             this.dgvAsignaturas.AllowUserToDeleteRows = false;
             this.dgvAsignaturas.AllowUserToOrderColumns = true;
+            this.dgvAsignaturas.AllowUserToResizeColumns = false;
+            this.dgvAsignaturas.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvAsignaturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAsignaturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAsignaturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAsignaturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAsignaturas.BackgroundColor = System.Drawing.Color.White;
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CrearGrupo,
             this.Editar,
             this.Eliminar});
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.Location = new System.Drawing.Point(5, 149);
             this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
@@ -303,9 +288,9 @@
             this.dgvAsignaturas.RowHeadersVisible = false;
             this.dgvAsignaturas.RowHeadersWidth = 51;
             this.dgvAsignaturas.RowTemplate.Height = 24;
-            this.dgvAsignaturas.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvAsignaturas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAsignaturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(1251, 402);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(1262, 402);
             this.dgvAsignaturas.TabIndex = 5;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
             // 
@@ -334,11 +319,11 @@
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(99, 68);
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(86, 74);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(520, 38);
+            this.txtBuscar.Size = new System.Drawing.Size(520, 27);
             this.txtBuscar.TabIndex = 4;
             this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -363,6 +348,45 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            // 
+            // panelMainDirEscuela
+            // 
+            this.panelMainDirEscuela.Controls.Add(this.pictureMaxDirectorEscuela);
+            this.panelMainDirEscuela.Controls.Add(this.pictureMINIMIZE1);
+            this.panelMainDirEscuela.Controls.Add(this.pictureCANCEL1);
+            this.panelMainDirEscuela.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMainDirEscuela.Location = new System.Drawing.Point(0, 0);
+            this.panelMainDirEscuela.Name = "panelMainDirEscuela";
+            this.panelMainDirEscuela.Size = new System.Drawing.Size(1270, 45);
+            this.panelMainDirEscuela.TabIndex = 11;
+            // 
+            // pictureMINIMIZE1
+            // 
+            this.pictureMINIMIZE1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureMINIMIZE1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureMINIMIZE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureMINIMIZE1.Image")));
+            this.pictureMINIMIZE1.Location = new System.Drawing.Point(1122, 2);
+            this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureMINIMIZE1.Name = "pictureMINIMIZE1";
+            this.pictureMINIMIZE1.Size = new System.Drawing.Size(39, 34);
+            this.pictureMINIMIZE1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureMINIMIZE1.TabIndex = 8;
+            this.pictureMINIMIZE1.TabStop = false;
+            this.pictureMINIMIZE1.Click += new System.EventHandler(this.pictureMINIMIZE1_Click);
+            // 
+            // pictureCANCEL1
+            // 
+            this.pictureCANCEL1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureCANCEL1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureCANCEL1.Image = ((System.Drawing.Image)(resources.GetObject("pictureCANCEL1.Image")));
+            this.pictureCANCEL1.Location = new System.Drawing.Point(1214, 2);
+            this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureCANCEL1.Name = "pictureCANCEL1";
+            this.pictureCANCEL1.Size = new System.Drawing.Size(39, 34);
+            this.pictureCANCEL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureCANCEL1.TabIndex = 9;
+            this.pictureCANCEL1.TabStop = false;
+            this.pictureCANCEL1.Click += new System.EventHandler(this.pictureCANCEL1_Click);
             // 
             // button1
             // 
@@ -404,15 +428,17 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
-            // panelMainDirEscuela
+            // pictureMaxDirectorEscuela
             // 
-            this.panelMainDirEscuela.Controls.Add(this.pictureMINIMIZE1);
-            this.panelMainDirEscuela.Controls.Add(this.pictureCANCEL1);
-            this.panelMainDirEscuela.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMainDirEscuela.Location = new System.Drawing.Point(0, 0);
-            this.panelMainDirEscuela.Name = "panelMainDirEscuela";
-            this.panelMainDirEscuela.Size = new System.Drawing.Size(1270, 45);
-            this.panelMainDirEscuela.TabIndex = 11;
+            this.pictureMaxDirectorEscuela.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureMaxDirectorEscuela.Image = ((System.Drawing.Image)(resources.GetObject("pictureMaxDirectorEscuela.Image")));
+            this.pictureMaxDirectorEscuela.Location = new System.Drawing.Point(1167, 2);
+            this.pictureMaxDirectorEscuela.Name = "pictureMaxDirectorEscuela";
+            this.pictureMaxDirectorEscuela.Size = new System.Drawing.Size(41, 34);
+            this.pictureMaxDirectorEscuela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureMaxDirectorEscuela.TabIndex = 10;
+            this.pictureMaxDirectorEscuela.TabStop = false;
+            this.pictureMaxDirectorEscuela.Click += new System.EventHandler(this.pictureMaxDirectorEscuela_Click);
             // 
             // mainDirectorEscuela
             // 
@@ -433,12 +459,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPrinciapl.ResumeLayout(false);
             this.panelPrinciapl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +497,6 @@
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Button btnVerCatalogo;
         private System.Windows.Forms.Panel panelMainDirEscuela;
+        private System.Windows.Forms.PictureBox pictureMaxDirectorEscuela;
     }
 }
