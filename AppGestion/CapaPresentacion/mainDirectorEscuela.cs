@@ -75,21 +75,21 @@ namespace CapaPresentacion
                 {
                     EditCatalogo frm = new EditCatalogo();
 
-                N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
-                frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
-                frm.textIdCatalogo.Text = oAsignatura.New();
-                if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
-                {
-                    frm.cmbDia3.Enabled = false;
-                    frm.textHInicio3.Enabled = false;
-                    frm.textHFin3.Enabled = false;
-                    frm.cmbTipo3.Enabled = false;
-                    frm.textIdCatalogo.Enabled = false;
+                    N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                    frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                    frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                    frm.textIdCatalogo.Text = oAsignatura.New();
+                    if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                    {
+                        frm.cmbDia3.Enabled = false;
+                        frm.textHInicio3.Enabled = false;
+                        frm.textHFin3.Enabled = false;
+                        frm.cmbTipo3.Enabled = false;
+                        frm.textIdCatalogo.Enabled = false;
+                    }
+                    frm.Show();
                 }
-                frm.Show();
-
 
             }
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected)
