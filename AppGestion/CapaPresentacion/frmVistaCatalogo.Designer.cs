@@ -32,6 +32,7 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaCatalogo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDescargar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
@@ -63,7 +64,7 @@ namespace CapaPresentacion
             this.btnDescargar.ForeColor = System.Drawing.Color.White;
             this.btnDescargar.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargar.Image")));
             this.btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDescargar.Location = new System.Drawing.Point(371, 481);
+            this.btnDescargar.Location = new System.Drawing.Point(281, 470);
             this.btnDescargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(192, 51);
@@ -79,7 +80,7 @@ namespace CapaPresentacion
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Gray;
-            this.label13.Location = new System.Drawing.Point(62, 83);
+            this.label13.Location = new System.Drawing.Point(79, 82);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label13.Size = new System.Drawing.Size(94, 23);
@@ -91,30 +92,33 @@ namespace CapaPresentacion
             this.dgvCatalogo.AllowUserToAddRows = false;
             this.dgvCatalogo.AllowUserToDeleteRows = false;
             this.dgvCatalogo.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvCatalogo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCatalogo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCatalogo.BackgroundColor = System.Drawing.Color.White;
             this.dgvCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCatalogo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCatalogo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCatalogo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCatalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCatalogo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Editar,
             this.Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Baskerville Old Face", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCatalogo.Location = new System.Drawing.Point(33, 139);
             this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCatalogo.Name = "dgvCatalogo";
@@ -143,12 +147,12 @@ namespace CapaPresentacion
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(162, 82);
+            this.txtBuscar.Location = new System.Drawing.Point(179, 79);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(477, 23);
+            this.txtBuscar.Size = new System.Drawing.Size(477, 30);
             this.txtBuscar.TabIndex = 48;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -163,7 +167,7 @@ namespace CapaPresentacion
             this.btnHorarios.ForeColor = System.Drawing.Color.White;
             this.btnHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnHorarios.Image")));
             this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(583, 481);
+            this.btnHorarios.Location = new System.Drawing.Point(672, 470);
             this.btnHorarios.Margin = new System.Windows.Forms.Padding(4);
             this.btnHorarios.Name = "btnHorarios";
             this.btnHorarios.Size = new System.Drawing.Size(176, 51);
@@ -236,7 +240,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1127, 554);
             this.Controls.Add(this.panelVistaCatalogo);
             this.Controls.Add(this.btnHorarios);
