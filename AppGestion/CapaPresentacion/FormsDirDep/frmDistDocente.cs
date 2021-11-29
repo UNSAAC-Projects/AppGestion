@@ -28,6 +28,9 @@ namespace CapaPresentacion
             // Mover columnas editar
             dgvCargaAcademica.Columns[0].DisplayIndex = 5;
 
+            //
+            dgvCargaAcademica.Columns["HORAS DICTADO"].Visible = false;
+
         }
 
         private void MostrarTablaDocentes()

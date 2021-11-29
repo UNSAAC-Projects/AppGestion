@@ -21,6 +21,7 @@ namespace CapaPresentacion
         //Declaracion variables
         DataSet result;
 
+        //Constructor
         public frmDirecDepAcade()
         {
             InitializeComponent();
@@ -114,16 +115,6 @@ namespace CapaPresentacion
         #endregion
 
         #region Eventos
-        private void button1_Click(object sender, EventArgs e)
-        {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61,92);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            buttonLISTAR.BackColor = Color.FromArgb(12, 61, 92);
-        }
-
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
@@ -174,8 +165,7 @@ namespace CapaPresentacion
         {
             WindowState = FormWindowState.Minimized;
         }
-        #endregion
-
+        
         private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCatalogo.Rows[e.RowIndex];
@@ -266,5 +256,6 @@ namespace CapaPresentacion
                 WindowState = FormWindowState.Normal;
             }
         }
+        #endregion
     }
 }
