@@ -16,6 +16,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             MostrarTablaHorarioDocente(CodDocente);
+            MostrarHorasDictado();
         }
 
         private void MostrarTablaHorarioDocente(string codDocente)
@@ -24,7 +25,24 @@ namespace CapaPresentacion
             dgvHorarioDocente.DataSource = oDocente.MostrarHorarioDocente(codDocente);
         }
 
-        private void pictureBoxCerrar_Click(object sender, EventArgs e)
+        private void MostrarHorasDictado()
+        {
+            string value;
+            int horasDictado, total = 0;
+            foreach (DataGridViewRow row in dgvHorarioDocente.Rows)
+            {
+                value = row.Cells["HORAS"].Value.ToString();
+                horasDictado =  int.Parse(value);
+                total += horasDictado;
+            }
+            textBoxHDictado.Text = total.ToString();
+        }
+        private void buttonCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
         {
             Close();
         }
