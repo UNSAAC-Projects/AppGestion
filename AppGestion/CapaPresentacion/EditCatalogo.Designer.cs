@@ -290,6 +290,7 @@
             // textIdCatalogo
             // 
             this.textIdCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIdCatalogo.Enabled = false;
             this.textIdCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textIdCatalogo.Location = new System.Drawing.Point(63, 77);
             this.textIdCatalogo.Margin = new System.Windows.Forms.Padding(2);

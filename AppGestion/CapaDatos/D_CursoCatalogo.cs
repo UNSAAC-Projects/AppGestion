@@ -195,6 +195,19 @@ namespace CapaDatos
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
-        
+        //Nuevo Catalago
+        public string Nuevo()
+        {
+
+            SqlCommand cmd = new SqlCommand("NuevoCatalogo", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.CommandTimeout = 30;
+            SqlCommandBuilder.DeriveParameters(cmd);
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+            return (string)cmd.Parameters["@RETURN_VALUE"].Value;
+        }
+
     }
 }
