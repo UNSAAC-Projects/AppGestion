@@ -66,5 +66,9 @@ namespace CapaNegocio
         {
             data.EditarDocentePractico(CodCursoCatalogo, CodDocenteP);
         }
+        public string New()
+        {
+            return data.Nuevo();
+        }
     }
 }

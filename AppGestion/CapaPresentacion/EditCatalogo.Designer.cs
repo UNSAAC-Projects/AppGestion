@@ -190,6 +190,7 @@
             // cmbTipo3
             // 
             this.cmbTipo3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo3.FormattingEnabled = true;
@@ -205,6 +206,7 @@
             // cmbTipo2
             // 
             this.cmbTipo2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo2.FormattingEnabled = true;
@@ -220,6 +222,7 @@
             // cmbTipo1
             // 
             this.cmbTipo1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo1.FormattingEnabled = true;
@@ -289,6 +292,7 @@
             // textIdCatalogo
             // 
             this.textIdCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIdCatalogo.Enabled = false;
             this.textIdCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textIdCatalogo.Location = new System.Drawing.Point(84, 95);
             this.textIdCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -312,6 +316,7 @@
             // cmbGrupo
             // 
             this.cmbGrupo.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGrupo.FormattingEnabled = true;
@@ -435,6 +440,7 @@
             // cmbDia3
             // 
             this.cmbDia3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia3.FormattingEnabled = true;
@@ -454,6 +460,7 @@
             // cmbDia2
             // 
             this.cmbDia2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia2.FormattingEnabled = true;
@@ -540,6 +547,7 @@
             // cmbDia1
             // 
             this.cmbDia1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia1.FormattingEnabled = true;
@@ -648,7 +656,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -689,5 +696,6 @@
         private System.Windows.Forms.PictureBox pictureCancelAsignaturas;
         private System.Windows.Forms.PictureBox pictureMinAsignaturas;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
+        public System.Windows.Forms.Panel panel3;
     }
 }

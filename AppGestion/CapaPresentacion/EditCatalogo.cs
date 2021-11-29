@@ -118,6 +118,7 @@ namespace CapaPresentacion
             }
             if (Update == true) 
             {
+               
                 try
                 {
                     entities.IdCatalogo = textIdCatalogo.Text;
