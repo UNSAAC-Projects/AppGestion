@@ -6,10 +6,10 @@ use db_a7d2c3_appgestion
 go
 
 /* Para ejecutar BD de forma local */
---DROP DATABASE AppGestion
---GO
---create database AppGestion
---go
+---DROP DATABASE AppGestion
+---GO
+---create database AppGestion
+---go
 --use AppGestion
 --go
 
