@@ -79,7 +79,7 @@ namespace CapaPresentacion
                 }
                 catch 
                 {
-                    MessageBox.Show("No se peuede agregar");
+                    MessageBox.Show("No se puede agregar");
                 }
 
             }

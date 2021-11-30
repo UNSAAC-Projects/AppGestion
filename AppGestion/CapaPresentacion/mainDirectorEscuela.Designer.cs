@@ -209,7 +209,7 @@
             this.btnVerCatalogo.ForeColor = System.Drawing.Color.White;
             this.btnVerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.Image")));
             this.btnVerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCatalogo.Location = new System.Drawing.Point(721, 465);
+            this.btnVerCatalogo.Location = new System.Drawing.Point(330, 462);
             this.btnVerCatalogo.Name = "btnVerCatalogo";
             this.btnVerCatalogo.Size = new System.Drawing.Size(136, 44);
             this.btnVerCatalogo.TabIndex = 10;
