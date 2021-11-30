@@ -17,7 +17,7 @@
 
 <h3 align="left"> Implementado 💻🖱</h2>        
                                                  
-- Lenguaje:C# 
+-  Lenguaje     : C# 
 -  Base de datos: SQL Sever
 ************************************************
 ************************************************
