@@ -3,8 +3,8 @@ use db_a7d2c3_appgestion
 go
 
 /* Para ejecutar BD de forma local */
---use AppGestion
---go
+---use AppGestion
+---go
 
 /*ELIMINAR ELEMENTOS DE TODAS LAS TABLAS*/
 --Desactivar limitaciones de todas las tablas
