@@ -21,24 +21,70 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
+        bool validar_actualizar()
+        {
+            bool M = true;
+            if (textNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese Nombre de la Asinatura");
+                M = false;
+            }
+            else if (textCreditos.Text == "")
+            {
+                MessageBox.Show("Ingrese Creditos de la Asignatura");
+                M = false;
+            }
+            else if (textCreditos.Text == "")
+            {
+                MessageBox.Show("Ingrese Creditos de la Asignatura");
+                M = false;
+            }
+            else if (cmbCategoria.Text == "")
+            {
+                MessageBox.Show("Ingrese Categoria de la Asignatura");
+                M = false;
+            }
+            else if (textHorasPracticas.Text == "")
+            {
+                MessageBox.Show("Ingrese Horas practicas de la Asignatura");
+                M = false;
+            }
+            else if (textHorasTeoricas.Text == "")
+            {
+                MessageBox.Show("Ingrese Horas teoricas de la Asignatura");
+                M = false;
+            }
+            else if (textPrerrequisitos.Text == "")
+            {
+                MessageBox.Show("Ingrese Prerequisitos de la Asignatura");
+                M = false;
+            }
+            return M;
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (Update == false)
             {
                 try
                 {
-                    entities.codAsigantura = textCodAsignatura.Text;
-                    entities.idPlan = textIDPlan.Text;
-                    entities.nombre = textNombre.Text;
-                    entities.creditos = textCreditos.Text;
-                    entities.categoria = cmbCategoria.Text;
-                    entities.horasPracticas = textHorasPracticas.Text;
-                    entities.horasTeoricas = textHorasTeoricas.Text;
-                    entities.prerrequisitos = textPrerrequisitos.Text;
-                    business.CreandoAsignatura(entities);
+                    bool R = validar_actualizar();
                     
-                    Close();
+                    if(R)
+                    {
+                        entities.codAsigantura = textCodAsignatura.Text;
+                        entities.idPlan = textIDPlan.Text;
+                        entities.nombre = textNombre.Text;
+                        entities.creditos = textCreditos.Text;
+                        entities.categoria = cmbCategoria.Text;
+                        entities.horasPracticas = textHorasPracticas.Text;
+                        entities.horasTeoricas = textHorasTeoricas.Text;
+                        entities.prerrequisitos = textPrerrequisitos.Text;
+                        business.CreandoAsignatura(entities);
+
+                        MessageBox.Show("Agregado Exitosamente");
+                        Close();
+                    }
+                   
                 }
                 catch (Exception ex)
                 {
@@ -49,20 +95,30 @@ namespace CapaPresentacion
             {
                 try
                 {
-                    entities.codAsigantura = textCodAsignatura.Text;
-                    textCodAsignatura.Enabled = false;
-                    entities.idPlan = textIDPlan.Text;
-                    entities.nombre = textNombre.Text;
-                    entities.creditos = textCreditos.Text;
-                    entities.categoria = cmbCategoria.Text;
-                    entities.horasPracticas = textHorasPracticas.Text;
-                    entities.horasTeoricas = textHorasTeoricas.Text;
-                    entities.prerrequisitos = textPrerrequisitos.Text;
+                    bool R = validar_actualizar();
 
-                    business.EditandoAsignatura(entities);
-                    Close();
+                    if (R==true)
+                    {
+                        entities.codAsigantura = textCodAsignatura.Text;
+                        textCodAsignatura.Enabled = false;
+                        entities.idPlan = textIDPlan.Text;
+                        entities.nombre = textNombre.Text;
+                        entities.creditos = textCreditos.Text;
+                        entities.categoria = cmbCategoria.Text;
+                        entities.horasPracticas = textHorasPracticas.Text;
+                        entities.horasTeoricas = textHorasTeoricas.Text;
+                        entities.prerrequisitos = textPrerrequisitos.Text;
 
-                    Update = false;
+
+                        business.EditandoAsignatura(entities);
+                        MessageBox.Show("Modificado Exitosamente");
+                        Close();
+
+                        Update = false;
+                    }
+                    
+                    
+                   
                 }
                 catch (Exception ex)
                 {

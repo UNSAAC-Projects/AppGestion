@@ -55,5 +55,15 @@ namespace CapaPresentacion
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
+
+        private void dgvHorarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmVistaHorarios_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
