@@ -1,21 +1,17 @@
 use master
 go
+
+ /* Para ejecutar DB en la nube */
+use db_a7d2c3_appgestion
+go
+
+/* Para ejecutar BD de forma local */
 --DROP DATABASE AppGestion
 --GO
 --create database AppGestion
 --go
--- Para ejecutar DB en la nube
-use db_a7d2c3_appgestion
-go
---create database db_a7d2c3_appgestion
-ALTER DATABASE { db_a7d2c3_appgestion  | CURRENT }
-go
---use db_a7d2c3_appgestion
---go
--- Para usar de forma local
 --use AppGestion
 --go
-
 
 /***********************************************************************************
 					CREACION TABLAS

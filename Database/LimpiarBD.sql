@@ -1,3 +1,5 @@
+-- SCRIPT PARA ELIMINAR TODO EL CONTENIDO DE UNA BD
+
 /* Drop all non-system stored procs */
 DECLARE @name VARCHAR(128)
 DECLARE @SQL VARCHAR(254)
