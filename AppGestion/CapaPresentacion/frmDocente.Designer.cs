@@ -144,6 +144,7 @@ namespace CapaPresentacion
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ContenedorLogin);
             this.Name = "frmDocente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();

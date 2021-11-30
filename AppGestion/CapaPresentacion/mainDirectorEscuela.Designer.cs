@@ -246,7 +246,6 @@
             this.dgvAsignaturas.AllowUserToAddRows = false;
             this.dgvAsignaturas.AllowUserToDeleteRows = false;
             this.dgvAsignaturas.AllowUserToOrderColumns = true;
-            this.dgvAsignaturas.AllowUserToResizeColumns = false;
             this.dgvAsignaturas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvAsignaturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
