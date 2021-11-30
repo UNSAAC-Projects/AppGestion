@@ -192,8 +192,8 @@
             this.cmbTipo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo3.FormattingEnabled = true;
             this.cmbTipo3.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
+            "T",
+            "P"});
             this.cmbTipo3.Location = new System.Drawing.Point(530, 367);
             this.cmbTipo3.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo3.Name = "cmbTipo3";
@@ -208,8 +208,8 @@
             this.cmbTipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo2.FormattingEnabled = true;
             this.cmbTipo2.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
+            "T",
+            "P"});
             this.cmbTipo2.Location = new System.Drawing.Point(530, 329);
             this.cmbTipo2.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo2.Name = "cmbTipo2";
@@ -224,8 +224,8 @@
             this.cmbTipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo1.FormattingEnabled = true;
             this.cmbTipo1.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
+            "T",
+            "P"});
             this.cmbTipo1.Location = new System.Drawing.Point(530, 292);
             this.cmbTipo1.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipo1.Name = "cmbTipo1";
