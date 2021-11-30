@@ -30,9 +30,9 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsignarDocente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelCodigo = new System.Windows.Forms.Label();
             this.labelCurso = new System.Windows.Forms.Label();
             this.labelCreditos = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@ namespace CapaPresentacion
             this.labelCodigo.Location = new System.Drawing.Point(43, 74);
             this.labelCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(100, 22);
+            this.labelCodigo.Size = new System.Drawing.Size(80, 20);
             this.labelCodigo.TabIndex = 0;
             this.labelCodigo.Text = "CÓDIGO:";
             // 
@@ -81,7 +81,7 @@ namespace CapaPresentacion
             this.labelCurso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelCurso.Location = new System.Drawing.Point(243, 74);
             this.labelCurso.Name = "labelCurso";
-            this.labelCurso.Size = new System.Drawing.Size(204, 22);
+            this.labelCurso.Size = new System.Drawing.Size(164, 20);
             this.labelCurso.TabIndex = 1;
             this.labelCurso.Text = "NOMBRE DEL CURSO:";
             // 
@@ -92,7 +92,7 @@ namespace CapaPresentacion
             this.labelCreditos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelCreditos.Location = new System.Drawing.Point(460, 165);
             this.labelCreditos.Name = "labelCreditos";
-            this.labelCreditos.Size = new System.Drawing.Size(105, 22);
+            this.labelCreditos.Size = new System.Drawing.Size(83, 20);
             this.labelCreditos.TabIndex = 2;
             this.labelCreditos.Text = "CRÉDITOS:";
             // 
@@ -103,7 +103,7 @@ namespace CapaPresentacion
             this.labelGrupo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelGrupo.Location = new System.Drawing.Point(768, 165);
             this.labelGrupo.Name = "labelGrupo";
-            this.labelGrupo.Size = new System.Drawing.Size(84, 22);
+            this.labelGrupo.Size = new System.Drawing.Size(68, 20);
             this.labelGrupo.TabIndex = 4;
             this.labelGrupo.Text = "GRUPO:";
             // 
@@ -114,7 +114,7 @@ namespace CapaPresentacion
             this.labelHT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelHT.Location = new System.Drawing.Point(43, 165);
             this.labelHT.Name = "labelHT";
-            this.labelHT.Size = new System.Drawing.Size(177, 22);
+            this.labelHT.Size = new System.Drawing.Size(137, 20);
             this.labelHT.TabIndex = 5;
             this.labelHT.Text = "HORAS TEÓRICAS:";
             // 
@@ -125,7 +125,7 @@ namespace CapaPresentacion
             this.labelHP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelHP.Location = new System.Drawing.Point(238, 165);
             this.labelHP.Name = "labelHP";
-            this.labelHP.Size = new System.Drawing.Size(191, 22);
+            this.labelHP.Size = new System.Drawing.Size(148, 20);
             this.labelHP.TabIndex = 6;
             this.labelHP.Text = "HORAS PRÁCTICAS:";
             // 
@@ -136,7 +136,7 @@ namespace CapaPresentacion
             this.labelAula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelAula.Location = new System.Drawing.Point(613, 165);
             this.labelAula.Name = "labelAula";
-            this.labelAula.Size = new System.Drawing.Size(66, 22);
+            this.labelAula.Size = new System.Drawing.Size(53, 20);
             this.labelAula.TabIndex = 10;
             this.labelAula.Text = "AULA:";
             // 
@@ -151,7 +151,7 @@ namespace CapaPresentacion
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(932, 44);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(932, 40);
             this.panelBarraTitulo.TabIndex = 11;
             this.panelBarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseDown);
             // 
@@ -197,7 +197,7 @@ namespace CapaPresentacion
             this.labelTitulo.Location = new System.Drawing.Point(37, 5);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(305, 30);
+            this.labelTitulo.Size = new System.Drawing.Size(234, 22);
             this.labelTitulo.TabIndex = 31;
             this.labelTitulo.Text = "Asignación de docentes";
             // 
@@ -206,7 +206,7 @@ namespace CapaPresentacion
             this.textBoxCodigo.Enabled = false;
             this.textBoxCodigo.Location = new System.Drawing.Point(47, 104);
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(100, 27);
+            this.textBoxCodigo.Size = new System.Drawing.Size(100, 23);
             this.textBoxCodigo.TabIndex = 12;
             // 
             // textBoxCurso
@@ -214,7 +214,7 @@ namespace CapaPresentacion
             this.textBoxCurso.Enabled = false;
             this.textBoxCurso.Location = new System.Drawing.Point(242, 104);
             this.textBoxCurso.Name = "textBoxCurso";
-            this.textBoxCurso.Size = new System.Drawing.Size(630, 27);
+            this.textBoxCurso.Size = new System.Drawing.Size(630, 23);
             this.textBoxCurso.TabIndex = 12;
             // 
             // textBoxCreditos
@@ -222,7 +222,7 @@ namespace CapaPresentacion
             this.textBoxCreditos.Enabled = false;
             this.textBoxCreditos.Location = new System.Drawing.Point(464, 204);
             this.textBoxCreditos.Name = "textBoxCreditos";
-            this.textBoxCreditos.Size = new System.Drawing.Size(100, 27);
+            this.textBoxCreditos.Size = new System.Drawing.Size(100, 23);
             this.textBoxCreditos.TabIndex = 12;
             // 
             // textBoxAula
@@ -230,7 +230,7 @@ namespace CapaPresentacion
             this.textBoxAula.Enabled = false;
             this.textBoxAula.Location = new System.Drawing.Point(617, 204);
             this.textBoxAula.Name = "textBoxAula";
-            this.textBoxAula.Size = new System.Drawing.Size(100, 27);
+            this.textBoxAula.Size = new System.Drawing.Size(100, 23);
             this.textBoxAula.TabIndex = 12;
             // 
             // textBoxHT
@@ -238,7 +238,7 @@ namespace CapaPresentacion
             this.textBoxHT.Enabled = false;
             this.textBoxHT.Location = new System.Drawing.Point(47, 204);
             this.textBoxHT.Name = "textBoxHT";
-            this.textBoxHT.Size = new System.Drawing.Size(100, 27);
+            this.textBoxHT.Size = new System.Drawing.Size(100, 23);
             this.textBoxHT.TabIndex = 12;
             // 
             // textBoxHP
@@ -246,7 +246,7 @@ namespace CapaPresentacion
             this.textBoxHP.Enabled = false;
             this.textBoxHP.Location = new System.Drawing.Point(242, 204);
             this.textBoxHP.Name = "textBoxHP";
-            this.textBoxHP.Size = new System.Drawing.Size(100, 27);
+            this.textBoxHP.Size = new System.Drawing.Size(100, 23);
             this.textBoxHP.TabIndex = 12;
             // 
             // textBoxGrupo
@@ -254,7 +254,7 @@ namespace CapaPresentacion
             this.textBoxGrupo.Enabled = false;
             this.textBoxGrupo.Location = new System.Drawing.Point(772, 204);
             this.textBoxGrupo.Name = "textBoxGrupo";
-            this.textBoxGrupo.Size = new System.Drawing.Size(100, 27);
+            this.textBoxGrupo.Size = new System.Drawing.Size(100, 23);
             this.textBoxGrupo.TabIndex = 15;
             // 
             // buttonGuardar
@@ -296,34 +296,34 @@ namespace CapaPresentacion
             this.dgvHorarioCurso.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvHorarioCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHorarioCurso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorarioCurso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioCurso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHorarioCurso.ColumnHeadersHeight = 60;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHorarioCurso.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHorarioCurso.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHorarioCurso.Location = new System.Drawing.Point(31, 252);
             this.dgvHorarioCurso.Name = "dgvHorarioCurso";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorarioCurso.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioCurso.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHorarioCurso.RowHeadersVisible = false;
             this.dgvHorarioCurso.RowHeadersWidth = 51;
             this.dgvHorarioCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -333,7 +333,7 @@ namespace CapaPresentacion
             // 
             // frmAsignarDocente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(932, 561);
@@ -358,7 +358,7 @@ namespace CapaPresentacion
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmAsignarDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAsignarDocente";

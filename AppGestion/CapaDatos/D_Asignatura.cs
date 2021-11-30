@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using CapaEntidades;
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -64,14 +65,23 @@ namespace CapaDatos
 
         public void EliminarAsignatura(string codAsignatura)
         {
-            SqlCommand cmd = new SqlCommand("SP_ELIMINARASIGNATURA", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ELIMINARASIGNATURA", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
 
-            cmd.Parameters.AddWithValue("@CodAsignatura", codAsignatura);
+                cmd.Parameters.AddWithValue("@CodAsignatura", codAsignatura);
 
-            cmd.ExecuteNonQuery();
-            conexion.Close();
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception)
+            {
+                string mensaje = "No se puede eliminar la asignatura debido a que ya existe un catálogo que lo está usando.";
+                MessageBox.Show(mensaje,"Error");
+            }
+           
         }
 
         public void CrearAsignatura(E_Asignatura curso)

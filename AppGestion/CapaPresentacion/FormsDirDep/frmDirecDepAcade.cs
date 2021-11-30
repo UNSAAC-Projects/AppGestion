@@ -20,13 +20,20 @@ namespace CapaPresentacion
     {
         //Declaracion variables
         DataSet result;
+        N_Login oLogin = new N_Login();
 
         //Constructor
-        public frmDirecDepAcade()
+        public frmDirecDepAcade(string CodDocente)
         {
             InitializeComponent();
             MostrarTablaCatalogo();
             MoverModificarColumnas();
+            MostrarNombreUsuario(CodDocente);
+        }
+
+        private void MostrarNombreUsuario(string codDocente)
+        {
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
         }
 
         #region Módulos
@@ -125,7 +132,7 @@ namespace CapaPresentacion
         private void buttonLISTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            FormListaDocentes p = new FormListaDocentes();
+            frmListaDocentes p = new frmListaDocentes();
             p.Show();
         }
         
