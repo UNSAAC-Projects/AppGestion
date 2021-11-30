@@ -254,6 +254,7 @@ create proc SP_EDITARCATALOGO
 	@CodDocenteTeorico varchar(6),
 	@CodDocentePractico varchar(6)
 as 
+delete from THorario where IDCatalogo=@IDCatalogo
 update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
 where IDCatalogo =@IDCatalogo
 go
@@ -264,8 +265,6 @@ as
 delete from THorario where IDCatalogo=@IDCatalogo
 delete from TCatalogo where IDCatalogo=@IDCatalogo
 go
-
-
 
 ----------------------  PROC.  HORARIO -----------------
 CREATE PROC SP_INSERTARHORARIO
@@ -287,14 +286,14 @@ go
 CREATE PROC SP_VISTACATALOGO
 --@BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
@@ -486,3 +485,4 @@ select *
 from TLogin
 where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
+
