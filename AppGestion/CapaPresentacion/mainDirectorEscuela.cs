@@ -107,6 +107,8 @@ namespace CapaPresentacion
             {
                 frmMantAsignatura frm = new frmMantAsignatura();
                 frm.Update = true;
+                frm.textCodAsignatura.Enabled = false;
+                frm.textIDPlan.Enabled = false;
                 frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
                 frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
@@ -153,6 +155,11 @@ namespace CapaPresentacion
             {
                 WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void panelPrinciapl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
