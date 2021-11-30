@@ -85,7 +85,7 @@
             this.ContenedorLogin.Controls.Add(this.pictureBox2);
             this.ContenedorLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
-            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2);
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(233, 528);
             this.ContenedorLogin.TabIndex = 1;
@@ -131,7 +131,7 @@
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(44, 328);
+            this.labelNombre.Location = new System.Drawing.Point(19, 331);
             this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(145, 20);
@@ -142,7 +142,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel2.Location = new System.Drawing.Point(23, 367);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 2);
             this.panel2.TabIndex = 6;
@@ -151,7 +151,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel1.Location = new System.Drawing.Point(23, 114);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 2);
             this.panel1.TabIndex = 5;
@@ -172,7 +172,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(59, 195);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(98, 110);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -191,7 +191,7 @@
             this.panelPrinciapl.Controls.Add(this.panelMainDirEscuela);
             this.panelPrinciapl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrinciapl.Location = new System.Drawing.Point(233, 0);
-            this.panelPrinciapl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelPrinciapl.Margin = new System.Windows.Forms.Padding(2);
             this.panelPrinciapl.Name = "panelPrinciapl";
             this.panelPrinciapl.Size = new System.Drawing.Size(807, 528);
             this.panelPrinciapl.TabIndex = 1;
@@ -232,7 +232,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(496, 50);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(99, 44);
             this.button2.TabIndex = 7;
@@ -246,7 +246,6 @@
             this.dgvAsignaturas.AllowUserToAddRows = false;
             this.dgvAsignaturas.AllowUserToDeleteRows = false;
             this.dgvAsignaturas.AllowUserToOrderColumns = true;
-            this.dgvAsignaturas.AllowUserToResizeColumns = false;
             this.dgvAsignaturas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvAsignaturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -281,7 +280,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.Location = new System.Drawing.Point(4, 121);
-            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             this.dgvAsignaturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -324,7 +323,7 @@
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(64, 60);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(390, 21);
             this.txtBuscar.TabIndex = 4;
@@ -334,7 +333,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(32, 60);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(28, 28);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -345,7 +344,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(26, 50);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(455, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -359,7 +358,7 @@
             this.panelMainDirEscuela.Controls.Add(this.pictureCANCEL1);
             this.panelMainDirEscuela.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMainDirEscuela.Location = new System.Drawing.Point(0, 0);
-            this.panelMainDirEscuela.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMainDirEscuela.Margin = new System.Windows.Forms.Padding(2);
             this.panelMainDirEscuela.Name = "panelMainDirEscuela";
             this.panelMainDirEscuela.Size = new System.Drawing.Size(807, 37);
             this.panelMainDirEscuela.TabIndex = 11;
@@ -369,7 +368,7 @@
             this.pictureMaxDirectorEscuela.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureMaxDirectorEscuela.Image = ((System.Drawing.Image)(resources.GetObject("pictureMaxDirectorEscuela.Image")));
             this.pictureMaxDirectorEscuela.Location = new System.Drawing.Point(730, 2);
-            this.pictureMaxDirectorEscuela.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureMaxDirectorEscuela.Margin = new System.Windows.Forms.Padding(2);
             this.pictureMaxDirectorEscuela.Name = "pictureMaxDirectorEscuela";
             this.pictureMaxDirectorEscuela.Size = new System.Drawing.Size(31, 28);
             this.pictureMaxDirectorEscuela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -383,7 +382,7 @@
             this.pictureMINIMIZE1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureMINIMIZE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureMINIMIZE1.Image")));
             this.pictureMINIMIZE1.Location = new System.Drawing.Point(697, 2);
-            this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureMINIMIZE1.Name = "pictureMINIMIZE1";
             this.pictureMINIMIZE1.Size = new System.Drawing.Size(29, 28);
             this.pictureMINIMIZE1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -397,7 +396,7 @@
             this.pictureCANCEL1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureCANCEL1.Image = ((System.Drawing.Image)(resources.GetObject("pictureCANCEL1.Image")));
             this.pictureCANCEL1.Location = new System.Drawing.Point(765, 2);
-            this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureCANCEL1.Name = "pictureCANCEL1";
             this.pictureCANCEL1.Size = new System.Drawing.Size(29, 28);
             this.pictureCANCEL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -452,7 +451,7 @@
             this.Controls.Add(this.panelPrinciapl);
             this.Controls.Add(this.ContenedorLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "mainDirectorEscuela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainDirectorEscuela";

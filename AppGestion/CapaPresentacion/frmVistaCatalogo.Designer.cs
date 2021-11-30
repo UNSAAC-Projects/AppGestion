@@ -36,6 +36,8 @@ namespace CapaPresentacion
             this.btnDescargar = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dgvCatalogo = new System.Windows.Forms.DataGridView();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnHorarios = new System.Windows.Forms.Button();
             this.panelVistaCatalogo = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@ namespace CapaPresentacion
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btonCerrarVistaCatalogo = new System.Windows.Forms.PictureBox();
             this.btnMinVistaCatalogo = new System.Windows.Forms.PictureBox();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).BeginInit();
             this.panelVistaCatalogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -129,13 +129,25 @@ namespace CapaPresentacion
             this.dgvCatalogo.TabIndex = 47;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
             // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
+            this.Editar.Name = "Editar";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.Eliminar.Name = "Eliminar";
+            // 
             // txtBuscar
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(134, 64);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(358, 26);
             this.txtBuscar.TabIndex = 48;
@@ -170,7 +182,7 @@ namespace CapaPresentacion
             this.panelVistaCatalogo.Controls.Add(this.btnMinVistaCatalogo);
             this.panelVistaCatalogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelVistaCatalogo.Location = new System.Drawing.Point(0, 0);
-            this.panelVistaCatalogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelVistaCatalogo.Name = "panelVistaCatalogo";
             this.panelVistaCatalogo.Size = new System.Drawing.Size(845, 33);
             this.panelVistaCatalogo.TabIndex = 50;
@@ -202,7 +214,7 @@ namespace CapaPresentacion
             this.btonCerrarVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btonCerrarVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btonCerrarVistaCatalogo.Image")));
             this.btonCerrarVistaCatalogo.Location = new System.Drawing.Point(814, 2);
-            this.btonCerrarVistaCatalogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btonCerrarVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.btonCerrarVistaCatalogo.Name = "btonCerrarVistaCatalogo";
             this.btonCerrarVistaCatalogo.Size = new System.Drawing.Size(26, 26);
             this.btonCerrarVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,25 +227,13 @@ namespace CapaPresentacion
             this.btnMinVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaCatalogo.Image")));
             this.btnMinVistaCatalogo.Location = new System.Drawing.Point(784, 2);
-            this.btnMinVistaCatalogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinVistaCatalogo.Name = "btnMinVistaCatalogo";
             this.btnMinVistaCatalogo.Size = new System.Drawing.Size(26, 26);
             this.btnMinVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinVistaCatalogo.TabIndex = 51;
             this.btnMinVistaCatalogo.TabStop = false;
             this.btnMinVistaCatalogo.Click += new System.EventHandler(this.btnMinVistaCatalogo_Click);
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.Eliminar.Name = "Eliminar";
             // 
             // frmVistaCatalogo
             // 
@@ -249,6 +249,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.btnDescargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVistaCatalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaCatalogo";
             this.Load += new System.EventHandler(this.frmVistaCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();

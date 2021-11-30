@@ -235,6 +235,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMantCatalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMantCatalogo";
             this.ResumeLayout(false);
             this.PerformLayout();
