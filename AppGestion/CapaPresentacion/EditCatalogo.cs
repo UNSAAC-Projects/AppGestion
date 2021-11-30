@@ -17,7 +17,9 @@ namespace CapaPresentacion
     public partial class EditCatalogo : Form
     {
         public bool Update = false;
-        E_CursoCatalogo entities = new E_CursoCatalogo();
+        public string DocPractico = "";
+        public string DocTeorico = "";
+         E_CursoCatalogo entities = new E_CursoCatalogo();
         N_CursoCatalogo business = new N_CursoCatalogo();
 
         E_Horario entitiesHorario = new E_Horario();
@@ -35,7 +37,7 @@ namespace CapaPresentacion
                 {
                     entities.IdCatalogo = textIdCatalogo.Text;
                     entities.NroSemestre = textNroSemestre.Text;
-                    entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
+                    entities.CodAsignatura = textCodigo.Text;
                     entities.Grupo = cmbGrupo.Text;
                     entities.Aula = textAula.Text;
                     entities.CodDocenteTeorico = "D000";
@@ -76,16 +78,16 @@ namespace CapaPresentacion
                         }
                     }
                     Close();
-                }
-                catch 
-                {
-                    MessageBox.Show("No se puede agregar");
-                }
-
             }
+                catch
+            {
+                MessageBox.Show("No se puede agregar");
+            }
+
+        }
             if (Update == true) 
             {
-               
+
                 try
                 {
                     entities.IdCatalogo = textIdCatalogo.Text;
@@ -94,8 +96,8 @@ namespace CapaPresentacion
                     entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
                     entities.Grupo = cmbGrupo.Text;
                     entities.Aula = textAula.Text;
-                    entities.CodDocenteTeorico = "D000";
-                    entities.CodDocentePractico = "D000";
+                    entities.CodDocenteTeorico = DocTeorico;
+                    entities.CodDocentePractico = DocTeorico;
                     business.EditandoCursoCatalogo(entities);
 
                     // HORARIO
@@ -103,7 +105,7 @@ namespace CapaPresentacion
                     TextBox[] HInicio = { textHInicio1, textHInicio2, textHInicio3 };
                     TextBox[] HFin = { textHFin1, textHFin2, textHFin3 };
                     ComboBox[] Tipo = { cmbTipo1, cmbTipo2, cmbTipo3 };
-
+                    
                     int i = 0;
                     int creditos = Convert.ToInt32(textCreditos.Text);
                     entitiesHorario.IdCatalogo = textIdCatalogo.Text;
@@ -134,7 +136,7 @@ namespace CapaPresentacion
                     Close();
                     Update = false;
                 }
-                catch 
+                catch
                 {
                     MessageBox.Show("No es posible editar");
                 }
