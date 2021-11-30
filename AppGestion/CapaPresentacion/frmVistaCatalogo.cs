@@ -23,8 +23,8 @@ namespace CapaPresentacion
         }
         public void OcultarMoverAncharColumnas()
         {
-            dgvCatalogo.Columns[0].DisplayIndex = 10;
-            dgvCatalogo.Columns[1].DisplayIndex = 10;
+            dgvCatalogo.Columns[0].DisplayIndex = 12;
+            dgvCatalogo.Columns[1].DisplayIndex = 12;
 
             dgvCatalogo.Columns[0].Width = 50;
             dgvCatalogo.Columns[1].Width = 50;
@@ -35,7 +35,9 @@ namespace CapaPresentacion
             dgvCatalogo.Columns[6].Width = 70;
             dgvCatalogo.Columns[7].Width = 90;
             dgvCatalogo.Columns[8].Width = 90;
-          
+            dgvCatalogo.Columns["CodDocentePractico"].Visible = false;
+            dgvCatalogo.Columns["CodDocenteTeorico"].Visible = false;
+
         }
         public void MostrarVistaCatalogo()
         {
@@ -74,7 +76,11 @@ namespace CapaPresentacion
                 frm.textIdCatalogo.Enabled = false;
                 frm.textCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 frm.textNombreCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                frm.textNombreCurso.Enabled = false;
                 frm.textCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                frm.textNroSemestre.Text= dgvCatalogo.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
+                frm.textNroSemestre.Enabled = false;
+
                 if (Convert.ToInt32(dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
                 {
                     frm.cmbDia3.Enabled = false;
@@ -82,6 +88,8 @@ namespace CapaPresentacion
                     frm.textHFin3.Enabled = false;
                     frm.cmbTipo3.Enabled = false;
                 }
+                frm.DocPractico= dgvCatalogo.Rows[e.RowIndex].Cells["CodDocentePractico"].Value.ToString();
+                frm.DocTeorico= dgvCatalogo.Rows[e.RowIndex].Cells["CodDocenteTeorico"].Value.ToString();
                 frm.ShowDialog();
                 MostrarVistaCatalogo();
             }
