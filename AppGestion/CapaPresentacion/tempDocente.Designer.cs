@@ -171,7 +171,6 @@ namespace CapaPresentacion
             this.dgvCursosDocente.Name = "dgvCursosDocente";
             this.dgvCursosDocente.Size = new System.Drawing.Size(647, 318);
             this.dgvCursosDocente.TabIndex = 5;
-            this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick);
             // 
             // TEMA
             // 

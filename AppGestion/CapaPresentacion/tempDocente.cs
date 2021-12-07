@@ -27,7 +27,7 @@ namespace CapaPresentacion
             ObtenerTiempo(out _, out _, out string dia);
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
-            //dgvCursosDocente.DataSource = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
+            dgvCursosDocente.DataSource = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
 
         }
 
@@ -54,11 +54,6 @@ namespace CapaPresentacion
             string fecha, hora, dia;
             ObtenerTiempo(out fecha, out hora,out dia);
             MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
-        }
-
-        private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
