@@ -67,11 +67,6 @@ namespace CapaPresentacion
                 //Recuperar información de la tabla
                 //form.textBoxCodigo.Text = CodCursoCatalogo;
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                //form.textBoxHT.Text = row.Cells["HT"].Value.ToString();
-                //form.textBoxHP.Text = row.Cells["HP"].Value.ToString();
-                //form.textBoxCreditos.Text = row.Cells["CRED"].Value.ToString();
-                //form.textBoxAula.Text = row.Cells["AULA"].Value.ToString();
-                //form.textBoxGrupo.Text = row.Cells["GRUPO"].Value.ToString();
                 form.ShowDialog();
             }
         }
