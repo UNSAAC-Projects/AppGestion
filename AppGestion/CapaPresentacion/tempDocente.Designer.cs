@@ -43,6 +43,7 @@ namespace CapaPresentacion
             this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
             this.TEMA = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ASISTENCIA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -153,7 +154,7 @@ namespace CapaPresentacion
             // 
             // buttonGetDate
             // 
-            this.buttonGetDate.Location = new System.Drawing.Point(510, 24);
+            this.buttonGetDate.Location = new System.Drawing.Point(511, 438);
             this.buttonGetDate.Name = "buttonGetDate";
             this.buttonGetDate.Size = new System.Drawing.Size(75, 23);
             this.buttonGetDate.TabIndex = 4;
@@ -182,12 +183,20 @@ namespace CapaPresentacion
             this.ASISTENCIA.HeaderText = "ASISTENCIA";
             this.ASISTENCIA.Name = "ASISTENCIA";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(670, 27);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
             // tempDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(934, 511);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.dgvCursosDocente);
             this.Controls.Add(this.buttonGetDate);
             this.Controls.Add(this.label1);
@@ -220,5 +229,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dgvCursosDocente;
         private System.Windows.Forms.DataGridViewComboBoxColumn TEMA;
         private System.Windows.Forms.DataGridViewImageColumn ASISTENCIA;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
