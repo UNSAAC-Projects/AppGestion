@@ -28,7 +28,6 @@ namespace CapaPresentacion
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             dgvCursosDocente.DataSource = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
-
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -54,6 +53,27 @@ namespace CapaPresentacion
             string fecha, hora, dia;
             ObtenerTiempo(out fecha, out hora,out dia);
             MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
+        }
+
+        private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
+            if (row.Cells["ASISTENCIA"].Selected)
+            {
+                //Obtener cod curso
+                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
+
+                frmAsistencia form = new frmAsistencia();
+                //Recuperar información de la tabla
+                //form.textBoxCodigo.Text = CodCursoCatalogo;
+                //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
+                //form.textBoxHT.Text = row.Cells["HT"].Value.ToString();
+                //form.textBoxHP.Text = row.Cells["HP"].Value.ToString();
+                //form.textBoxCreditos.Text = row.Cells["CRED"].Value.ToString();
+                //form.textBoxAula.Text = row.Cells["AULA"].Value.ToString();
+                //form.textBoxGrupo.Text = row.Cells["GRUPO"].Value.ToString();
+                form.ShowDialog();
+            }
         }
     }
 }

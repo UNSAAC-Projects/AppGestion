@@ -124,8 +124,8 @@
   <data name="download-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus-regular-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="table-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus-regular-245" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +136,8 @@
   <data name="Imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh-regular-36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh-regular-36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CerrarForm11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CerrarForm1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock-alt-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-alt-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -147,6 +147,12 @@
   </data>
   <data name="Logo Sistemas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Sistemas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="export-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\export-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-descargar-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-descargar-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,8 +181,8 @@
   <data name="user-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="export-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\export-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo Sistemas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Sistemas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="table-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\table-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,14 +208,11 @@
   <data name="eliminar_icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus-regular-244" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="list-check-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list-check-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\x-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chevron-up-square-solid-36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-up-square-solid-36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2021-11-21 at 12.53.18 PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,26 +244,23 @@
   <data name="x-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Imprimir1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus-regular-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="x-regular-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\x-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WhatsApp Image 2021-11-21 at 12.53.18 PM (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WhatsApp Image 2021-11-21 at 12.53.18 PM (1).jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="table-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\table-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh-regular-36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-regular-36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="menu-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user-regular-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,25 +268,28 @@
   <data name="download-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="refresh-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printer-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printer-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lista-de-verificacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lista-de-verificacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download-regular-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CerrarForm11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CerrarForm1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus-regular-244" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="x-regular-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="x-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\x-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="editar_icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editar_icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="export-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="export-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CerrarForm1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -295,8 +298,8 @@
   <data name="user-regular-243" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Sistemas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Sistemas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus-regular-242" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pencil_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -304,10 +307,10 @@
   <data name="printer-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\printer-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus-regular-241" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer-regular-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer-regular-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chevron-up-square-solid-36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chevron-up-square-solid-36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="graduado-16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\graduado-16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -213,6 +213,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap graduado_16px {
+            get {
+                object obj = ResourceManager.GetObject("graduado-16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_solid_24 {
             get {
                 object obj = ResourceManager.GetObject("group-solid-24", resourceCulture);
