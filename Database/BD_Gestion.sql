@@ -448,6 +448,29 @@ inner join TDocente D on D.CodDocente = @CodDocente
 group by D.CodDocente, D.Nombres, D.Apellidos, D.Estado
 GO
 
+-- Horario de un docente por día
+CREATE PROC SP_HORARIO_DOCENTE_DIA
+	@CodDocente varchar(9),
+	@NombreDia varchar(10)
+AS
+-- Declarando tabla temporal
+declare @temp table(
+	Codigo varchar(9),
+	Nombre varchar(100),
+	Tipo varchar(10),
+	Grupo varchar(1),
+	Dia varchar(10),
+	HoraInicio varchar (2),
+	HoraFin varchar (2),
+	Horas int,
+	Aula varchar(6)
+);
+INSERT @temp EXEC SP_HORARIO_DOCENTE @CodDocente;
+SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',HoraInicio AS 'HORA INICIO',HoraFin AS 'HORA FIN',Aula AS 'AULA'
+FROM @temp
+WHERE Dia = @NombreDia
+GO
+
 -- Lista docentes con sus horas de dictado
 CREATE PROC SP_LISTA_DOCENTES
 AS

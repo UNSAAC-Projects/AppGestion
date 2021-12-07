@@ -107,5 +107,22 @@ namespace CapaDatos
             return tabla;   
         }
 
+        //Metodo para obtener el horario de un docente de un dia
+        public DataTable MostrarHorarioDocenteDia(string codDocente, string nombreDia)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_HORARIO_DOCENTE_DIA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CodDocente", codDocente);
+            cmd.Parameters.AddWithValue("@NombreDia", nombreDia);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
     }
 }
