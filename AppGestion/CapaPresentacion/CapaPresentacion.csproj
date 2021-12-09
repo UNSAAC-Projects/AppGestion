@@ -126,6 +126,12 @@
     <Compile Include="frmVistaCatalogo.Designer.cs">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistaCursosDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaCursosDocente.Designer.cs">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVistaHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo.resx">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaCursosDocente.resx">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaHorarios.resx">
       <DependentUpon>frmVistaHorarios.cs</DependentUpon>

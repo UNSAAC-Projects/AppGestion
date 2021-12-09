@@ -2,16 +2,16 @@ use master
 go
 
  /* Para ejecutar DB en la nube */
-use db_a7d2c3_appgestion
-go
+--use db_a7d2c3_appgestion
+--go
 
 /* Para ejecutar BD de forma local */
 --DROP DATABASE AppGestion
---GO
---create database AppGestion
---go
---use AppGestion
---go
+GO
+create database AppGestion
+go
+use AppGestion
+go
 
 /***********************************************************************************
 					CREACION TABLAS
@@ -490,3 +490,17 @@ from TLogin
 where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
 
+/***************************************************************
+		             PROCEDIMIENTOS DOCENTES
+****************************************************************/
+create proc SP_LISTARCURSOSXDOCENTE
+@CODDOCENTE varchar(6)
+as
+select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
+where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
+go
+
+exec SP_LISTARCURSOSXDOCENTE 'D0004'
+
+SELECT*FROM TDocente

@@ -46,6 +46,7 @@
     <Compile Include="D_Asignatura.cs" />
     <Compile Include="D_Categoria.cs" />
     <Compile Include="D_CursoCatalogo.cs" />
+    <Compile Include="D_CursosDocente.cs" />
     <Compile Include="D_Docente.cs" />
     <Compile Include="D_Horario.cs" />
     <Compile Include="D_Login.cs" />
