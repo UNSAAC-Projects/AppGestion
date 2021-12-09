@@ -16,12 +16,20 @@ namespace CapaPresentacion
     public partial class mainDirectorEscuela : Form
     {
         N_Asignatura oAsignatura = new N_Asignatura();
-        public mainDirectorEscuela()
+        N_Login oLogin = new N_Login();
+        public mainDirectorEscuela(string CodDocente)
         {
             InitializeComponent();
             MostrarTablaAsignatura();
             OcultarMoverAncharColumnas();
+            MostrarNombreUsuario(CodDocente);
         }
+
+        private void MostrarNombreUsuario(string CodDocente)
+        {
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(CodDocente);
+        }
+
         public void OcultarMoverAncharColumnas()
         {
             dgvAsignaturas.Columns[0].DisplayIndex =10;
@@ -46,33 +54,6 @@ namespace CapaPresentacion
 
         }
 
-        private void mainDirectorEscuela_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-        private void bunifuButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void BuscarAsignatura(string search)
         {
             N_Asignatura oAsignatura = new N_Asignatura();
@@ -89,32 +70,45 @@ namespace CapaPresentacion
 
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["CrearGrupo"].Selected)
             {
-                EditCatalogo frm = new EditCatalogo();
-
-                N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
-                frm.textCodigo.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                frm.textNombreCurso.Text= dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
-                if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea crear un nuevo grupo?", "Alerta", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    frm.cmbDia3.Enabled = false;
-                    frm.textHInicio3.Enabled = false;
-                    frm.textHFin3.Enabled = false;
-                    frm.cmbTipo3.Enabled = false;
+                    EditCatalogo frm = new EditCatalogo();
+
+                    N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                    frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                    frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                    frm.textIdCatalogo.Text = oAsignatura.New();
+                    if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                    {
+                        frm.cmbDia3.Enabled = false;
+                        frm.textHInicio3.Enabled = false;
+                        frm.textHFin3.Enabled = false;
+                        frm.cmbTipo3.Enabled = false;
+                        frm.textIdCatalogo.Enabled = false;
+                    }
+                    frm.Show();
                 }
-                frm.Show();
+
             }
-            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected) 
+            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected)
             {
-                string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                oAsignatura.EliminandoAsignatura(delete);
-                
-                MostrarTablaAsignatura();
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                    oAsignatura.EliminandoAsignatura(delete);
+
+                    MostrarTablaAsignatura();
+                }
             }
             if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
             {
                 frmMantAsignatura frm = new frmMantAsignatura();
                 frm.Update = true;
+                frm.textCodAsignatura.Enabled = false;
+                frm.textIDPlan.Enabled = false;
                 frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
                 frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
                 frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
@@ -123,7 +117,6 @@ namespace CapaPresentacion
                 frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
                 frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
                 frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
-
                 frm.ShowDialog();
                 MostrarTablaAsignatura();
             }
@@ -136,22 +129,6 @@ namespace CapaPresentacion
             MostrarTablaAsignatura();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuTop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void panelPrinciapl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void pictureMINIMIZE1_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -161,13 +138,6 @@ namespace CapaPresentacion
         {
             this.Close();
         }
-
-        private void pictureBoxLogo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void btnVerCatalogo_Click_1(object sender, EventArgs e)
         {
@@ -187,7 +157,7 @@ namespace CapaPresentacion
             }
         }
 
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void panelPrinciapl_Paint(object sender, PaintEventArgs e)
         {
 
         }

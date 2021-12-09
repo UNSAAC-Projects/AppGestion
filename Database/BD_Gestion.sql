@@ -1,13 +1,17 @@
 use master
 go
+
+ /* Para ejecutar DB en la nube */
+--use db_a7d2c3_appgestion
+--go
+
+/* Para ejecutar BD de forma local */
 --DROP DATABASE AppGestion
---GO
+GO
 create database AppGestion
 go
-
 use AppGestion
 go
-
 
 /***********************************************************************************
 					CREACION TABLAS
@@ -75,7 +79,7 @@ GO
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
-	Dia varchar(100),
+	Dia varchar(10),
 	HoraInicio varchar(2),
 	HoraFin varchar(2),
 	IDCatalogo varchar(6),
@@ -93,7 +97,8 @@ CREATE TABLE TAsistencia
 	Tipo varchar(100),
 	IDHorario INT IDENTITY,
 	PRIMARY KEY (IDAsistencia),
-	FOREIGN KEY (IDHorario) REFERENCES THorario
+	FOREIGN KEY (IDHorario) REFERENCES THorario,
+	--DELETE ON CASCADE
 )
 GO
 
@@ -260,6 +265,7 @@ create proc SP_EDITARCATALOGO
 	@CodDocenteTeorico varchar(6),
 	@CodDocentePractico varchar(6)
 as 
+delete from THorario where IDCatalogo=@IDCatalogo
 update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
 where IDCatalogo =@IDCatalogo
 go
@@ -271,8 +277,6 @@ as
 delete from THorario where IDCatalogo=@IDCatalogo
 delete from TCatalogo where IDCatalogo=@IDCatalogo
 go
-
-
 
 ----------------------  PROC.  HORARIO -----------------
 CREATE PROC SP_INSERTARHORARIO
@@ -293,14 +297,14 @@ select* from TDocente
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 -------procedimiento almacenado para buscar curso-----
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
@@ -424,11 +428,95 @@ where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or
 (C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
 GO
 
+-- Mostrar las horas de dictado de un docente
+CREATE PROC SP_HORASDICTADO_DOCENTE
+	@CodDocente varchar(9)
+AS
+-- Declarando tabla temporal
+declare @temp table(
+	Codigo varchar(9),
+	Nombre varchar(100),
+	Tipo varchar(10),
+	Grupo varchar(1),
+	Dia varchar(10),
+	HoraInicio varchar (2),
+	HoraFin varchar (2),
+	Horas int,
+	Aula varchar(6)
+);
+INSERT @temp EXEC SP_HORARIO_DOCENTE @CodDocente;
+SELECT
+	D.CodDocente as CODIGO,
+	D.Nombres as NOMBRES,
+	D.Apellidos as APELLIDOS,
+	D.Estado as ESTADO,
+	SUM(T.Horas) as 'HORAS DICTADO'
+from @temp T
+inner join TDocente D on D.CodDocente = @CodDocente
+group by D.CodDocente, D.Nombres, D.Apellidos, D.Estado
+GO
+
 -- Lista docentes con sus horas de dictado
-CREATE PROC SP_DISTRIBUCION_DOCENTES
+CREATE PROC SP_LISTA_DOCENTES
 AS
 select CodDocente as CODIGO, Nombres as NOMBRES, 
-	Apellidos as APELLIDOS, Estado as ESTADO,
-	'5' as 'HORAS DICTADO' --(actualizar)
+	Apellidos as APELLIDOS, TituloAcademico as 'TITULO ACADEMICO',
+	Estado as ESTADO
 from TDocente
 GO
+
+-- Obtener el nombre de un docente
+CREATE PROC SP_OBTENER_NOMBREUSUARIO
+	@CodDocente varchar(6)
+AS
+select (Nombres + ' ' + Apellidos) as 'NOMBRE USUARIO'
+from TDocente
+where CodDocente = @CodDocente
+GO
+--listar los cursos asignados de un docente
+create proc SP_LISTARCURSOSXDOCENTE
+@CODDOCENTE varchar(6)
+as
+select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
+where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
+go
+
+-- Crear nueva ID
+CREATE FUNCTION NuevoCatalogo()
+RETURNS varchar(6)
+AS
+BEGIN
+	declare @Codigo varchar(4)
+	
+	set @Codigo=((select MAX(IDCatalogo)  from TCatalogo))
+	set @Codigo='C' + RIGHT('000' + LTRIM(right(isnull(@Codigo,'000'),3)+1 ),3)
+   RETURN (@codigo)
+END
+GO
+
+-- Obtener los datos de un usuario
+CREATE PROC SP_OBTENER_DATOSUSUARIO
+	@Usuario varchar(60), 
+	@Contrasenia varchar(60),
+	@Categoria varchar(100)
+AS
+select * 
+from TLogin
+where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
+GO
+
+/***************************************************************
+		             PROCEDIMIENTOS DOCENTES
+****************************************************************/
+create proc SP_LISTARCURSOSXDOCENTE
+@CODDOCENTE varchar(6)
+as
+select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
+where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
+go
+
+exec SP_LISTARCURSOSXDOCENTE 'D0004'
+
+SELECT*FROM TDocente

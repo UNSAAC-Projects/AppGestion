@@ -64,10 +64,9 @@ namespace CapaPresentacion
             this.btnDescargar.ForeColor = System.Drawing.Color.White;
             this.btnDescargar.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargar.Image")));
             this.btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDescargar.Location = new System.Drawing.Point(281, 470);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDescargar.Location = new System.Drawing.Point(211, 382);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(192, 51);
+            this.btnDescargar.Size = new System.Drawing.Size(144, 41);
             this.btnDescargar.TabIndex = 1;
             this.btnDescargar.Text = "EXPORTAR EXCEL";
             this.btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,10 +79,11 @@ namespace CapaPresentacion
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Gray;
-            this.label13.Location = new System.Drawing.Point(79, 82);
+            this.label13.Location = new System.Drawing.Point(59, 67);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label13.Size = new System.Drawing.Size(94, 23);
+            this.label13.Size = new System.Drawing.Size(73, 19);
             this.label13.TabIndex = 45;
             this.label13.Text = "BUSCAR:";
             // 
@@ -119,14 +119,13 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCatalogo.Location = new System.Drawing.Point(33, 139);
-            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCatalogo.Location = new System.Drawing.Point(25, 113);
             this.dgvCatalogo.Name = "dgvCatalogo";
             this.dgvCatalogo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCatalogo.RowHeadersVisible = false;
             this.dgvCatalogo.RowHeadersWidth = 51;
             this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCatalogo.Size = new System.Drawing.Size(1072, 304);
+            this.dgvCatalogo.Size = new System.Drawing.Size(804, 247);
             this.dgvCatalogo.TabIndex = 47;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
             // 
@@ -134,14 +133,12 @@ namespace CapaPresentacion
             // 
             this.Editar.HeaderText = "Editar";
             this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.Editar.MinimumWidth = 6;
             this.Editar.Name = "Editar";
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             // 
             // txtBuscar
@@ -149,10 +146,10 @@ namespace CapaPresentacion
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(179, 79);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscar.Location = new System.Drawing.Point(134, 64);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(477, 30);
+            this.txtBuscar.Size = new System.Drawing.Size(358, 26);
             this.txtBuscar.TabIndex = 48;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -167,10 +164,9 @@ namespace CapaPresentacion
             this.btnHorarios.ForeColor = System.Drawing.Color.White;
             this.btnHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnHorarios.Image")));
             this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(672, 470);
-            this.btnHorarios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHorarios.Location = new System.Drawing.Point(504, 382);
             this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(176, 51);
+            this.btnHorarios.Size = new System.Drawing.Size(132, 41);
             this.btnHorarios.TabIndex = 49;
             this.btnHorarios.Text = "VER HORARIOS";
             this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -186,8 +182,9 @@ namespace CapaPresentacion
             this.panelVistaCatalogo.Controls.Add(this.btnMinVistaCatalogo);
             this.panelVistaCatalogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelVistaCatalogo.Location = new System.Drawing.Point(0, 0);
+            this.panelVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.panelVistaCatalogo.Name = "panelVistaCatalogo";
-            this.panelVistaCatalogo.Size = new System.Drawing.Size(1127, 41);
+            this.panelVistaCatalogo.Size = new System.Drawing.Size(845, 33);
             this.panelVistaCatalogo.TabIndex = 50;
             // 
             // label11
@@ -195,19 +192,19 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label11.Location = new System.Drawing.Point(45, 3);
+            this.label11.Location = new System.Drawing.Point(34, 2);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 30);
+            this.label11.Size = new System.Drawing.Size(123, 22);
             this.label11.TabIndex = 51;
             this.label11.Text = "CATALOGO";
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 2);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(3, 2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(34, 35);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(26, 28);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 65;
             this.pictureBoxLogo.TabStop = false;
@@ -216,9 +213,10 @@ namespace CapaPresentacion
             // 
             this.btonCerrarVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btonCerrarVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btonCerrarVistaCatalogo.Image")));
-            this.btonCerrarVistaCatalogo.Location = new System.Drawing.Point(1085, 3);
+            this.btonCerrarVistaCatalogo.Location = new System.Drawing.Point(814, 2);
+            this.btonCerrarVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.btonCerrarVistaCatalogo.Name = "btonCerrarVistaCatalogo";
-            this.btonCerrarVistaCatalogo.Size = new System.Drawing.Size(35, 32);
+            this.btonCerrarVistaCatalogo.Size = new System.Drawing.Size(26, 26);
             this.btonCerrarVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btonCerrarVistaCatalogo.TabIndex = 51;
             this.btonCerrarVistaCatalogo.TabStop = false;
@@ -228,9 +226,10 @@ namespace CapaPresentacion
             // 
             this.btnMinVistaCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinVistaCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnMinVistaCatalogo.Image")));
-            this.btnMinVistaCatalogo.Location = new System.Drawing.Point(1046, 3);
+            this.btnMinVistaCatalogo.Location = new System.Drawing.Point(784, 2);
+            this.btnMinVistaCatalogo.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinVistaCatalogo.Name = "btnMinVistaCatalogo";
-            this.btnMinVistaCatalogo.Size = new System.Drawing.Size(35, 32);
+            this.btnMinVistaCatalogo.Size = new System.Drawing.Size(26, 26);
             this.btnMinVistaCatalogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinVistaCatalogo.TabIndex = 51;
             this.btnMinVistaCatalogo.TabStop = false;
@@ -238,10 +237,10 @@ namespace CapaPresentacion
             // 
             // frmVistaCatalogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1127, 554);
+            this.ClientSize = new System.Drawing.Size(845, 450);
             this.Controls.Add(this.panelVistaCatalogo);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.txtBuscar);
@@ -249,8 +248,8 @@ namespace CapaPresentacion
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnDescargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmVistaCatalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaCatalogo";
             this.Load += new System.EventHandler(this.frmVistaCatalogo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCatalogo)).EndInit();
@@ -270,12 +269,12 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dgvCatalogo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnHorarios;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.Panel panelVistaCatalogo;
         private System.Windows.Forms.PictureBox btonCerrarVistaCatalogo;
         private System.Windows.Forms.PictureBox btnMinVistaCatalogo;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
     }
 }

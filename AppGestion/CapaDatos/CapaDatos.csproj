@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,8 +46,10 @@
     <Compile Include="D_Asignatura.cs" />
     <Compile Include="D_Categoria.cs" />
     <Compile Include="D_CursoCatalogo.cs" />
+    <Compile Include="D_CursosDocente.cs" />
     <Compile Include="D_Docente.cs" />
     <Compile Include="D_Horario.cs" />
+    <Compile Include="D_Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

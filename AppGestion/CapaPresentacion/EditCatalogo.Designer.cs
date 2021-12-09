@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCatalogo));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelTitle = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.pictureMinAsignaturas = new System.Windows.Forms.PictureBox();
             this.pictureCancelAsignaturas = new System.Windows.Forms.PictureBox();
@@ -70,39 +70,38 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinAsignaturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCancelAsignaturas)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelTitle
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.pictureBoxLogo);
-            this.panel1.Controls.Add(this.pictureMinAsignaturas);
-            this.panel1.Controls.Add(this.pictureCancelAsignaturas);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(988, 48);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.panelTitle.Controls.Add(this.pictureBoxLogo);
+            this.panelTitle.Controls.Add(this.pictureMinAsignaturas);
+            this.panelTitle.Controls.Add(this.pictureCancelAsignaturas);
+            this.panelTitle.Controls.Add(this.label11);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Size = new System.Drawing.Size(988, 48);
+            this.panelTitle.TabIndex = 0;
+            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(39, 39);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 54;
             this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // pictureMinAsignaturas
             // 
@@ -135,12 +134,11 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label11.Location = new System.Drawing.Point(50, 9);
+            this.label11.Location = new System.Drawing.Point(51, 9);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(175, 30);
             this.label11.TabIndex = 31;
             this.label11.Text = "ASIGNATURAS";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel3
             // 
@@ -185,18 +183,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(988, 602);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // cmbTipo3
             // 
             this.cmbTipo3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo3.FormattingEnabled = true;
             this.cmbTipo3.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
-            this.cmbTipo3.Location = new System.Drawing.Point(706, 452);
+            "T",
+            "P"});
+            this.cmbTipo3.Location = new System.Drawing.Point(707, 452);
             this.cmbTipo3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTipo3.Name = "cmbTipo3";
             this.cmbTipo3.Size = new System.Drawing.Size(120, 28);
@@ -205,13 +203,14 @@
             // cmbTipo2
             // 
             this.cmbTipo2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo2.FormattingEnabled = true;
             this.cmbTipo2.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
-            this.cmbTipo2.Location = new System.Drawing.Point(706, 405);
+            "T",
+            "P"});
+            this.cmbTipo2.Location = new System.Drawing.Point(707, 405);
             this.cmbTipo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTipo2.Name = "cmbTipo2";
             this.cmbTipo2.Size = new System.Drawing.Size(120, 28);
@@ -220,13 +219,14 @@
             // cmbTipo1
             // 
             this.cmbTipo1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipo1.FormattingEnabled = true;
             this.cmbTipo1.Items.AddRange(new object[] {
-            "TEORICO",
-            "PRACTICO"});
-            this.cmbTipo1.Location = new System.Drawing.Point(706, 360);
+            "T",
+            "P"});
+            this.cmbTipo1.Location = new System.Drawing.Point(707, 359);
             this.cmbTipo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbTipo1.Name = "cmbTipo1";
             this.cmbTipo1.Size = new System.Drawing.Size(120, 28);
@@ -237,7 +237,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(742, 319);
+            this.label14.Location = new System.Drawing.Point(741, 319);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 21);
             this.label14.TabIndex = 55;
@@ -248,7 +248,7 @@
             this.textCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textCreditos.Enabled = false;
             this.textCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCreditos.Location = new System.Drawing.Point(795, 205);
+            this.textCreditos.Location = new System.Drawing.Point(795, 206);
             this.textCreditos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCreditos.Name = "textCreditos";
             this.textCreditos.Size = new System.Drawing.Size(97, 27);
@@ -273,9 +273,8 @@
             this.panel4.Location = new System.Drawing.Point(121, 342);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(750, 1);
+            this.panel4.Size = new System.Drawing.Size(749, 1);
             this.panel4.TabIndex = 51;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel2
             // 
@@ -283,12 +282,13 @@
             this.panel2.Location = new System.Drawing.Point(121, 314);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 1);
+            this.panel2.Size = new System.Drawing.Size(749, 1);
             this.panel2.TabIndex = 50;
             // 
             // textIdCatalogo
             // 
             this.textIdCatalogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textIdCatalogo.Enabled = false;
             this.textIdCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textIdCatalogo.Location = new System.Drawing.Point(84, 95);
             this.textIdCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -322,7 +322,7 @@
             this.cmbGrupo.Location = new System.Drawing.Point(528, 206);
             this.cmbGrupo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbGrupo.Name = "cmbGrupo";
-            this.cmbGrupo.Size = new System.Drawing.Size(110, 28);
+            this.cmbGrupo.Size = new System.Drawing.Size(111, 28);
             this.cmbGrupo.TabIndex = 47;
             // 
             // label4
@@ -365,7 +365,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(358, 49);
+            this.label6.Location = new System.Drawing.Point(357, 49);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(0, 20);
@@ -385,7 +385,7 @@
             // 
             this.textHInicio3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textHInicio3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHInicio3.Location = new System.Drawing.Point(362, 454);
+            this.textHInicio3.Location = new System.Drawing.Point(363, 454);
             this.textHInicio3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHInicio3.Name = "textHInicio3";
             this.textHInicio3.Size = new System.Drawing.Size(101, 27);
@@ -405,7 +405,7 @@
             // 
             this.textHInicio2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textHInicio2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHInicio2.Location = new System.Drawing.Point(362, 407);
+            this.textHInicio2.Location = new System.Drawing.Point(363, 407);
             this.textHInicio2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHInicio2.Name = "textHInicio2";
             this.textHInicio2.Size = new System.Drawing.Size(101, 27);
@@ -416,7 +416,7 @@
             this.textHFin1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textHFin1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textHFin1.ForeColor = System.Drawing.Color.Black;
-            this.textHFin1.Location = new System.Drawing.Point(548, 360);
+            this.textHFin1.Location = new System.Drawing.Point(548, 359);
             this.textHFin1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHFin1.Name = "textHFin1";
             this.textHFin1.Size = new System.Drawing.Size(101, 27);
@@ -426,7 +426,7 @@
             // 
             this.textHInicio1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textHInicio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHInicio1.Location = new System.Drawing.Point(362, 360);
+            this.textHInicio1.Location = new System.Drawing.Point(363, 359);
             this.textHInicio1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textHInicio1.Name = "textHInicio1";
             this.textHInicio1.Size = new System.Drawing.Size(101, 27);
@@ -435,6 +435,7 @@
             // cmbDia3
             // 
             this.cmbDia3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia3.FormattingEnabled = true;
@@ -445,7 +446,7 @@
             "JUEVES ",
             "VIERNES",
             "SABADO"});
-            this.cmbDia3.Location = new System.Drawing.Point(166, 454);
+            this.cmbDia3.Location = new System.Drawing.Point(165, 454);
             this.cmbDia3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDia3.Name = "cmbDia3";
             this.cmbDia3.Size = new System.Drawing.Size(144, 28);
@@ -454,6 +455,7 @@
             // cmbDia2
             // 
             this.cmbDia2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia2.FormattingEnabled = true;
@@ -464,7 +466,7 @@
             "JUEVES ",
             "VIERNES",
             "SABADO"});
-            this.cmbDia2.Location = new System.Drawing.Point(166, 407);
+            this.cmbDia2.Location = new System.Drawing.Point(165, 407);
             this.cmbDia2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDia2.Name = "cmbDia2";
             this.cmbDia2.Size = new System.Drawing.Size(144, 28);
@@ -487,7 +489,7 @@
             // 
             this.textAula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textAula.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textAula.Location = new System.Drawing.Point(668, 205);
+            this.textAula.Location = new System.Drawing.Point(668, 206);
             this.textAula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textAula.Name = "textAula";
             this.textAula.Size = new System.Drawing.Size(101, 27);
@@ -527,10 +529,11 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(758, 521);
+            this.button1.Location = new System.Drawing.Point(757, 521);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(180, 50);
+            this.button1.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
+            this.button1.Size = new System.Drawing.Size(157, 50);
             this.button1.TabIndex = 21;
             this.button1.Text = "GUARDAR";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -540,6 +543,7 @@
             // cmbDia1
             // 
             this.cmbDia1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbDia1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDia1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbDia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDia1.FormattingEnabled = true;
@@ -550,7 +554,7 @@
             "JUEVES ",
             "VIERNES",
             "SABADO"});
-            this.cmbDia1.Location = new System.Drawing.Point(166, 359);
+            this.cmbDia1.Location = new System.Drawing.Point(165, 359);
             this.cmbDia1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbDia1.Name = "cmbDia1";
             this.cmbDia1.Size = new System.Drawing.Size(144, 28);
@@ -572,7 +576,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(557, 317);
+            this.label8.Location = new System.Drawing.Point(557, 318);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 21);
             this.label8.TabIndex = 7;
@@ -583,7 +587,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(354, 317);
+            this.label7.Location = new System.Drawing.Point(355, 318);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 21);
             this.label7.TabIndex = 6;
@@ -594,7 +598,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(216, 317);
+            this.label5.Location = new System.Drawing.Point(216, 318);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 21);
             this.label5.TabIndex = 4;
@@ -623,7 +627,6 @@
             this.label1.Size = new System.Drawing.Size(232, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "CODIGO ASIGNATURA :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // EditCatalogo
             // 
@@ -631,13 +634,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 650);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EditCatalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditAsignaturas";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelTitle.ResumeLayout(false);
+            this.panelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinAsignaturas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCancelAsignaturas)).EndInit();
@@ -649,7 +653,7 @@
 
         #endregion
         private System.Windows.Forms.Panel panel3;
-        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;

@@ -20,12 +20,20 @@ namespace CapaPresentacion
     {
         //Declaracion variables
         DataSet result;
+        N_Login oLogin = new N_Login();
 
-        public frmDirecDepAcade()
+        //Constructor
+        public frmDirecDepAcade(string CodDocente)
         {
             InitializeComponent();
             MostrarTablaCatalogo();
             MoverModificarColumnas();
+            MostrarNombreUsuario(CodDocente);
+        }
+
+        private void MostrarNombreUsuario(string codDocente)
+        {
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
         }
 
         #region Módulos
@@ -68,11 +76,10 @@ namespace CapaPresentacion
             int indexColumn = 0;
             foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
             {
-                if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                if (columna.Name != "EDITAR")
                 {
                     indexColumn++;
                     exportarCatalogo.Cells[1, indexColumn] = columna.Name;
-
                 }
             }
             int indexfila = 0;
@@ -82,7 +89,7 @@ namespace CapaPresentacion
                 indexColumn = 0;
                 foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
                 {
-                    if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
+                    if (columna.Name != "EDITAR")
                     {
                         indexColumn++;
                         exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
@@ -115,16 +122,6 @@ namespace CapaPresentacion
         #endregion
 
         #region Eventos
-        private void button1_Click(object sender, EventArgs e)
-        {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61,92);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            buttonLISTAR.BackColor = Color.FromArgb(12, 61, 92);
-        }
-
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
@@ -135,7 +132,7 @@ namespace CapaPresentacion
         private void buttonLISTAR_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            FormListaDocentes p = new FormListaDocentes();
+            frmListaDocentes p = new frmListaDocentes();
             p.Show();
         }
         
@@ -175,8 +172,7 @@ namespace CapaPresentacion
         {
             WindowState = FormWindowState.Minimized;
         }
-        #endregion
-
+        
         private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCatalogo.Rows[e.RowIndex];
@@ -267,5 +263,6 @@ namespace CapaPresentacion
                 WindowState = FormWindowState.Normal;
             }
         }
+        #endregion
     }
 }

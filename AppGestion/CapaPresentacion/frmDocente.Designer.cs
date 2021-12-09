@@ -1,0 +1,193 @@
+﻿
+namespace CapaPresentacion
+{
+    partial class frmDocente
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
+            this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelNombre = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.DOCENTE = new System.Windows.Forms.Label();
+            this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
+            this.btnVerCursosDocente = new System.Windows.Forms.Button();
+            this.ContenedorLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ContenedorLogin
+            // 
+            this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.pictureBoxLogo);
+            this.ContenedorLogin.Controls.Add(this.label3);
+            this.ContenedorLogin.Controls.Add(this.labelNombre);
+            this.ContenedorLogin.Controls.Add(this.panel2);
+            this.ContenedorLogin.Controls.Add(this.panel1);
+            this.ContenedorLogin.Controls.Add(this.DOCENTE);
+            this.ContenedorLogin.Controls.Add(this.pictureBoxImagen);
+            this.ContenedorLogin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
+            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ContenedorLogin.Name = "ContenedorLogin";
+            this.ContenedorLogin.Size = new System.Drawing.Size(311, 554);
+            this.ContenedorLogin.TabIndex = 2;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 30);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 10;
+            this.pictureBoxLogo.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(91, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 40);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "INGENIERIA INFORMATICA \r\nY DE SISTEMAS";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombre.ForeColor = System.Drawing.Color.White;
+            this.labelNombre.Location = new System.Drawing.Point(58, 388);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(178, 22);
+            this.labelNombre.TabIndex = 7;
+            this.labelNombre.Text = "NOMBRE USUARIO";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.panel2.Location = new System.Drawing.Point(31, 452);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(251, 2);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.panel1.Location = new System.Drawing.Point(31, 140);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(252, 2);
+            this.panel1.TabIndex = 5;
+            // 
+            // DOCENTE
+            // 
+            this.DOCENTE.AutoSize = true;
+            this.DOCENTE.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DOCENTE.ForeColor = System.Drawing.Color.White;
+            this.DOCENTE.Location = new System.Drawing.Point(79, 170);
+            this.DOCENTE.Name = "DOCENTE";
+            this.DOCENTE.Size = new System.Drawing.Size(127, 30);
+            this.DOCENTE.TabIndex = 3;
+            this.DOCENTE.Text = "DOCENTE";
+            // 
+            // pictureBoxImagen
+            // 
+            this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
+            this.pictureBoxImagen.Location = new System.Drawing.Point(79, 214);
+            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxImagen.Name = "pictureBoxImagen";
+            this.pictureBoxImagen.Size = new System.Drawing.Size(131, 135);
+            this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImagen.TabIndex = 0;
+            this.pictureBoxImagen.TabStop = false;
+            // 
+            // btnVerCursosDocente
+            // 
+            this.btnVerCursosDocente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnVerCursosDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnVerCursosDocente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnVerCursosDocente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerCursosDocente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnVerCursosDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnVerCursosDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCursosDocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCursosDocente.ForeColor = System.Drawing.Color.White;
+            this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
+            this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerCursosDocente.Location = new System.Drawing.Point(790, 30);
+            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVerCursosDocente.Name = "btnVerCursosDocente";
+            this.btnVerCursosDocente.Size = new System.Drawing.Size(239, 42);
+            this.btnVerCursosDocente.TabIndex = 11;
+            this.btnVerCursosDocente.Text = "VER TODOS LOS CURSOS";
+            this.btnVerCursosDocente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVerCursosDocente.UseVisualStyleBackColor = false;
+            this.btnVerCursosDocente.Click += new System.EventHandler(this.btnVerCursosDocente_Click);
+            // 
+            // frmDocente
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnVerCursosDocente);
+            this.Controls.Add(this.ContenedorLogin);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmDocente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FormDocente";
+            this.ContenedorLogin.ResumeLayout(false);
+            this.ContenedorLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel ContenedorLogin;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label DOCENTE;
+        private System.Windows.Forms.PictureBox pictureBoxImagen;
+        private System.Windows.Forms.Button btnVerCursosDocente;
+    }
+}
