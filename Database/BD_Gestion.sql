@@ -469,11 +469,82 @@ GO
 create proc SP_LISTARCURSOSXDOCENTE
 @CODDOCENTE varchar(6)
 as
-select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
-from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
-where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
-go
+	DROP TABLE IF EXISTS #CursosxDocente
+	create table #CursosxDocente
+	(
+		GrupoAsignatura varchar(12),
+		Nombre varchar(100),
+		Grupo varchar(2),
+		Creditos varchar(2),
+		Categoria varchar(10),
+		Horario varchar(50)
+	)
+	-- Declarar el cursor
+	DECLARE cu_CursosXDocente CURSOR
+	FOR
+		select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos,
+		A.Categoria, H.Dia AS Horario
+			from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join THorario H 
+			on C.IDCatalogo=H.IDCatalogo
+		where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
 
+	-- Declarar variables para utilizar en el cursor
+	DECLARE @GrupoAsignatura varchar(12),@Nombre varchar(100), @Grupo varchar(2), @Creditos varchar(2), @Categoria varchar(10),
+	@Horario varchar(10), @AuxGrupoAsignatura varchar(12),@AuxNombre varchar(100), @AuxGrupo varchar(2), @AuxCreditos varchar(2), 
+	@AuxCategoria varchar(10), @AuxHorario varchar(10), @HorarioTotal varchar(40)
+
+	-- Abrir cursor
+	open cu_CursosXDocente
+
+	-- Recuperar la primera fila
+	FETCH NEXT FROM cu_CursosXDocente into 
+	@GrupoAsignatura,@Nombre, @Grupo, @Creditos, @Categoria,@Horario
+
+	set @HorarioTotal=@Horario
+	-- Procesar cada registro
+	while @@FETCH_STATUS = 0
+	begin
+		FETCH NEXT FROM cu_CursosXDocente into 
+		@AuxGrupoAsignatura,@AuxNombre, @AuxGrupo, @AuxCreditos, @AuxCategoria,@AuxHorario
+		if (@GrupoAsignatura = @AuxGrupoAsignatura)
+		begin
+			set @Nombre=@AuxNombre
+			set @Grupo=@AuxGrupo
+			set @Creditos=@AuxCreditos
+			set @Categoria=@AuxCategoria
+			set @Horario=@AuxHorario
+
+			set @HorarioTotal=@HorarioTotal+' - '+@Horario
+		end;
+		if (@GrupoAsignatura!=@AuxGrupoAsignatura)
+		begin
+			insert into #CursosxDocente 
+			values(@GrupoAsignatura,@Nombre,@Grupo,@Creditos,@Categoria,@HorarioTotal)
+
+			set @GrupoAsignatura=@AuxGrupoAsignatura
+			set @Nombre=@AuxNombre
+			set @Grupo=@AuxGrupo
+			set @Creditos=@AuxCreditos
+			set @Categoria=@AuxCategoria
+			set @Horario=@AuxHorario
+
+			set @HorarioTotal=@Horario
+		end;
+	end
+	--Pequeño artificio
+	declare @LenHorarioT int, @LenHorario int
+	set @LenHorarioT=LEN(@HorarioTotal)
+	set @LenHorario=LEN(@Horario)
+	set @HorarioTotal=SUBSTRING(@HorarioTotal,1,@LenHorarioT-@LenHorario-3)
+	insert into #CursosxDocente 
+			values(@GrupoAsignatura,@Nombre,@Grupo,@Creditos,@Categoria,@HorarioTotal)
+	--Cerrar el cursor
+	close cu_CursosXDocente
+	deallocate cu_CursosXDocente
+
+	--mostrar resultados
+	select *from #CursosxDocente
+GO
 -- Crear nueva ID
 CREATE FUNCTION NuevoCatalogo()
 RETURNS varchar(6)
