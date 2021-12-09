@@ -465,6 +465,14 @@ select (Nombres + ' ' + Apellidos) as 'NOMBRE USUARIO'
 from TDocente
 where CodDocente = @CodDocente
 GO
+--listar los cursos asignados de un docente
+create proc SP_LISTARCURSOSXDOCENTE
+@CODDOCENTE varchar(6)
+as
+select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
+from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
+where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
+go
 
 -- Crear nueva ID
 CREATE FUNCTION NuevoCatalogo()
