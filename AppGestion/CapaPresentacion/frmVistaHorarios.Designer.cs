@@ -55,7 +55,7 @@ namespace CapaPresentacion
             this.dgvHorarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHorarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHorarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvHorarios.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHorarios.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvHorarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHorarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvHorarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;

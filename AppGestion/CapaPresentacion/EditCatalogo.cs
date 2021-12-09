@@ -118,8 +118,8 @@ namespace CapaPresentacion
             }
             if (Update == true) 
             {
-                try
-                {
+                //try
+                //{
                     entities.IdCatalogo = textIdCatalogo.Text;
                     textIdCatalogo.Enabled = false;
                     entities.NroSemestre = textNroSemestre.Text;
@@ -165,11 +165,11 @@ namespace CapaPresentacion
                     }
                     Close();
                     Update = false;
-                }
-                catch 
-                {
-                    MessageBox.Show("No es posible editar");
-                }
+                //}
+                //catch 
+                //{
+                //    MessageBox.Show("No es posible editar");
+                //}
             }
             
         }
