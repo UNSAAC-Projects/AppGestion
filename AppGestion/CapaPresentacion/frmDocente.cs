@@ -7,21 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel;
+using System.IO;
+
 using CapaNegocio;
 
 namespace CapaPresentacion
 {
     public partial class frmDocente : Form
     {
+        DataSet result;
         N_Login oLogin = new N_Login();
-        public string codDocente;
+        public string Docente;
 
         public frmDocente(string CodDocente)
         {
             InitializeComponent();
-            MostrarTablaCatalogo(codDocente);
-            codDocente = CodDocente;
+            MostrarTablaCatalogo(CodDocente);
             MostrarNombreUsuario(CodDocente);
+
+            Docente = CodDocente;
         }
 
         private void MostrarNombreUsuario(string codDocente)
@@ -31,7 +36,7 @@ namespace CapaPresentacion
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
-            frmVistaCursosDocente frm = new frmVistaCursosDocente(codDocente); 
+            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente); 
             frm.ShowDialog();
         }
 
@@ -93,6 +98,55 @@ namespace CapaPresentacion
                 string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
 
                 frmAsistencia form = new frmAsistencia();
+               
+                //Recuperar información de la tabla
+                //form.textBoxCodigo.Text = CodCursoCatalogo;
+                //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
+                form.ShowDialog();
+            }
+        }
+
+        private void frmDocente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
+            if (row.Cells["ASISTENCIA"].Selected)
+            {
+                //Obtener cod curso
+                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
+
+                frmAsistencia form = new frmAsistencia();
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                        IExcelDataReader reader;
+                        if (ofd.FilterIndex == 1)
+                        {
+                            reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                        }
+                        else
+                        {
+                            reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                        }
+                        reader.IsFirstRowAsColumnNames = true;
+                        result = reader.AsDataSet();
+                        form.dgvAsistencia.DataSource = result.Tables[0];
+                        reader.Close();
+
+                    }
+                }
+
                 //Recuperar información de la tabla
                 //form.textBoxCodigo.Text = CodCursoCatalogo;
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
