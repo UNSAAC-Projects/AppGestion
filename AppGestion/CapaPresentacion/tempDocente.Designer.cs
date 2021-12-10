@@ -31,24 +31,24 @@ namespace CapaPresentacion
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tempDocente));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DOCENTE = new System.Windows.Forms.Label();
+            this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonGetDate = new System.Windows.Forms.Button();
             this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.TEMA = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ASISTENCIA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ContenedorLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorLogin
@@ -67,6 +67,16 @@ namespace CapaPresentacion
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(233, 511);
             this.ContenedorLogin.TabIndex = 2;
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 24);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(62, 67);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 10;
+            this.pictureBoxLogo.TabStop = false;
             // 
             // label3
             // 
@@ -123,6 +133,17 @@ namespace CapaPresentacion
             this.DOCENTE.TabIndex = 3;
             this.DOCENTE.Text = "DOCENTE";
             // 
+            // pictureBoxImagen
+            // 
+            this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
+            this.pictureBoxImagen.Location = new System.Drawing.Point(59, 174);
+            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxImagen.Name = "pictureBoxImagen";
+            this.pictureBoxImagen.Size = new System.Drawing.Size(98, 110);
+            this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImagen.TabIndex = 0;
+            this.pictureBoxImagen.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -134,7 +155,7 @@ namespace CapaPresentacion
             // 
             // buttonGetDate
             // 
-            this.buttonGetDate.Location = new System.Drawing.Point(511, 438);
+            this.buttonGetDate.Location = new System.Drawing.Point(544, 457);
             this.buttonGetDate.Name = "buttonGetDate";
             this.buttonGetDate.Size = new System.Drawing.Size(75, 23);
             this.buttonGetDate.TabIndex = 4;
@@ -161,6 +182,16 @@ namespace CapaPresentacion
             this.dgvCursosDocente.TabIndex = 5;
             this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick);
             // 
+            // TEMA
+            // 
+            this.TEMA.HeaderText = "TEMA";
+            this.TEMA.Name = "TEMA";
+            // 
+            // ASISTENCIA
+            // 
+            this.ASISTENCIA.HeaderText = "ASISTENCIA";
+            this.ASISTENCIA.Name = "ASISTENCIA";
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(670, 27);
@@ -171,40 +202,7 @@ namespace CapaPresentacion
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "ASISTENCIA";
-            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.graduado_16px;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 24);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(62, 67);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 10;
-            this.pictureBoxLogo.TabStop = false;
-            // 
-            // pictureBoxImagen
-            // 
-            this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
-            this.pictureBoxImagen.Location = new System.Drawing.Point(59, 174);
-            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBoxImagen.Name = "pictureBoxImagen";
-            this.pictureBoxImagen.Size = new System.Drawing.Size(98, 110);
-            this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImagen.TabIndex = 0;
-            this.pictureBoxImagen.TabStop = false;
-            // 
-            // TEMA
-            // 
-            this.TEMA.HeaderText = "TEMA";
-            this.TEMA.Name = "TEMA";
-            // 
-            // ASISTENCIA
-            // 
-            this.ASISTENCIA.HeaderText = "ASISTENCIA";
-            this.ASISTENCIA.Image = global::CapaPresentacion.Properties.Resources.graduado_16px;
-            this.ASISTENCIA.Name = "ASISTENCIA";
             // 
             // tempDocente
             // 
@@ -222,9 +220,9 @@ namespace CapaPresentacion
             this.Text = "FormDocente";
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
