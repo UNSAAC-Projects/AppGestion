@@ -17,7 +17,7 @@ EXEC sys.sp_msforeachtable 'DELETE FROM ?'
 EXEC sys.sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 go
 
-INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
+--INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
 GO
 /********************************************************************************************************************
 						INSERTAR DATOS
