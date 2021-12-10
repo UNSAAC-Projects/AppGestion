@@ -28,5 +28,10 @@ namespace CapaNegocio
         {
             return data.MostrarHorarioDocente(CodDocente);
         }
+
+        public DataTable MostrarHorarioDocenteDia(string codDocente, string nombreDia)
+        {
+            return data.MostrarHorarioDocenteDia(codDocente, nombreDia);
+        }
     }
 }

@@ -84,6 +84,12 @@
     <Compile Include="frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="tempDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tempDocente.Designer.cs">
+      <DependentUpon>tempDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tempDocente.resx">
+      <DependentUpon>tempDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
@@ -383,6 +392,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\presencial.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduado-16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

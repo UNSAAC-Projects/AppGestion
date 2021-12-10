@@ -11,43 +11,14 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class frmDocente : Form
+    public partial class tempDocente : Form
     {
         N_Login oLogin = new N_Login();
-        public string codDocente;
 
-        public frmDocente(string CodDocente)
+        public tempDocente(string codDocente)
         {
             InitializeComponent();
             MostrarTablaCatalogo(codDocente);
-            codDocente = CodDocente;
-            MostrarNombreUsuario(CodDocente);
-        }
-
-        private void MostrarNombreUsuario(string codDocente)
-        {
-            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
-        }
-
-        private void btnVerCursosDocente_Click(object sender, EventArgs e)
-        {
-            frmVistaCursosDocente frm = new frmVistaCursosDocente(codDocente); 
-            frm.ShowDialog();
-        }
-
-        private void btnMINIMIZAR_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnCERRAR_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void MostrarTablaCatalogo(string codDocente)
@@ -77,12 +48,12 @@ namespace CapaPresentacion
             }
         }
 
-        //private void buttonGetDate_Click(object sender, EventArgs e)
-        //{
-        //    string fecha, hora, dia;
-        //    ObtenerTiempo(out fecha, out hora, out dia);
-        //    MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
-        //}
+        private void buttonGetDate_Click(object sender, EventArgs e)
+        {
+            string fecha, hora, dia;
+            ObtenerTiempo(out fecha, out hora,out dia);
+            MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
+        }
 
         private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
