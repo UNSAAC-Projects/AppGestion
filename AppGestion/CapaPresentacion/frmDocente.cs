@@ -33,5 +33,20 @@ namespace CapaPresentacion
             frmVistaCursosDocente frm = new frmVistaCursosDocente(codDocente); 
             frm.ShowDialog();
         }
+
+        private void btnMINIMIZAR_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCERRAR_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
