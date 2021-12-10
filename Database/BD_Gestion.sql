@@ -291,7 +291,6 @@ AS INSERT INTO THorario values (
 	@IDCatalogo,
 	@Tipo )
 go
-select* from TDocente
 
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
@@ -299,6 +298,7 @@ as
 select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
+
 -------procedimiento almacenado para buscar curso-----
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
@@ -495,6 +495,7 @@ select (Nombres + ' ' + Apellidos) as 'NOMBRE USUARIO'
 from TDocente
 where CodDocente = @CodDocente
 GO
+
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
 @CODDOCENTE varchar(6)
