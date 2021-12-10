@@ -78,6 +78,12 @@
     <Compile Include="FormsDirDep\frmDistDocente.Designer.cs">
       <DependentUpon>frmDistDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistencia.Designer.cs">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="tempDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,12 @@
     <Compile Include="frmVistaCatalogo.Designer.cs">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVistaCursosDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaCursosDocente.Designer.cs">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVistaHorarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,9 @@
     <EmbeddedResource Include="FormsDirDep\frmHorarioDocente.resx">
       <DependentUpon>frmHorarioDocente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="tempDocente.resx">
       <DependentUpon>tempDocente.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo.resx">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaCursosDocente.resx">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaHorarios.resx">
       <DependentUpon>frmVistaHorarios.cs</DependentUpon>
@@ -353,6 +371,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chevron-up-square-solid-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registered-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-square-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presencial.png.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\graduado-16px.png" />

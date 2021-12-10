@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+
 namespace CapaPresentacion
 {
     public partial class frmHorarioDocente : Form

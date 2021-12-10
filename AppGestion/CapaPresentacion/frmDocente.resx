@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnVerCursosDocente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAATtJREFUSEvt
+        lD1SAkEUhDegTEQDYqo4Csh1PIAlZQ4egxtQ6Ak08gJmRiocwMBw+XrmIc6bWdFgKQO+qq7ded0zu/Oz
+        Wx3539R13UOX6B69ok+T7lWT17P476FTB12jD7QPZZTtWPefIdhHT+ivqE/fhilDYIBelHYs0BCdmkZo
+        iTzqO7DhUjC66Fkpx5VFMvAmMZKgMboW2UFxHuyUhXkn6Bat0DuaqWbeHfLM5X1BQVMuMTRfA3pm5l3E
+        ZsZIfoDGY6xlhKly1Zt71uadxWbGg/wAjX0P0LJ43sw7j82M5AFNSxSmybW0RFPzxrGZsVsiQaG0yUvz
+        tMl6iGbiN1lftCfdZEGx6ZhOLJKBdxMjCeVjKjCaPjQdRZ0WvYSkZSm9efOHtoVAe7+KLQTb+9l9h07t
+        /K6PHJCq2gDrQNF5jaol8AAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBoxImagen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA3YAAAOVCAYAAAAlfXKhAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
