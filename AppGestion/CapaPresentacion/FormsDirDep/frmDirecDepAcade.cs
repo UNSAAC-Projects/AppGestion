@@ -20,20 +20,12 @@ namespace CapaPresentacion
     {
         //Declaracion variables
         DataSet result;
-        N_Login oLogin = new N_Login();
 
-        //Constructor
-        public frmDirecDepAcade(string CodDocente)
+        public frmDirecDepAcade()
         {
             InitializeComponent();
             MostrarTablaCatalogo();
             MoverModificarColumnas();
-            MostrarNombreUsuario(CodDocente);
-        }
-
-        private void MostrarNombreUsuario(string codDocente)
-        {
-            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
         }
 
         #region Módulos
@@ -76,10 +68,11 @@ namespace CapaPresentacion
             int indexColumn = 0;
             foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
             {
-                if (columna.Name != "EDITAR")
+                if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
                 {
                     indexColumn++;
                     exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+
                 }
             }
             int indexfila = 0;
@@ -89,7 +82,7 @@ namespace CapaPresentacion
                 indexColumn = 0;
                 foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
                 {
-                    if (columna.Name != "EDITAR")
+                    if ((columna.Name != "Editar") && (columna.Name != "Eliminar"))
                     {
                         indexColumn++;
                         exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
@@ -122,6 +115,16 @@ namespace CapaPresentacion
         #endregion
 
         #region Eventos
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61,92);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            buttonLISTAR.BackColor = Color.FromArgb(12, 61, 92);
+        }
+
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
@@ -172,28 +175,38 @@ namespace CapaPresentacion
         {
             WindowState = FormWindowState.Minimized;
         }
-        
+        #endregion
+
         private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dgvCatalogo.Rows[e.RowIndex];
-            if (row.Cells["EDITAR"].Selected)
+            //if (dgvCatalogo.Rows[e.RowIndex].Cells["ELIMINAR"].Selected)
+            //{
+            //    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Some Title", MessageBoxButtons.YesNo);
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        //do something
+            //    }
+            //    else if (dialogResult == DialogResult.No)
+            //    {
+            //        //do something else
+            //    }
+
+            //}
+            if (dgvCatalogo.Rows[e.RowIndex].Cells["EDITAR"].Selected)
             {
                 //Obtener cod curso
-                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
+                string CodCursoCatalogo = dgvCatalogo.Rows[e.RowIndex].Cells["CODIGO"].Value.ToString();
 
                 frmAsignarDocente form = new frmAsignarDocente(CodCursoCatalogo);
                 //Recuperar información de la tabla
                 form.textBoxCodigo.Text = CodCursoCatalogo;
-                form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                form.textBoxHT.Text = row.Cells["HT"].Value.ToString();
-                form.textBoxHP.Text = row.Cells["HP"].Value.ToString();
-                form.textBoxCreditos.Text = row.Cells["CRED"].Value.ToString();
-                form.textBoxAula.Text = row.Cells["AULA"].Value.ToString();
-                form.textBoxGrupo.Text = row.Cells["GRUPO"].Value.ToString();
+                form.textBoxCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CURSO"].Value.ToString();
+                form.textBoxHT.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HT"].Value.ToString();
+                form.textBoxHP.Text = dgvCatalogo.Rows[e.RowIndex].Cells["HP"].Value.ToString();
+                form.textBoxCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CRED"].Value.ToString();
+                form.textBoxAula.Text = dgvCatalogo.Rows[e.RowIndex].Cells["AULA"].Value.ToString();
+                form.textBoxGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["GRUPO"].Value.ToString();
                 form.ShowDialog();
-
-                //Actualizar tabla catalogo
-                MostrarTablaCatalogo();
             }
         }
 
@@ -262,12 +275,6 @@ namespace CapaPresentacion
             {
                 WindowState = FormWindowState.Normal;
             }
-        }
-        #endregion
-
-        private void frmDirecDepAcade_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
