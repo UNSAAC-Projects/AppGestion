@@ -78,6 +78,18 @@
     <Compile Include="FormsDirDep\frmDistDocente.Designer.cs">
       <DependentUpon>frmDistDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistencia.Designer.cs">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tempDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tempDocente.Designer.cs">
+      <DependentUpon>tempDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,11 +126,23 @@
     <Compile Include="frmMantAsignatura.Designer.cs">
       <DependentUpon>frmMantAsignatura.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantCatalogo.Designer.cs">
+      <DependentUpon>frmMantCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVistaCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmVistaCatalogo.Designer.cs">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVistaCursosDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaCursosDocente.Designer.cs">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVistaHorarios.cs">
       <SubType>Form</SubType>
@@ -155,6 +179,12 @@
     <EmbeddedResource Include="FormsDirDep\frmHorarioDocente.resx">
       <DependentUpon>frmHorarioDocente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tempDocente.resx">
+      <DependentUpon>tempDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +194,14 @@
     <EmbeddedResource Include="frmMantAsignatura.resx">
       <DependentUpon>frmMantAsignatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMantCatalogo.resx">
+      <DependentUpon>frmMantCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo.resx">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaCursosDocente.resx">
+      <DependentUpon>frmVistaCursosDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaHorarios.resx">
       <DependentUpon>frmVistaHorarios.cs</DependentUpon>
@@ -335,6 +371,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chevron-up-square-solid-36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registered-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-square-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox-regular-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-solid-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book-solid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presencial.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduado-16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,3 +1,8 @@
+ /* Para ejecutar DB en la nube */
+--use db_a7d2c3_appgestion
+--go
+
+/* Para ejecutar BD de forma local */
 use AppGestion
 go
 
@@ -12,6 +17,8 @@ EXEC sys.sp_msforeachtable 'DELETE FROM ?'
 EXEC sys.sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 go
 
+INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
+GO
 /********************************************************************************************************************
 						INSERTAR DATOS
 *********************************************************************************************************************/
@@ -35,17 +42,17 @@ INSERT INTO TAsignatura (CodAsignatura, IDPlan, Nombre, Creditos,HorasPracticas,
 ('IF480','P001','ADMINISTRACION DE TECNOLOGIAS DE INFORMACION','03','02','02','OEES','ME352'),	
 ('IF452','P001','ALGORITMOS Y ESTRUCTURAS DE DATOS','04','02','03','OEES','IF450'),	
 ('IF453','P001','PROGRAMACION II','02','04','00','OEES','IF451'),
-('IF610','P001','ANALISIS Y DISEÃ‘O DE SISTEMAS DE INFORMACION','04','02','03','OEES','IF450 y IF480'),
+('IF610','P001','ANALISIS Y DISEÑO DE SISTEMAS DE INFORMACION','04','02','03','OEES','IF450 y IF480'),
 ('IF650','P001','MODELOS PROBABILISTICOS','04','02','03','OEES','ME352'),
 ('IF550','P001','ORGANIZACION Y ARQUITECTURA DEL COMPUTADOR','04','02','03','OEES','EL371'),
 ('IF454','P001','TEORIA DE LA COMPUTACION','03','02','02','OEES','IF452 y ME355'),
 ('IF455','P001','ALGORITMOS PARALELOS Y DISTRIBUIDOS','04','02','03','OEES','IF452'),
 ('IF458','P001','COMPUTACION GRAFICA I','04','02','03','EEEP','IF452 y ME351'),
-('IF612','P001','FUNDAMENTOS Y DISEÃ‘O DE BASES DE DATOS','04','02','03','OEES','IF610'),	
+('IF612','P001','FUNDAMENTOS Y DISEÑO DE BASES DE DATOS','04','02','03','OEES','IF610'),	
 ('IF457','P001','METODOS NUMERICOS','03','02','02','OEES','ME356'),	
 ('IF551','P001','SISTEMAS OPERATIVOS','04','02','03','OEES','IF550'),
 ('IF456','P001','ALGORITMOS AVANZADOS','04','02','03','OEES','IF454'),
-('IF467','P001','ANALISIS Y DISEÃ‘O DE ALGORITMOS','03','02','02','EEEP','IF452 y IF453'),
+('IF467','P001','ANALISIS Y DISEÑO DE ALGORITMOS','03','02','02','EEEP','IF452 y IF453'),
 ('IF466','P001','COMPILADORES','03','02','02','EEEP','IF454'),	
 ('IF613','P001','DESARROLLO DE SOFTWARE I','02','04','00','OEES','IF612'),	
 ('IF651','P001','INTELIGENCIA ARTIFICIAL','04','02','03','OEES','IF650 y IF612'),
@@ -69,6 +76,7 @@ INSERT INTO TAsignatura (CodAsignatura, IDPlan, Nombre, Creditos,HorasPracticas,
 go
 
 INSERT INTO TDocente VALUES 
+('D000','NO DEFINIDO' ,'','',''),
 ('D0001','ABDON','RIBAS PUGA','LICENCIADO EN FISICO MATEMATICAS','ACTIVO'),
 ('D0002','ANA ROCIO','CARDENAS MAITA','MAGISTER EN CIENCIAS EN SISTEMAS DE INFORMACION','ACTIVO'),
 ('D0003','DENNIS IVAN','CANDIA OVIEDO','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO'),
@@ -122,10 +130,42 @@ INSERT INTO TCatalogo VALUES
 GO
 
 INSERT INTO TLogin VALUES 
-('boris','boris','Docente','D0035'),
-('zonia','zonia','Docente','D0028'),
-('zonia','zonia','DirectorEscuela','D0028'),
+('abdon','abdon','Docente','D0001'),
+('ana','ana','Docente','D0002'),
+('dennis','dennis','Docente','D0003'),
+('doris','doris','Docente','D0004'),
+('edwin','edwin','Docente','D0005'),
+('efraina','efraina','Docente','D0006'),
+('emilio','emilio','Docente','D0007'),
+('enrique','enrique','Docente','D0008'),
+('esther','esther','Docente','D0009'),
+('guzman','guzman','Docente','D0010'),
+('harley','harley','Docente','D0011'),
+('henry','henry','Docente','D0012'),
+('hernan_c','hernan_c','Docente','D0013'),
+('hernan_n','hernan_n','Docente','D0014'),
+('ivan','ivan','Docente','D0015'),
+('javier_a','javier_a','Docente','D0016'),
+('javier_d','javier_d','Docente','D0017'),
+('jose','jose','Docente','D0018'),
+('julio','julio','Docente','D0019'),
+('karelia','karelia','Docente','D0020'),
 ('lauro','lauro','Docente','D0021'),
+('lino_a','lino_a','Docente','D0022'),
+('lino_p','lino_p','Docente','D0023'),
+('luis_a','luis_a','Docente','D0024'),
+('luis_b','luis_b','Docente','D0025'),
+('manuel','manuel','Docente','D0026'),
+('maritza','maritza','Docente','D0027'),
+('zonia','zonia','Docente','D0028'),
+('robert','robert','Docente','D0029'),
+('rony','rony','Docente','D0030'),
+('vanesa','vanesa','Docente','D0031'),
+('waldo_e','waldo_e','Docente','D0032'),
+('waldo','waldo','Docente','D0033'),
+('willian','willian','Docente','D0034'),
+('boris','boris','Docente','D0035'),
+('zonia','zonia','DirectorEscuela','D0028'),
 ('lauro','lauro','DirectorAcademico','D0021');
 go
 
