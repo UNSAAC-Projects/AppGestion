@@ -254,7 +254,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAsignaturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAsignaturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAsignaturas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAsignaturas.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
