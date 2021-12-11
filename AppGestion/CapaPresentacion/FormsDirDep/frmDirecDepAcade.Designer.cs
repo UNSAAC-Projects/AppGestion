@@ -406,7 +406,6 @@ namespace CapaPresentacion
             this.Name = "frmDirecDepAcade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiecDepAcade";
-            this.Load += new System.EventHandler(this.frmDirecDepAcade_Load);
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
