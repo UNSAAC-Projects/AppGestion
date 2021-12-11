@@ -50,7 +50,7 @@ namespace CapaPresentacion
             this.label4 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblDocente = new System.Windows.Forms.Label();
-            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Asistencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
@@ -226,6 +226,7 @@ namespace CapaPresentacion
             this.buttonDESMARCAR.Text = "Desmarcar todos";
             this.buttonDESMARCAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonDESMARCAR.UseVisualStyleBackColor = false;
+            this.buttonDESMARCAR.Click += new System.EventHandler(this.buttonDESMARCAR_Click);
             // 
             // buttonMARCAR
             // 
@@ -244,6 +245,7 @@ namespace CapaPresentacion
             this.buttonMARCAR.Text = "Marcar todos";
             this.buttonMARCAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonMARCAR.UseVisualStyleBackColor = false;
+            this.buttonMARCAR.Click += new System.EventHandler(this.buttonMARCAR_Click);
             // 
             // pictureBox2
             // 
@@ -273,7 +275,7 @@ namespace CapaPresentacion
             this.dgvAsistencia.AllowUserToOrderColumns = true;
             this.dgvAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsistencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.A,
+            this.Asistencia,
             this.Observacion});
             this.dgvAsistencia.Location = new System.Drawing.Point(57, 282);
             this.dgvAsistencia.Name = "dgvAsistencia";
@@ -310,14 +312,14 @@ namespace CapaPresentacion
             this.lblDocente.TabIndex = 19;
             this.lblDocente.Text = "-";
             // 
-            // A
+            // Asistencia
             // 
-            this.A.FalseValue = "F";
-            this.A.HeaderText = "Asistencia";
-            this.A.MinimumWidth = 6;
-            this.A.Name = "A";
-            this.A.TrueValue = "P";
-            this.A.Width = 80;
+            this.Asistencia.FalseValue = "F";
+            this.Asistencia.HeaderText = "Asistencia";
+            this.Asistencia.MinimumWidth = 6;
+            this.Asistencia.Name = "Asistencia";
+            this.Asistencia.TrueValue = "P";
+            this.Asistencia.Width = 80;
             // 
             // Observacion
             // 
@@ -388,7 +390,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblFecha;
         public System.Windows.Forms.Label lblDocente;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn A;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Asistencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
     }
 }
