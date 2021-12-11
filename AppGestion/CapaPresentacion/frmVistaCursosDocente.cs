@@ -35,5 +35,10 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
