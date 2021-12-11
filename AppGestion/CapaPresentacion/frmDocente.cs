@@ -64,7 +64,7 @@ namespace CapaPresentacion
         {
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
-            dia = "VIERNES";
+            //dia = "VIERNES";
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             // Obtener tabla de horarios del dia actual
