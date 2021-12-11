@@ -29,25 +29,25 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaCursosDocente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelVistaHorario = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnCloseCursosDocente = new System.Windows.Forms.PictureBox();
             this.btnMinCursosDocente = new System.Windows.Forms.PictureBox();
+            this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonDESCARGAR = new System.Windows.Forms.Button();
             this.panelVistaHorario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseCursosDocente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinCursosDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelVistaHorario
@@ -61,7 +61,7 @@ namespace CapaPresentacion
             this.panelVistaHorario.Location = new System.Drawing.Point(0, 0);
             this.panelVistaHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelVistaHorario.Name = "panelVistaHorario";
-            this.panelVistaHorario.Size = new System.Drawing.Size(957, 43);
+            this.panelVistaHorario.Size = new System.Drawing.Size(1048, 43);
             this.panelVistaHorario.TabIndex = 9;
             // 
             // label11
@@ -74,72 +74,6 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(213, 23);
             this.label11.TabIndex = 32;
             this.label11.Text = "CURSOS ASIGNADOS";
-            // 
-            // dgvCursosDocente
-            // 
-            this.dgvCursosDocente.AllowUserToAddRows = false;
-            this.dgvCursosDocente.AllowUserToDeleteRows = false;
-            this.dgvCursosDocente.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvCursosDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvCursosDocente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCursosDocente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCursosDocente.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCursosDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCursosDocente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvCursosDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCursosDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvCursosDocente.Location = new System.Drawing.Point(12, 115);
-            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvCursosDocente.Name = "dgvCursosDocente";
-            this.dgvCursosDocente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvCursosDocente.RowHeadersVisible = false;
-            this.dgvCursosDocente.RowHeadersWidth = 51;
-            this.dgvCursosDocente.RowTemplate.Height = 24;
-            this.dgvCursosDocente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvCursosDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCursosDocente.Size = new System.Drawing.Size(697, 418);
-            this.dgvCursosDocente.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.presencial_png;
-            this.pictureBox1.Location = new System.Drawing.Point(725, 115);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 341);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label1.Image = global::CapaPresentacion.Properties.Resources.book_solid;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(264, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 28);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "       TUS CURSOS SON:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // pictureBoxLogo
             // 
@@ -178,6 +112,72 @@ namespace CapaPresentacion
             this.btnMinCursosDocente.TabStop = false;
             this.btnMinCursosDocente.Click += new System.EventHandler(this.btnMinCursosDocente_Click);
             // 
+            // dgvCursosDocente
+            // 
+            this.dgvCursosDocente.AllowUserToAddRows = false;
+            this.dgvCursosDocente.AllowUserToDeleteRows = false;
+            this.dgvCursosDocente.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvCursosDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCursosDocente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCursosDocente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCursosDocente.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCursosDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCursosDocente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvCursosDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCursosDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCursosDocente.Location = new System.Drawing.Point(12, 115);
+            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvCursosDocente.Name = "dgvCursosDocente";
+            this.dgvCursosDocente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCursosDocente.RowHeadersVisible = false;
+            this.dgvCursosDocente.RowHeadersWidth = 51;
+            this.dgvCursosDocente.RowTemplate.Height = 24;
+            this.dgvCursosDocente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvCursosDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvCursosDocente.Size = new System.Drawing.Size(783, 418);
+            this.dgvCursosDocente.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.presencial_png;
+            this.pictureBox1.Location = new System.Drawing.Point(801, 115);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(223, 341);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.label1.Image = global::CapaPresentacion.Properties.Resources.book_solid;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(264, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 28);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "       TUS CURSOS SON:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // buttonDESCARGAR
             // 
             this.buttonDESCARGAR.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -190,7 +190,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(725, 471);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(813, 472);
             this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
             this.buttonDESCARGAR.Size = new System.Drawing.Size(202, 46);
@@ -203,7 +203,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 538);
+            this.ClientSize = new System.Drawing.Size(1048, 538);
             this.Controls.Add(this.buttonDESCARGAR);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -213,13 +213,14 @@ namespace CapaPresentacion
             this.Name = "frmVistaCursosDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaCursosDocente";
+            this.Load += new System.EventHandler(this.frmVistaCursosDocente_Load);
             this.panelVistaHorario.ResumeLayout(false);
             this.panelVistaHorario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCloseCursosDocente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinCursosDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

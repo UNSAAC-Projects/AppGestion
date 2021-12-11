@@ -17,6 +17,8 @@ namespace CapaPresentacion
     {
         DataSet result;
         N_Login oLogin = new N_Login();
+       
+      
         public string Docente;
 
         public frmDocente(string CodDocente)
@@ -24,13 +26,20 @@ namespace CapaPresentacion
             InitializeComponent();
             MostrarTablaCatalogo(CodDocente);
             MostrarNombreUsuario(CodDocente);
-
+           
             Docente = CodDocente;
+            
         }
+        public frmDocente()
+        {
 
+        }
         private void MostrarNombreUsuario(string codDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
+           
+            datos.NombreDocente = labelNombre.Text;
+           
         }
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
@@ -107,7 +116,7 @@ namespace CapaPresentacion
 
         private void frmDocente_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void labelNombre_Click(object sender, EventArgs e)

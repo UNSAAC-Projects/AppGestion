@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="datos.cs" />
     <Compile Include="EditCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
