@@ -101,5 +101,25 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void buttonMARCAR_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
+            {
+
+                row.Cells["Asistencia"].Value = true;
+
+            }
+        }
+
+        private void buttonDESMARCAR_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
+            {
+
+                row.Cells["Asistencia"].Value = false;
+
+            }
+        }
     }
 }
