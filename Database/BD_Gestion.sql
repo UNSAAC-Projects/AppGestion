@@ -473,7 +473,9 @@ declare @temp table(
 	Aula varchar(6)
 );
 INSERT @temp EXEC SP_HORARIO_DOCENTE @CodDocente;
-SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',HoraInicio AS 'HORA INICIO',HoraFin AS 'HORA FIN',Aula AS 'AULA'
+--SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',HoraInicio AS 'HORA INICIO',HoraFin AS 'HORA FIN',Aula AS 'AULA'
+SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',(HoraInicio+' - '+HoraFin) AS 'HORAS',Aula AS 'AULA'
+
 FROM @temp
 WHERE Dia = @NombreDia
 GO

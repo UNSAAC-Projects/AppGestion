@@ -72,8 +72,8 @@ namespace CapaPresentacion
             //Verificar si la tabla no está vacio
             if (table != null && table.Rows.Count > 0)
             {
-                dgvCursosDocente.ColumnHeadersVisible = true; // Mostrar encabezado
                 dgvCursosDocente.DataSource = table; //Mostrar tabla
+                MoverModificarColumnas(); //Modificar columnas
             }
             else //Si está vacio
             {
@@ -82,6 +82,28 @@ namespace CapaPresentacion
                 labelMensaje.Visible = true; //Mostrar label
                 pictureBoxLibros.Visible = true; // Mostrar imagen
             }
+        }
+
+        private void MoverModificarColumnas()
+        {
+            //Mostrar encabezado
+            dgvCursosDocente.ColumnHeadersVisible = true; // Mostrar encabezado
+            //dgvCatalogo.ColumnHeadersVisible = true;
+
+            // Mover columnas 
+            dgvCursosDocente.Columns["TEMA"].DisplayIndex = 7;
+            dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
+
+            ////Modificar ancho de columnas
+            dgvCursosDocente.Columns["CODIGO"].Width = 70;
+            dgvCursosDocente.Columns["NOMBRE"].Width = 240;
+            dgvCursosDocente.Columns["TIPO"].Width = 50;
+            dgvCursosDocente.Columns["GRUPO"].Width = 60;
+            dgvCursosDocente.Columns["HORAS"].Width = 70;
+            dgvCursosDocente.Columns["AULA"].Width = 60;
+            dgvCursosDocente.Columns["TEMA"].Width = 300;
+            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
+            
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
