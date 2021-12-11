@@ -47,7 +47,11 @@ namespace CapaPresentacion
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvAsistencia = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblDocente = new System.Windows.Forms.Label();
             this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
@@ -68,7 +72,7 @@ namespace CapaPresentacion
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(785, 48);
+            this.panel1.Size = new System.Drawing.Size(871, 48);
             this.panel1.TabIndex = 1;
             // 
             // btnCERRAR
@@ -76,7 +80,7 @@ namespace CapaPresentacion
             this.btnCERRAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
-            this.btnCERRAR.Location = new System.Drawing.Point(739, 2);
+            this.btnCERRAR.Location = new System.Drawing.Point(825, 2);
             this.btnCERRAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(35, 34);
@@ -90,7 +94,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(700, 2);
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(786, 2);
             this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 34);
@@ -127,13 +131,12 @@ namespace CapaPresentacion
             this.labelLISTADOCENTE.AutoSize = true;
             this.labelLISTADOCENTE.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLISTADOCENTE.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.labelLISTADOCENTE.Location = new System.Drawing.Point(107, 52);
+            this.labelLISTADOCENTE.Location = new System.Drawing.Point(214, 52);
             this.labelLISTADOCENTE.Name = "labelLISTADOCENTE";
-            this.labelLISTADOCENTE.Size = new System.Drawing.Size(562, 69);
+            this.labelLISTADOCENTE.Size = new System.Drawing.Size(410, 69);
             this.labelLISTADOCENTE.TabIndex = 7;
-            this.labelLISTADOCENTE.Text = "LISTA DE ALUMNOS DE LA ASIGNATURA:\r\n              Ingeneria Informatica y de Sist" +
-    "emas\r\n                     Fecha y Hora:                                        " +
-    "                        ";
+            this.labelLISTADOCENTE.Text = "         LISTA DE ALUMNOS DE LA ASIGNATURA:\r\n              Ingeneria Informatica " +
+    "y de Sistemas\r\n                     ";
             // 
             // label1
             // 
@@ -141,7 +144,7 @@ namespace CapaPresentacion
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(212, 121);
+            this.label1.Location = new System.Drawing.Point(282, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 10;
@@ -153,7 +156,7 @@ namespace CapaPresentacion
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label2.Location = new System.Drawing.Point(12, 175);
+            this.label2.Location = new System.Drawing.Point(69, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 18);
             this.label2.TabIndex = 11;
@@ -165,7 +168,7 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label3.Location = new System.Drawing.Point(399, 175);
+            this.label3.Location = new System.Drawing.Point(470, 179);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(137, 18);
             this.label3.TabIndex = 12;
@@ -173,15 +176,15 @@ namespace CapaPresentacion
             // 
             // textBoxTEMA
             // 
-            this.textBoxTEMA.Location = new System.Drawing.Point(141, 175);
+            this.textBoxTEMA.Location = new System.Drawing.Point(198, 176);
             this.textBoxTEMA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTEMA.Name = "textBoxTEMA";
-            this.textBoxTEMA.Size = new System.Drawing.Size(192, 22);
+            this.textBoxTEMA.Size = new System.Drawing.Size(224, 22);
             this.textBoxTEMA.TabIndex = 13;
             // 
             // textBoxOBSERVACIONES
             // 
-            this.textBoxOBSERVACIONES.Location = new System.Drawing.Point(541, 171);
+            this.textBoxOBSERVACIONES.Location = new System.Drawing.Point(612, 175);
             this.textBoxOBSERVACIONES.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxOBSERVACIONES.Name = "textBoxOBSERVACIONES";
             this.textBoxOBSERVACIONES.Size = new System.Drawing.Size(179, 22);
@@ -196,7 +199,7 @@ namespace CapaPresentacion
             this.buttonGUARDAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonGUARDAR.Image = global::CapaPresentacion.Properties.Resources.save_solid_24;
             this.buttonGUARDAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGUARDAR.Location = new System.Drawing.Point(325, 722);
+            this.buttonGUARDAR.Location = new System.Drawing.Point(346, 831);
             this.buttonGUARDAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonGUARDAR.Name = "buttonGUARDAR";
             this.buttonGUARDAR.Size = new System.Drawing.Size(167, 46);
@@ -215,7 +218,7 @@ namespace CapaPresentacion
             this.buttonDESMARCAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESMARCAR.Image = global::CapaPresentacion.Properties.Resources.checkbox_regular_24;
             this.buttonDESMARCAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDESMARCAR.Location = new System.Drawing.Point(453, 225);
+            this.buttonDESMARCAR.Location = new System.Drawing.Point(612, 225);
             this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDESMARCAR.Name = "buttonDESMARCAR";
             this.buttonDESMARCAR.Size = new System.Drawing.Size(191, 37);
@@ -233,7 +236,7 @@ namespace CapaPresentacion
             this.buttonMARCAR.ForeColor = System.Drawing.Color.White;
             this.buttonMARCAR.Image = global::CapaPresentacion.Properties.Resources.check_square_regular_24;
             this.buttonMARCAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMARCAR.Location = new System.Drawing.Point(83, 225);
+            this.buttonMARCAR.Location = new System.Drawing.Point(57, 225);
             this.buttonMARCAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMARCAR.Name = "buttonMARCAR";
             this.buttonMARCAR.Size = new System.Drawing.Size(183, 37);
@@ -245,10 +248,10 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CapaPresentacion.Properties.Resources.Logo_unsaac11;
-            this.pictureBox2.Location = new System.Drawing.Point(700, 52);
+            this.pictureBox2.Location = new System.Drawing.Point(776, 52);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(83, 69);
+            this.pictureBox2.Size = new System.Drawing.Size(83, 92);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
@@ -259,7 +262,7 @@ namespace CapaPresentacion
             this.pictureBox1.Location = new System.Drawing.Point(3, 52);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 69);
+            this.pictureBox1.Size = new System.Drawing.Size(80, 92);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -270,27 +273,66 @@ namespace CapaPresentacion
             this.dgvAsistencia.AllowUserToOrderColumns = true;
             this.dgvAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsistencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.A});
-            this.dgvAsistencia.Location = new System.Drawing.Point(72, 282);
+            this.A,
+            this.Observacion});
+            this.dgvAsistencia.Location = new System.Drawing.Point(57, 282);
             this.dgvAsistencia.Name = "dgvAsistencia";
             this.dgvAsistencia.RowHeadersWidth = 51;
             this.dgvAsistencia.RowTemplate.Height = 24;
-            this.dgvAsistencia.Size = new System.Drawing.Size(678, 420);
+            this.dgvAsistencia.Size = new System.Drawing.Size(761, 531);
             this.dgvAsistencia.TabIndex = 16;
+            this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(283, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 17);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Fecha y Hora:";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(428, 140);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(13, 17);
+            this.lblFecha.TabIndex = 18;
+            this.lblFecha.Text = "-";
+            // 
+            // lblDocente
+            // 
+            this.lblDocente.AutoSize = true;
+            this.lblDocente.Location = new System.Drawing.Point(428, 115);
+            this.lblDocente.Name = "lblDocente";
+            this.lblDocente.Size = new System.Drawing.Size(13, 17);
+            this.lblDocente.TabIndex = 19;
+            this.lblDocente.Text = "-";
             // 
             // A
             // 
             this.A.FalseValue = "F";
-            this.A.HeaderText = "A";
+            this.A.HeaderText = "Asistencia";
             this.A.MinimumWidth = 6;
             this.A.Name = "A";
-            this.A.Width = 30;
+            this.A.TrueValue = "P";
+            this.A.Width = 80;
+            // 
+            // Observacion
+            // 
+            this.Observacion.HeaderText = "Observacion";
+            this.Observacion.MinimumWidth = 6;
+            this.Observacion.Name = "Observacion";
             // 
             // frmAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 779);
+            this.ClientSize = new System.Drawing.Size(871, 885);
+            this.Controls.Add(this.lblDocente);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvAsistencia);
             this.Controls.Add(this.buttonGUARDAR);
             this.Controls.Add(this.textBoxOBSERVACIONES);
@@ -343,6 +385,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMINIMIZAR;
         private System.Windows.Forms.PictureBox btnCERRAR;
         public System.Windows.Forms.DataGridView dgvAsistencia;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblFecha;
+        public System.Windows.Forms.Label lblDocente;
         private System.Windows.Forms.DataGridViewCheckBoxColumn A;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
     }
 }

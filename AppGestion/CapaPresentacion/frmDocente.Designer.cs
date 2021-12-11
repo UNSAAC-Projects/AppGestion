@@ -300,7 +300,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel ContenedorLogin;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label DOCENTE;
@@ -313,5 +312,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridView dgvCursosDocente;
         private System.Windows.Forms.DataGridViewComboBoxColumn TEMA;
         private System.Windows.Forms.DataGridViewImageColumn ASISTENCIA;
+        public System.Windows.Forms.Label labelNombre;
     }
 }
