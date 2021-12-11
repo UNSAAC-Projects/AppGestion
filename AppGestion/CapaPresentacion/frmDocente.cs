@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel;
 using System.IO;
-
 using CapaNegocio;
 
 namespace CapaPresentacion

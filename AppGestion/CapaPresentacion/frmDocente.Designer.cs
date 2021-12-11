@@ -68,7 +68,7 @@ namespace CapaPresentacion
             this.ContenedorLogin.Controls.Add(this.pictureBoxImagen);
             this.ContenedorLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
-            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2);
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(218, 523);
             this.ContenedorLogin.TabIndex = 2;
@@ -155,7 +155,7 @@ namespace CapaPresentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel2.Location = new System.Drawing.Point(10, 310);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(188, 2);
             this.panel2.TabIndex = 6;
@@ -164,7 +164,7 @@ namespace CapaPresentacion
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel1.Location = new System.Drawing.Point(9, 86);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 2);
             this.panel1.TabIndex = 5;
@@ -185,7 +185,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
             this.pictureBoxImagen.Location = new System.Drawing.Point(44, 133);
-            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
             this.pictureBoxImagen.Size = new System.Drawing.Size(98, 110);
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,7 +210,7 @@ namespace CapaPresentacion
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
             this.btnCERRAR.Location = new System.Drawing.Point(884, 0);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(32, 33);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,7 +224,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
             this.btnMINIMIZAR.Location = new System.Drawing.Point(847, 0);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(32, 33);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
