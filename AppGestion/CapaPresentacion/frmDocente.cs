@@ -18,22 +18,19 @@ namespace CapaPresentacion
         DataSet result;
         N_Login oLogin = new N_Login();
        
-      
         public string Docente;
 
         public frmDocente(string CodDocente)
         {
             InitializeComponent();
-            MostrarTablaCatalogo(CodDocente);
+            //Mostrar nombre de usuario
             MostrarNombreUsuario(CodDocente);
-           
+            //Mostrar horario del docente o mensaje si no tiene ningun curso
+            MostrarHorarioxDia(CodDocente); 
             Docente = CodDocente;
             
         }
-        public frmDocente()
-        {
 
-        }
         private void MostrarNombreUsuario(string codDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
@@ -63,13 +60,26 @@ namespace CapaPresentacion
 
         }
 
-        private void MostrarTablaCatalogo(string codDocente)
+        private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
+            //dia = "VIERNES";
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
-            dgvCursosDocente.DataSource = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
+            // Obtener tabla de horarios del dia actual
+            var table = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
+            //Verificar si la tabla no está vacio
+            if (table != null && table.Rows.Count > 0)
+            {
+                dgvCursosDocente.DataSource = table; //Mostrar tabla
+            }
+            else //Si está vacio
+            {
+                //Mostrar mensaje
+                dgvCursosDocente.Visible = false; //Ocultar datagridview
+                labelMensaje.Visible = true;
+            }
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -151,10 +161,8 @@ namespace CapaPresentacion
                         result = reader.AsDataSet();
                         form.dgvAsistencia.DataSource = result.Tables[0];
                         reader.Close();
-
                     }
                 }
-
                 //Recuperar información de la tabla
                 //form.textBoxCodigo.Text = CodCursoCatalogo;
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
