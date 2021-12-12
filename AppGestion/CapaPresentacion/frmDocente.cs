@@ -63,8 +63,10 @@ namespace CapaPresentacion
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
-            ObtenerTiempo(out _, out _, out string dia);
-            //dia = "VIERNES";
+            //////////////////////////
+            //ObtenerTiempo(out _, out _, out string dia);
+            string dia = "VIERNES";
+            ///////////////////////////
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             // Obtener tabla de horarios del dia actual
@@ -99,7 +101,9 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["NOMBRE"].Width = 240;
             dgvCursosDocente.Columns["TIPO"].Width = 50;
             dgvCursosDocente.Columns["GRUPO"].Width = 60;
-            dgvCursosDocente.Columns["HORAS"].Width = 70;
+            ///////////////////
+            //dgvCursosDocente.Columns["HORAS"].Width = 70;
+            ///////////////////
             dgvCursosDocente.Columns["AULA"].Width = 60;
             dgvCursosDocente.Columns["TEMA"].Width = 300;
             dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
