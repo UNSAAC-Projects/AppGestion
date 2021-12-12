@@ -121,5 +121,15 @@ namespace CapaPresentacion
 
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelLISTADOCENTE_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
