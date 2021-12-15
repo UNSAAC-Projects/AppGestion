@@ -76,6 +76,19 @@ CREATE TABLE TCatalogo
 )
 GO
 
+create table TPlanSesiones
+(
+	Id		int identity,
+	Unidad				varchar(40),
+	Capitulo			varchar(20),
+	Tema				varchar(255),
+	HorasProgramadas	varchar(4),
+	Fecha				date,
+	IDCatalogo			varchar(6),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
+
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
