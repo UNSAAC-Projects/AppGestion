@@ -88,7 +88,7 @@ namespace CapaPresentacion
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se peuede agregar");
+                    MessageBox.Show("No se puede agregar");
                 }
             }
             if (Update == true)
