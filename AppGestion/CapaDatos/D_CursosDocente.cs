@@ -28,5 +28,21 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+        public string ObtenerCodCatalogo(string GrupoAsignatura)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_EXISTE_CURSOCATALOGO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CURSOCATALOGO", GrupoAsignatura);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            string CodCatalogo = tabla.Rows[0][0].ToString();
+
+            conexion.Close();
+            return CodCatalogo;
+        }
     }
 }

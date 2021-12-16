@@ -143,6 +143,9 @@
         dePpE7iBT4av2Wk42pLb/jBgjBFd9w1GpMAkW+94IwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="PlanSesiones.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhkAGQAffEAB8hKyAiLCAiLSEjLSEjLiEjLyQlLykoLyIkMCMlMiQmMCUnMiQmMyQmNCQnNCUn

@@ -85,6 +85,18 @@
     <Compile Include="frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMantPlanSesiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMantPlanSesiones.Designer.cs">
+      <DependentUpon>frmMantPlanSesiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanDeSesiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanDeSesiones.Designer.cs">
+      <DependentUpon>frmPlanDeSesiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="tempDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMantPlanSesiones.resx">
+      <DependentUpon>frmMantPlanSesiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanDeSesiones.resx">
+      <DependentUpon>frmPlanDeSesiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tempDocente.resx">
       <DependentUpon>tempDocente.cs</DependentUpon>
