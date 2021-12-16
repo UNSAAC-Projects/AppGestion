@@ -6,7 +6,7 @@ go
 --go
 
 /* Para ejecutar BD de forma local */
-DROP DATABASE AppGestion
+--DROP DATABASE AppGestion
 GO
 create database AppGestion
 go
@@ -75,6 +75,20 @@ CREATE TABLE TCatalogo
 	FOREIGN KEY (CodDocenteTeorico) REFERENCES TDocente
 )
 GO
+
+create table TPlanSesiones
+(
+	Id		int identity,
+	Unidad				varchar(40),
+	Capitulo			varchar(20),
+	Tema				varchar(255),
+	HorasProgramadas	varchar(4),
+	Fecha				date,
+	IDCatalogo			varchar(6),
+
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
 
 CREATE TABLE THorario
 (
@@ -601,4 +615,40 @@ select *
 from TLogin
 where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
+-- Obtener Plan de sesiones
+CREATE PROC SP_OBTENER_PLANSESIONES
+	@CodCatalogo varchar(6)
+AS
+select
+	P.Unidad, 
+	P.Capitulo, 
+	P.Tema, 
+	P.HorasProgramadas AS Horas
+from TCatalogo C, TPlanSesiones P
+where C.IDCatalogo=@CodCatalogo
+GO
+
+-- Editar plan sesiones
+create proc SP_EDITARPLANSESIONES
+	@Id int,
+	@Unidad varchar(40),
+	@Capitulo varchar(20),
+	@Tema varchar(255),
+	@HorasProgramadas varchar(4),
+	@Fecha date
+as 
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, @HorasProgramadas=@HorasProgramadas, Fecha=@Fecha
+where Id =@Id
+GO
+-- Eliminar Tema de plan de sesiones
+create proc SP_ELIMINARTEMA_PLANSESIONES
+	@CodCatalogo varchar(6),
+	@Id int
+as
+delete from TPlanSesiones where Id=@Id
+go
+
+
+
+
 
