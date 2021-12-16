@@ -63,10 +63,8 @@ namespace CapaPresentacion
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
-            //////////////////////////
-            //ObtenerTiempo(out _, out _, out string dia);
-            string dia = "VIERNES";
-            ///////////////////////////
+            ObtenerTiempo(out _, out _, out string dia);
+            dia = "VIERNES";
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             // Obtener tabla de horarios del dia actual
