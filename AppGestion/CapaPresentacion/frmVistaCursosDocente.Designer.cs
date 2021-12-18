@@ -62,7 +62,7 @@ namespace CapaPresentacion
             this.panelVistaHorario.Location = new System.Drawing.Point(0, 0);
             this.panelVistaHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelVistaHorario.Name = "panelVistaHorario";
-            this.panelVistaHorario.Size = new System.Drawing.Size(1288, 43);
+            this.panelVistaHorario.Size = new System.Drawing.Size(1311, 43);
             this.panelVistaHorario.TabIndex = 9;
             // 
             // label11
@@ -183,7 +183,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = global::CapaPresentacion.Properties.Resources.download_regular_241;
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(1064, 503);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(1064, 501);
             this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
             this.buttonDESCARGAR.Size = new System.Drawing.Size(202, 46);
@@ -215,7 +215,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1288, 583);
+            this.ClientSize = new System.Drawing.Size(1311, 631);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
