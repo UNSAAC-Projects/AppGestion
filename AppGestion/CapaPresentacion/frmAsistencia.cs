@@ -108,7 +108,7 @@ namespace CapaPresentacion
             {
 
                 row.Cells["Asistencia"].Value = true;
-
+                
             }
         }
 
