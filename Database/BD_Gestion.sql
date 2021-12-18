@@ -76,6 +76,20 @@ CREATE TABLE TCatalogo
 )
 GO
 
+create table TPlanSesiones
+(
+	Id		int identity,
+	Unidad				varchar(40),
+	Capitulo			varchar(20),
+	Tema				varchar(255),
+	HorasProgramadas	varchar(4),
+	Fecha				date,
+	IDCatalogo			varchar(6),
+	Finalizado			varchar(14),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
+
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
@@ -254,7 +268,6 @@ as
 insert into TCatalogo values(@IDCatalogo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
 go
 
-DROP PROC SP_EDITARCATALOGO
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
 create proc SP_EDITARCATALOGO
 	@IDCatalogo varchar(6),
@@ -292,7 +305,6 @@ AS INSERT INTO THorario values (
 	@IDCatalogo,
 	@Tipo )
 go
-select* from TDocente
 
 ----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
@@ -300,6 +312,7 @@ as
 select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
+
 -------procedimiento almacenado para buscar curso-----
 CREATE PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
@@ -474,7 +487,9 @@ declare @temp table(
 	Aula varchar(6)
 );
 INSERT @temp EXEC SP_HORARIO_DOCENTE @CodDocente;
-SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',HoraInicio AS 'HORA INICIO',HoraFin AS 'HORA FIN',Aula AS 'AULA'
+--SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',HoraInicio AS 'HORA INICIO',HoraFin AS 'HORA FIN',Aula AS 'AULA'
+SELECT Codigo AS 'CODIGO',Nombre AS 'NOMBRE',Tipo AS 'TIPO',Grupo AS 'GRUPO',(HoraInicio+' - '+HoraFin) AS 'HORAS',Aula AS 'AULA'
+
 FROM @temp
 WHERE Dia = @NombreDia
 GO
@@ -496,6 +511,7 @@ select (Nombres + ' ' + Apellidos) as 'NOMBRE USUARIO'
 from TDocente
 where CodDocente = @CodDocente
 GO
+
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
 @CODDOCENTE varchar(6)
@@ -599,18 +615,42 @@ select *
 from TLogin
 where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
+-- Obtener Plan de sesiones
+CREATE PROC SP_OBTENER_PLANSESIONES
+	@CodCatalogo varchar(6)
+AS
+select
+	P.Unidad, 
+	P.Capitulo, 
+	P.Tema, 
+	P.HorasProgramadas AS Horas,
+	p.Finalizado
+from TCatalogo C, TPlanSesiones P
+where C.IDCatalogo=@CodCatalogo
+GO
 
-/***************************************************************
-		             PROCEDIMIENTOS DOCENTES
-****************************************************************/
-create proc SP_LISTARCURSOSXDOCENTE
-@CODDOCENTE varchar(6)
+-- Editar plan sesiones
+create proc SP_EDITARPLANSESIONES
+	@Id int,
+	@Unidad varchar(40),
+	@Capitulo varchar(20),
+	@Tema varchar(255),
+	@HorasProgramadas varchar(4),
+	@Finalizado varchar(14),
+	@Fecha date
+as 
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
+where Id =@Id
+GO
+-- Eliminar Tema de plan de sesiones
+create proc SP_ELIMINARTEMA_PLANSESIONES
+	@CodCatalogo varchar(6),
+	@Id int
 as
-select C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura, A.Nombre, C.Grupo, A.Creditos, A.Categoria
-from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura
-where C.CodDocentePractico=@CODDOCENTE or c.CodDocenteTeorico=@CODDOCENTE
+delete from TPlanSesiones where Id=@Id
 go
 
-exec SP_LISTARCURSOSXDOCENTE 'D0004'
 
-SELECT*FROM TDocente
+
+
+

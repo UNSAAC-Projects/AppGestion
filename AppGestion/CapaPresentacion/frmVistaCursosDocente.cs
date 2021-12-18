@@ -15,7 +15,7 @@ namespace CapaPresentacion
 {
     public partial class frmVistaCursosDocente : Form
     {
-
+        N_CursosDocente ocursosDocente = new N_CursosDocente();
         public frmVistaCursosDocente(string CodDocente)
         {
             InitializeComponent();
@@ -39,6 +39,22 @@ namespace CapaPresentacion
         private void frmVistaCursosDocente_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
+            if (row.Cells["PlanSesiones"].Selected)
+            {
+                //Obtener cod curso
+                string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
+                string CodCatalogo  = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura) ;
+                string NombreAsignatura = row.Cells["Nombre"].Value.ToString();
+                string Grupo = row.Cells["Grupo"].Value.ToString();
+                frmPlanDeSesiones form = new frmPlanDeSesiones(CodCatalogo, NombreAsignatura, Grupo);
+                
+                form.ShowDialog();
+            }
         }
     }
 }

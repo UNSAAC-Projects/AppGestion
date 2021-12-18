@@ -30,6 +30,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContenedorLogin = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -41,17 +43,21 @@ namespace CapaPresentacion
             this.DOCENTE = new System.Windows.Forms.Label();
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCERRAR = new System.Windows.Forms.PictureBox();
-            this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
             this.TEMA = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ASISTENCIA = new System.Windows.Forms.DataGridViewImageColumn();
+            this.labelMensaje = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBoxLibros = new System.Windows.Forms.PictureBox();
+            this.btnCERRAR = new System.Windows.Forms.PictureBox();
+            this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLibros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorLogin
@@ -70,7 +76,7 @@ namespace CapaPresentacion
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
             this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorLogin.Name = "ContenedorLogin";
-            this.ContenedorLogin.Size = new System.Drawing.Size(291, 644);
+            this.ContenedorLogin.Size = new System.Drawing.Size(309, 644);
             this.ContenedorLogin.TabIndex = 2;
             this.ContenedorLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorLogin_Paint);
             // 
@@ -87,10 +93,10 @@ namespace CapaPresentacion
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.Image = global::CapaPresentacion.Properties.Resources.registered_solid_24;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(13, 453);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(31, 453);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(261, 42);
+            this.button1.Size = new System.Drawing.Size(243, 42);
             this.button1.TabIndex = 12;
             this.button1.Text = "REPORTE DE CURSOS";
             this.button1.UseVisualStyleBackColor = false;
@@ -99,7 +105,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(4, 4);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(75, 78);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +117,7 @@ namespace CapaPresentacion
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(84, 27);
+            this.label3.Location = new System.Drawing.Point(85, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(207, 40);
             this.label3.TabIndex = 8;
@@ -120,14 +126,14 @@ namespace CapaPresentacion
             // 
             // labelNombre
             // 
-            this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(37, 322);
+            this.labelNombre.Location = new System.Drawing.Point(35, 314);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(178, 22);
+            this.labelNombre.Size = new System.Drawing.Size(229, 57);
             this.labelNombre.TabIndex = 7;
             this.labelNombre.Text = "NOMBRE USUARIO";
+            this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
             // 
             // btnVerCursosDocente
@@ -143,10 +149,10 @@ namespace CapaPresentacion
             this.btnVerCursosDocente.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
             this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCursosDocente.Location = new System.Drawing.Point(13, 402);
-            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVerCursosDocente.Location = new System.Drawing.Point(35, 403);
+            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerCursosDocente.Name = "btnVerCursosDocente";
-            this.btnVerCursosDocente.Size = new System.Drawing.Size(261, 42);
+            this.btnVerCursosDocente.Size = new System.Drawing.Size(251, 42);
             this.btnVerCursosDocente.TabIndex = 11;
             this.btnVerCursosDocente.Text = "VER TODOS MIS CURSOS";
             this.btnVerCursosDocente.UseVisualStyleBackColor = false;
@@ -155,19 +161,19 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(13, 382);
+            this.panel2.Location = new System.Drawing.Point(19, 382);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 2);
+            this.panel2.Size = new System.Drawing.Size(267, 2);
             this.panel2.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(12, 106);
+            this.panel1.Location = new System.Drawing.Point(19, 106);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 2);
+            this.panel1.Size = new System.Drawing.Size(267, 2);
             this.panel1.TabIndex = 5;
             // 
             // DOCENTE
@@ -175,7 +181,7 @@ namespace CapaPresentacion
             this.DOCENTE.AutoSize = true;
             this.DOCENTE.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.DOCENTE.ForeColor = System.Drawing.Color.White;
-            this.DOCENTE.Location = new System.Drawing.Point(85, 126);
+            this.DOCENTE.Location = new System.Drawing.Point(100, 126);
             this.DOCENTE.Name = "DOCENTE";
             this.DOCENTE.Size = new System.Drawing.Size(94, 23);
             this.DOCENTE.TabIndex = 3;
@@ -184,10 +190,10 @@ namespace CapaPresentacion
             // pictureBoxImagen
             // 
             this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
-            this.pictureBoxImagen.Location = new System.Drawing.Point(59, 164);
+            this.pictureBoxImagen.Location = new System.Drawing.Point(68, 151);
             this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
-            this.pictureBoxImagen.Size = new System.Drawing.Size(131, 135);
+            this.pictureBoxImagen.Size = new System.Drawing.Size(165, 154);
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagen.TabIndex = 0;
             this.pictureBoxImagen.TabStop = false;
@@ -197,11 +203,107 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label1.Location = new System.Drawing.Point(463, 34);
+            this.label1.Location = new System.Drawing.Point(541, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(411, 23);
             this.label1.TabIndex = 14;
             this.label1.Text = "CURSOS  DICTADOS EN SEMESTRE LECTIVO";
+            // 
+            // dgvCursosDocente
+            // 
+            this.dgvCursosDocente.AllowUserToAddRows = false;
+            this.dgvCursosDocente.AllowUserToDeleteRows = false;
+            this.dgvCursosDocente.AllowUserToOrderColumns = true;
+            this.dgvCursosDocente.AllowUserToResizeRows = false;
+            this.dgvCursosDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCursosDocente.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCursosDocente.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvCursosDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCursosDocente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCursosDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCursosDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCursosDocente.ColumnHeadersVisible = false;
+            this.dgvCursosDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TEMA,
+            this.ASISTENCIA});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCursosDocente.Location = new System.Drawing.Point(327, 85);
+            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCursosDocente.Name = "dgvCursosDocente";
+            this.dgvCursosDocente.RowHeadersVisible = false;
+            this.dgvCursosDocente.RowHeadersWidth = 51;
+            this.dgvCursosDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvCursosDocente.Size = new System.Drawing.Size(877, 503);
+            this.dgvCursosDocente.TabIndex = 15;
+            this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick_1);
+            // 
+            // TEMA
+            // 
+            this.TEMA.FillWeight = 100.1522F;
+            this.TEMA.HeaderText = "TEMA";
+            this.TEMA.MinimumWidth = 6;
+            this.TEMA.Name = "TEMA";
+            this.TEMA.Width = 6;
+            // 
+            // ASISTENCIA
+            // 
+            this.ASISTENCIA.FillWeight = 99.84779F;
+            this.ASISTENCIA.HeaderText = "ASISTENCIA";
+            this.ASISTENCIA.Image = global::CapaPresentacion.Properties.Resources.graduado_24px;
+            this.ASISTENCIA.MinimumWidth = 6;
+            this.ASISTENCIA.Name = "ASISTENCIA";
+            this.ASISTENCIA.Width = 6;
+            // 
+            // labelMensaje
+            // 
+            this.labelMensaje.AutoSize = true;
+            this.labelMensaje.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.labelMensaje.Location = new System.Drawing.Point(541, 118);
+            this.labelMensaje.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMensaje.Name = "labelMensaje";
+            this.labelMensaje.Size = new System.Drawing.Size(425, 30);
+            this.labelMensaje.TabIndex = 16;
+            this.labelMensaje.Text = "No tiene ningún curso a dictar hoy";
+            this.labelMensaje.Visible = false;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "ASISTENCIA";
+            this.dataGridViewImageColumn1.Image = global::CapaPresentacion.Properties.Resources.graduado_24px;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // pictureBoxLibros
+            // 
+            this.pictureBoxLibros.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLibros.Image")));
+            this.pictureBoxLibros.Location = new System.Drawing.Point(447, 212);
+            this.pictureBoxLibros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLibros.Name = "pictureBoxLibros";
+            this.pictureBoxLibros.Size = new System.Drawing.Size(648, 283);
+            this.pictureBoxLibros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLibros.TabIndex = 17;
+            this.pictureBoxLibros.TabStop = false;
+            this.pictureBoxLibros.Visible = false;
             // 
             // btnCERRAR
             // 
@@ -231,54 +333,21 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.TabStop = false;
             this.btnMINIMIZAR.Click += new System.EventHandler(this.btnMINIMIZAR_Click);
             // 
-            // dgvCursosDocente
-            // 
-            this.dgvCursosDocente.AllowUserToAddRows = false;
-            this.dgvCursosDocente.AllowUserToDeleteRows = false;
-            this.dgvCursosDocente.AllowUserToOrderColumns = true;
-            this.dgvCursosDocente.AllowUserToResizeRows = false;
-            this.dgvCursosDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCursosDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TEMA,
-            this.ASISTENCIA});
-            this.dgvCursosDocente.Location = new System.Drawing.Point(316, 85);
-            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvCursosDocente.Name = "dgvCursosDocente";
-            this.dgvCursosDocente.RowHeadersWidth = 51;
-            this.dgvCursosDocente.Size = new System.Drawing.Size(877, 503);
-            this.dgvCursosDocente.TabIndex = 15;
-            this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick_1);
-            // 
-            // TEMA
-            // 
-            this.TEMA.HeaderText = "TEMA";
-            this.TEMA.MinimumWidth = 6;
-            this.TEMA.Name = "TEMA";
-            this.TEMA.Width = 125;
-            // 
-            // ASISTENCIA
-            // 
-            this.ASISTENCIA.HeaderText = "ASISTENCIA";
-            this.ASISTENCIA.MinimumWidth = 6;
-            this.ASISTENCIA.Name = "ASISTENCIA";
-            this.ASISTENCIA.Width = 125;
-            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1224, 644);
+            this.Controls.Add(this.pictureBoxLibros);
+            this.Controls.Add(this.labelMensaje);
             this.Controls.Add(this.dgvCursosDocente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCERRAR);
             this.Controls.Add(this.btnMINIMIZAR);
             this.Controls.Add(this.ContenedorLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
@@ -287,9 +356,10 @@ namespace CapaPresentacion
             this.ContenedorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLibros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +383,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewComboBoxColumn TEMA;
         private System.Windows.Forms.DataGridViewImageColumn ASISTENCIA;
         public System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label labelMensaje;
+        private System.Windows.Forms.PictureBox pictureBoxLibros;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

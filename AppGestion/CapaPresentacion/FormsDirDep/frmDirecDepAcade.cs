@@ -265,9 +265,5 @@ namespace CapaPresentacion
         }
         #endregion
 
-        private void frmDirecDepAcade_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
