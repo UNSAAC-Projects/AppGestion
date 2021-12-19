@@ -90,6 +90,16 @@ create table TPlanSesiones
 )
 go
 
+create table TSilabo
+(
+   IdSilabo int identity,
+   Contenido varbinary(max),
+   IDCatalogo varchar(6),
+   primary key (IdSilabo),
+   foreign key(IDCatalogo) references TCatalogo
+)
+go
+     
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
@@ -649,6 +659,27 @@ create proc SP_ELIMINARTEMA_PLANSESIONES
 as
 delete from TPlanSesiones where Id=@Id
 go
+-----Subir Silabo-----
+create proc SP_SUBIRSILABO
+    @Contenido varbinary(max),
+	@IDCatalogo  varchar(6)
+as
+insert into TSilabo (Contenido,IDCatalogo) values (@Contenido,@IDCatalogo) 
+GO
+--select * from TSilabo
+---VER SILABO----
+create proc SP_VERSILABO
+    @IDCatalogo varchar(6)
+as
+select Contenido from TSilabo where IDCatalogo=@IDCatalogo
+GO
+
+
+
+
+
+
+
 
 
 
