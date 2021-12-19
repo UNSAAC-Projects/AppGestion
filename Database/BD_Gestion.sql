@@ -39,7 +39,7 @@ CREATE TABLE TAsignatura
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
 GO
-
+/*
 CREATE TABLE TAlumno
 (
 	CodAlumno varchar(6),
@@ -48,7 +48,7 @@ CREATE TABLE TAlumno
 	PRIMARY KEY (CodAlumno) 
 )
 GO
-
+*/
 CREATE TABLE TDocente
 (
 	CodDocente varchar(6),
@@ -76,6 +76,15 @@ CREATE TABLE TCatalogo
 )
 GO
 
+create table TArchivo(
+	Id			int identity,
+	Nombre		varchar(255),--Nombre del archivo
+	Contenido	varbinary(max),--Contenido binario del archivo
+	IDCatalogo	varchar(6),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
+
 create table TPlanSesiones
 (
 	Id		int identity,
@@ -85,11 +94,21 @@ create table TPlanSesiones
 	HorasProgramadas	varchar(4),
 	Fecha				date,
 	IDCatalogo			varchar(6),
-
+	Finalizado			varchar(14),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
 
+create table TSilabo
+(
+   IdSilabo int identity,
+   Contenido varbinary(max),
+   IDCatalogo varchar(6),
+   primary key (IdSilabo),
+   foreign key(IDCatalogo) references TCatalogo
+)
+go
+     
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
@@ -175,14 +194,12 @@ GO
 
 CREATE TABLE TMatriculado
 (
-	IDMatriculado varchar(6),
-	CodAlumno varchar(6),
-	Semestre varchar(7),
-	Grupo varchar(1),
-	IDCatalogo varchar(6),
-	PRIMARY KEY (IDMatriculado),
-	FOREIGN KEY (CodAlumno) REFERENCES TAlumno,
-	FOREIGN KEY (IDCatalogo) REFERENCES TCatalogo
+	IDCatalogo		varchar(6),	
+	CodAlumno		varchar(8),
+	Nombre			varchar(30),
+	Apellidos		varchar(50),
+	primary key(IDCatalogo,CodAlumno),
+	foreign key(IDCatalogo) references TCatalogo
 )
 GO
 
@@ -623,7 +640,8 @@ select
 	P.Unidad, 
 	P.Capitulo, 
 	P.Tema, 
-	P.HorasProgramadas AS Horas
+	P.HorasProgramadas AS Horas,
+	p.Finalizado
 from TCatalogo C, TPlanSesiones P
 where C.IDCatalogo=@CodCatalogo
 GO
@@ -635,9 +653,10 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
+	@Finalizado varchar(14),
 	@Fecha date
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, @HorasProgramadas=@HorasProgramadas, Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
 where Id =@Id
 GO
 -- Eliminar Tema de plan de sesiones
@@ -647,6 +666,46 @@ create proc SP_ELIMINARTEMA_PLANSESIONES
 as
 delete from TPlanSesiones where Id=@Id
 go
+-----Subir Silabo-----
+create proc SP_SUBIRSILABO
+    @Contenido varbinary(max),
+	@IDCatalogo  varchar(6)
+as
+insert into TSilabo (Contenido,IDCatalogo) values (@Contenido,@IDCatalogo) 
+GO
+--select * from TSilabo
+---VER SILABO----
+create proc SP_VERSILABO
+    @IDCatalogo varchar(6)
+as
+select Contenido from TSilabo where IDCatalogo=@IDCatalogo
+GO
+
+-- proc. para TArchivos
+create proc SP_GuardarArchivo
+@Nombre varchar(60),
+@Ruta varchar(400),
+@IDCatalogo varchar(6)
+as
+	declare @sql varchar(max) 
+	set @sql='insert into TArchivo(Nombre,contenido,IDCatalogo)
+		SELECT '''+@Nombre+''', bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Ruta+''', single_blob) as Data'
+	exec(@sql)
+go
+
+create proc SP_ListarArchivo
+@IDCatalogo varchar(6)
+as
+	select Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
+GO
+
+
+
+
+
+
+
 
 
 

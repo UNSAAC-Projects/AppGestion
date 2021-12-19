@@ -35,7 +35,9 @@ namespace CapaPresentacion
 
         private void MoverModificarColumnas()
         {
-            dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=4;
+            dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=6;
+            dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
+            dgvPlanSesiones.Columns["Completado"].DisplayIndex = 4;
         }
 
         public void MostrarPlanSesiones(string CodCatalogo)
@@ -134,6 +136,11 @@ namespace CapaPresentacion
                 dgvPlanSesiones.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove);
 
             }
+
+        }
+
+        private void dgvPlanSesiones_DoubleClick(object sender, EventArgs e)
+        {
 
         }
     }
