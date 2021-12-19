@@ -39,12 +39,15 @@ namespace CapaPresentacion
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonDESCARGAR = new System.Windows.Forms.Button();
-            this.PlanSesiones = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnCloseCursosDocente = new System.Windows.Forms.PictureBox();
             this.btnMinCursosDocente = new System.Windows.Forms.PictureBox();
+            this.PlanSesiones = new System.Windows.Forms.DataGridViewImageColumn();
+            this.SubirSilabo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.VerSilabo = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelVistaHorario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursosDocente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -101,7 +104,9 @@ namespace CapaPresentacion
             this.dgvCursosDocente.ColumnHeadersHeight = 35;
             this.dgvCursosDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvCursosDocente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.PlanSesiones});
+            this.PlanSesiones,
+            this.SubirSilabo,
+            this.VerSilabo});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -155,6 +160,14 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 136;
             // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Silabo";
+            this.dataGridViewImageColumn2.Image = global::CapaPresentacion.Properties.Resources.pdf_24px;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 60;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -185,14 +198,6 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Text = "DESCARGAR";
             this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDESCARGAR.UseVisualStyleBackColor = false;
-            // 
-            // PlanSesiones
-            // 
-            this.PlanSesiones.HeaderText = "Plan de Sesiones";
-            this.PlanSesiones.Image = global::CapaPresentacion.Properties.Resources.book_solid;
-            this.PlanSesiones.MinimumWidth = 6;
-            this.PlanSesiones.Name = "PlanSesiones";
-            this.PlanSesiones.Width = 136;
             // 
             // pictureBoxLogo
             // 
@@ -230,6 +235,29 @@ namespace CapaPresentacion
             this.btnMinCursosDocente.TabIndex = 0;
             this.btnMinCursosDocente.TabStop = false;
             this.btnMinCursosDocente.Click += new System.EventHandler(this.btnMinCursosDocente_Click);
+            // 
+            // PlanSesiones
+            // 
+            this.PlanSesiones.HeaderText = "Plan de Sesiones";
+            this.PlanSesiones.Image = global::CapaPresentacion.Properties.Resources.book_solid;
+            this.PlanSesiones.MinimumWidth = 6;
+            this.PlanSesiones.Name = "PlanSesiones";
+            this.PlanSesiones.Width = 136;
+            // 
+            // SubirSilabo
+            // 
+            this.SubirSilabo.HeaderText = "Subir Silabo";
+            this.SubirSilabo.Image = global::CapaPresentacion.Properties.Resources.pdf2_24px;
+            this.SubirSilabo.MinimumWidth = 6;
+            this.SubirSilabo.Name = "SubirSilabo";
+            // 
+            // VerSilabo
+            // 
+            this.VerSilabo.HeaderText = "Ver Silabo";
+            this.VerSilabo.Image = global::CapaPresentacion.Properties.Resources.ver_24px;
+            this.VerSilabo.MinimumWidth = 6;
+            this.VerSilabo.Name = "VerSilabo";
+            this.VerSilabo.Width = 90;
             // 
             // frmVistaCursosDocente
             // 
@@ -272,7 +300,10 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button buttonDESCARGAR;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewImageColumn PlanSesiones;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn PlanSesiones;
+        private System.Windows.Forms.DataGridViewImageColumn SubirSilabo;
+        private System.Windows.Forms.DataGridViewImageColumn VerSilabo;
     }
 }
