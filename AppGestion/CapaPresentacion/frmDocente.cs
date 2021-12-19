@@ -51,10 +51,10 @@ namespace CapaPresentacion
             ////((DataGridViewComboBoxColumn)dgvCursosDocente.Columns["TEMA"]).DataSource = CB.Items;
             //((DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells[0]).DataSource = CB.Items;
 
-            DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dgvCursosDocente[0, 0];
-            comboCell.Items.Clear();
-            string[] A = { "Hola", "Mundo" };
-            comboCell.Items.AddRange(A);
+            //DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dgvCursosDocente[0, 0];
+            //comboCell.Items.Clear();
+            //string[] A = { "Hola", "Mundo" };
+            //comboCell.Items.AddRange(A);
         }
 
         private void MostrarNombreUsuario(string codDocente)
