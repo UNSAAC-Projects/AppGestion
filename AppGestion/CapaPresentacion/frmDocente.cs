@@ -26,17 +26,35 @@ namespace CapaPresentacion
             //Mostrar nombre de usuario
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
-            MostrarHorarioxDia(CodDocente); 
-            Docente = CodDocente;
+            MostrarHorarioxDia(CodDocente);
+            //Mostrar temas a dictar de cada curso
+            MostrarTemasDictar();
             
+            Docente = CodDocente;
+        }
+
+        private void MostrarTemasDictar()
+        {
+            // setCellComboBoxItems(dgvCursosDocente, 0,6,)
+            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells["TEMA"];
+            //dgvcbc.Items.Clear();
+            //dgvcbc.Items.Add("Hola");
+            //dgvcbc.Items.Add("Mundo");
+
+            //ComboBox CB = new ComboBox();
+            //CB.Items.Add("A");
+            //CB.Items.Add("B");
+            //CB.Items.Add("C");
+            //CB.Items.Add("D");
+            //CB.Items.Add("E");
+
+            //((DataGridViewComboBoxColumn)dgvCursosDocente.Columns["TEMA"]).DataSource = CB.Items;
         }
 
         private void MostrarNombreUsuario(string codDocente)
         {
-            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
-           
-            datos.NombreDocente = labelNombre.Text;
-           
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
+            datos.NombreDocente = labelNombre.Text; 
         }
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
@@ -52,19 +70,14 @@ namespace CapaPresentacion
 
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
+            Close();
         }
 
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
-            dia = "VIERNES";
+            dia = "MARTES";
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             // Obtener tabla de horarios del dia actual
@@ -94,18 +107,15 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["TEMA"].DisplayIndex = 7;
             dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
 
-            ////Modificar ancho de columnas
+            //Modificar ancho de columnas
             dgvCursosDocente.Columns["CODIGO"].Width = 70;
             dgvCursosDocente.Columns["NOMBRE"].Width = 240;
             dgvCursosDocente.Columns["TIPO"].Width = 50;
             dgvCursosDocente.Columns["GRUPO"].Width = 60;
-            ///////////////////
-            //dgvCursosDocente.Columns["HORAS"].Width = 70;
-            ///////////////////
+            dgvCursosDocente.Columns["HORAS"].Width = 70;
             dgvCursosDocente.Columns["AULA"].Width = 60;
             dgvCursosDocente.Columns["TEMA"].Width = 300;
             dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
-            
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -126,13 +136,6 @@ namespace CapaPresentacion
             }
         }
 
-        //private void buttonGetDate_Click(object sender, EventArgs e)
-        //{
-        //    string fecha, hora, dia;
-        //    ObtenerTiempo(out fecha, out hora, out dia);
-        //    MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
-        //}
-
         private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
@@ -148,16 +151,6 @@ namespace CapaPresentacion
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
                 form.ShowDialog();
             }
-        }
-
-        private void frmDocente_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void labelNombre_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

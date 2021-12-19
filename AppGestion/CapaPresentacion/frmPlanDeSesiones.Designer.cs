@@ -300,10 +300,6 @@ namespace CapaPresentacion
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPlanDeSesiones";
             this.Text = "frmPlanDeSesiones";
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.frmPlanDeSesiones_DragDrop);
-            this.DragOver += new System.Windows.Forms.DragEventHandler(this.frmPlanDeSesiones_DragOver);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmPlanDeSesiones_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmPlanDeSesiones_MouseMove);
             this.panelVistaHorario.ResumeLayout(false);
             this.panelVistaHorario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();

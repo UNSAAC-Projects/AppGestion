@@ -67,7 +67,7 @@ namespace CapaPresentacion
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
                         //FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                        string Ruta = @"D:\ciclo 2021-II\PLANEAMIENTO ESTRATEGICO\GUIA12-TI.docx (1).pdf";
+                        string Ruta = @"C:\Users\avill\Downloads\Workbook - Unit 7.pdf";
                         string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
                         string CodCatalogo = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura);
                         oSilabo.SubirSilabo(Ruta,CodCatalogo);

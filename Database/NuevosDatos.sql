@@ -17,8 +17,6 @@ EXEC sys.sp_msforeachtable 'DELETE FROM ?'
 EXEC sys.sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
 go
 
---INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
-GO
 /********************************************************************************************************************
 						INSERTAR DATOS
 *********************************************************************************************************************/
@@ -121,12 +119,12 @@ INSERT INTO TCatalogo VALUES
 ('C004','09','IF658','A','103IN','D0017','D0017'),
 ('C005','04','IF214','A','203IN','D0010','D0012'),
 ('C006','03','IF468','A','203IN','D0004','D0004'),
-('C007','06','IF450','A','105IN','D0016','D0018'),
+('C007','06','IF450','A','105IN','D0016','D0025'),
 ('C008','10','IF450','B','105IN','D0014','D0010'),
 
 ('C009','08','IF484','A','104IN','D0020','D0021'),
-('C010','03','IF457','A','104IN','D0008','D0008'),
-('C011','05','IF483','B','104IN','D0004','D0004');
+('C010','03','IF457','A','104IN','D0004','D0004'),
+('C011','05','IF483','B','104IN','D0003','D0003');
 GO
 
 INSERT INTO TLogin VALUES 
@@ -396,6 +394,31 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Fecha,Finalizad
 ('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','2022-03-11','NO','C006'),--semana14
 ('3°UNIDAD','---------','Examen Parcial','02','2022-03-15','NO','C006'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','2022-03-17','NO','C006'),
-('3°UNIDAD','---------','Entrega de Notas','01','2022-03-18','NO','C006');--semana15
+('3°UNIDAD','---------','Entrega de Notas','01','2022-03-18','NO','C006'),--semana15
+
+---C0010 -> MÉTODOS NUMÉRICOS
+--(Unidad,Capitulo,Tema,HorasProgramadas,Fecha,Finalizado,IDCatalogo)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','2021-11-30','SI','C010'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','2021-12-02','SI','C010'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','2021-12-03','SI','C010'),
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Introducción y Teoría de Errores','04','2021-12-07','NO','C010'),
+('1°UNIDAD','Capitulo2','Series de Taylor','04','2021-12-09','NO','C010'),
+('1°UNIDAD','Capitulo3','Resolución de Ecuaciones no Lineales','08','2021-12-10','NO','C010'),
+('1°UNIDAD','Capitulo4','Resolución de Sistemas de Ecuaciones Lineales','08','2021-12-14','NO','C010'),
+('1°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 1','04','2021-12-16','NO','C010'),
+('1°UNIDAD','','Examen Parcial I','02','2022-03-15','NO','C010'),
+('1°UNIDAD','','Revision Examen Parcial I','02','2022-03-17','NO','C010'),
+('1°UNIDAD','','Entrega de Notas','01','2022-03-18','NO','C010'),--semana15
+
+-- 2°parcial
+('2°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 2','04','2021-12-17','NO','C010'),
+('2°UNIDAD','Capitulo6','Diferenciación Numérica','04','2021-12-21','NO','C010'),
+('2°UNIDAD','Capitulo7','Integración Numérica','08','2021-12-23','NO','C010'),
+('2°UNIDAD','Capitulo8','Ecuaciones Diferenciales Ordinarias','08','2021-12-24','NO','C010'),
+('2°UNIDAD','','Examen Parcial II','02','2022-03-15','NO','C010'),
+('2°UNIDAD','','Revision Examen Parcial II','02','2022-03-17','NO','C010'),
+('2°UNIDAD','','Entrega de Notas','01','2022-03-18','NO','C010');--semana15
+
 GO
 

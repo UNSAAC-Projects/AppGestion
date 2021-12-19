@@ -642,8 +642,8 @@ select
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
 	p.Finalizado
-from TCatalogo C, TPlanSesiones P
-where C.IDCatalogo=@CodCatalogo
+from TPlanSesiones P
+where P.IDCatalogo=@CodCatalogo
 GO
 
 -- Editar plan sesiones
@@ -673,7 +673,7 @@ create proc SP_SUBIRSILABO
 as
 insert into TSilabo (Contenido,IDCatalogo) values (@Contenido,@IDCatalogo) 
 GO
---select * from TSilabo
+
 ---VER SILABO----
 create proc SP_VERSILABO
     @IDCatalogo varchar(6)
