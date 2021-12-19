@@ -39,7 +39,7 @@ CREATE TABLE TAsignatura
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
 GO
-
+/*
 CREATE TABLE TAlumno
 (
 	CodAlumno varchar(6),
@@ -48,7 +48,7 @@ CREATE TABLE TAlumno
 	PRIMARY KEY (CodAlumno) 
 )
 GO
-
+*/
 CREATE TABLE TDocente
 (
 	CodDocente varchar(6),
@@ -75,6 +75,15 @@ CREATE TABLE TCatalogo
 	FOREIGN KEY (CodDocenteTeorico) REFERENCES TDocente
 )
 GO
+
+create table TArchivo(
+	Id			int identity,
+	Nombre		varchar(255),--Nombre del archivo
+	Contenido	varbinary(max),--Contenido binario del archivo
+	IDCatalogo	varchar(6),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
 
 create table TPlanSesiones
 (
@@ -185,14 +194,12 @@ GO
 
 CREATE TABLE TMatriculado
 (
-	IDMatriculado varchar(6),
-	CodAlumno varchar(6),
-	Semestre varchar(7),
-	Grupo varchar(1),
-	IDCatalogo varchar(6),
-	PRIMARY KEY (IDMatriculado),
-	FOREIGN KEY (CodAlumno) REFERENCES TAlumno,
-	FOREIGN KEY (IDCatalogo) REFERENCES TCatalogo
+	IDCatalogo		varchar(6),	
+	CodAlumno		varchar(8),
+	Nombre			varchar(30),
+	Apellidos		varchar(50),
+	primary key(IDCatalogo,CodAlumno),
+	foreign key(IDCatalogo) references TCatalogo
 )
 GO
 
@@ -672,6 +679,25 @@ create proc SP_VERSILABO
     @IDCatalogo varchar(6)
 as
 select Contenido from TSilabo where IDCatalogo=@IDCatalogo
+GO
+
+-- proc. para TArchivos
+create proc SP_GuardarArchivo
+@Nombre varchar(60),
+@Ruta varchar(400),
+@IDCatalogo varchar(6)
+as
+	declare @sql varchar(max) 
+	set @sql='insert into TArchivo(Nombre,contenido,IDCatalogo)
+		SELECT '''+@Nombre+''', bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Ruta+''', single_blob) as Data'
+	exec(@sql)
+go
+
+create proc SP_ListarArchivo
+@IDCatalogo varchar(6)
+as
+	select Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
 GO
 
 
