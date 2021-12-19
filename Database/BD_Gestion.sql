@@ -85,7 +85,7 @@ create table TPlanSesiones
 	HorasProgramadas	varchar(4),
 	Fecha				date,
 	IDCatalogo			varchar(6),
-
+	Completado			varchar(2)
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
