@@ -19,6 +19,7 @@ namespace CapaPresentacion
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
         private int rowIndexOfItemUnderMouseToDrop;
+
         public frmPlanDeSesiones(string CodCatalogo, string NombreAsignatura, string Grupo)
         {
             InitializeComponent();
