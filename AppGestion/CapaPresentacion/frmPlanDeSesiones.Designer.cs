@@ -47,6 +47,8 @@ namespace CapaPresentacion
             this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.btnAgregarTema = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelVistaHorario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -65,7 +67,7 @@ namespace CapaPresentacion
             this.panelVistaHorario.Location = new System.Drawing.Point(0, 0);
             this.panelVistaHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelVistaHorario.Name = "panelVistaHorario";
-            this.panelVistaHorario.Size = new System.Drawing.Size(1148, 43);
+            this.panelVistaHorario.Size = new System.Drawing.Size(978, 43);
             this.panelVistaHorario.TabIndex = 10;
             // 
             // label11
@@ -82,7 +84,6 @@ namespace CapaPresentacion
             // dgvPlanSesiones
             // 
             this.dgvPlanSesiones.AllowDrop = true;
-            this.dgvPlanSesiones.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -101,7 +102,9 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.ColumnHeadersHeight = 35;
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.eliminar});
+            this.eliminar,
+            this.Completado,
+            this.observacion});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,9 +122,10 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.RowTemplate.Height = 24;
             this.dgvPlanSesiones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPlanSesiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPlanSesiones.Size = new System.Drawing.Size(1075, 335);
+            this.dgvPlanSesiones.Size = new System.Drawing.Size(908, 335);
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
+            this.dgvPlanSesiones.DoubleClick += new System.EventHandler(this.dgvPlanSesiones_DoubleClick);
             // 
             // labelPlanSesiones
             // 
@@ -216,7 +220,7 @@ namespace CapaPresentacion
             // 
             this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
-            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1089, 4);
+            this.btnClosePlanSesiones.Location = new System.Drawing.Point(908, 4);
             this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
             this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
@@ -229,7 +233,7 @@ namespace CapaPresentacion
             // 
             this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
-            this.btnMinPlanSesiones.Location = new System.Drawing.Point(1047, 4);
+            this.btnMinPlanSesiones.Location = new System.Drawing.Point(866, 4);
             this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
             this.btnMinPlanSesiones.Size = new System.Drawing.Size(36, 34);
@@ -251,7 +255,7 @@ namespace CapaPresentacion
             this.btnAgregarTema.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAgregarTema.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTema.Image")));
             this.btnAgregarTema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarTema.Location = new System.Drawing.Point(887, 503);
+            this.btnAgregarTema.Location = new System.Drawing.Point(720, 503);
             this.btnAgregarTema.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarTema.Name = "btnAgregarTema";
             this.btnAgregarTema.Size = new System.Drawing.Size(224, 42);
@@ -267,11 +271,25 @@ namespace CapaPresentacion
             this.eliminar.Name = "eliminar";
             this.eliminar.Width = 72;
             // 
+            // Completado
+            // 
+            this.Completado.HeaderText = "Completado";
+            this.Completado.MinimumWidth = 6;
+            this.Completado.Name = "Completado";
+            this.Completado.Width = 108;
+            // 
+            // observacion
+            // 
+            this.observacion.HeaderText = "Observacion";
+            this.observacion.MinimumWidth = 6;
+            this.observacion.Name = "observacion";
+            this.observacion.Width = 132;
+            // 
             // frmPlanDeSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 570);
+            this.ClientSize = new System.Drawing.Size(978, 570);
             this.Controls.Add(this.btnAgregarTema);
             this.Controls.Add(this.lblNombreAsignatura);
             this.Controls.Add(this.labelPlanSesiones);
@@ -313,5 +331,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Button btnAgregarTema;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
     }
 }
