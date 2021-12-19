@@ -35,9 +35,9 @@ namespace CapaPresentacion
 
         private void MostrarTemasDictar()
         {
-            // setCellComboBoxItems(dgvCursosDocente, 0,6,)
-            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells["TEMA"];
-            //dgvcbc.Items.Clear();
+            ////setCellComboBoxItems(dgvCursosDocente, 0, 6,)
+            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells[0];
+            ////dgvcbc.Items.Clear();
             //dgvcbc.Items.Add("Hola");
             //dgvcbc.Items.Add("Mundo");
 
@@ -48,7 +48,13 @@ namespace CapaPresentacion
             //CB.Items.Add("D");
             //CB.Items.Add("E");
 
-            //((DataGridViewComboBoxColumn)dgvCursosDocente.Columns["TEMA"]).DataSource = CB.Items;
+            ////((DataGridViewComboBoxColumn)dgvCursosDocente.Columns["TEMA"]).DataSource = CB.Items;
+            //((DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells[0]).DataSource = CB.Items;
+
+            DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dgvCursosDocente[0, 0];
+            comboCell.Items.Clear();
+            string[] A = { "Hola", "Mundo" };
+            comboCell.Items.AddRange(A);
         }
 
         private void MostrarNombreUsuario(string codDocente)

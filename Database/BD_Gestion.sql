@@ -674,11 +674,29 @@ as
 insert into TSilabo (Contenido,IDCatalogo) values (@Contenido,@IDCatalogo) 
 GO
 
----VER SILABO----
-create proc SP_VERSILABO
+---OBTENER CONTENIDO DEL SILABO----
+create proc SP_OBTENER_SILABO
     @IDCatalogo varchar(6)
 as
 select Contenido from TSilabo where IDCatalogo=@IDCatalogo
+GO
+
+--COMPROBRAR SI EXISTE SILABO----
+create proc SP_EXISTE_SILABO
+	@IDCatalogo varchar(6)
+as
+select * from TSilabo
+where IDCatalogo = @IDCatalogo
+go
+
+-- ACTUALIZAR CONTENIDO DE UN SILABO
+CREATE PROC SP_ACTUALIZAR_SILABO
+	@IDCatalogo varchar(6),
+	@Contenido varbinary(max)
+AS
+UPDATE TSilabo SET
+	Contenido=@Contenido
+WHERE IDCatalogo = @IDCatalogo
 GO
 
 -- proc. para TArchivos

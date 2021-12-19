@@ -13,7 +13,7 @@ using CapaNegocio;
 using Excel;
 using CapaEntidades;
 using System.IO;
-using ceTe.DynamicPDF.Viewer;
+using System.Diagnostics;
 
 namespace CapaPresentacion
 {
@@ -41,9 +41,10 @@ namespace CapaPresentacion
             this.Close();
         }
 
-        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
-        {
-
+        public string ObtenerRutaProyecto()
+        {//Método para obtener la ruta del proyecto
+            string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            return rutaProyecto;
         }
 
         private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,13 +67,20 @@ namespace CapaPresentacion
                 {
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        //FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                        string Ruta = @"C:\Users\avill\Downloads\Workbook - Unit 7.pdf";
+                        string Ruta = ofd.FileName; //Obtener ruta del archivo
                         string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
                         string CodCatalogo = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura);
-                        oSilabo.SubirSilabo(Ruta,CodCatalogo);
-                        MessageBox.Show("Se subio Correctamente el archivo");
-
+                        //Verificar si existe ya un silabo
+                        if (oSilabo.ExisteSilabo(CodCatalogo)) //Si existe
+                        {
+                            //Actualizar contenido del silabo
+                            oSilabo.ActualizarSilabo(Ruta, CodCatalogo);
+                        }
+                        else //Si no existe
+                        {
+                            oSilabo.SubirSilabo(Ruta, CodCatalogo); //Subir silabo
+                        }
+                        MessageBox.Show("Se subio correctamente el silabo");
                     }
                 }
             }
@@ -81,12 +89,28 @@ namespace CapaPresentacion
                 string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
                 string CodCatalogo = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura);
                 byte[] bytesSilabo= oSilabo.ObtenerBytesSilabo(CodCatalogo);
-                PdfViewer pdfViewer = new PdfViewer();
-
-                PdfDocument pdfDocument = new PdfDocument(bytesSilabo);
-                pdfViewer.Open(pdfDocument);
-
+                if(bytesSilabo != null) //Si existe silabo
+                {
+                    string NombrePDF = "Silabo";
+                    //Crear ruta temporal del pdf
+                    string rutaPDF = $"{ObtenerRutaProyecto()}\\tempFiles\\{NombrePDF}.pdf";
+                    //Crear pdf en la carpeta temporal
+                    File.WriteAllBytes(rutaPDF, bytesSilabo);
+                    //Abrir pdf
+                    ProcessStartInfo startInfo = new ProcessStartInfo(rutaPDF);
+                    Process.Start(startInfo);
+                }
+                else //Si no existe silabo
+                {
+                    MessageBox.Show("No existe silabo", "Advertencia"); //Mostrar mensaje
+                }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
+
 }
