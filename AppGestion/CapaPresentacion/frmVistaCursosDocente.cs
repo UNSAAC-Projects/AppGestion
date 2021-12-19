@@ -61,7 +61,7 @@ namespace CapaPresentacion
                 
                 form.ShowDialog();
             }
-            if (row.Cells["SubirSilabo"].Selected)
+            else if (row.Cells["SubirSilabo"].Selected)
             {
                 using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "|*.pdf", ValidateNames = true })
                 {
@@ -84,7 +84,7 @@ namespace CapaPresentacion
                     }
                 }
             }
-            if (row.Cells["VerSilabo"].Selected)
+            else if (row.Cells["VerSilabo"].Selected)
             {
                 string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
                 string CodCatalogo = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura);
