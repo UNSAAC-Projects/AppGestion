@@ -85,11 +85,21 @@ create table TPlanSesiones
 	HorasProgramadas	varchar(4),
 	Fecha				date,
 	IDCatalogo			varchar(6),
-	Completado			varchar(2)
+	Finalizado			varchar(14),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
 
+create table TSilabo
+(
+   IdSilabo int identity,
+   Contenido varbinary(max),
+   IDCatalogo varchar(6),
+   primary key (IdSilabo),
+   foreign key(IDCatalogo) references TCatalogo
+)
+go
+     
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
@@ -623,7 +633,8 @@ select
 	P.Unidad, 
 	P.Capitulo, 
 	P.Tema, 
-	P.HorasProgramadas AS Horas
+	P.HorasProgramadas AS Horas,
+	p.Finalizado
 from TCatalogo C, TPlanSesiones P
 where C.IDCatalogo=@CodCatalogo
 GO
@@ -635,9 +646,10 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
+	@Finalizado varchar(14),
 	@Fecha date
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, @HorasProgramadas=@HorasProgramadas, Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
 where Id =@Id
 GO
 -- Eliminar Tema de plan de sesiones
@@ -647,6 +659,27 @@ create proc SP_ELIMINARTEMA_PLANSESIONES
 as
 delete from TPlanSesiones where Id=@Id
 go
+-----Subir Silabo-----
+create proc SP_SUBIRSILABO
+    @Contenido varbinary(max),
+	@IDCatalogo  varchar(6)
+as
+insert into TSilabo (Contenido,IDCatalogo) values (@Contenido,@IDCatalogo) 
+GO
+--select * from TSilabo
+---VER SILABO----
+create proc SP_VERSILABO
+    @IDCatalogo varchar(6)
+as
+select Contenido from TSilabo where IDCatalogo=@IDCatalogo
+GO
+
+
+
+
+
+
+
 
 
 
