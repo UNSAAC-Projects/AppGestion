@@ -172,32 +172,45 @@ namespace CapaPresentacion
                     //Obtener cod curso
                     string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
 
+                    FileStream fs = File.Open("C:/Users/OEM/Downloads/prueba/Alumnos.xls", FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
+
                     frmAsistencia form = new frmAsistencia();
-                    using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-                    {
-                        if (ofd.ShowDialog() == DialogResult.OK)
-                        {
-                            FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                            IExcelDataReader reader;
-                            if (ofd.FilterIndex == 1)
-                            {
-                                reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                            }
-                            else
-                            {
-                                reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                            }
                             reader.IsFirstRowAsColumnNames = true;
                             result = reader.AsDataSet();
                             form.dgvAsistencia.DataSource = result.Tables[0];
                             reader.Close();
-                        }
-                    }
-                    //Recuperar información de la tabla
-                    //form.textBoxCodigo.Text = CodCursoCatalogo;
-                    //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                    form.ShowDialog();
+                            form.ShowDialog();
+
+
+                    //using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+                    //{
+                    //    if (ofd.ShowDialog() == DialogResult.OK)
+                    //    {
+                    //        FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    //        IExcelDataReader reader;
+                    //        if (ofd.FilterIndex == 1)
+                    //        {
+                    //            reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                    //        }
+                    //        else
+                    //        {
+                    //            reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                    //        }
+
+                    //        frmAsistencia form = new frmAsistencia();
+                    //        reader.IsFirstRowAsColumnNames = true;
+                    //        result = reader.AsDataSet();
+                    //        form.dgvAsistencia.DataSource = result.Tables[0];
+                    //        reader.Close();
+                    //        form.ShowDialog();
+                    //    }
+                    //}
+
+
                 }
+
             }   
         }
     }
