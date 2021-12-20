@@ -171,6 +171,7 @@ namespace CapaPresentacion
                 {
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
+                    datos.NombreCurso= row.Cells["NOMBRE"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
 
                     DataTable tabla = new DataTable();
@@ -179,6 +180,7 @@ namespace CapaPresentacion
                     //recuperar la ruta del archivo excel
                     tabla = oDocente.MostrarArchivos(codCatalogo);
                     string ruta=tabla.Rows[0][0].ToString();
+                    string contenido = tabla.Rows[0][1].ToString();
                     
                     FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
                     IExcelDataReader reader;

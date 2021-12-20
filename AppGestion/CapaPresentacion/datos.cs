@@ -8,8 +8,8 @@ namespace CapaPresentacion
 {
     public class datos
     {
-       static public string NombreDocente;
-
+        static public string NombreDocente;
+        static public string NombreCurso;
 
     }
 }
