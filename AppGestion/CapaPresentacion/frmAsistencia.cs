@@ -90,11 +90,15 @@ namespace CapaPresentacion
                     excel.Cells[IndiceFila + 1, IndiceColumna] = fila.Cells[columna.Name].Value;
                 }
             }
-            excel.Visible = true;
+            excel.Visible = false;
+
+            MessageBox.Show(excel.ToString());
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
             ExportarDatos(dgvAsistencia);
+
+
         }
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
