@@ -27,8 +27,6 @@ namespace CapaPresentacion
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(CodDocente);
-            //Mostrar temas a dictar de cada curso
-            MostrarTemasDictar();
             
             Docente = CodDocente;
         }
@@ -93,6 +91,8 @@ namespace CapaPresentacion
             {
                 dgvCursosDocente.DataSource = table; //Mostrar tabla
                 MoverModificarColumnas(); //Modificar columnas
+                MostrarTemasDictar();  //Mostrar temas a dictar de cada curso
+
             }
             else //Si está vacio
             {
