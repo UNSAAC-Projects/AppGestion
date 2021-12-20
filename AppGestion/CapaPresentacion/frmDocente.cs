@@ -191,32 +191,6 @@ namespace CapaPresentacion
                     reader.Close();
                     form.ShowDialog();
 
-
-                    //using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-                    //{
-                    //    if (ofd.ShowDialog() == DialogResult.OK)
-                    //    {
-                    //        FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                    //        IExcelDataReader reader;
-                    //        if (ofd.FilterIndex == 1)
-                    //        {
-                    //            reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                    //        }
-                    //        else
-                    //        {
-                    //            reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                    //        }
-
-                    //        frmAsistencia form = new frmAsistencia();
-                    //        reader.IsFirstRowAsColumnNames = true;
-                    //        result = reader.AsDataSet();
-                    //        form.dgvAsistencia.DataSource = result.Tables[0];
-                    //        reader.Close();
-                    //        form.ShowDialog();
-                    //    }
-                    //}
-
-
                 }
 
             }   
