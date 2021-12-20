@@ -59,16 +59,16 @@ namespace CapaPresentacion
         {
 
         }
-
+        N_Docente oDocente = new N_Docente();
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
             //////////////////////////
             //ObtenerTiempo(out _, out _, out string dia);
-            string dia = "VIERNES";
+            string dia = "JUEVES";
             ///////////////////////////
             //Mostrar tabla
-            N_Docente oDocente = new N_Docente();
+           
             // Obtener tabla de horarios del dia actual
             var table = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
             //Verificar si la tabla no está vacio
@@ -169,19 +169,27 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
                 if (row.Cells["ASISTENCIA"].Selected)
                 {
-                    //Obtener cod curso
-                    string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
+                    //Obtener cod curso y luego codcatalogo
+                    string codAsignatura = row.Cells["CODIGO"].Value.ToString();
+                    string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
 
-                    FileStream fs = File.Open("C:/Users/OEM/Downloads/prueba/Alumnos.xls", FileMode.Open, FileAccess.Read);
+                    DataTable tabla = new DataTable();
+
+
+                    //recuperar la ruta del archivo excel
+                    tabla = oDocente.MostrarArchivos(codCatalogo);
+                    string ruta=tabla.Rows[0][0].ToString();
+                    
+                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
                     IExcelDataReader reader;
                     reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
                     frmAsistencia form = new frmAsistencia();
-                            reader.IsFirstRowAsColumnNames = true;
-                            result = reader.AsDataSet();
-                            form.dgvAsistencia.DataSource = result.Tables[0];
-                            reader.Close();
-                            form.ShowDialog();
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    form.dgvAsistencia.DataSource = result.Tables[0];
+                    reader.Close();
+                    form.ShowDialog();
 
 
                     //using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
