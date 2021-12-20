@@ -143,5 +143,26 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void pnlPlanDeSeciones_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlPlanDeSeciones_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
     }
 }
