@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using SpreadsheetLight;
 
 namespace CapaPresentacion
 {
@@ -61,9 +63,12 @@ namespace CapaPresentacion
             
 
         }
+        string datetime;
+        string fecha;
         public void ImprimirHoraFecha()
         {
-            string datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
+            datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
+         
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
 
@@ -71,30 +76,37 @@ namespace CapaPresentacion
         }
         public void ExportarDatos(DataGridView datalistado)
         {
-            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application(); // Instancia a la libreria de Microsoft Office
-            excel.Application.Workbooks.Add(true); //Con esto añadimos una hoja en el Excel para exportar los archivos
-            int IndiceColumna = 0;
-            foreach (DataGridViewColumn columna in datalistado.Columns) //Aquí empezamos a leer las columnas del listado a exportar
+            
+            string name = datos.NombreCurso;
+
+            string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
+            SLDocument osLDocument = new SLDocument();
+            System.Data.DataTable dt = new System.Data.DataTable();
+            //registrar columnas
+            dt.Columns.Add("ASISTENCIA",typeof(string));
+            dt.Columns.Add("ALUMNOS", typeof(string));
+            dt.Columns.Add("APELLIDOS Y NOMBRES", typeof(string));
+            dt.Columns.Add("OBSERVACION", typeof(string));
+            //registrar filas
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-                IndiceColumna++;
-                excel.Cells[1, IndiceColumna] = columna.Name;
+
+                string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
+                string alumnos = Convert.ToString(row.Cells["ALUMNO"].Value);
+                string apellidos = Convert.ToString(row.Cells["APELLIDOS Y NOMBRES"].Value);
+                string observacion = Convert.ToString(row.Cells["Observacion"].Value);
+                dt.Rows.Add(asistencia, alumnos, apellidos, observacion);
             }
-            int IndiceFila = 0;
-            foreach (DataGridViewRow fila in datalistado.Rows) //Aquí leemos las filas de las columnas leídas
-            {
-                IndiceFila++;
-                IndiceColumna = 0;
-                foreach (DataGridViewColumn columna in datalistado.Columns)
-                {
-                    IndiceColumna++;
-                    excel.Cells[IndiceFila + 1, IndiceColumna] = fila.Cells[columna.Name].Value;
-                }
-            }
-            excel.Visible = true;
+
+            osLDocument.ImportDataTable(1,1,dt,true);
+            osLDocument.SaveAs(ruta);
+
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
             ExportarDatos(dgvAsistencia);
+
+
         }
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -108,7 +120,7 @@ namespace CapaPresentacion
             {
 
                 row.Cells["Asistencia"].Value = true;
-
+                
             }
         }
 
