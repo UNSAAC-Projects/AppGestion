@@ -24,7 +24,7 @@ namespace CapaPresentacion
             Application.Run(AppContext);
         }
 
-        //Método para intercambiar formularios
+        //Método para intercambiar el formulario principal
         public static void SwitchMainForm(Form newForm)
         {
             var oldMainForm = AppContext.MainForm;

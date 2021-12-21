@@ -19,6 +19,7 @@ namespace CapaPresentacion
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
         private int rowIndexOfItemUnderMouseToDrop;
+
         public frmPlanDeSesiones(string CodCatalogo, string NombreAsignatura, string Grupo)
         {
             InitializeComponent();
@@ -44,6 +45,7 @@ namespace CapaPresentacion
             N_PlanSesiones pvista = new N_PlanSesiones();
             dgvPlanSesiones.DataSource = pvista.ListandoPlanSesiones(CodCatalogo);
         }
+
         private void btnClosePlanSesiones_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,19 +58,19 @@ namespace CapaPresentacion
 
         private void dgvPlanSesiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Eliminar"].Selected)
-            {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    dgvPlanSesiones.Rows.RemoveAt(e.RowIndex) ;
+            //if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            //{
+            //    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
+            //    if (dialogResult == DialogResult.Yes)
+            //    {
+            //        dgvPlanSesiones.Rows.RemoveAt(e.RowIndex) ;
 
 
-                }
-            }
+            //    }
+            //}
         }
 
-        private void frmPlanDeSesiones_MouseMove(object sender, MouseEventArgs e)
+        private void dgvPlanSesiones_MouseMove(object sender, MouseEventArgs e)
         {
             if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
             {
@@ -83,9 +85,10 @@ namespace CapaPresentacion
                     DragDropEffects.Move);
                 }
             }
+
         }
 
-        private void frmPlanDeSesiones_MouseDown(object sender, MouseEventArgs e)
+        private void dgvPlanSesiones_MouseDown(object sender, MouseEventArgs e)
         {
             // Get the index of the item the mouse is below.
             rowIndexFromMouseDown = dgvPlanSesiones.HitTest(e.X, e.Y).RowIndex;
@@ -105,14 +108,16 @@ namespace CapaPresentacion
             else
                 // Reset the rectangle if the mouse is not over an item in the ListBox.
                 dragBoxFromMouseDown = Rectangle.Empty;
+
         }
 
-        private void frmPlanDeSesiones_DragOver(object sender, DragEventArgs e)
+        private void dgvPlanSesiones_DragOver(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Move;
+
         }
 
-        private void frmPlanDeSesiones_DragDrop(object sender, DragEventArgs e)
+        private void dgvPlanSesiones_DragDrop(object sender, DragEventArgs e)
         {
             // The mouse locations are relative to the screen, so they must be 
             // converted to client coordinates.
@@ -131,11 +136,33 @@ namespace CapaPresentacion
                 dgvPlanSesiones.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove);
 
             }
+
         }
 
         private void dgvPlanSesiones_DoubleClick(object sender, EventArgs e)
         {
 
+        }
+
+        private void pnlPlanDeSeciones_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlPlanDeSeciones_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }

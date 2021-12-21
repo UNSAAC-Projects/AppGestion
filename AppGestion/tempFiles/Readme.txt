@@ -1,0 +1,1 @@
+Esta carpeta sirve para guardar archivos temporalmente para despues eliminarlos

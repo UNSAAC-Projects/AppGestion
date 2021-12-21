@@ -124,5 +124,47 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+
+        //Metodo para obtener el codigo de asignatura de un respectivo catalogo
+        public string ObtenerCodCatalago(string codAsignatura)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_CodCursoCodCatalogo", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CodCurso", codAsignatura);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            conexion.Close();
+
+            //-- Verificando si CodCursoCatalogo existe
+            string nombreUsuario;
+            if (tabla.Rows.Count == 1)
+            {
+                nombreUsuario = tabla.Rows[0][0].ToString();
+                return nombreUsuario;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public DataTable MostrarDatosArchivo(string codCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_ListarArchivo", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@IDCatalogo", codCatalogo);
+         
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
     }
 }

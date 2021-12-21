@@ -17,7 +17,7 @@ namespace CapaPresentacion
     {
         DataSet result;
         N_Login oLogin = new N_Login();
-       
+
         public string Docente;
 
         public frmDocente(string CodDocente)
@@ -26,22 +26,49 @@ namespace CapaPresentacion
             //Mostrar nombre de usuario
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
-            MostrarHorarioxDia(CodDocente); 
+            MostrarHorarioxDia(CodDocente);
+
             Docente = CodDocente;
-            
+        }
+
+        private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
+        {// Mostrar las celdas con combobox con items
+
+            DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
+            // You might pass a boolean to determine whether to clear or not.
+            dgvcbc.Items.Clear();
+            foreach (object itemToAdd in itemsToAdd)
+            {
+                dgvcbc.Items.Add(itemToAdd);
+            }
+            dgvcbc.Value = itemsToAdd[0];
+        }
+
+
+        private void MostrarTemasDictar()
+        {
+            string[] items = { "Hola", "Hola1", "Hola3" };
+            //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
+            //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
+            MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
+
+            string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
+            //var index = dgvCursosDocente.Rows.Add();
+            //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
+            //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
+            MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
+
         }
 
         private void MostrarNombreUsuario(string codDocente)
         {
-            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
-           
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
             datos.NombreDocente = labelNombre.Text;
-           
         }
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
-            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente); 
+            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
         }
 
@@ -52,23 +79,25 @@ namespace CapaPresentacion
 
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
+        N_Docente oDocente = new N_Docente();
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
+            ObtenerTiempo(out _, out _, out string dia);
+            dia = "MARTES";
             //////////////////////////
             //ObtenerTiempo(out _, out _, out string dia);
-            string dia = "VIERNES";
+            
             ///////////////////////////
             //Mostrar tabla
-            N_Docente oDocente = new N_Docente();
+
             // Obtener tabla de horarios del dia actual
             var table = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
             //Verificar si la tabla no está vacio
@@ -76,6 +105,8 @@ namespace CapaPresentacion
             {
                 dgvCursosDocente.DataSource = table; //Mostrar tabla
                 MoverModificarColumnas(); //Modificar columnas
+                MostrarTemasDictar();  //Mostrar temas a dictar de cada curso
+
             }
             else //Si está vacio
             {
@@ -96,18 +127,15 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["TEMA"].DisplayIndex = 7;
             dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
 
-            ////Modificar ancho de columnas
-            dgvCursosDocente.Columns["CODIGO"].Width = 70;
+            //Modificar ancho de columnas
+            /*dgvCursosDocente.Columns["CODIGO"].Width = 70;
             dgvCursosDocente.Columns["NOMBRE"].Width = 240;
             dgvCursosDocente.Columns["TIPO"].Width = 50;
             dgvCursosDocente.Columns["GRUPO"].Width = 60;
-            ///////////////////
-            //dgvCursosDocente.Columns["HORAS"].Width = 70;
-            ///////////////////
+            dgvCursosDocente.Columns["HORAS"].Width = 70;
             dgvCursosDocente.Columns["AULA"].Width = 60;
             dgvCursosDocente.Columns["TEMA"].Width = 300;
-            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
-            
+            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;*/
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -128,13 +156,6 @@ namespace CapaPresentacion
             }
         }
 
-        //private void buttonGetDate_Click(object sender, EventArgs e)
-        //{
-        //    string fecha, hora, dia;
-        //    ObtenerTiempo(out fecha, out hora, out dia);
-        //    MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
-        //}
-
         private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
@@ -144,22 +165,12 @@ namespace CapaPresentacion
                 string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
 
                 frmAsistencia form = new frmAsistencia();
-               
+
                 //Recuperar información de la tabla
                 //form.textBoxCodigo.Text = CodCursoCatalogo;
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
                 form.ShowDialog();
             }
-        }
-
-        private void frmDocente_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void labelNombre_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -169,36 +180,82 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
                 if (row.Cells["ASISTENCIA"].Selected)
                 {
-                    //Obtener cod curso
-                    string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
+                    //Obtener cod curso y luego codcatalogo
+                    string codAsignatura = row.Cells["CODIGO"].Value.ToString();
+                    datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
+
+                    DataTable tabla = new DataTable();
+
+
+                    //recuperar la ruta del archivo excel
+                    tabla = oDocente.MostrarArchivos(codCatalogo);
+                    string ruta = tabla.Rows[0][0].ToString();
+                    string contenido = tabla.Rows[0][1].ToString();
+
+                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
                     frmAsistencia form = new frmAsistencia();
-                    using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-                    {
-                        if (ofd.ShowDialog() == DialogResult.OK)
-                        {
-                            FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                            IExcelDataReader reader;
-                            if (ofd.FilterIndex == 1)
-                            {
-                                reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                            }
-                            else
-                            {
-                                reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                            }
-                            reader.IsFirstRowAsColumnNames = true;
-                            result = reader.AsDataSet();
-                            form.dgvAsistencia.DataSource = result.Tables[0];
-                            reader.Close();
-                        }
-                    }
-                    //Recuperar información de la tabla
-                    //form.textBoxCodigo.Text = CodCursoCatalogo;
-                    //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    form.dgvAsistencia.DataSource = result.Tables[0];
+                    reader.Close();
                     form.ShowDialog();
+
+                    
+                    
                 }
-            }   
+            }
+        }
+
+        private void frmDocente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaxFrmDocente_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlFrmDocente_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+            
+
+        }
+
+        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
