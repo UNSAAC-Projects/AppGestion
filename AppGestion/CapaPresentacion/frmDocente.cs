@@ -31,8 +31,9 @@ namespace CapaPresentacion
             Docente = CodDocente;
         }
 
-        private void setCellComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
-        {
+        private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
+        {// Mostrar las celdas con combobox con items
+
             DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
             // You might pass a boolean to determine whether to clear or not.
             dgvcbc.Items.Clear();
@@ -49,13 +50,13 @@ namespace CapaPresentacion
             string[] items = { "Hola", "Hola1", "Hola3" };
             //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
             //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
-            setCellComboBoxItems(dgvCursosDocente, 0, 0, items);
+            MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
 
             string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
             //var index = dgvCursosDocente.Rows.Add();
             //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
             //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
-            setCellComboBoxItems(dgvCursosDocente, 1, 0, items2);
+            MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
 
         }
 
