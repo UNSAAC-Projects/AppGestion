@@ -203,9 +203,6 @@ namespace CapaPresentacion
                     form.dgvAsistencia.DataSource = result.Tables[0];
                     reader.Close();
                     form.ShowDialog();
-
-                    
-                    
                 }
             }
         }
