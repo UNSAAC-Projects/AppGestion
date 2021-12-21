@@ -118,14 +118,14 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
 
             //Modificar ancho de columnas
-            dgvCursosDocente.Columns["CODIGO"].Width = 70;
+            /*dgvCursosDocente.Columns["CODIGO"].Width = 70;
             dgvCursosDocente.Columns["NOMBRE"].Width = 240;
             dgvCursosDocente.Columns["TIPO"].Width = 50;
             dgvCursosDocente.Columns["GRUPO"].Width = 60;
             dgvCursosDocente.Columns["HORAS"].Width = 70;
             dgvCursosDocente.Columns["AULA"].Width = 60;
             dgvCursosDocente.Columns["TEMA"].Width = 300;
-            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
+            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;*/
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -200,6 +200,40 @@ namespace CapaPresentacion
                     form.ShowDialog();
                 }
             }   
+        }
+
+        private void frmDocente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaxFrmDocente_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlFrmDocente_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }
