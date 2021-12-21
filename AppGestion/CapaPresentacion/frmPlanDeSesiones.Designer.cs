@@ -46,8 +46,8 @@ namespace CapaPresentacion
             this.lblNombreAsignatura = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnSubirSilabo = new System.Windows.Forms.Button();
-            this.btnVerSilabo = new System.Windows.Forms.Button();
+            // this.btnSubirSilabo = new System.Windows.Forms.Button();
+            // this.btnVerSilabo = new System.Windows.Forms.Button();
             this.btnAgregarTema = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlPlanDeSeciones.SuspendLayout();
@@ -227,45 +227,45 @@ namespace CapaPresentacion
             // 
             // btnSubirSilabo
             // 
-            this.btnSubirSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnSubirSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSubirSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnSubirSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnSubirSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnSubirSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubirSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirSilabo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSubirSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirSilabo.Image")));
-            this.btnSubirSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirSilabo.Location = new System.Drawing.Point(36, 503);
-            this.btnSubirSilabo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSubirSilabo.Name = "btnSubirSilabo";
-            this.btnSubirSilabo.Size = new System.Drawing.Size(224, 42);
-            this.btnSubirSilabo.TabIndex = 13;
-            this.btnSubirSilabo.Text = "SUBIR SILABO";
-            this.btnSubirSilabo.UseVisualStyleBackColor = false;
+            //this.btnSubirSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            //this.btnSubirSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            //this.btnSubirSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
+            //this.btnSubirSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            //this.btnSubirSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            //this.btnSubirSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            //this.btnSubirSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.btnSubirSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.btnSubirSilabo.ForeColor = System.Drawing.Color.Gainsboro;
+            //this.btnSubirSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirSilabo.Image")));
+            //this.btnSubirSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.btnSubirSilabo.Location = new System.Drawing.Point(36, 503);
+            //this.btnSubirSilabo.Margin = new System.Windows.Forms.Padding(4);
+            //this.btnSubirSilabo.Name = "btnSubirSilabo";
+            //this.btnSubirSilabo.Size = new System.Drawing.Size(224, 42);
+            //this.btnSubirSilabo.TabIndex = 13;
+            //this.btnSubirSilabo.Text = "SUBIR SILABO";
+            //this.btnSubirSilabo.UseVisualStyleBackColor = false;
             // 
             // btnVerSilabo
             // 
-            this.btnVerSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVerSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnVerSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnVerSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerSilabo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVerSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerSilabo.Image")));
-            this.btnVerSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerSilabo.Location = new System.Drawing.Point(278, 503);
-            this.btnVerSilabo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVerSilabo.Name = "btnVerSilabo";
-            this.btnVerSilabo.Size = new System.Drawing.Size(224, 42);
-            this.btnVerSilabo.TabIndex = 12;
-            this.btnVerSilabo.Text = "VER SILABO";
-            this.btnVerSilabo.UseVisualStyleBackColor = false;
+            //this.btnVerSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            //this.btnVerSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            //this.btnVerSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
+            //this.btnVerSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            //this.btnVerSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            //this.btnVerSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            //this.btnVerSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            //this.btnVerSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.btnVerSilabo.ForeColor = System.Drawing.Color.Gainsboro;
+            //this.btnVerSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerSilabo.Image")));
+            //this.btnVerSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            //this.btnVerSilabo.Location = new System.Drawing.Point(278, 503);
+            //this.btnVerSilabo.Margin = new System.Windows.Forms.Padding(4);
+            //this.btnVerSilabo.Name = "btnVerSilabo";
+            //this.btnVerSilabo.Size = new System.Drawing.Size(224, 42);
+            //this.btnVerSilabo.TabIndex = 12;
+            //this.btnVerSilabo.Text = "VER SILABO";
+            //this.btnVerSilabo.UseVisualStyleBackColor = false;
             // 
             // btnAgregarTema
             // 
