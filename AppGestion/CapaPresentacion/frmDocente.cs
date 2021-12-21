@@ -17,7 +17,7 @@ namespace CapaPresentacion
     {
         DataSet result;
         N_Login oLogin = new N_Login();
-       
+
         public string Docente;
 
         public frmDocente(string CodDocente)
@@ -27,7 +27,7 @@ namespace CapaPresentacion
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(CodDocente);
-            
+
             Docente = CodDocente;
         }
 
@@ -63,12 +63,12 @@ namespace CapaPresentacion
         private void MostrarNombreUsuario(string codDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
-            datos.NombreDocente = labelNombre.Text; 
+            datos.NombreDocente = labelNombre.Text;
         }
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
-            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente); 
+            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
         }
 
@@ -94,10 +94,10 @@ namespace CapaPresentacion
             dia = "MARTES";
             //////////////////////////
             //ObtenerTiempo(out _, out _, out string dia);
-            string dia = "JUEVES";
+            
             ///////////////////////////
             //Mostrar tabla
-           
+
             // Obtener tabla de horarios del dia actual
             var table = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
             //Verificar si la tabla no está vacio
@@ -165,7 +165,7 @@ namespace CapaPresentacion
                 string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
 
                 frmAsistencia form = new frmAsistencia();
-               
+
                 //Recuperar información de la tabla
                 //form.textBoxCodigo.Text = CodCursoCatalogo;
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
@@ -182,36 +182,32 @@ namespace CapaPresentacion
                 {
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
-                    datos.NombreCurso= row.Cells["NOMBRE"].Value.ToString();
+                    datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
 
+                    DataTable tabla = new DataTable();
+
+
+                    //recuperar la ruta del archivo excel
+                    tabla = oDocente.MostrarArchivos(codCatalogo);
+                    string ruta = tabla.Rows[0][0].ToString();
+                    string contenido = tabla.Rows[0][1].ToString();
+
+                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
+
                     frmAsistencia form = new frmAsistencia();
-                    using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-                    {
-                        if (ofd.ShowDialog() == DialogResult.OK)
-                        {
-                            FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                            IExcelDataReader reader;
-                            if (ofd.FilterIndex == 1)
-                            {
-                                reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                            }
-                            else
-                            {
-                                reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                            }
-                            reader.IsFirstRowAsColumnNames = true;
-                            result = reader.AsDataSet();
-                            form.dgvAsistencia.DataSource = result.Tables[0];
-                            reader.Close();
-                        }
-                    }
-                    //Recuperar información de la tabla
-                    //form.textBoxCodigo.Text = CodCursoCatalogo;
-                    //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    form.dgvAsistencia.DataSource = result.Tables[0];
+                    reader.Close();
                     form.ShowDialog();
+
+                    
+                    
                 }
-            }   
+            }
         }
 
         private void frmDocente_Load(object sender, EventArgs e)
@@ -246,29 +242,16 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-                    DataTable tabla = new DataTable();
+            
 
-
-                    //recuperar la ruta del archivo excel
-                    tabla = oDocente.MostrarArchivos(codCatalogo);
-                    string ruta=tabla.Rows[0][0].ToString();
-                    string contenido = tabla.Rows[0][1].ToString();
-                    
-                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader;
-                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
-
-                    frmAsistencia form = new frmAsistencia();
-                    reader.IsFirstRowAsColumnNames = true;
-                    result = reader.AsDataSet();
-                    form.dgvAsistencia.DataSource = result.Tables[0];
-                    reader.Close();
-                    form.ShowDialog();
-
-                }
-
-            }   
         }
+
+        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
