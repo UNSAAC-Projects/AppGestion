@@ -31,28 +31,32 @@ namespace CapaPresentacion
             Docente = CodDocente;
         }
 
+        private void setCellComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
+        {
+            DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
+            // You might pass a boolean to determine whether to clear or not.
+            dgvcbc.Items.Clear();
+            foreach (object itemToAdd in itemsToAdd)
+            {
+                dgvcbc.Items.Add(itemToAdd);
+            }
+            dgvcbc.Value = itemsToAdd[0];
+        }
+
+
         private void MostrarTemasDictar()
         {
-            ////setCellComboBoxItems(dgvCursosDocente, 0, 6,)
-            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells[0];
-            ////dgvcbc.Items.Clear();
-            //dgvcbc.Items.Add("Hola");
-            //dgvcbc.Items.Add("Mundo");
+            string[] items = { "Hola", "Hola1", "Hola3" };
+            //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
+            //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
+            setCellComboBoxItems(dgvCursosDocente, 0, 0, items);
 
-            //ComboBox CB = new ComboBox();
-            //CB.Items.Add("A");
-            //CB.Items.Add("B");
-            //CB.Items.Add("C");
-            //CB.Items.Add("D");
-            //CB.Items.Add("E");
+            string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
+            //var index = dgvCursosDocente.Rows.Add();
+            //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
+            //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
+            setCellComboBoxItems(dgvCursosDocente, 1, 0, items2);
 
-            ////((DataGridViewComboBoxColumn)dgvCursosDocente.Columns["TEMA"]).DataSource = CB.Items;
-            //((DataGridViewComboBoxCell)dgvCursosDocente.Rows[0].Cells[0]).DataSource = CB.Items;
-
-            //DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dgvCursosDocente[0, 0];
-            //comboCell.Items.Clear();
-            //string[] A = { "Hola", "Mundo" };
-            //comboCell.Items.AddRange(A);
         }
 
         private void MostrarNombreUsuario(string codDocente)
