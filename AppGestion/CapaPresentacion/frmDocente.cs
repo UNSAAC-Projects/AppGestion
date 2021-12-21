@@ -26,17 +26,44 @@ namespace CapaPresentacion
             //Mostrar nombre de usuario
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
-            MostrarHorarioxDia(CodDocente); 
-            Docente = CodDocente;
+            MostrarHorarioxDia(CodDocente);
             
+            Docente = CodDocente;
+        }
+
+        private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
+        {// Mostrar las celdas con combobox con items
+
+            DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
+            // You might pass a boolean to determine whether to clear or not.
+            dgvcbc.Items.Clear();
+            foreach (object itemToAdd in itemsToAdd)
+            {
+                dgvcbc.Items.Add(itemToAdd);
+            }
+            dgvcbc.Value = itemsToAdd[0];
+        }
+
+
+        private void MostrarTemasDictar()
+        {
+            string[] items = { "Hola", "Hola1", "Hola3" };
+            //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
+            //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
+            MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
+
+            string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
+            //var index = dgvCursosDocente.Rows.Add();
+            //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
+            //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
+            MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
+
         }
 
         private void MostrarNombreUsuario(string codDocente)
         {
-            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
-           
-            datos.NombreDocente = labelNombre.Text;
-           
+            labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
+            datos.NombreDocente = labelNombre.Text; 
         }
 
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
@@ -52,21 +79,14 @@ namespace CapaPresentacion
 
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
+            Close();
         }
 
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
-            //////////////////////////
-            //ObtenerTiempo(out _, out _, out string dia);
-            string dia = "VIERNES";
-            ///////////////////////////
+            ObtenerTiempo(out _, out _, out string dia);
+            dia = "MARTES";
             //Mostrar tabla
             N_Docente oDocente = new N_Docente();
             // Obtener tabla de horarios del dia actual
@@ -76,6 +96,8 @@ namespace CapaPresentacion
             {
                 dgvCursosDocente.DataSource = table; //Mostrar tabla
                 MoverModificarColumnas(); //Modificar columnas
+                MostrarTemasDictar();  //Mostrar temas a dictar de cada curso
+
             }
             else //Si está vacio
             {
@@ -96,18 +118,15 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["TEMA"].DisplayIndex = 7;
             dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
 
-            ////Modificar ancho de columnas
-            dgvCursosDocente.Columns["CODIGO"].Width = 70;
+            //Modificar ancho de columnas
+            /*dgvCursosDocente.Columns["CODIGO"].Width = 70;
             dgvCursosDocente.Columns["NOMBRE"].Width = 240;
             dgvCursosDocente.Columns["TIPO"].Width = 50;
             dgvCursosDocente.Columns["GRUPO"].Width = 60;
-            ///////////////////
-            //dgvCursosDocente.Columns["HORAS"].Width = 70;
-            ///////////////////
+            dgvCursosDocente.Columns["HORAS"].Width = 70;
             dgvCursosDocente.Columns["AULA"].Width = 60;
             dgvCursosDocente.Columns["TEMA"].Width = 300;
-            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
-            
+            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;*/
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -128,13 +147,6 @@ namespace CapaPresentacion
             }
         }
 
-        //private void buttonGetDate_Click(object sender, EventArgs e)
-        //{
-        //    string fecha, hora, dia;
-        //    ObtenerTiempo(out fecha, out hora, out dia);
-        //    MessageBox.Show($"Dia: {fecha}\nHora: {hora}\nDia: {dia}");
-        //}
-
         private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
@@ -150,16 +162,6 @@ namespace CapaPresentacion
                 //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
                 form.ShowDialog();
             }
-        }
-
-        private void frmDocente_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void labelNombre_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -199,6 +201,40 @@ namespace CapaPresentacion
                     form.ShowDialog();
                 }
             }   
+        }
+
+        private void frmDocente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMaxFrmDocente_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlFrmDocente_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }
