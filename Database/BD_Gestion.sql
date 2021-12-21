@@ -92,9 +92,9 @@ create table TPlanSesiones
 	Capitulo			varchar(20),
 	Tema				varchar(255),
 	HorasProgramadas	varchar(4),
-	Fecha				date,
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
+	Observacion			varchar(100),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -641,10 +641,12 @@ select
 	P.Capitulo, 
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
-	p.Finalizado
+	p.Finalizado,
+    p.Observacion
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
+
 
 -- Editar plan sesiones
 create proc SP_EDITARPLANSESIONES
@@ -653,12 +655,13 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
-	@Finalizado varchar(14),
-	@Fecha date
+	@Observacion varchar(100),
+	@Finalizado varchar(14)
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Observacion=@Observacion
 where Id =@Id
 GO
+
 -- Eliminar Tema de plan de sesiones
 create proc SP_ELIMINARTEMA_PLANSESIONES
 	@CodCatalogo varchar(6),
