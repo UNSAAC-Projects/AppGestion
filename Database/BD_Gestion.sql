@@ -79,6 +79,7 @@ GO
 create table TArchivo(
 	Id			int identity,
 	Nombre		varchar(255),--Nombre del archivo
+	Ruta        varchar(255),--Ruta del archivo
 	Contenido	varbinary(max),--Contenido binario del archivo
 	IDCatalogo	varchar(6),
 	foreign key(IDCatalogo) references TCatalogo
@@ -92,9 +93,9 @@ create table TPlanSesiones
 	Capitulo			varchar(20),
 	Tema				varchar(255),
 	HorasProgramadas	varchar(4),
+	Fecha				date,
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
-	Observacion			varchar(100),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -641,12 +642,10 @@ select
 	P.Capitulo, 
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
-	p.Finalizado,
-    p.Observacion
+	p.Finalizado
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
-
 
 -- Editar plan sesiones
 create proc SP_EDITARPLANSESIONES
@@ -655,13 +654,12 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
-	@Observacion varchar(100),
-	@Finalizado varchar(14)
+	@Finalizado varchar(14),
+	@Fecha date
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Observacion=@Observacion
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
 where Id =@Id
 GO
-
 -- Eliminar Tema de plan de sesiones
 create proc SP_ELIMINARTEMA_PLANSESIONES
 	@CodCatalogo varchar(6),
@@ -706,20 +704,35 @@ GO
 create proc SP_GuardarArchivo
 @Nombre varchar(60),
 @Ruta varchar(400),
+@Contenido varchar(400),
 @IDCatalogo varchar(6)
 as
 	declare @sql varchar(max) 
-	set @sql='insert into TArchivo(Nombre,contenido,IDCatalogo)
-		SELECT '''+@Nombre+''', bulkcolumn,'''+@IDCatalogo+
-		''' from openrowset(bulk N'''+@Ruta+''', single_blob) as Data'
+	set @sql='insert into TArchivo(Nombre,Ruta,contenido,IDCatalogo)
+		SELECT '''+@Nombre+''',''' +@Ruta+''', bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
 	exec(@sql)
 go
+-- insertar ruta en  cada asignatura
+--drop proc SP_ListarArchivo
 
 create proc SP_ListarArchivo
 @IDCatalogo varchar(6)
 as
-	select Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
+	select Ruta,Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
 GO
+
+--procedimientos almacenado para recuperar el codigo de catalago de un curso 
+create proc SP_CodCursoCodCatalogo
+@CodCurso varchar(10)
+as
+	select IDCatalogo from TCatalogo where CodAsignatura + Grupo+'IN'=@CodCurso
+go
+
+--insertar datos LISTA DE ALUMNOS - Docente Doris
+exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+exec SP_ListarArchivo 'C006'
 
 
 
