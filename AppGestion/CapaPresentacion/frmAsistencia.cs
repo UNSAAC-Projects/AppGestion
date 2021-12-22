@@ -76,7 +76,7 @@ namespace CapaPresentacion
         }
         bool  ExportarDatos(DataGridView datalistado)
         {
-            //concatenar con el nombre del tema
+            //concatenar con el nombre del tema.
             
             var DateAndTime = DateTime.Now;
             string Date = DateTime.Now.ToString("ddMMyyyy");
