@@ -79,6 +79,7 @@ GO
 create table TArchivo(
 	Id			int identity,
 	Nombre		varchar(255),--Nombre del archivo
+	Ruta        varchar(255),--Ruta del archivo
 	Contenido	varbinary(max),--Contenido binario del archivo
 	IDCatalogo	varchar(6),
 	foreign key(IDCatalogo) references TCatalogo
@@ -703,20 +704,35 @@ GO
 create proc SP_GuardarArchivo
 @Nombre varchar(60),
 @Ruta varchar(400),
+@Contenido varchar(400),
 @IDCatalogo varchar(6)
 as
 	declare @sql varchar(max) 
-	set @sql='insert into TArchivo(Nombre,contenido,IDCatalogo)
-		SELECT '''+@Nombre+''', bulkcolumn,'''+@IDCatalogo+
-		''' from openrowset(bulk N'''+@Ruta+''', single_blob) as Data'
+	set @sql='insert into TArchivo(Nombre,Ruta,contenido,IDCatalogo)
+		SELECT '''+@Nombre+''',''' +@Ruta+''', bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
 	exec(@sql)
 go
+-- insertar ruta en  cada asignatura
+--drop proc SP_ListarArchivo
 
 create proc SP_ListarArchivo
 @IDCatalogo varchar(6)
 as
-	select Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
+	select Ruta,Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
 GO
+
+--procedimientos almacenado para recuperar el codigo de catalago de un curso 
+create proc SP_CodCursoCodCatalogo
+@CodCurso varchar(10)
+as
+	select IDCatalogo from TCatalogo where CodAsignatura + Grupo+'IN'=@CodCurso
+go
+
+--insertar datos LISTA DE ALUMNOS - Docente Doris
+exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+exec SP_ListarArchivo 'C006'
 
 
 
