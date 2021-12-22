@@ -65,11 +65,13 @@ namespace CapaPresentacion
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
             datos.NombreDocente = labelNombre.Text;
         }
-
+      
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
             frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
+            
+            
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
