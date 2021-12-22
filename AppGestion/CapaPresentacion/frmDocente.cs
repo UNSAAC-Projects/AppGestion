@@ -184,7 +184,7 @@ namespace CapaPresentacion
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-
+                    datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
 
@@ -254,6 +254,12 @@ namespace CapaPresentacion
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
+            RAsistencia.Show();
         }
     }
 }

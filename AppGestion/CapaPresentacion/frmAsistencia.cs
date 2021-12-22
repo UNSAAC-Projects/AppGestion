@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using SpreadsheetLight;
+using CapaEntidades;
+using CapaNegocio;
+
 
 namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
         FrmLogin L = new FrmLogin();
+
+        E_Asistencia entities = new E_Asistencia();
         public frmAsistencia()
         {
             InitializeComponent();
@@ -74,10 +79,12 @@ namespace CapaPresentacion
 
            
         }
+        
         bool  ExportarDatos(DataGridView datalistado)
         {
             //concatenar con el nombre del tema.
-            
+            N_Asistencia A = new N_Asistencia();
+
             var DateAndTime = DateTime.Now;
             string Date = DateTime.Now.ToString("ddMMyyyy");
 
@@ -105,6 +112,14 @@ namespace CapaPresentacion
 
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
+            //insertar lista a la base de datos
+            entities.curso = datos.NombreCurso;
+            entities.tema = "HOLA";
+            entities.fecha = lblFecha.Text;
+            entities.asistencia =ruta;
+            entities.idcatalogo = datos.CodCatalogo;
+            A.CreandoCurso_Asistencia(entities);
+
             return true;
 
         }
