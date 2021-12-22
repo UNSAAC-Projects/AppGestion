@@ -93,9 +93,9 @@ create table TPlanSesiones
 	Capitulo			varchar(20),
 	Tema				varchar(255),
 	HorasProgramadas	varchar(4),
-	Fecha				date,
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
+	Observacion			varchar(100),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -654,10 +654,9 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
-	@Finalizado varchar(14),
-	@Fecha date
+	@Finalizado varchar(14)
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado
 where Id =@Id
 GO
 -- Eliminar Tema de plan de sesiones
@@ -730,9 +729,9 @@ as
 go
 
 --insertar datos LISTA DE ALUMNOS - Docente Doris
-exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
-exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
-exec SP_ListarArchivo 'C006'
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_ListarArchivo 'C006'
 
 
 
