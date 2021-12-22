@@ -754,11 +754,20 @@ exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto
 exec SP_ListarArchivo 'C006'
 */
 
+create proc SP_GuardarSilabo
+@Contenido varchar(max),
+@IDCatalogo varchar(6)
+as
+	declare @sql varchar(max) 
+	set @sql='insert into TSilabo(contenido,IDCatalogo)
+		SELECT bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
+	exec(@sql)
+go
 
 
 
-
-
+ 
 
 
 
