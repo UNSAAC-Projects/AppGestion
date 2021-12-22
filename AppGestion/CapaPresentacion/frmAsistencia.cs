@@ -68,16 +68,21 @@ namespace CapaPresentacion
         public void ImprimirHoraFecha()
         {
             datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
-         
+
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
 
            
         }
-        public void ExportarDatos(DataGridView datalistado)
+        bool  ExportarDatos(DataGridView datalistado)
         {
+            //concatenar con el nombre del tema
             
-            string name = datos.NombreCurso;
+            var DateAndTime = DateTime.Now;
+            string Date = DateTime.Now.ToString("ddMMyyyy");
+
+            string name = datos.NombreCurso + Date;
+
 
             string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
             SLDocument osLDocument = new SLDocument();
@@ -100,12 +105,20 @@ namespace CapaPresentacion
 
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
+            return true;
 
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvAsistencia);
-
+            if (ExportarDatos(dgvAsistencia))
+            {
+                MessageBox.Show("Guardado exitosamente...");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al guardar...");
+            }
 
         }
 
