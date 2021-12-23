@@ -29,5 +29,9 @@ namespace CapaNegocio
         {
             data.EliminarPlanSesiones(id);
         }
+        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo)
+        {
+            data.GuardarPlanSesiones(tabla,IDCatalogo);
+        }
     }
 }

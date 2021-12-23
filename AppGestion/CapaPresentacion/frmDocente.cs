@@ -34,14 +34,14 @@ namespace CapaPresentacion
         private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
         {// Mostrar las celdas con combobox con items
 
-            DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
-            // You might pass a boolean to determine whether to clear or not.
-            dgvcbc.Items.Clear();
-            foreach (object itemToAdd in itemsToAdd)
-            {
-                dgvcbc.Items.Add(itemToAdd);
-            }
-            dgvcbc.Value = itemsToAdd[0];
+            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
+            //// You might pass a boolean to determine whether to clear or not.
+            //dgvcbc.Items.Clear();
+            //foreach (object itemToAdd in itemsToAdd)
+            //{
+            //    dgvcbc.Items.Add(itemToAdd);
+            //}
+            //dgvcbc.Value = itemsToAdd[0];
         }
 
 
@@ -209,6 +209,7 @@ namespace CapaPresentacion
                 }
             }
         }
+
 
         private void frmDocente_Load(object sender, EventArgs e)
         {
