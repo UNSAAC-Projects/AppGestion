@@ -159,5 +159,10 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void textBoxTEMA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
