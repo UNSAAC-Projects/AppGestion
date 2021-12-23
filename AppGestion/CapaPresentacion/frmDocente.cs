@@ -28,7 +28,7 @@ namespace CapaPresentacion
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(CodDocente);
-
+            datos.CodDocente = CodDocente;
             Docente = CodDocente;
         }
 
@@ -163,7 +163,7 @@ namespace CapaPresentacion
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-
+                    datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
                     //recuperar la ruta del archivo excel
@@ -214,6 +214,12 @@ namespace CapaPresentacion
             }
             
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
+            RAsistencia.Show();
         }
     }
 }

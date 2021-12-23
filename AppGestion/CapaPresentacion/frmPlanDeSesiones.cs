@@ -233,5 +233,10 @@ namespace CapaPresentacion
             }
            
         }
+
+        private void frmPlanDeSesiones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
