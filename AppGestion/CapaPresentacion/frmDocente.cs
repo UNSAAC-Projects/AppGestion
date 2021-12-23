@@ -17,6 +17,7 @@ namespace CapaPresentacion
     {
         DataSet result;
         N_Login oLogin = new N_Login();
+        N_Docente oDocente = new N_Docente();
 
         public string Docente;
 
@@ -44,19 +45,18 @@ namespace CapaPresentacion
             //dgvcbc.Value = itemsToAdd[0];
         }
 
-
         private void MostrarTemasDictar()
         {
             string[] items = { "Hola", "Hola1", "Hola3" };
             //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
             //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
-            MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
+            //MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
 
             string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
             //var index = dgvCursosDocente.Rows.Add();
             //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
             //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
-            MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
+            //MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
 
         }
 
@@ -65,7 +65,7 @@ namespace CapaPresentacion
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente); //Obtener nombre del usuario
             datos.NombreDocente = labelNombre.Text;
         }
-
+      
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
             frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
@@ -82,11 +82,7 @@ namespace CapaPresentacion
             Close();
         }
 
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        N_Docente oDocente = new N_Docente();
+        
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
@@ -156,23 +152,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
-            if (row.Cells["ASISTENCIA"].Selected)
-            {
-                //Obtener cod curso
-                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
-
-                frmAsistencia form = new frmAsistencia();
-
-                //Recuperar información de la tabla
-                //form.textBoxCodigo.Text = CodCursoCatalogo;
-                //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                form.ShowDialog();
-            }
-        }
-
         private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) //Si no se hizo click en el encabezado
@@ -187,7 +166,6 @@ namespace CapaPresentacion
 
                     DataTable tabla = new DataTable();
 
-
                     //recuperar la ruta del archivo excel
                     tabla = oDocente.MostrarArchivos(codCatalogo);
                     string ruta = tabla.Rows[0][0].ToString();
@@ -197,23 +175,14 @@ namespace CapaPresentacion
                     IExcelDataReader reader;
                     reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
-                    frmAsistencia form = new frmAsistencia();
+                    frmAsistencia form = new frmAsistencia(codCatalogo);
                     reader.IsFirstRowAsColumnNames = true;
                     result = reader.AsDataSet();
                     form.dgvAsistencia.DataSource = result.Tables[0];
                     reader.Close();
                     form.ShowDialog();
-
-                    
-                    
                 }
             }
-        }
-
-
-        private void frmDocente_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnMaxFrmDocente_Click(object sender, EventArgs e)
@@ -244,18 +213,6 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
             
-
-        }
-
-        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
     }
