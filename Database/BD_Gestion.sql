@@ -93,9 +93,9 @@ create table TPlanSesiones
 	Capitulo			varchar(20),
 	Tema				varchar(255),
 	HorasProgramadas	varchar(4),
-	Fecha				date,
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
+	Observacion			varchar(100),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -671,6 +671,18 @@ from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
 
+-- Obtener temas de plan de sesión x unidad, de un determinado catalogo
+CREATE PROC SP_OBTENER_TEMASXUNIDAD
+	@IDCatalogo varchar(6),
+	@Unidad varchar(40)
+AS
+	select
+	case when Capitulo = '' then (Tema) else (Capitulo + ' - ' + Tema) end as TEMA
+	from TPlanSesiones
+	where IDCatalogo = @IDCatalogo and Unidad = @Unidad
+GO
+
+
 -- Editar plan sesiones
 create proc SP_EDITARPLANSESIONES
 	@Id int,
@@ -678,10 +690,9 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
-	@Finalizado varchar(14),
-	@Fecha date
+	@Finalizado varchar(14)
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado
 where Id =@Id
 GO
 -- Eliminar Tema de plan de sesiones
