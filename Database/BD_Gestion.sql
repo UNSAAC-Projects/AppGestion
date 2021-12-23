@@ -1,3 +1,6 @@
+/***********************************************************************************
+					       CREACION BASE DE DATOS APP GESTION
+************************************************************************************/
 use master
 go
 
@@ -6,7 +9,7 @@ go
 --go
 
 /* Para ejecutar BD de forma local */
---DROP DATABASE AppGestion
+DROP DATABASE IF EXISTS AppGestion
 GO
 create database AppGestion
 go
@@ -14,9 +17,10 @@ use AppGestion
 go
 
 /***********************************************************************************
-					CREACION TABLAS
+					               CREACION DE TABLAS
 ************************************************************************************/
 
+/*TABLA PLAN DE ESTUDIOS*/
 CREATE TABLE TPlanDeEstudios
 (
 	IDPlan varchar(6),
@@ -25,6 +29,7 @@ CREATE TABLE TPlanDeEstudios
 )
 GO
 
+/*TABLA ASIGNATURA*/
 CREATE TABLE TAsignatura
 (
 	CodAsignatura varchar(6),
@@ -39,16 +44,8 @@ CREATE TABLE TAsignatura
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
 GO
-/*
-CREATE TABLE TAlumno
-(
-	CodAlumno varchar(6),
-	Nombres varchar(100),
-	Apellidos varchar(100),
-	PRIMARY KEY (CodAlumno) 
-)
-GO
-*/
+
+/*TABLA DOCENTE*/
 CREATE TABLE TDocente
 (
 	CodDocente varchar(6),
@@ -60,6 +57,7 @@ CREATE TABLE TDocente
 )
 GO
 
+/*TABLA CATALOGO*/
 CREATE TABLE TCatalogo
 (
 	IDCatalogo varchar(6),
@@ -76,6 +74,7 @@ CREATE TABLE TCatalogo
 )
 GO
 
+/*TABALA ARCHIVO*/
 create table TArchivo(
 	Id			int identity,
 	Nombre		varchar(255),--Nombre del archivo
@@ -86,6 +85,7 @@ create table TArchivo(
 )
 go
 
+/*TABLA PLAN DE SESIONES*/
 create table TPlanSesiones
 (
 	Id		int identity,
@@ -93,13 +93,14 @@ create table TPlanSesiones
 	Capitulo			varchar(20),
 	Tema				varchar(255),
 	HorasProgramadas	varchar(4),
-	Fecha				date,
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
+	Observacion			varchar(100),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
 
+/*TABLA SILABO*/
 create table TSilabo
 (
    IdSilabo int identity,
@@ -109,7 +110,8 @@ create table TSilabo
    foreign key(IDCatalogo) references TCatalogo
 )
 go
-     
+
+/*TABLA HORARIO*/
 CREATE TABLE THorario
 (
 	IDHorario INT IDENTITY,
@@ -123,6 +125,7 @@ CREATE TABLE THorario
 )
 GO
 
+/*TABLA ASISTENCIA*/
 CREATE TABLE TAsistencia
 (
 	IDAsistencia varchar(6),
@@ -136,6 +139,7 @@ CREATE TABLE TAsistencia
 )
 GO
 
+/*TABLA ASISTENCIA ALUMNO*/
 CREATE TABLE TAsistenciaAlumno
 (
 	IDAsistenciaAlumno varchar(6),
@@ -147,6 +151,7 @@ CREATE TABLE TAsistenciaAlumno
 )
 GO
 
+/*TABLA ASISTENCIA-DIARIA DOCENTE*/ 
 CREATE TABLE TAsistenciaDiariaDocente
 (
 	IDAsistenciaDiaria varchar(6),
@@ -156,6 +161,7 @@ CREATE TABLE TAsistenciaDiariaDocente
 )
 GO
 
+/*TABLA ASISTENCIA DOCENTE*/
 CREATE TABLE TAsistenciaDocente
 (
 	IDAsistenciaDocente varchar(6),
@@ -168,6 +174,7 @@ CREATE TABLE TAsistenciaDocente
 )
 GO
 
+/*TABLA LISTADO DOCENTES*/
 CREATE TABLE TListadoDocentes
 (
 	IDListado varchar(6),
@@ -182,6 +189,7 @@ CREATE TABLE TListadoDocentes
 )
 GO
 
+/*TABLA LOGINS*/
 CREATE TABLE TLogin
 (
 	Usuario varchar(60) NOT NULL, 
@@ -193,6 +201,7 @@ CREATE TABLE TLogin
 )
 GO
 
+/*TABLA MATRICULADO*/
 CREATE TABLE TMatriculado
 (
 	IDCatalogo		varchar(6),	
@@ -204,7 +213,12 @@ CREATE TABLE TMatriculado
 )
 GO
 
-------------------------------- PROCEDIMIENTO ALMACENADOS DE ASIGNATURA--------------------------------------
+/**************************************************************************************************************************
+					                            PROCEDIMIENTOS ALMACENADOS
+**************************************************************************************************************************/
+
+/*-------------------------- PROCEDIMIENTOS ALMACENADOS DE ASIGNATURA--------------------------------*/
+
 -----------procecedimiento alamcenado para listar las asignaturas-----------
 create proc SP_LISTARASIGNATURA
 as
@@ -257,7 +271,8 @@ delete TAsignatura
 where CodAsignatura=@CodAsignatura
 go
 
---------------------- PROCEDIMIENTO ALMACENADOS DE CURSO CATALOGO
+/*--------------------- PROCEDIMIENTOS ALMACENADOS DE CURSO CATALOGO--------------------------*/
+
 -----------procecedimiento alamcenado para listar los cursos de catalogo----------
 create proc SP_LISTARCATALOGO
 as
@@ -271,7 +286,6 @@ as
 select * from TCatalogo
 where NroSemestre like @BUSCAR + '%' or  CodAsignatura like @BUSCAR + '%' 
 go
-
 
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
 create proc SP_INSERTARCATALOGO
@@ -309,7 +323,29 @@ delete from THorario where IDCatalogo=@IDCatalogo
 delete from TCatalogo where IDCatalogo=@IDCatalogo
 go
 
-----------------------  PROC.  HORARIO -----------------
+-- Crear nueva ID
+CREATE FUNCTION NuevoCatalogo()
+RETURNS varchar(6)
+AS
+BEGIN
+	declare @Codigo varchar(4)
+	
+	set @Codigo=((select MAX(IDCatalogo)  from TCatalogo))
+	set @Codigo='C' + RIGHT('000' + LTRIM(right(isnull(@Codigo,'000'),3)+1 ),3)
+   RETURN (@codigo)
+END
+GO
+
+-- procedimiento almacenado para recuperar el codigo de catalago de un curso 
+create proc SP_CodCursoCodCatalogo
+@CodCurso varchar(10)
+as
+	select IDCatalogo from TCatalogo where CodAsignatura + Grupo+'IN'=@CodCurso
+go
+
+
+
+/*----------------------  PROCEDIMIENTOS ALMACENADOS PARA HORARIO -----------------*/
 CREATE PROC SP_INSERTARHORARIO
 	@Dia varchar(100),
 	@HoraInicio varchar(2),
@@ -324,7 +360,7 @@ AS INSERT INTO THorario values (
 	@Tipo )
 go
 
-----------------------  PROC. VISTA CATALOGO ------------------------------------------------------
+----------------------  PROCEDIMIENTOS ALMACENADOS PARA VISTA CATALOGO ------------------------------------------------------
 CREATE PROC SP_VISTACATALOGO
 as
 select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
@@ -347,13 +383,9 @@ select C.CodAsignatura,A.Nombre, C.Grupo, h.Dia ,h.HoraInicio, h.HoraFin, h.Tipo
 from THorario h inner join TCatalogo c on h.IDCatalogo = c.IDCatalogo inner join TAsignatura A ON c.CodAsignatura=A.CodAsignatura
 go
 
-INSERT INTO TDocente values ('D000','NO DEFINIDO' ,'','','')
-GO
 
+/*----------------------------PROCEDIMIENTOS DIRECTOR DEPARTAMENTO ACADÉMICO------------------------------------------------*/
 
-/***************************************************************
-		PROCEDIMIENTOS DIRECTOR DEPARTAMENTO ACADÉMICO
-****************************************************************/
 --ver lista del catálogo------------
 CREATE PROC SP_LISTACATALOGO 
 AS
@@ -392,6 +424,7 @@ where C.CodAsignatura = SUBSTRING(@CURSOCATALOGO,1,5) --Obtener CodAsignatura
 and C.Grupo = SUBSTRING(@CURSOCATALOGO,6,1) --Obtener Grupo
 GO
 
+/*----------------------------------PROCEDIMIENTOS ALMACENADOS PARA DOCENTE ----------------------------------------------*/
 --Insertar un docente
 CREATE PROC SP_INSERT_DOCENTE
 	@CodDocente varchar(6),
@@ -530,6 +563,7 @@ from TDocente
 where CodDocente = @CodDocente
 GO
 
+/*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
 @CODDOCENTE varchar(6)
@@ -610,20 +644,8 @@ as
 	--mostrar resultados
 	select *from #CursosxDocente
 GO
--- Crear nueva ID
-CREATE FUNCTION NuevoCatalogo()
-RETURNS varchar(6)
-AS
-BEGIN
-	declare @Codigo varchar(4)
-	
-	set @Codigo=((select MAX(IDCatalogo)  from TCatalogo))
-	set @Codigo='C' + RIGHT('000' + LTRIM(right(isnull(@Codigo,'000'),3)+1 ),3)
-   RETURN (@codigo)
-END
-GO
 
--- Obtener los datos de un usuario
+/*----------------------- PROCEDIMIENTO PARA OBTENER LOS DATOS DE UN USUARIO----------------------------*/
 CREATE PROC SP_OBTENER_DATOSUSUARIO
 	@Usuario varchar(60), 
 	@Contrasenia varchar(60),
@@ -633,6 +655,8 @@ select *
 from TLogin
 where Usuario = @Usuario and Contrasenia = @Contrasenia and Categoria = @Categoria
 GO
+
+/*----------------------------------PROCEMIENTOS PARA PLAN DE SESIONES ------------------------------------------*/
 -- Obtener Plan de sesiones
 CREATE PROC SP_OBTENER_PLANSESIONES
 	@CodCatalogo varchar(6)
@@ -647,6 +671,18 @@ from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
 
+-- Obtener temas de plan de sesión x unidad, de un determinado catalogo
+CREATE PROC SP_OBTENER_TEMASXUNIDAD
+	@IDCatalogo varchar(6),
+	@Unidad varchar(40)
+AS
+	select
+	case when Capitulo = '' then (Tema) else (Capitulo + ' - ' + Tema) end as TEMA
+	from TPlanSesiones
+	where IDCatalogo = @IDCatalogo and Unidad = @Unidad
+GO
+
+
 -- Editar plan sesiones
 create proc SP_EDITARPLANSESIONES
 	@Id int,
@@ -654,10 +690,9 @@ create proc SP_EDITARPLANSESIONES
 	@Capitulo varchar(20),
 	@Tema varchar(255),
 	@HorasProgramadas varchar(4),
-	@Finalizado varchar(14),
-	@Fecha date
+	@Finalizado varchar(14)
 as 
-update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado,Fecha=@Fecha
+update TPlanSesiones set Unidad=@Unidad, Capitulo=@Capitulo, Tema=@Tema, HorasProgramadas=@HorasProgramadas, Finalizado=@Finalizado
 where Id =@Id
 GO
 -- Eliminar Tema de plan de sesiones
@@ -667,6 +702,8 @@ create proc SP_ELIMINARTEMA_PLANSESIONES
 as
 delete from TPlanSesiones where Id=@Id
 go
+
+/*------------------------------------- PROCEDIMIENTOS ALMACENADOS PARA SILABO -----------------------------------------*/
 -----Subir Silabo-----
 create proc SP_SUBIRSILABO
     @Contenido varbinary(max),
@@ -700,7 +737,7 @@ UPDATE TSilabo SET
 WHERE IDCatalogo = @IDCatalogo
 GO
 
--- proc. para TArchivos
+/*---------------------------------------- PROCEDIMIENTOS ALMACENADOS PARA ARCHIVO-----------------------------------*/
 create proc SP_GuardarArchivo
 @Nombre varchar(60),
 @Ruta varchar(400),
@@ -713,8 +750,6 @@ as
 		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
 	exec(@sql)
 go
--- insertar ruta en  cada asignatura
---drop proc SP_ListarArchivo
 
 create proc SP_ListarArchivo
 @IDCatalogo varchar(6)
@@ -722,24 +757,28 @@ as
 	select Ruta,Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
 GO
 
---procedimientos almacenado para recuperar el codigo de catalago de un curso 
-create proc SP_CodCursoCodCatalogo
-@CodCurso varchar(10)
-as
-	select IDCatalogo from TCatalogo where CodAsignatura + Grupo+'IN'=@CodCurso
-go
 
+/*
 --insertar datos LISTA DE ALUMNOS - Docente Doris
 exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
 exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 exec SP_ListarArchivo 'C006'
+*/
+
+create proc SP_GuardarSilabo
+@Contenido varchar(max),
+@IDCatalogo varchar(6)
+as
+	declare @sql varchar(max) 
+	set @sql='insert into TSilabo(contenido,IDCatalogo)
+		SELECT bulkcolumn,'''+@IDCatalogo+
+		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
+	exec(@sql)
+go
 
 
 
-
-
-
-
+ 
 
 
 
