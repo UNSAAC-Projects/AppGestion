@@ -73,7 +73,7 @@ namespace CapaPresentacion
             // panelLinea
             // 
             this.panelLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.panelLinea.Location = new System.Drawing.Point(9, 154);
+            this.panelLinea.Location = new System.Drawing.Point(11, 152);
             this.panelLinea.Margin = new System.Windows.Forms.Padding(2);
             this.panelLinea.Name = "panelLinea";
             this.panelLinea.Size = new System.Drawing.Size(188, 4);
