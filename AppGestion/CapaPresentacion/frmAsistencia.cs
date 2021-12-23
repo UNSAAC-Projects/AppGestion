@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using SpreadsheetLight;
-
+using CapaNegocio;
 namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
         FrmLogin L = new FrmLogin();
+        N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
+
         public frmAsistencia()
         {
             InitializeComponent();
@@ -37,6 +39,9 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
+            // Mostrar temas
+            MostrarTemas();
+            // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
             dgvAsistencia.Columns["ALUMNO"].DisplayIndex = 1;
             dgvAsistencia.Columns["APELLIDOS Y NOMBRES"].DisplayIndex = 2;
@@ -55,24 +60,22 @@ namespace CapaPresentacion
               dgvAsistencia.Columns.Remove("Obs");
               dgvAsistencia.Columns.Remove("Column9");
               dgvAsistencia.Columns.Remove("NRO");
-
-
-
             ImprimirHoraFecha();
-
-            
-
         }
-        string datetime;
-        string fecha;
+
+        private void MostrarTemas()
+        {
+            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad("C010", "1°UNIDAD");
+            object[] arrayItems = listItems.ToArray();
+            comboBoxTema.Items.AddRange(arrayItems);
+        }
+
         public void ImprimirHoraFecha()
         {
+            string datetime;
             datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
-
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
-
-           
         }
         bool  ExportarDatos(DataGridView datalistado)
         {
@@ -119,11 +122,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al guardar...");
             }
-
-        }
-
-        private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
 

@@ -45,8 +45,6 @@ namespace CapaPresentacion
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCursosDocente = new System.Windows.Forms.DataGridView();
-            this.TEMA = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ASISTENCIA = new System.Windows.Forms.DataGridViewImageColumn();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBoxLibros = new System.Windows.Forms.PictureBox();
@@ -59,6 +57,8 @@ namespace CapaPresentacion
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.TEMA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ASISTENCIA = new System.Windows.Forms.DataGridViewImageColumn();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -87,7 +87,7 @@ namespace CapaPresentacion
             this.ContenedorLogin.Controls.Add(this.DOCENTE);
             this.ContenedorLogin.Controls.Add(this.pictureBoxImagen);
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
-            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(2);
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(233, 528);
             this.ContenedorLogin.TabIndex = 2;
@@ -172,7 +172,7 @@ namespace CapaPresentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel2.Location = new System.Drawing.Point(19, 343);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(189, 2);
             this.panel2.TabIndex = 6;
@@ -181,7 +181,7 @@ namespace CapaPresentacion
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
             this.panel1.Location = new System.Drawing.Point(19, 111);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(189, 2);
             this.panel1.TabIndex = 5;
@@ -202,7 +202,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxImagen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxImagen.Image")));
             this.pictureBoxImagen.Location = new System.Drawing.Point(65, 163);
-            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxImagen.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxImagen.Name = "pictureBoxImagen";
             this.pictureBoxImagen.Size = new System.Drawing.Size(98, 110);
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,22 +272,6 @@ namespace CapaPresentacion
             this.dgvCursosDocente.TabIndex = 15;
             this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick_1);
             // 
-            // TEMA
-            // 
-            this.TEMA.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.TEMA.FillWeight = 100.1522F;
-            this.TEMA.HeaderText = "TEMA";
-            this.TEMA.MinimumWidth = 6;
-            this.TEMA.Name = "TEMA";
-            // 
-            // ASISTENCIA
-            // 
-            this.ASISTENCIA.FillWeight = 99.84779F;
-            this.ASISTENCIA.HeaderText = "ASISTENCIA";
-            this.ASISTENCIA.Image = global::CapaPresentacion.Properties.Resources.graduado_24px;
-            this.ASISTENCIA.MinimumWidth = 6;
-            this.ASISTENCIA.Name = "ASISTENCIA";
-            // 
             // labelMensaje
             // 
             this.labelMensaje.AutoSize = true;
@@ -327,7 +311,7 @@ namespace CapaPresentacion
             this.btnCERRAR.BackColor = System.Drawing.Color.Transparent;
             this.btnCERRAR.Image = ((System.Drawing.Image)(resources.GetObject("btnCERRAR.Image")));
             this.btnCERRAR.Location = new System.Drawing.Point(986, 3);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(28, 28);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,7 +325,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.Transparent;
             this.btnMINIMIZAR.Image = ((System.Drawing.Image)(resources.GetObject("btnMINIMIZAR.Image")));
             this.btnMINIMIZAR.Location = new System.Drawing.Point(920, 3);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(28, 28);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -354,7 +338,7 @@ namespace CapaPresentacion
             this.btnMaxFrmDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaxFrmDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxFrmDocente.Image")));
             this.btnMaxFrmDocente.Location = new System.Drawing.Point(953, 3);
-            this.btnMaxFrmDocente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaxFrmDocente.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaxFrmDocente.Name = "btnMaxFrmDocente";
             this.btnMaxFrmDocente.Size = new System.Drawing.Size(28, 28);
             this.btnMaxFrmDocente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -366,7 +350,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(765, 40);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(122, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -376,11 +360,10 @@ namespace CapaPresentacion
             // pnlFrmDocente
             // 
             this.pnlFrmDocente.Location = new System.Drawing.Point(231, 0);
-            this.pnlFrmDocente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFrmDocente.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFrmDocente.Name = "pnlFrmDocente";
             this.pnlFrmDocente.Size = new System.Drawing.Size(944, 38);
             this.pnlFrmDocente.TabIndex = 20;
-            this.pnlFrmDocente.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmDocente_Paint);
             this.pnlFrmDocente.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFrmDocente_MouseMove);
             // 
             // panel3
@@ -389,7 +372,7 @@ namespace CapaPresentacion
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.panel3.Location = new System.Drawing.Point(802, 501);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(224, 4);
             this.panel3.TabIndex = 21;
@@ -399,7 +382,7 @@ namespace CapaPresentacion
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(787, 493);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(22, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -413,7 +396,7 @@ namespace CapaPresentacion
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.panel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(233)))), ((int)(((byte)(236)))));
             this.panel4.Location = new System.Drawing.Point(233, 70);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(190, 4);
             this.panel4.TabIndex = 22;
@@ -422,12 +405,29 @@ namespace CapaPresentacion
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(416, 62);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(22, 20);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
+            // 
+            // TEMA
+            // 
+            this.TEMA.FillWeight = 100.1522F;
+            this.TEMA.HeaderText = "TEMA";
+            this.TEMA.MinimumWidth = 6;
+            this.TEMA.Name = "TEMA";
+            this.TEMA.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TEMA.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ASISTENCIA
+            // 
+            this.ASISTENCIA.FillWeight = 99.84779F;
+            this.ASISTENCIA.HeaderText = "ASISTENCIA";
+            this.ASISTENCIA.Image = global::CapaPresentacion.Properties.Resources.graduado_24px;
+            this.ASISTENCIA.MinimumWidth = 6;
+            this.ASISTENCIA.Name = "ASISTENCIA";
             // 
             // frmDocente
             // 
@@ -453,7 +453,6 @@ namespace CapaPresentacion
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
-            this.Load += new System.EventHandler(this.frmDocente_Load);
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -490,8 +489,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelMensaje;
         private System.Windows.Forms.PictureBox pictureBoxLibros;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TEMA;
-        private System.Windows.Forms.DataGridViewImageColumn ASISTENCIA;
         private System.Windows.Forms.PictureBox btnMaxFrmDocente;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlFrmDocente;
@@ -499,5 +496,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEMA;
+        private System.Windows.Forms.DataGridViewImageColumn ASISTENCIA;
     }
 }

@@ -671,6 +671,18 @@ from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
 
+-- Obtener temas de plan de sesión x unidad, de un determinado catalogo
+CREATE PROC SP_OBTENER_TEMASXUNIDAD
+	@IDCatalogo varchar(6),
+	@Unidad varchar(40)
+AS
+	select
+	case when Capitulo = '' then (Tema) else (Capitulo + ' - ' + Tema) end as TEMA
+	from TPlanSesiones
+	where IDCatalogo = @IDCatalogo and Unidad = @Unidad
+GO
+
+
 -- Editar plan sesiones
 create proc SP_EDITARPLANSESIONES
 	@Id int,

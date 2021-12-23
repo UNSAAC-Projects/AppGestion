@@ -17,6 +17,7 @@ namespace CapaPresentacion
     {
         DataSet result;
         N_Login oLogin = new N_Login();
+        N_Docente oDocente = new N_Docente();
 
         public string Docente;
 
@@ -44,19 +45,18 @@ namespace CapaPresentacion
             dgvcbc.Value = itemsToAdd[0];
         }
 
-
         private void MostrarTemasDictar()
         {
             string[] items = { "Hola", "Hola1", "Hola3" };
             //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
             //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
-            MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
+            //MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
 
             string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
             //var index = dgvCursosDocente.Rows.Add();
             //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
             //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
-            MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
+            //MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
 
         }
 
@@ -70,8 +70,6 @@ namespace CapaPresentacion
         {
             frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
-            
-            
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -84,11 +82,7 @@ namespace CapaPresentacion
             Close();
         }
 
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        N_Docente oDocente = new N_Docente();
+        
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
@@ -209,11 +203,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void frmDocente_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnMaxFrmDocente_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -242,16 +231,6 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
             
-
-        }
-
-        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
 
         }
     }

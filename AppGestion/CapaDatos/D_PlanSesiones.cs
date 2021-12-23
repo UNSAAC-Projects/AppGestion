@@ -79,5 +79,32 @@ namespace CapaDatos
             }
 
         }
+
+        public List <string> ObtenerTemasXUnidad(string IdCatalogo, string Unidad) 
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_OBTENER_TEMASXUNIDAD", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@IDCatalogo", IdCatalogo);
+            cmd.Parameters.AddWithValue("@Unidad", Unidad);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            //return tabla;
+            List<string> ListaTemas = new List<string>();
+
+            //Recorrer tabla
+            foreach (DataRow row in tabla.Rows)
+            {
+                ListaTemas.Add(row[0].ToString());
+            }
+
+            return ListaTemas;
+        }
+
     }
 }
