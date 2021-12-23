@@ -380,7 +380,7 @@ namespace CapaPresentacion
             this.pnlFrmDocente.Name = "pnlFrmDocente";
             this.pnlFrmDocente.Size = new System.Drawing.Size(1259, 47);
             this.pnlFrmDocente.TabIndex = 20;
-            this.pnlFrmDocente.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFrmDocente_Paint);
+            
             this.pnlFrmDocente.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFrmDocente_MouseMove);
             // 
             // panel3
@@ -392,7 +392,7 @@ namespace CapaPresentacion
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(298, 5);
             this.panel3.TabIndex = 21;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            
             // 
             // pictureBox2
             // 
@@ -404,7 +404,7 @@ namespace CapaPresentacion
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            
             // 
             // pictureBox3
             // 
@@ -415,7 +415,7 @@ namespace CapaPresentacion
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            
             // 
             // panel5
             // 
@@ -461,7 +461,7 @@ namespace CapaPresentacion
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
-            this.Load += new System.EventHandler(this.frmDocente_Load);
+            
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

@@ -137,7 +137,7 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(242, 22);
             this.label11.TabIndex = 33;
             this.label11.Text = "ASISTENCIA DE ALUMNOS";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            
             // 
             // labelLISTADOCENTE
             // 
@@ -149,7 +149,7 @@ namespace CapaPresentacion
             this.labelLISTADOCENTE.Size = new System.Drawing.Size(106, 19);
             this.labelLISTADOCENTE.TabIndex = 7;
             this.labelLISTADOCENTE.Text = "Asignatura :";
-            this.labelLISTADOCENTE.Click += new System.EventHandler(this.labelLISTADOCENTE_Click);
+            
             // 
             // label1
             // 
@@ -283,7 +283,7 @@ namespace CapaPresentacion
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+           
             // 
             // pictureBox1
             // 
@@ -338,7 +338,7 @@ namespace CapaPresentacion
             this.dgvAsistencia.RowTemplate.Height = 24;
             this.dgvAsistencia.Size = new System.Drawing.Size(748, 403);
             this.dgvAsistencia.TabIndex = 16;
-            this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
+            
             // 
             // Asistencia
             // 
