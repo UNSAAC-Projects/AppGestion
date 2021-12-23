@@ -97,7 +97,7 @@ namespace CapaDatos
             //return tabla;
             List<string> ListaTemas = new List<string>();
 
-            //Recorrer tabla
+            //Recorrer tabla y guardar en lista
             foreach (DataRow row in tabla.Rows)
             {
                 ListaTemas.Add(row[0].ToString());

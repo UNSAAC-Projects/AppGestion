@@ -152,23 +152,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void dgvCursosDocente_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
-            if (row.Cells["ASISTENCIA"].Selected)
-            {
-                //Obtener cod curso
-                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
-
-                frmAsistencia form = new frmAsistencia();
-
-                //Recuperar información de la tabla
-                //form.textBoxCodigo.Text = CodCursoCatalogo;
-                //form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                form.ShowDialog();
-            }
-        }
-
         private void dgvCursosDocente_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0) //Si no se hizo click en el encabezado
@@ -183,7 +166,6 @@ namespace CapaPresentacion
 
                     DataTable tabla = new DataTable();
 
-
                     //recuperar la ruta del archivo excel
                     tabla = oDocente.MostrarArchivos(codCatalogo);
                     string ruta = tabla.Rows[0][0].ToString();
@@ -193,7 +175,7 @@ namespace CapaPresentacion
                     IExcelDataReader reader;
                     reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
-                    frmAsistencia form = new frmAsistencia();
+                    frmAsistencia form = new frmAsistencia(codCatalogo);
                     reader.IsFirstRowAsColumnNames = true;
                     result = reader.AsDataSet();
                     form.dgvAsistencia.DataSource = result.Tables[0];

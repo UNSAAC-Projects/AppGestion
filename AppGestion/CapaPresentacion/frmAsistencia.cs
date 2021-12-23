@@ -16,15 +16,11 @@ namespace CapaPresentacion
     {
         FrmLogin L = new FrmLogin();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-
-        public frmAsistencia()
+        string IdCatalogo;
+        public frmAsistencia(string pIdCatalogo)
         {
             InitializeComponent();
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
+            IdCatalogo = pIdCatalogo;
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -39,8 +35,9 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            // Mostrar temas
+            // Mostrar temas a dictar
             MostrarTemas();
+
             // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
             dgvAsistencia.Columns["ALUMNO"].DisplayIndex = 1;
@@ -50,24 +47,25 @@ namespace CapaPresentacion
             //dgvAsistencia.Columns["A"].DisplayIndex = 4;
             
             //dgvAsistencia.Columns[0].Width = 40;
-              dgvAsistencia.Columns[3].Width = 68;
-              dgvAsistencia.Columns[4].Width = 260;
-              dgvAsistencia.Columns.Remove("1");
-              dgvAsistencia.Columns.Remove("2");
-              dgvAsistencia.Columns.Remove("3");
-              dgvAsistencia.Columns.Remove("4");
-              dgvAsistencia.Columns.Remove("5");
-              dgvAsistencia.Columns.Remove("Obs");
-              dgvAsistencia.Columns.Remove("Column9");
-              dgvAsistencia.Columns.Remove("NRO");
+            dgvAsistencia.Columns[3].Width = 68;
+            dgvAsistencia.Columns[4].Width = 260;
+            dgvAsistencia.Columns.Remove("1");
+            dgvAsistencia.Columns.Remove("2");
+            dgvAsistencia.Columns.Remove("3");
+            dgvAsistencia.Columns.Remove("4");
+            dgvAsistencia.Columns.Remove("5");
+            dgvAsistencia.Columns.Remove("Obs");
+            dgvAsistencia.Columns.Remove("Column9");
+            dgvAsistencia.Columns.Remove("NRO");
             ImprimirHoraFecha();
         }
 
         private void MostrarTemas()
-        {
-            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad("C010", "1°UNIDAD");
-            object[] arrayItems = listItems.ToArray();
-            comboBoxTema.Items.AddRange(arrayItems);
+        {// Mostrar el listado de temas en comboBoxTema
+            //Obtener lista de temas
+            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
+            object[] arrayItems = listItems.ToArray(); //Convertir a array
+            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
         }
 
         public void ImprimirHoraFecha()
@@ -145,15 +143,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelLISTADOCENTE_Click(object sender, EventArgs e)
-        {
-
-        }
         //Movimiento panel
         int posY = 0;
         int posX = 0;
