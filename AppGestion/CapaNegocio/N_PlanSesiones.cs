@@ -29,5 +29,14 @@ namespace CapaNegocio
         {
             data.EliminarPlanSesiones(id);
         }
+
+        public List<string> ObtenerTemasXUnidad(string IdCatalogo, string Unidad)
+        {
+            return data.ObtenerTemasXUnidad(IdCatalogo, Unidad);
+        }
+        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo)
+        {
+            data.GuardarPlanSesiones(tabla,IDCatalogo);
+        }
     }
 }
