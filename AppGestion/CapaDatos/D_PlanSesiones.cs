@@ -106,5 +106,33 @@ namespace CapaDatos
             return ListaTemas;
         }
 
+        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo) {
+            
+            string Unidad, Capitulo, Tema, Horas, Finalizado, Observacion;
+
+            string ComandoSQL = $"exec SP_Eliminar_PLANXCATALOGO \'{IDCatalogo}\' \n";
+
+            foreach (DataRow fila in tabla.Rows) {
+                Unidad = fila["Unidad"].ToString();
+                Capitulo=fila["Capitulo"].ToString();
+                Tema=fila["Tema"].ToString();
+                Horas=fila["Horas"].ToString();
+                Finalizado=fila["Finalizado"].ToString();
+                Observacion=fila["Observacion"].ToString();
+
+                //Observacion == "" ? "\'\'": fila["Observacion"].ToString();
+
+                //if (Observacion == "") { Observacion = "\'\'"; }
+
+                ComandoSQL +=$"Insert Into TPlanSesiones values (\'{Unidad}\',\'{Capitulo}\',\'{Tema}\',\'{Horas}\',\'{IDCatalogo}\',\'{Finalizado}\',\'{Observacion}\')\n";
+
+                
+            }
+            SqlCommand cmd = new SqlCommand(ComandoSQL, conexion);
+            conexion.Open();
+            
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

@@ -130,7 +130,7 @@ namespace CapaDatos
         {
             DataTable tabla = new DataTable();
             SqlCommand cmd = new SqlCommand("SP_CodCursoCodCatalogo", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure; 
             conexion.Open();
 
             cmd.Parameters.AddWithValue("@CodCurso", codAsignatura);
