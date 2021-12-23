@@ -27,7 +27,7 @@ namespace CapaPresentacion
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(CodDocente);
-
+            datos.CodDocente = CodDocente;
             Docente = CodDocente;
         }
 

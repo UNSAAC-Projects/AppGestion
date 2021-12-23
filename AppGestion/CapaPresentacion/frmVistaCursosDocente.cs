@@ -129,5 +129,10 @@ namespace CapaPresentacion
             }
 
         }
+
+        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

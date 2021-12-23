@@ -164,5 +164,10 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void frmPlanDeSesiones_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
