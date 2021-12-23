@@ -106,5 +106,36 @@ namespace CapaDatos
             return ListaTemas;
         }
 
+        //Obtener ultimo tema completado
+        public string[] UltimoTemaCompletado(string IdCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_ULTIMO_TEMACOMPLETADO", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@IDCatalogo", IdCatalogo);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            string[] arrayTema = new string[4];
+            if(tabla.Rows.Count > 0) //Si tabla no está vacia
+            {
+                arrayTema[0] = tabla.Rows[0]["Id"].ToString();
+                arrayTema[1] = tabla.Rows[0]["Unidad"].ToString();
+                arrayTema[2] = tabla.Rows[0]["Capitulo"].ToString();
+                arrayTema[3] = tabla.Rows[0]["Tema"].ToString();
+                conexion.Close();
+                return arrayTema;
+            }
+            else //Si está vacia
+            {
+                conexion.Close();
+                return null;
+            }
+            
+
+        }
     }
 }
