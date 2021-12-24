@@ -23,7 +23,7 @@ namespace CapaPresentacion
             InitializeComponent();
         }
         N_Asistencia A = new N_Asistencia();
-        frmAsistencia oAsistencia = new frmAsistencia();
+        //frmAsistencia oAsistencia = new frmAsistencia();
         N_CursosDocente D = new N_CursosDocente();
         E_Asistencia Asis = new E_Asistencia();
        
@@ -95,6 +95,33 @@ namespace CapaPresentacion
         private void cboAsistenciaCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
             listar_asistencias();        
+        }
+
+        private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCancelarFrmReporte_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void pnlFrmReporteAsistencia_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
         }
     }
 }

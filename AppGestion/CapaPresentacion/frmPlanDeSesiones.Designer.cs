@@ -48,11 +48,15 @@ namespace CapaPresentacion
             this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNuevaFila = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPlanDeSeciones
@@ -128,6 +132,7 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPlanSesiones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPlanSesiones.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPlanSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPlanSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPlanSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -231,7 +236,7 @@ namespace CapaPresentacion
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(855, 503);
+            this.btnGuardar.Location = new System.Drawing.Point(861, 503);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(201, 46);
@@ -260,7 +265,7 @@ namespace CapaPresentacion
             this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaFila.ForeColor = System.Drawing.Color.White;
             this.btnNuevaFila.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevaFila.Location = new System.Drawing.Point(622, 503);
+            this.btnNuevaFila.Location = new System.Drawing.Point(629, 503);
             this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevaFila.Name = "btnNuevaFila";
             this.btnNuevaFila.Size = new System.Drawing.Size(201, 46);
@@ -268,6 +273,26 @@ namespace CapaPresentacion
             this.btnNuevaFila.Text = "ANADIR NUEVA FILA";
             this.btnNuevaFila.UseVisualStyleBackColor = false;
             this.btnNuevaFila.Click += new System.EventHandler(this.btnNuevaFila_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-63, 442);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(242, 141);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(955, 68);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(242, 141);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
             // 
             // frmPlanDeSesiones
             // 
@@ -282,6 +307,8 @@ namespace CapaPresentacion
             this.Controls.Add(this.labelPlanSesiones);
             this.Controls.Add(this.dgvPlanSesiones);
             this.Controls.Add(this.pnlPlanDeSeciones);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPlanDeSesiones";
             this.Text = "frmPlanDeSesiones";
@@ -292,6 +319,8 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +343,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnNuevaFila;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
