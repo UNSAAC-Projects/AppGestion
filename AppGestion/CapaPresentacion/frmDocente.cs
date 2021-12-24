@@ -153,7 +153,7 @@ namespace CapaPresentacion
                     datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
-                    //recuperar la ruta del archivo excel
+                    //recuperar la ruta del archivo exce
                     tabla = oDocente.MostrarArchivos(codCatalogo);
                     string ruta = tabla.Rows[0][0].ToString();
                     string contenido = tabla.Rows[0][1].ToString();
