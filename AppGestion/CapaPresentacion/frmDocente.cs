@@ -203,7 +203,7 @@ namespace CapaPresentacion
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
             RAsistencia.Show();
