@@ -106,11 +106,11 @@ namespace CapaDatos
             return ListaTemas;
         }
 
-        //Obtener ultimo tema completado
-        public string[] UltimoTemaCompletado(string IdCatalogo)
+        //Obtener el siguiente tema a dictar de un determinado catalogo
+        public string[] SiguienteTema(string IdCatalogo)
         {
             DataTable tabla = new DataTable();
-            SqlCommand cmd = new SqlCommand("SP_ULTIMO_TEMACOMPLETADO", conexion);
+            SqlCommand cmd = new SqlCommand("SP_SIGUIENTE_TEMA", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
 
@@ -131,11 +131,11 @@ namespace CapaDatos
             }
             else //Si está vacia
             {
+                //La tabla retornará vacia cuando se completen todos los temas
+                //del plan de sesiones
                 conexion.Close();
                 return null;
             }
-            
-
         }
     }
 }

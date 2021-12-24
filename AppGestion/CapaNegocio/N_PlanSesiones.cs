@@ -34,5 +34,10 @@ namespace CapaNegocio
         {
             return data.ObtenerTemasXUnidad(IdCatalogo, Unidad);
         }
+
+        public string[] SiguienteTema(string IdCatalogo)
+        {
+            return data.SiguienteTema(IdCatalogo);
+        }
     }
 }
