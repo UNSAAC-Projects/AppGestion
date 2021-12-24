@@ -41,7 +41,7 @@ namespace CapaPresentacion
         private void MoverModificarColumnas()
         {
             dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=6;
-            dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
+            //dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
             dgvPlanSesiones.Columns["Completado"].DisplayIndex = 4;
 
             dgvPlanSesiones.Columns["Finalizado"].Visible = true;      
