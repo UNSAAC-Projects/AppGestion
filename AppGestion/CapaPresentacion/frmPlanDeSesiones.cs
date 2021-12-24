@@ -19,13 +19,18 @@ namespace CapaPresentacion
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
         private int rowIndexOfItemUnderMouseToDrop;
+        DataTable tabla = new DataTable();
+        private string IDCatalogo;
+        
 
         public frmPlanDeSesiones(string CodCatalogo, string NombreAsignatura, string Grupo)
         {
+
             InitializeComponent();
             MostrarPlanSesiones(CodCatalogo);
             MostrarNombreAsignatura(NombreAsignatura, Grupo);
             MoverModificarColumnas();
+            IDCatalogo = CodCatalogo;
         }
 
         private void MostrarNombreAsignatura(string nombreAsignatura, string grupo)
@@ -38,12 +43,21 @@ namespace CapaPresentacion
             dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=6;
             dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
             dgvPlanSesiones.Columns["Completado"].DisplayIndex = 4;
+
+            dgvPlanSesiones.Columns["Finalizado"].Visible = true;      
         }
 
         public void MostrarPlanSesiones(string CodCatalogo)
         {
             N_PlanSesiones pvista = new N_PlanSesiones();
             dgvPlanSesiones.DataSource = pvista.ListandoPlanSesiones(CodCatalogo);
+            foreach (DataGridViewRow fila in dgvPlanSesiones.Rows)
+            {
+                if (fila.Cells["Finalizado"].Value.ToString() =="SI")
+                {
+                    fila.Cells["Completado"].Value = "SI";
+                }
+            }
         }
 
         private void btnClosePlanSesiones_Click(object sender, EventArgs e)
@@ -58,16 +72,21 @@ namespace CapaPresentacion
 
         private void dgvPlanSesiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Eliminar"].Selected)
-            //{
-            //    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
-            //    if (dialogResult == DialogResult.Yes)
-            //    {
-            //        dgvPlanSesiones.Rows.RemoveAt(e.RowIndex) ;
+            if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+            {
+                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    dgvPlanSesiones.Rows.RemoveAt(e.RowIndex);
 
 
-            //    }
-            //}
+                }
+            }
+
+            if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Completado"].Selected)
+            {
+                dgvPlanSesiones.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
 
         private void dgvPlanSesiones_MouseMove(object sender, MouseEventArgs e)
@@ -163,6 +182,61 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void btnNuevaFila_Click(object sender, EventArgs e)
+        {
+            int indice = dgvPlanSesiones.CurrentRow.Index;
+
+            //validar seleccion de fila
+            if (indice != -1)
+            {
+                tabla = dgvPlanSesiones.DataSource as DataTable;
+                DataRow fila = tabla.NewRow();
+                fila["Finalizado"]= "NO";
+                tabla.Rows.InsertAt(fila, indice+1);
+  
+            }
+            else
+            {
+                MessageBox.Show("No se selecciono ninguna fila");
+            }
+
+           
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            tabla = dgvPlanSesiones.DataSource as DataTable;
+            oPlanSesiones.GuardarPlanSesiones(tabla, IDCatalogo);
+
+            MessageBox.Show("Los cambios se guardaron correctamente");
+        }
+
+        private void dgvPlanSesiones_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex>=0)
+            {
+                if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Completado"].Selected)
+                {
+                    //ver el valor del checkbox
+                    if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["Completado"].Value.ToString()) == "SI")
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["Finalizado"].Value = "SI";
+                    }
+                    else
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["Finalizado"].Value = "NO";
+                    }
+                }
+            }
+           
+        }
+
+        private void frmPlanDeSesiones_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

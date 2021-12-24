@@ -56,17 +56,7 @@ namespace CapaDatos
             conexion.Close();
 
             return tablaDocentes;
-            //DataTable table = new DataTable();
-            ////DataRow row = table.NewRow();
-            //foreach (DataRow currentRow in tablaDocentes.Rows)
-            //{
-            //    string CodDocente = currentRow[0].ToString();
-            //    var row = HorasDictadoDocente(CodDocente);
-            //    // if(row!= null) table.Rows.Add(row);
-            //    if (row != null) table.ImportRow(row);
-
-            //}
-            //return table;
+            
         }
 
         public DataRow HorasDictadoDocente(string CodDocente)
@@ -130,7 +120,7 @@ namespace CapaDatos
         {
             DataTable tabla = new DataTable();
             SqlCommand cmd = new SqlCommand("SP_CodCursoCodCatalogo", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandType = CommandType.StoredProcedure; 
             conexion.Open();
 
             cmd.Parameters.AddWithValue("@CodCurso", codAsignatura);

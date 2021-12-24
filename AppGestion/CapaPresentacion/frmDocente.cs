@@ -29,21 +29,21 @@ namespace CapaPresentacion
             MostrarNombreUsuario(CodDocente);
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(CodDocente);
-
+            datos.CodDocente = CodDocente;
             Docente = CodDocente;
         }
 
         private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
         {// Mostrar las celdas con combobox con items
 
-            DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
-            // You might pass a boolean to determine whether to clear or not.
-            dgvcbc.Items.Clear();
-            foreach (object itemToAdd in itemsToAdd)
-            {
-                dgvcbc.Items.Add(itemToAdd);
-            }
-            dgvcbc.Value = itemsToAdd[0];
+            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
+            //// You might pass a boolean to determine whether to clear or not.
+            //dgvcbc.Items.Clear();
+            //foreach (object itemToAdd in itemsToAdd)
+            //{
+            //    dgvcbc.Items.Add(itemToAdd);
+            //}
+            //dgvcbc.Value = itemsToAdd[0];
         }
 
         private void MostrarTemasDictar()
@@ -163,7 +163,7 @@ namespace CapaPresentacion
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-
+                    datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
                     //recuperar la ruta del archivo excel
@@ -214,6 +214,12 @@ namespace CapaPresentacion
             }
             
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
+            RAsistencia.Show();
         }
     }
 }

@@ -3595,35 +3595,4 @@
   <metadata name="Completado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="observacion.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnSubirSilabo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAK9JREFUSEvt
-        0rEOwVAYxfH7GiaDwcDK4u01Nk8gqcFgIvEG17nt30ckotoz4ZecRE77naGRfkfOeaRslU35Te2hwbGy
-        U272yoTHw2hoqhzK6pOjMue1fjQwY+iVs7Lk9c/ocKGcysobF2XFWXc6qpvzbmrO+mMoUPuwG6h92A3U
-        PuwGah92A7UPu4Hah91A7cNuoPbRZtVON9bUf0b6ro/feKiK2btSts8svuZPkNIVvEDyzlKyQZUAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="btnVerSilabo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAE7SURBVEhL7ZQ9UgJBFIQ3oExEA2KqOArIdTyAJWUOHoMbUOgJNPICZkYqHMDAcPl65iHOm1nR
-        YCkDvqqu3XndM7vzs1sd+d/Udd1Dl+gevaJPk+5Vk9ez+O+hUwddow+0D2WU7Vj3nyHYR0/or6hP34Yp
-        Q2CAXpR2LNAQnZpGaIk86juw4VIwuuhZKceVRTLwJjGSoDG6FtlBcR7slIV5J+gWrdA7mqlm3h3yzOV9
-        QUFTLjE0XwN6ZuZdxGbGSH6AxmOsZYSpctWbe9bmncVmxoP8AI19D9CyeN7MO4/NjOQBTUsUpsm1tERT
-        88axmbFbIkGhtMlL87TJeohm4jdZX7Qn3WRBsemYTiySgXcTIwnlYyowmj40HUWdFr2EpGUpvXnzh7aF
-        QHu/ii0E2/vZfYdO7fyujxyQqtoA60DReY2qJfAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnAgregarTema.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACSSURBVEhL7ZRBCoAwDAT7veL/P6D+IwYcRAylTWPVgwM5LMnuqgfTjwsRmXRWnV4WnUychYMo
-        M3EWDgTpBnvZz358QRTiLOzDEGdhP/4TId1gby9AGn2F9QcLvGAfV1CF/OIrIw2s63DfXYAsF7Jvf6IL
-        2N8taP5dYzlCS3C2ozrrNJVg8RVEIfPe0DPkP1mQ0ganCvpXxvTcoQAAAABJRU5ErkJggg==
-</value>
-  </data>
 </root>

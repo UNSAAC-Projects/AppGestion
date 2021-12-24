@@ -784,9 +784,14 @@ as
 	exec(@sql)
 go
 
+alter proc SP_Eliminar_PLANXCATALOGO
+	@IDCatalogo varchar(6)
+as
+delete from TPlanSesiones where IDCatalogo=@IDCatalogo
+GO
 
-
+--exec SP_Eliminar_PLANXCATALOGO 'C006'
  
-
+--select * from TPlanSesiones
 
 

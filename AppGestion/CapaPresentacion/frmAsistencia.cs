@@ -9,12 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using SpreadsheetLight;
+using CapaEntidades;
 using CapaNegocio;
+
+
 namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
         FrmLogin L = new FrmLogin();
+
+        E_Asistencia entities = new E_Asistencia();
+       
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
         string IdCatalogo;
         public frmAsistencia(string pIdCatalogo)
@@ -75,10 +81,12 @@ namespace CapaPresentacion
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
         }
+        
         bool  ExportarDatos(DataGridView datalistado)
         {
             //concatenar con el nombre del tema.
-            
+            N_Asistencia A = new N_Asistencia();
+
             var DateAndTime = DateTime.Now;
             string Date = DateTime.Now.ToString("ddMMyyyy");
 
@@ -106,6 +114,14 @@ namespace CapaPresentacion
 
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
+            //insertar lista a la base de datos
+            entities.curso = datos.NombreCurso;
+            entities.tema = "HOLA";
+            entities.fecha = lblFecha.Text;
+            entities.asistencia =ruta;
+            entities.idcatalogo = datos.CodCatalogo;
+            A.CreandoCurso_Asistencia(entities);
+
             return true;
 
         }
@@ -158,6 +174,11 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void textBoxTEMA_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

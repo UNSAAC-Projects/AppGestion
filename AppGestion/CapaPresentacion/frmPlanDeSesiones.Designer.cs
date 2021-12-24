@@ -41,15 +41,13 @@ namespace CapaPresentacion
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPlanSesiones = new System.Windows.Forms.Label();
             this.lblNombreAsignatura = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnSubirSilabo = new System.Windows.Forms.Button();
-            this.btnVerSilabo = new System.Windows.Forms.Button();
-            this.btnAgregarTema = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNuevaFila = new System.Windows.Forms.Button();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
@@ -124,6 +122,7 @@ namespace CapaPresentacion
             // dgvPlanSesiones
             // 
             this.dgvPlanSesiones.AllowDrop = true;
+            this.dgvPlanSesiones.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -143,8 +142,7 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
-            this.Completado,
-            this.observacion});
+            this.Completado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,6 +163,7 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.Size = new System.Drawing.Size(1043, 335);
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
+            this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
             this.dgvPlanSesiones.DoubleClick += new System.EventHandler(this.dgvPlanSesiones_DoubleClick);
             // 
             // eliminar
@@ -177,17 +176,12 @@ namespace CapaPresentacion
             // 
             // Completado
             // 
+            this.Completado.FalseValue = "NO";
             this.Completado.HeaderText = "Completado";
             this.Completado.MinimumWidth = 6;
             this.Completado.Name = "Completado";
+            this.Completado.TrueValue = "SI";
             this.Completado.Width = 108;
-            // 
-            // observacion
-            // 
-            this.observacion.HeaderText = "Observacion";
-            this.observacion.MinimumWidth = 6;
-            this.observacion.Name = "observacion";
-            this.observacion.Width = 132;
             // 
             // labelPlanSesiones
             // 
@@ -225,68 +219,26 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 72;
             // 
-            // btnSubirSilabo
+            // btnGuardar
             // 
-            this.btnSubirSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnSubirSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSubirSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubirSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnSubirSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnSubirSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnSubirSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubirSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubirSilabo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnSubirSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnSubirSilabo.Image")));
-            this.btnSubirSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSubirSilabo.Location = new System.Drawing.Point(36, 503);
-            this.btnSubirSilabo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSubirSilabo.Name = "btnSubirSilabo";
-            this.btnSubirSilabo.Size = new System.Drawing.Size(224, 42);
-            this.btnSubirSilabo.TabIndex = 13;
-            this.btnSubirSilabo.Text = "SUBIR SILABO";
-            this.btnSubirSilabo.UseVisualStyleBackColor = false;
-            // 
-            // btnVerSilabo
-            // 
-            this.btnVerSilabo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerSilabo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVerSilabo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerSilabo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerSilabo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnVerSilabo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnVerSilabo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerSilabo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerSilabo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnVerSilabo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerSilabo.Image")));
-            this.btnVerSilabo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerSilabo.Location = new System.Drawing.Point(278, 503);
-            this.btnVerSilabo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVerSilabo.Name = "btnVerSilabo";
-            this.btnVerSilabo.Size = new System.Drawing.Size(224, 42);
-            this.btnVerSilabo.TabIndex = 12;
-            this.btnVerSilabo.Text = "VER SILABO";
-            this.btnVerSilabo.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregarTema
-            // 
-            this.btnAgregarTema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnAgregarTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAgregarTema.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTema.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnAgregarTema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnAgregarTema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnAgregarTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTema.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarTema.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAgregarTema.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTema.Image")));
-            this.btnAgregarTema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarTema.Location = new System.Drawing.Point(855, 503);
-            this.btnAgregarTema.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarTema.Name = "btnAgregarTema";
-            this.btnAgregarTema.Size = new System.Drawing.Size(224, 42);
-            this.btnAgregarTema.TabIndex = 21;
-            this.btnAgregarTema.Text = "AGREGAR TEMA";
-            this.btnAgregarTema.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(855, 503);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(201, 46);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "GUARDAR ";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // panel1
             // 
@@ -296,23 +248,44 @@ namespace CapaPresentacion
             this.panel1.Size = new System.Drawing.Size(1090, 4);
             this.panel1.TabIndex = 22;
             // 
+            // btnNuevaFila
+            // 
+            this.btnNuevaFila.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnNuevaFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNuevaFila.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaFila.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnNuevaFila.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnNuevaFila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnNuevaFila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaFila.ForeColor = System.Drawing.Color.White;
+            this.btnNuevaFila.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevaFila.Location = new System.Drawing.Point(622, 503);
+            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevaFila.Name = "btnNuevaFila";
+            this.btnNuevaFila.Size = new System.Drawing.Size(201, 46);
+            this.btnNuevaFila.TabIndex = 23;
+            this.btnNuevaFila.Text = "ANADIR NUEVA FILA";
+            this.btnNuevaFila.UseVisualStyleBackColor = false;
+            this.btnNuevaFila.Click += new System.EventHandler(this.btnNuevaFila_Click);
+            // 
             // frmPlanDeSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1116, 585);
+            this.Controls.Add(this.btnNuevaFila);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnAgregarTema);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblNombreAsignatura);
             this.Controls.Add(this.labelPlanSesiones);
-            this.Controls.Add(this.btnSubirSilabo);
-            this.Controls.Add(this.btnVerSilabo);
             this.Controls.Add(this.dgvPlanSesiones);
             this.Controls.Add(this.pnlPlanDeSeciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPlanDeSesiones";
             this.Text = "frmPlanDeSesiones";
+            this.Load += new System.EventHandler(this.frmPlanDeSesiones_Load);
             this.pnlPlanDeSeciones.ResumeLayout(false);
             this.pnlPlanDeSeciones.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
@@ -332,16 +305,14 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnClosePlanSesiones;
         private System.Windows.Forms.PictureBox btnMinPlanSesiones;
         private System.Windows.Forms.DataGridView dgvPlanSesiones;
-        private System.Windows.Forms.Button btnVerSilabo;
-        private System.Windows.Forms.Button btnSubirSilabo;
         private System.Windows.Forms.Label labelPlanSesiones;
         public System.Windows.Forms.Label lblNombreAsignatura;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.Button btnAgregarTema;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnNuevaFila;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
-        private System.Windows.Forms.Panel panel1;
     }
 }

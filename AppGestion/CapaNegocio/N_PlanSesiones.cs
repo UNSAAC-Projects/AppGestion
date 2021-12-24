@@ -39,5 +39,9 @@ namespace CapaNegocio
         {
             return data.SiguienteTema(IdCatalogo);
         }
+        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo)
+        {
+            data.GuardarPlanSesiones(tabla,IDCatalogo);
+        }
     }
 }
