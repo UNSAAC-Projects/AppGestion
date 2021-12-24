@@ -34,7 +34,6 @@ namespace CapaPresentacion
             this.btnMaxMantAsignatura = new System.Windows.Forms.PictureBox();
             this.btnMinMantAsignatura = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUnidad = new System.Windows.Forms.Label();
             this.lblCapitulo = new System.Windows.Forms.Label();
             this.lblHoras = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMantAsignatura
@@ -103,18 +101,6 @@ namespace CapaPresentacion
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 64;
             this.pictureBoxLogo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(328, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 258);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
             // 
             // lblUnidad
             // 
@@ -303,7 +289,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.lblHoras);
             this.Controls.Add(this.lblCapitulo);
             this.Controls.Add(this.lblUnidad);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelMantAsignatura);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMantPlanSesiones";
@@ -312,7 +297,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +308,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMaxMantAsignatura;
         private System.Windows.Forms.PictureBox btnMinMantAsignatura;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUnidad;
         private System.Windows.Forms.Label lblCapitulo;
         private System.Windows.Forms.Label lblHoras;

@@ -34,6 +34,11 @@ namespace CapaNegocio
         {
             return data.ObtenerTemasXUnidad(IdCatalogo, Unidad);
         }
+
+        public string[] SiguienteTema(string IdCatalogo)
+        {
+            return data.SiguienteTema(IdCatalogo);
+        }
         public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo)
         {
             data.GuardarPlanSesiones(tabla,IDCatalogo);

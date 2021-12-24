@@ -18,6 +18,7 @@ namespace CapaPresentacion
         DataSet result;
         N_Login oLogin = new N_Login();
         N_Docente oDocente = new N_Docente();
+        N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
 
         public string Docente;
 
@@ -32,32 +33,22 @@ namespace CapaPresentacion
             Docente = CodDocente;
         }
 
-        private void MostrarComboBoxItems(DataGridView dataGrid, int rowIndex, int colIndex, object[] itemsToAdd)
-        {// Mostrar las celdas con combobox con items
-
-            //DataGridViewComboBoxCell dgvcbc = (DataGridViewComboBoxCell)dataGrid.Rows[rowIndex].Cells[colIndex];
-            //// You might pass a boolean to determine whether to clear or not.
-            //dgvcbc.Items.Clear();
-            //foreach (object itemToAdd in itemsToAdd)
-            //{
-            //    dgvcbc.Items.Add(itemToAdd);
-            //}
-            //dgvcbc.Value = itemsToAdd[0];
-        }
-
         private void MostrarTemasDictar()
         {
-            string[] items = { "Hola", "Hola1", "Hola3" };
-            //dgvCursosDocente.Rows[0].Cells[0].Value = "Hola";
-            //dgvCursosDocente.Rows[0].Cells[1].Value = "Hola1";
-            //MostrarComboBoxItems(dgvCursosDocente, 0, 0, items);
-
-            string[] items2 = { "Mundo", "Mundo1", "Mundo3" };
-            //var index = dgvCursosDocente.Rows.Add();
-            //dgvCursosDocente.Rows[1].Cells[0].Value = "Mundo";
-            //dgvCursosDocente.Rows[1].Cells[1].Value = "Mundo1";
-            //MostrarComboBoxItems(dgvCursosDocente, 1, 0, items2);
-
+            string codAsignatura, codCatalogo;
+            string[] arrayTema;
+            string tema;
+            //Obtener cod catalogo
+            //DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
+            foreach (DataGridViewRow row in dgvCursosDocente.Rows)
+            {
+                codAsignatura = row.Cells["CODIGO"].Value.ToString();
+                codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
+                arrayTema = oPlanSesiones.SiguienteTema(codCatalogo);
+                tema = $"{arrayTema[2]} - {arrayTema[3]}";
+                row.Cells["TEMA"].Value = tema;
+            }
+            //dgvCursosDocente.NotifyCurrentCellDirty(true);
         }
 
         private void MostrarNombreUsuario(string codDocente)
@@ -88,12 +79,8 @@ namespace CapaPresentacion
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
             dia = "MARTES";
-            //////////////////////////
-            //ObtenerTiempo(out _, out _, out string dia);
-            
-            ///////////////////////////
-            //Mostrar tabla
 
+            //Mostrar tabla
             // Obtener tabla de horarios del dia actual
             var table = oDocente.MostrarHorarioDocenteDia(codDocente, dia);
             //Verificar si la tabla no está vacio
@@ -216,15 +203,12 @@ namespace CapaPresentacion
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
             RAsistencia.Show();
         }
 
-        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
 }

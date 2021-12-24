@@ -23,6 +23,11 @@ namespace CapaPresentacion
        
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
         string IdCatalogo;
+
+        public frmAsistencia()
+        {
+            InitializeComponent();
+        }
         public frmAsistencia(string pIdCatalogo)
         {
             InitializeComponent();
@@ -71,7 +76,7 @@ namespace CapaPresentacion
             //Obtener lista de temas
             List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
             object[] arrayItems = listItems.ToArray(); //Convertir a array
-            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            //comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
         }
 
         public void ImprimirHoraFecha()
@@ -174,11 +179,6 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-        }
-
-        private void textBoxTEMA_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
