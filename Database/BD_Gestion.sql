@@ -209,6 +209,17 @@ CREATE TABLE TMatriculado
 	foreign key(IDCatalogo) references TCatalogo
 )
 GO
+create table TReportesAsistencia
+(
+	Id int identity,
+	Curso varchar(100),
+	Tema varchar(100),
+	Fecha varchar(100),
+	Asistencia varchar(200),
+	IDCatalogo varchar(6),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
 
 /**************************************************************************************************************************
 					                            PROCEDIMIENTOS ALMACENADOS
@@ -791,15 +802,7 @@ GO
  
 --select * from TPlanSesiones
 
--- insertar ruta en  cada asignatura
---drop proc SP_InsertarAsistenciaReporte
-
---procedimientos almacenado para recuperar el codigo de catalago de un curso 
-create proc SP_CodCursoCodCatalogo
-@CodCurso varchar(10)
-as
-	select IDCatalogo from TCatalogo where CodAsignatura + Grupo+'IN'=@CodCurso
-go
+/*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
 --insertar asistencias
 create proc SP_InsertarAsistenciaReporte
 	@Curso varchar(100),
@@ -828,8 +831,3 @@ GO
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 --select * from TArchivo
 --select * from TDocente
-
---select * from TCatalogo
---select * from TReportesAsistencia
-
-

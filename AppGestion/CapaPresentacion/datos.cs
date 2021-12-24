@@ -10,6 +10,7 @@ namespace CapaPresentacion
     {
         static public string NombreDocente;
         static public string NombreCurso;
-
+        static public string CodDocente;
+        static public string CodCatalogo;
     }
 }

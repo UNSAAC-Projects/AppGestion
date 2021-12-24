@@ -129,15 +129,5 @@ namespace CapaPresentacion
             }
 
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
