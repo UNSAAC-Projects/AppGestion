@@ -209,10 +209,6 @@ namespace CapaPresentacion
             RAsistencia.Show();
         }
 
-        private void btnReporteCursos_Click(object sender, EventArgs e)
-        {
-            FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
-            RAsistencia.Show();
-        }
+      
     }
 }
