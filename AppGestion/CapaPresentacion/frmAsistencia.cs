@@ -23,6 +23,11 @@ namespace CapaPresentacion
        
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
         string IdCatalogo;
+
+        public frmAsistencia()
+        {
+            InitializeComponent();
+        }
         public frmAsistencia(string pIdCatalogo)
         {
             InitializeComponent();
@@ -174,11 +179,6 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-        }
-
-        private void textBoxTEMA_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
