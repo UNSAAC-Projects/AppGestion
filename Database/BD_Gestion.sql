@@ -212,6 +212,17 @@ CREATE TABLE TMatriculado
 	foreign key(IDCatalogo) references TCatalogo
 )
 GO
+create table TReportesAsistencia
+(
+	Id int identity,
+	Curso varchar(100),
+	Tema varchar(100),
+	Fecha varchar(100),
+	Asistencia varchar(200),
+	IDCatalogo varchar(6),
+	foreign key(IDCatalogo) references TCatalogo
+)
+go
 
 /**************************************************************************************************************************
 					                            PROCEDIMIENTOS ALMACENADOS
@@ -784,7 +795,7 @@ as
 	exec(@sql)
 go
 
-alter proc SP_Eliminar_PLANXCATALOGO
+create proc SP_Eliminar_PLANXCATALOGO
 	@IDCatalogo varchar(6)
 as
 delete from TPlanSesiones where IDCatalogo=@IDCatalogo
@@ -794,4 +805,32 @@ GO
  
 --select * from TPlanSesiones
 
+/*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
+--insertar asistencias
+create proc SP_InsertarAsistenciaReporte
+	@Curso varchar(100),
+	@Tema varchar(100),
+	@Fecha varchar(100),
+	@Asistencia varchar(200),
+	@IDCatalogo varchar(6)
+as
+	insert into TReportesAsistencia values(@Curso,@Tema,@Fecha,@Asistencia,@IDCatalogo) 
+GO
+create proc SP_ListarAsistencias
+as
+	select * from TReportesAsistencia
+GO
+create proc SP_ListarAsistenciasCurso
+@Curso varchar(100)
+as
+	select * from TReportesAsistencia
+	where Curso=@Curso
+GO
 
+--insertar datos LISTA DE ALUMNOS - Docente Doris
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_ListarArchivo 'C006'
+--exec SP_LISTARCURSOSXDOCENTE 'D0004'
+--select * from TArchivo
+--select * from TDocente
