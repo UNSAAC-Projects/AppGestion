@@ -342,7 +342,7 @@ namespace CapaPresentacion
             this.Name = "frmVistaCursosDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaCursosDocente";
-            this.Load += new System.EventHandler(this.frmVistaCursosDocente_Load);
+            //this.Load += new System.EventHandler(this.frmVistaCursosDocente_Load);
             this.pnlVistaCursosAsig.ResumeLayout(false);
             this.pnlVistaCursosAsig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
