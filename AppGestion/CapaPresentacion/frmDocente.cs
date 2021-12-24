@@ -208,5 +208,7 @@ namespace CapaPresentacion
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
             RAsistencia.Show();
         }
+
+      
     }
 }
