@@ -221,5 +221,10 @@ namespace CapaPresentacion
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
             RAsistencia.Show();
         }
+
+        private void pnlFrmDocente_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
