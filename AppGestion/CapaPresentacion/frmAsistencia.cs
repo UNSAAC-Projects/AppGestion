@@ -22,16 +22,17 @@ namespace CapaPresentacion
         E_Asistencia entities = new E_Asistencia();
        
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-        string IdCatalogo;
+        string IdCatalogo, NombreAsignatura;
 
         public frmAsistencia()
         {
             InitializeComponent();
         }
-        public frmAsistencia(string pIdCatalogo)
+        public frmAsistencia(string pIdCatalogo, string pNombreAsignatura)
         {
             InitializeComponent();
             IdCatalogo = pIdCatalogo;
+            NombreAsignatura = pNombreAsignatura;
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -46,8 +47,11 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            // Mostrar temas a dictar
+            // Mostrar temas a dictar en el combobox
             MostrarTemas();
+
+            // Mostrar nombre de la asignatura
+            lblAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
@@ -73,10 +77,13 @@ namespace CapaPresentacion
 
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
-            //Obtener lista de temas
-            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
+
+            //Obtener lista de temas e id del siguiente tema
+            List<string> listItems = oPlanSesiones.ObtenerTemasProximos(IdCatalogo, out int indexSiguienteTema);
+            //Mostrar temas en combobox
             object[] arrayItems = listItems.ToArray(); //Convertir a array
-            //comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
         }
 
         public void ImprimirHoraFecha()
@@ -97,7 +104,6 @@ namespace CapaPresentacion
 
             string name = datos.NombreCurso + Date;
 
-
             string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
             SLDocument osLDocument = new SLDocument();
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -109,26 +115,22 @@ namespace CapaPresentacion
             //registrar filas
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
                 string alumnos = Convert.ToString(row.Cells["ALUMNO"].Value);
                 string apellidos = Convert.ToString(row.Cells["APELLIDOS Y NOMBRES"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 dt.Rows.Add(asistencia, alumnos, apellidos, observacion);
             }
-
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
             //insertar lista a la base de datos
             entities.curso = datos.NombreCurso;
-            entities.tema = "HOLA";
+            entities.tema = comboBoxTema.Text;
             entities.fecha = lblFecha.Text;
             entities.asistencia =ruta;
             entities.idcatalogo = datos.CodCatalogo;
             A.CreandoCurso_Asistencia(entities);
-
             return true;
-
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
@@ -141,16 +143,13 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al guardar...");
             }
-
         }
 
         private void buttonMARCAR_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = true;
-                
             }
         }
 
@@ -158,9 +157,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = false;
-
             }
         }
 

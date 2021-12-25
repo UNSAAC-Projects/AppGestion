@@ -466,6 +466,7 @@ namespace CapaPresentacion
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
+            this.Load += new System.EventHandler(this.frmDocente_Load);
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
