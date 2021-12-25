@@ -73,7 +73,6 @@ namespace CapaPresentacion
             this.pnlVistaCursosAsig.Name = "pnlVistaCursosAsig";
             this.pnlVistaCursosAsig.Size = new System.Drawing.Size(1387, 43);
             this.pnlVistaCursosAsig.TabIndex = 9;
-            this.pnlVistaCursosAsig.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlVistaCursosAsig_Paint);
             this.pnlVistaCursosAsig.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlVistaCursosAsig_MouseMove);
             // 
             // label11

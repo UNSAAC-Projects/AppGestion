@@ -93,7 +93,13 @@ namespace CapaPresentacion
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
         }
-        
+
+        public string ObtenerRutaProyecto()
+        {//Método para obtener la ruta del proyecto
+            string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            return rutaProyecto;
+        }
+
         bool  ExportarDatos(DataGridView datalistado)
         {
             //concatenar con el nombre del tema.
@@ -104,7 +110,8 @@ namespace CapaPresentacion
 
             string name = datos.NombreCurso + Date;
 
-            string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
+            string ruta = $@"{ObtenerRutaProyecto()}\..\ListaAlumnosDia\" + name + ".xlsx";
+            //string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
             SLDocument osLDocument = new SLDocument();
             System.Data.DataTable dt = new System.Data.DataTable();
             //registrar columnas
