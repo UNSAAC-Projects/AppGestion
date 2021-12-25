@@ -30,12 +30,12 @@ namespace CapaNegocio
             data.EliminarPlanSesiones(id);
         }
 
-        public List<string> ObtenerTemasXUnidad(string IdCatalogo, string Unidad)
+        public List<string> ObtenerTemasProximos(string IdCatalogo, out int idSiguienteTema)
         {
-            return data.ObtenerTemasXUnidad(IdCatalogo, Unidad);
+            return data.ObtenerTemasProximos(IdCatalogo, out idSiguienteTema);
         }
 
-        public string[] SiguienteTema(string IdCatalogo)
+        public string SiguienteTema(string IdCatalogo)
         {
             return data.SiguienteTema(IdCatalogo);
         }

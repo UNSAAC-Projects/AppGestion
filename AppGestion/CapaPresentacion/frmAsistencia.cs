@@ -46,7 +46,7 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            // Mostrar temas a dictar
+            // Mostrar temas a dictar en el combobox
             MostrarTemas();
 
             // Mostrar relacion de alumnos matriculados
@@ -73,10 +73,13 @@ namespace CapaPresentacion
 
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
-            //Obtener lista de temas
-            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
+
+            //Obtener lista de temas e id del siguiente tema
+            List<string> listItems = oPlanSesiones.ObtenerTemasProximos(IdCatalogo, out int indexSiguienteTema);
+            //Mostrar temas en combobox
             object[] arrayItems = listItems.ToArray(); //Convertir a array
             comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
         }
 
         public void ImprimirHoraFecha()
@@ -97,7 +100,6 @@ namespace CapaPresentacion
 
             string name = datos.NombreCurso + Date;
 
-
             string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
             SLDocument osLDocument = new SLDocument();
             System.Data.DataTable dt = new System.Data.DataTable();
@@ -116,7 +118,6 @@ namespace CapaPresentacion
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 dt.Rows.Add(asistencia, alumnos, apellidos, observacion);
             }
-
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
             //insertar lista a la base de datos
@@ -126,9 +127,7 @@ namespace CapaPresentacion
             entities.asistencia =ruta;
             entities.idcatalogo = datos.CodCatalogo;
             A.CreandoCurso_Asistencia(entities);
-
             return true;
-
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
@@ -141,16 +140,13 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al guardar...");
             }
-
         }
 
         private void buttonMARCAR_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = true;
-                
             }
         }
 
@@ -158,9 +154,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = false;
-
             }
         }
 

@@ -671,16 +671,6 @@ from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
 
--- Obtener temas de plan de sesión x unidad, de un determinado catalogo
-CREATE PROC SP_OBTENER_TEMASXUNIDAD
-	@IDCatalogo varchar(6),
-	@Unidad varchar(40)
-AS
-	select
-	case when Capitulo = '' then (Tema) else (Capitulo + ' - ' + Tema) end as TEMA
-	from TPlanSesiones
-	where IDCatalogo = @IDCatalogo and Unidad = @Unidad
-GO
 
 
 -- Editar plan sesiones
@@ -707,10 +697,25 @@ go
 CREATE PROC SP_SIGUIENTE_TEMA
 	@IdCatalogo varchar(6)
 AS
-	SELECT TOP 1 * FROM TPlanSesiones 
+	SELECT TOP 1 Tema FROM TPlanSesiones 
 	WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
 GO
 
+-- Obtener los 3 temas anteriores y posteriores a dictar
+CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
+	@IDCatalogo varchar(6),
+	@IDTema INT OUTPUT --id del tema siguiente a dictar
+AS
+	SET @IDTema = (
+		SELECT TOP 1 Id FROM TPlanSesiones 
+		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
+	) --Obtener id
+
+	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+	WHERE Id = @IDTema 
+	OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+GO
 
 /*------------------------------------- PROCEDIMIENTOS ALMACENADOS PARA SILABO -----------------------------------------*/
 -----Subir Silabo-----
