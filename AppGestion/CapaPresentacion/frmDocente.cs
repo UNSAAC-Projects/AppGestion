@@ -143,8 +143,10 @@ namespace CapaPresentacion
                 {
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
-                    datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    string Grupo = row.Cells["GRUPO"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
+                    datos.NombreCurso = NombreCurso;
                     datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
@@ -157,7 +159,7 @@ namespace CapaPresentacion
                     IExcelDataReader reader;
                     reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
-                    frmAsistencia form = new frmAsistencia(codCatalogo);
+                    frmAsistencia form = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
                     reader.IsFirstRowAsColumnNames = true;
                     result = reader.AsDataSet();
                     form.dgvAsistencia.DataSource = result.Tables[0];

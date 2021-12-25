@@ -22,16 +22,17 @@ namespace CapaPresentacion
         E_Asistencia entities = new E_Asistencia();
        
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-        string IdCatalogo;
+        string IdCatalogo, NombreAsignatura;
 
         public frmAsistencia()
         {
             InitializeComponent();
         }
-        public frmAsistencia(string pIdCatalogo)
+        public frmAsistencia(string pIdCatalogo, string pNombreAsignatura)
         {
             InitializeComponent();
             IdCatalogo = pIdCatalogo;
+            NombreAsignatura = pNombreAsignatura;
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -48,6 +49,9 @@ namespace CapaPresentacion
         {
             // Mostrar temas a dictar en el combobox
             MostrarTemas();
+
+            // Mostrar nombre de la asignatura
+            lblAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
@@ -111,7 +115,6 @@ namespace CapaPresentacion
             //registrar filas
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
                 string alumnos = Convert.ToString(row.Cells["ALUMNO"].Value);
                 string apellidos = Convert.ToString(row.Cells["APELLIDOS Y NOMBRES"].Value);
@@ -122,7 +125,7 @@ namespace CapaPresentacion
             osLDocument.SaveAs(ruta);
             //insertar lista a la base de datos
             entities.curso = datos.NombreCurso;
-            entities.tema = "HOLA";
+            entities.tema = comboBoxTema.Text;
             entities.fecha = lblFecha.Text;
             entities.asistencia =ruta;
             entities.idcatalogo = datos.CodCatalogo;
