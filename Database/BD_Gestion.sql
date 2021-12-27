@@ -869,8 +869,8 @@ as
 GO
 
 --insertar datos LISTA DE ALUMNOS - Docente Doris
---exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
---exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','C:\Users\LUCERO\Documents\GitHub\AppGestion\ListaAlumnosCursos\Lista1.xls','C:\Users\LUCERO\Documents\GitHub\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','C:\Users\LUCERO\Documents\GitHub\AppGestion\ListaAlumnosCursos\Lista2.xls','C:\Users\LUCERO\Documents\GitHub\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 --select * from TArchivo

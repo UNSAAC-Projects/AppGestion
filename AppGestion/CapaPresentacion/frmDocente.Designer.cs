@@ -325,7 +325,7 @@ namespace CapaPresentacion
             this.pictureBoxLibros.TabIndex = 17;
             this.pictureBoxLibros.TabStop = false;
             this.pictureBoxLibros.Visible = false;
-            this.pictureBoxLibros.Click += new System.EventHandler(this.pictureBoxLibros_Click);
+            
             // 
             // btnCERRAR
             // 
