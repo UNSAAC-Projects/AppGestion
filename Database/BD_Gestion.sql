@@ -6,7 +6,7 @@ go
 --go
 
 /* Para ejecutar BD de forma local */
---DROP DATABASE IF EXISTS AppGestion
+DROP DATABASE IF EXISTS AppGestion
 GO
 create database AppGestion
 go
@@ -76,7 +76,6 @@ create table TArchivo(
 	Id			int identity,
 	Nombre		varchar(255),--Nombre del archivo
 	Ruta        varchar(255),--Ruta del archivo
-	Contenido	varbinary(max),--Contenido binario del archivo
 	IDCatalogo	varchar(6),
 	foreign key(IDCatalogo) references TCatalogo
 )
@@ -797,22 +796,17 @@ GO
 
 /*---------------------------------------- PROCEDIMIENTOS ALMACENADOS PARA ARCHIVO-----------------------------------*/
 create proc SP_GuardarArchivo
-@Nombre varchar(60),
-@Ruta varchar(400),
-@Contenido varchar(400),
-@IDCatalogo varchar(6)
+	@Nombre varchar(60),
+	@Ruta varchar(400),
+	@IDCatalogo varchar(6)
 as
-	declare @sql varchar(max) 
-	set @sql='insert into TArchivo(Nombre,Ruta,contenido,IDCatalogo)
-		SELECT '''+@Nombre+''',''' +@Ruta+''', bulkcolumn,'''+@IDCatalogo+
-		''' from openrowset(bulk N'''+@Contenido+''', single_blob) as Data'
-	exec(@sql)
-go
+	insert into TArchivo values(@Nombre,@Ruta,@IDCatalogo) 
+GO
 
 create proc SP_ListarArchivo
 @IDCatalogo varchar(6)
 as
-	select Ruta,Contenido from TArchivo WHERE @IDCatalogo=IDCatalogo
+	select Ruta from TArchivo WHERE @IDCatalogo=IDCatalogo
 GO
 
 /*
@@ -854,7 +848,7 @@ create proc SP_InsertarAsistenciaReporte
 as
 	insert into TReportesAsistencia values(@Curso,@Tema,@Fecha,@Asistencia,@IDCatalogo) 
 GO
-create proc SP_ListarAsistencias
+create proc SP_ListarAsistenciasplanse
 as
 	select * from TReportesAsistencia
 GO
@@ -864,12 +858,3 @@ as
 	select * from TReportesAsistencia
 	where Curso=@Curso
 GO
-
---insertar datos LISTA DE ALUMNOS - Docente Doris
---exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
---exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
---exec SP_ListarArchivo 'C006'
---exec SP_LISTARCURSOSXDOCENTE 'D0004'
-select * from TPlanSesiones where IDCatalogo='C006'
---select * from TDocente
-
