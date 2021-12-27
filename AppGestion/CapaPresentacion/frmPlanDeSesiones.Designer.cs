@@ -39,9 +39,6 @@ namespace CapaPresentacion
             this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
             this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPlanSesiones = new System.Windows.Forms.Label();
             this.lblNombreAsignatura = new System.Windows.Forms.Label();
             this.pnlLineaLibros = new System.Windows.Forms.Panel();
@@ -57,6 +54,8 @@ namespace CapaPresentacion
             this.pictureLibro1 = new System.Windows.Forms.PictureBox();
             this.pictureLibro2 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
@@ -156,8 +155,7 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
-            this.Completado,
-            this.Observacion});
+            this.Completado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -180,29 +178,6 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
             this.dgvPlanSesiones.DoubleClick += new System.EventHandler(this.dgvPlanSesiones_DoubleClick);
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.eliminar.MinimumWidth = 6;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
-            // 
-            // Completado
-            // 
-            this.Completado.FalseValue = "NO";
-            this.Completado.HeaderText = "Completado";
-            this.Completado.MinimumWidth = 6;
-            this.Completado.Name = "Completado";
-            this.Completado.TrueValue = "SI";
-            this.Completado.Width = 108;
-            // 
-            // Observacion
-            // 
-            this.Observacion.MinimumWidth = 6;
-            this.Observacion.Name = "Observacion";
-            this.Observacion.Width = 132;
             // 
             // labelPlanSesiones
             // 
@@ -374,6 +349,23 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 72;
             // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.eliminar.MinimumWidth = 6;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Width = 72;
+            // 
+            // Completado
+            // 
+            this.Completado.FalseValue = "NO";
+            this.Completado.HeaderText = "Completado";
+            this.Completado.MinimumWidth = 6;
+            this.Completado.Name = "Completado";
+            this.Completado.TrueValue = "SI";
+            this.Completado.Width = 108;
+            // 
             // frmPlanDeSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -429,10 +421,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Panel pnlLineaLibros;
         private System.Windows.Forms.Button btnNuevaFila;
-        private System.Windows.Forms.DataGridViewImageColumn eliminar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
         private System.Windows.Forms.PictureBox pictureLibro3;
         private System.Windows.Forms.PictureBox pictureLibro2;
         private System.Windows.Forms.PictureBox pictureLibro1;
@@ -441,5 +430,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewImageColumn eliminar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
     }
 }
