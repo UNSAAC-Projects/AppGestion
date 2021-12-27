@@ -107,7 +107,7 @@ namespace CapaPresentacion
             this.btnReporteCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCursos.Image")));
             this.btnReporteCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteCursos.Location = new System.Drawing.Point(25, 514);
-            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteCursos.Name = "btnReporteCursos";
             this.btnReporteCursos.Size = new System.Drawing.Size(293, 60);
             this.btnReporteCursos.TabIndex = 12;
@@ -119,7 +119,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(3, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +163,7 @@ namespace CapaPresentacion
             this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
             this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerCursosDocente.Location = new System.Drawing.Point(25, 457);
-            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCursosDocente.Name = "btnVerCursosDocente";
             this.btnVerCursosDocente.Size = new System.Drawing.Size(293, 60);
             this.btnVerCursosDocente.TabIndex = 11;
@@ -265,7 +265,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursosDocente.Location = new System.Drawing.Point(327, 146);
-            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(5);
             this.dgvCursosDocente.Name = "dgvCursosDocente";
             this.dgvCursosDocente.RowHeadersVisible = false;
             this.dgvCursosDocente.RowHeadersWidth = 51;
@@ -318,13 +318,14 @@ namespace CapaPresentacion
             this.pictureBoxLibros.BackColor = System.Drawing.Color.White;
             this.pictureBoxLibros.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLibros.Image")));
             this.pictureBoxLibros.Location = new System.Drawing.Point(509, 234);
-            this.pictureBoxLibros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLibros.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLibros.Name = "pictureBoxLibros";
             this.pictureBoxLibros.Size = new System.Drawing.Size(648, 283);
             this.pictureBoxLibros.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLibros.TabIndex = 17;
             this.pictureBoxLibros.TabStop = false;
             this.pictureBoxLibros.Visible = false;
+            this.pictureBoxLibros.Click += new System.EventHandler(this.pictureBoxLibros_Click);
             // 
             // btnCERRAR
             // 
@@ -462,7 +463,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";

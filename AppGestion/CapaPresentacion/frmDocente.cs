@@ -209,6 +209,9 @@ namespace CapaPresentacion
             RAsistencia.Show();
         }
 
-      
+        private void pictureBoxLibros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
