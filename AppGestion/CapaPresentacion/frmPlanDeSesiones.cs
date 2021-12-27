@@ -238,5 +238,10 @@ namespace CapaPresentacion
         {
             MostrarPlanSesiones(IDCatalogo);
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
