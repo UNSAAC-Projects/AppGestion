@@ -1,4 +1,4 @@
- /* Para ejecutar DB en la nube */
+/* Para ejecutar DB en la nube */
 --use db_a7d2c3_appgestion
 --go
 
@@ -426,4 +426,8 @@ GO
 --exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\FUNDAMENTOS DE LA PROGRAMACION.pdf','C006'
 --exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\Métodos Numéricos2.pdf','C010'
 
-
+--insertar datos LISTA DE ALUMNOS - Docente Doris
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_ListarArchivo 'C006'
+--exec SP_LISTARCURSOSXDOCENTE 'D0004'
