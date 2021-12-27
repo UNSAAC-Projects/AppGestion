@@ -76,7 +76,7 @@ namespace CapaPresentacion
             //Obtener lista de temas
             List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
             object[] arrayItems = listItems.ToArray(); //Convertir a array
-            //comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
         }
 
         public void ImprimirHoraFecha()

@@ -343,81 +343,87 @@ INSERT INTO TMatriculado VALUES
 GO
 */
 
-INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Fecha,Finalizado,IDCatalogo) VALUES 
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','2','2021-11-30','NO','C006'),--Fundamentos de programacion(profe doris)
-('1°UNIDAD','Capitulo0','Examen de entrada','2','2021-12-02','NO','C006'),
-('1°UNIDAD','Capitulo0','Información complememtaria','1','2021-12-03','NO','C006'),--semana0
+INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES 
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006',''),--Fundamentos de programacion(profe doris)
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C006',''),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C006',''),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','2021-12-07','NO','C006'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','2021-12-09','NO','C006'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','2021-12-10','NO','C006'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','2021-12-14','NO','C006'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','2021-12-16','NO','C006'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','2021-12-17','NO','C006'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','2021-12-21','NO','C006'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','2021-12-23','NO','C006'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','2021-12-24','NO','C006'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','2021-12-28','NO','C006'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','2021-12-30','NO','C006'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','2021-12-31','NO','C006'),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','2022-01-04','NO','C006'),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','2022-01-06','NO','C006'),
-('1°UNIDAD','---------','Entrega de Notas','01','2022-01-07','NO','C006'),--semana5
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C006',''),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C006',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C006',''),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C006',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C006',''),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C006',''),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C006',''),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C006',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C006',''),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C006',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C006',''),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C006',''),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','2022-01-11','NO','C006'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','2022-11-13','NO','C006'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','2022-01-14','NO','C006'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','2022-01-18','NO','C006'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','2022-01-20','NO','C006'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','2022-01-21','NO','C006'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','2022-01-25','NO','C006'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','2022-01-27','NO','C006'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','2022-01-28','NO','C006'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','2022-02-01','NO','C006'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','2022-02-03','NO','C006'),
-('2°UNIDAD','Capitulo4','Repaso','01','2022-02-04','NO','C006'),--semana9
-('2°UNIDAD','---------','Examen Parcial','02','2022-02-08','NO','C006'),
-('2°UNIDAD','---------','Revision Examen Parcial I','02','2022-02-10','NO','C006'),
-('2°UNIDAD','---------','Entrega de Notas','01','2022-02-11','NO','C006'),--semana10
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C006',''),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C006',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C006',''),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C006',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C006',''),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C006',''),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C006',''),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C006',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C006',''),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C006',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C006',''),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C006',''),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','2022-02-15','NO','C006'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','2022-02-17','NO','C006'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','2022-02-18','NO','C006'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','2022-02-22','NO','C006'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','2022-02-24','NO','C006'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','2022-02-25','NO','C006'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','2022-03-01','NO','C006'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','2022-03-03','NO','C006'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','2022-03-04','NO','C006'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','2022-03-08','NO','C006'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','2022-03-10','NO','C006'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','2022-03-11','NO','C006'),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','2022-03-15','NO','C006'),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','2022-03-17','NO','C006'),
-('3°UNIDAD','---------','Entrega de Notas','01','2022-03-18','NO','C006'),--semana15
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C006',''),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C006',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C006',''),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C006',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C006',''),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C006',''),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C006',''),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C006',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C006',''),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C006',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C006',''),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C006',''),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana15
 
 ---C0010 -> MÉTODOS NUMÉRICOS
 --(Unidad,Capitulo,Tema,HorasProgramadas,Fecha,Finalizado,IDCatalogo)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','2021-11-30','SI','C010'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','2021-12-02','SI','C010'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','2021-12-03','SI','C010'),
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','SI','C010',''),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','SI','C010',''),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','SI','C010',''),
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Introducción y Teoría de Errores','04','2021-12-07','NO','C010'),
-('1°UNIDAD','Capitulo2','Series de Taylor','04','2021-12-09','NO','C010'),
-('1°UNIDAD','Capitulo3','Resolución de Ecuaciones no Lineales','08','2021-12-10','NO','C010'),
-('1°UNIDAD','Capitulo4','Resolución de Sistemas de Ecuaciones Lineales','08','2021-12-14','NO','C010'),
-('1°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 1','04','2021-12-16','NO','C010'),
-('1°UNIDAD','','Examen Parcial I','02','2022-03-15','NO','C010'),
-('1°UNIDAD','','Revision Examen Parcial I','02','2022-03-17','NO','C010'),
-('1°UNIDAD','','Entrega de Notas','01','2022-03-18','NO','C010'),--semana15
+('1°UNIDAD','Capitulo1','Introducción y Teoría de Errores','04','NO','C010',''),
+('1°UNIDAD','Capitulo2','Series de Taylor','04','NO','C010',''),
+('1°UNIDAD','Capitulo3','Resolución de Ecuaciones no Lineales','08','NO','C010',''),
+('1°UNIDAD','Capitulo4','Resolución de Sistemas de Ecuaciones Lineales','08','NO','C010',''),
+('1°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 1','04','NO','C010',''),
+('1°UNIDAD','','Examen Parcial I','02','NO','C010',''),
+('1°UNIDAD','','Revision Examen Parcial I','02','NO','C010',''),
+('1°UNIDAD','','Entrega de Notas','01','NO','C010',''),--semana15
 
 -- 2°parcial
-('2°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 2','04','2021-12-17','NO','C010'),
-('2°UNIDAD','Capitulo6','Diferenciación Numérica','04','2021-12-21','NO','C010'),
-('2°UNIDAD','Capitulo7','Integración Numérica','08','2021-12-23','NO','C010'),
-('2°UNIDAD','Capitulo8','Ecuaciones Diferenciales Ordinarias','08','2021-12-24','NO','C010'),
-('2°UNIDAD','','Examen Parcial II','02','2022-03-15','NO','C010'),
-('2°UNIDAD','','Revision Examen Parcial II','02','2022-03-17','NO','C010'),
-('2°UNIDAD','','Entrega de Notas','01','2022-03-18','NO','C010');--semana15
+('2°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 2','04','NO','C010',''),
+('2°UNIDAD','Capitulo6','Diferenciación Numérica','04','NO','C010',''),
+('2°UNIDAD','Capitulo7','Integración Numérica','08','NO','C010',''),
+('2°UNIDAD','Capitulo8','Ecuaciones Diferenciales Ordinarias','08','NO','C010',''),
+('2°UNIDAD','','Examen Parcial II','02','NO','C010',''),
+('2°UNIDAD','','Revision Examen Parcial II','02','NO','C010',''),
+('2°UNIDAD','','Entrega de Notas','01','NO','C010','');--semana15
+
+GO
+
+----Silabos insertar-
+--exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\FUNDAMENTOS DE LA PROGRAMACION.pdf','C006'
+--exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\Métodos Numéricos2.pdf','C010'
 
 

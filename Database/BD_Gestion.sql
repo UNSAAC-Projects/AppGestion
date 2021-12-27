@@ -674,7 +674,8 @@ select
 	P.Capitulo, 
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
-	p.Finalizado
+	p.Finalizado,
+	p.Observacion
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
@@ -825,9 +826,10 @@ as
 GO
 
 --insertar datos LISTA DE ALUMNOS - Docente Doris
---exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
---exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\8vosemestre\Ing.Software\proyecto\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
---select * from TArchivo
+select * from TPlanSesiones where IDCatalogo='C006'
 --select * from TDocente
+
