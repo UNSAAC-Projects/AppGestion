@@ -180,5 +180,13 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            dgvAsistencia.Columns["ALUMNO"].ReadOnly = true;
+            dgvAsistencia.Columns["APELLIDOS Y NOMBRES"].ReadOnly = true;
+            
+        }
     }
 }
