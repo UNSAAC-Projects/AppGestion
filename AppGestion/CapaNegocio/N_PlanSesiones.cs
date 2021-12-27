@@ -30,18 +30,22 @@ namespace CapaNegocio
             data.EliminarPlanSesiones(id);
         }
 
-        public List<string> ObtenerTemasXUnidad(string IdCatalogo, string Unidad)
+        public List<string> ObtenerTemasProximos(string IdCatalogo, out int idSiguienteTema)
         {
-            return data.ObtenerTemasXUnidad(IdCatalogo, Unidad);
+            return data.ObtenerTemasProximos(IdCatalogo, out idSiguienteTema);
         }
 
-        public string[] SiguienteTema(string IdCatalogo)
+        public string SiguienteTema(string IdCatalogo)
         {
             return data.SiguienteTema(IdCatalogo);
         }
         public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo)
         {
             data.GuardarPlanSesiones(tabla,IDCatalogo);
+        }
+        public void InsertarNuevoTema(int idTemaAnterior, string codCatalogo, string tema)
+        {
+            data.InsertarNuevoTema(idTemaAnterior, codCatalogo, tema);
         }
     }
 }

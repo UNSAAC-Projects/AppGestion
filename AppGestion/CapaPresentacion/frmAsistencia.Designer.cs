@@ -64,6 +64,7 @@ namespace CapaPresentacion
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.comboBoxTema = new System.Windows.Forms.ComboBox();
+            this.lblAsignatura = new System.Windows.Forms.Label();
             this.pnlAsistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
@@ -471,6 +472,18 @@ namespace CapaPresentacion
             this.comboBoxTema.Size = new System.Drawing.Size(252, 28);
             this.comboBoxTema.TabIndex = 25;
             // 
+            // lblAsignatura
+            // 
+            this.lblAsignatura.AutoSize = true;
+            this.lblAsignatura.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsignatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblAsignatura.Location = new System.Drawing.Point(232, 46);
+            this.lblAsignatura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAsignatura.Name = "lblAsignatura";
+            this.lblAsignatura.Size = new System.Drawing.Size(12, 16);
+            this.lblAsignatura.TabIndex = 26;
+            this.lblAsignatura.Text = "-";
+            // 
             // frmAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -553,5 +566,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ComboBox comboBoxTema;
+        public System.Windows.Forms.Label lblAsignatura;
     }
 }

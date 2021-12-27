@@ -236,7 +236,7 @@ namespace CapaPresentacion
 
         private void frmPlanDeSesiones_Load(object sender, EventArgs e)
         {
-
+            MostrarPlanSesiones(IDCatalogo);
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

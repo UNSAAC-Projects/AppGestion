@@ -30,15 +30,18 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPlanDeSeciones = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
             this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPlanSesiones = new System.Windows.Forms.Label();
             this.lblNombreAsignatura = new System.Windows.Forms.Label();
             this.pnlLineaLibros = new System.Windows.Forms.Panel();
@@ -135,22 +138,22 @@ namespace CapaPresentacion
             // 
             this.dgvPlanSesiones.AllowDrop = true;
             this.dgvPlanSesiones.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPlanSesiones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPlanSesiones.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlanSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPlanSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPlanSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanSesiones.ColumnHeadersHeight = 35;
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -178,6 +181,29 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
             this.dgvPlanSesiones.DoubleClick += new System.EventHandler(this.dgvPlanSesiones_DoubleClick);
+            // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.eliminar.MinimumWidth = 6;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Width = 72;
+            // 
+            // Completado
+            // 
+            this.Completado.FalseValue = "NO";
+            this.Completado.HeaderText = "Completado";
+            this.Completado.MinimumWidth = 6;
+            this.Completado.Name = "Completado";
+            this.Completado.TrueValue = "SI";
+            this.Completado.Width = 108;
+            // 
+            // Observacion
+            // 
+            this.Observacion.MinimumWidth = 6;
+            this.Observacion.Name = "Observacion";
+            this.Observacion.Width = 132;
             // 
             // labelPlanSesiones
             // 
@@ -432,5 +458,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
     }
 }
