@@ -30,8 +30,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPlanDeSeciones = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -76,11 +76,10 @@ namespace CapaPresentacion
             this.pnlPlanDeSeciones.Controls.Add(this.btnMinPlanSesiones);
             this.pnlPlanDeSeciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPlanDeSeciones.Location = new System.Drawing.Point(0, 0);
-            this.pnlPlanDeSeciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPlanDeSeciones.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPlanDeSeciones.Name = "pnlPlanDeSeciones";
             this.pnlPlanDeSeciones.Size = new System.Drawing.Size(837, 35);
             this.pnlPlanDeSeciones.TabIndex = 10;
-            this.pnlPlanDeSeciones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPlanDeSeciones_Paint);
             this.pnlPlanDeSeciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPlanDeSeciones_MouseMove);
             // 
             // pictureBox1
@@ -110,7 +109,7 @@ namespace CapaPresentacion
             this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
             this.btnClosePlanSesiones.Location = new System.Drawing.Point(801, 3);
-            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(2);
             this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
             this.btnClosePlanSesiones.Size = new System.Drawing.Size(27, 28);
             this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -123,7 +122,7 @@ namespace CapaPresentacion
             this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
             this.btnMinPlanSesiones.Location = new System.Drawing.Point(770, 3);
-            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
             this.btnMinPlanSesiones.Size = new System.Drawing.Size(27, 28);
             this.btnMinPlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,29 +134,29 @@ namespace CapaPresentacion
             // 
             this.dgvPlanSesiones.AllowDrop = true;
             this.dgvPlanSesiones.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPlanSesiones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPlanSesiones.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlanSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPlanSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPlanSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPlanSesiones.ColumnHeadersHeight = 35;
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
             this.Completado});
             this.dgvPlanSesiones.Location = new System.Drawing.Point(27, 93);
-            this.dgvPlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPlanSesiones.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPlanSesiones.Name = "dgvPlanSesiones";
             this.dgvPlanSesiones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPlanSesiones.RowHeadersVisible = false;
@@ -169,7 +168,6 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
-            this.dgvPlanSesiones.DoubleClick += new System.EventHandler(this.dgvPlanSesiones_DoubleClick);
             // 
             // eliminar
             // 
@@ -221,7 +219,7 @@ namespace CapaPresentacion
             // 
             this.pnlLineaLibros.BackColor = System.Drawing.Color.DarkGray;
             this.pnlLineaLibros.Location = new System.Drawing.Point(3, 465);
-            this.pnlLineaLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLineaLibros.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLineaLibros.Name = "pnlLineaLibros";
             this.pnlLineaLibros.Size = new System.Drawing.Size(832, 5);
             this.pnlLineaLibros.TabIndex = 22;
@@ -230,7 +228,7 @@ namespace CapaPresentacion
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Location = new System.Drawing.Point(27, 93);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(782, 2);
             this.panel2.TabIndex = 23;
@@ -239,7 +237,7 @@ namespace CapaPresentacion
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Location = new System.Drawing.Point(29, 374);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(782, 2);
             this.panel3.TabIndex = 24;
@@ -248,7 +246,7 @@ namespace CapaPresentacion
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.Location = new System.Drawing.Point(27, 93);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(2, 282);
             this.panel5.TabIndex = 36;
@@ -257,7 +255,7 @@ namespace CapaPresentacion
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Location = new System.Drawing.Point(808, 93);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(2, 282);
             this.panel4.TabIndex = 37;
@@ -273,7 +271,7 @@ namespace CapaPresentacion
             // pictureLibro3
             // 
             this.pictureLibro3.Location = new System.Drawing.Point(139, 420);
-            this.pictureLibro3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureLibro3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureLibro3.Name = "pictureLibro3";
             this.pictureLibro3.Size = new System.Drawing.Size(62, 55);
             this.pictureLibro3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -292,7 +290,7 @@ namespace CapaPresentacion
             this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaFila.ForeColor = System.Drawing.Color.White;
             this.btnNuevaFila.Location = new System.Drawing.Point(462, 420);
-            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuevaFila.Name = "btnNuevaFila";
             this.btnNuevaFila.Size = new System.Drawing.Size(176, 37);
             this.btnNuevaFila.TabIndex = 23;
@@ -314,7 +312,7 @@ namespace CapaPresentacion
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Location = new System.Drawing.Point(646, 420);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(163, 37);
             this.btnGuardar.TabIndex = 21;
@@ -338,7 +336,7 @@ namespace CapaPresentacion
             // 
             this.pictureLibro1.Image = ((System.Drawing.Image)(resources.GetObject("pictureLibro1.Image")));
             this.pictureLibro1.Location = new System.Drawing.Point(4, 394);
-            this.pictureLibro1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureLibro1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureLibro1.Name = "pictureLibro1";
             this.pictureLibro1.Size = new System.Drawing.Size(78, 67);
             this.pictureLibro1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -349,13 +347,12 @@ namespace CapaPresentacion
             // 
             this.pictureLibro2.Image = ((System.Drawing.Image)(resources.GetObject("pictureLibro2.Image")));
             this.pictureLibro2.Location = new System.Drawing.Point(67, 407);
-            this.pictureLibro2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureLibro2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureLibro2.Name = "pictureLibro2";
             this.pictureLibro2.Size = new System.Drawing.Size(84, 57);
             this.pictureLibro2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLibro2.TabIndex = 34;
             this.pictureLibro2.TabStop = false;
-            this.pictureLibro2.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // dataGridViewImageColumn2
             // 
@@ -387,8 +384,9 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureLibro2);
             this.Controls.Add(this.dgvPlanSesiones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPlanDeSesiones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPlanDeSesiones";
             this.Load += new System.EventHandler(this.frmPlanDeSesiones_Load);
             this.pnlPlanDeSeciones.ResumeLayout(false);

@@ -228,9 +228,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanDeSesiones.resx">
       <DependentUpon>frmPlanDeSesiones.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteAsistencia.resx">
       <DependentUpon>FrmReporteAsistencia.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
