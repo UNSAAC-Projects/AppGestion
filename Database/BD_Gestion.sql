@@ -678,6 +678,7 @@ select
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
 	p.Finalizado
+	p.Observacion
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
