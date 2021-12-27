@@ -30,7 +30,6 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPlanDeSeciones = new System.Windows.Forms.Panel();
@@ -57,8 +56,6 @@ namespace CapaPresentacion
             this.pictureLibro1 = new System.Windows.Forms.PictureBox();
             this.pictureLibro2 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
@@ -79,9 +76,9 @@ namespace CapaPresentacion
             this.pnlPlanDeSeciones.Controls.Add(this.btnMinPlanSesiones);
             this.pnlPlanDeSeciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPlanDeSeciones.Location = new System.Drawing.Point(0, 0);
-            this.pnlPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlPlanDeSeciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlPlanDeSeciones.Name = "pnlPlanDeSeciones";
-            this.pnlPlanDeSeciones.Size = new System.Drawing.Size(1116, 43);
+            this.pnlPlanDeSeciones.Size = new System.Drawing.Size(837, 35);
             this.pnlPlanDeSeciones.TabIndex = 10;
             this.pnlPlanDeSeciones.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPlanDeSeciones_Paint);
             this.pnlPlanDeSeciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPlanDeSeciones_MouseMove);
@@ -89,10 +86,9 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(28, 29);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
@@ -102,9 +98,10 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(48, 9);
+            this.label11.Location = new System.Drawing.Point(36, 7);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 23);
+            this.label11.Size = new System.Drawing.Size(153, 21);
             this.label11.TabIndex = 32;
             this.label11.Text = "PLAN DE SESIONES";
             // 
@@ -112,10 +109,10 @@ namespace CapaPresentacion
             // 
             this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
-            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1068, 4);
-            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClosePlanSesiones.Location = new System.Drawing.Point(801, 3);
+            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
-            this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
+            this.btnClosePlanSesiones.Size = new System.Drawing.Size(27, 28);
             this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnClosePlanSesiones.TabIndex = 1;
             this.btnClosePlanSesiones.TabStop = false;
@@ -125,10 +122,10 @@ namespace CapaPresentacion
             // 
             this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
-            this.btnMinPlanSesiones.Location = new System.Drawing.Point(1027, 4);
-            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinPlanSesiones.Location = new System.Drawing.Point(770, 3);
+            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
-            this.btnMinPlanSesiones.Size = new System.Drawing.Size(36, 34);
+            this.btnMinPlanSesiones.Size = new System.Drawing.Size(27, 28);
             this.btnMinPlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinPlanSesiones.TabIndex = 0;
             this.btnMinPlanSesiones.TabStop = false;
@@ -138,37 +135,29 @@ namespace CapaPresentacion
             // 
             this.dgvPlanSesiones.AllowDrop = true;
             this.dgvPlanSesiones.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPlanSesiones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPlanSesiones.BackgroundColor = System.Drawing.Color.White;
             this.dgvPlanSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPlanSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvPlanSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlanSesiones.ColumnHeadersHeight = 35;
             this.dgvPlanSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
             this.Completado});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPlanSesiones.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPlanSesiones.Location = new System.Drawing.Point(36, 115);
-            this.dgvPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvPlanSesiones.Location = new System.Drawing.Point(27, 93);
+            this.dgvPlanSesiones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPlanSesiones.Name = "dgvPlanSesiones";
             this.dgvPlanSesiones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvPlanSesiones.RowHeadersVisible = false;
@@ -176,7 +165,7 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.RowTemplate.Height = 24;
             this.dgvPlanSesiones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvPlanSesiones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPlanSesiones.Size = new System.Drawing.Size(1043, 347);
+            this.dgvPlanSesiones.Size = new System.Drawing.Size(782, 282);
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
@@ -188,7 +177,7 @@ namespace CapaPresentacion
             this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
             this.eliminar.MinimumWidth = 6;
             this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
+            this.eliminar.Width = 58;
             // 
             // Completado
             // 
@@ -197,7 +186,7 @@ namespace CapaPresentacion
             this.Completado.MinimumWidth = 6;
             this.Completado.Name = "Completado";
             this.Completado.TrueValue = "SI";
-            this.Completado.Width = 108;
+            this.Completado.Width = 87;
             // 
             // Observacion
             // 
@@ -210,9 +199,10 @@ namespace CapaPresentacion
             this.labelPlanSesiones.AutoSize = true;
             this.labelPlanSesiones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPlanSesiones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.labelPlanSesiones.Location = new System.Drawing.Point(74, 70);
+            this.labelPlanSesiones.Location = new System.Drawing.Point(56, 57);
+            this.labelPlanSesiones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPlanSesiones.Name = "labelPlanSesiones";
-            this.labelPlanSesiones.Size = new System.Drawing.Size(388, 23);
+            this.labelPlanSesiones.Size = new System.Drawing.Size(302, 19);
             this.labelPlanSesiones.TabIndex = 14;
             this.labelPlanSesiones.Text = "PLAN DE SESIONES DE LA ASIGNATURA :";
             // 
@@ -220,55 +210,56 @@ namespace CapaPresentacion
             // 
             this.lblNombreAsignatura.AutoSize = true;
             this.lblNombreAsignatura.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAsignatura.Location = new System.Drawing.Point(468, 70);
+            this.lblNombreAsignatura.Location = new System.Drawing.Point(351, 57);
+            this.lblNombreAsignatura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreAsignatura.Name = "lblNombreAsignatura";
-            this.lblNombreAsignatura.Size = new System.Drawing.Size(16, 21);
+            this.lblNombreAsignatura.Size = new System.Drawing.Size(14, 19);
             this.lblNombreAsignatura.TabIndex = 20;
             this.lblNombreAsignatura.Text = "-";
             // 
             // pnlLineaLibros
             // 
             this.pnlLineaLibros.BackColor = System.Drawing.Color.DarkGray;
-            this.pnlLineaLibros.Location = new System.Drawing.Point(4, 572);
-            this.pnlLineaLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlLineaLibros.Location = new System.Drawing.Point(3, 465);
+            this.pnlLineaLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlLineaLibros.Name = "pnlLineaLibros";
-            this.pnlLineaLibros.Size = new System.Drawing.Size(1110, 6);
+            this.pnlLineaLibros.Size = new System.Drawing.Size(832, 5);
             this.pnlLineaLibros.TabIndex = 22;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Location = new System.Drawing.Point(36, 115);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(27, 93);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1043, 2);
+            this.panel2.Size = new System.Drawing.Size(782, 2);
             this.panel2.TabIndex = 23;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Location = new System.Drawing.Point(39, 460);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(29, 374);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1043, 2);
+            this.panel3.Size = new System.Drawing.Size(782, 2);
             this.panel3.TabIndex = 24;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Location = new System.Drawing.Point(36, 115);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel5.Location = new System.Drawing.Point(27, 93);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 347);
+            this.panel5.Size = new System.Drawing.Size(2, 282);
             this.panel5.TabIndex = 36;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Location = new System.Drawing.Point(1077, 115);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Location = new System.Drawing.Point(808, 93);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(2, 347);
+            this.panel4.Size = new System.Drawing.Size(2, 282);
             this.panel4.TabIndex = 37;
             // 
             // dataGridViewImageColumn1
@@ -281,10 +272,10 @@ namespace CapaPresentacion
             // 
             // pictureLibro3
             // 
-            this.pictureLibro3.Image = ((System.Drawing.Image)(resources.GetObject("pictureLibro3.Image")));
-            this.pictureLibro3.Location = new System.Drawing.Point(185, 517);
+            this.pictureLibro3.Location = new System.Drawing.Point(139, 420);
+            this.pictureLibro3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureLibro3.Name = "pictureLibro3";
-            this.pictureLibro3.Size = new System.Drawing.Size(82, 68);
+            this.pictureLibro3.Size = new System.Drawing.Size(62, 55);
             this.pictureLibro3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLibro3.TabIndex = 32;
             this.pictureLibro3.TabStop = false;
@@ -300,11 +291,10 @@ namespace CapaPresentacion
             this.btnNuevaFila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevaFila.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaFila.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevaFila.Image")));
-            this.btnNuevaFila.Location = new System.Drawing.Point(625, 517);
-            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(5);
+            this.btnNuevaFila.Location = new System.Drawing.Point(462, 420);
+            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevaFila.Name = "btnNuevaFila";
-            this.btnNuevaFila.Size = new System.Drawing.Size(235, 46);
+            this.btnNuevaFila.Size = new System.Drawing.Size(176, 37);
             this.btnNuevaFila.TabIndex = 23;
             this.btnNuevaFila.Text = "AÑADIR NUEVA FILA";
             this.btnNuevaFila.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -323,11 +313,10 @@ namespace CapaPresentacion
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
-            this.btnGuardar.Location = new System.Drawing.Point(862, 517);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnGuardar.Location = new System.Drawing.Point(646, 420);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(217, 46);
+            this.btnGuardar.Size = new System.Drawing.Size(163, 37);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "GUARDAR ";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -338,10 +327,9 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1273, 84);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(955, 68);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(323, 174);
+            this.pictureBox2.Size = new System.Drawing.Size(242, 141);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 31;
             this.pictureBox2.TabStop = false;
@@ -349,9 +337,10 @@ namespace CapaPresentacion
             // pictureLibro1
             // 
             this.pictureLibro1.Image = ((System.Drawing.Image)(resources.GetObject("pictureLibro1.Image")));
-            this.pictureLibro1.Location = new System.Drawing.Point(6, 485);
+            this.pictureLibro1.Location = new System.Drawing.Point(4, 394);
+            this.pictureLibro1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureLibro1.Name = "pictureLibro1";
-            this.pictureLibro1.Size = new System.Drawing.Size(104, 82);
+            this.pictureLibro1.Size = new System.Drawing.Size(78, 67);
             this.pictureLibro1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLibro1.TabIndex = 35;
             this.pictureLibro1.TabStop = false;
@@ -359,9 +348,10 @@ namespace CapaPresentacion
             // pictureLibro2
             // 
             this.pictureLibro2.Image = ((System.Drawing.Image)(resources.GetObject("pictureLibro2.Image")));
-            this.pictureLibro2.Location = new System.Drawing.Point(89, 501);
+            this.pictureLibro2.Location = new System.Drawing.Point(67, 407);
+            this.pictureLibro2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureLibro2.Name = "pictureLibro2";
-            this.pictureLibro2.Size = new System.Drawing.Size(112, 70);
+            this.pictureLibro2.Size = new System.Drawing.Size(84, 57);
             this.pictureLibro2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLibro2.TabIndex = 34;
             this.pictureLibro2.TabStop = false;
@@ -375,29 +365,12 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 72;
             // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.eliminar.MinimumWidth = 6;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
-            // 
-            // Completado
-            // 
-            this.Completado.FalseValue = "NO";
-            this.Completado.HeaderText = "Completado";
-            this.Completado.MinimumWidth = 6;
-            this.Completado.Name = "Completado";
-            this.Completado.TrueValue = "SI";
-            this.Completado.Width = 108;
-            // 
             // frmPlanDeSesiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1116, 585);
+            this.ClientSize = new System.Drawing.Size(837, 475);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
@@ -414,7 +387,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureLibro2);
             this.Controls.Add(this.dgvPlanSesiones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmPlanDeSesiones";
             this.Text = "frmPlanDeSesiones";
             this.Load += new System.EventHandler(this.frmPlanDeSesiones_Load);
@@ -458,8 +431,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observacion;
     }
 }
