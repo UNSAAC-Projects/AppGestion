@@ -173,5 +173,18 @@ namespace CapaDatos
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
+
+        public void  InsertarNuevoTema(int idTemaAnterior, string codCatalogo, string tema)
+        {
+            SqlCommand cmd = new SqlCommand("SP_INSERTAR_TEMA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@IdAnterior", idTemaAnterior);
+            cmd.Parameters.AddWithValue("@IDCatalogo", codCatalogo);
+            cmd.Parameters.AddWithValue("@Tema", tema);
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

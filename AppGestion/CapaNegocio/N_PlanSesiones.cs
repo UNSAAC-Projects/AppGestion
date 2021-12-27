@@ -43,5 +43,9 @@ namespace CapaNegocio
         {
             data.GuardarPlanSesiones(tabla,IDCatalogo);
         }
+        public void InsertarNuevoTema(int idTemaAnterior, string codCatalogo, string tema)
+        {
+            data.InsertarNuevoTema(idTemaAnterior, codCatalogo, tema);
+        }
     }
 }
