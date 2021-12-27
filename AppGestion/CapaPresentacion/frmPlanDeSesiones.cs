@@ -44,7 +44,7 @@ namespace CapaPresentacion
             dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
             dgvPlanSesiones.Columns["Completado"].DisplayIndex = 4;
 
-            dgvPlanSesiones.Columns["Finalizado"].Visible = true;      
+            dgvPlanSesiones.Columns["Finalizado"].Visible = false;      
         }
 
         public void MostrarPlanSesiones(string CodCatalogo)
@@ -158,15 +158,6 @@ namespace CapaPresentacion
 
         }
 
-        private void dgvPlanSesiones_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlPlanDeSeciones_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         //Movimiento panel
         int posY = 0;
         int posX = 0;
@@ -201,9 +192,6 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("No se selecciono ninguna fila");
             }
-
-           
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -237,11 +225,6 @@ namespace CapaPresentacion
         private void frmPlanDeSesiones_Load(object sender, EventArgs e)
         {
             MostrarPlanSesiones(IDCatalogo);
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
