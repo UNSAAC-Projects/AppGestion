@@ -680,16 +680,6 @@ from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
 
--- Obtener temas de plan de sesión x unidad, de un determinado catalogo
-CREATE PROC SP_OBTENER_TEMASXUNIDAD
-	@IDCatalogo varchar(6),
-	@Unidad varchar(40)
-AS
-	select
-	case when Capitulo = '' then (Tema) else (Capitulo + ' - ' + Tema) end as TEMA
-	from TPlanSesiones
-	where IDCatalogo = @IDCatalogo and Unidad = @Unidad
-GO
 
 
 -- Editar plan sesiones
@@ -716,10 +706,60 @@ go
 CREATE PROC SP_SIGUIENTE_TEMA
 	@IdCatalogo varchar(6)
 AS
-	SELECT TOP 1 * FROM TPlanSesiones 
+	SELECT TOP 1 Tema FROM TPlanSesiones 
 	WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
 GO
 
+-- Obtener los 3 temas anteriores y posteriores a dictar
+CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
+	@IDCatalogo varchar(6),
+	@IDTema INT OUTPUT --id del tema siguiente a dictar
+AS
+	SET @IDTema = (
+		SELECT TOP 1 Id FROM TPlanSesiones 
+		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
+	) --Obtener id
+
+	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+	WHERE Id = @IDTema 
+	OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+GO
+
+--Agregar nuevo tema despues del ID especificado
+CREATE PROC SP_INSERTAR_TEMA
+	@IdAnterior int, --ID del tema anterior
+	@IDCatalogo varchar(6),
+	@Tema varchar(255)
+AS
+	--Obtener datos de la tabla
+	SELECT *
+	INTO #tempPlan
+	FROM TPlanSesiones 
+	WHERE IDCatalogo = @IDCatalogo
+
+	--Eliminar todo el contenido
+	DELETE FROM TPlanSesiones
+	WHERE IDCatalogo = @IDCatalogo
+
+	--Agregar informacion anterior al ID
+	INSERT INTO TPlanSesiones
+	SELECT Unidad, Capitulo, Tema, HorasProgramadas, IDCatalogo, Finalizado, Observacion
+	FROM #tempPlan
+	WHERE Id <= @IdAnterior
+
+	--Agregar nuevo tema
+	INSERT INTO TPlanSesiones VALUES ('','',@Tema,'02',@IDCatalogo,'NO','')
+
+	--Agregar informacion posterior al ID
+	INSERT INTO TPlanSesiones
+	SELECT Unidad, Capitulo, Tema, HorasProgramadas, IDCatalogo, Finalizado, Observacion
+	FROM #tempPlan
+	WHERE Id > @IdAnterior
+
+	--Eliminar tabla temporal
+	DROP TABLE #tempPlan
+GO
 
 /*------------------------------------- PROCEDIMIENTOS ALMACENADOS PARA SILABO -----------------------------------------*/
 -----Subir Silabo-----
@@ -826,8 +866,8 @@ as
 GO
 
 --insertar datos LISTA DE ALUMNOS - Docente Doris
-exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
-exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 select * from TPlanSesiones where IDCatalogo='C006'
