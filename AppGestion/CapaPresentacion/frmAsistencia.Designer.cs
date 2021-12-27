@@ -153,11 +153,11 @@ namespace CapaPresentacion
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.label1.Location = new System.Drawing.Point(188, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 21);
+            this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 10;
             this.label1.Text = "Docente :";
             // 
@@ -345,11 +345,12 @@ namespace CapaPresentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.label4.Location = new System.Drawing.Point(152, 119);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 21);
+            this.label4.Size = new System.Drawing.Size(129, 19);
             this.label4.TabIndex = 17;
             this.label4.Text = "Fecha y Hora :";
             // 
@@ -465,7 +466,7 @@ namespace CapaPresentacion
             this.comboBoxTema.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTema.FormattingEnabled = true;
             this.comboBoxTema.Location = new System.Drawing.Point(180, 156);
-            this.comboBoxTema.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxTema.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxTema.Name = "comboBoxTema";
             this.comboBoxTema.Size = new System.Drawing.Size(252, 28);
             this.comboBoxTema.TabIndex = 25;
