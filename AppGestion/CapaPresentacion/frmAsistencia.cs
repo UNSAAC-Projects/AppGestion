@@ -12,17 +12,16 @@ using SpreadsheetLight;
 using CapaEntidades;
 using CapaNegocio;
 
-
 namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
         FrmLogin L = new FrmLogin();
-
         E_Asistencia entities = new E_Asistencia();
-       
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
+
         string IdCatalogo, NombreAsignatura;
+        int indexTema; //Indice del siguiente tema a dictar
 
         public frmAsistencia()
         {
@@ -143,12 +142,29 @@ namespace CapaPresentacion
         {
             if (ExportarDatos(dgvAsistencia))
             {
+                //Guardar un tema si no está en el combo box o actualizarlo como tema completado
+                GuardarActualizarTema();
+
                 MessageBox.Show("Guardado exitosamente...");
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Error al guardar...");
+            }
+        }
+
+        private void GuardarActualizarTema()
+        {
+            string item = comboBoxTema.Text.Trim();
+            if (comboBoxTema.Items.Contains(item))
+            {
+                //Actualizar como completado
+            }
+            else
+            {
+                //Agregar tema a plan sesiones
+                oPlanSesiones.InsertarNuevoTema(indexTema, IdCatalogo, item);
             }
         }
 
