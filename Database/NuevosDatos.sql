@@ -1,4 +1,4 @@
- /* Para ejecutar DB en la nube */
+/* Para ejecutar DB en la nube */
 --use db_a7d2c3_appgestion
 --go
 

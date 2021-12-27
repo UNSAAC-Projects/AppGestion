@@ -1,6 +1,3 @@
-/***********************************************************************************
-					       CREACION BASE DE DATOS APP GESTION
-************************************************************************************/
 use master
 go
 
@@ -873,5 +870,6 @@ GO
 --exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
---select * from TArchivo
+select * from TPlanSesiones where IDCatalogo='C006'
 --select * from TDocente
+
