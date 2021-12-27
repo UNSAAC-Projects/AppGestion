@@ -12,26 +12,26 @@ using SpreadsheetLight;
 using CapaEntidades;
 using CapaNegocio;
 
-
 namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
         FrmLogin L = new FrmLogin();
-
         E_Asistencia entities = new E_Asistencia();
-       
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-        string IdCatalogo;
+
+        string IdCatalogo, NombreAsignatura;
+        int indexTema; //Indice del siguiente tema a dictar
 
         public frmAsistencia()
         {
             InitializeComponent();
         }
-        public frmAsistencia(string pIdCatalogo)
+        public frmAsistencia(string pIdCatalogo, string pNombreAsignatura)
         {
             InitializeComponent();
             IdCatalogo = pIdCatalogo;
+            NombreAsignatura = pNombreAsignatura;
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -46,8 +46,11 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            // Mostrar temas a dictar
+            // Mostrar temas a dictar en el combobox
             MostrarTemas();
+
+            // Mostrar nombre de la asignatura
+            lblAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
@@ -73,10 +76,13 @@ namespace CapaPresentacion
 
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
-            //Obtener lista de temas
-            List<string> listItems = oPlanSesiones.ObtenerTemasXUnidad(IdCatalogo, "1°UNIDAD");
+
+            //Obtener lista de temas e id del siguiente tema
+            List<string> listItems = oPlanSesiones.ObtenerTemasProximos(IdCatalogo, out int indexSiguienteTema);
+            //Mostrar temas en combobox
             object[] arrayItems = listItems.ToArray(); //Convertir a array
-            //comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+            comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
         }
 
         public void ImprimirHoraFecha()
@@ -86,7 +92,13 @@ namespace CapaPresentacion
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
         }
-        
+
+        public string ObtenerRutaProyecto()
+        {//Método para obtener la ruta del proyecto
+            string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+            return rutaProyecto;
+        }
+
         bool  ExportarDatos(DataGridView datalistado)
         {
             //concatenar con el nombre del tema.
@@ -97,8 +109,8 @@ namespace CapaPresentacion
 
             string name = datos.NombreCurso + Date;
 
-
-            string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
+            string ruta = $@"{ObtenerRutaProyecto()}\..\ListaAlumnosDia\" + name + ".xlsx";
+            //string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
             SLDocument osLDocument = new SLDocument();
             System.Data.DataTable dt = new System.Data.DataTable();
             //registrar columnas
@@ -109,31 +121,30 @@ namespace CapaPresentacion
             //registrar filas
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
                 string alumnos = Convert.ToString(row.Cells["ALUMNO"].Value);
                 string apellidos = Convert.ToString(row.Cells["APELLIDOS Y NOMBRES"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 dt.Rows.Add(asistencia, alumnos, apellidos, observacion);
             }
-
             osLDocument.ImportDataTable(1,1,dt,true);
             osLDocument.SaveAs(ruta);
             //insertar lista a la base de datos
             entities.curso = datos.NombreCurso;
-            entities.tema = "HOLA";
+            entities.tema = comboBoxTema.Text;
             entities.fecha = lblFecha.Text;
             entities.asistencia =ruta;
             entities.idcatalogo = datos.CodCatalogo;
             A.CreandoCurso_Asistencia(entities);
-
             return true;
-
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
             if (ExportarDatos(dgvAsistencia))
             {
+                //Guardar un tema si no está en el combo box o actualizarlo como tema completado
+                GuardarActualizarTema();
+
                 MessageBox.Show("Guardado exitosamente...");
                 this.Close();
             }
@@ -141,16 +152,27 @@ namespace CapaPresentacion
             {
                 MessageBox.Show("Error al guardar...");
             }
+        }
 
+        private void GuardarActualizarTema()
+        {
+            string item = comboBoxTema.Text.Trim();
+            if (comboBoxTema.Items.Contains(item))
+            {
+                //Actualizar como completado
+            }
+            else
+            {
+                //Agregar tema a plan sesiones
+                oPlanSesiones.InsertarNuevoTema(indexTema, IdCatalogo, item);
+            }
         }
 
         private void buttonMARCAR_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = true;
-                
             }
         }
 
@@ -158,9 +180,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-
                 row.Cells["Asistencia"].Value = false;
-
             }
         }
 

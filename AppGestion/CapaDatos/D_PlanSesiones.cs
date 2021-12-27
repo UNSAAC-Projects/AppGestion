@@ -80,34 +80,44 @@ namespace CapaDatos
 
         }
 
-        public List <string> ObtenerTemasXUnidad(string IdCatalogo, string Unidad) 
+        // Obtener los 3 temas anteriores y posteriores a dictar
+        public List<string> ObtenerTemasProximos(string IdCatalogo, out int indexSiguienteTema) 
         {
             DataTable tabla = new DataTable();
-            SqlCommand cmd = new SqlCommand("SP_OBTENER_TEMASXUNIDAD", conexion);
+            SqlCommand cmd = new SqlCommand("SP_OBTENER_TEMAS_PROXIMOS", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
 
             cmd.Parameters.AddWithValue("@IDCatalogo", IdCatalogo);
-            cmd.Parameters.AddWithValue("@Unidad", Unidad);
+            cmd.Parameters.Add("@IDTema", SqlDbType.Int).Direction = ParameterDirection.Output; //Parametro de salida
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tabla);
+            da.Fill(tabla); //Rellenar tabla
+            int idSiguienteTema = Convert.ToInt32(cmd.Parameters["@IDTema"].Value); //Obtener variable de salida
 
             conexion.Close();
-            //return tabla;
-            List<string> ListaTemas = new List<string>();
 
+            List<string> listaTemas = new List<string>();
+            indexSiguienteTema = -1; //Valor por defecto
             //Recorrer tabla y guardar en lista
-            foreach (DataRow row in tabla.Rows)
+            if (tabla.Rows.Count > 0) //Si tabla no está vacia
             {
-                ListaTemas.Add(row[0].ToString());
+                
+                for (int i = 0; i < tabla.Rows.Count; i++)
+                {
+                    //Si IDTema es igual a idSiguienteTema
+                    if (idSiguienteTema.ToString() == tabla.Rows[i]["Id"].ToString())
+                        indexSiguienteTema = i; //Guardar indice
+                    //Agregar tema a lista   
+                    listaTemas.Add(tabla.Rows[i]["Tema"].ToString());   
+                }
+                return listaTemas;
             }
-
-            return ListaTemas;
+            else return null;
         }
 
         //Obtener el siguiente tema a dictar de un determinado catalogo
-        public string[] SiguienteTema(string IdCatalogo)
+        public string SiguienteTema(string IdCatalogo)
         {
             DataTable tabla = new DataTable();
             SqlCommand cmd = new SqlCommand("SP_SIGUIENTE_TEMA", conexion);
@@ -118,22 +128,20 @@ namespace CapaDatos
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tabla);
-
-            string[] arrayTema = new string[4];
-            if(tabla.Rows.Count > 0) //Si tabla no está vacia
+            conexion.Close();
+            if (tabla.Rows.Count > 0) //Si tabla no está vacia
             {
-                arrayTema[0] = tabla.Rows[0]["Id"].ToString();
-                arrayTema[1] = tabla.Rows[0]["Unidad"].ToString();
-                arrayTema[2] = tabla.Rows[0]["Capitulo"].ToString();
-                arrayTema[3] = tabla.Rows[0]["Tema"].ToString();
-                conexion.Close();
-                return arrayTema;
+                //arrayTema[0] = tabla.Rows[0]["Id"].ToString();
+                //arrayTema[1] = tabla.Rows[0]["Unidad"].ToString();
+                //arrayTema[2] = tabla.Rows[0]["Capitulo"].ToString();
+                //arrayTema[3] = tabla.Rows[0]["Tema"].ToString();
+                string siguienteTema = tabla.Rows[0][0].ToString(); //Obtener tema
+                return siguienteTema;
             }
             else //Si está vacia
             {
                 //La tabla retornará vacia cuando se completen todos los temas
-                //del plan de sesiones
-                conexion.Close();
+                //del plan de sesiones y no haya un siguiente tema
                 return null;
             }
         }
@@ -162,6 +170,19 @@ namespace CapaDatos
             SqlCommand cmd = new SqlCommand(ComandoSQL, conexion);
             conexion.Open();
             
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public void  InsertarNuevoTema(int idTemaAnterior, string codCatalogo, string tema)
+        {
+            SqlCommand cmd = new SqlCommand("SP_INSERTAR_TEMA", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@IdAnterior", idTemaAnterior);
+            cmd.Parameters.AddWithValue("@IDCatalogo", codCatalogo);
+            cmd.Parameters.AddWithValue("@Tema", tema);
+
             cmd.ExecuteNonQuery();
             conexion.Close();
         }

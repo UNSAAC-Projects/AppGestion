@@ -25,10 +25,6 @@ namespace CapaPresentacion
         public frmDocente(string CodDocente)
         {
             InitializeComponent();
-            //Mostrar nombre de usuario
-            MostrarNombreUsuario(CodDocente);
-            //Mostrar horario del docente o mensaje si no tiene ningun curso
-            MostrarHorarioxDia(CodDocente);
             datos.CodDocente = CodDocente;
             Docente = CodDocente;
         }
@@ -36,19 +32,18 @@ namespace CapaPresentacion
         private void MostrarTemasDictar()
         {
             string codAsignatura, codCatalogo;
-            string[] arrayTema;
             string tema;
             //Obtener cod catalogo
-            //DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
             foreach (DataGridViewRow row in dgvCursosDocente.Rows)
             {
                 codAsignatura = row.Cells["CODIGO"].Value.ToString();
                 codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-                arrayTema = oPlanSesiones.SiguienteTema(codCatalogo);
-                tema = $"{arrayTema[2]} - {arrayTema[3]}";
+                //arrayTema = oPlanSesiones.SiguienteTema(codCatalogo);
+                //tema = $"{arrayTema[2]} - {arrayTema[3]}";
+                tema = oPlanSesiones.SiguienteTema(codCatalogo);
+
                 row.Cells["TEMA"].Value = tema;
             }
-            //dgvCursosDocente.NotifyCurrentCellDirty(true);
         }
 
         private void MostrarNombreUsuario(string codDocente)
@@ -148,8 +143,10 @@ namespace CapaPresentacion
                 {
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
-                    datos.NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    string Grupo = row.Cells["GRUPO"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
+                    datos.NombreCurso = NombreCurso;
                     datos.CodCatalogo = codCatalogo;
                     DataTable tabla = new DataTable();
 
@@ -162,7 +159,7 @@ namespace CapaPresentacion
                     IExcelDataReader reader;
                     reader = ExcelReaderFactory.CreateBinaryReader(fs);
 
-                    frmAsistencia form = new frmAsistencia(codCatalogo);
+                    frmAsistencia form = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
                     reader.IsFirstRowAsColumnNames = true;
                     result = reader.AsDataSet();
                     form.dgvAsistencia.DataSource = result.Tables[0];
@@ -199,8 +196,6 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-            
-
         }
 
         private void btnReporteCursos_Click(object sender, EventArgs e)
@@ -209,9 +204,12 @@ namespace CapaPresentacion
             RAsistencia.Show();
         }
 
-        private void pictureBoxLibros_Click(object sender, EventArgs e)
+        private void frmDocente_Load(object sender, EventArgs e)
         {
-
+            //Mostrar nombre de usuario
+            MostrarNombreUsuario(Docente);
+            //Mostrar horario del docente o mensaje si no tiene ningun curso
+            MostrarHorarioxDia(Docente);
         }
     }
 }

@@ -107,11 +107,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void pnlVistaCursosAsig_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         //Movimiento panel
         int posY = 0;
         int posX = 0;
@@ -127,7 +122,6 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
-
         }
     }
 }
