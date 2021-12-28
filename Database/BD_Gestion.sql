@@ -6,7 +6,7 @@ go
 --go
 
 /* Para ejecutar BD de forma local */
---DROP DATABASE IF EXISTS AppGestion
+DROP DATABASE IF EXISTS AppGestion
 GO
 create database AppGestion
 go
@@ -865,11 +865,4 @@ as
 	where Curso=@Curso
 GO
 
---insertar datos LISTA DE ALUMNOS - Docente Doris
---exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
---exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
---exec SP_ListarArchivo 'C006'
---exec SP_LISTARCURSOSXDOCENTE 'D0004'
-select * from TPlanSesiones where IDCatalogo='C006'
---select * from TDocente
 

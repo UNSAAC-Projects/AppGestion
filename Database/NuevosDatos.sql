@@ -1,4 +1,10 @@
 /* Para ejecutar DB en la nube */
+
+/* -- Nube */
+--Server name: sql5080.site4now.net
+--Login: db_a7d2c3_appgestion_admin
+--Password: AppGestion1
+
 --use db_a7d2c3_appgestion
 --go
 
@@ -425,5 +431,18 @@ GO
 ----Silabos insertar-
 --exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\FUNDAMENTOS DE LA PROGRAMACION.pdf','C006'
 --exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\Métodos Numéricos2.pdf','C010'
+
+--insertar datos LISTA DE ALUMNOS - Docente Doris
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+go
+exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+GO
+--exec SP_ListarArchivo 'C006'
+--exec SP_LISTARCURSOSXDOCENTE 'D0004'
+--select * from TPlanSesiones where IDCatalogo='C006'
+--select * from TDocente
+GO
 
 
