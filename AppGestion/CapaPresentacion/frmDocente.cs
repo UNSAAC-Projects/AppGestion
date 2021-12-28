@@ -106,14 +106,14 @@ namespace CapaPresentacion
             dgvCursosDocente.Columns["ASISTENCIA"].DisplayIndex = 7;
 
             //Modificar ancho de columnas
-            /*dgvCursosDocente.Columns["CODIGO"].Width = 70;
-            dgvCursosDocente.Columns["NOMBRE"].Width = 240;
-            dgvCursosDocente.Columns["TIPO"].Width = 50;
-            dgvCursosDocente.Columns["GRUPO"].Width = 60;
-            dgvCursosDocente.Columns["HORAS"].Width = 70;
-            dgvCursosDocente.Columns["AULA"].Width = 60;
-            dgvCursosDocente.Columns["TEMA"].Width = 300;
-            dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;*/
+            //dgvCursosDocente.Columns["CODIGO"].Width = 70;
+            //dgvCursosDocente.Columns["NOMBRE"].Width = 340;
+            //dgvCursosDocente.Columns["TIPO"].Width = 50;
+            //dgvCursosDocente.Columns["GRUPO"].Width = 60;
+            //dgvCursosDocente.Columns["HORAS"].Width = 70;
+            //dgvCursosDocente.Columns["AULA"].Width = 60;
+            //dgvCursosDocente.Columns["TEMA"].Width = 300;
+            //dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
         }
 
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
@@ -153,7 +153,7 @@ namespace CapaPresentacion
                     //recuperar la ruta del archivo exce
                     tabla = oDocente.MostrarArchivos(codCatalogo);
                     string ruta = tabla.Rows[0][0].ToString();
-                    string contenido = tabla.Rows[0][1].ToString();
+                    //string contenido = tabla.Rows[0][1].ToString();
 
                     FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
                     IExcelDataReader reader;

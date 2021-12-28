@@ -94,6 +94,7 @@ namespace CapaPresentacion
 
         private void cboAsistenciaCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cboAsistenciaCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             listar_asistencias();        
         }
 
