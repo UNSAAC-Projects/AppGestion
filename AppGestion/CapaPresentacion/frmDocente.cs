@@ -141,30 +141,18 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
                 if (row.Cells["ASISTENCIA"].Selected)
                 {
+                    N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string Grupo = row.Cells["GRUPO"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-                    datos.NombreCurso = NombreCurso;
-                    datos.CodCatalogo = codCatalogo;
-                    DataTable tabla = new DataTable();
+                    // hasta aqui esta bien 
 
-                    //recuperar la ruta del archivo exce
-                    tabla = oDocente.MostrarArchivos(codCatalogo);
-                    string ruta = tabla.Rows[0][0].ToString();
-                    //string contenido = tabla.Rows[0][1].ToString();
-
-                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader;
-                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
-
-                    frmAsistencia form = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
-                    reader.IsFirstRowAsColumnNames = true;
-                    result = reader.AsDataSet();
-                    form.dgvAsistencia.DataSource = result.Tables[0];
-                    reader.Close();
-                    form.ShowDialog();
+                    frmAsistencia frm = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
+                    frm.CodAsignatura = codAsignatura;
+                    frm.dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(codCatalogo);
+                    frm.ShowDialog();
                 }
             }
         }
