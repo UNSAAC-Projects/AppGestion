@@ -858,3 +858,15 @@ as
 	select * from TReportesAsistencia
 	where Curso=@Curso
 GO
+
+--- PROCEDIMIENTOS PARA MATRICULADOS -------
+create OR ALTER proc SP_ListarMatriculados
+@IdCatalogo VARCHAR(6)
+as
+select CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES
+from TMatriculado where IDCatalogo=@IdCatalogo
+ORDER BY APELLIDOS_Y_NOMBRES
+go
+
+
+
