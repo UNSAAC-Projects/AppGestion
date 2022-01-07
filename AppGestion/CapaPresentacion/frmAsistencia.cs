@@ -51,27 +51,11 @@ namespace CapaPresentacion
             MostrarTemas();
 
             // Mostrar nombre de la asignatura
-            lblAsignatura.Text = NombreAsignatura;
+            lblNombreAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
-            //dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
-            //dgvAsistencia.Columns["ALUMNO"].DisplayIndex = 1;
-            //dgvAsistencia.Columns["APELLIDOS Y NOMBRES"].DisplayIndex = 2;
-            //dgvAsistencia.Columns["ALUMNO"].DisplayIndex = 2;
-            //dgvAsistencia.Columns["APELLIDOS Y NOMBRES"].DisplayIndex = 3;
-            //dgvAsistencia.Columns["A"].DisplayIndex = 4;
-            
-            //dgvAsistencia.Columns[0].Width = 40;
-            //dgvAsistencia.Columns[3].Width = 68;
-            //dgvAsistencia.Columns[4].Width = 260;
-            //dgvAsistencia.Columns.Remove("1");
-            //dgvAsistencia.Columns.Remove("2");
-            //dgvAsistencia.Columns.Remove("3");
-            //dgvAsistencia.Columns.Remove("4");
-            //dgvAsistencia.Columns.Remove("5");
-            //dgvAsistencia.Columns.Remove("Obs");
-            //dgvAsistencia.Columns.Remove("Column9");
-            //dgvAsistencia.Columns.Remove("NRO");
+            dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
+
             ImprimirHoraFecha();
         }
 
@@ -106,37 +90,32 @@ namespace CapaPresentacion
             N_Asistencia A = new N_Asistencia();
 
             var DateAndTime = DateTime.Now;
-            string Date = DateTime.Now.ToString("ddMMyyyy");
+            string Date = DateTime.Now.ToString("dd-MM-yyyy");
 
-            string name = NombreAsignatura + Date;
+            string name = NombreAsignatura;
 
-            string ruta = $@"{ObtenerRutaProyecto()}\..\ListaAlumnosDia\" + name + ".xlsx";
-            //string ruta = @"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\"+name+".xlsx";
-            SLDocument osLDocument = new SLDocument();
-            System.Data.DataTable dt = new System.Data.DataTable();
-            //registrar columnas
-            dt.Columns.Add("ASISTENCIA",typeof(string));
-            dt.Columns.Add("ALUMNOS", typeof(string));
-            dt.Columns.Add("APELLIDOS Y NOMBRES", typeof(string));
-            dt.Columns.Add("OBSERVACION", typeof(string));
             //registrar filas
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
+                E_Asistencia_alumnos entities = new E_Asistencia_alumnos();
+                N_Asistencia_alumnos busines = new N_Asistencia_alumnos();
                 string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
-                string alumnos = Convert.ToString(row.Cells["CodAlumno"].Value);
-                string apellidos = Convert.ToString(row.Cells["APELLIDOS_Y_NOMBRES"].Value);
+                if (asistencia == "")
+                {
+                    asistencia = "F";
+                }
+                string codalumno = Convert.ToString(row.Cells["CodAlumno"].Value);
+                string nombres = Convert.ToString(row.Cells["APELLIDOS_Y_NOMBRES"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
-                dt.Rows.Add(asistencia, alumnos, apellidos, observacion);
+                //insertar datos en la bd
+                entities.fecha = Date;
+                entities.idcatalogo = IdCatalogo;
+                entities.codalumno = codalumno;
+                entities.nombres = nombres;
+                entities.asistio = asistencia;
+                entities.observacion = observacion;
+                busines.InsertarAsistenciaAlumno(entities);
             }
-            osLDocument.ImportDataTable(1,1,dt,true);
-            osLDocument.SaveAs(ruta);
-            //insertar lista a la base de datos
-            entities.curso = NombreAsignatura;
-            entities.tema = comboBoxTema.Text;
-            entities.fecha = lblFecha.Text;
-            entities.asistencia =ruta;
-            entities.idcatalogo = IdCatalogo;
-            A.CreandoCurso_Asistencia(entities);
             return true;
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
@@ -173,7 +152,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-                row.Cells["Asistencia"].Value = true;
+                row.Cells["Asistencia"].Value = "P";
             }
         }
 
@@ -181,7 +160,7 @@ namespace CapaPresentacion
         {
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
-                row.Cells["Asistencia"].Value = false;
+                row.Cells["Asistencia"].Value = "F";
             }
         }
 
@@ -204,10 +183,10 @@ namespace CapaPresentacion
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            dgvAsistencia.Columns["ALUMNO"].ReadOnly = true;
-            dgvAsistencia.Columns["APELLIDOS Y NOMBRES"].ReadOnly = true;
-            
+
+            dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
+            dgvAsistencia.Columns["APELLIDOS_Y_NOMBRES"].ReadOnly = true;
+
         }
     }
 }
