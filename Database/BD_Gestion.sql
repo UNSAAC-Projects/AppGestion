@@ -220,6 +220,19 @@ create table TReportesAsistencia
 )
 go
 
+CREATE TABLE TAsistencia_Alumnos
+(
+	Fecha date,
+	IdCatalogo varchar(6),
+	CodAlumno varchar(10),
+	Nombres varchar(200),
+	Asistio varchar(8),
+	Observacion varchar(40),
+	PRIMARY KEY (Fecha,IdCatalogo,CodAlumno),
+	FOREIGN KEY (IdCatalogo) REFERENCES TCatalogo,
+)
+GO
+
 /**************************************************************************************************************************
 					                            PROCEDIMIENTOS ALMACENADOS
 **************************************************************************************************************************/
@@ -858,6 +871,20 @@ as
 	select * from TReportesAsistencia
 	where Curso=@Curso
 GO
+
+create or alter proc SP_InsertarAsistenciaAlumno
+@Fecha date,
+@IdCatalogo varchar(6),
+@CodAlumno varchar(10),
+@Nombres varchar(200),
+@Asistio varchar(8),
+@Observacion varchar(40)
+as
+if exists (select* from TAsistencia_Alumnos where Fecha=@Fecha and IdCatalogo=@IdCatalogo and CodAlumno=@CodAlumno)
+update TAsistencia_Alumnos set Asistio=@Asistio, Observacion=@Observacion where Fecha=@Fecha and IdCatalogo=@IdCatalogo and CodAlumno=@CodAlumno
+else
+insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
+go
 
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados
