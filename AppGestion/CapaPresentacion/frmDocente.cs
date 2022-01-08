@@ -151,22 +151,6 @@ namespace CapaPresentacion
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
                     // hasta aqui esta bien 
 
-                    //recuperar la ruta del archivo exce
-                    tabla = oDocente.MostrarArchivos(codCatalogo);
-                    string ruta = tabla.Rows[0][0].ToString();
-                    //string contenido = tabla.Rows[0][1].ToString();
-
-                    FileStream fs = File.Open(ruta, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader;
-                    reader = ExcelReaderFactory.CreateBinaryReader(fs);
-
-                    frmAsistencia form = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
-                    reader.IsFirstRowAsColumnNames = true;
-                    result = reader.AsDataSet();
-                    form.dgvAsistencia.DataSource = result.Tables[0];
-                    reader.Close();
-                    form.ShowDialog();
-                    //dgvCursosDocente.Refresh();
                     frmAsistencia frm = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
                     frm.CodAsignatura = codAsignatura;
                     frm.dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(codCatalogo);
