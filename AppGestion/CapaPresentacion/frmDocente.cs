@@ -143,14 +143,13 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
                 if (row.Cells["ASISTENCIA"].Selected)
                 {
+                    N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string Grupo = row.Cells["GRUPO"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-                    datos.NombreCurso = NombreCurso;
-                    datos.CodCatalogo = codCatalogo;
-                    DataTable tabla = new DataTable();
+                    // hasta aqui esta bien 
 
                     //recuperar la ruta del archivo exce
                     tabla = oDocente.MostrarArchivos(codCatalogo);
@@ -168,6 +167,10 @@ namespace CapaPresentacion
                     reader.Close();
                     form.ShowDialog();
                     //dgvCursosDocente.Refresh();
+                    frmAsistencia frm = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
+                    frm.CodAsignatura = codAsignatura;
+                    frm.dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(codCatalogo);
+                    frm.ShowDialog();
                 }
             }
         }
