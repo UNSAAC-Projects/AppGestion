@@ -19,7 +19,7 @@ namespace CapaPresentacion
         N_Login oLogin = new N_Login();
         N_Docente oDocente = new N_Docente();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-
+        DataTable tabla;
         public string Docente;
 
         public frmDocente(string CodDocente)
