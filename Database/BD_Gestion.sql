@@ -721,7 +721,7 @@ AS
 
 	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
 	WHERE Id = @IDTema 
-	OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
 	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
 GO
 

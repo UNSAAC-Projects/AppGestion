@@ -426,6 +426,59 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('2°UNIDAD','','Revision Examen Parcial II','02','NO','C010',''),
 ('2°UNIDAD','','Entrega de Notas','01','NO','C010','');--semana15
 
+INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES
+-- C001 -> DEEP LEARNING
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C001',''),-- Deep Learning(profe Boris)
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C001',''),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C001',''),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C001',''),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C001',''),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C001',''),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C001',''),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C001',''),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C001',''),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C001',''),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C006',''),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C001',''),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C001',''),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C001',''),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C001',''),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','');--semana15
 GO
 
 ----Silabos insertar-
@@ -435,9 +488,9 @@ GO
 --insertar datos LISTA DE ALUMNOS - Docente Doris
 --exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
 --exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
-exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
 go
-exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
 GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'

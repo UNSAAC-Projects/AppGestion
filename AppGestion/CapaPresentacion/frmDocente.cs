@@ -56,6 +56,8 @@ namespace CapaPresentacion
         {
             frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
+            //Actualizar tabla docentes
+            MostrarHorarioxDia(Docente);
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -165,6 +167,7 @@ namespace CapaPresentacion
                     form.dgvAsistencia.DataSource = result.Tables[0];
                     reader.Close();
                     form.ShowDialog();
+                    //dgvCursosDocente.Refresh();
                 }
             }
         }
@@ -201,7 +204,8 @@ namespace CapaPresentacion
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
-            RAsistencia.Show();
+            RAsistencia.ShowDialog();
+            //dgvCursosDocente.Refresh();
         }
 
         private void frmDocente_Load(object sender, EventArgs e)

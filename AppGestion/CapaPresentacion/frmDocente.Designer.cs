@@ -106,9 +106,9 @@ namespace CapaPresentacion
             this.btnReporteCursos.Location = new System.Drawing.Point(25, 515);
             this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteCursos.Name = "btnReporteCursos";
-            this.btnReporteCursos.Size = new System.Drawing.Size(317, 60);
+            this.btnReporteCursos.Size = new System.Drawing.Size(291, 60);
             this.btnReporteCursos.TabIndex = 12;
-            this.btnReporteCursos.Text = "REPORTE DE ASISTENCIAS";
+            this.btnReporteCursos.Text = "LISTA DE ASISTENCIAS";
             this.btnReporteCursos.UseVisualStyleBackColor = false;
             this.btnReporteCursos.Click += new System.EventHandler(this.btnReporteCursos_Click);
             // 
@@ -217,7 +217,7 @@ namespace CapaPresentacion
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.label1.Location = new System.Drawing.Point(430, 78);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(469, 27);
+            this.label1.Size = new System.Drawing.Size(443, 26);
             this.label1.TabIndex = 14;
             this.label1.Text = "CURSOS  DICTADOS EN SEMESTRE LECTIVO";
             this.label1.UseMnemonic = false;

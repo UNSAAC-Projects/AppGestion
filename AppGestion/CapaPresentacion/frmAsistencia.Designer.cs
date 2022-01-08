@@ -65,6 +65,9 @@ namespace CapaPresentacion
             this.panel8 = new System.Windows.Forms.Panel();
             this.comboBoxTema = new System.Windows.Forms.ComboBox();
             this.lblAsignatura = new System.Windows.Forms.Label();
+            this.lblAsignatura2 = new System.Windows.Forms.Label();
+            this.lblTotalAlumnos = new System.Windows.Forms.Label();
+            this.lblNroAlumnos = new System.Windows.Forms.Label();
             this.pnlAsistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
@@ -316,7 +319,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAsistencia.Location = new System.Drawing.Point(156, 218);
+            this.dgvAsistencia.Location = new System.Drawing.Point(156, 248);
             this.dgvAsistencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsistencia.Name = "dgvAsistencia";
             this.dgvAsistencia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -477,12 +480,46 @@ namespace CapaPresentacion
             this.lblAsignatura.AutoSize = true;
             this.lblAsignatura.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsignatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblAsignatura.Location = new System.Drawing.Point(232, 46);
+            this.lblAsignatura.Location = new System.Drawing.Point(100, 100);
             this.lblAsignatura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAsignatura.Name = "lblAsignatura";
             this.lblAsignatura.Size = new System.Drawing.Size(12, 16);
             this.lblAsignatura.TabIndex = 26;
             this.lblAsignatura.Text = "-";
+            // 
+            // lblAsignatura2
+            // 
+            this.lblAsignatura2.AutoSize = true;
+            this.lblAsignatura2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsignatura2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblAsignatura2.Location = new System.Drawing.Point(309, 58);
+            this.lblAsignatura2.Name = "lblAsignatura2";
+            this.lblAsignatura2.Size = new System.Drawing.Size(14, 18);
+            this.lblAsignatura2.TabIndex = 26;
+            this.lblAsignatura2.Text = "-";
+            // 
+            // lblTotalAlumnos
+            // 
+            this.lblTotalAlumnos.AutoSize = true;
+            this.lblTotalAlumnos.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalAlumnos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.lblTotalAlumnos.Location = new System.Drawing.Point(348, 210);
+            this.lblTotalAlumnos.Name = "lblTotalAlumnos";
+            this.lblTotalAlumnos.Size = new System.Drawing.Size(172, 18);
+            this.lblTotalAlumnos.TabIndex = 27;
+            this.lblTotalAlumnos.Text = "Cantidad de Alumnos:";
+            // 
+            // lblNroAlumnos
+            // 
+            this.lblNroAlumnos.AutoSize = true;
+            this.lblNroAlumnos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNroAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblNroAlumnos.Location = new System.Drawing.Point(543, 210);
+            this.lblNroAlumnos.Name = "lblNroAlumnos";
+            this.lblNroAlumnos.Size = new System.Drawing.Size(14, 18);
+            this.lblNroAlumnos.TabIndex = 28;
+            this.lblNroAlumnos.Text = "-";
             // 
             // frmAsistencia
             // 
@@ -490,6 +527,9 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(967, 706);
+            this.Controls.Add(this.lblNroAlumnos);
+            this.Controls.Add(this.lblTotalAlumnos);
+            this.Controls.Add(this.lblAsignatura2);
             this.Controls.Add(this.comboBoxTema);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel8);
@@ -567,5 +607,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ComboBox comboBoxTema;
         public System.Windows.Forms.Label lblAsignatura;
+        public System.Windows.Forms.Label lblAsignatura2;
+        private System.Windows.Forms.Label lblTotalAlumnos;
+        public System.Windows.Forms.Label lblNroAlumnos;
     }
 }
