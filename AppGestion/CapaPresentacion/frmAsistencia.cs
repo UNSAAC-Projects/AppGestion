@@ -51,6 +51,9 @@ namespace CapaPresentacion
             MostrarTemas();
 
             // Mostrar nombre de la asignatura
+            //lblAsignatura2.Text = NombreAsignatura;
+            //Mostrar cantidad de Alumnos
+            lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
             lblNombreAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
