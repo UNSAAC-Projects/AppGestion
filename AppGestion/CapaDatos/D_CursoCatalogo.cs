@@ -126,7 +126,7 @@ namespace CapaDatos
 
             return table;
         }
-        public DataTable ListarMatriculados(string IdCatalogo)
+        public DataTable ListarMatriculados(string IdCatalogo, string date)
         {
             DataTable table = new DataTable();
             SqlDataReader readRows;
@@ -135,6 +135,7 @@ namespace CapaDatos
             conexion.Open();
 
             cmd.Parameters.AddWithValue("@IdCatalogo", IdCatalogo);
+            cmd.Parameters.AddWithValue("@Fecha", date);
             readRows = cmd.ExecuteReader();
             table.Load(readRows);
 
