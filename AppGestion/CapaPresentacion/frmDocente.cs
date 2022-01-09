@@ -153,7 +153,6 @@ namespace CapaPresentacion
 
                     frmAsistencia frm = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
                     frm.CodAsignatura = codAsignatura;
-                    frm.dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(codCatalogo);
                     frm.ShowDialog();
                 }
             }

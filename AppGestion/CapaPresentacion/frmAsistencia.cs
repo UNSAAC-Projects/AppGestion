@@ -48,20 +48,39 @@ namespace CapaPresentacion
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
             // Mostrar temas a dictar en el combobox
+            MostrarListaMatriculados();
             MostrarTemas();
 
-            // Mostrar nombre de la asignatura
-            //lblAsignatura2.Text = NombreAsignatura;
-            //Mostrar cantidad de Alumnos
             lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
             lblNombreAsignatura.Text = NombreAsignatura;
 
             // Mostrar relacion de alumnos matriculados
-            dgvAsistencia.Columns["Observacion"].DisplayIndex = 3;
+            dgvAsistencia.Columns["Asistio"].Visible = false;
 
             ImprimirHoraFecha();
         }
-
+        private void MostrarListaMatriculados()
+        {
+            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+            string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
+            {
+                string a = Convert.ToString(row.Cells["Asistio"].Value);
+                if (a == "")
+                {
+                    row.Cells["Asistencia"].Value = "F";
+                }
+                if (a == "F")
+                {
+                    row.Cells["Asistencia"].Value = "F";
+                }
+                if (a == "P")
+                {
+                    row.Cells["Asistencia"].Value = "P";
+                }
+            }
+        }
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
 
@@ -81,11 +100,11 @@ namespace CapaPresentacion
             lblDocente.Text = datos.NombreDocente;
         }
 
-        public string ObtenerRutaProyecto()
-        {//Método para obtener la ruta del proyecto
-            string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-            return rutaProyecto;
-        }
+        //public string ObtenerRutaProyecto()
+        //{//Método para obtener la ruta del proyecto
+        //    string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
+        //    return rutaProyecto;
+        //}
 
         bool  ExportarDatos(DataGridView datalistado)
         {
@@ -96,19 +115,15 @@ namespace CapaPresentacion
             string Date = DateTime.Now.ToString("dd-MM-yyyy");
 
             string name = NombreAsignatura;
-
             //registrar filas
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 E_Asistencia_alumnos entities = new E_Asistencia_alumnos();
                 N_Asistencia_alumnos busines = new N_Asistencia_alumnos();
+
                 string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
-                if (asistencia == "")
-                {
-                    asistencia = "F";
-                }
                 string codalumno = Convert.ToString(row.Cells["CodAlumno"].Value);
-                string nombres = Convert.ToString(row.Cells["APELLIDOS_Y_NOMBRES"].Value);
+                string nombres = Convert.ToString(row.Cells["Nombres"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 //insertar datos en la bd
                 entities.fecha = Date;
@@ -188,7 +203,7 @@ namespace CapaPresentacion
         {
 
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
-            dgvAsistencia.Columns["APELLIDOS_Y_NOMBRES"].ReadOnly = true;
+            dgvAsistencia.Columns["Nombres"].ReadOnly = true;
 
         }
     }
