@@ -887,12 +887,34 @@ insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@A
 go
 
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
-create OR ALTER proc SP_ListarMatriculados
-@IdCatalogo VARCHAR(6)
+create OR ALTER proc SP_ListarMatriculados 
+@IdCatalogo VARCHAR(6),
+@Fecha date
 as
-select CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES
-from TMatriculado where IDCatalogo=@IdCatalogo
-ORDER BY APELLIDOS_Y_NOMBRES
+
+if exists (select * from TAsistencia_Alumnos where Fecha=@Fecha and IdCatalogo=@IdCatalogo)
+begin
+	select CodAlumno,Nombres,Asistio,Observacion
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo and Fecha=@Fecha
+	order by Nombres
+end;
+else
+begin
+	create table Aux(
+		id int identity,
+		Asistio varchar(10),
+		Observacion varchar(30)
+	)
+	select IDCatalogo,CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES, Asistio='',Observacion='' into #t1
+	from TMatriculado full join Aux on IDCatalogo=@IdCatalogo 
+
+	select CodAlumno,APELLIDOS_Y_NOMBRES as Nombres,Asistio,Observacion
+	from #t1 where IDCatalogo=@IdCatalogo 
+	ORDER BY Nombres
+	--drop table Aux
+end;
+drop table if exists #t1
+drop table if exists Aux
 go
 
 
