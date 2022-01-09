@@ -24,9 +24,14 @@ namespace CapaDatos
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tabla);
-
             conexion.Close();
-            return tabla;
+
+            //Verificar si existen datos en la tabla
+            //Nota: Si tabla siempre tendra una fila por los valores NULL
+            if (tabla.Rows.Count == 1 && tabla.Rows[0]["GrupoAsignatura"].ToString() == "") 
+                return null;
+            else 
+                return tabla;
         }
         public string ObtenerCodCatalogo(string GrupoAsignatura)
         {

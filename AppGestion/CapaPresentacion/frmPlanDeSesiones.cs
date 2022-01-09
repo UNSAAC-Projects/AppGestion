@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,13 @@ using System.Windows.Forms;
 using CapaNegocio;
 using System.Runtime.InteropServices;
 using CapaEntidades;
+using Excel;
+using System.IO;
+
 
 namespace CapaPresentacion
 {
+    
     public partial class frmPlanDeSesiones : Form
     {
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
@@ -21,7 +26,8 @@ namespace CapaPresentacion
         private int rowIndexOfItemUnderMouseToDrop;
         DataTable tabla = new DataTable();
         private string IDCatalogo;
-        
+        DataSet result;
+
 
         public frmPlanDeSesiones(string CodCatalogo, string NombreAsignatura, string Grupo)
         {
@@ -77,9 +83,9 @@ namespace CapaPresentacion
                 DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    dgvPlanSesiones.Rows.RemoveAt(e.RowIndex);
-
-
+                    tabla = dgvPlanSesiones.DataSource as DataTable;
+                    tabla.Rows.RemoveAt(e.RowIndex);
+                    dgvPlanSesiones.DataSource = tabla;
                 }
             }
 
@@ -226,5 +232,50 @@ namespace CapaPresentacion
         {
             MostrarPlanSesiones(IDCatalogo);
         }
+
+        /*DataView ImportarDatos(string nombrearchivo)
+        {
+            string conexion = string.Format("Provider = Microsoft.ACE.OLEDB.12.0; Data Souce = {0}; Extended Properties = 'Excel 12.0;", nombrearchivo);
+            OleDbConnection conector = new OleDbConnection(conexion);
+            conector.Open();
+            OleDbCommand consulta = new OleDbCommand("select * from [Hoja1$]", conector);
+            OleDbDataAdapter adaptador = new OleDbDataAdapter
+            {
+                SelectCommand = consulta
+            };
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds);
+            conector.Close();
+
+            return ds.Tables[0].DefaultView;
+        
+        }*/
+
+        private void btnImportarDatos_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|.xls|Excel Workbook|.xlsx", ValidateNames = true })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    if (ofd.FilterIndex == 1)
+                    {
+                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                    }
+                    else
+                    {
+                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                    }
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    dgvPlanSesiones.DataSource = result.Tables[0];
+                    reader.Close();
+
+                }
+            }
+        }
+
     }
 }

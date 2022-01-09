@@ -1,4 +1,10 @@
 /* Para ejecutar DB en la nube */
+
+/* -- Nube */
+--Server name: sql5080.site4now.net
+--Login: db_a7d2c3_appgestion_admin
+--Password: AppGestion1
+
 --use db_a7d2c3_appgestion
 --go
 
@@ -213,23 +219,6 @@ INSERT INTO THorario VALUES
 ('MIERCOLES','7','9','C011','P');
 GO
 
---INSERT INTO TAsistencia VALUES
---('A0001','28/05/21' ,'7','Alumno','H0001'),
---('A0002','14/04/21','7'	,'Docente','H0001'),
---('A0003','28/05/21' ,'9','Alumno','H0001'),
---('A0004','14/04/21','9'	,'Docente','H0001')
---GO
-
---INSERT INTO TAsistenciaDocente VALUES
---('AD0001','A0002','5'	,'','A'),
---('AD0002','A0004','5'	,'','A')
---GO
-
---INSERT INTO TAsistenciaAlumno VALUES
---('AA0001','A0001','A'	,''),
---('AA0002','A0003','A'	,'')
---GO
-
 INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES 
 ('C006','182898','CERATI CERRILLO','FIORELLA'),
 ('C006','125156','CONDORI FLORES WILLIAMS','DENNIS'),
@@ -254,94 +243,41 @@ INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES
 ('C006','171260','QUISPE TTITO','JOEL WILLY'),
 ('C006','192428','RADO HUAYOTUMA','ARTUR MARTI'),
 ('C006','163671','ROBLES SILVA','ANGELO'),
-('C011','171605','SALINAS ATAUSINCHI','JERSON'),
-('C011','184655','SANCA ZEVALLOS','JERY'),
-('C011','141011','SIPAUCAR CONDORI','MARITZA MARIBEL'),	
-('C011','182938','VILLAFUERTE GARCES','EDU RODRIGO'),
-('C011','145009','YCHU VALENCIA','MIGUEL HUMBERTO'),
-('C011','182941','YUCA LIMA','KARLA URBELINDA'),
-('C011','950610','ANDRADE ESCOBAR','LUIS'),
-('C011','131605','AYQUIPA GOMEZ','AMILCAR'),
-('C011','130516','BUSTAMANTE MAMANI','WASHINGTON MARCO'),
-('C011','170749','CARMONA CHOQUEMAMANI','KENNY HAROLD'),
-('C011','170428','CASSA LIPA','EDWAR YURI'),
-('C011','161756','CCONISLLA MEDINa','ANTHONY ALDAIR'),
-('C011','174440','CONDORI OCHOA','GIOVDEY ABRAHAM'),
-('C011','182909','ESTRELLA VILCA','JAMES KEVIN'),
-('C011','182910','FLORES ROBLES','KATHERYNE SHARMELLY'),
-('C011','182914','HUAMAN MENDOZA','ELVIS JORGE'),
-('C011','112207','IBARRA CASTILLO','WALDO ERICK'),
-('C011','170436','LUYCHO ANCAIFURO','MARIELA'),
-('C011','163809','MAMANI CHINO','RUBEN'),
-('C011','164566','MAMANI QUINTA','MICHAEL ANTONNI'),
-('C011','182923','MORA CCARHUARUPAY','LUZ LUCERO'),
-('C011','171064','ORE GAMARRA','ABRAHAM BENJAMIN'),
-('C011','101526','ORUE QUISPE','ALVARO AMERICO'),
-('C011','130322','PEREZ TOMAYLLA','BRUNO'),
-('C011','151822','PUMA MAMANI','NILSON MAURIO'),
-('C011','151780','QUISPE PUMA','LUCERO'),
-('C011','101664','QUISPE RODRIGUEZ','LUIS ALEXEI'),
-('C011','171069','RODRIGUEZ OJEDA','JORGE VICTOR'),
-('C011','174454','TINTAYA TACO','YUREMA LISBETH'),
-('C011','083221','TRUJILLO TORBISCO','LUIS ANDERSON'),
-('C011','174455','UGARTE CASTILLO','BRIGGITTE LEONOR'),
-('C011','182936','USUCACHI ANO','ISAC ANDERSON'),
-('C011','155183','VARGAS ARQQUE','JEREMYK RUFINO');
+('C010','171605','SALINAS ATAUSINCHI','JERSON'),
+('C010','184655','SANCA ZEVALLOS','JERY'),
+('C010','141011','SIPAUCAR CONDORI','MARITZA MARIBEL'),	
+('C010','182938','VILLAFUERTE GARCES','EDU RODRIGO'),
+('C010','145009','YCHU VALENCIA','MIGUEL HUMBERTO'),
+('C010','182941','YUCA LIMA','KARLA URBELINDA'),
+('C010','950610','ANDRADE ESCOBAR','LUIS'),
+('C010','131605','AYQUIPA GOMEZ','AMILCAR'),
+('C010','130516','BUSTAMANTE MAMANI','WASHINGTON MARCO'),
+('C010','170749','CARMONA CHOQUEMAMANI','KENNY HAROLD'),
+('C010','170428','CASSA LIPA','EDWAR YURI'),
+('C010','161756','CCONISLLA MEDINa','ANTHONY ALDAIR'),
+('C010','174440','CONDORI OCHOA','GIOVDEY ABRAHAM'),
+('C010','182909','ESTRELLA VILCA','JAMES KEVIN'),
+('C010','182910','FLORES ROBLES','KATHERYNE SHARMELLY'),
+('C010','182914','HUAMAN MENDOZA','ELVIS JORGE'),
+('C010','112207','IBARRA CASTILLO','WALDO ERICK'),
+('C010','170436','LUYCHO ANCAIFURO','MARIELA'),
+('C010','163809','MAMANI CHINO','RUBEN'),
+('C010','164566','MAMANI QUINTA','MICHAEL ANTONNI'),
+('C010','182923','MORA CCARHUARUPAY','LUZ LUCERO'),
+('C010','171064','ORE GAMARRA','ABRAHAM BENJAMIN'),
+('C010','101526','ORUE QUISPE','ALVARO AMERICO'),
+('C010','130322','PEREZ TOMAYLLA','BRUNO'),
+('C010','151822','PUMA MAMANI','NILSON MAURIO'),
+('C010','151780','QUISPE PUMA','LUCERO'),
+('C010','101664','QUISPE RODRIGUEZ','LUIS ALEXEI'),
+('C010','171069','RODRIGUEZ OJEDA','JORGE VICTOR'),
+('C010','174454','TINTAYA TACO','YUREMA LISBETH'),
+('C010','083221','TRUJILLO TORBISCO','LUIS ANDERSON'),
+('C010','174455','UGARTE CASTILLO','BRIGGITTE LEONOR'),
+('C010','182936','USUCACHI ANO','ISAC ANDERSON'),
+('C010','155183','VARGAS ARQQUE','JEREMYK RUFINO');
 GO
 
-
-/*
-INSERT INTO TMatriculado VALUES
-('M0001','170750','2021-II','A','C001'),
-('M0002','182908','2021-II','A','C001'),
-('M0003','174443','2021-II','A','C001'),
-('M0004','151812','2021-II','A','C001'),
-('M0005','171059','2021-II','A','C001'),
-('M0006','184648','2021-II','A','C001'),
-('M0007','171061','2021-II','A','C001'),
-('M0008','163808','2021-II','B','C001'),
-('M0009','130741','2021-II','B','C001'),
-('M0010','154631','2021-II','B','C001'),
-('M0011','182925','2021-II','B','C001'),
-('M0012','182926','2021-II','B','C001'),
-('M0016','161135','2021-II','B','C001'),
-('M0017','171260','2021-II','A','C002'),
-('M0018','192428','2021-II','A','C002'),
-('M0019','163671','2021-II','A','C002'),
-('M0020','171605','2021-II','A','C002'),
-('M0021','184655','2021-II','A','C002'),
-('M0022','141011','2021-II','A','C002'),
-('M0023','182938','2021-II','A','C002'),
-('M0024','145009','2021-II','A','C002'),
-('M0027','131605','2021-II','B','C002'),
-('M0028','130516','2021-II','B','C002'),
-('M0029','170749','2021-II','B','C002'),
-('M0030','170428','2021-II','B','C002'),
-('M0031','161756','2021-II','B','C002'),
-('M0032','174440','2021-II','B','C002'),
-('M0033','182909','2021-II','B','C002'),
-('M0034','182910','2021-II','B','C002'),
-('M0035','182914','2021-II','B','C002'),
-('M0036','112207','2021-II','B','C002'),
-('M0037','170436','2021-II','B','C002'),
-('M0038','163809','2021-II','A','C003'),
-('M0039','164566','2021-II','A','C003'),
-('M0040','182923','2021-II','A','C003'),
-('M0041','171064','2021-II','A','C003'),
-('M0042','101526','2021-II','A','C003'),
-('M0043','130322','2021-II','A','C004'),
-('M0044','151822','2021-II','A','C004'),
-('M0048','174454','2021-II','A','C004'),
-('M0049','083221','2021-II','A','C004'),
-('M0050','174455','2021-II','A','C004'),
-('M0051','182936','2021-II','A','C004'),
-('M0052','155183','2021-II','B','C004'),
-('M0053','182898','2021-II','B','C004'),
-('M0054','125156','2021-II','B','C004'),
-('M0055','163839','2021-II','B','C004'),
-('M0056','170430','2021-II','B','C004');
-GO
-*/
 
 INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES 
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006',''),--Fundamentos de programacion(profe doris)
@@ -420,6 +356,59 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('2°UNIDAD','','Revision Examen Parcial II','02','NO','C010',''),
 ('2°UNIDAD','','Entrega de Notas','01','NO','C010','');--semana15
 
+INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES
+-- C001 -> DEEP LEARNING
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C001',''),-- Deep Learning(profe Boris)
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C001',''),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C001',''),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C001',''),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C001',''),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C001',''),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C001',''),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C001',''),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C001',''),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C001',''),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C001',''),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C001',''),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C006',''),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C001',''),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C001',''),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C001',''),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C001',''),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C001',''),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','');--semana15
 GO
 
 ----Silabos insertar-
@@ -427,7 +416,11 @@ GO
 --exec SP_GuardarSilabo 'C:\Users\LUCERO\Downloads\Silabos\Métodos Numéricos2.pdf','C010'
 
 --insertar datos LISTA DE ALUMNOS - Docente Doris
---exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
---exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--go
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'

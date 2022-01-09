@@ -126,7 +126,24 @@ namespace CapaDatos
 
             return table;
         }
+        public DataTable ListarMatriculados(string IdCatalogo, string date)
+        {
+            DataTable table = new DataTable();
+            SqlDataReader readRows;
+            SqlCommand cmd = new SqlCommand("SP_ListarMatriculados", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
 
+            cmd.Parameters.AddWithValue("@IdCatalogo", IdCatalogo);
+            cmd.Parameters.AddWithValue("@Fecha", date);
+            readRows = cmd.ExecuteReader();
+            table.Load(readRows);
+
+            readRows.Close();
+            conexion.Close();
+
+            return table;
+        }
         public DataTable MostrarHorarioCurso(string CodCursoCatalogo)
         {
             DataTable tabla = new DataTable();

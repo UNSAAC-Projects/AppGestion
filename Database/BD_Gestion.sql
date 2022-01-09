@@ -121,70 +121,6 @@ CREATE TABLE THorario
 )
 GO
 
-/*TABLA ASISTENCIA*/
-CREATE TABLE TAsistencia
-(
-	IDAsistencia varchar(6),
-	Fecha varchar(10),
-	Hora varchar(2),
-	Tipo varchar(100),
-	IDHorario INT IDENTITY,
-	PRIMARY KEY (IDAsistencia),
-	FOREIGN KEY (IDHorario) REFERENCES THorario,
-	--DELETE ON CASCADE
-)
-GO
-
-/*TABLA ASISTENCIA ALUMNO*/
-CREATE TABLE TAsistenciaAlumno
-(
-	IDAsistenciaAlumno varchar(6),
-	IDAsistencia varchar(6),
-	Asistio varchar(60),
-	Observaciones varchar(100),
-	PRIMARY KEY (IDAsistenciaAlumno),
-	FOREIGN KEY (IDAsistencia) REFERENCES TAsistencia
-)
-GO
-
-/*TABLA ASISTENCIA-DIARIA DOCENTE*/ 
-CREATE TABLE TAsistenciaDiariaDocente
-(
-	IDAsistenciaDiaria varchar(6),
-	Fecha varchar(10),
-	Hora varchar(2),
-	PRIMARY KEY (IDAsistenciaDiaria) 
-)
-GO
-
-/*TABLA ASISTENCIA DOCENTE*/
-CREATE TABLE TAsistenciaDocente
-(
-	IDAsistenciaDocente varchar(6),
-	IDAsistencia varchar(6),
-	Semestre varchar(2),
-	TemaAvance varchar(100),
-	Asistio varchar(60),
-	PRIMARY KEY (IDAsistenciaDocente),
-	FOREIGN KEY (IDAsistencia) REFERENCES TAsistencia
-)
-GO
-
-/*TABLA LISTADO DOCENTES*/
-CREATE TABLE TListadoDocentes
-(
-	IDListado varchar(6),
-	IDAsistenciaDiaria varchar(6),
-	Asistio varchar(60),
-	CodDocente varchar(6),
-	Observaciones varchar(100),
-	PRIMARY KEY (IDListado),
-	FOREIGN KEY (IDAsistenciaDiaria) REFERENCES TAsistenciaDiariaDocente,
-	FOREIGN KEY (CodDocente) REFERENCES TDocente
-
-)
-GO
-
 /*TABLA LOGINS*/
 CREATE TABLE TLogin
 (
@@ -219,6 +155,19 @@ create table TReportesAsistencia
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
+
+CREATE TABLE TAsistencia_Alumnos
+(
+	Fecha date,
+	IdCatalogo varchar(6),
+	CodAlumno varchar(10),
+	Nombres varchar(200),
+	Asistio varchar(8),
+	Observacion varchar(40),
+	PRIMARY KEY (Fecha,IdCatalogo,CodAlumno),
+	FOREIGN KEY (IdCatalogo) REFERENCES TCatalogo,
+)
+GO
 
 /**************************************************************************************************************************
 					                            PROCEDIMIENTOS ALMACENADOS
@@ -721,7 +670,7 @@ AS
 
 	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
 	WHERE Id = @IDTema 
-	OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
 	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
 GO
 
@@ -858,3 +807,51 @@ as
 	select * from TReportesAsistencia
 	where Curso=@Curso
 GO
+
+create or alter proc SP_InsertarAsistenciaAlumno
+@Fecha date,
+@IdCatalogo varchar(6),
+@CodAlumno varchar(10),
+@Nombres varchar(200),
+@Asistio varchar(8),
+@Observacion varchar(40)
+as
+if exists (select* from TAsistencia_Alumnos where Fecha=@Fecha and IdCatalogo=@IdCatalogo and CodAlumno=@CodAlumno)
+update TAsistencia_Alumnos set Asistio=@Asistio, Observacion=@Observacion where Fecha=@Fecha and IdCatalogo=@IdCatalogo and CodAlumno=@CodAlumno
+else
+insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
+go
+
+--- PROCEDIMIENTOS PARA MATRICULADOS -------
+create OR ALTER proc SP_ListarMatriculados 
+@IdCatalogo VARCHAR(6),
+@Fecha date
+as
+
+if exists (select * from TAsistencia_Alumnos where Fecha=@Fecha and IdCatalogo=@IdCatalogo)
+begin
+	select CodAlumno,Nombres,Asistio,Observacion
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo and Fecha=@Fecha
+	order by Nombres
+end;
+else
+begin
+	create table Aux(
+		id int identity,
+		Asistio varchar(10),
+		Observacion varchar(30)
+	)
+	select IDCatalogo,CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES, Asistio='',Observacion='' into #t1
+	from TMatriculado full join Aux on IDCatalogo=@IdCatalogo 
+
+	select CodAlumno,APELLIDOS_Y_NOMBRES as Nombres,Asistio,Observacion
+	from #t1 where IDCatalogo=@IdCatalogo 
+	ORDER BY Nombres
+	--drop table Aux
+end;
+drop table if exists #t1
+drop table if exists Aux
+go
+
+
+
