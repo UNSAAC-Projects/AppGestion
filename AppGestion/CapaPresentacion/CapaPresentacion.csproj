@@ -252,6 +252,9 @@
     <EmbeddedResource Include="frmMantCatalogo.resx">
       <DependentUpon>frmMantCatalogo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportesSesiones.resx">
+      <DependentUpon>frmReportesSesiones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo.resx">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>
     </EmbeddedResource>

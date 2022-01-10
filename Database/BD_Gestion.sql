@@ -822,6 +822,17 @@ else
 insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
 go
 
+-- Mostrar reporte de sesiones
+CREATE PROC SP_REPORTE_SESIONES
+	@IdCatalogo varchar(4)
+AS
+select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas',
+	'' as 'Horas Avanzadas', '' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+from TPlanSesiones
+where IDCatalogo = @IdCatalogo
+GO
+
+
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
 @IdCatalogo VARCHAR(6),

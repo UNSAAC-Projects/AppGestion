@@ -20,7 +20,7 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AppContext = new ApplicationContext(new FrmLogin());
+            AppContext = new ApplicationContext(new frmReportesSesiones());
             Application.Run(AppContext);
         }
 
