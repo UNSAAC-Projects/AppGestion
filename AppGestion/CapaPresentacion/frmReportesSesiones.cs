@@ -23,7 +23,15 @@ namespace CapaPresentacion
 
         private void frmReportesSesiones_Load(object sender, EventArgs e)
         {
-            MostrarReporte("C006");
+            MostrarReporte("C006"); //Mostrar reporte de plan de sesiones
+            MostrarItemsComboBox(); //Mostrar opciones en comboBox
+            comboBoxAsignaturas.SelectedIndex = 0;
+        }
+
+        private void MostrarItemsComboBox()
+        {
+            string[] Asignaturas = { "FUNDAMENTOS DE PROGRAMACION", "METODOS NUMERICOS" };
+            comboBoxAsignaturas.Items.AddRange(Asignaturas);
         }
 
         private void MostrarReporte(string IdCatalogo)
@@ -59,6 +67,14 @@ namespace CapaPresentacion
             exportarCatalogo.Visible = true;
         }
 
+
+        private void comboBoxAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Actualizar reporte con los datos de la asignatura selecionada
+            MostrarReporte("C006");
+        }
         private void buttonExportar_Click(object sender, EventArgs e) => ExportarDatos(dgvReporteSesiones);
+
+        private void buttonCerrrar_Click(object sender, EventArgs e) => Close();
     }
 }
