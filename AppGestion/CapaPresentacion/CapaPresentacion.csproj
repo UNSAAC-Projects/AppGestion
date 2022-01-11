@@ -170,11 +170,11 @@
     <Compile Include="frmMantCatalogo.Designer.cs">
       <DependentUpon>frmMantCatalogo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportesSesiones.cs">
+    <Compile Include="frmReporteSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReportesSesiones.Designer.cs">
-      <DependentUpon>frmReportesSesiones.cs</DependentUpon>
+    <Compile Include="frmReporteSesiones.Designer.cs">
+      <DependentUpon>frmReporteSesiones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVistaCatalogo.cs">
       <SubType>Form</SubType>
@@ -252,8 +252,8 @@
     <EmbeddedResource Include="frmMantCatalogo.resx">
       <DependentUpon>frmMantCatalogo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportesSesiones.resx">
-      <DependentUpon>frmReportesSesiones.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteSesiones.resx">
+      <DependentUpon>frmReporteSesiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo.resx">
       <DependentUpon>frmVistaCatalogo.cs</DependentUpon>

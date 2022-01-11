@@ -519,6 +519,18 @@ from TDocente
 where CodDocente = @CodDocente
 GO
 
+-- Procedimiento que muestra el cod y nombre de cursos que dicta un docente
+CREATE PROC SP_CURSOS_DOCENTE
+	@CodDocente varchar(5)
+AS
+select distinct (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre AS NOMBRE
+from THorario H
+inner join TCatalogo C on H.IDCatalogo = C.IDCatalogo
+inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
+where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
+(C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
+GO
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -826,8 +838,8 @@ go
 CREATE PROC SP_REPORTE_SESIONES
 	@IdCatalogo varchar(4)
 AS
-select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas',
-	'' as 'Horas Avanzadas', '' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
+	'' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
