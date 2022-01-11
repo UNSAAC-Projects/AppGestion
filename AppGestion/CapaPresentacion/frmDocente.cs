@@ -209,5 +209,11 @@ namespace CapaPresentacion
             RAsistencia.CodDocente = datos.CodDocente;
             RAsistencia.ShowDialog();
         }
+
+        private void buttonReporteSesiones_Click(object sender, EventArgs e)
+        {
+            frmReporteSesiones RSesiones = new frmReporteSesiones(Docente);
+            RSesiones.ShowDialog();
+        }
     }
 }
