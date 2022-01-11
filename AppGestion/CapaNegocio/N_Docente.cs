@@ -42,5 +42,10 @@ namespace CapaNegocio
         {
             return data.MostrarDatosArchivo(codCatalogo);
         }
+
+        public string[] CursosDocente(string codDocente)
+        {
+            return data.CursosDocente(codDocente);
+        }
     }
 }

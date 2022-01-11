@@ -17,6 +17,5 @@ namespace CapaNegocio
         {
             return data.MostrarReporteSesiones(IdCatalogo);
         }
-
     }
 }

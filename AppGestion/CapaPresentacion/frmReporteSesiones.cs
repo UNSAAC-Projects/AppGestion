@@ -12,25 +12,35 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class frmReportesSesiones : Form
+    public partial class frmReporteSesiones : Form
     {
         N_ReporteSesiones oReporteSesiones = new N_ReporteSesiones();
+        N_CursosDocente oCursosDocente = new N_CursosDocente();
+        N_Docente oDocente = new N_Docente();
 
-        public frmReportesSesiones()
+        private string CodDocente;
+        public frmReporteSesiones(string pCodDocente)
         {
             InitializeComponent();
+            CodDocente = pCodDocente;
         }
 
         private void frmReportesSesiones_Load(object sender, EventArgs e)
         {
-            MostrarReporte("C006"); //Mostrar reporte de plan de sesiones
             MostrarItemsComboBox(); //Mostrar opciones en comboBox
             comboBoxAsignaturas.SelectedIndex = 0;
+
+            //Obtener codCursoAsignatura
+            string codCursoAsig = comboBoxAsignaturas.Text.Substring(0, 6);
+            string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
+            MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
         }
 
         private void MostrarItemsComboBox()
         {
-            string[] Asignaturas = { "FUNDAMENTOS DE PROGRAMACION", "METODOS NUMERICOS" };
+            //Obtener cursos que dicta el docente
+            string[] Asignaturas = oDocente.CursosDocente(CodDocente);
+            //Mostrar cursos
             comboBoxAsignaturas.Items.AddRange(Asignaturas);
         }
 
@@ -67,19 +77,19 @@ namespace CapaPresentacion
             exportarCatalogo.Visible = true;
         }
 
-
         private void comboBoxAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Obtener codCursoAsignatura
+            string codCursoAsig = comboBoxAsignaturas.Text.Substring(0,6);
+            string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
             //Actualizar reporte con los datos de la asignatura selecionada
-            MostrarReporte("C006");
+            MostrarReporte(codCatalogo);
         }
         private void buttonExportar_Click(object sender, EventArgs e) => ExportarDatos(dgvReporteSesiones);
 
-        private void buttonCerrrar_Click(object sender, EventArgs e) => Close();
-
-        private void btnCerrarFrmReportesSesiones_Click(object sender, EventArgs e)
+        private void buttonCerrrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

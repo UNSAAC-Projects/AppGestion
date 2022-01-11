@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnREPORTEASISTENCIA.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAahJREFUSEvd
+        lctKw0AUhuPSpDOoKGoF8Q3Ux/DyMoKXhRtFFz6HuMpFKa71CVwoaWpBRNBVFwq2LuqqnnNytJP0TEi6
+        9IePZGb+808yM02d/6dWqDeboXoDBlYi9dEM9Q6XVBMEFIenvOA1DvQRl5VXLkgk8aeX4fpM7UidcWk5
+        mUE20Df2JGaQDbaON4kZZIOtpMerqRXooz0ptfFmkA22/smY5J277DKDxoFj7JKKqsAxdklFVeAYu6Si
+        AjpxWDtMfG/t4Xzeu7uuuxxjlxAiE2m/3ZhVXFZeYlgeCB8MnAn0x4HabgbqBvq/gB7ex5HeojBJmSCZ
+        zu+TJ6E+FcZTAn1CgXmJZgNcc/TRk6d9fbjfbUXuoulDxDfJm0a49FbZd4ttDKdCUMaHwHLx0FAjphyJ
+        P1djXy9tewtUCDJ9TJeHhhJMGZ4uZjT7utjGpaFCQ/f+5BL7P7lrKOgs/MNJQnedfOnJgT1Re1RoCMYO
+        yC8tURLoDfgqvpqhWfQx+nADua8Pn+r9dsOtIxz+jWOFx7WM8CjyJKPYjmlV0Zuky4WbnvuhOc4Pu1f4
+        SFWxtbUAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnReporteCursos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAahJREFUSEvd

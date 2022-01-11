@@ -519,6 +519,18 @@ from TDocente
 where CodDocente = @CodDocente
 GO
 
+-- Procedimiento que muestra el cod y nombre de cursos que dicta un docente
+CREATE PROC SP_CURSOS_DOCENTE
+	@CodDocente varchar(5)
+AS
+select distinct (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre AS NOMBRE
+from THorario H
+inner join TCatalogo C on H.IDCatalogo = C.IDCatalogo
+inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
+where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
+(C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
+GO
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -826,12 +838,16 @@ go
 CREATE PROC SP_REPORTE_SESIONES
 	@IdCatalogo varchar(4)
 AS
-select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas',
-	'' as 'Horas Avanzadas', '' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+-- Obtener categoria
+declare @Categoria varchar(100)
+select @Categoria = Categoria from TAsignatura 
+	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
+-- Mostrar reporte
+select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
-
 
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
@@ -862,6 +878,56 @@ begin
 end;
 drop table if exists #t1
 drop table if exists Aux
+go
+--=========Procediminetos para reportes de asistencias===========
+create OR ALTER proc sp_ReporteAsistencia
+@IdCatalogo varchar(6),@FechaInicio date,@FechaFin date
+as
+	SELECT  distinct  Fecha into #tablafecha from TAsistencia_Alumnos 
+	where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	declare @columnas nvarchar (max),@consulta nvarchar(max)
+	set @columnas=''
+	
+
+	DECLARE @Fecha AS nvarchar(400)
+	DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
+	OPEN CURSORFECHA
+	FETCH NEXT FROM CURSORFECHA INTO @Fecha
+	WHILE @@fetch_status = 0
+	BEGIN
+		--PRINT @Fecha
+		set @columnas=@columnas+'['+@Fecha+'],'
+		FETCH NEXT FROM CURSORFECHA INTO @Fecha
+	END
+	CLOSE CURSORFECHA
+	DEALLOCATE CURSORFECHA
+	
+	select Fecha,CodAlumno,Nombres,Asistio
+	into #temp
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
+	
+	set @columnas=substring(@columnas,1,len(@columnas)-1) 
+	--print @columnas
+	set @consulta='select *
+	--into #tablareporte
+	from #temp
+	pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
+	drop table if exists #tablafecha
+	execute (@consulta)
+	drop table if exists #temp
+go
+
+create or alter proc sp_recuperarIdCat_Doc_y_Asignatura
+@NombreAsignatura varchar(100),
+@CodDocente varchar(10)
+as
+	select CodAsignatura
+	into #tmp
+	from TAsignatura where Nombre=@NombreAsignatura
+
+	select IDCatalogo
+	from #tmp t INNER JOIN TCatalogo c on t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
+	drop table if exists #tmp
 go
 
 

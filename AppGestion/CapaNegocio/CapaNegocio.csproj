@@ -50,6 +50,7 @@
     <Compile Include="N_Horario.cs" />
     <Compile Include="N_Login.cs" />
     <Compile Include="N_PlanSesiones.cs" />
+    <Compile Include="N_ReporteAsistencia.cs" />
     <Compile Include="N_ReporteSesiones.cs" />
     <Compile Include="N_Silabo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
