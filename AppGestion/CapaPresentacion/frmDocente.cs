@@ -201,5 +201,13 @@ namespace CapaPresentacion
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(Docente);
         }
+
+        private void btnREPORTEASISTENCIA_Click(object sender, EventArgs e)
+        {
+            
+            ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
+            RAsistencia.CodDocente = datos.CodDocente;
+            RAsistencia.ShowDialog();
+        }
     }
 }
