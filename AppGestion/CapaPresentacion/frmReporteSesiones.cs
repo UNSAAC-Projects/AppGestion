@@ -91,5 +91,10 @@ namespace CapaPresentacion
         {
             Close();
         }
+
+        private void btnCerrarFrmReportesSesiones_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
