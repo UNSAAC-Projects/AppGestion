@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteSesiones));
             this.dgvReporteSesiones = new System.Windows.Forms.DataGridView();
             this.labelReporteAsistencia = new System.Windows.Forms.Label();
@@ -52,32 +52,36 @@
             // 
             // dgvReporteSesiones
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvReporteSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvReporteSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvReporteSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvReporteSesiones.BackgroundColor = System.Drawing.Color.White;
-            this.dgvReporteSesiones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporteSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvReporteSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvReporteSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvReporteSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReporteSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvReporteSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReporteSesiones.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvReporteSesiones.Location = new System.Drawing.Point(50, 155);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReporteSesiones.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvReporteSesiones.Location = new System.Drawing.Point(27, 155);
             this.dgvReporteSesiones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvReporteSesiones.Name = "dgvReporteSesiones";
-            this.dgvReporteSesiones.RowHeadersWidth = 51;
-            this.dgvReporteSesiones.Size = new System.Drawing.Size(979, 350);
+            this.dgvReporteSesiones.RowHeadersVisible = false;
+            this.dgvReporteSesiones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgvReporteSesiones.Size = new System.Drawing.Size(1046, 350);
             this.dgvReporteSesiones.TabIndex = 0;
             // 
             // labelReporteAsistencia
@@ -96,11 +100,11 @@
             // buttonExportar
             // 
             this.buttonExportar.BackColor = System.Drawing.Color.Transparent;
-            this.buttonExportar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonExportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonExportar.FlatAppearance.BorderSize = 3;
             this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExportar.ForeColor = System.Drawing.Color.Gray;
+            this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonExportar.Location = new System.Drawing.Point(550, 523);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExportar.Name = "buttonExportar";
@@ -112,7 +116,7 @@
             // 
             // buttonCerrrar
             // 
-            this.buttonCerrrar.BackColor = System.Drawing.Color.Gray;
+            this.buttonCerrrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonCerrrar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonCerrrar.FlatAppearance.BorderSize = 3;
             this.buttonCerrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -161,7 +165,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1074, 40);
+            this.panel1.Size = new System.Drawing.Size(1102, 40);
             this.panel1.TabIndex = 6;
             // 
             // pictureBoxLogo
@@ -178,7 +182,7 @@
             // btnCerrarFrmReportesSesiones
             // 
             this.btnCerrarFrmReportesSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarFrmReportesSesiones.Image")));
-            this.btnCerrarFrmReportesSesiones.Location = new System.Drawing.Point(1038, 5);
+            this.btnCerrarFrmReportesSesiones.Location = new System.Drawing.Point(1066, 6);
             this.btnCerrarFrmReportesSesiones.Name = "btnCerrarFrmReportesSesiones";
             this.btnCerrarFrmReportesSesiones.Size = new System.Drawing.Size(24, 24);
             this.btnCerrarFrmReportesSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -201,9 +205,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-29, 65);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 108);
+            this.pictureBox1.Size = new System.Drawing.Size(196, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -213,10 +217,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1074, 587);
+            this.ClientSize = new System.Drawing.Size(1102, 587);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvReporteSesiones);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelAsignatura);
             this.Controls.Add(this.comboBoxAsignaturas);
             this.Controls.Add(this.buttonCerrrar);
