@@ -68,6 +68,9 @@ namespace CapaPresentacion
             this.lblNroAlumnos = new System.Windows.Forms.Label();
             this.lblnombreCantidad = new System.Windows.Forms.Label();
             this.lblAsistio = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblFaltaron = new System.Windows.Forms.Label();
             this.pnlAsistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
@@ -516,11 +519,38 @@ namespace CapaPresentacion
             // lblAsistio
             // 
             this.lblAsistio.AutoSize = true;
-            this.lblAsistio.Location = new System.Drawing.Point(772, 209);
+            this.lblAsistio.Location = new System.Drawing.Point(740, 210);
             this.lblAsistio.Name = "lblAsistio";
             this.lblAsistio.Size = new System.Drawing.Size(24, 17);
             this.lblAsistio.TabIndex = 29;
             this.lblAsistio.Text = "__";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(650, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Asisten:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(828, 218);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Faltaron";
+            // 
+            // lblFaltaron
+            // 
+            this.lblFaltaron.AutoSize = true;
+            this.lblFaltaron.Location = new System.Drawing.Point(907, 214);
+            this.lblFaltaron.Name = "lblFaltaron";
+            this.lblFaltaron.Size = new System.Drawing.Size(24, 17);
+            this.lblFaltaron.TabIndex = 32;
+            this.lblFaltaron.Text = "__";
             // 
             // frmAsistencia
             // 
@@ -528,6 +558,9 @@ namespace CapaPresentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(967, 636);
+            this.Controls.Add(this.lblFaltaron);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAsistio);
             this.Controls.Add(this.lblnombreCantidad);
             this.Controls.Add(this.lblNroAlumnos);
@@ -612,5 +645,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label lblnombreCantidad;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Asistencia;
         private System.Windows.Forms.Label lblAsistio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFaltaron;
     }
 }
