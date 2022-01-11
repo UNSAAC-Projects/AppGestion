@@ -19,7 +19,7 @@ namespace CapaPresentacion
         N_Login oLogin = new N_Login();
         N_Docente oDocente = new N_Docente();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-
+        DataTable tabla;
         public string Docente;
 
         public frmDocente(string CodDocente)
@@ -56,6 +56,8 @@ namespace CapaPresentacion
         {
             frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
             frm.ShowDialog();
+            //Actualizar tabla docentes
+            MostrarHorarioxDia(Docente);
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -141,14 +143,13 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvCursosDocente.Rows[e.RowIndex];
                 if (row.Cells["ASISTENCIA"].Selected)
                 {
+                    N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
                     //Obtener cod curso y luego codcatalogo
                     string codAsignatura = row.Cells["CODIGO"].Value.ToString();
                     string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
                     string Grupo = row.Cells["GRUPO"].Value.ToString();
                     string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-                    datos.NombreCurso = NombreCurso;
-                    datos.CodCatalogo = codCatalogo;
-                    DataTable tabla = new DataTable();
+                    // hasta aqui esta bien 
 
                     //recuperar la ruta del archivo exce
                     tabla = oDocente.MostrarArchivos(codCatalogo);
@@ -165,6 +166,11 @@ namespace CapaPresentacion
                     form.dgvAsistencia.DataSource = result.Tables[0];
                     reader.Close();
                     form.ShowDialog();
+                    //dgvCursosDocente.Refresh();
+                    frmAsistencia frm = new frmAsistencia(codCatalogo, $"{NombreCurso} - GRUPO {Grupo}");
+                    frm.CodAsignatura = codAsignatura;
+                    frm.dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(codCatalogo);
+                    frm.ShowDialog();
                 }
             }
         }
@@ -201,7 +207,8 @@ namespace CapaPresentacion
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
-            RAsistencia.Show();
+            RAsistencia.ShowDialog();
+            //dgvCursosDocente.Refresh();
         }
 
         private void frmDocente_Load(object sender, EventArgs e)

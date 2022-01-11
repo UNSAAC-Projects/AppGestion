@@ -107,7 +107,7 @@ namespace CapaPresentacion
             this.btnReporteCursos.Name = "btnReporteCursos";
             this.btnReporteCursos.Size = new System.Drawing.Size(238, 49);
             this.btnReporteCursos.TabIndex = 12;
-            this.btnReporteCursos.Text = "REPORTE DE ASISTENCIAS";
+            this.btnReporteCursos.Text = "LISTA DE ASISTENCIAS";
             this.btnReporteCursos.UseVisualStyleBackColor = false;
             this.btnReporteCursos.Click += new System.EventHandler(this.btnReporteCursos_Click);
             // 
