@@ -66,6 +66,7 @@ namespace CapaPresentacion
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
             string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            //string Date ="11-01-2022";
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
@@ -139,6 +140,7 @@ namespace CapaPresentacion
 
             var DateAndTime = DateTime.Now;
             string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            //string Date = "11-01-2022";
 
             string name = NombreAsignatura;
             //registrar filas
