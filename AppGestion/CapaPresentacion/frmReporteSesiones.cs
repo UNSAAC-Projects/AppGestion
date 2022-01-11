@@ -12,13 +12,15 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class frmReportesSesiones : Form
+    public partial class frmReporteSesiones : Form
     {
         N_ReporteSesiones oReporteSesiones = new N_ReporteSesiones();
-
-        public frmReportesSesiones()
+        N_Docente oDocente = new N_Docente();
+        private string CodDocente;
+        public frmReporteSesiones(string pCodDocente)
         {
             InitializeComponent();
+            CodDocente = pCodDocente;
         }
 
         private void frmReportesSesiones_Load(object sender, EventArgs e)
@@ -30,7 +32,10 @@ namespace CapaPresentacion
 
         private void MostrarItemsComboBox()
         {
-            string[] Asignaturas = { "FUNDAMENTOS DE PROGRAMACION", "METODOS NUMERICOS" };
+            //Obtener cursos que dicta el docente
+            string[] Asignaturas = oDocente.CursosDocente(CodDocente);
+
+            //string[] Asignaturas = { "FUNDAMENTOS DE PROGRAMACION", "METODOS NUMERICOS" };
             comboBoxAsignaturas.Items.AddRange(Asignaturas);
         }
 
@@ -66,7 +71,6 @@ namespace CapaPresentacion
             }
             exportarCatalogo.Visible = true;
         }
-
 
         private void comboBoxAsignaturas_SelectedIndexChanged(object sender, EventArgs e)
         {
