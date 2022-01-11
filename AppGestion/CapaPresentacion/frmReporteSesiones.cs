@@ -87,10 +87,7 @@ namespace CapaPresentacion
         }
         private void buttonExportar_Click(object sender, EventArgs e) => ExportarDatos(dgvReporteSesiones);
 
-        private void buttonCerrrar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        private void buttonCerrrar_Click(object sender, EventArgs e) => Close();
 
         private void btnCerrarFrmReportesSesiones_Click(object sender, EventArgs e)
         {
