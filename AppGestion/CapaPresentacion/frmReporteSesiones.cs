@@ -34,6 +34,12 @@ namespace CapaPresentacion
             string codCursoAsig = comboBoxAsignaturas.Text.Substring(0, 6);
             string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
             MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
+
+            //Ocultar columnas
+            dgvReporteSesiones.Columns["Fecha"].Visible = false;
+            dgvReporteSesiones.Columns["Total Asistentes"].Visible = false;
+            dgvReporteSesiones.Columns["Total faltantes"].Visible = false;
+
         }
 
         private void MostrarItemsComboBox()

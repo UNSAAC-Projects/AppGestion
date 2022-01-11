@@ -35,8 +35,8 @@ namespace CapaPresentacion
         private void ReporteAsistenciasAlumnos_Load(object sender, EventArgs e)
         {
             CargarCombo();
-            mostrarReporte();
-
+            comboBoxCursosReporte.SelectedIndex = 0;
+            //mostrarReporte();
         }
 
         private void mostrarReporte()
@@ -50,6 +50,7 @@ namespace CapaPresentacion
                 dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
             }
             int M;
+            string valorFila;
             M = dgvReporteAsistencia.Columns.Count;
             foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
             {
@@ -57,7 +58,8 @@ namespace CapaPresentacion
                 asistencia = 0;
                 for (int i = 2; i < M - 1; i++)
                 {
-                    if (m.Cells[i].Value.ToString() == "P")
+                    valorFila = m.Cells[i].Value.ToString();
+                    if (valorFila == "P")
                     {
                         asistencia++;
                     }
@@ -85,7 +87,7 @@ namespace CapaPresentacion
                 comboBoxCursosReporte.Items.Add(dt.Rows[i][1].ToString());
                 i = i + 1;
             }
-            comboBoxCursosReporte.SelectedIndex = 0;
+            //comboBoxCursosReporte.SelectedIndex = 0;
 
 
         }
