@@ -838,12 +838,16 @@ go
 CREATE PROC SP_REPORTE_SESIONES
 	@IdCatalogo varchar(4)
 AS
+-- Obtener categoria
+declare @Categoria varchar(100)
+select @Categoria = Categoria from TAsignatura 
+	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
+-- Mostrar reporte
 select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
-	'' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
-
 
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
