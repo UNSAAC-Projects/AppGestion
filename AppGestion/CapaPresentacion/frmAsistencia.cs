@@ -56,14 +56,18 @@ namespace CapaPresentacion
 
             // Mostrar relacion de alumnos matriculados
             dgvAsistencia.Columns["Asistio"].Visible = false;
-
+           
             ImprimirHoraFecha();
+            ContarAsistencia();
+
+
         }
         private void MostrarListaMatriculados()
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
             string Date = DateTime.Now.ToString("dd-MM-yyyy");
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
+            int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 string a = Convert.ToString(row.Cells["Asistio"].Value);
@@ -78,8 +82,27 @@ namespace CapaPresentacion
                 if (a == "P")
                 {
                     row.Cells["Asistencia"].Value = "P";
+
+                    
+
                 }
+
             }
+            //asisten
+           
+        }
+        public void ContarAsistencia()
+        {
+            int contador = 0;
+            foreach (DataGridViewRow fila in dgvAsistencia .Rows)
+            {
+                if (fila.Cells["Asistencia"].Value.ToString() == "P")
+                {
+                    contador = contador + 1;
+                }
+               
+            }
+            lblAsistio.Text = contador.ToString();
         }
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
@@ -171,6 +194,7 @@ namespace CapaPresentacion
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 row.Cells["Asistencia"].Value = "P";
+               
             }
         }
 
@@ -201,9 +225,10 @@ namespace CapaPresentacion
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            ContarAsistencia();
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;
+           
 
         }
     }
