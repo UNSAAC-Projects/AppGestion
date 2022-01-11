@@ -102,7 +102,10 @@ namespace CapaPresentacion
                 }
                
             }
+            
             lblAsistio.Text = contador.ToString();
+            long nro =UInt32.Parse(lblNroAlumnos.Text) - contador;
+            lblFaltaron.Text = nro.ToString();
         }
         private void MostrarTemas()
         {// Mostrar el listado de temas en comboBoxTema
