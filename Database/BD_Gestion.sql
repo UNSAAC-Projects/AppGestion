@@ -121,70 +121,6 @@ CREATE TABLE THorario
 )
 GO
 
-/*TABLA ASISTENCIA*/
-CREATE TABLE TAsistencia
-(
-	IDAsistencia varchar(6),
-	Fecha varchar(10),
-	Hora varchar(2),
-	Tipo varchar(100),
-	IDHorario INT IDENTITY,
-	PRIMARY KEY (IDAsistencia),
-	FOREIGN KEY (IDHorario) REFERENCES THorario,
-	--DELETE ON CASCADE
-)
-GO
-
-/*TABLA ASISTENCIA ALUMNO*/
-CREATE TABLE TAsistenciaAlumno
-(
-	IDAsistenciaAlumno varchar(6),
-	IDAsistencia varchar(6),
-	Asistio varchar(60),
-	Observaciones varchar(100),
-	PRIMARY KEY (IDAsistenciaAlumno),
-	FOREIGN KEY (IDAsistencia) REFERENCES TAsistencia
-)
-GO
-
-/*TABLA ASISTENCIA-DIARIA DOCENTE*/ 
-CREATE TABLE TAsistenciaDiariaDocente
-(
-	IDAsistenciaDiaria varchar(6),
-	Fecha varchar(10),
-	Hora varchar(2),
-	PRIMARY KEY (IDAsistenciaDiaria) 
-)
-GO
-
-/*TABLA ASISTENCIA DOCENTE*/
-CREATE TABLE TAsistenciaDocente
-(
-	IDAsistenciaDocente varchar(6),
-	IDAsistencia varchar(6),
-	Semestre varchar(2),
-	TemaAvance varchar(100),
-	Asistio varchar(60),
-	PRIMARY KEY (IDAsistenciaDocente),
-	FOREIGN KEY (IDAsistencia) REFERENCES TAsistencia
-)
-GO
-
-/*TABLA LISTADO DOCENTES*/
-CREATE TABLE TListadoDocentes
-(
-	IDListado varchar(6),
-	IDAsistenciaDiaria varchar(6),
-	Asistio varchar(60),
-	CodDocente varchar(6),
-	Observaciones varchar(100),
-	PRIMARY KEY (IDListado),
-	FOREIGN KEY (IDAsistenciaDiaria) REFERENCES TAsistenciaDiariaDocente,
-	FOREIGN KEY (CodDocente) REFERENCES TDocente
-
-)
-GO
-
 /*TABLA LOGINS*/
 CREATE TABLE TLogin
 (
@@ -583,6 +519,18 @@ from TDocente
 where CodDocente = @CodDocente
 GO
 
+-- Procedimiento que muestra el cod y nombre de cursos que dicta un docente
+CREATE PROC SP_CURSOS_DOCENTE
+	@CodDocente varchar(5)
+AS
+select distinct (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre AS NOMBRE
+from THorario H
+inner join TCatalogo C on H.IDCatalogo = C.IDCatalogo
+inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
+where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
+(C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
+GO
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -886,13 +834,46 @@ else
 insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
 go
 
+-- Mostrar reporte de sesiones
+CREATE PROC SP_REPORTE_SESIONES
+	@IdCatalogo varchar(4)
+AS
+select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
+	'' as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+from TPlanSesiones
+where IDCatalogo = @IdCatalogo
+GO
+
+
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
-create OR ALTER proc SP_ListarMatriculados
-@IdCatalogo VARCHAR(6)
+create OR ALTER proc SP_ListarMatriculados 
+@IdCatalogo VARCHAR(6),
+@Fecha date
 as
-select CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES
-from TMatriculado where IDCatalogo=@IdCatalogo
-ORDER BY APELLIDOS_Y_NOMBRES
+
+if exists (select * from TAsistencia_Alumnos where Fecha=@Fecha and IdCatalogo=@IdCatalogo)
+begin
+	select CodAlumno,Nombres,Asistio,Observacion
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo and Fecha=@Fecha
+	order by Nombres
+end;
+else
+begin
+	create table Aux(
+		id int identity,
+		Asistio varchar(10),
+		Observacion varchar(30)
+	)
+	select IDCatalogo,CodAlumno,Apellidos +' '+ Nombre as APELLIDOS_Y_NOMBRES, Asistio='',Observacion='' into #t1
+	from TMatriculado full join Aux on IDCatalogo=@IdCatalogo 
+
+	select CodAlumno,APELLIDOS_Y_NOMBRES as Nombres,Asistio,Observacion
+	from #t1 where IDCatalogo=@IdCatalogo 
+	ORDER BY Nombres
+	--drop table Aux
+end;
+drop table if exists #t1
+drop table if exists Aux
 go
 
 

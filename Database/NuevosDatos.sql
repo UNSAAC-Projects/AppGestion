@@ -219,23 +219,6 @@ INSERT INTO THorario VALUES
 ('MIERCOLES','7','9','C011','P');
 GO
 
---INSERT INTO TAsistencia VALUES
---('A0001','28/05/21' ,'7','Alumno','H0001'),
---('A0002','14/04/21','7'	,'Docente','H0001'),
---('A0003','28/05/21' ,'9','Alumno','H0001'),
---('A0004','14/04/21','9'	,'Docente','H0001')
---GO
-
---INSERT INTO TAsistenciaDocente VALUES
---('AD0001','A0002','5'	,'','A'),
---('AD0002','A0004','5'	,'','A')
---GO
-
---INSERT INTO TAsistenciaAlumno VALUES
---('AA0001','A0001','A'	,''),
---('AA0002','A0003','A'	,'')
---GO
-
 INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES 
 ('C006','182898','CERATI CERRILLO','FIORELLA'),
 ('C006','125156','CONDORI FLORES WILLIAMS','DENNIS'),
@@ -295,61 +278,6 @@ INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES
 ('C010','155183','VARGAS ARQQUE','JEREMYK RUFINO');
 GO
 
-
-
-
-/*
-INSERT INTO TMatriculado VALUES
-('M0001','170750','2021-II','A','C001'),
-('M0002','182908','2021-II','A','C001'),
-('M0003','174443','2021-II','A','C001'),
-('M0004','151812','2021-II','A','C001'),
-('M0005','171059','2021-II','A','C001'),
-('M0006','184648','2021-II','A','C001'),
-('M0007','171061','2021-II','A','C001'),
-('M0008','163808','2021-II','B','C001'),
-('M0009','130741','2021-II','B','C001'),
-('M0010','154631','2021-II','B','C001'),
-('M0011','182925','2021-II','B','C001'),
-('M0012','182926','2021-II','B','C001'),
-('M0016','161135','2021-II','B','C001'),
-('M0017','171260','2021-II','A','C002'),
-('M0018','192428','2021-II','A','C002'),
-('M0019','163671','2021-II','A','C002'),
-('M0020','171605','2021-II','A','C002'),
-('M0021','184655','2021-II','A','C002'),
-('M0022','141011','2021-II','A','C002'),
-('M0023','182938','2021-II','A','C002'),
-('M0024','145009','2021-II','A','C002'),
-('M0027','131605','2021-II','B','C002'),
-('M0028','130516','2021-II','B','C002'),
-('M0029','170749','2021-II','B','C002'),
-('M0030','170428','2021-II','B','C002'),
-('M0031','161756','2021-II','B','C002'),
-('M0032','174440','2021-II','B','C002'),
-('M0033','182909','2021-II','B','C002'),
-('M0034','182910','2021-II','B','C002'),
-('M0035','182914','2021-II','B','C002'),
-('M0036','112207','2021-II','B','C002'),
-('M0037','170436','2021-II','B','C002'),
-('M0038','163809','2021-II','A','C003'),
-('M0039','164566','2021-II','A','C003'),
-('M0040','182923','2021-II','A','C003'),
-('M0041','171064','2021-II','A','C003'),
-('M0042','101526','2021-II','A','C003'),
-('M0043','130322','2021-II','A','C004'),
-('M0044','151822','2021-II','A','C004'),
-('M0048','174454','2021-II','A','C004'),
-('M0049','083221','2021-II','A','C004'),
-('M0050','174455','2021-II','A','C004'),
-('M0051','182936','2021-II','A','C004'),
-('M0052','155183','2021-II','B','C004'),
-('M0053','182898','2021-II','B','C004'),
-('M0054','125156','2021-II','B','C004'),
-('M0055','163839','2021-II','B','C004'),
-('M0056','170430','2021-II','B','C004');
-GO
-*/
 
 INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES 
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006',''),--Fundamentos de programacion(profe doris)
@@ -490,9 +418,9 @@ GO
 --insertar datos LISTA DE ALUMNOS - Docente Doris
 --exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
 --exec SP_GuardarArchivo 'METODOS NUMERICOS','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','E:\Projects - University\Ingeniería de Software\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
-exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
-go
-exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
-GO
+--exec SP_GuardarArchivo 'FUNDAMENTOS DE PROGRAMACION','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista1.xls','C006'
+--go
+--exec SP_GuardarArchivo 'METODOS NUMERICOS','D:\Semestre 2021-2\Ingenieria del Software I\AppGestion\ListaAlumnosCursos\Lista2.xls','C010'
+--GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'

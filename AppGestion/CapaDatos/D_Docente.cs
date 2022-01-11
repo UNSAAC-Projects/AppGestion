@@ -156,5 +156,34 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+
+        //Funcion para mostrar cursos que dicta un docente
+        public string[] CursosDocente(string codDocente)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_CURSOS_DOCENTE", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@CodDocente", codDocente);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+
+            //Formar string
+            List<string> cursos = new List<string>();
+            string codCursoCatalogo, nombreCurso;
+            //Recorrer datatable
+            foreach (DataRow row in tabla.Rows)
+            {
+                codCursoCatalogo = row[0].ToString();
+                nombreCurso = row[1].ToString();
+
+                cursos.Add($"{codCursoCatalogo} - {nombreCurso}");
+            }
+            return cursos.ToArray();
+        }
     }
 }
