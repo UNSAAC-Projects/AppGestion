@@ -519,6 +519,18 @@ from TDocente
 where CodDocente = @CodDocente
 GO
 
+-- Procedimiento que muestra el cod y nombre de cursos que dicta un docente
+CREATE PROC SP_CURSOS_DOCENTE
+	@CodDocente varchar(5)
+AS
+select distinct (C.CodAsignatura + C.Grupo + 'IN') as CODIGO, 
+	A.Nombre AS NOMBRE
+from THorario H
+inner join TCatalogo C on H.IDCatalogo = C.IDCatalogo
+inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
+where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
+(C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
+GO
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -821,6 +833,21 @@ update TAsistencia_Alumnos set Asistio=@Asistio, Observacion=@Observacion where 
 else
 insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
 go
+
+-- Mostrar reporte de sesiones
+CREATE PROC SP_REPORTE_SESIONES
+	@IdCatalogo varchar(4)
+AS
+-- Obtener categoria
+declare @Categoria varchar(100)
+select @Categoria = Categoria from TAsignatura 
+	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
+-- Mostrar reporte
+select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+from TPlanSesiones
+where IDCatalogo = @IdCatalogo
+GO
 
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
