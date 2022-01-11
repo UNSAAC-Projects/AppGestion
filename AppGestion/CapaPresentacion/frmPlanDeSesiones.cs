@@ -233,28 +233,10 @@ namespace CapaPresentacion
             MostrarPlanSesiones(IDCatalogo);
         }
 
-        /*DataView ImportarDatos(string nombrearchivo)
-        {
-            string conexion = string.Format("Provider = Microsoft.ACE.OLEDB.12.0; Data Souce = {0}; Extended Properties = 'Excel 12.0;", nombrearchivo);
-            OleDbConnection conector = new OleDbConnection(conexion);
-            conector.Open();
-            OleDbCommand consulta = new OleDbCommand("select * from [Hoja1$]", conector);
-            OleDbDataAdapter adaptador = new OleDbDataAdapter
-            {
-                SelectCommand = consulta
-            };
-
-            DataSet ds = new DataSet();
-            adaptador.Fill(ds);
-            conector.Close();
-
-            return ds.Tables[0].DefaultView;
-        
-        }*/
 
         private void btnImportarDatos_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|.xls|Excel Workbook|.xlsx", ValidateNames = true })
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -271,6 +253,7 @@ namespace CapaPresentacion
                     reader.IsFirstRowAsColumnNames = true;
                     result = reader.AsDataSet();
                     dgvPlanSesiones.DataSource = result.Tables[0];
+
                     reader.Close();
 
                 }
