@@ -42,6 +42,8 @@ namespace CapaPresentacion
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBoxUnidad = new System.Windows.Forms.ComboBox();
+            this.lblUnidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteAsistencia)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFrmReporte)).BeginInit();
@@ -79,12 +81,13 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvReporteAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvReporteAsistencia.Location = new System.Drawing.Point(50, 143);
+            this.dgvReporteAsistencia.Location = new System.Drawing.Point(38, 116);
+            this.dgvReporteAsistencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvReporteAsistencia.Name = "dgvReporteAsistencia";
             this.dgvReporteAsistencia.RowHeadersVisible = false;
             this.dgvReporteAsistencia.RowHeadersWidth = 51;
             this.dgvReporteAsistencia.RowTemplate.Height = 24;
-            this.dgvReporteAsistencia.Size = new System.Drawing.Size(926, 535);
+            this.dgvReporteAsistencia.Size = new System.Drawing.Size(694, 435);
             this.dgvReporteAsistencia.TabIndex = 1;
             this.dgvReporteAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -93,9 +96,10 @@ namespace CapaPresentacion
             this.comboBoxCursosReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCursosReporte.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCursosReporte.FormattingEnabled = true;
-            this.comboBoxCursosReporte.Location = new System.Drawing.Point(153, 86);
+            this.comboBoxCursosReporte.Location = new System.Drawing.Point(115, 70);
+            this.comboBoxCursosReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxCursosReporte.Name = "comboBoxCursosReporte";
-            this.comboBoxCursosReporte.Size = new System.Drawing.Size(426, 25);
+            this.comboBoxCursosReporte.Size = new System.Drawing.Size(320, 23);
             this.comboBoxCursosReporte.TabIndex = 2;
             this.comboBoxCursosReporte.SelectedIndexChanged += new System.EventHandler(this.comboBoxCurso_SelectedIndexChanged);
             // 
@@ -108,18 +112,19 @@ namespace CapaPresentacion
             this.panel1.Controls.Add(this.label11);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 43);
+            this.panel1.Size = new System.Drawing.Size(776, 35);
             this.panel1.TabIndex = 3;
             // 
             // btnMinimizarFrmReporte
             // 
             this.btnMinimizarFrmReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizarFrmReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarFrmReporte.Image")));
-            this.btnMinimizarFrmReporte.Location = new System.Drawing.Point(944, 4);
-            this.btnMinimizarFrmReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizarFrmReporte.Location = new System.Drawing.Point(708, 3);
+            this.btnMinimizarFrmReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizarFrmReporte.Name = "btnMinimizarFrmReporte";
-            this.btnMinimizarFrmReporte.Size = new System.Drawing.Size(41, 37);
+            this.btnMinimizarFrmReporte.Size = new System.Drawing.Size(31, 30);
             this.btnMinimizarFrmReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimizarFrmReporte.TabIndex = 59;
             this.btnMinimizarFrmReporte.TabStop = false;
@@ -129,10 +134,10 @@ namespace CapaPresentacion
             // 
             this.btnCancelarFrmReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarFrmReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarFrmReporte.Image")));
-            this.btnCancelarFrmReporte.Location = new System.Drawing.Point(991, 4);
-            this.btnCancelarFrmReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarFrmReporte.Location = new System.Drawing.Point(743, 3);
+            this.btnCancelarFrmReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelarFrmReporte.Name = "btnCancelarFrmReporte";
-            this.btnCancelarFrmReporte.Size = new System.Drawing.Size(41, 37);
+            this.btnCancelarFrmReporte.Size = new System.Drawing.Size(31, 30);
             this.btnCancelarFrmReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCancelarFrmReporte.TabIndex = 58;
             this.btnCancelarFrmReporte.TabStop = false;
@@ -141,10 +146,9 @@ namespace CapaPresentacion
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 4);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(0, 3);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(37, 36);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(28, 29);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogo.TabIndex = 57;
             this.pictureBoxLogo.TabStop = false;
@@ -154,9 +158,10 @@ namespace CapaPresentacion
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(44, 9);
+            this.label11.Location = new System.Drawing.Point(33, 7);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(251, 23);
+            this.label11.Size = new System.Drawing.Size(210, 21);
             this.label11.TabIndex = 34;
             this.label11.Text = "REPORTE DE ASISTENCIAS";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -168,9 +173,10 @@ namespace CapaPresentacion
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(46, 86);
+            this.label1.Location = new System.Drawing.Point(34, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 19);
+            this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "CURSO:";
             // 
@@ -179,24 +185,57 @@ namespace CapaPresentacion
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.panel2.Location = new System.Drawing.Point(142, 116);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(106, 94);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 1);
+            this.panel2.Size = new System.Drawing.Size(338, 2);
             this.panel2.TabIndex = 22;
+            // 
+            // comboBoxUnidad
+            // 
+            this.comboBoxUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxUnidad.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxUnidad.FormattingEnabled = true;
+            this.comboBoxUnidad.Items.AddRange(new object[] {
+            "1era unidad",
+            "2da unidad",
+            "3ra unidad"});
+            this.comboBoxUnidad.Location = new System.Drawing.Point(622, 70);
+            this.comboBoxUnidad.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxUnidad.Name = "comboBoxUnidad";
+            this.comboBoxUnidad.Size = new System.Drawing.Size(117, 23);
+            this.comboBoxUnidad.TabIndex = 23;
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUnidad.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblUnidad.Location = new System.Drawing.Point(547, 72);
+            this.lblUnidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(65, 17);
+            this.lblUnidad.TabIndex = 24;
+            this.lblUnidad.Text = "UNIDAD:";
             // 
             // ReporteAsistenciasAlumnos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1035, 742);
+            this.ClientSize = new System.Drawing.Size(776, 603);
+            this.Controls.Add(this.lblUnidad);
+            this.Controls.Add(this.comboBoxUnidad);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBoxCursosReporte);
             this.Controls.Add(this.dgvReporteAsistencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ReporteAsistenciasAlumnos";
             this.Text = "ReporteAsistenciasAlumnos";
             this.Load += new System.EventHandler(this.ReporteAsistenciasAlumnos_Load);
@@ -222,5 +261,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnCancelarFrmReporte;
         private System.Windows.Forms.PictureBox btnMinimizarFrmReporte;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comboBoxUnidad;
+        private System.Windows.Forms.Label lblUnidad;
     }
 }

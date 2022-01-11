@@ -37,6 +37,7 @@ namespace CapaPresentacion
             CargarCombo();
             comboBoxCursosReporte.SelectedIndex = 0;
             //mostrarReporte();
+            comboBoxUnidad.SelectedIndex = 0;
         }
 
         private void mostrarReporte()
