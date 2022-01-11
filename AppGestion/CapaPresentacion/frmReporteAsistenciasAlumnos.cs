@@ -11,13 +11,13 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class ReporteAsistenciasAlumnos : Form
+    public partial class frmReporteAsistenciasAlumnos : Form
     {
         readonly N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
         readonly N_CursosDocente D = new N_CursosDocente();
 
         public string CodDocente;
-        public ReporteAsistenciasAlumnos()
+        public frmReporteAsistenciasAlumnos()
         {
             InitializeComponent();
         }
