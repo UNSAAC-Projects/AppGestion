@@ -86,11 +86,11 @@
     <Compile Include="FormsDirDep\frmAsignarDocente.Designer.cs">
       <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsDirDep\frmAsistenciaDocentes.cs">
+    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsDirDep\frmAsistenciaDocentes.Designer.cs">
-      <DependentUpon>frmAsistenciaDocentes.cs</DependentUpon>
+    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.Designer.cs">
+      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsDirDep\frmDirecDepAcade.cs">
       <SubType>Form</SubType>
@@ -223,8 +223,8 @@
     <EmbeddedResource Include="FormsDirDep\frmAsignarDocentev2.resx">
       <DependentUpon>frmAsignarDocentev2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsDirDep\frmAsistenciaDocentes.resx">
-      <DependentUpon>frmAsistenciaDocentes.cs</DependentUpon>
+    <EmbeddedResource Include="FormsDirDep\frmAsistenciaDiariaDocentes.resx">
+      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmDirecDepAcade.resx">
       <DependentUpon>frmDirecDepAcade.cs</DependentUpon>

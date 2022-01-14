@@ -14,7 +14,7 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class frmAsistenciaDocentes : Form
+    public partial class frmAsistenciaDiariaDocentes : Form
     {
         FrmLogin L = new FrmLogin();
         E_Asistencia entities = new E_Asistencia();
@@ -23,7 +23,7 @@ namespace CapaPresentacion
         public string CodAsignatura;
         int indexTema; //Indice del siguiente tema a dictar
 
-        public frmAsistenciaDocentes()
+        public frmAsistenciaDiariaDocentes()
         {
             InitializeComponent();
         }
@@ -40,46 +40,33 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            //MostrarListaMatriculados();
             // Mostrar los docentes activos en el semestre actual
             MostrarDocentesActivos();
-
-
-            lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
-
-            // Mostrar relacion de alumnos matriculados
-            dgvAsistencia.Columns["Asistio"].Visible = false;
-           
-            ImprimirHoraFecha();
+            // Ocultar columna Asistio
+            dgvAsistencia.Columns["Asistió"].Visible = false;
+            //Mostrar nro de docentes
+            labelNroDocentes.Text = dgvAsistencia.Rows.Count.ToString();
+            //Mostrar hora  y fecha 
+            MostrarHoraFecha();
+            //Contar asistentes y faltantes
             ContarAsistencia();
-
-
         }
         private void MostrarDocentesActivos()
         {
-            //N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            ////string Date ="11-01-2022";
-            //dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
-            //int asisten = 0;
-            //foreach (DataGridViewRow row in dgvAsistencia.Rows)
-            //{
-            //    string a = Convert.ToString(row.Cells["Asistio"].Value);
-            //    if (a == "")
-            //    {
-            //        row.Cells["Asistencia"].Value = "F";
-            //    }
-            //    if (a == "F")
-            //    {
-            //        row.Cells["Asistencia"].Value = "F";
-            //    }
-            //    if (a == "P")
-            //    {
-            //        row.Cells["Asistencia"].Value = "P";
-            //    }
-            //}
-            ////asisten
-           
+            N_AsistenciaDiariaDocentes oADiariaDocentes = new N_AsistenciaDiariaDocentes();
+            //string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            DateTime fecha = DateTime.Now;
+            string semestreLectivo = "2021-II"; //Falta detectar automáticamente
+            dgvAsistencia.DataSource = oADiariaDocentes.ListarDocentesActivos(semestreLectivo, fecha);
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
+            {
+                // Obtener valor de la columna Asistio
+                string value = Convert.ToString(row.Cells["Asistió"].Value);
+                // Marcar o descarmar combobox de acuardo al valor de value
+                if (value == "") row.Cells["Asistencia"].Value = "F";
+                else if (value == "F") row.Cells["Asistencia"].Value = "F";
+                else if (value == "P") row.Cells["Asistencia"].Value = "P";
+            }
         }
         public void ContarAsistencia()
         {
@@ -94,16 +81,19 @@ namespace CapaPresentacion
             }
             
             lblAsistio.Text = contador.ToString();
-            long nro =UInt32.Parse(lblNroAlumnos.Text) - contador;
+            long nro =UInt32.Parse(labelNroDocentes.Text) - contador;
             lblFaltaron.Text = nro.ToString();
         }
 
-        public void ImprimirHoraFecha()
+        public void MostrarHoraFecha()
         {
-            string datetime;
-            datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
-            lblFecha.Text = datetime;
-            //lblDocente.Text = datos.NombreDocente;
+            string fecha, hora;
+            //Recuperar hora y fecha del sistema
+            fecha = DateTime.Now.ToString("dd/MM/yyyy");
+            hora = DateTime.Now.ToString("hh:mm tt");
+            //Mostrar fecha y hora en los labels
+            labelFecha.Text = fecha;
+            labelHora.Text = hora;
         }
 
         bool  ExportarDatos(DataGridView datalistado)
@@ -170,8 +160,6 @@ namespace CapaPresentacion
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ContarAsistencia();
-            dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
-            dgvAsistencia.Columns["Nombres"].ReadOnly = true;
         }
 
         //Movimiento panel

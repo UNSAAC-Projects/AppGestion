@@ -1,7 +1,7 @@
 ﻿
 namespace CapaPresentacion
 {
-    partial class frmAsistenciaDocentes
+    partial class frmAsistenciaDiariaDocentes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsistenciaDocentes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsistenciaDiariaDocentes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,8 +46,8 @@ namespace CapaPresentacion
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvAsistencia = new System.Windows.Forms.DataGridView();
             this.Asistencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblFecha = new System.Windows.Forms.Label();
+            this.labelTextoFecha = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -55,12 +55,14 @@ namespace CapaPresentacion
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblAsignatura = new System.Windows.Forms.Label();
-            this.lblNroAlumnos = new System.Windows.Forms.Label();
-            this.lblnombreCantidad = new System.Windows.Forms.Label();
+            this.labelNroDocentes = new System.Windows.Forms.Label();
+            this.labelTextoNroDoc = new System.Windows.Forms.Label();
             this.lblAsistio = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblFaltaron = new System.Windows.Forms.Label();
+            this.labelTextoHora = new System.Windows.Forms.Label();
+            this.labelHora = new System.Windows.Forms.Label();
             this.pnlAsistencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
@@ -79,7 +81,7 @@ namespace CapaPresentacion
             this.pnlAsistencia.Controls.Add(this.label11);
             this.pnlAsistencia.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAsistencia.Location = new System.Drawing.Point(0, 0);
-            this.pnlAsistencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAsistencia.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAsistencia.Name = "pnlAsistencia";
             this.pnlAsistencia.Size = new System.Drawing.Size(725, 36);
             this.pnlAsistencia.TabIndex = 1;
@@ -91,7 +93,7 @@ namespace CapaPresentacion
             this.btnCERRAR.BackColor = System.Drawing.Color.Transparent;
             this.btnCERRAR.Image = ((System.Drawing.Image)(resources.GetObject("btnCERRAR.Image")));
             this.btnCERRAR.Location = new System.Drawing.Point(693, 2);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(27, 29);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,7 +107,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.Transparent;
             this.btnMINIMIZAR.Image = ((System.Drawing.Image)(resources.GetObject("btnMINIMIZAR.Image")));
             this.btnMINIMIZAR.Location = new System.Drawing.Point(662, 2);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(27, 29);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +119,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox3.Image = global::CapaPresentacion.Properties.Resources.menu_regular_242;
             this.pictureBox3.Location = new System.Drawing.Point(9, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(27, 26);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,9 +134,9 @@ namespace CapaPresentacion
             this.label11.Location = new System.Drawing.Point(40, 7);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(193, 20);
+            this.label11.Size = new System.Drawing.Size(249, 20);
             this.label11.TabIndex = 33;
-            this.label11.Text = "ASISTENCIA DE DOCENTES";
+            this.label11.Text = "ASISTENCIA DIARIA DE DOCENTES";
             // 
             // buttonGUARDAR
             // 
@@ -149,7 +151,7 @@ namespace CapaPresentacion
             this.buttonGUARDAR.ForeColor = System.Drawing.Color.DimGray;
             this.buttonGUARDAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonGUARDAR.Location = new System.Drawing.Point(579, 453);
-            this.buttonGUARDAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGUARDAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGUARDAR.Name = "buttonGUARDAR";
             this.buttonGUARDAR.Size = new System.Drawing.Size(63, 58);
             this.buttonGUARDAR.TabIndex = 15;
@@ -167,8 +169,8 @@ namespace CapaPresentacion
             this.buttonDESMARCAR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESMARCAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESMARCAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESMARCAR.Image")));
-            this.buttonDESMARCAR.Location = new System.Drawing.Point(25, 284);
-            this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDESMARCAR.Location = new System.Drawing.Point(30, 309);
+            this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDESMARCAR.Name = "buttonDESMARCAR";
             this.buttonDESMARCAR.Size = new System.Drawing.Size(74, 115);
             this.buttonDESMARCAR.TabIndex = 9;
@@ -188,8 +190,8 @@ namespace CapaPresentacion
             this.buttonMarcar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMarcar.ForeColor = System.Drawing.Color.White;
             this.buttonMarcar.Image = ((System.Drawing.Image)(resources.GetObject("buttonMarcar.Image")));
-            this.buttonMarcar.Location = new System.Drawing.Point(25, 160);
-            this.buttonMarcar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonMarcar.Location = new System.Drawing.Point(30, 185);
+            this.buttonMarcar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMarcar.Name = "buttonMarcar";
             this.buttonMarcar.Size = new System.Drawing.Size(74, 115);
             this.buttonMarcar.TabIndex = 8;
@@ -203,7 +205,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(662, 39);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(58, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -214,7 +216,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas1;
             this.pictureBox1.Location = new System.Drawing.Point(6, 39);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -254,14 +256,14 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAsistencia.Location = new System.Drawing.Point(108, 142);
-            this.dgvAsistencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAsistencia.Location = new System.Drawing.Point(108, 160);
+            this.dgvAsistencia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAsistencia.Name = "dgvAsistencia";
             this.dgvAsistencia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAsistencia.RowHeadersVisible = false;
             this.dgvAsistencia.RowHeadersWidth = 51;
             this.dgvAsistencia.RowTemplate.Height = 24;
-            this.dgvAsistencia.Size = new System.Drawing.Size(581, 307);
+            this.dgvAsistencia.Size = new System.Drawing.Size(581, 289);
             this.dgvAsistencia.TabIndex = 16;
             this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
             // 
@@ -274,37 +276,37 @@ namespace CapaPresentacion
             this.Asistencia.TrueValue = "P";
             this.Asistencia.Width = 72;
             // 
-            // label4
+            // labelTextoFecha
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.label4.Location = new System.Drawing.Point(105, 59);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 17);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Fecha y Hora :";
+            this.labelTextoFecha.AutoSize = true;
+            this.labelTextoFecha.BackColor = System.Drawing.Color.Transparent;
+            this.labelTextoFecha.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextoFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.labelTextoFecha.Location = new System.Drawing.Point(105, 59);
+            this.labelTextoFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTextoFecha.Name = "labelTextoFecha";
+            this.labelTextoFecha.Size = new System.Drawing.Size(58, 17);
+            this.labelTextoFecha.TabIndex = 17;
+            this.labelTextoFecha.Text = "Fecha: ";
             // 
-            // lblFecha
+            // labelFecha
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblFecha.Location = new System.Drawing.Point(219, 62);
-            this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(12, 15);
-            this.lblFecha.TabIndex = 18;
-            this.lblFecha.Text = "-";
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelFecha.Location = new System.Drawing.Point(167, 59);
+            this.labelFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(12, 15);
+            this.labelFecha.TabIndex = 18;
+            this.labelFecha.Text = "-";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.ForeColor = System.Drawing.Color.Gray;
             this.panel3.Location = new System.Drawing.Point(6, 487);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(567, 4);
             this.panel3.TabIndex = 21;
@@ -314,7 +316,7 @@ namespace CapaPresentacion
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.ForeColor = System.Drawing.Color.Gray;
             this.panel4.Location = new System.Drawing.Point(6, 474);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(567, 4);
             this.panel4.TabIndex = 22;
@@ -324,7 +326,7 @@ namespace CapaPresentacion
             this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel5.Location = new System.Drawing.Point(652, 488);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(68, 4);
             this.panel5.TabIndex = 22;
@@ -334,7 +336,7 @@ namespace CapaPresentacion
             this.panel6.BackColor = System.Drawing.Color.Silver;
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel6.Location = new System.Drawing.Point(663, 480);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(57, 4);
             this.panel6.TabIndex = 23;
@@ -345,7 +347,7 @@ namespace CapaPresentacion
             this.panel7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel7.ForeColor = System.Drawing.Color.Gray;
             this.panel7.Location = new System.Drawing.Point(6, 480);
-            this.panel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(534, 4);
             this.panel7.TabIndex = 23;
@@ -355,7 +357,7 @@ namespace CapaPresentacion
             this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.ForeColor = System.Drawing.Color.Gray;
             this.panel8.Location = new System.Drawing.Point(646, 474);
-            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(74, 4);
             this.panel8.TabIndex = 24;
@@ -372,36 +374,36 @@ namespace CapaPresentacion
             this.lblAsignatura.TabIndex = 26;
             this.lblAsignatura.Text = "-";
             // 
-            // lblNroAlumnos
+            // labelNroDocentes
             // 
-            this.lblNroAlumnos.AutoSize = true;
-            this.lblNroAlumnos.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNroAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblNroAlumnos.Location = new System.Drawing.Point(246, 104);
-            this.lblNroAlumnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNroAlumnos.Name = "lblNroAlumnos";
-            this.lblNroAlumnos.Size = new System.Drawing.Size(12, 15);
-            this.lblNroAlumnos.TabIndex = 27;
-            this.lblNroAlumnos.Text = "-";
+            this.labelNroDocentes.AutoSize = true;
+            this.labelNroDocentes.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNroDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelNroDocentes.Location = new System.Drawing.Point(251, 122);
+            this.labelNroDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNroDocentes.Name = "labelNroDocentes";
+            this.labelNroDocentes.Size = new System.Drawing.Size(12, 15);
+            this.labelNroDocentes.TabIndex = 27;
+            this.labelNroDocentes.Text = "-";
             // 
-            // lblnombreCantidad
+            // labelTextoNroDoc
             // 
-            this.lblnombreCantidad.AutoSize = true;
-            this.lblnombreCantidad.BackColor = System.Drawing.Color.Transparent;
-            this.lblnombreCantidad.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombreCantidad.ForeColor = System.Drawing.Color.DimGray;
-            this.lblnombreCantidad.Location = new System.Drawing.Point(100, 102);
-            this.lblnombreCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblnombreCantidad.Name = "lblnombreCantidad";
-            this.lblnombreCantidad.Size = new System.Drawing.Size(139, 17);
-            this.lblnombreCantidad.TabIndex = 28;
-            this.lblnombreCantidad.Text = "Cantidad de Alumnos:";
+            this.labelTextoNroDoc.AutoSize = true;
+            this.labelTextoNroDoc.BackColor = System.Drawing.Color.Transparent;
+            this.labelTextoNroDoc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextoNroDoc.ForeColor = System.Drawing.Color.DimGray;
+            this.labelTextoNroDoc.Location = new System.Drawing.Point(105, 120);
+            this.labelTextoNroDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTextoNroDoc.Name = "labelTextoNroDoc";
+            this.labelTextoNroDoc.Size = new System.Drawing.Size(114, 17);
+            this.labelTextoNroDoc.TabIndex = 28;
+            this.labelTextoNroDoc.Text = "Nro. de docentes:";
             // 
             // lblAsistio
             // 
             this.lblAsistio.AutoSize = true;
             this.lblAsistio.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsistio.Location = new System.Drawing.Point(418, 104);
+            this.lblAsistio.Location = new System.Drawing.Point(423, 122);
             this.lblAsistio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAsistio.Name = "lblAsistio";
             this.lblAsistio.Size = new System.Drawing.Size(19, 15);
@@ -413,7 +415,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(350, 102);
+            this.label2.Location = new System.Drawing.Point(355, 120);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 17);
@@ -425,7 +427,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(483, 105);
+            this.label5.Location = new System.Drawing.Point(488, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
@@ -436,33 +438,60 @@ namespace CapaPresentacion
             // 
             this.lblFaltaron.AutoSize = true;
             this.lblFaltaron.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaltaron.Location = new System.Drawing.Point(544, 107);
+            this.lblFaltaron.Location = new System.Drawing.Point(549, 125);
             this.lblFaltaron.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFaltaron.Name = "lblFaltaron";
             this.lblFaltaron.Size = new System.Drawing.Size(19, 15);
             this.lblFaltaron.TabIndex = 32;
             this.lblFaltaron.Text = "__";
             // 
-            // frmAsistenciaDocentes
+            // labelTextoHora
+            // 
+            this.labelTextoHora.AutoSize = true;
+            this.labelTextoHora.BackColor = System.Drawing.Color.Transparent;
+            this.labelTextoHora.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextoHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.labelTextoHora.Location = new System.Drawing.Point(105, 86);
+            this.labelTextoHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTextoHora.Name = "labelTextoHora";
+            this.labelTextoHora.Size = new System.Drawing.Size(44, 17);
+            this.labelTextoHora.TabIndex = 33;
+            this.labelTextoHora.Text = "Hora:";
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelHora.Location = new System.Drawing.Point(153, 88);
+            this.labelHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(12, 15);
+            this.labelHora.TabIndex = 34;
+            this.labelHora.Text = "-";
+            // 
+            // frmAsistenciaDiariaDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(725, 517);
+            this.Controls.Add(this.labelHora);
+            this.Controls.Add(this.labelTextoHora);
             this.Controls.Add(this.lblFaltaron);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAsistio);
-            this.Controls.Add(this.lblnombreCantidad);
-            this.Controls.Add(this.lblNroAlumnos);
+            this.Controls.Add(this.labelTextoNroDoc);
+            this.Controls.Add(this.labelNroDocentes);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelFecha);
+            this.Controls.Add(this.labelTextoFecha);
             this.Controls.Add(this.dgvAsistencia);
             this.Controls.Add(this.buttonGUARDAR);
             this.Controls.Add(this.buttonDESMARCAR);
@@ -471,8 +500,8 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlAsistencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmAsistenciaDocentes";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "frmAsistenciaDiariaDocentes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " k";
             this.Load += new System.EventHandler(this.frmAsistencia_Load);
@@ -503,8 +532,8 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox btnMINIMIZAR;
         private System.Windows.Forms.PictureBox btnCERRAR;
         public System.Windows.Forms.DataGridView dgvAsistencia;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label labelTextoFecha;
+        private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -512,12 +541,14 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
         public System.Windows.Forms.Label lblAsignatura;
-        private System.Windows.Forms.Label lblNroAlumnos;
-        private System.Windows.Forms.Label lblnombreCantidad;
+        private System.Windows.Forms.Label labelNroDocentes;
+        private System.Windows.Forms.Label labelTextoNroDoc;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Asistencia;
         private System.Windows.Forms.Label lblAsistio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblFaltaron;
+        private System.Windows.Forms.Label labelTextoHora;
+        private System.Windows.Forms.Label labelHora;
     }
 }
