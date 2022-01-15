@@ -65,8 +65,10 @@ namespace CapaPresentacion
         private void MostrarListaMatriculados()
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            //DateTime Date = DateTime.Now;
+            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
             //string Date ="11-01-2022";
+            DateTime Date = new DateTime(2022, 01, 16);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
@@ -83,14 +85,8 @@ namespace CapaPresentacion
                 if (a == "P")
                 {
                     row.Cells["Asistencia"].Value = "P";
-
-                    
-
                 }
-
             }
-            //asisten
-           
         }
         public void ContarAsistencia()
         {
@@ -101,9 +97,7 @@ namespace CapaPresentacion
                 {
                     contador = contador + 1;
                 }
-               
             }
-            
             lblAsistio.Text = contador.ToString();
             long nro =UInt32.Parse(lblNroAlumnos.Text) - contador;
             lblFaltaron.Text = nro.ToString();
@@ -139,8 +133,9 @@ namespace CapaPresentacion
             N_Asistencia A = new N_Asistencia();
 
             var DateAndTime = DateTime.Now;
-            string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            //string Date = "11-01-2022";
+            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            //DateTime Date = DateTime.Now;
+            DateTime Date = new DateTime(2022,01,16);
 
             string name = NombreAsignatura;
             //registrar filas
