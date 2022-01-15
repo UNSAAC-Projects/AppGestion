@@ -94,7 +94,7 @@
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,7 +208,7 @@
             this.btnVerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.Image")));
             this.btnVerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerCatalogo.Location = new System.Drawing.Point(476, 581);
-            this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCatalogo.Name = "btnVerCatalogo";
             this.btnVerCatalogo.Size = new System.Drawing.Size(181, 54);
             this.btnVerCatalogo.TabIndex = 10;
@@ -348,6 +348,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panelMainDirEscuela
             // 

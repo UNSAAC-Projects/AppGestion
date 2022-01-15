@@ -29,6 +29,7 @@ namespace CapaPresentacion
             Docente = CodDocente;
         }
 
+        //duplicado
         private void MostrarTemasDictar()
         {
             string codAsignatura, codCatalogo;
@@ -54,10 +55,12 @@ namespace CapaPresentacion
       
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
-            frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
-            frm.ShowDialog();
+            AbrirFormulariosEnPanelContenedor(new frmVistaCursosDocente(Docente));
+
+            //frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
+            //frm.ShowDialog();
             //Actualizar tabla docentes
-            MostrarHorarioxDia(Docente);
+            
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -96,7 +99,7 @@ namespace CapaPresentacion
                 pictureBoxLibros.Visible = true; // Mostrar imagen
             }
         }
-
+        //duplicado
         private void MoverModificarColumnas()
         {
             //Mostrar encabezado
@@ -118,6 +121,7 @@ namespace CapaPresentacion
             //dgvCursosDocente.Columns["ASISTENCIA"].Width = 80;
         }
 
+        //duplicado
         public void ObtenerTiempo(out string fecha, out string hora, out string dia)
         {
             fecha = DateTime.Now.ToString("dd/MM/yyyy");
@@ -214,6 +218,21 @@ namespace CapaPresentacion
         {
             frmReporteSesiones RSesiones = new frmReporteSesiones(Docente);
             RSesiones.ShowDialog();
+        }
+        ///
+        private Form formActivado = null;
+        private void AbrirFormulariosEnPanelContenedor(Form FormHijo)
+        {
+            if (formActivado != null)
+                formActivado.Close();
+            formActivado = FormHijo;
+            FormHijo.TopLevel = false;
+            FormHijo.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(FormHijo);
+            panelContenedor.Tag = FormHijo;
+            FormHijo.BringToFront();
+            FormHijo.Show();
+
         }
     }
 }
