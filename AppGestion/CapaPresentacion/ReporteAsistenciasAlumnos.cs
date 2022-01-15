@@ -21,11 +21,6 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        public void listar_reportes()
-        {
-            dgvReporteAsistencia.DataSource = A.listarAsitenciaCurso(comboBoxCursosReporte.SelectedItem.ToString());
-            dgvReporteAsistencia.Columns["ASISTENCIA"].DisplayIndex = 4;
-        }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -44,7 +39,7 @@ namespace CapaPresentacion
         {
             string NombreAsig = comboBoxCursosReporte.Text;
             string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente);
-            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "03/01/2022", "10/01/2023");
+            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "2022-01-10", "2022-03-02");
             //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
             if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
             {
