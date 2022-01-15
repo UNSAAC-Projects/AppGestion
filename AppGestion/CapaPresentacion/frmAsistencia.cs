@@ -65,10 +65,8 @@ namespace CapaPresentacion
         private void MostrarListaMatriculados()
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            //DateTime Date = DateTime.Now;
-            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            //string Date ="11-01-2022";
-            DateTime Date = new DateTime(2022, 01, 16);
+            DateTime Date = DateTime.Now;
+            //DateTime Date = new DateTime(2022, 01, 16);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
@@ -133,9 +131,8 @@ namespace CapaPresentacion
             N_Asistencia A = new N_Asistencia();
 
             var DateAndTime = DateTime.Now;
-            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            //DateTime Date = DateTime.Now;
-            DateTime Date = new DateTime(2022,01,16);
+            DateTime Date = DateTime.Now;
+            //DateTime Date = new DateTime(2022,01,16);
 
             string name = NombreAsignatura;
             //registrar filas
