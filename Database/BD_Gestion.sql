@@ -169,6 +169,18 @@ CREATE TABLE TAsistencia_Alumnos
 )
 GO
 
+CREATE TABLE TAsistenciaDiariaDocentes
+(
+	Fecha date,
+	CodDocente varchar(6),
+	Nombres varchar(200),
+	Asistio varchar(8),
+	Observacion varchar(40),
+	PRIMARY KEY (Fecha,CodDocente),
+	FOREIGN KEY (CodDocente) REFERENCES TDocente,
+)
+GO
+
 /**************************************************************************************************************************
 					                            PROCEDIMIENTOS ALMACENADOS
 **************************************************************************************************************************/
@@ -531,6 +543,30 @@ inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
 where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
 (C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
 GO
+
+-- Mostrar los docentes activos en un determiando semestre
+create proc SP_ListarDocentesActivos
+@SemestreLectivo varchar(8),
+@Fecha date
+as
+if exists(select * from TAsistenciaDiariaDocentes where Fecha=@Fecha)
+begin
+	select CodDocente,Nombres,Asistio,Observacion
+	from TAsistenciaDiariaDocentes where Fecha=@Fecha
+	order by Nombres
+end
+else
+begin
+	--Mostrar docentes activos en el semestre actual (incompleto)
+	--Falta seleccionar los docentes por semestre.
+	select CodDocente, 
+		(Nombres+' '+Apellidos) as 'Nombres',
+		'F' as 'Asistio', '' as 'Observacion'
+	from TDocente
+	where CodDocente != 'D000'
+end
+go
+
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
