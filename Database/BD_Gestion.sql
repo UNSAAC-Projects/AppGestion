@@ -545,7 +545,7 @@ where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or
 GO
 
 -- Mostrar los docentes activos en un determiando semestre
-create or alter proc SP_ListarDocentesActivos
+create proc SP_ListarDocentesActivos
 @SemestreLectivo varchar(8),
 @Fecha date
 as
@@ -559,9 +559,9 @@ else
 begin
 	--Mostrar docentes activos en el semestre actual (incompleto)
 	--Falta seleccionar los docentes por semestre.
-	select CodDocente as 'Código', 
-		(Nombres+' '+Apellidos) as 'Nombres y apellidos',
-		'' as 'Asistió', '' as 'Observación'
+	select CodDocente, 
+		(Nombres+' '+Apellidos) as 'Nombres',
+		'F' as 'Asistio', '' as 'Observacion'
 	from TDocente
 	where CodDocente != 'D000'
 end

@@ -32,5 +32,27 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+
+        public void GuardarAsistenciasDiarias(DataTable tabla, string fecha)
+        {
+            //string Unidad, Capitulo, Tema, Horas, Finalizado, Observacion;
+            string codDocente, nombres, asistio, observacion;
+
+            string ComandoSQL = $"delete from TAsistenciaDiariaDocentes where Fecha = '{fecha}'\n";
+
+            foreach (DataRow fila in tabla.Rows)
+            {
+                codDocente = fila["CodDocente"].ToString();
+                nombres = fila["Nombres"].ToString();
+                asistio = fila["Asistio"].ToString();
+                observacion = fila["Observacion"].ToString();
+                ComandoSQL += $"Insert Into TAsistenciaDiariaDocentes values ('{fecha}','{codDocente}','{nombres}','{asistio}','{observacion}')\n";
+            }
+            SqlCommand cmd = new SqlCommand(ComandoSQL, conexion);
+            conexion.Open();
+
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

@@ -169,7 +169,7 @@ namespace CapaPresentacion
             this.buttonDESMARCAR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESMARCAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESMARCAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESMARCAR.Image")));
-            this.buttonDESMARCAR.Location = new System.Drawing.Point(30, 309);
+            this.buttonDESMARCAR.Location = new System.Drawing.Point(26, 280);
             this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDESMARCAR.Name = "buttonDESMARCAR";
             this.buttonDESMARCAR.Size = new System.Drawing.Size(74, 115);
@@ -190,7 +190,7 @@ namespace CapaPresentacion
             this.buttonMarcar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMarcar.ForeColor = System.Drawing.Color.White;
             this.buttonMarcar.Image = ((System.Drawing.Image)(resources.GetObject("buttonMarcar.Image")));
-            this.buttonMarcar.Location = new System.Drawing.Point(30, 185);
+            this.buttonMarcar.Location = new System.Drawing.Point(26, 159);
             this.buttonMarcar.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMarcar.Name = "buttonMarcar";
             this.buttonMarcar.Size = new System.Drawing.Size(74, 115);
@@ -256,16 +256,17 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAsistencia.Location = new System.Drawing.Point(108, 160);
+            this.dgvAsistencia.Location = new System.Drawing.Point(108, 130);
             this.dgvAsistencia.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAsistencia.Name = "dgvAsistencia";
             this.dgvAsistencia.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAsistencia.RowHeadersVisible = false;
             this.dgvAsistencia.RowHeadersWidth = 51;
             this.dgvAsistencia.RowTemplate.Height = 24;
-            this.dgvAsistencia.Size = new System.Drawing.Size(581, 289);
+            this.dgvAsistencia.Size = new System.Drawing.Size(581, 319);
             this.dgvAsistencia.TabIndex = 16;
             this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
+            this.dgvAsistencia.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellValueChanged);
             // 
             // Asistencia
             // 
@@ -379,7 +380,7 @@ namespace CapaPresentacion
             this.labelNroDocentes.AutoSize = true;
             this.labelNroDocentes.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNroDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelNroDocentes.Location = new System.Drawing.Point(251, 122);
+            this.labelNroDocentes.Location = new System.Drawing.Point(484, 62);
             this.labelNroDocentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNroDocentes.Name = "labelNroDocentes";
             this.labelNroDocentes.Size = new System.Drawing.Size(12, 15);
@@ -392,7 +393,7 @@ namespace CapaPresentacion
             this.labelTextoNroDoc.BackColor = System.Drawing.Color.Transparent;
             this.labelTextoNroDoc.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextoNroDoc.ForeColor = System.Drawing.Color.DimGray;
-            this.labelTextoNroDoc.Location = new System.Drawing.Point(105, 120);
+            this.labelTextoNroDoc.Location = new System.Drawing.Point(338, 60);
             this.labelTextoNroDoc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTextoNroDoc.Name = "labelTextoNroDoc";
             this.labelTextoNroDoc.Size = new System.Drawing.Size(114, 17);
@@ -403,7 +404,7 @@ namespace CapaPresentacion
             // 
             this.lblAsistio.AutoSize = true;
             this.lblAsistio.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsistio.Location = new System.Drawing.Point(423, 122);
+            this.lblAsistio.Location = new System.Drawing.Point(406, 94);
             this.lblAsistio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAsistio.Name = "lblAsistio";
             this.lblAsistio.Size = new System.Drawing.Size(19, 15);
@@ -415,7 +416,7 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(355, 120);
+            this.label2.Location = new System.Drawing.Point(338, 92);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 17);
@@ -427,7 +428,7 @@ namespace CapaPresentacion
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(488, 123);
+            this.label5.Location = new System.Drawing.Point(471, 95);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
@@ -438,7 +439,7 @@ namespace CapaPresentacion
             // 
             this.lblFaltaron.AutoSize = true;
             this.lblFaltaron.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFaltaron.Location = new System.Drawing.Point(549, 125);
+            this.lblFaltaron.Location = new System.Drawing.Point(532, 97);
             this.lblFaltaron.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFaltaron.Name = "lblFaltaron";
             this.lblFaltaron.Size = new System.Drawing.Size(19, 15);

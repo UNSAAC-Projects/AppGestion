@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using SpreadsheetLight;
-using CapaEntidades;
 using CapaNegocio;
+using CapaEntidades;
+using System.Data;
 
 namespace CapaPresentacion
 {
@@ -19,6 +11,7 @@ namespace CapaPresentacion
         FrmLogin L = new FrmLogin();
         E_Asistencia entities = new E_Asistencia();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
+        N_AsistenciaDiariaDocentes oADiariaDocentes = new N_AsistenciaDiariaDocentes();
 
         public string CodAsignatura;
         int indexTema; //Indice del siguiente tema a dictar
@@ -43,13 +36,13 @@ namespace CapaPresentacion
             // Mostrar los docentes activos en el semestre actual
             MostrarDocentesActivos();
             // Ocultar columna Asistio
-            dgvAsistencia.Columns["Asistió"].Visible = false;
+            dgvAsistencia.Columns["Asistio"].Visible = true;
             //Mostrar nro de docentes
             labelNroDocentes.Text = dgvAsistencia.Rows.Count.ToString();
             //Mostrar hora  y fecha 
             MostrarHoraFecha();
             //Contar asistentes y faltantes
-            ContarAsistencia();
+            //ContarAsistencia();
         }
         private void MostrarDocentesActivos()
         {
@@ -61,7 +54,7 @@ namespace CapaPresentacion
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 // Obtener valor de la columna Asistio
-                string value = Convert.ToString(row.Cells["Asistió"].Value);
+                string value = Convert.ToString(row.Cells["Asistio"].Value);
                 // Marcar o descarmar combobox de acuardo al valor de value
                 if (value == "") row.Cells["Asistencia"].Value = "F";
                 else if (value == "F") row.Cells["Asistencia"].Value = "F";
@@ -96,8 +89,14 @@ namespace CapaPresentacion
             labelHora.Text = hora;
         }
 
-        bool  ExportarDatos(DataGridView datalistado)
+        public bool  GuardarDatos()
         {
+            DataTable tabla = dgvAsistencia.DataSource as DataTable;
+            //string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            string fecha = DateTime.Now.ToString("MM-dd-yyyy");
+
+            oADiariaDocentes.GuardarAsistenciasDiarias(tabla, fecha);
+
             ////concatenar con el nombre del tema.
             //N_Asistencia A = new N_Asistencia();
 
@@ -129,7 +128,7 @@ namespace CapaPresentacion
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
         {
-            if (ExportarDatos(dgvAsistencia))
+            if (GuardarDatos())
             {
                 MessageBox.Show("Guardado exitosamente...");
                 this.Close();
@@ -159,7 +158,12 @@ namespace CapaPresentacion
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContarAsistencia();
+            //ContarAsistencia();
+
+            if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
+            {
+                dgvAsistencia.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
 
         //Movimiento panel
@@ -179,5 +183,24 @@ namespace CapaPresentacion
             }
         }
 
+        private void dgvAsistencia_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
+                {
+                    //ver el valor del checkbox
+                    string valorAsistencia = dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Value.ToString();
+                    if (valorAsistencia == "P")
+                    {
+                        dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "P";
+                    }
+                    else
+                    {
+                        dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "F";
+                    }
+                }
+            }
+        }
     }
 }

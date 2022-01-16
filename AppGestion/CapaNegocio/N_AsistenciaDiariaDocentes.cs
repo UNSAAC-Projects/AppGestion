@@ -18,5 +18,10 @@ namespace CapaNegocio
         {
             return data.ListarDocentesActivos(semestreLectivo, fecha);
         }
+
+        public void GuardarAsistenciasDiarias(DataTable tabla, string fecha)
+        {
+            data.GuardarAsistenciasDiarias(tabla, fecha);
+        }
     }
 }
