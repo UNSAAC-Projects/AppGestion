@@ -29,13 +29,23 @@ namespace CapaPresentacion
              
         public void MostrarListaAsistencias()
         {
-            string idCatalogo = cboAsistenciaCurso.SelectedItem.ToString();//(CORREGIR)
+            //Obtener codigo (ex: IF324)
+            string codGrupoAsignatura = cboAsistenciaCurso.SelectedItem.ToString().Substring(0,6);
+            //Obtener IdCatalogo
+            string idCatalogo = oCursosDocente.ObtenerCodCatalogo(codGrupoAsignatura);
+            //Mostrar asistencias
             dgvAsistenciaReporte.DataSource = oListaAsistencias.ListarAsitenciaCurso(idCatalogo);
         }
         private void FrmReporteAsistencia_Load(object sender, EventArgs e)
         {
+            //Mostrar items del combobox
             MostrarItemsComboBox();   
+            //Mostrar lista de asistencias
             MostrarListaAsistencias();
+            //Mover columna
+            dgvAsistenciaReporte.Columns["Asistencia"].DisplayIndex = 3;
+            //Ocultar columna
+            dgvAsistenciaReporte.Columns["IdCatalogo"].Visible = false;
         }
         void MostrarItemsComboBox()
         {
@@ -56,30 +66,27 @@ namespace CapaPresentacion
 
         private void dgvAsistenciaReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataGridViewRow row = dgvAsistenciaReporte.Rows[e.RowIndex];
-            //if (row.Cells["ASISTENCIA"].Selected)
-            //{
-            //    //oAsistencia.ShowDialog();
-
-            //  //  DataTable tabla = new DataTable();
-
-
-            //    //recuperar la ruta del archivo excel
-            //   // tabla = oDocente.MostrarArchivos(codCatalogo);
-            //   // string ruta = tabla.Rows[0][0].ToString();
-            //    //string contenido = tabla.Rows[0][1].ToString();
-
-            //    FileStream fs = File.Open(@"D:\8vosemestre\Ing.Software\proyecto\ListaAlumnosDia\FUNDAMENTOS DE PROGRAMACION22122021.xlsx", FileMode.Open, FileAccess.Read);
-            //    IExcelDataReader reader;
-            //    reader = ExcelReaderFactory.CreateBinaryReader(fs);
-
-            //    frmAsistencia form = new frmAsistencia();
-            //    reader.IsFirstRowAsColumnNames = true;
-            //    result = reader.AsDataSet();
-            //    form.dgvAsistencia.DataSource = result.Tables[0];
-            //    reader.Close();
-            //    form.ShowDialog();
-            //}
+            if (e.RowIndex >= 0) //Si no se hizo click en el encabezado
+            {
+                DataGridViewRow row = dgvAsistenciaReporte.Rows[e.RowIndex];
+                if (row.Cells["Asistencia"].Selected)
+                {
+                    N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
+                    //Obtener cod curso y luego codcatalogo
+                    //string codAsignatura = row.Cells["CODIGO"].Value.ToString();
+                    //string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
+                    //string Grupo = row.Cells["GRUPO"].Value.ToString();
+                    //string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
+                    // hasta aqui esta bien 
+                    //Obtener IdCatalogo
+                    string idCatalogo = row.Cells["IdCatalogo"].Value.ToString();
+                    string nombreCurso = cboAsistenciaCurso.SelectedItem.ToString();
+                    string strFecha = row.Cells["Fecha"].Value.ToString();
+                    DateTime fecha = DateTime.Parse(strFecha);
+                    frmAsistencia frm = new frmAsistencia(idCatalogo, nombreCurso, fecha);
+                    frm.ShowDialog();
+                }
+            }
         }
 
         private void cboAsistenciaCurso_Click(object sender, EventArgs e)

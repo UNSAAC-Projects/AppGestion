@@ -17,11 +17,14 @@ namespace CapaPresentacion
     public partial class frmAsistencia : Form
     {
         //FrmLogin L = new FrmLogin();
-        N_ListaAsistencias oListaAsistencias = new N_ListaAsistencias();
-        N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
+        readonly N_ListaAsistencias oListaAsistencias = new N_ListaAsistencias();
+        readonly N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
 
-        string IdCatalogo, NombreAsignatura;
+        private string IdCatalogo, NombreAsignatura;
+        private DateTime Fecha;
+
         public string CodAsignatura;
+
         int indexTema; //Indice del siguiente tema a dictar
 
         public frmAsistencia()
@@ -33,6 +36,14 @@ namespace CapaPresentacion
             InitializeComponent();
             IdCatalogo = pIdCatalogo;
             NombreAsignatura = pNombreAsignatura;
+            Fecha = DateTime.Now;
+        }
+        public frmAsistencia(string pIdCatalogo, string pNombreAsignatura, DateTime pFecha)
+        {
+            InitializeComponent();
+            IdCatalogo = pIdCatalogo;
+            NombreAsignatura = pNombreAsignatura;
+            Fecha = pFecha;
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -48,7 +59,7 @@ namespace CapaPresentacion
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
             //Mostar lista de alumnos matriculados
-            MostrarListaMatriculados();
+            MostrarListaMatriculados(Fecha);
             // Mostrar temas a dictar en el combobox
             MostrarTemas();
 
@@ -61,10 +72,10 @@ namespace CapaPresentacion
             ImprimirHoraFecha();
             ContarAsistencia();
         }
-        private void MostrarListaMatriculados()
+        private void MostrarListaMatriculados(DateTime Date)
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            DateTime Date = DateTime.Now;
+            //DateTime Date = DateTime.Now;
             //DateTime Date = new DateTime(2022, 01, 16);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
@@ -113,7 +124,7 @@ namespace CapaPresentacion
         public void ImprimirHoraFecha()
         {
             string datetime;
-            datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
+            datetime = Fecha.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
         }
@@ -147,7 +158,7 @@ namespace CapaPresentacion
             //Iniciar entidad ListaAsistencias para guardar datos de la asistencia
             E_ListaAsistencias eListaAsistencias = new E_ListaAsistencias();
             eListaAsistencias.fecha = Date;
-            eListaAsistencias.tema = comboBoxTema.SelectedItem.ToString();
+            eListaAsistencias.tema = comboBoxTema.GetItemText(comboBoxTema.SelectedItem); //(CORREGIR)
             eListaAsistencias.idcatalogo = IdCatalogo;
             //Guardar datos de la asistencia en la tabla TListaAsistencias
             oListaAsistencias.GuardarDatosAsistencia(eListaAsistencias);
