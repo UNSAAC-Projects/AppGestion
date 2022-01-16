@@ -32,14 +32,11 @@ namespace CapaDatos
             SqlCommand cmd = new SqlCommand("SP_ListarAsistenciasCurso", conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
-            cmd.Parameters.AddWithValue("@Curso", idCatalogo);
+            cmd.Parameters.AddWithValue("@IdCatalogo", idCatalogo);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tabla);
             conexion.Close();
             return tabla;
         }
-
-
     }
-
 }

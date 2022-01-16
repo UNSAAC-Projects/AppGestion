@@ -16,47 +16,44 @@ using System.IO;
 
 namespace CapaPresentacion
 {
-    public partial class FrmReporteAsistencia : Form
+    public partial class frmListaAsistencias : Form
     {
-        public FrmReporteAsistencia()
+        //Variables de solo lectura
+        readonly N_ListaAsistencias oListaAsistencias = new N_ListaAsistencias();
+        readonly N_CursosDocente oCursosDocente = new N_CursosDocente();
+
+        public frmListaAsistencias()
         {
             InitializeComponent();
         }
-        N_ListaAsistencias A = new N_ListaAsistencias();
-        //frmAsistencia oAsistencia = new frmAsistencia();
-        N_CursosDocente D = new N_CursosDocente();
-        E_ListaAsistencias Asis = new E_ListaAsistencias();
-       
-        public void listar_asistencias()
+             
+        public void MostrarListaAsistencias()
         {
-            dgvAsistenciaReporte.DataSource = A.listarAsitenciaCurso(cboAsistenciaCurso.SelectedItem.ToString());
-            dgvAsistenciaReporte.Columns[5].Visible = false;
-            dgvAsistenciaReporte.Columns[6].Visible = false;
-            dgvAsistenciaReporte.Columns["ASISTENCIA"].DisplayIndex = 4;
+            string idCatalogo = cboAsistenciaCurso.SelectedItem.ToString();//(CORREGIR)
+            dgvAsistenciaReporte.DataSource = oListaAsistencias.ListarAsitenciaCurso(idCatalogo);
         }
         private void FrmReporteAsistencia_Load(object sender, EventArgs e)
         {
-            
-            CargarCombo();
-            
-            listar_asistencias();
+            MostrarItemsComboBox();   
+            MostrarListaAsistencias();
         }
-        void CargarCombo()
+        void MostrarItemsComboBox()
         {
-            DataTable dt = new DataTable();
-            dt = D.ListandoCursosDocente(datos.CodDocente);
+            DataTable dt = oCursosDocente.ListarCursosDocente(datos.CodDocente);
             int n = dt.Rows.Count;
-            int i = 0;
-            while (i < n)
-            {
-                cboAsistenciaCurso.Items.Add(dt.Rows[i][1].ToString());
-                i = i + 1;
-            }
-            cboAsistenciaCurso.SelectedIndex = 0;
+            string grupoAsignatura, nombreAsignatura;
             
-
+            //Recorrer filas del DataTable
+            foreach (DataRow row in dt.Rows)
+            {
+                grupoAsignatura = row[0].ToString(); //GrupoAsignatura (ex: IF342)
+                nombreAsignatura = row[1].ToString(); //Nombre de la asignatura
+                cboAsistenciaCurso.Items.Add($"{grupoAsignatura} - {nombreAsignatura}");
+            }
+            //Seleccionar valor por defecto del combobox
+            cboAsistenciaCurso.SelectedIndex = 0;
         }
-        DataSet result;
+
         private void dgvAsistenciaReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //DataGridViewRow row = dgvAsistenciaReporte.Rows[e.RowIndex];
@@ -92,8 +89,7 @@ namespace CapaPresentacion
 
         private void cboAsistenciaCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cboAsistenciaCurso.DropDownStyle = ComboBoxStyle.DropDownList;
-            listar_asistencias();        
+            MostrarListaAsistencias();        
         }
 
         private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)
@@ -103,7 +99,7 @@ namespace CapaPresentacion
 
         private void btnCancelarFrmReporte_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         //Movimiento panel
