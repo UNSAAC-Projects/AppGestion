@@ -14,7 +14,6 @@ namespace CapaPresentacion
         N_AsistenciaDiariaDocentes oADiariaDocentes = new N_AsistenciaDiariaDocentes();
 
         public string CodAsignatura;
-        int indexTema; //Indice del siguiente tema a dictar
 
         public frmAsistenciaDiariaDocentes()
         {
@@ -36,13 +35,13 @@ namespace CapaPresentacion
             // Mostrar los docentes activos en el semestre actual
             MostrarDocentesActivos();
             // Ocultar columna Asistio
-            dgvAsistencia.Columns["Asistio"].Visible = true;
+            dgvAsistencia.Columns["Asistio"].Visible = false;
             //Mostrar nro de docentes
             labelNroDocentes.Text = dgvAsistencia.Rows.Count.ToString();
             //Mostrar hora  y fecha 
             MostrarHoraFecha();
             //Contar asistentes y faltantes
-            //ContarAsistencia();
+            ContarAsistencia();
         }
         private void MostrarDocentesActivos()
         {
@@ -91,39 +90,12 @@ namespace CapaPresentacion
 
         public bool  GuardarDatos()
         {
+            //Recuperar tabla
             DataTable tabla = dgvAsistencia.DataSource as DataTable;
-            //string fecha = DateTime.Now.ToString("dd-MM-yyyy");
+            //Obtener fecha en formato mes-dia-año
             string fecha = DateTime.Now.ToString("MM-dd-yyyy");
-
+            //Guardar asistencias
             oADiariaDocentes.GuardarAsistenciasDiarias(tabla, fecha);
-
-            ////concatenar con el nombre del tema.
-            //N_Asistencia A = new N_Asistencia();
-
-            //var DateAndTime = DateTime.Now;
-            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            ////string Date = "11-01-2022";
-
-            //string name = NombreAsignatura;
-            ////registrar filas
-            //foreach (DataGridViewRow row in dgvAsistencia.Rows)
-            //{
-            //    E_Asistencia_alumnos entities = new E_Asistencia_alumnos();
-            //    N_Asistencia_alumnos busines = new N_Asistencia_alumnos();
-
-            //    string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
-            //    string codalumno = Convert.ToString(row.Cells["CodAlumno"].Value);
-            //    string nombres = Convert.ToString(row.Cells["Nombres"].Value);
-            //    string observacion = Convert.ToString(row.Cells["Observacion"].Value);
-            //    //insertar datos en la bd
-            //    entities.fecha = Date;
-            //    entities.idcatalogo = IdCatalogo;
-            //    entities.codalumno = codalumno;
-            //    entities.nombres = nombres;
-            //    entities.asistio = asistencia;
-            //    entities.observacion = observacion;
-            //    busines.InsertarAsistenciaAlumno(entities);
-            //}
             return true;
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
@@ -146,6 +118,7 @@ namespace CapaPresentacion
                 row.Cells["Asistencia"].Value = "P";
                
             }
+            ContarAsistencia();
         }
 
         private void buttonDESMARCAR_Click(object sender, EventArgs e)
@@ -154,11 +127,12 @@ namespace CapaPresentacion
             {
                 row.Cells["Asistencia"].Value = "F";
             }
+            ContarAsistencia();
         }
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //ContarAsistencia();
+            ContarAsistencia();
 
             if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
             {
