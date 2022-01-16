@@ -13,9 +13,9 @@ namespace CapaPresentacion
 {
     public partial class ReporteAsistenciasAlumnos : Form
     {
-        N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
-        N_CursosDocente D = new N_CursosDocente();
-        N_Asistencia A = new N_Asistencia();
+        readonly N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
+        readonly N_CursosDocente D = new N_CursosDocente();
+
         public string CodDocente;
         public ReporteAsistenciasAlumnos()
         {
@@ -75,7 +75,7 @@ namespace CapaPresentacion
         void CargarCombo()
         {
             DataTable dt = new DataTable();
-            dt = D.ListandoCursosDocente(datos.CodDocente);
+            dt = D.ListarCursosDocente(datos.CodDocente);
             int n = dt.Rows.Count;
             int i = 0;
             while(i < n)

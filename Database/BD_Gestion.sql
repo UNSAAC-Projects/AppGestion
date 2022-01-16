@@ -144,14 +144,13 @@ CREATE TABLE TMatriculado
 	foreign key(IDCatalogo) references TCatalogo
 )
 GO
-create table TReportesAsistencia
+create table TListaAsistencias
 (
 	Id int identity,
-	Curso varchar(100),
-	Tema varchar(100),
-	Fecha varchar(100),
-	Asistencia varchar(200),
+	Tema varchar(255),
+	Fecha date,
 	IDCatalogo varchar(6),
+	primary key(Id),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -835,27 +834,38 @@ GO
 --select * from TPlanSesiones
 
 /*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
---insertar asistencias
-create proc SP_InsertarAsistenciaReporte
-	@Curso varchar(100),
-	@Tema varchar(100),
-	@Fecha varchar(100),
-	@Asistencia varchar(200),
+--Insertar o actualizar datos de las asistencias en TListaAsistencias
+create proc SP_InsertarDatosAsistencia
+	@Tema varchar(255),
+	@Fecha date,
 	@IDCatalogo varchar(6)
 as
-	insert into TReportesAsistencia values(@Curso,@Tema,@Fecha,@Asistencia,@IDCatalogo) 
-GO
-create proc SP_ListarAsistenciasplanse
-as
-	select * from TReportesAsistencia
-GO
-create proc SP_ListarAsistenciasCurso
-@Curso varchar(100)
-as
-	select * from TReportesAsistencia
-	where Curso=@Curso
+--Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
+	begin
+		update TListaAsistencias 
+		set Tema = @Tema
+		where Fecha = @Fecha and IdCatalogo = @IDCatalogo
+	end
+--Caso contrario, agregar
+else
+	insert into TListaAsistencias values(@Tema,@Fecha,@IDCatalogo) 
 GO
 
+--create proc SP_ListarAsistenciasplanse
+--as
+--	select * from TListaAsistencias
+--GO
+
+-- Listar asistencias registradas por curso
+create proc SP_ListarAsistenciasCurso
+@IdCatalogo varchar(6)
+as
+	select IdCatalogo, Tema, Fecha from TListaAsistencias
+	where IdCatalogo = @IdCatalogo
+GO
+
+-- Insertar la asistencia de un alumno a TAsistencia_Alumnos
 create or alter proc SP_InsertarAsistenciaAlumno
 @Fecha date,
 @IdCatalogo varchar(6),

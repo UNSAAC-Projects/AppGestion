@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cAsistencia.cs" />
+    <Compile Include="D_ListaAsistencias.cs" />
     <Compile Include="D_Asignatura.cs" />
     <Compile Include="D_AsistenciaDiariaDocentes.cs" />
     <Compile Include="D_Asistencia_alumnos.cs" />

@@ -9,7 +9,7 @@ namespace CapaPresentacion
     public partial class frmAsistenciaDiariaDocentes : Form
     {
         FrmLogin L = new FrmLogin();
-        E_Asistencia entities = new E_Asistencia();
+        E_ListaAsistencias entities = new E_ListaAsistencias();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
         N_AsistenciaDiariaDocentes oADiariaDocentes = new N_AsistenciaDiariaDocentes();
 

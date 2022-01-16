@@ -189,7 +189,7 @@ namespace CapaPresentacion
 
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
-            FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
+            frmListaAsistencias RAsistencia = new frmListaAsistencias();
             RAsistencia.ShowDialog();
             //dgvCursosDocente.Refresh();
         }
