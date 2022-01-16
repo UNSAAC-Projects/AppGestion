@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
+            this.panelContenedor2 = new System.Windows.Forms.Panel();
             this.panelMainDirEscuela = new System.Windows.Forms.Panel();
             this.pictureMaxDirectorEscuela = new System.Windows.Forms.PictureBox();
             this.pictureMINIMIZE1 = new System.Windows.Forms.PictureBox();
@@ -49,7 +50,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panelContenedor2 = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -199,6 +199,17 @@
             this.panelPrinciapl.TabIndex = 1;
             this.panelPrinciapl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrinciapl_Paint);
             // 
+            // panelContenedor2
+            // 
+            this.panelContenedor2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelContenedor2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelContenedor2.Location = new System.Drawing.Point(6, 53);
+            this.panelContenedor2.Name = "panelContenedor2";
+            this.panelContenedor2.Size = new System.Drawing.Size(1067, 585);
+            this.panelContenedor2.TabIndex = 12;
+            // 
             // panelMainDirEscuela
             // 
             this.panelMainDirEscuela.Controls.Add(this.pictureMaxDirectorEscuela);
@@ -291,14 +302,6 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
-            // panelContenedor2
-            // 
-            this.panelContenedor2.BackColor = System.Drawing.Color.DarkOrange;
-            this.panelContenedor2.Location = new System.Drawing.Point(21, 79);
-            this.panelContenedor2.Name = "panelContenedor2";
-            this.panelContenedor2.Size = new System.Drawing.Size(1038, 525);
-            this.panelContenedor2.TabIndex = 12;
-            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,6 +314,7 @@
             this.Name = "mainDirectorEscuela";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "mainDirectorEscuela";
+            this.Load += new System.EventHandler(this.mainDirectorEscuela_Load);
             this.ContenedorLogin.ResumeLayout(false);
             this.ContenedorLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();

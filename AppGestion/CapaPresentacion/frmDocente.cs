@@ -107,8 +107,9 @@ namespace CapaPresentacion
         {
             PantallaOk();
             //Mostrar nombre de usuario
-            MostrarNombreUsuario(Docente);          
-            
+            MostrarNombreUsuario(Docente);
+            AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
+
         }
 
         private void btnREPORTEASISTENCIA_Click(object sender, EventArgs e)

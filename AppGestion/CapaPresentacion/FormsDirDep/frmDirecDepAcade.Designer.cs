@@ -253,7 +253,7 @@ namespace CapaPresentacion
             this.pictureBoxMaxRest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMaxRest.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMaxRest.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMaxRest.Image")));
-            this.pictureBoxMaxRest.Location = new System.Drawing.Point(1180, 0);
+            this.pictureBoxMaxRest.Location = new System.Drawing.Point(1214, 0);
             this.pictureBoxMaxRest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMaxRest.Name = "pictureBoxMaxRest";
             this.pictureBoxMaxRest.Size = new System.Drawing.Size(49, 41);
@@ -267,7 +267,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.DimGray;
             this.btnMINIMIZAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM;
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(1131, 0);
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(1165, 0);
             this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
             this.btnMINIMIZAR.Size = new System.Drawing.Size(43, 41);
@@ -281,7 +281,7 @@ namespace CapaPresentacion
             this.btnCERRAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCERRAR.BackColor = System.Drawing.Color.DimGray;
             this.btnCERRAR.Image = global::CapaPresentacion.Properties.Resources.WhatsApp_Image_2021_11_21_at_12_53_18_PM__1_;
-            this.btnCERRAR.Location = new System.Drawing.Point(1235, 0);
+            this.btnCERRAR.Location = new System.Drawing.Point(1269, 0);
             this.btnCERRAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCERRAR.Name = "btnCERRAR";
             this.btnCERRAR.Size = new System.Drawing.Size(43, 41);
@@ -292,10 +292,13 @@ namespace CapaPresentacion
             // 
             // panelContenedor3
             // 
+            this.panelContenedor3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor3.BackColor = System.Drawing.Color.Yellow;
-            this.panelContenedor3.Location = new System.Drawing.Point(327, 105);
+            this.panelContenedor3.Location = new System.Drawing.Point(310, 55);
             this.panelContenedor3.Name = "panelContenedor3";
-            this.panelContenedor3.Size = new System.Drawing.Size(933, 476);
+            this.panelContenedor3.Size = new System.Drawing.Size(1002, 564);
             this.panelContenedor3.TabIndex = 9;
             // 
             // frmDirecDepAcade
@@ -303,7 +306,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1284, 631);
+            this.ClientSize = new System.Drawing.Size(1318, 631);
             this.Controls.Add(this.panelContenedor3);
             this.Controls.Add(this.pictureBoxMaxRest);
             this.Controls.Add(this.btnMINIMIZAR);

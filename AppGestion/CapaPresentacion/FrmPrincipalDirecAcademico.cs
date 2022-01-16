@@ -216,7 +216,9 @@ namespace CapaPresentacion
             MessageBox.Show("El catálogo se actualizó correctamente.", "Mensaje de confirmación");
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

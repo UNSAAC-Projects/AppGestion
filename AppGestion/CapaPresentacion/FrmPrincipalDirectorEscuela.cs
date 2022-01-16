@@ -38,13 +38,13 @@ namespace CapaPresentacion
             dgvAsignaturas.Columns[0].Width = 70;
             dgvAsignaturas.Columns[1].Width = 50;
             dgvAsignaturas.Columns[2].Width = 50;
-            dgvAsignaturas.Columns[3].Width = 80;
-            dgvAsignaturas.Columns[4].Width = 60;
+            dgvAsignaturas.Columns[3].Width = 60;//80
+            dgvAsignaturas.Columns[4].Width = 30;//60
             dgvAsignaturas.Columns[5].Width = 250;
-            dgvAsignaturas.Columns[6].Width = 50;
-            dgvAsignaturas.Columns[7].Width = 70;
-            dgvAsignaturas.Columns[8].Width = 90;
-            dgvAsignaturas.Columns[9].Width = 90;
+            dgvAsignaturas.Columns[6].Width = 35;
+            dgvAsignaturas.Columns[7].Width = 45;
+            dgvAsignaturas.Columns[8].Width = 60;
+            dgvAsignaturas.Columns[9].Width = 60;
         }
         public void MostrarTablaAsignatura()
         {

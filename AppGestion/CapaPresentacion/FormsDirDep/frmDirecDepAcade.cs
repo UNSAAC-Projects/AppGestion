@@ -28,7 +28,12 @@ namespace CapaPresentacion
             InitializeComponent();
             MostrarNombreUsuario(CodDocente);
         }
-
+        //Pantalla Completa
+        public void PantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
         private void MostrarNombreUsuario(string codDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
@@ -148,7 +153,7 @@ namespace CapaPresentacion
 
         private void frmDirecDepAcade_Load(object sender, EventArgs e)
         {
-
+            PantallaOk();
         }
 
         private void btnCatalogo_Click(object sender, EventArgs e)
@@ -159,6 +164,7 @@ namespace CapaPresentacion
         private void buttonIMPORTAR_Click(object sender, EventArgs e)
         {
             
+
             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
             {

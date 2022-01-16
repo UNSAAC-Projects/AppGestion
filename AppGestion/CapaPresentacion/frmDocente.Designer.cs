@@ -86,6 +86,7 @@ namespace CapaPresentacion
             // 
             // btnCursosPorDia
             // 
+            this.btnCursosPorDia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCursosPorDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnCursosPorDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCursosPorDia.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -93,14 +94,14 @@ namespace CapaPresentacion
             this.btnCursosPorDia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnCursosPorDia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCursosPorDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCursosPorDia.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursosPorDia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCursosPorDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnCursosPorDia.Image = ((System.Drawing.Image)(resources.GetObject("btnCursosPorDia.Image")));
             this.btnCursosPorDia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCursosPorDia.Location = new System.Drawing.Point(0, 425);
+            this.btnCursosPorDia.Location = new System.Drawing.Point(3, 436);
             this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4);
             this.btnCursosPorDia.Name = "btnCursosPorDia";
-            this.btnCursosPorDia.Size = new System.Drawing.Size(317, 60);
+            this.btnCursosPorDia.Size = new System.Drawing.Size(277, 60);
             this.btnCursosPorDia.TabIndex = 15;
             this.btnCursosPorDia.Text = "CURSOS POR DIA";
             this.btnCursosPorDia.UseVisualStyleBackColor = false;
@@ -108,6 +109,7 @@ namespace CapaPresentacion
             // 
             // buttonReporteSesiones
             // 
+            this.buttonReporteSesiones.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonReporteSesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonReporteSesiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonReporteSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -130,6 +132,7 @@ namespace CapaPresentacion
             // 
             // btnREPORTEASISTENCIA
             // 
+            this.btnREPORTEASISTENCIA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnREPORTEASISTENCIA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnREPORTEASISTENCIA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnREPORTEASISTENCIA.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -152,6 +155,7 @@ namespace CapaPresentacion
             // 
             // btnReporteCursos
             // 
+            this.btnReporteCursos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnReporteCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnReporteCursos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnReporteCursos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -208,6 +212,7 @@ namespace CapaPresentacion
             // 
             // btnVerCursosDocente
             // 
+            this.btnVerCursosDocente.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnVerCursosDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnVerCursosDocente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVerCursosDocente.Cursor = System.Windows.Forms.Cursors.Hand;

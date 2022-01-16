@@ -24,6 +24,12 @@ namespace CapaPresentacion
 
             MostrarNombreUsuario(CodDocente);
         }
+        //Pantalla completa
+        public void PantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
 
         private void MostrarNombreUsuario(string CodDocente)
         {
@@ -82,6 +88,11 @@ namespace CapaPresentacion
         private void btnVerCatalogos_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmVistaCatalogo());
+        }
+
+        private void mainDirectorEscuela_Load(object sender, EventArgs e)
+        {
+            PantallaOk();
         }
     }
 }
