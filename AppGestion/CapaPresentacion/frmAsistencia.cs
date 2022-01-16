@@ -65,7 +65,8 @@ namespace CapaPresentacion
         private void MostrarListaMatriculados()
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            //string Date = DateTime.Now.ToString("dd-MM-yyyy");
+            DateTime Date = DateTime.Now;
             //string Date ="11-01-2022";
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             int asisten = 0;

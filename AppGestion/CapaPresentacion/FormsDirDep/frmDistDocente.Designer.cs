@@ -59,7 +59,7 @@ namespace CapaPresentacion
             this.panelcabeceratentativa.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelcabeceratentativa.Location = new System.Drawing.Point(0, 0);
             this.panelcabeceratentativa.Name = "panelcabeceratentativa";
-            this.panelcabeceratentativa.Size = new System.Drawing.Size(879, 40);
+            this.panelcabeceratentativa.Size = new System.Drawing.Size(783, 40);
             this.panelcabeceratentativa.TabIndex = 2;
             // 
             // label1
@@ -69,14 +69,14 @@ namespace CapaPresentacion
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
             this.label1.Location = new System.Drawing.Point(66, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(344, 18);
+            this.label1.Size = new System.Drawing.Size(430, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "CARGA ACADEMICA TENTATIVA DE DOCENTES";
             // 
             // pictureBoxCerrarTENTATIVA
             // 
             this.pictureBoxCerrarTENTATIVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCerrarTENTATIVA.Image")));
-            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(840, 3);
+            this.pictureBoxCerrarTENTATIVA.Location = new System.Drawing.Point(724, 2);
             this.pictureBoxCerrarTENTATIVA.Name = "pictureBoxCerrarTENTATIVA";
             this.pictureBoxCerrarTENTATIVA.Size = new System.Drawing.Size(35, 35);
             this.pictureBoxCerrarTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -97,7 +97,7 @@ namespace CapaPresentacion
             // pictureBoxMINIMIZARTENTATIVA
             // 
             this.pictureBoxMINIMIZARTENTATIVA.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMINIMIZARTENTATIVA.Image")));
-            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(801, 3);
+            this.pictureBoxMINIMIZARTENTATIVA.Location = new System.Drawing.Point(685, 2);
             this.pictureBoxMINIMIZARTENTATIVA.Name = "pictureBoxMINIMIZARTENTATIVA";
             this.pictureBoxMINIMIZARTENTATIVA.Size = new System.Drawing.Size(35, 35);
             this.pictureBoxMINIMIZARTENTATIVA.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -112,6 +112,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvCargaAcademica.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCargaAcademica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCargaAcademica.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCargaAcademica.BackgroundColor = System.Drawing.Color.White;
             this.dgvCargaAcademica.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCargaAcademica.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -142,7 +143,7 @@ namespace CapaPresentacion
             this.dgvCargaAcademica.RowHeadersWidth = 51;
             this.dgvCargaAcademica.RowTemplate.Height = 24;
             this.dgvCargaAcademica.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCargaAcademica.Size = new System.Drawing.Size(833, 397);
+            this.dgvCargaAcademica.Size = new System.Drawing.Size(414, 255);
             this.dgvCargaAcademica.TabIndex = 3;
             this.dgvCargaAcademica.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargaAcademica_CellContentClick);
             // 
@@ -168,8 +169,8 @@ namespace CapaPresentacion
             this.buttonCerrar.FlatAppearance.BorderSize = 0;
             this.buttonCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCerrar.Location = new System.Drawing.Point(706, 485);
-            this.buttonCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCerrar.Location = new System.Drawing.Point(283, 351);
+            this.buttonCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCerrar.Name = "buttonCerrar";
             this.buttonCerrar.Size = new System.Drawing.Size(130, 34);
             this.buttonCerrar.TabIndex = 59;
@@ -179,10 +180,10 @@ namespace CapaPresentacion
             // 
             // frmDistDocentes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(879, 541);
+            this.ClientSize = new System.Drawing.Size(783, 541);
             this.Controls.Add(this.buttonCerrar);
             this.Controls.Add(this.dgvCargaAcademica);
             this.Controls.Add(this.panelcabeceratentativa);

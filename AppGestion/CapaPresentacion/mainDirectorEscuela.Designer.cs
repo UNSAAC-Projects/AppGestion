@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.btnVerCatalogos = new System.Windows.Forms.Button();
+            this.btnASIGNATURA = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,15 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
-            this.btnVerCatalogo = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.CrearGrupo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panelMainDirEscuela = new System.Windows.Forms.Panel();
             this.pictureMaxDirectorEscuela = new System.Windows.Forms.PictureBox();
             this.pictureMINIMIZE1 = new System.Windows.Forms.PictureBox();
@@ -59,13 +49,11 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panelContenedor2 = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).BeginInit();
@@ -75,6 +63,8 @@
             // ContenedorLogin
             // 
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.btnVerCatalogos);
+            this.ContenedorLogin.Controls.Add(this.btnASIGNATURA);
             this.ContenedorLogin.Controls.Add(this.pictureBoxLogo);
             this.ContenedorLogin.Controls.Add(this.label4);
             this.ContenedorLogin.Controls.Add(this.label3);
@@ -89,6 +79,26 @@
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(311, 650);
             this.ContenedorLogin.TabIndex = 1;
+            // 
+            // btnVerCatalogos
+            // 
+            this.btnVerCatalogos.Location = new System.Drawing.Point(72, 581);
+            this.btnVerCatalogos.Name = "btnVerCatalogos";
+            this.btnVerCatalogos.Size = new System.Drawing.Size(131, 23);
+            this.btnVerCatalogos.TabIndex = 13;
+            this.btnVerCatalogos.Text = "VER CATALOGO";
+            this.btnVerCatalogos.UseVisualStyleBackColor = true;
+            this.btnVerCatalogos.Click += new System.EventHandler(this.btnVerCatalogos_Click);
+            // 
+            // btnASIGNATURA
+            // 
+            this.btnASIGNATURA.Location = new System.Drawing.Point(72, 528);
+            this.btnASIGNATURA.Name = "btnASIGNATURA";
+            this.btnASIGNATURA.Size = new System.Drawing.Size(131, 23);
+            this.btnASIGNATURA.TabIndex = 12;
+            this.btnASIGNATURA.Text = "ASIGNATURAS";
+            this.btnASIGNATURA.UseVisualStyleBackColor = true;
+            this.btnASIGNATURA.Click += new System.EventHandler(this.btnASIGNATURA_Click);
             // 
             // pictureBoxLogo
             // 
@@ -179,12 +189,7 @@
             // panelPrinciapl
             // 
             this.panelPrinciapl.BackColor = System.Drawing.Color.White;
-            this.panelPrinciapl.Controls.Add(this.btnVerCatalogo);
-            this.panelPrinciapl.Controls.Add(this.button2);
-            this.panelPrinciapl.Controls.Add(this.dgvAsignaturas);
-            this.panelPrinciapl.Controls.Add(this.txtBuscar);
-            this.panelPrinciapl.Controls.Add(this.pictureBox5);
-            this.panelPrinciapl.Controls.Add(this.pictureBox4);
+            this.panelPrinciapl.Controls.Add(this.panelContenedor2);
             this.panelPrinciapl.Controls.Add(this.panelMainDirEscuela);
             this.panelPrinciapl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrinciapl.Location = new System.Drawing.Point(311, 0);
@@ -193,162 +198,6 @@
             this.panelPrinciapl.Size = new System.Drawing.Size(1076, 650);
             this.panelPrinciapl.TabIndex = 1;
             this.panelPrinciapl.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPrinciapl_Paint);
-            // 
-            // btnVerCatalogo
-            // 
-            this.btnVerCatalogo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnVerCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnVerCatalogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnVerCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnVerCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnVerCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCatalogo.ForeColor = System.Drawing.Color.White;
-            this.btnVerCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogo.Image")));
-            this.btnVerCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCatalogo.Location = new System.Drawing.Point(476, 581);
-            this.btnVerCatalogo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnVerCatalogo.Name = "btnVerCatalogo";
-            this.btnVerCatalogo.Size = new System.Drawing.Size(181, 54);
-            this.btnVerCatalogo.TabIndex = 10;
-            this.btnVerCatalogo.Text = "VER CATALOGO";
-            this.btnVerCatalogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnVerCatalogo.UseVisualStyleBackColor = false;
-            this.btnVerCatalogo.Click += new System.EventHandler(this.btnVerCatalogo_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(661, 62);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 54);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "AGREGAR";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // dgvAsignaturas
-            // 
-            this.dgvAsignaturas.AllowUserToAddRows = false;
-            this.dgvAsignaturas.AllowUserToDeleteRows = false;
-            this.dgvAsignaturas.AllowUserToOrderColumns = true;
-            this.dgvAsignaturas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvAsignaturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAsignaturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvAsignaturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAsignaturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAsignaturas.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CrearGrupo,
-            this.Editar,
-            this.Eliminar});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(5, 149);
-            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvAsignaturas.Name = "dgvAsignaturas";
-            this.dgvAsignaturas.ReadOnly = true;
-            this.dgvAsignaturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvAsignaturas.RowHeadersVisible = false;
-            this.dgvAsignaturas.RowHeadersWidth = 51;
-            this.dgvAsignaturas.RowTemplate.Height = 24;
-            this.dgvAsignaturas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dgvAsignaturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(1068, 402);
-            this.dgvAsignaturas.TabIndex = 5;
-            this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
-            // 
-            // CrearGrupo
-            // 
-            this.CrearGrupo.HeaderText = "CrearGrupo";
-            this.CrearGrupo.Image = global::CapaPresentacion.Properties.Resources.plus_24px;
-            this.CrearGrupo.MinimumWidth = 6;
-            this.CrearGrupo.Name = "CrearGrupo";
-            this.CrearGrupo.ReadOnly = true;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::CapaPresentacion.Properties.Resources.editar_icono;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.Eliminar.MinimumWidth = 6;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BackColor = System.Drawing.Color.White;
-            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(85, 74);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(520, 27);
-            this.txtBuscar.TabIndex = 4;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(43, 74);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(37, 34);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(35, 62);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(607, 55);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // panelMainDirEscuela
             // 
@@ -442,6 +291,14 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
+            // panelContenedor2
+            // 
+            this.panelContenedor2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelContenedor2.Location = new System.Drawing.Point(21, 79);
+            this.panelContenedor2.Name = "panelContenedor2";
+            this.panelContenedor2.Size = new System.Drawing.Size(1038, 525);
+            this.panelContenedor2.TabIndex = 12;
+            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -459,10 +316,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPrinciapl.ResumeLayout(false);
-            this.panelPrinciapl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).EndInit();
@@ -474,20 +327,12 @@
         #endregion
         private System.Windows.Forms.Panel ContenedorLogin;
         private System.Windows.Forms.Panel panelPrinciapl;
-        private System.Windows.Forms.DataGridView dgvAsignaturas;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn CrearGrupo;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelNombre;
@@ -496,8 +341,10 @@
         private System.Windows.Forms.PictureBox pictureMINIMIZE1;
         private System.Windows.Forms.PictureBox pictureCANCEL1;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
-        private System.Windows.Forms.Button btnVerCatalogo;
         private System.Windows.Forms.Panel panelMainDirEscuela;
         private System.Windows.Forms.PictureBox pictureMaxDirectorEscuela;
+        private System.Windows.Forms.Button btnVerCatalogos;
+        private System.Windows.Forms.Button btnASIGNATURA;
+        private System.Windows.Forms.Panel panelContenedor2;
     }
 }
