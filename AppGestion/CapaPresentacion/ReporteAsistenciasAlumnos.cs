@@ -15,7 +15,7 @@ namespace CapaPresentacion
     {
         N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
         N_CursosDocente D = new N_CursosDocente();
-        N_Asistencia A = new N_Asistencia();
+        N_ListaAsistencias A = new N_ListaAsistencias();
         public string CodDocente;
         public ReporteAsistenciasAlumnos()
         {

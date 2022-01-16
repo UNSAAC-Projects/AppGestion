@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="E_Asignatura.cs" />
-    <Compile Include="E_Asistencia.cs" />
+    <Compile Include="E_ListaAsistencias.cs" />
     <Compile Include="E_Asistencia_alumnos.cs" />
     <Compile Include="E_CursoCatalogo.cs" />
     <Compile Include="E_CursosDocente.cs" />

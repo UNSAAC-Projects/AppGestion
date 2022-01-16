@@ -16,8 +16,8 @@ namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
-        FrmLogin L = new FrmLogin();
-        E_Asistencia entities = new E_Asistencia();
+        //FrmLogin L = new FrmLogin();
+        N_ListaAsistencias oListaAsistencias = new N_ListaAsistencias();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
 
         string IdCatalogo, NombreAsignatura;
@@ -47,20 +47,19 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
-            // Mostrar temas a dictar en el combobox
+            //Mostar lista de alumnos matriculados
             MostrarListaMatriculados();
+            // Mostrar temas a dictar en el combobox
             MostrarTemas();
 
             lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
             lblNombreAsignatura.Text = NombreAsignatura;
 
-            // Mostrar relacion de alumnos matriculados
+            //Ocultar columna Asistio
             dgvAsistencia.Columns["Asistio"].Visible = false;
            
             ImprimirHoraFecha();
             ContarAsistencia();
-
-
         }
         private void MostrarListaMatriculados()
         {
@@ -68,7 +67,6 @@ namespace CapaPresentacion
             DateTime Date = DateTime.Now;
             //DateTime Date = new DateTime(2022, 01, 16);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
-            int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 string a = Convert.ToString(row.Cells["Asistio"].Value);
@@ -109,6 +107,7 @@ namespace CapaPresentacion
             object[] arrayItems = listItems.ToArray(); //Convertir a array
             comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
             comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
+            indexTema = indexSiguienteTema;
         }
 
         public void ImprimirHoraFecha()
@@ -119,23 +118,14 @@ namespace CapaPresentacion
             lblDocente.Text = datos.NombreDocente;
         }
 
-        //public string ObtenerRutaProyecto()
-        //{//Método para obtener la ruta del proyecto
-        //    string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-        //    return rutaProyecto;
-        //}
-
         bool  ExportarDatos(DataGridView datalistado)
         {
-            //concatenar con el nombre del tema.
-            N_Asistencia A = new N_Asistencia();
-
-            var DateAndTime = DateTime.Now;
+            //var DateAndTime = DateTime.Now;
             DateTime Date = DateTime.Now;
             //DateTime Date = new DateTime(2022,01,16);
 
             string name = NombreAsignatura;
-            //registrar filas
+            //Guardar asistencia de alumnos
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 E_Asistencia_alumnos entities = new E_Asistencia_alumnos();
@@ -154,6 +144,14 @@ namespace CapaPresentacion
                 entities.observacion = observacion;
                 busines.InsertarAsistenciaAlumno(entities);
             }
+            //Iniciar entidad ListaAsistencias para guardar datos de la asistencia
+            E_ListaAsistencias eListaAsistencias = new E_ListaAsistencias();
+            eListaAsistencias.fecha = Date;
+            eListaAsistencias.tema = comboBoxTema.SelectedItem.ToString();
+            eListaAsistencias.idcatalogo = IdCatalogo;
+            //Guardar datos de la asistencia en la tabla TListaAsistencias
+            oListaAsistencias.GuardarDatosAsistencia(eListaAsistencias);
+
             return true;
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
@@ -177,7 +175,7 @@ namespace CapaPresentacion
             string item = comboBoxTema.Text.Trim();
             if (comboBoxTema.Items.Contains(item))
             {
-                //Actualizar como completado
+                //Actualizar como completado (falta completar)
             }
             else
             {
@@ -225,8 +223,6 @@ namespace CapaPresentacion
             ContarAsistencia();
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;
-           
-
         }
     }
 }

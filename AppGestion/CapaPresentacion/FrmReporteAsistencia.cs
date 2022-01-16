@@ -22,15 +22,13 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-        N_Asistencia A = new N_Asistencia();
+        N_ListaAsistencias A = new N_ListaAsistencias();
         //frmAsistencia oAsistencia = new frmAsistencia();
         N_CursosDocente D = new N_CursosDocente();
-        E_Asistencia Asis = new E_Asistencia();
+        E_ListaAsistencias Asis = new E_ListaAsistencias();
        
         public void listar_asistencias()
         {
-            
-
             dgvAsistenciaReporte.DataSource = A.listarAsitenciaCurso(cboAsistenciaCurso.SelectedItem.ToString());
             dgvAsistenciaReporte.Columns[5].Visible = false;
             dgvAsistenciaReporte.Columns[6].Visible = false;
@@ -94,7 +92,7 @@ namespace CapaPresentacion
 
         private void cboAsistenciaCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cboAsistenciaCurso.DropDownStyle = ComboBoxStyle.DropDownList;
+            //cboAsistenciaCurso.DropDownStyle = ComboBoxStyle.DropDownList;
             listar_asistencias();        
         }
 
