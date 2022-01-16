@@ -144,14 +144,13 @@ CREATE TABLE TMatriculado
 	foreign key(IDCatalogo) references TCatalogo
 )
 GO
-create table TReportesAsistencia
+create table TListaAsistencias
 (
 	Id int identity,
-	Curso varchar(100),
-	Tema varchar(100),
-	Fecha varchar(100),
-	Asistencia varchar(200),
+	Tema varchar(255),
+	Fecha date,
 	IDCatalogo varchar(6),
+	primary key(Id),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -166,6 +165,18 @@ CREATE TABLE TAsistencia_Alumnos
 	Observacion varchar(40),
 	PRIMARY KEY (Fecha,IdCatalogo,CodAlumno),
 	FOREIGN KEY (IdCatalogo) REFERENCES TCatalogo,
+)
+GO
+
+CREATE TABLE TAsistenciaDiariaDocentes
+(
+	Fecha date,
+	CodDocente varchar(6),
+	Nombres varchar(200),
+	Asistio varchar(8),
+	Observacion varchar(40),
+	PRIMARY KEY (Fecha,CodDocente),
+	FOREIGN KEY (CodDocente) REFERENCES TDocente,
 )
 GO
 
@@ -531,6 +542,30 @@ inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
 where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
 (C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
 GO
+
+-- Mostrar los docentes activos en un determiando semestre
+create proc SP_ListarDocentesActivos
+@SemestreLectivo varchar(8),
+@Fecha date
+as
+if exists(select * from TAsistenciaDiariaDocentes where Fecha=@Fecha)
+begin
+	select CodDocente,Nombres,Asistio,Observacion
+	from TAsistenciaDiariaDocentes where Fecha=@Fecha
+	order by Nombres
+end
+else
+begin
+	--Mostrar docentes activos en el semestre actual (incompleto)
+	--Falta seleccionar los docentes por semestre.
+	select CodDocente, 
+		(Nombres+' '+Apellidos) as 'Nombres',
+		'F' as 'Asistio', '' as 'Observacion'
+	from TDocente
+	where CodDocente != 'D000'
+end
+go
+
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -799,27 +834,38 @@ GO
 --select * from TPlanSesiones
 
 /*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
---insertar asistencias
-create proc SP_InsertarAsistenciaReporte
-	@Curso varchar(100),
-	@Tema varchar(100),
-	@Fecha varchar(100),
-	@Asistencia varchar(200),
+--Insertar o actualizar datos de las asistencias en TListaAsistencias
+create proc SP_InsertarDatosAsistencia
+	@Tema varchar(255),
+	@Fecha date,
 	@IDCatalogo varchar(6)
 as
-	insert into TReportesAsistencia values(@Curso,@Tema,@Fecha,@Asistencia,@IDCatalogo) 
-GO
-create proc SP_ListarAsistenciasplanse
-as
-	select * from TReportesAsistencia
-GO
-create proc SP_ListarAsistenciasCurso
-@Curso varchar(100)
-as
-	select * from TReportesAsistencia
-	where Curso=@Curso
+--Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
+	begin
+		update TListaAsistencias 
+		set Tema = @Tema
+		where Fecha = @Fecha and IdCatalogo = @IDCatalogo
+	end
+--Caso contrario, agregar
+else
+	insert into TListaAsistencias values(@Tema,@Fecha,@IDCatalogo) 
 GO
 
+--create proc SP_ListarAsistenciasplanse
+--as
+--	select * from TListaAsistencias
+--GO
+
+-- Listar asistencias registradas por curso
+create proc SP_ListarAsistenciasCurso
+@IdCatalogo varchar(6)
+as
+	select IdCatalogo, Tema, Fecha from TListaAsistencias
+	where IdCatalogo = @IdCatalogo
+GO
+
+-- Insertar la asistencia de un alumno a TAsistencia_Alumnos
 create or alter proc SP_InsertarAsistenciaAlumno
 @Fecha date,
 @IdCatalogo varchar(6),

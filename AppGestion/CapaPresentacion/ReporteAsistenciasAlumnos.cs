@@ -13,18 +13,13 @@ namespace CapaPresentacion
 {
     public partial class ReporteAsistenciasAlumnos : Form
     {
-        N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
-        N_CursosDocente D = new N_CursosDocente();
-        N_Asistencia A = new N_Asistencia();
+        readonly N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
+        readonly N_CursosDocente D = new N_CursosDocente();
+
         public string CodDocente;
         public ReporteAsistenciasAlumnos()
         {
             InitializeComponent();
-        }
-        public void listar_reportes()
-        {
-            dgvReporteAsistencia.DataSource = A.listarAsitenciaCurso(comboBoxCursosReporte.SelectedItem.ToString());
-            dgvReporteAsistencia.Columns["ASISTENCIA"].DisplayIndex = 4;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,7 +39,7 @@ namespace CapaPresentacion
         {
             string NombreAsig = comboBoxCursosReporte.Text;
             string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente);
-            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "03/01/2022", "10/01/2023");
+            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "2022-01-10", "2022-03-02");
             //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
             if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
             {
@@ -80,7 +75,7 @@ namespace CapaPresentacion
         void CargarCombo()
         {
             DataTable dt = new DataTable();
-            dt = D.ListandoCursosDocente(datos.CodDocente);
+            dt = D.ListarCursosDocente(datos.CodDocente);
             int n = dt.Rows.Count;
             int i = 0;
             while(i < n)
