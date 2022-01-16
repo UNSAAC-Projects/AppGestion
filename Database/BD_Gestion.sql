@@ -834,12 +834,21 @@ GO
 --select * from TPlanSesiones
 
 /*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
---Insertar datos de las asistencias en TListaAsistencias
+--Insertar o actualizar datos de las asistencias en TListaAsistencias
 create proc SP_InsertarDatosAsistencia
 	@Tema varchar(255),
 	@Fecha date,
 	@IDCatalogo varchar(6)
 as
+--Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
+	begin
+		update TListaAsistencias 
+		set Tema = @Tema
+		where Fecha = @Fecha and IdCatalogo = @IDCatalogo
+	end
+--Caso contrario, agregar
+else
 	insert into TListaAsistencias values(@Tema,@Fecha,@IDCatalogo) 
 GO
 

@@ -158,9 +158,9 @@ namespace CapaPresentacion
             //Iniciar entidad ListaAsistencias para guardar datos de la asistencia
             E_ListaAsistencias eListaAsistencias = new E_ListaAsistencias();
             eListaAsistencias.fecha = Date;
-            eListaAsistencias.tema = comboBoxTema.GetItemText(comboBoxTema.SelectedItem); //(CORREGIR)
+            eListaAsistencias.tema = comboBoxTema.Text;
             eListaAsistencias.idcatalogo = IdCatalogo;
-            //Guardar datos de la asistencia en la tabla TListaAsistencias
+            //Guardar o actualizar datos de la asistencia en la tabla TListaAsistencias
             oListaAsistencias.GuardarDatosAsistencia(eListaAsistencias);
 
             return true;

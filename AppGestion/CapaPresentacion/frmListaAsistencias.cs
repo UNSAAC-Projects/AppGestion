@@ -71,31 +71,22 @@ namespace CapaPresentacion
                 DataGridViewRow row = dgvAsistenciaReporte.Rows[e.RowIndex];
                 if (row.Cells["Asistencia"].Selected)
                 {
-                    N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-                    //Obtener cod curso y luego codcatalogo
-                    //string codAsignatura = row.Cells["CODIGO"].Value.ToString();
-                    //string NombreCurso = row.Cells["NOMBRE"].Value.ToString();
-                    //string Grupo = row.Cells["GRUPO"].Value.ToString();
-                    //string codCatalogo = oDocente.ObtenerCodCatalogo(codAsignatura);
-                    // hasta aqui esta bien 
-                    //Obtener IdCatalogo
+                    //Recuperar información
                     string idCatalogo = row.Cells["IdCatalogo"].Value.ToString();
                     string nombreCurso = cboAsistenciaCurso.SelectedItem.ToString();
                     string strFecha = row.Cells["Fecha"].Value.ToString();
                     DateTime fecha = DateTime.Parse(strFecha);
                     frmAsistencia frm = new frmAsistencia(idCatalogo, nombreCurso, fecha);
                     frm.ShowDialog();
+                    //Actualizar lista de asistencias
+                    MostrarListaAsistencias();
                 }
             }
         }
 
-        private void cboAsistenciaCurso_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void cboAsistenciaCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Mostrar asistencias para el nuevo curso seleccionado
             MostrarListaAsistencias();        
         }
 
@@ -124,6 +115,23 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void dgvAsistenciaReporte_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {//Evento para mostrar numeración en el encabezado de la fila
+
+            var grid = sender as DataGridView; //dgv
+            var rowIdx = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                //Alineación de la numeración
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
     }
 }
