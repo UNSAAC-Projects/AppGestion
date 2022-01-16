@@ -13,7 +13,7 @@ namespace CapaNegocio
     {
         D_CursosDocente data = new D_CursosDocente();
         //E_CursosDocente entities = new E_CursosDocente();
-        public DataTable ListandoCursosDocente(string CodDocente)
+        public DataTable ListarCursosDocente(string CodDocente)
         {
             return data.ListarCursosDocente(CodDocente);
         }

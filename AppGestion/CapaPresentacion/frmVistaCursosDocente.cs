@@ -29,8 +29,7 @@ namespace CapaPresentacion
         public void MostrarCursosDocente(string codDocente)
         {
             N_CursosDocente ovista = new N_CursosDocente();
-            
-            System.Data.DataTable tabla = ovista.ListandoCursosDocente(codDocente);
+            System.Data.DataTable tabla = ovista.ListarCursosDocente(codDocente);
             if(tabla != null) //Si tabla no está vacia
                 dgvCursosDocente.DataSource = tabla;
             
