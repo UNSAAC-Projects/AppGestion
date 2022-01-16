@@ -86,12 +86,6 @@
     <Compile Include="FormsDirDep\frmAsignarDocente.Designer.cs">
       <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.Designer.cs">
-      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsDirDep\frmDirecDepAcade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,11 +122,23 @@
     <Compile Include="frmPlanDeSesiones.Designer.cs">
       <DependentUpon>frmPlanDeSesiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaAsistencias.cs">
+    <Compile Include="FrmPrincipalDirecAcademico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaAsistencias.Designer.cs">
-      <DependentUpon>frmListaAsistencias.cs</DependentUpon>
+    <Compile Include="FrmPrincipalDirecAcademico.Designer.cs">
+      <DependentUpon>FrmPrincipalDirecAcademico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalDirectorEscuela.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalDirectorEscuela.Designer.cs">
+      <DependentUpon>FrmPrincipalDirectorEscuela.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipalDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipalDocente.Designer.cs">
+      <DependentUpon>FrmPrincipalDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocente.cs">
       <SubType>Form</SubType>
@@ -223,9 +229,6 @@
     <EmbeddedResource Include="FormsDirDep\frmAsignarDocentev2.resx">
       <DependentUpon>frmAsignarDocentev2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsDirDep\frmAsistenciaDiariaDocentes.resx">
-      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmDirecDepAcade.resx">
       <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,9 +254,14 @@
       <DependentUpon>frmPlanDeSesiones.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaAsistencias.resx">
-      <DependentUpon>frmListaAsistencias.cs</DependentUpon>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="FrmPrincipalDirecAcademico.resx">
+      <DependentUpon>FrmPrincipalDirecAcademico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalDirectorEscuela.resx">
+      <DependentUpon>FrmPrincipalDirectorEscuela.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipalDocente.resx">
+      <DependentUpon>FrmPrincipalDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
@@ -480,9 +488,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\education2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\form-24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

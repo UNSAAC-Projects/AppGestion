@@ -126,5 +126,10 @@ namespace CapaPresentacion
                 Top = Top + (e.Y - posY);
             }
         }
+
+        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
