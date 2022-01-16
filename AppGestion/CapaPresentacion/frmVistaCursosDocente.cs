@@ -29,8 +29,7 @@ namespace CapaPresentacion
         public void MostrarCursosDocente(string codDocente)
         {
             N_CursosDocente ovista = new N_CursosDocente();
-            
-            System.Data.DataTable tabla = ovista.ListandoCursosDocente(codDocente);
+            System.Data.DataTable tabla = ovista.ListarCursosDocente(codDocente);
             if(tabla != null) //Si tabla no está vacia
                 dgvCursosDocente.DataSource = tabla;
             
@@ -126,6 +125,11 @@ namespace CapaPresentacion
                 Left = Left + (e.X - posX);
                 Top = Top + (e.Y - posY);
             }
+        }
+
+        private void frmVistaCursosDocente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,7 +46,7 @@ namespace CapaNegocio
         {
             return data.ListarCatalogoDA();  //DA: director académico
         }
-        public DataTable ListarMatriculados(string IdCatalogo, string date)
+        public DataTable ListarMatriculados(string IdCatalogo, DateTime date)
         {
             return data.ListarMatriculados(IdCatalogo, date);
         }

@@ -139,15 +139,5 @@ namespace CapaPresentacion
             exportarCatalogo.Visible = true;
         }
 
-        private void btnMinVistaCatalogo_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btonCerrarVistaCatalogo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

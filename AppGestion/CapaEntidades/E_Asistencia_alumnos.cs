@@ -8,7 +8,7 @@ namespace CapaEntidades
 {
     public class E_Asistencia_alumnos
     {
-        private string _Fecha;
+        private DateTime _Fecha;
         private string _IdCatalogo;
         private string _CodAlumno;
         private string _Nombres;
@@ -18,7 +18,7 @@ namespace CapaEntidades
         {
 
         }
-        public E_Asistencia_alumnos(string Fecha, string IdCatalogo,
+        public E_Asistencia_alumnos(DateTime Fecha, string IdCatalogo,
             string CodAlumno, string Nombres, string Asistio, string Observacion)
         {
             _Fecha = Fecha;
@@ -28,7 +28,7 @@ namespace CapaEntidades
             _Asistio = Asistio;
             _Observacion = Observacion;
         }
-        public string fecha { get => _Fecha; set => _Fecha = value; }
+        public DateTime fecha { get => _Fecha; set => _Fecha = value; }
         public string idcatalogo { get => _IdCatalogo; set => _IdCatalogo = value; }
         public string codalumno { get => _CodAlumno; set => _CodAlumno = value; }
         public string nombres { get => _Nombres; set => _Nombres = value; }
