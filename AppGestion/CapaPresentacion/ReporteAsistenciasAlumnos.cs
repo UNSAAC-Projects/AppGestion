@@ -31,15 +31,16 @@ namespace CapaPresentacion
         {
             CargarCombo();
             comboBoxCursosReporte.SelectedIndex = 0;
-            //mostrarReporte();
-            comboBoxUnidad.SelectedIndex = 0;
+            //comboBoxUnidad.SelectedIndex = 0;
         }
 
         private void mostrarReporte()
         {
             string NombreAsig = comboBoxCursosReporte.Text;
             string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente);
-            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "2022-01-10", "2022-03-02");
+            string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
+            string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
+            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
             //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
             if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
             {
@@ -69,6 +70,7 @@ namespace CapaPresentacion
 
         private void comboBoxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dgvReporteAsistencia.Columns.Clear();
             comboBoxCursosReporte.DropDownStyle = ComboBoxStyle.DropDownList;
             mostrarReporte();
         }
@@ -84,11 +86,35 @@ namespace CapaPresentacion
                 i = i + 1;
             }
             //comboBoxCursosReporte.SelectedIndex = 0;
-
-
         }
         DataSet result;
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
 
+            //Recorrer columnas y guardar valores
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                indexColumn++;
+                exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+            }
+            int indexfila = 0;
+
+            //Recorrer filas y guardar sus valores
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                }
+            }
+            exportarCatalogo.Visible = true;
+        }
         private void label11_Click(object sender, EventArgs e)
         {
 
@@ -102,6 +128,23 @@ namespace CapaPresentacion
         private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void dtpFechaInferior_ValueChanged(object sender, EventArgs e)
+        {
+            dgvReporteAsistencia.Columns.Clear();
+            mostrarReporte();
+        }
+
+        private void dtpFechaSuperior_ValueChanged(object sender, EventArgs e)
+        {
+            dgvReporteAsistencia.Columns.Clear();
+            mostrarReporte();
+        }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            ExportarDatos(dgvReporteAsistencia);
         }
     }
 }

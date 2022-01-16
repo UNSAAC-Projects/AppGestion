@@ -76,7 +76,7 @@ namespace CapaPresentacion
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
             //DateTime Date = DateTime.Now;
-            //DateTime Date = new DateTime(2022, 01, 16);
+            Date = new DateTime(2022, 01, 17);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
@@ -132,8 +132,8 @@ namespace CapaPresentacion
         bool  ExportarDatos(DataGridView datalistado)
         {
             //var DateAndTime = DateTime.Now;
-            DateTime Date = DateTime.Now;
-            //DateTime Date = new DateTime(2022,01,16);
+            //DateTime Date = DateTime.Now;
+            DateTime Date = new DateTime(2022,01,17);
 
             string name = NombreAsignatura;
             //Guardar asistencia de alumnos

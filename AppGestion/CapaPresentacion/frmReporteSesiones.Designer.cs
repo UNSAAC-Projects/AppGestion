@@ -87,7 +87,7 @@
             this.labelReporteAsistencia.Location = new System.Drawing.Point(431, 43);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
-            this.labelReporteAsistencia.Size = new System.Drawing.Size(242, 25);
+            this.labelReporteAsistencia.Size = new System.Drawing.Size(286, 33);
             this.labelReporteAsistencia.TabIndex = 1;
             this.labelReporteAsistencia.Text = "REPORTE DE AVANCE";
             // 
@@ -102,7 +102,7 @@
             this.buttonExportar.Location = new System.Drawing.Point(581, 594);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(235, 41);
+            this.buttonExportar.Size = new System.Drawing.Size(264, 51);
             this.buttonExportar.TabIndex = 2;
             this.buttonExportar.Text = "Exportar Excel";
             this.buttonExportar.UseVisualStyleBackColor = false;
@@ -119,7 +119,7 @@
             this.buttonCerrrar.Location = new System.Drawing.Point(824, 594);
             this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCerrrar.Name = "buttonCerrrar";
-            this.buttonCerrrar.Size = new System.Drawing.Size(236, 41);
+            this.buttonCerrrar.Size = new System.Drawing.Size(266, 51);
             this.buttonCerrrar.TabIndex = 3;
             this.buttonCerrrar.Text = "Cerrar";
             this.buttonCerrrar.UseVisualStyleBackColor = false;
@@ -131,10 +131,10 @@
             this.comboBoxAsignaturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAsignaturas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAsignaturas.FormattingEnabled = true;
-            this.comboBoxAsignaturas.Location = new System.Drawing.Point(328, 94);
-            this.comboBoxAsignaturas.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxAsignaturas.Location = new System.Drawing.Point(369, 118);
+            this.comboBoxAsignaturas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxAsignaturas.Name = "comboBoxAsignaturas";
-            this.comboBoxAsignaturas.Size = new System.Drawing.Size(450, 28);
+            this.comboBoxAsignaturas.Size = new System.Drawing.Size(506, 29);
             this.comboBoxAsignaturas.TabIndex = 4;
             this.comboBoxAsignaturas.SelectedIndexChanged += new System.EventHandler(this.comboBoxAsignaturas_SelectedIndexChanged);
             // 
@@ -143,10 +143,10 @@
             this.labelAsignatura.AutoSize = true;
             this.labelAsignatura.BackColor = System.Drawing.Color.Transparent;
             this.labelAsignatura.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAsignatura.Location = new System.Drawing.Point(210, 96);
+            this.labelAsignatura.Location = new System.Drawing.Point(236, 120);
             this.labelAsignatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAsignatura.Name = "labelAsignatura";
-            this.labelAsignatura.Size = new System.Drawing.Size(110, 21);
+            this.labelAsignatura.Size = new System.Drawing.Size(128, 24);
             this.labelAsignatura.TabIndex = 5;
             this.labelAsignatura.Text = "Asignatura: ";
             // 
@@ -155,26 +155,27 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.panel2.Location = new System.Drawing.Point(327, 124);
+            this.panel2.Location = new System.Drawing.Point(368, 155);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 1);
+            this.panel2.Size = new System.Drawing.Size(506, 0);
             this.panel2.TabIndex = 21;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 146);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // frmReporteSesiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1111, 694);
@@ -187,7 +188,7 @@
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmReporteSesiones";
             this.Text = "frmReportesSesiones";
             this.Load += new System.EventHandler(this.frmReportesSesiones_Load);
