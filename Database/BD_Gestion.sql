@@ -58,6 +58,7 @@ GO
 CREATE TABLE TCatalogo
 (
 	IDCatalogo varchar(6),
+	SemestreLectivo varchar(6),
 	NroSemestre varchar(2),
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
@@ -257,6 +258,7 @@ go
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
 create proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
+	@SemestreLectivo varchar(6),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -264,7 +266,7 @@ create proc SP_INSERTARCATALOGO
 	@CodDocenteTeorico varchar(6),
 	@CodDocentePractico varchar(6)
 as
-insert into TCatalogo values(@IDCatalogo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
+insert into TCatalogo values(@IDCatalogo,@SemestreLectivo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
 go
 
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
