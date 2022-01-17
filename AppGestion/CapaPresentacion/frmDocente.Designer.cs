@@ -365,7 +365,6 @@ namespace CapaPresentacion
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1104, 694);
             this.panelContenedor.TabIndex = 41;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // frmDocente
             // 

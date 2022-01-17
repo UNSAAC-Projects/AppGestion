@@ -27,25 +27,27 @@ namespace CapaPresentacion
 
         private void frmReportesSesiones_Load(object sender, EventArgs e)
         {
-            MostrarItemsComboBox(); //Mostrar opciones en comboBox
-            comboBoxAsignaturas.SelectedIndex = 0;
-
-            //Obtener codCursoAsignatura
-            string codCursoAsig = comboBoxAsignaturas.Text.Substring(0, 6);
-            string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
-            MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
-
-            //Ocultar columnas
-            dgvReporteSesiones.Columns["Fecha"].Visible = false;
-            dgvReporteSesiones.Columns["Total Asistentes"].Visible = false;
-            dgvReporteSesiones.Columns["Total faltantes"].Visible = false;
-
-        }
-
-        private void MostrarItemsComboBox()
-        {
             //Obtener cursos que dicta el docente
             string[] Asignaturas = oDocente.CursosDocente(CodDocente);
+            if(Asignaturas != null) //Si tiene asignaturas dictando
+            {
+                MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
+                comboBoxAsignaturas.SelectedIndex = 0;
+
+                //Obtener codCursoAsignatura
+                string codCursoAsig = comboBoxAsignaturas.Text.Substring(0, 6);
+                string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
+                MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
+
+                //Ocultar columnas
+                dgvReporteSesiones.Columns["Fecha"].Visible = false;
+                dgvReporteSesiones.Columns["Total Asistentes"].Visible = false;
+                dgvReporteSesiones.Columns["Total faltantes"].Visible = false;
+            }
+        }
+
+        private void MostrarItemsComboBox(string[] Asignaturas)
+        {
             //Mostrar cursos
             comboBoxAsignaturas.Items.AddRange(Asignaturas);
         }

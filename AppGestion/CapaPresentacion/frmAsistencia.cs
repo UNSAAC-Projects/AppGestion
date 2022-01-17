@@ -114,11 +114,16 @@ namespace CapaPresentacion
 
             //Obtener lista de temas e id del siguiente tema
             List<string> listItems = oPlanSesiones.ObtenerTemasProximos(IdCatalogo, out int indexSiguienteTema);
-            //Mostrar temas en combobox
-            object[] arrayItems = listItems.ToArray(); //Convertir a array
-            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
-            comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
-            indexTema = indexSiguienteTema;
+            
+            if(listItems != null) //Si hay temas por mostrar
+            {
+                //Mostrar temas en combobox
+                object[] arrayItems = listItems.ToArray(); //Convertir a array
+                comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+                comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
+                indexTema = indexSiguienteTema;
+            }
+            
         }
 
         public void ImprimirHoraFecha()
@@ -132,7 +137,7 @@ namespace CapaPresentacion
         bool  ExportarDatos(DataGridView datalistado)
         {
             //var DateAndTime = DateTime.Now;
-            DateTime Date = DateTime.Now;
+            //DateTime Date = DateTime.Now;
             //DateTime Date = new DateTime(2022,01,17);
 
             string name = NombreAsignatura;
@@ -147,7 +152,7 @@ namespace CapaPresentacion
                 string nombres = Convert.ToString(row.Cells["Nombres"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 //insertar datos en la bd
-                entities.fecha = Date;
+                entities.fecha = Fecha;
                 entities.idcatalogo = IdCatalogo;
                 entities.codalumno = codalumno;
                 entities.nombres = nombres;
@@ -157,7 +162,7 @@ namespace CapaPresentacion
             }
             //Iniciar entidad ListaAsistencias para guardar datos de la asistencia
             E_ListaAsistencias eListaAsistencias = new E_ListaAsistencias();
-            eListaAsistencias.fecha = Date;
+            eListaAsistencias.fecha = Fecha;
             eListaAsistencias.tema = comboBoxTema.Text;
             eListaAsistencias.idcatalogo = IdCatalogo;
             //Guardar o actualizar datos de la asistencia en la tabla TListaAsistencias
