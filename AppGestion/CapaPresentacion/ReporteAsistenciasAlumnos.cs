@@ -29,9 +29,14 @@ namespace CapaPresentacion
 
         private void ReporteAsistenciasAlumnos_Load(object sender, EventArgs e)
         {
-            CargarCombo();
-            comboBoxCursosReporte.SelectedIndex = 0;
-            //comboBoxUnidad.SelectedIndex = 0;
+            //Obtener cursos del docente
+            DataTable tablaCursos = D.ListarCursosDocente(datos.CodDocente);
+            if(tablaCursos != null)
+            {
+                MostrarItemsComboBox(tablaCursos);
+                comboBoxCursosReporte.SelectedIndex = 0;
+                //comboBoxUnidad.SelectedIndex = 0;
+            }
         }
 
         private void mostrarReporte()
@@ -74,20 +79,16 @@ namespace CapaPresentacion
             comboBoxCursosReporte.DropDownStyle = ComboBoxStyle.DropDownList;
             mostrarReporte();
         }
-        void CargarCombo()
+        void MostrarItemsComboBox(DataTable tablaCursos)
         {
-            DataTable dt = new DataTable();
-            dt = D.ListarCursosDocente(datos.CodDocente);
-            int n = dt.Rows.Count;
+            int n = tablaCursos.Rows.Count;
             int i = 0;
             while(i < n)
             {
-                comboBoxCursosReporte.Items.Add(dt.Rows[i][1].ToString());
-                i = i + 1;
+                comboBoxCursosReporte.Items.Add(tablaCursos.Rows[i][1].ToString());
+                i++;
             }
-            //comboBoxCursosReporte.SelectedIndex = 0;
         }
-        DataSet result;
         public void ExportarDatos(DataGridView listadoCatalogo)
         {
             Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
@@ -115,14 +116,10 @@ namespace CapaPresentacion
             }
             exportarCatalogo.Visible = true;
         }
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCancelarFrmReporte_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)

@@ -45,11 +45,6 @@ namespace CapaPresentacion
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmVistaCursosDocente(Docente));
-
-            //frmVistaCursosDocente frm = new frmVistaCursosDocente(Docente);
-            //frm.ShowDialog();
-            //Actualizar tabla docentes
-            
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -61,10 +56,6 @@ namespace CapaPresentacion
         {
             Close();
         }
-
-
-
-
         private void btnMaxFrmDocente_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -97,10 +88,6 @@ namespace CapaPresentacion
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmListaAsistencias());
-
-            //FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
-            //RAsistencia.ShowDialog();
-            //dgvCursosDocente.Refresh();
         }
 
         private void frmDocente_Load(object sender, EventArgs e)
@@ -114,7 +101,6 @@ namespace CapaPresentacion
 
         private void btnREPORTEASISTENCIA_Click(object sender, EventArgs e)
         {
-            
             ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
             RAsistencia.CodDocente = datos.CodDocente;
             RAsistencia.ShowDialog();
@@ -123,11 +109,7 @@ namespace CapaPresentacion
         private void buttonReporteSesiones_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmReporteSesiones(Docente));
-
-            //frmReporteSesiones RSesiones = new frmReporteSesiones(Docente);
-            //RSesiones.ShowDialog();
         }
-        ///
         private Form formActivado = null;
         private void AbrirFormulariosEnPanelContenedor(Form FormHijo)
         {
@@ -140,18 +122,11 @@ namespace CapaPresentacion
             panelContenedor.Tag = FormHijo;
             FormHijo.BringToFront();
             FormHijo.Show();
-
         }
 
         private void btnCursosPorDia_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
         }
-
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
     }
 }

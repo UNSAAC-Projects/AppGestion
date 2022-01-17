@@ -104,6 +104,12 @@
     <Compile Include="frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsDirDep\frmAsistenciaDiariaDocentes.designer.cs">
+      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaAsistencias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmAsistenciaDiariaDocentes.resx">
+      <DependentUpon>frmAsistenciaDiariaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaAsistencias.resx">
       <DependentUpon>frmListaAsistencias.cs</DependentUpon>

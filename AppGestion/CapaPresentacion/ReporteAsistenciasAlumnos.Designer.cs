@@ -162,7 +162,6 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(304, 30);
             this.label11.TabIndex = 34;
             this.label11.Text = "REPORTE DE ASISTENCIAS";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label1
             // 

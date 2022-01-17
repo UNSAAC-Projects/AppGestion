@@ -172,18 +172,22 @@ namespace CapaDatos
 
             conexion.Close();
 
-            //Formar string
-            List<string> cursos = new List<string>();
-            string codCursoCatalogo, nombreCurso;
-            //Recorrer datatable
-            foreach (DataRow row in tabla.Rows)
+            if (tabla.Rows.Count != 0)
             {
-                codCursoCatalogo = row[0].ToString();
-                nombreCurso = row[1].ToString();
+                //Formar string
+                List<string> cursos = new List<string>();
+                string codCursoCatalogo, nombreCurso;
+                //Recorrer datatable
+                foreach (DataRow row in tabla.Rows)
+                {
+                    codCursoCatalogo = row[0].ToString();
+                    nombreCurso = row[1].ToString();
 
-                cursos.Add($"{codCursoCatalogo} - {nombreCurso}");
+                    cursos.Add($"{codCursoCatalogo} - {nombreCurso}");
+                }
+                return cursos.ToArray();
             }
-            return cursos.ToArray();
+            else return  null;
         }
     }
 }

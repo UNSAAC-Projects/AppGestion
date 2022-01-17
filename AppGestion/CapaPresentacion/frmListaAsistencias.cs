@@ -30,31 +30,37 @@ namespace CapaPresentacion
         public void MostrarListaAsistencias()
         {
             //Obtener codigo (ex: IF324)
-            string codGrupoAsignatura = cboAsistenciaCurso.SelectedItem.ToString().Substring(0,6);
+            string codGrupoAsignatura = cboAsistenciaCurso.Text.Substring(0,6);
             //Obtener IdCatalogo
             string idCatalogo = oCursosDocente.ObtenerCodCatalogo(codGrupoAsignatura);
             //Mostrar asistencias
             dgvAsistenciaReporte.DataSource = oListaAsistencias.ListarAsitenciaCurso(idCatalogo);
+ 
         }
         private void FrmReporteAsistencia_Load(object sender, EventArgs e)
         {
-            //Mostrar items del combobox
-            MostrarItemsComboBox();   
-            //Mostrar lista de asistencias
-            MostrarListaAsistencias();
-            //Mover columna
-            dgvAsistenciaReporte.Columns["Asistencia"].DisplayIndex = 3;
-            //Ocultar columna
-            dgvAsistenciaReporte.Columns["IdCatalogo"].Visible = false;
+            //Recuperar cursos docente
+            DataTable tablaCursos = oCursosDocente.ListarCursosDocente(datos.CodDocente);
+            if(tablaCursos != null)//Si el docente dicta cursos
+            {
+                //Mostrar items del combobox
+                MostrarItemsComboBox(tablaCursos);
+                //Mostrar lista de asistencias
+                MostrarListaAsistencias();
+                //Mover columna
+                dgvAsistenciaReporte.Columns["Asistencia"].DisplayIndex = 3;
+                //Ocultar columna
+                dgvAsistenciaReporte.Columns["IdCatalogo"].Visible = false;
+            }
+           
         }
-        void MostrarItemsComboBox()
+        void MostrarItemsComboBox(DataTable tablaCursos)
         {
-            DataTable dt = oCursosDocente.ListarCursosDocente(datos.CodDocente);
-            int n = dt.Rows.Count;
+            int n = tablaCursos.Rows.Count;
             string grupoAsignatura, nombreAsignatura;
-            
+
             //Recorrer filas del DataTable
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow row in tablaCursos.Rows)
             {
                 grupoAsignatura = row[0].ToString(); //GrupoAsignatura (ex: IF342)
                 nombreAsignatura = row[1].ToString(); //Nombre de la asignatura
