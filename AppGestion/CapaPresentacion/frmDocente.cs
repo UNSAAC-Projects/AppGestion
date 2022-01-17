@@ -96,7 +96,7 @@ namespace CapaPresentacion
 
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
-            //AbrirFormulariosEnPanelContenedor(new FrmReporteAsistencia());
+            AbrirFormulariosEnPanelContenedor(new frmListaAsistencias());
 
             //FrmReporteAsistencia RAsistencia = new FrmReporteAsistencia();
             //RAsistencia.ShowDialog();
