@@ -32,7 +32,7 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
-        public string recuperarIdCat(string NombreAsig, string CodDocente)
+        public string recuperarIdCat(string NombreAsig, string CodDocente,string Grupo)
         {
             DataTable tabla = new DataTable();
             SqlCommand cmd = new SqlCommand("sp_recuperarIdCat_Doc_y_Asignatura", conexion);
@@ -41,6 +41,7 @@ namespace CapaDatos
 
             cmd.Parameters.AddWithValue("@NombreAsignatura", NombreAsig);
             cmd.Parameters.AddWithValue("@CodDocente", CodDocente);
+            cmd.Parameters.AddWithValue("@Grupo", Grupo);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(tabla);

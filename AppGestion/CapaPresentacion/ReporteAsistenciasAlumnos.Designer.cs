@@ -29,9 +29,9 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReporteAsistenciasAlumnos));
             this.dgvReporteAsistencia = new System.Windows.Forms.DataGridView();
             this.comboBoxCursosReporte = new System.Windows.Forms.ComboBox();
@@ -47,6 +47,8 @@ namespace CapaPresentacion
             this.dtpFechaInferior = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSuperior = new System.Windows.Forms.DateTimePicker();
             this.buttonExportar = new System.Windows.Forms.Button();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
+            this.cbNombreCurso = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteAsistencia)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFrmReporte)).BeginInit();
@@ -57,8 +59,8 @@ namespace CapaPresentacion
             // dgvReporteAsistencia
             // 
             this.dgvReporteAsistencia.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvReporteAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvReporteAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvReporteAsistencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -67,23 +69,23 @@ namespace CapaPresentacion
             this.dgvReporteAsistencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReporteAsistencia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvReporteAsistencia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporteAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReporteAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvReporteAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReporteAsistencia.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReporteAsistencia.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvReporteAsistencia.Location = new System.Drawing.Point(57, 244);
             this.dgvReporteAsistencia.Name = "dgvReporteAsistencia";
             this.dgvReporteAsistencia.RowHeadersVisible = false;
@@ -221,6 +223,7 @@ namespace CapaPresentacion
             this.dtpFechaInferior.Name = "dtpFechaInferior";
             this.dtpFechaInferior.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaInferior.TabIndex = 27;
+            this.dtpFechaInferior.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInferior.ValueChanged += new System.EventHandler(this.dtpFechaInferior_ValueChanged);
             // 
             // dtpFechaSuperior
@@ -232,6 +235,7 @@ namespace CapaPresentacion
             this.dtpFechaSuperior.Name = "dtpFechaSuperior";
             this.dtpFechaSuperior.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaSuperior.TabIndex = 28;
+            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 18, 17, 15, 0, 0);
             this.dtpFechaSuperior.ValueChanged += new System.EventHandler(this.dtpFechaSuperior_ValueChanged);
             // 
             // buttonExportar
@@ -251,12 +255,32 @@ namespace CapaPresentacion
             this.buttonExportar.UseVisualStyleBackColor = false;
             this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
             // 
+            // cbGrupo
+            // 
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Location = new System.Drawing.Point(35, 163);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(121, 28);
+            this.cbGrupo.TabIndex = 30;
+            this.cbGrupo.Visible = false;
+            // 
+            // cbNombreCurso
+            // 
+            this.cbNombreCurso.FormattingEnabled = true;
+            this.cbNombreCurso.Location = new System.Drawing.Point(172, 162);
+            this.cbNombreCurso.Name = "cbNombreCurso";
+            this.cbNombreCurso.Size = new System.Drawing.Size(121, 28);
+            this.cbNombreCurso.TabIndex = 31;
+            this.cbNombreCurso.Visible = false;
+            // 
             // ReporteAsistenciasAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1164, 928);
+            this.Controls.Add(this.cbNombreCurso);
+            this.Controls.Add(this.cbGrupo);
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.dtpFechaSuperior);
             this.Controls.Add(this.dtpFechaInferior);
@@ -298,5 +322,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DateTimePicker dtpFechaInferior;
         private System.Windows.Forms.DateTimePicker dtpFechaSuperior;
         private System.Windows.Forms.Button buttonExportar;
+        private System.Windows.Forms.ComboBox cbGrupo;
+        private System.Windows.Forms.ComboBox cbNombreCurso;
     }
 }

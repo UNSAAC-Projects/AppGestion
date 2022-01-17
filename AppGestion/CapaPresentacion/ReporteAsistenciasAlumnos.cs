@@ -35,41 +35,54 @@ namespace CapaPresentacion
             {
                 MostrarItemsComboBox(tablaCursos);
                 comboBoxCursosReporte.SelectedIndex = 0;
+                cbNombreCurso.SelectedIndex = 0;
+                cbGrupo.SelectedIndex = 0;
                 //comboBoxUnidad.SelectedIndex = 0;
             }
         }
 
         private void mostrarReporte()
         {
-            string NombreAsig = comboBoxCursosReporte.Text;
-            string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente);
-            string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
-            string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
-            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
-            //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-            if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
+            try
             {
-                dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-            }
-            int M;
-            string valorFila;
-            M = dgvReporteAsistencia.Columns.Count;
-            foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
-            {
-                int asistencia;
-                asistencia = 0;
-                for (int i = 2; i < M - 1; i++)
+                cbGrupo.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+                cbNombreCurso.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+                string NombreAsig = cbNombreCurso.Text;
+                string Grupo = cbGrupo.Text;
+                string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente, Grupo);
+                string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
+                string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
+                dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
+                //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+                //if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
+                //{
+                    dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+                //}
+                int M;
+                string valorFila;
+                M = dgvReporteAsistencia.Columns.Count;
+                foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
                 {
-                    valorFila = m.Cells[i].Value.ToString();
-                    if (valorFila == "P")
+                    int asistencia;
+                    asistencia = 0;
+                    for (int i = 2; i < M - 1; i++)
                     {
-                        asistencia++;
+                        valorFila = m.Cells[i].Value.ToString();
+                        if (valorFila == "P")
+                        {
+                            asistencia++;
+                        }
                     }
+                    float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
+                    //float PORCENTAJE = 70;
+                    PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
+                    m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
                 }
-                float PORCENTAJE =(((float)asistencia * 100 / (float)(M - 3))) ;
-                //float PORCENTAJE = 70;
-                PORCENTAJE = (float)Math.Round(PORCENTAJE,2);
-                m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() +"%";
+            }
+            catch 
+            {
+                MessageBox.Show("Aun no existe assitencias registradas...");
+                Close();
             }
         }
 
@@ -85,7 +98,9 @@ namespace CapaPresentacion
             int i = 0;
             while(i < n)
             {
-                comboBoxCursosReporte.Items.Add(tablaCursos.Rows[i][1].ToString());
+                comboBoxCursosReporte.Items.Add(tablaCursos.Rows[i][1].ToString() + " " + tablaCursos.Rows[i][2].ToString());
+                cbGrupo.Items.Add(tablaCursos.Rows[i][2].ToString());
+                cbNombreCurso.Items.Add(tablaCursos.Rows[i][1].ToString());
                 i++;
             }
         }
