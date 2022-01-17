@@ -714,13 +714,18 @@ CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
 AS
 	SET @IDTema = (
 		SELECT TOP 1 Id FROM TPlanSesiones 
-		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
+		WHERE IDCatalogo = @IDCatalogo AND Finalizado = 'NO'
 	) --Obtener id
 
-	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
-	WHERE Id = @IDTema 
-	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
-	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+	IF @IDTema IS NULL
+		SET @IDTema = -1
+	ELSE
+		BEGIN
+		SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+		WHERE Id = @IDTema 
+		--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+		OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+		END
 GO
 
 --Agregar nuevo tema despues del ID especificado
