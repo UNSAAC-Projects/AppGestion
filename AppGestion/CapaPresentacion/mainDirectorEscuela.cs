@@ -95,10 +95,15 @@ namespace CapaPresentacion
             PantallaOk();
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro de que quieres cerrar Sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                this.Close();
+
+        }
+
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString(" MMM dd yyyy");
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
             this.btnVerCatalogos = new System.Windows.Forms.Button();
@@ -42,6 +43,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
             this.panelContenedor2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMainDirEscuela = new System.Windows.Forms.Panel();
             this.pictureMaxDirectorEscuela = new System.Windows.Forms.PictureBox();
             this.pictureMINIMIZE1 = new System.Windows.Forms.PictureBox();
@@ -50,21 +56,28 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_logout = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.labelHora = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
+            this.panelContenedor2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorLogin
             // 
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.ContenedorLogin.Controls.Add(this.btn_logout);
             this.ContenedorLogin.Controls.Add(this.btnVerCatalogos);
             this.ContenedorLogin.Controls.Add(this.btnASIGNATURA);
             this.ContenedorLogin.Controls.Add(this.pictureBoxLogo);
@@ -84,9 +97,18 @@
             // 
             // btnVerCatalogos
             // 
-            this.btnVerCatalogos.Location = new System.Drawing.Point(72, 538);
+            this.btnVerCatalogos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnVerCatalogos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnVerCatalogos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnVerCatalogos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnVerCatalogos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCatalogos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCatalogos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnVerCatalogos.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogos.Image")));
+            this.btnVerCatalogos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerCatalogos.Location = new System.Drawing.Point(0, 599);
             this.btnVerCatalogos.Name = "btnVerCatalogos";
-            this.btnVerCatalogos.Size = new System.Drawing.Size(131, 23);
+            this.btnVerCatalogos.Size = new System.Drawing.Size(322, 48);
             this.btnVerCatalogos.TabIndex = 13;
             this.btnVerCatalogos.Text = "VER CATALOGO";
             this.btnVerCatalogos.UseVisualStyleBackColor = true;
@@ -94,9 +116,18 @@
             // 
             // btnASIGNATURA
             // 
-            this.btnASIGNATURA.Location = new System.Drawing.Point(72, 498);
+            this.btnASIGNATURA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnASIGNATURA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnASIGNATURA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnASIGNATURA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnASIGNATURA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnASIGNATURA.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnASIGNATURA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnASIGNATURA.Image = ((System.Drawing.Image)(resources.GetObject("btnASIGNATURA.Image")));
+            this.btnASIGNATURA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnASIGNATURA.Location = new System.Drawing.Point(0, 535);
             this.btnASIGNATURA.Name = "btnASIGNATURA";
-            this.btnASIGNATURA.Size = new System.Drawing.Size(131, 23);
+            this.btnASIGNATURA.Size = new System.Drawing.Size(311, 47);
             this.btnASIGNATURA.TabIndex = 12;
             this.btnASIGNATURA.Text = "ASIGNATURAS";
             this.btnASIGNATURA.UseVisualStyleBackColor = true;
@@ -171,7 +202,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(44, 465);
+            this.label1.Location = new System.Drawing.Point(39, 482);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 30);
             this.label1.TabIndex = 3;
@@ -190,7 +221,7 @@
             // 
             // panelPrinciapl
             // 
-            this.panelPrinciapl.BackColor = System.Drawing.Color.White;
+            this.panelPrinciapl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelPrinciapl.Controls.Add(this.panelContenedor2);
             this.panelPrinciapl.Controls.Add(this.panelMainDirEscuela);
             this.panelPrinciapl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,14 +237,97 @@
             this.panelContenedor2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelContenedor2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panelContenedor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panelContenedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor2.BackgroundImage")));
+            this.panelContenedor2.Controls.Add(this.label7);
+            this.panelContenedor2.Controls.Add(this.label6);
+            this.panelContenedor2.Controls.Add(this.label5);
+            this.panelContenedor2.Controls.Add(this.label2);
+            this.panelContenedor2.Controls.Add(this.pictureBox1);
             this.panelContenedor2.Location = new System.Drawing.Point(6, 53);
             this.panelContenedor2.Name = "panelContenedor2";
             this.panelContenedor2.Size = new System.Drawing.Size(1067, 585);
             this.panelContenedor2.TabIndex = 12;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(357, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(343, 37);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Escuela profesional de";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(27, 481);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(991, 37);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "Acreditada por el Comité de Acreditación de Computación ICACIT";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(152, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(776, 37);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "Con alto contenido en Ciencias de la Computación";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(150, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(788, 49);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Ingenieria Informatica y de sistemas ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(364, 210);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(295, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelMainDirEscuela
             // 
+            this.panelMainDirEscuela.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelMainDirEscuela.Controls.Add(this.pictureBox4);
+            this.panelMainDirEscuela.Controls.Add(this.pictureBox3);
+            this.panelMainDirEscuela.Controls.Add(this.labelHora);
+            this.panelMainDirEscuela.Controls.Add(this.labelFecha);
             this.panelMainDirEscuela.Controls.Add(this.pictureMaxDirectorEscuela);
             this.panelMainDirEscuela.Controls.Add(this.pictureMINIMIZE1);
             this.panelMainDirEscuela.Controls.Add(this.pictureCANCEL1);
@@ -228,10 +342,10 @@
             // 
             this.pictureMaxDirectorEscuela.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureMaxDirectorEscuela.Image = ((System.Drawing.Image)(resources.GetObject("pictureMaxDirectorEscuela.Image")));
-            this.pictureMaxDirectorEscuela.Location = new System.Drawing.Point(973, 2);
+            this.pictureMaxDirectorEscuela.Location = new System.Drawing.Point(980, 5);
             this.pictureMaxDirectorEscuela.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureMaxDirectorEscuela.Name = "pictureMaxDirectorEscuela";
-            this.pictureMaxDirectorEscuela.Size = new System.Drawing.Size(41, 34);
+            this.pictureMaxDirectorEscuela.Size = new System.Drawing.Size(37, 34);
             this.pictureMaxDirectorEscuela.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureMaxDirectorEscuela.TabIndex = 10;
             this.pictureMaxDirectorEscuela.TabStop = false;
@@ -242,10 +356,10 @@
             this.pictureMINIMIZE1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureMINIMIZE1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureMINIMIZE1.Image = ((System.Drawing.Image)(resources.GetObject("pictureMINIMIZE1.Image")));
-            this.pictureMINIMIZE1.Location = new System.Drawing.Point(929, 2);
+            this.pictureMINIMIZE1.Location = new System.Drawing.Point(936, 5);
             this.pictureMINIMIZE1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureMINIMIZE1.Name = "pictureMINIMIZE1";
-            this.pictureMINIMIZE1.Size = new System.Drawing.Size(39, 34);
+            this.pictureMINIMIZE1.Size = new System.Drawing.Size(37, 34);
             this.pictureMINIMIZE1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureMINIMIZE1.TabIndex = 8;
             this.pictureMINIMIZE1.TabStop = false;
@@ -256,10 +370,10 @@
             this.pictureCANCEL1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureCANCEL1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureCANCEL1.Image = ((System.Drawing.Image)(resources.GetObject("pictureCANCEL1.Image")));
-            this.pictureCANCEL1.Location = new System.Drawing.Point(1020, 2);
+            this.pictureCANCEL1.Location = new System.Drawing.Point(1027, 5);
             this.pictureCANCEL1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureCANCEL1.Name = "pictureCANCEL1";
-            this.pictureCANCEL1.Size = new System.Drawing.Size(39, 34);
+            this.pictureCANCEL1.Size = new System.Drawing.Size(37, 34);
             this.pictureCANCEL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureCANCEL1.TabIndex = 9;
             this.pictureCANCEL1.TabStop = false;
@@ -304,28 +418,52 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
-            // btn_logout
+            // pictureBox3
             // 
-            this.btn_logout.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btn_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.btn_logout.Image = global::CapaPresentacion.Properties.Resources.CerrarForm;
-            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(33, 568);
-            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(250, 60);
-            this.btn_logout.TabIndex = 17;
-            this.btn_logout.Text = "LOG OUT";
-            this.btn_logout.UseVisualStyleBackColor = false;
-            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(233, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHora.ForeColor = System.Drawing.Color.DimGray;
+            this.labelHora.Location = new System.Drawing.Point(69, 11);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(99, 34);
+            this.labelHora.TabIndex = 17;
+            this.labelHora.Text = "label3";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(57, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 16;
+            this.pictureBox4.TabStop = false;
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.ForeColor = System.Drawing.Color.DimGray;
+            this.labelFecha.Location = new System.Drawing.Point(306, 11);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(99, 34);
+            this.labelFecha.TabIndex = 18;
+            this.labelFecha.Text = "label3";
+            // 
+            // timerHoraFecha
+            // 
+            this.timerHoraFecha.Enabled = true;
+            this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
             // 
             // mainDirectorEscuela
             // 
@@ -345,10 +483,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPrinciapl.ResumeLayout(false);
+            this.panelContenedor2.ResumeLayout(false);
+            this.panelContenedor2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
+            this.panelMainDirEscuela.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -375,6 +519,15 @@
         private System.Windows.Forms.Button btnVerCatalogos;
         private System.Windows.Forms.Button btnASIGNATURA;
         private System.Windows.Forms.Panel panelContenedor2;
-        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label labelHora;
+        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Timer timerHoraFecha;
     }
 }

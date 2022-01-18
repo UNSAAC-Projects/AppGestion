@@ -86,14 +86,15 @@ namespace CapaPresentacion
             this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvAsignaturas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAsignaturas.ColumnHeadersHeight = 32;
+            this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAsignaturas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CrearGrupo,
             this.Editar,
@@ -106,6 +107,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAsignaturas.EnableHeadersVisualStyles = false;
             this.dgvAsignaturas.Location = new System.Drawing.Point(12, 122);
             this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
@@ -116,7 +118,7 @@ namespace CapaPresentacion
             this.dgvAsignaturas.RowTemplate.Height = 24;
             this.dgvAsignaturas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvAsignaturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(1043, 452);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(1043, 430);
             this.dgvAsignaturas.TabIndex = 14;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick_1);
             // 
@@ -182,6 +184,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1067, 585);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvAsignaturas);

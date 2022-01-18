@@ -103,7 +103,11 @@ namespace CapaPresentacion
         {
             ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
             RAsistencia.CodDocente = datos.CodDocente;
-            RAsistencia.ShowDialog();
+            AbrirFormulariosEnPanelContenedor(RAsistencia);
+
+            /*ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
+            RAsistencia.CodDocente = datos.CodDocente;
+            RAsistencia.ShowDialog();*/
         }
 
         private void buttonReporteSesiones_Click(object sender, EventArgs e)
@@ -123,18 +127,47 @@ namespace CapaPresentacion
             FormHijo.BringToFront();
             FormHijo.Show();
         }
-
+        //
         private void btnCursosPorDia_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
-            if (MessageBox.Show("Estas seguro de que quieres cerrar Sesion?","Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                this.Close();
-            
-            //Program.AppContext.Show();
+
+        }
+
+        private void flecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHora_Click(object sender, EventArgs e)
+        {
+
+        }
+        // mostrarhora y fecha
+
+        private void timerHoraFecha_Tick_1(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString(" MMM dd yyyy");
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFecha_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
