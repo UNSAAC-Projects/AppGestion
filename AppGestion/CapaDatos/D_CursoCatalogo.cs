@@ -126,7 +126,7 @@ namespace CapaDatos
 
             return table;
         }
-        public DataTable ListarMatriculados(string IdCatalogo, string date)
+        public DataTable ListarMatriculados(string IdCatalogo, DateTime date)
         {
             DataTable table = new DataTable();
             SqlDataReader readRows;

@@ -59,6 +59,7 @@ GO
 CREATE TABLE TCatalogo
 (
 	IDCatalogo varchar(6),
+	SemestreLectivo varchar(6),
 	NroSemestre varchar(2),
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
@@ -145,14 +146,13 @@ CREATE TABLE TMatriculado
 	foreign key(IDCatalogo) references TCatalogo
 )
 GO
-create table TReportesAsistencia
+create table TListaAsistencias
 (
 	Id int identity,
-	Curso varchar(100),
-	Tema varchar(100),
-	Fecha varchar(100),
-	Asistencia varchar(200),
+	Tema varchar(255),
+	Fecha date,
 	IDCatalogo varchar(6),
+	primary key(Id),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -167,6 +167,18 @@ CREATE TABLE TAsistencia_Alumnos
 	Observacion varchar(40),
 	PRIMARY KEY (Fecha,IdCatalogo,CodAlumno),
 	FOREIGN KEY (IdCatalogo) REFERENCES TCatalogo,
+)
+GO
+
+CREATE TABLE TAsistenciaDiariaDocentes
+(
+	Fecha date,
+	CodDocente varchar(6),
+	Nombres varchar(200),
+	Asistio varchar(8),
+	Observacion varchar(40),
+	PRIMARY KEY (Fecha,CodDocente),
+	FOREIGN KEY (CodDocente) REFERENCES TDocente,
 )
 GO
 
@@ -249,6 +261,7 @@ go
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
 create proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
+	@SemestreLectivo varchar(6),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -256,7 +269,7 @@ create proc SP_INSERTARCATALOGO
 	@CodDocenteTeorico varchar(6),
 	@CodDocentePractico varchar(6)
 as
-insert into TCatalogo values(@IDCatalogo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
+insert into TCatalogo values(@IDCatalogo,@SemestreLectivo,@NroSemestre,@CodAsignatura,@Grupo,@Aula,@CodDocentePractico,@CodDocenteTeorico)
 go
 
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
@@ -534,6 +547,30 @@ inner join TAsignatura A on A.CodAsignatura = C.CodAsignatura
 where (C.CodDocentePractico = @CodDocente and H.Tipo = 'P') or 
 (C.CodDocenteTeorico = @CodDocente and H.Tipo = 'T')
 GO
+
+-- Mostrar los docentes activos en un determiando semestre
+create proc SP_ListarDocentesActivos
+@SemestreLectivo varchar(8),
+@Fecha date
+as
+if exists(select * from TAsistenciaDiariaDocentes where Fecha=@Fecha)
+begin
+	select CodDocente,Nombres,Asistio,Observacion
+	from TAsistenciaDiariaDocentes where Fecha=@Fecha
+	order by Nombres
+end
+else
+begin
+	--Mostrar docentes activos en el semestre actual (incompleto)
+	--Falta seleccionar los docentes por semestre.
+	select CodDocente, 
+		(Nombres+' '+Apellidos) as 'Nombres',
+		'F' as 'Asistio', '' as 'Observacion'
+	from TDocente
+	where CodDocente != 'D000'
+end
+go
+
 /*------------------------- PROCEDIMIENTOS ALMACENADOS PARA CURSOS X DOCENTE ---------------------------*/
 --listar los cursos asignados de un docente
 create proc SP_LISTARCURSOSXDOCENTE
@@ -680,13 +717,18 @@ CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
 AS
 	SET @IDTema = (
 		SELECT TOP 1 Id FROM TPlanSesiones 
-		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
+		WHERE IDCatalogo = @IDCatalogo AND Finalizado = 'NO'
 	) --Obtener id
 
-	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
-	WHERE Id = @IDTema 
-	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
-	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+	IF @IDTema IS NULL
+		SET @IDTema = -1
+	ELSE
+		BEGIN
+		SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+		WHERE Id = @IDTema 
+		--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+		OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
+		END
 GO
 
 --Agregar nuevo tema despues del ID especificado
@@ -802,27 +844,38 @@ GO
 --select * from TPlanSesiones
 
 /*----------------------------PROCEDIMIENTOS ALMACENADOS ASISTENCIA - REPORTE----------------------------------*/
---insertar asistencias
-create proc SP_InsertarAsistenciaReporte
-	@Curso varchar(100),
-	@Tema varchar(100),
-	@Fecha varchar(100),
-	@Asistencia varchar(200),
+--Insertar o actualizar datos de las asistencias en TListaAsistencias
+create proc SP_InsertarDatosAsistencia
+	@Tema varchar(255),
+	@Fecha date,
 	@IDCatalogo varchar(6)
 as
-	insert into TReportesAsistencia values(@Curso,@Tema,@Fecha,@Asistencia,@IDCatalogo) 
-GO
-create proc SP_ListarAsistenciasplanse
-as
-	select * from TReportesAsistencia
-GO
-create proc SP_ListarAsistenciasCurso
-@Curso varchar(100)
-as
-	select * from TReportesAsistencia
-	where Curso=@Curso
+--Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
+	begin
+		update TListaAsistencias 
+		set Tema = @Tema
+		where Fecha = @Fecha and IdCatalogo = @IDCatalogo
+	end
+--Caso contrario, agregar
+else
+	insert into TListaAsistencias values(@Tema,@Fecha,@IDCatalogo) 
 GO
 
+--create proc SP_ListarAsistenciasplanse
+--as
+--	select * from TListaAsistencias
+--GO
+
+-- Listar asistencias registradas por curso
+create proc SP_ListarAsistenciasCurso
+@IdCatalogo varchar(6)
+as
+	select IdCatalogo, Tema, Fecha from TListaAsistencias
+	where IdCatalogo = @IdCatalogo
+GO
+
+-- Insertar la asistencia de un alumno a TAsistencia_Alumnos
 create or alter proc SP_InsertarAsistenciaAlumno
 @Fecha date,
 @IdCatalogo varchar(6),
@@ -887,11 +940,10 @@ create OR ALTER proc sp_ReporteAsistencia
 @IdCatalogo varchar(6),@FechaInicio date,@FechaFin date
 as
 	SELECT  distinct  Fecha into #tablafecha from TAsistencia_Alumnos 
-	where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	where Fecha>=@FechaInicio and Fecha<=@FechaFin and IdCatalogo=@IdCatalogo
 	declare @columnas nvarchar (max),@consulta nvarchar(max)
 	set @columnas=''
 	
-
 	DECLARE @Fecha AS nvarchar(400)
 	DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
 	OPEN CURSORFECHA
@@ -912,7 +964,6 @@ as
 	set @columnas=substring(@columnas,1,len(@columnas)-1) 
 	--print @columnas
 	set @consulta='select *
-	--into #tablareporte
 	from #temp
 	pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
 	drop table if exists #tablafecha
@@ -920,18 +971,21 @@ as
 	drop table if exists #temp
 go
 
+
 create or alter proc sp_recuperarIdCat_Doc_y_Asignatura
 @NombreAsignatura varchar(100),
-@CodDocente varchar(10)
+@CodDocente varchar(10),
+@Grupo varchar(3)
 as
 	select CodAsignatura
 	into #tmp
 	from TAsignatura where Nombre=@NombreAsignatura
 
 	select IDCatalogo
-	from #tmp t INNER JOIN TCatalogo c on t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
+	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
 go
+
 
 
 

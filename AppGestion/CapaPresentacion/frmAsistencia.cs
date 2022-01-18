@@ -16,12 +16,15 @@ namespace CapaPresentacion
 {
     public partial class frmAsistencia : Form
     {
-        FrmLogin L = new FrmLogin();
-        E_Asistencia entities = new E_Asistencia();
-        N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
+        //FrmLogin L = new FrmLogin();
+        readonly N_ListaAsistencias oListaAsistencias = new N_ListaAsistencias();
+        readonly N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
 
-        string IdCatalogo, NombreAsignatura;
+        private string IdCatalogo, NombreAsignatura;
+        private DateTime Fecha;
+
         public string CodAsignatura;
+
         int indexTema; //Indice del siguiente tema a dictar
 
         public frmAsistencia()
@@ -33,11 +36,14 @@ namespace CapaPresentacion
             InitializeComponent();
             IdCatalogo = pIdCatalogo;
             NombreAsignatura = pNombreAsignatura;
+            Fecha = DateTime.Now;
         }
-
-        private void btnMINIMIZAR_Click(object sender, EventArgs e)
+        public frmAsistencia(string pIdCatalogo, string pNombreAsignatura, DateTime pFecha)
         {
-            WindowState = FormWindowState.Minimized;
+            InitializeComponent();
+            IdCatalogo = pIdCatalogo;
+            NombreAsignatura = pNombreAsignatura;
+            Fecha = pFecha;
         }
 
         private void btnCERRAR_Click(object sender, EventArgs e)
@@ -47,28 +53,26 @@ namespace CapaPresentacion
 
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
+            //Mostar lista de alumnos matriculados
+            MostrarListaMatriculados(Fecha);
             // Mostrar temas a dictar en el combobox
-            MostrarListaMatriculados();
             MostrarTemas();
 
             lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
             lblNombreAsignatura.Text = NombreAsignatura;
 
-            // Mostrar relacion de alumnos matriculados
+            //Ocultar columna Asistio
             dgvAsistencia.Columns["Asistio"].Visible = false;
            
             ImprimirHoraFecha();
             ContarAsistencia();
-
-
         }
-        private void MostrarListaMatriculados()
+        private void MostrarListaMatriculados(DateTime Date)
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            //string Date ="11-01-2022";
+            Date = DateTime.Now;
+            //Date = new DateTime(2022, 01, 17);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
-            int asisten = 0;
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 string a = Convert.ToString(row.Cells["Asistio"].Value);
@@ -83,14 +87,8 @@ namespace CapaPresentacion
                 if (a == "P")
                 {
                     row.Cells["Asistencia"].Value = "P";
-
-                    
-
                 }
-
             }
-            //asisten
-           
         }
         public void ContarAsistencia()
         {
@@ -101,9 +99,7 @@ namespace CapaPresentacion
                 {
                     contador = contador + 1;
                 }
-               
             }
-            
             lblAsistio.Text = contador.ToString();
             long nro =UInt32.Parse(lblNroAlumnos.Text) - contador;
             lblFaltaron.Text = nro.ToString();
@@ -113,37 +109,34 @@ namespace CapaPresentacion
 
             //Obtener lista de temas e id del siguiente tema
             List<string> listItems = oPlanSesiones.ObtenerTemasProximos(IdCatalogo, out int indexSiguienteTema);
-            //Mostrar temas en combobox
-            object[] arrayItems = listItems.ToArray(); //Convertir a array
-            comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
-            comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
+            
+            if(listItems != null) //Si hay temas por mostrar
+            {
+                //Mostrar temas en combobox
+                object[] arrayItems = listItems.ToArray(); //Convertir a array
+                comboBoxTema.Items.AddRange(arrayItems); //Insertar valores
+                comboBoxTema.SelectedText = arrayItems[indexSiguienteTema].ToString(); //Valor por defecto
+                indexTema = indexSiguienteTema;
+            }
+            
         }
 
         public void ImprimirHoraFecha()
         {
             string datetime;
-            datetime = DateTime.Now.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
+            datetime = Fecha.ToString("dd / MM / yyyy" +"   "+ "hh:mm:ss tt");
             lblFecha.Text = datetime;
             lblDocente.Text = datos.NombreDocente;
         }
 
-        //public string ObtenerRutaProyecto()
-        //{//Método para obtener la ruta del proyecto
-        //    string rutaProyecto = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\.."));
-        //    return rutaProyecto;
-        //}
-
         bool  ExportarDatos(DataGridView datalistado)
         {
-            //concatenar con el nombre del tema.
-            N_Asistencia A = new N_Asistencia();
-
-            var DateAndTime = DateTime.Now;
-            string Date = DateTime.Now.ToString("dd-MM-yyyy");
-            //string Date = "11-01-2022";
+            //var DateAndTime = DateTime.Now;
+            //DateTime Date = DateTime.Now;
+            //DateTime Date = new DateTime(2022,01,17);
 
             string name = NombreAsignatura;
-            //registrar filas
+            //Guardar asistencia de alumnos
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
                 E_Asistencia_alumnos entities = new E_Asistencia_alumnos();
@@ -154,7 +147,7 @@ namespace CapaPresentacion
                 string nombres = Convert.ToString(row.Cells["Nombres"].Value);
                 string observacion = Convert.ToString(row.Cells["Observacion"].Value);
                 //insertar datos en la bd
-                entities.fecha = Date;
+                entities.fecha = Fecha;
                 entities.idcatalogo = IdCatalogo;
                 entities.codalumno = codalumno;
                 entities.nombres = nombres;
@@ -162,6 +155,14 @@ namespace CapaPresentacion
                 entities.observacion = observacion;
                 busines.InsertarAsistenciaAlumno(entities);
             }
+            //Iniciar entidad ListaAsistencias para guardar datos de la asistencia
+            E_ListaAsistencias eListaAsistencias = new E_ListaAsistencias();
+            eListaAsistencias.fecha = Fecha;
+            eListaAsistencias.tema = comboBoxTema.Text;
+            eListaAsistencias.idcatalogo = IdCatalogo;
+            //Guardar o actualizar datos de la asistencia en la tabla TListaAsistencias
+            oListaAsistencias.GuardarDatosAsistencia(eListaAsistencias);
+
             return true;
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
@@ -185,7 +186,7 @@ namespace CapaPresentacion
             string item = comboBoxTema.Text.Trim();
             if (comboBoxTema.Items.Contains(item))
             {
-                //Actualizar como completado
+                //Actualizar como completado (falta completar)
             }
             else
             {
@@ -228,13 +229,30 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnMaxAsistencia_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void pnlAsistencia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+ 
             ContarAsistencia();
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;
-           
-
         }
     }
 }

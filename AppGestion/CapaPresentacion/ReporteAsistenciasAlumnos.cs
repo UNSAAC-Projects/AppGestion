@@ -13,18 +13,13 @@ namespace CapaPresentacion
 {
     public partial class ReporteAsistenciasAlumnos : Form
     {
-        N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
-        N_CursosDocente D = new N_CursosDocente();
-        N_Asistencia A = new N_Asistencia();
+        readonly N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
+        readonly N_CursosDocente D = new N_CursosDocente();
+
         public string CodDocente;
         public ReporteAsistenciasAlumnos()
         {
             InitializeComponent();
-        }
-        public void listar_reportes()
-        {
-            dgvReporteAsistencia.DataSource = A.listarAsitenciaCurso(comboBoxCursosReporte.SelectedItem.ToString());
-            dgvReporteAsistencia.Columns["ASISTENCIA"].DisplayIndex = 4;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,79 +29,125 @@ namespace CapaPresentacion
 
         private void ReporteAsistenciasAlumnos_Load(object sender, EventArgs e)
         {
-            CargarCombo();
-            comboBoxCursosReporte.SelectedIndex = 0;
-            //mostrarReporte();
-            comboBoxUnidad.SelectedIndex = 0;
+            //Obtener cursos del docente
+            DataTable tablaCursos = D.ListarCursosDocente(datos.CodDocente);
+            if(tablaCursos != null)
+            {
+                MostrarItemsComboBox(tablaCursos);
+                comboBoxCursosReporte.SelectedIndex = 0;
+                cbNombreCurso.SelectedIndex = 0;
+                cbGrupo.SelectedIndex = 0;
+                //comboBoxUnidad.SelectedIndex = 0;
+            }
         }
 
         private void mostrarReporte()
         {
-            string NombreAsig = comboBoxCursosReporte.Text;
-            string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente);
-            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, "03/01/2022", "10/01/2023");
-            //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-            if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
+            try
             {
-                dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-            }
-            int M;
-            string valorFila;
-            M = dgvReporteAsistencia.Columns.Count;
-            foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
-            {
-                int asistencia;
-                asistencia = 0;
-                for (int i = 2; i < M - 1; i++)
+                cbGrupo.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+                cbNombreCurso.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+                string NombreAsig = cbNombreCurso.Text;
+                string Grupo = cbGrupo.Text;
+                string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente, Grupo);
+                string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
+                string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
+                dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
+                //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+                //if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
+                //{
+                    dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+                //}
+                int M;
+                string valorFila;
+                M = dgvReporteAsistencia.Columns.Count;
+                foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
                 {
-                    valorFila = m.Cells[i].Value.ToString();
-                    if (valorFila == "P")
+                    int asistencia;
+                    asistencia = 0;
+                    for (int i = 2; i < M - 1; i++)
                     {
-                        asistencia++;
+                        valorFila = m.Cells[i].Value.ToString();
+                        if (valorFila == "P")
+                        {
+                            asistencia++;
+                        }
                     }
+                    float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
+                    //float PORCENTAJE = 70;
+                    PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
+                    m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
                 }
-                float PORCENTAJE =(((float)asistencia * 100 / (float)(M - 3))) ;
-                //float PORCENTAJE = 70;
-                PORCENTAJE = (float)Math.Round(PORCENTAJE,2);
-                m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() +"%";
+            }
+            catch (ArgumentException e)
+            {
+                MessageBox.Show("Aun no existe assitencias registradas...");
+                Close();
             }
         }
 
         private void comboBoxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dgvReporteAsistencia.Columns.Clear();
             comboBoxCursosReporte.DropDownStyle = ComboBoxStyle.DropDownList;
             mostrarReporte();
         }
-        void CargarCombo()
+        void MostrarItemsComboBox(DataTable tablaCursos)
         {
-            DataTable dt = new DataTable();
-            dt = D.ListandoCursosDocente(datos.CodDocente);
-            int n = dt.Rows.Count;
+            int n = tablaCursos.Rows.Count;
             int i = 0;
             while(i < n)
             {
-                comboBoxCursosReporte.Items.Add(dt.Rows[i][1].ToString());
-                i = i + 1;
+                comboBoxCursosReporte.Items.Add(tablaCursos.Rows[i][1].ToString() + " " + tablaCursos.Rows[i][2].ToString());
+                cbGrupo.Items.Add(tablaCursos.Rows[i][2].ToString());
+                cbNombreCurso.Items.Add(tablaCursos.Rows[i][1].ToString());
+                i++;
             }
-            //comboBoxCursosReporte.SelectedIndex = 0;
-
-
         }
-        DataSet result;
-
-        private void label11_Click(object sender, EventArgs e)
+        public void ExportarDatos(DataGridView listadoCatalogo)
         {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
 
+            //Recorrer columnas y guardar valores
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                indexColumn++;
+                exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+            }
+            int indexfila = 0;
+
+            //Recorrer filas y guardar sus valores
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                }
+            }
+            exportarCatalogo.Visible = true;
         }
 
-        private void btnCancelarFrmReporte_Click(object sender, EventArgs e)
+        private void dtpFechaInferior_ValueChanged(object sender, EventArgs e)
         {
-            this.Close();
+            dgvReporteAsistencia.Columns.Clear();
+            mostrarReporte();
         }
 
-        private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)
+        private void dtpFechaSuperior_ValueChanged(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            dgvReporteAsistencia.Columns.Clear();
+            mostrarReporte();
         }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            ExportarDatos(dgvReporteAsistencia);
+        }
+
     }
 }

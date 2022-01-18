@@ -97,12 +97,11 @@ namespace CapaDatos
 
             conexion.Close();
 
-            List<string> listaTemas = new List<string>();
             indexSiguienteTema = -1; //Valor por defecto
             //Recorrer tabla y guardar en lista
             if (tabla.Rows.Count > 0) //Si tabla no está vacia
             {
-                
+                List<string> listaTemas = new List<string>();
                 for (int i = 0; i < tabla.Rows.Count; i++)
                 {
                     //Si IDTema es igual a idSiguienteTema

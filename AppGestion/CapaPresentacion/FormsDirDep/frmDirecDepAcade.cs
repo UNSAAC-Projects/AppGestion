@@ -26,48 +26,22 @@ namespace CapaPresentacion
         public frmDirecDepAcade(string CodDocente)
         {
             InitializeComponent();
-            MostrarTablaCatalogo();
-            MoverModificarColumnas();
             MostrarNombreUsuario(CodDocente);
         }
-
+        //Pantalla Completa
+        public void PantallaOk()
+        {
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+        }
         private void MostrarNombreUsuario(string codDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(codDocente);
         }
 
         #region Módulos
-        private void MoverModificarColumnas()
-        {
-            //Mostrar encabezado
-            dgvCatalogo.ColumnHeadersVisible = true;
 
-            // Mover columnas editar
-            dgvCatalogo.Columns[0].DisplayIndex = 13;
 
-            //Modificar ancho de columnas
-            dgvCatalogo.Columns["CURSO"].Width = 250;
-            dgvCatalogo.Columns["CRED"].Width = 50;
-            dgvCatalogo.Columns["TIPO"].Width = 40;
-            dgvCatalogo.Columns["GRUPO"].Width = 60;
-            dgvCatalogo.Columns["HT"].Width = 40;
-            dgvCatalogo.Columns["HP"].Width = 40;
-            dgvCatalogo.Columns["DIA"].Width = 60;
-            dgvCatalogo.Columns["HORA INICIO"].Width = 50;
-            dgvCatalogo.Columns["HORA FIN"].Width = 50;
-            dgvCatalogo.Columns["AULA"].Width = 50;
-            dgvCatalogo.Columns["NOMBRES"].Width = 100;
-            dgvCatalogo.Columns["APELLIDOS"].Width =150;
-            dgvCatalogo.Columns["EDITAR"].Width = 50;
-
-        }
-
-        private void MostrarTablaCatalogo()
-        {
-            // Modulo para mostrar el catalogo en el formulario principal del director de escuela
-            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            dgvCatalogo.DataSource = oCursoCatalogo.ListarCatalogoDA(); //DA: director académico
-        }
 
         public void ExportarDatos(DataGridView listadoCatalogo)
         {
@@ -124,44 +98,20 @@ namespace CapaPresentacion
         #region Eventos
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            frmDistDocentes c = new frmDistDocentes();
-            c.Show();
+            //buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            AbrirFormulariosEnPanelContenedor(new frmDistDocentes());
+            //frmDistDocentes c = new frmDistDocentes();
+            //c.Show();
         }
 
         private void buttonLISTAR_Click(object sender, EventArgs e)
         {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            frmListaDocentes p = new frmListaDocentes();
-            p.Show();
+           // buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            AbrirFormulariosEnPanelContenedor(new frmAsistenciaDiariaDocentes());
+            //frmListaDocentes p = new frmListaDocentes();
+            //p.Show();
         }
-        
-        private void buttonIMPORTAR_Click(object sender, EventArgs e)
-        {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader;
-                    if (ofd.FilterIndex == 1)
-                    {
-                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                    }
-                    else
-                    {
-                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                    }
-                    reader.IsFirstRowAsColumnNames = true;
-                    result = reader.AsDataSet();
-                    dgvCatalogo.DataSource = result.Tables[0];
-                    reader.Close();
 
-                }
-            }
-
-        }
         
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
@@ -172,85 +122,6 @@ namespace CapaPresentacion
         {
             WindowState = FormWindowState.Minimized;
         }
-        
-        private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvCatalogo.Rows[e.RowIndex];
-            if (row.Cells["EDITAR"].Selected)
-            {
-                //Obtener cod curso
-                string CodCursoCatalogo = row.Cells["CODIGO"].Value.ToString();
-
-                frmAsignarDocente form = new frmAsignarDocente(CodCursoCatalogo);
-                //Recuperar información de la tabla
-                form.textBoxCodigo.Text = CodCursoCatalogo;
-                form.textBoxCurso.Text = row.Cells["CURSO"].Value.ToString();
-                form.textBoxHT.Text = row.Cells["HT"].Value.ToString();
-                form.textBoxHP.Text = row.Cells["HP"].Value.ToString();
-                form.textBoxCreditos.Text = row.Cells["CRED"].Value.ToString();
-                form.textBoxAula.Text = row.Cells["AULA"].Value.ToString();
-                form.textBoxGrupo.Text = row.Cells["GRUPO"].Value.ToString();
-                form.ShowDialog();
-
-                //Actualizar tabla catalogo
-                MostrarTablaCatalogo();
-            }
-        }
-
-        private void buttonActualizar_Click(object sender, EventArgs e)
-        {
-            //Definiendo variables
-            string codCurso, nombreCurso, tipo;
-            string codDocente, nombresDocente, apellidosDocente;
-            N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
-            N_Docente oDocente = new N_Docente();
-
-            //Recorrer filas del dgvCatalogo
-            foreach (DataGridViewRow row in dgvCatalogo.Rows)
-            {
-                //Recuperar codigo del curso (ex: IF340AIN)
-                codCurso = row.Cells["CODIGO"].Value.ToString();
-
-                //Verificar si existe codigo del curso
-                if (oCursoCatalogo.ExisteCursoCatalogo(codCurso)) //Si existe curso
-                {
-                    //Recuperar nombres y apellidos del docente
-                    nombresDocente = row.Cells["NOMBRES"].Value.ToString();
-                    apellidosDocente = row.Cells["APELLIDOS"].Value.ToString();
-                    
-                    //Recuperar el tipo de curso
-                    tipo = row.Cells["TIPO"].Value.ToString();
-
-                    //Recuperar código del docente
-                    codDocente = oDocente.RecuperarCodDocente(nombresDocente, apellidosDocente);
-                    if(codDocente!= null) //Si codDocente existe
-                    {
-                        //Verificar si es docente teorico o práctico
-                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, codDocente);
-                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, codDocente);
-                    }
-                    else //Si codDocente no existe
-                    {
-                        if (tipo == "T") oCursoCatalogo.EditarDocenteTeorico(codCurso, "");   // "" vacio que se convertira a NULL
-                        else if (tipo == "P") oCursoCatalogo.EditarDocentePractico(codCurso, "");   // "" vacio que se convertira a NULL
-                        MessageBox.Show($"El docente {nombresDocente} {apellidosDocente} no se encuentra registrado. Verifique si sus datos están correctos.", "Alerta");
-                    }
-                }
-                else  // No existe curso
-                {
-                    //Recuperar nombre del curso
-                    nombreCurso = row.Cells["CURSO"].Value.ToString();
-                    MessageBox.Show($"El curso {codCurso} - {nombreCurso} no se encuentra registrado en el catálogo.");
-                }
-            }
-            //Reiniciar tabla de catalogo
-            MostrarTablaCatalogo();
-
-            //Mensaje de confirmación
-            MessageBox.Show("El catálogo se actualizó correctamente.","Mensaje de confirmación");
-        }
-
-        private void buttonDESCARGAR_Click(object sender, EventArgs e) => ExportarDatos(dgvCatalogo);
 
         private void pictureBoxMaxRest_Click(object sender, EventArgs e)
         {
@@ -265,5 +136,86 @@ namespace CapaPresentacion
         }
         #endregion
 
+        private Form formActivado = null;
+        private void AbrirFormulariosEnPanelContenedor(Form FormHijo)
+        {
+            if (formActivado != null)
+                formActivado.Close();
+            formActivado = FormHijo;
+            FormHijo.TopLevel = false;
+            FormHijo.Dock = DockStyle.Fill;
+            panelContenedor3.Controls.Add(FormHijo);
+            panelContenedor3.Tag = FormHijo;
+            FormHijo.BringToFront();
+            FormHijo.Show();
+
+        }
+
+        private void frmDirecDepAcade_Load(object sender, EventArgs e)
+        {
+            PantallaOk();
+        }
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new FrmPrincipalDirecAcademico());
+        }
+        //mostrar Hora y Fecha
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString("dddd mmmm, yyyy");
+        }
+
+        private void labelHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /* private void buttonIMPORTAR_Click(object sender, EventArgs e)
+         {
+
+
+             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+             {
+                 if (ofd.ShowDialog() == DialogResult.OK)
+                 {
+                     FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                     IExcelDataReader reader;
+                     if (ofd.FilterIndex == 1)
+                     {
+                         reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                     }
+                     else
+                     {
+                         reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                     }
+                     reader.IsFirstRowAsColumnNames = true;
+                     result = reader.AsDataSet();
+                     //dgvCatalogo.DataSource = result.Tables[0];
+                     reader.Close();
+
+
+
+                 }
+             }
+         }*/
     }
 }

@@ -39,13 +39,6 @@ namespace CapaPresentacion
             dgvCargaAcademica.DataSource =  oDocente.ListarDistribucionDocentes();
         }
 
-        private void pictureBoxCerrarTENTATIVA_Click(object sender, EventArgs e) => Close();
-
-        private void pictureBoxMINIMIZARTENTATIVA_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void dgvCargaAcademica_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgvCargaAcademica.Rows[e.RowIndex];
@@ -68,5 +61,10 @@ namespace CapaPresentacion
         }
 
         private void buttonCerrar_Click(object sender, EventArgs e) => Close();
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
