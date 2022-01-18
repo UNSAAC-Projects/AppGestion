@@ -31,9 +31,9 @@ namespace CapaPresentacion
 
         public void OcultarMoverAncharColumnas()
         {
-            dgvAsignaturas.Columns[0].DisplayIndex = 10;
-            dgvAsignaturas.Columns[1].DisplayIndex = 10;
-            dgvAsignaturas.Columns[2].DisplayIndex = 10;//0
+            dgvAsignaturas.Columns[0].DisplayIndex = 11;
+            dgvAsignaturas.Columns[1].DisplayIndex = 11;
+            dgvAsignaturas.Columns[2].DisplayIndex = 11;//0
 
             dgvAsignaturas.Columns[0].Width = 70;
             dgvAsignaturas.Columns[1].Width = 50;
@@ -93,6 +93,7 @@ namespace CapaPresentacion
                         frm.cmbTipo3.Enabled = false;
                         frm.textIdCatalogo.Enabled = false;
                     }
+                    frm.textNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
                     frm.Show();
                 }
 
@@ -122,6 +123,8 @@ namespace CapaPresentacion
                 frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
                 frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
                 frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
+
+                frm.textBoxNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
                 frm.ShowDialog();
                 MostrarTablaAsignatura();
             }

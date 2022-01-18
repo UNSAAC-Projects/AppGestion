@@ -20,8 +20,7 @@ namespace CapaPresentacion
         public mainDirectorEscuela(string CodDocente)
         {
             InitializeComponent();
-
-
+            
             MostrarNombreUsuario(CodDocente);
         }
         //Pantalla completa
@@ -30,6 +29,7 @@ namespace CapaPresentacion
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
+       
 
         private void MostrarNombreUsuario(string CodDocente)
         {
