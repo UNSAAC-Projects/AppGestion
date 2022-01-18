@@ -14,7 +14,6 @@ namespace CapaPresentacion
         /// 
 
         public static ApplicationContext AppContext { get; set; }
-
         [STAThread]
         static void Main()
         {
@@ -22,7 +21,9 @@ namespace CapaPresentacion
             Application.SetCompatibleTextRenderingDefault(false);
             AppContext = new ApplicationContext(new FrmLogin());
             Application.Run(AppContext);
+            //Application.Run(Login1 = new FrmLogin());
         }
+        
 
         //Método para intercambiar el formulario principal
         public static void SwitchMainForm(Form newForm)

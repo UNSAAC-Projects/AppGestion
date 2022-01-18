@@ -175,7 +175,7 @@ namespace CapaPresentacion
             this.labelBienvenido.AutoSize = true;
             this.labelBienvenido.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBienvenido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(21)))), ((int)(((byte)(21)))));
-            this.labelBienvenido.Location = new System.Drawing.Point(241, 24);
+            this.labelBienvenido.Location = new System.Drawing.Point(285, 20);
             this.labelBienvenido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBienvenido.Name = "labelBienvenido";
             this.labelBienvenido.Size = new System.Drawing.Size(176, 41);

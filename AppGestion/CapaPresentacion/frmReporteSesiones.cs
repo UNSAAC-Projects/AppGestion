@@ -101,5 +101,10 @@ namespace CapaPresentacion
         {
             this.Close();
         }
+
+        private void dgvReporteSesiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
