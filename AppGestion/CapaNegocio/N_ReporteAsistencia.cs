@@ -19,9 +19,9 @@ namespace CapaNegocio
         {
             return data.ReporteAsistencia(IdCatalogo, FechaInicio, FechaFin);
         }
-        public string recuperarIdCat(string NombreAsig, string CodDocente)
+        public string recuperarIdCat(string NombreAsig, string CodDocente, string Grupo)
         {
-            return data.recuperarIdCat(NombreAsig, CodDocente);
+            return data.recuperarIdCat(NombreAsig, CodDocente,Grupo);
         }
     }
 }

@@ -971,16 +971,18 @@ go
 
 create or alter proc sp_recuperarIdCat_Doc_y_Asignatura
 @NombreAsignatura varchar(100),
-@CodDocente varchar(10)
+@CodDocente varchar(10),
+@Grupo varchar(3)
 as
 	select CodAsignatura
 	into #tmp
 	from TAsignatura where Nombre=@NombreAsignatura
 
 	select IDCatalogo
-	from #tmp t INNER JOIN TCatalogo c on t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
+	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
 go
+
 
 
 

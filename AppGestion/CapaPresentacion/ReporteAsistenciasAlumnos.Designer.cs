@@ -41,6 +41,8 @@ namespace CapaPresentacion
             this.dtpFechaInferior = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaSuperior = new System.Windows.Forms.DateTimePicker();
             this.buttonExportar = new System.Windows.Forms.Button();
+            this.cbGrupo = new System.Windows.Forms.ComboBox();
+            this.cbNombreCurso = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteAsistencia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,6 +159,7 @@ namespace CapaPresentacion
             this.dtpFechaInferior.Name = "dtpFechaInferior";
             this.dtpFechaInferior.Size = new System.Drawing.Size(178, 22);
             this.dtpFechaInferior.TabIndex = 27;
+            this.dtpFechaInferior.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInferior.ValueChanged += new System.EventHandler(this.dtpFechaInferior_ValueChanged);
             // 
             // dtpFechaSuperior
@@ -169,6 +172,7 @@ namespace CapaPresentacion
             this.dtpFechaSuperior.Name = "dtpFechaSuperior";
             this.dtpFechaSuperior.Size = new System.Drawing.Size(178, 22);
             this.dtpFechaSuperior.TabIndex = 28;
+            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 18, 17, 15, 0, 0);
             this.dtpFechaSuperior.ValueChanged += new System.EventHandler(this.dtpFechaSuperior_ValueChanged);
             // 
             // buttonExportar
@@ -187,6 +191,24 @@ namespace CapaPresentacion
             this.buttonExportar.Text = "Exportar Excel";
             this.buttonExportar.UseVisualStyleBackColor = false;
             this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
+            // 
+            // cbGrupo
+            // 
+            this.cbGrupo.FormattingEnabled = true;
+            this.cbGrupo.Location = new System.Drawing.Point(35, 163);
+            this.cbGrupo.Name = "cbGrupo";
+            this.cbGrupo.Size = new System.Drawing.Size(121, 28);
+            this.cbGrupo.TabIndex = 30;
+            this.cbGrupo.Visible = false;
+            // 
+            // cbNombreCurso
+            // 
+            this.cbNombreCurso.FormattingEnabled = true;
+            this.cbNombreCurso.Location = new System.Drawing.Point(172, 162);
+            this.cbNombreCurso.Name = "cbNombreCurso";
+            this.cbNombreCurso.Size = new System.Drawing.Size(121, 28);
+            this.cbNombreCurso.TabIndex = 31;
+            this.cbNombreCurso.Visible = false;
             // 
             // ReporteAsistenciasAlumnos
             // 
@@ -224,5 +246,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.DateTimePicker dtpFechaInferior;
         private System.Windows.Forms.DateTimePicker dtpFechaSuperior;
         private System.Windows.Forms.Button buttonExportar;
+        private System.Windows.Forms.ComboBox cbGrupo;
+        private System.Windows.Forms.ComboBox cbNombreCurso;
     }
 }
