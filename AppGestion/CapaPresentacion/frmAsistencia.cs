@@ -46,11 +46,6 @@ namespace CapaPresentacion
             Fecha = pFecha;
         }
 
-        private void btnMINIMIZAR_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -234,8 +229,27 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnMaxAsistencia_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void pnlAsistencia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+ 
             ContarAsistencia();
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;

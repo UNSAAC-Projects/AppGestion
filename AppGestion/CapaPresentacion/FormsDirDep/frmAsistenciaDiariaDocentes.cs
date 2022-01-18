@@ -20,16 +20,6 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        private void btnMINIMIZAR_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnCERRAR_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void frmAsistencia_Load(object sender, EventArgs e)
         {
             // Mostrar los docentes activos en el semestre actual
@@ -175,6 +165,11 @@ namespace CapaPresentacion
                     }
                 }
             }
+        }
+
+        private void pnlAsistencia_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

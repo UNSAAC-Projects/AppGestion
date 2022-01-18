@@ -220,5 +220,35 @@ namespace CapaPresentacion
         {
 
         }
+
+        //
+        private void buttonIMPORTAR_Click(object sender, EventArgs e)
+        {
+            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                    IExcelDataReader reader;
+                    if (ofd.FilterIndex == 1)
+                    {
+                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                    }
+                    else
+                    {
+                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                    }
+                    reader.IsFirstRowAsColumnNames = true;
+                    result = reader.AsDataSet();
+                    dgvCatalogo.DataSource = result.Tables[0];
+                    reader.Close();
+
+
+
+                }
+            }
+        }
     }
+    
 }

@@ -117,16 +117,6 @@ namespace CapaPresentacion
             exportarCatalogo.Visible = true;
         }
 
-        private void btnCancelarFrmReporte_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnMinimizarFrmReporte_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void dtpFechaInferior_ValueChanged(object sender, EventArgs e)
         {
             dgvReporteAsistencia.Columns.Clear();
@@ -143,5 +133,6 @@ namespace CapaPresentacion
         {
             ExportarDatos(dgvReporteAsistencia);
         }
+
     }
 }
