@@ -46,16 +46,18 @@ namespace CapaPresentacion
             this.label7 = new System.Windows.Forms.Label();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.panelMantAsignatura = new System.Windows.Forms.Panel();
+            this.btnMaxMantAsignatura = new System.Windows.Forms.PictureBox();
+            this.btnMinMantAsignatura = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMaxMantAsignatura = new System.Windows.Forms.PictureBox();
-            this.btnMinMantAsignatura = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNroSemestre = new System.Windows.Forms.TextBox();
             this.panelMantAsignatura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).BeginInit();
@@ -130,7 +132,7 @@ namespace CapaPresentacion
             // 
             this.textCreditos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textCreditos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textCreditos.Location = new System.Drawing.Point(307, 242);
+            this.textCreditos.Location = new System.Drawing.Point(307, 226);
             this.textCreditos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCreditos.Name = "textCreditos";
             this.textCreditos.Size = new System.Drawing.Size(226, 24);
@@ -178,7 +180,7 @@ namespace CapaPresentacion
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label4.Location = new System.Drawing.Point(559, 240);
+            this.label4.Location = new System.Drawing.Point(559, 226);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(132, 23);
@@ -204,7 +206,7 @@ namespace CapaPresentacion
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
-            this.label6.Location = new System.Drawing.Point(77, 240);
+            this.label6.Location = new System.Drawing.Point(77, 227);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(109, 23);
@@ -238,8 +240,8 @@ namespace CapaPresentacion
             "ECG",
             "OEES",
             "AEX"});
-            this.cmbCategoria.Location = new System.Drawing.Point(729, 241);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbCategoria.Location = new System.Drawing.Point(728, 227);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(161, 26);
             this.cmbCategoria.TabIndex = 61;
@@ -254,8 +256,46 @@ namespace CapaPresentacion
             this.panelMantAsignatura.Location = new System.Drawing.Point(0, 0);
             this.panelMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMantAsignatura.Name = "panelMantAsignatura";
-            this.panelMantAsignatura.Size = new System.Drawing.Size(985, 39);
+            this.panelMantAsignatura.Size = new System.Drawing.Size(992, 39);
             this.panelMantAsignatura.TabIndex = 63;
+            // 
+            // btnMaxMantAsignatura
+            // 
+            this.btnMaxMantAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaxMantAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxMantAsignatura.Image")));
+            this.btnMaxMantAsignatura.Location = new System.Drawing.Point(947, 2);
+            this.btnMaxMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaxMantAsignatura.Name = "btnMaxMantAsignatura";
+            this.btnMaxMantAsignatura.Size = new System.Drawing.Size(36, 37);
+            this.btnMaxMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMaxMantAsignatura.TabIndex = 66;
+            this.btnMaxMantAsignatura.TabStop = false;
+            this.btnMaxMantAsignatura.Click += new System.EventHandler(this.btnMaxMantAsignatura_Click);
+            // 
+            // btnMinMantAsignatura
+            // 
+            this.btnMinMantAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinMantAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnMinMantAsignatura.Image")));
+            this.btnMinMantAsignatura.Location = new System.Drawing.Point(904, 1);
+            this.btnMinMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinMantAsignatura.Name = "btnMinMantAsignatura";
+            this.btnMinMantAsignatura.Size = new System.Drawing.Size(36, 37);
+            this.btnMinMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinMantAsignatura.TabIndex = 65;
+            this.btnMinMantAsignatura.TabStop = false;
+            this.btnMinMantAsignatura.Click += new System.EventHandler(this.btnMinMantAsignatura_Click);
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
+            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 2);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(35, 34);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 64;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
             // 
             // panel1
             // 
@@ -306,44 +346,6 @@ namespace CapaPresentacion
             this.label2.TabIndex = 55;
             this.label2.Text = "HORAS TEORICAS:";
             // 
-            // btnMaxMantAsignatura
-            // 
-            this.btnMaxMantAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaxMantAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxMantAsignatura.Image")));
-            this.btnMaxMantAsignatura.Location = new System.Drawing.Point(947, 2);
-            this.btnMaxMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaxMantAsignatura.Name = "btnMaxMantAsignatura";
-            this.btnMaxMantAsignatura.Size = new System.Drawing.Size(36, 37);
-            this.btnMaxMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMaxMantAsignatura.TabIndex = 66;
-            this.btnMaxMantAsignatura.TabStop = false;
-            this.btnMaxMantAsignatura.Click += new System.EventHandler(this.btnMaxMantAsignatura_Click);
-            // 
-            // btnMinMantAsignatura
-            // 
-            this.btnMinMantAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinMantAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnMinMantAsignatura.Image")));
-            this.btnMinMantAsignatura.Location = new System.Drawing.Point(904, 1);
-            this.btnMinMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinMantAsignatura.Name = "btnMinMantAsignatura";
-            this.btnMinMantAsignatura.Size = new System.Drawing.Size(36, 37);
-            this.btnMinMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinMantAsignatura.TabIndex = 65;
-            this.btnMinMantAsignatura.TabStop = false;
-            this.btnMinMantAsignatura.Click += new System.EventHandler(this.btnMinMantAsignatura_Click);
-            // 
-            // pictureBoxLogo
-            // 
-            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
-            this.pictureBoxLogo.Location = new System.Drawing.Point(4, 2);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(35, 34);
-            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogo.TabIndex = 64;
-            this.pictureBoxLogo.TabStop = false;
-            this.pictureBoxLogo.Click += new System.EventHandler(this.pictureBoxLogo_Click);
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
@@ -356,7 +358,7 @@ namespace CapaPresentacion
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(773, 455);
+            this.btnGuardar.Location = new System.Drawing.Point(773, 472);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(167, 46);
@@ -378,12 +380,37 @@ namespace CapaPresentacion
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
+            this.label8.Location = new System.Drawing.Point(77, 270);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label8.Size = new System.Drawing.Size(154, 23);
+            this.label8.TabIndex = 69;
+            this.label8.Text = "NRO SEMESTRE:";
+            // 
+            // textBoxNroSemestre
+            // 
+            this.textBoxNroSemestre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxNroSemestre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNroSemestre.Location = new System.Drawing.Point(307, 272);
+            this.textBoxNroSemestre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxNroSemestre.Name = "textBoxNroSemestre";
+            this.textBoxNroSemestre.Size = new System.Drawing.Size(226, 24);
+            this.textBoxNroSemestre.TabIndex = 70;
+            // 
             // frmMantAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(985, 528);
+            this.ClientSize = new System.Drawing.Size(992, 545);
+            this.Controls.Add(this.textBoxNroSemestre);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -408,7 +435,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMantAsignatura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMantAsignatura";
@@ -451,5 +478,7 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox textBoxNroSemestre;
     }
 }

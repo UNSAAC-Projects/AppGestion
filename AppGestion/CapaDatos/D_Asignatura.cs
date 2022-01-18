@@ -98,6 +98,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
             cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
+            cmd.Parameters.AddWithValue("@NroSemestre", curso.nroSemestre);
 
             cmd.ExecuteNonQuery();
             conexion.Close();
@@ -116,6 +117,7 @@ namespace CapaDatos
             cmd.Parameters.AddWithValue("@HorasPracticas", curso.horasPracticas);
             cmd.Parameters.AddWithValue("@HorasTeoricas", curso.horasTeoricas);
             cmd.Parameters.AddWithValue("@Prerrequisitos", curso.prerrequisitos);
+            cmd.Parameters.AddWithValue("@NroSemestre", curso.nroSemestre);
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
