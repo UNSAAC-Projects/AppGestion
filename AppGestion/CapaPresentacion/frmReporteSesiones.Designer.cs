@@ -48,20 +48,25 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvReporteSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvReporteSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvReporteSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvReporteSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvReporteSesiones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvReporteSesiones.BackgroundColor = System.Drawing.Color.White;
             this.dgvReporteSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReporteSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvReporteSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvReporteSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvReporteSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReporteSesiones.ColumnHeadersHeight = 32;
+            this.dgvReporteSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,39 +75,41 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvReporteSesiones.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvReporteSesiones.Location = new System.Drawing.Point(27, 155);
-            this.dgvReporteSesiones.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvReporteSesiones.Location = new System.Drawing.Point(41, 151);
+            this.dgvReporteSesiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvReporteSesiones.Name = "dgvReporteSesiones";
             this.dgvReporteSesiones.RowHeadersVisible = false;
             this.dgvReporteSesiones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dgvReporteSesiones.Size = new System.Drawing.Size(1046, 402);
-            this.dgvReporteSesiones.TabIndex = 0;
+            this.dgvReporteSesiones.Size = new System.Drawing.Size(1020, 444);
+            this.dgvReporteSesiones.TabIndex = 16;
             // 
             // labelReporteAsistencia
             // 
+            this.labelReporteAsistencia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelReporteAsistencia.AutoSize = true;
             this.labelReporteAsistencia.BackColor = System.Drawing.Color.Transparent;
-            this.labelReporteAsistencia.Font = new System.Drawing.Font("Century Gothic", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelReporteAsistencia.ForeColor = System.Drawing.Color.LightCoral;
-            this.labelReporteAsistencia.Location = new System.Drawing.Point(431, 43);
+            this.labelReporteAsistencia.Font = new System.Drawing.Font("Century Gothic", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelReporteAsistencia.ForeColor = System.Drawing.Color.DimGray;
+            this.labelReporteAsistencia.Location = new System.Drawing.Point(338, 9);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
-            this.labelReporteAsistencia.Size = new System.Drawing.Size(286, 33);
+            this.labelReporteAsistencia.Size = new System.Drawing.Size(428, 45);
             this.labelReporteAsistencia.TabIndex = 1;
-            this.labelReporteAsistencia.Text = "REPORTE DE AVANCE";
+            this.labelReporteAsistencia.Text = "REPORTE DE SECIONES";
             // 
             // buttonExportar
             // 
+            this.buttonExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonExportar.BackColor = System.Drawing.Color.Transparent;
             this.buttonExportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonExportar.FlatAppearance.BorderSize = 3;
             this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonExportar.Location = new System.Drawing.Point(581, 594);
-            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonExportar.Location = new System.Drawing.Point(543, 621);
+            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(264, 51);
+            this.buttonExportar.Size = new System.Drawing.Size(235, 41);
             this.buttonExportar.TabIndex = 2;
             this.buttonExportar.Text = "Exportar Excel";
             this.buttonExportar.UseVisualStyleBackColor = false;
@@ -110,16 +117,17 @@
             // 
             // buttonCerrrar
             // 
+            this.buttonCerrrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCerrrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonCerrrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonCerrrar.FlatAppearance.BorderSize = 3;
             this.buttonCerrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCerrrar.Location = new System.Drawing.Point(824, 594);
-            this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCerrrar.Location = new System.Drawing.Point(815, 621);
+            this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCerrrar.Name = "buttonCerrrar";
-            this.buttonCerrrar.Size = new System.Drawing.Size(266, 51);
+            this.buttonCerrrar.Size = new System.Drawing.Size(236, 41);
             this.buttonCerrrar.TabIndex = 3;
             this.buttonCerrrar.Text = "Cerrar";
             this.buttonCerrrar.UseVisualStyleBackColor = false;
@@ -131,10 +139,10 @@
             this.comboBoxAsignaturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAsignaturas.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAsignaturas.FormattingEnabled = true;
-            this.comboBoxAsignaturas.Location = new System.Drawing.Point(369, 118);
-            this.comboBoxAsignaturas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxAsignaturas.Location = new System.Drawing.Point(328, 94);
+            this.comboBoxAsignaturas.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAsignaturas.Name = "comboBoxAsignaturas";
-            this.comboBoxAsignaturas.Size = new System.Drawing.Size(506, 29);
+            this.comboBoxAsignaturas.Size = new System.Drawing.Size(450, 28);
             this.comboBoxAsignaturas.TabIndex = 4;
             this.comboBoxAsignaturas.SelectedIndexChanged += new System.EventHandler(this.comboBoxAsignaturas_SelectedIndexChanged);
             // 
@@ -143,10 +151,10 @@
             this.labelAsignatura.AutoSize = true;
             this.labelAsignatura.BackColor = System.Drawing.Color.Transparent;
             this.labelAsignatura.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAsignatura.Location = new System.Drawing.Point(236, 120);
+            this.labelAsignatura.Location = new System.Drawing.Point(210, 96);
             this.labelAsignatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAsignatura.Name = "labelAsignatura";
-            this.labelAsignatura.Size = new System.Drawing.Size(128, 24);
+            this.labelAsignatura.Size = new System.Drawing.Size(110, 21);
             this.labelAsignatura.TabIndex = 5;
             this.labelAsignatura.Text = "Asignatura: ";
             // 
@@ -155,30 +163,28 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.panel2.Location = new System.Drawing.Point(368, 155);
+            this.panel2.Location = new System.Drawing.Point(327, 124);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(506, 0);
+            this.panel2.Size = new System.Drawing.Size(450, 1);
             this.panel2.TabIndex = 21;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(196, 146);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
             // frmReporteSesiones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1111, 694);
+            this.ClientSize = new System.Drawing.Size(1104, 694);
             this.Controls.Add(this.labelReporteAsistencia);
             this.Controls.Add(this.dgvReporteSesiones);
             this.Controls.Add(this.panel2);
@@ -188,7 +194,7 @@
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmReporteSesiones";
             this.Text = "frmReportesSesiones";
             this.Load += new System.EventHandler(this.frmReportesSesiones_Load);

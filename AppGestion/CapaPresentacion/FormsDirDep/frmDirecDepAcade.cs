@@ -98,7 +98,7 @@ namespace CapaPresentacion
         #region Eventos
         private void buttonDISTRIBUCION_Click(object sender, EventArgs e)
         {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            //buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
             AbrirFormulariosEnPanelContenedor(new frmDistDocentes());
             //frmDistDocentes c = new frmDistDocentes();
             //c.Show();
@@ -106,8 +106,8 @@ namespace CapaPresentacion
 
         private void buttonLISTAR_Click(object sender, EventArgs e)
         {
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            AbrirFormulariosEnPanelContenedor(new frmListaDocentes());
+           // buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+            AbrirFormulariosEnPanelContenedor(new frmAsistenciaDiariaDocentes());
             //frmListaDocentes p = new frmListaDocentes();
             //p.Show();
         }
@@ -160,35 +160,62 @@ namespace CapaPresentacion
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDirecAcademico());
         }
-
-        private void buttonIMPORTAR_Click(object sender, EventArgs e)
+        //mostrar Hora y Fecha
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
         {
-            
-
-            buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
-                    IExcelDataReader reader;
-                    if (ofd.FilterIndex == 1)
-                    {
-                        reader = ExcelReaderFactory.CreateBinaryReader(fs);
-                    }
-                    else
-                    {
-                        reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
-                    }
-                    reader.IsFirstRowAsColumnNames = true;
-                    result = reader.AsDataSet();
-                    //dgvCatalogo.DataSource = result.Tables[0];
-                    reader.Close();
-
-                    
-
-                }
-            }
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString("dddd mmmm, yyyy");
         }
+
+        private void labelHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFecha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /* private void buttonIMPORTAR_Click(object sender, EventArgs e)
+         {
+
+
+             buttonIMPORTAR.BackColor = Color.FromArgb(12, 61, 92);
+             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+             {
+                 if (ofd.ShowDialog() == DialogResult.OK)
+                 {
+                     FileStream fs = File.Open(ofd.FileName, FileMode.Open, FileAccess.Read);
+                     IExcelDataReader reader;
+                     if (ofd.FilterIndex == 1)
+                     {
+                         reader = ExcelReaderFactory.CreateBinaryReader(fs);
+                     }
+                     else
+                     {
+                         reader = ExcelReaderFactory.CreateOpenXmlReader(fs);
+                     }
+                     reader.IsFirstRowAsColumnNames = true;
+                     result = reader.AsDataSet();
+                     //dgvCatalogo.DataSource = result.Tables[0];
+                     reader.Close();
+
+
+
+                 }
+             }
+         }*/
     }
 }

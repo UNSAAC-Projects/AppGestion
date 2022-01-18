@@ -94,5 +94,16 @@ namespace CapaPresentacion
         {
             PantallaOk();
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerHoraFecha_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+            labelFecha.Text = DateTime.Now.ToString(" MMM dd yyyy");
+        }
     }
 }
