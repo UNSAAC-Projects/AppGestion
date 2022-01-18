@@ -49,6 +49,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.btnCERRAR = new System.Windows.Forms.PictureBox();
             this.panelContenedor3 = new System.Windows.Forms.Panel();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
@@ -60,6 +61,7 @@ namespace CapaPresentacion
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.pnlLateral.Controls.Add(this.btn_logout);
             this.pnlLateral.Controls.Add(this.btnCatalogo);
             this.pnlLateral.Controls.Add(this.buttonDISTRIBUCION);
             this.pnlLateral.Controls.Add(this.buttonIMPORTAR);
@@ -87,7 +89,7 @@ namespace CapaPresentacion
             this.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCatalogo.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCatalogo.Image = global::CapaPresentacion.Properties.Resources.export_regular_24;
-            this.btnCatalogo.Location = new System.Drawing.Point(-3, 387);
+            this.btnCatalogo.Location = new System.Drawing.Point(-3, 370);
             this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCatalogo.Name = "btnCatalogo";
             this.btnCatalogo.Size = new System.Drawing.Size(299, 50);
@@ -104,7 +106,7 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonDISTRIBUCION.Image = global::CapaPresentacion.Properties.Resources.group_solid_24;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(-3, 563);
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(3, 510);
             this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
             this.buttonDISTRIBUCION.Size = new System.Drawing.Size(304, 48);
@@ -122,7 +124,7 @@ namespace CapaPresentacion
             this.buttonIMPORTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIMPORTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonIMPORTAR.Image = global::CapaPresentacion.Properties.Resources.export_regular_24;
-            this.buttonIMPORTAR.Location = new System.Drawing.Point(0, 453);
+            this.buttonIMPORTAR.Location = new System.Drawing.Point(0, 415);
             this.buttonIMPORTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonIMPORTAR.Name = "buttonIMPORTAR";
             this.buttonIMPORTAR.Size = new System.Drawing.Size(299, 50);
@@ -139,7 +141,7 @@ namespace CapaPresentacion
             this.buttonLISTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLISTAR.ForeColor = System.Drawing.Color.Gainsboro;
             this.buttonLISTAR.Image = global::CapaPresentacion.Properties.Resources.list_check_regular_241;
-            this.buttonLISTAR.Location = new System.Drawing.Point(-3, 508);
+            this.buttonLISTAR.Location = new System.Drawing.Point(3, 467);
             this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLISTAR.Name = "buttonLISTAR";
             this.buttonLISTAR.Size = new System.Drawing.Size(301, 50);
@@ -301,6 +303,29 @@ namespace CapaPresentacion
             this.panelContenedor3.Size = new System.Drawing.Size(1002, 564);
             this.panelContenedor3.TabIndex = 9;
             // 
+            // btn_logout
+            // 
+            this.btn_logout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btn_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btn_logout.Image = global::CapaPresentacion.Properties.Resources.CerrarForm;
+            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.Location = new System.Drawing.Point(24, 564);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(250, 60);
+            this.btn_logout.TabIndex = 18;
+            this.btn_logout.Text = "LOG OUT";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
             // frmDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -351,5 +376,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.PictureBox pictureBoxMaxRest;
         private System.Windows.Forms.Button btnCatalogo;
         private System.Windows.Forms.Panel panelContenedor3;
+        private System.Windows.Forms.Button btn_logout;
     }
 }

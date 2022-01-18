@@ -128,5 +128,13 @@ namespace CapaPresentacion
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Estas seguro de que quieres cerrar Sesion?","Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
+            
+            //Program.AppContext.Show();
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace CapaPresentacion
                     m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
                 }
             }
-            catch 
+            catch (ArgumentException e)
             {
                 MessageBox.Show("Aun no existe assitencias registradas...");
                 Close();

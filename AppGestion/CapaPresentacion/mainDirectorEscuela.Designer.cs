@@ -50,6 +50,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,6 +64,7 @@
             // ContenedorLogin
             // 
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.btn_logout);
             this.ContenedorLogin.Controls.Add(this.btnVerCatalogos);
             this.ContenedorLogin.Controls.Add(this.btnASIGNATURA);
             this.ContenedorLogin.Controls.Add(this.pictureBoxLogo);
@@ -82,7 +84,7 @@
             // 
             // btnVerCatalogos
             // 
-            this.btnVerCatalogos.Location = new System.Drawing.Point(72, 581);
+            this.btnVerCatalogos.Location = new System.Drawing.Point(72, 538);
             this.btnVerCatalogos.Name = "btnVerCatalogos";
             this.btnVerCatalogos.Size = new System.Drawing.Size(131, 23);
             this.btnVerCatalogos.TabIndex = 13;
@@ -92,7 +94,7 @@
             // 
             // btnASIGNATURA
             // 
-            this.btnASIGNATURA.Location = new System.Drawing.Point(72, 528);
+            this.btnASIGNATURA.Location = new System.Drawing.Point(72, 498);
             this.btnASIGNATURA.Name = "btnASIGNATURA";
             this.btnASIGNATURA.Size = new System.Drawing.Size(131, 23);
             this.btnASIGNATURA.TabIndex = 12;
@@ -169,7 +171,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 482);
+            this.label1.Location = new System.Drawing.Point(44, 465);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 30);
             this.label1.TabIndex = 3;
@@ -302,6 +304,29 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 236;
             // 
+            // btn_logout
+            // 
+            this.btn_logout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btn_logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_logout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btn_logout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btn_logout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btn_logout.Image = global::CapaPresentacion.Properties.Resources.CerrarForm;
+            this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_logout.Location = new System.Drawing.Point(33, 568);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(250, 60);
+            this.btn_logout.TabIndex = 17;
+            this.btn_logout.Text = "LOG OUT";
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
+            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,5 +375,6 @@
         private System.Windows.Forms.Button btnVerCatalogos;
         private System.Windows.Forms.Button btnASIGNATURA;
         private System.Windows.Forms.Panel panelContenedor2;
+        private System.Windows.Forms.Button btn_logout;
     }
 }
