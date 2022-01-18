@@ -30,8 +30,8 @@ namespace CapaPresentacion
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHorarioDocente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
             this.pictureBoxMin = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
@@ -73,8 +73,10 @@ namespace CapaPresentacion
             this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelBarraTitulo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(724, 34);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(724, 44);
             this.panelBarraTitulo.TabIndex = 12;
+            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
+            this.panelBarraTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBarraTitulo_MouseMove);
             // 
             // pictureBoxMin
             // 
@@ -140,7 +142,7 @@ namespace CapaPresentacion
             this.labelTitulo.Location = new System.Drawing.Point(40, 9);
             this.labelTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitulo.Name = "labelTitulo";
-            this.labelTitulo.Size = new System.Drawing.Size(160, 22);
+            this.labelTitulo.Size = new System.Drawing.Size(207, 30);
             this.labelTitulo.TabIndex = 31;
             this.labelTitulo.Text = "Horario docente\r\n";
             // 
@@ -156,25 +158,25 @@ namespace CapaPresentacion
             this.dgvHorarioDocente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvHorarioDocente.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvHorarioDocente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorarioDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(109)))), ((int)(((byte)(126)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioDocente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvHorarioDocente.ColumnHeadersHeight = 40;
             this.dgvHorarioDocente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHorarioDocente.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHorarioDocente.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvHorarioDocente.Location = new System.Drawing.Point(20, 224);
             this.dgvHorarioDocente.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvHorarioDocente.Name = "dgvHorarioDocente";
@@ -191,7 +193,7 @@ namespace CapaPresentacion
             this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.ReadOnly = true;
-            this.textBoxCodigo.Size = new System.Drawing.Size(132, 23);
+            this.textBoxCodigo.Size = new System.Drawing.Size(132, 27);
             this.textBoxCodigo.TabIndex = 61;
             // 
             // textBoxNombres
@@ -200,7 +202,7 @@ namespace CapaPresentacion
             this.textBoxNombres.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxNombres.Name = "textBoxNombres";
             this.textBoxNombres.ReadOnly = true;
-            this.textBoxNombres.Size = new System.Drawing.Size(270, 23);
+            this.textBoxNombres.Size = new System.Drawing.Size(270, 27);
             this.textBoxNombres.TabIndex = 62;
             // 
             // textBoxEstado
@@ -209,7 +211,7 @@ namespace CapaPresentacion
             this.textBoxEstado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxEstado.Name = "textBoxEstado";
             this.textBoxEstado.ReadOnly = true;
-            this.textBoxEstado.Size = new System.Drawing.Size(154, 23);
+            this.textBoxEstado.Size = new System.Drawing.Size(154, 27);
             this.textBoxEstado.TabIndex = 63;
             // 
             // textBoxApellidos
@@ -219,7 +221,7 @@ namespace CapaPresentacion
             this.textBoxApellidos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxApellidos.Name = "textBoxApellidos";
             this.textBoxApellidos.ReadOnly = true;
-            this.textBoxApellidos.Size = new System.Drawing.Size(332, 23);
+            this.textBoxApellidos.Size = new System.Drawing.Size(332, 27);
             this.textBoxApellidos.TabIndex = 63;
             // 
             // textBoxHDictado
@@ -228,7 +230,7 @@ namespace CapaPresentacion
             this.textBoxHDictado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxHDictado.Name = "textBoxHDictado";
             this.textBoxHDictado.ReadOnly = true;
-            this.textBoxHDictado.Size = new System.Drawing.Size(132, 23);
+            this.textBoxHDictado.Size = new System.Drawing.Size(132, 27);
             this.textBoxHDictado.TabIndex = 63;
             // 
             // labelCodigo
@@ -237,7 +239,7 @@ namespace CapaPresentacion
             this.labelCodigo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelCodigo.Location = new System.Drawing.Point(15, 47);
             this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(69, 17);
+            this.labelCodigo.Size = new System.Drawing.Size(92, 21);
             this.labelCodigo.TabIndex = 64;
             this.labelCodigo.Text = "CÓDIGO:";
             // 
@@ -247,7 +249,7 @@ namespace CapaPresentacion
             this.labelNombres.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelNombres.Location = new System.Drawing.Point(15, 100);
             this.labelNombres.Name = "labelNombres";
-            this.labelNombres.Size = new System.Drawing.Size(72, 17);
+            this.labelNombres.Size = new System.Drawing.Size(97, 21);
             this.labelNombres.TabIndex = 64;
             this.labelNombres.Text = "NOMBRES:";
             // 
@@ -257,7 +259,7 @@ namespace CapaPresentacion
             this.labelEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelEstado.Location = new System.Drawing.Point(15, 156);
             this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(60, 17);
+            this.labelEstado.Size = new System.Drawing.Size(81, 21);
             this.labelEstado.TabIndex = 64;
             this.labelEstado.Text = "ESTADO:";
             // 
@@ -267,7 +269,7 @@ namespace CapaPresentacion
             this.labelApellidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelApellidos.Location = new System.Drawing.Point(344, 100);
             this.labelApellidos.Name = "labelApellidos";
-            this.labelApellidos.Size = new System.Drawing.Size(78, 17);
+            this.labelApellidos.Size = new System.Drawing.Size(104, 21);
             this.labelApellidos.TabIndex = 64;
             this.labelApellidos.Text = "APELLIDOS:";
             // 
@@ -277,7 +279,7 @@ namespace CapaPresentacion
             this.labelHorasDictado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(168)))), ((int)(((byte)(25)))));
             this.labelHorasDictado.Location = new System.Drawing.Point(344, 156);
             this.labelHorasDictado.Name = "labelHorasDictado";
-            this.labelHorasDictado.Size = new System.Drawing.Size(139, 17);
+            this.labelHorasDictado.Size = new System.Drawing.Size(186, 21);
             this.labelHorasDictado.TabIndex = 64;
             this.labelHorasDictado.Text = "HORAS DE DICTADO:";
             // 
@@ -298,7 +300,7 @@ namespace CapaPresentacion
             // 
             // frmHorarioDocente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(724, 460);

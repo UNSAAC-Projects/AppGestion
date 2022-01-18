@@ -26,15 +26,15 @@ namespace CapaPresentacion
             dgvCatalogo.Columns[0].DisplayIndex = 12;
             dgvCatalogo.Columns[1].DisplayIndex = 12;
 
-            dgvCatalogo.Columns[0].Width = 50;
-            dgvCatalogo.Columns[1].Width = 50;
+            dgvCatalogo.Columns[0].Width = 120;//70
+            dgvCatalogo.Columns[1].Width = 120;//70
             dgvCatalogo.Columns[2].Visible = false;
             dgvCatalogo.Columns[3].Visible = false;
-            dgvCatalogo.Columns[4].Width = 100;
-            dgvCatalogo.Columns[5].Width = 240;
-            dgvCatalogo.Columns[6].Width = 70;
-            dgvCatalogo.Columns[7].Width = 90;
-            dgvCatalogo.Columns[8].Width = 90;
+            dgvCatalogo.Columns[4].Width = 120;//100
+            dgvCatalogo.Columns[5].Width = 360;//240
+            dgvCatalogo.Columns[6].Width = 90;//70
+            dgvCatalogo.Columns[7].Width = 120;//90
+            dgvCatalogo.Columns[8].Width = 120;//90
             dgvCatalogo.Columns["CodDocentePractico"].Visible = false;
             dgvCatalogo.Columns["CodDocenteTeorico"].Visible = false;
 
