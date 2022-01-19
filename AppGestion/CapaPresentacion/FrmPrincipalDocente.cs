@@ -69,14 +69,11 @@ namespace CapaPresentacion
                 row.Cells["TEMA"].Value = tema;
             }
         }
-
-
-
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
-            dia = "LUNES";
+            dia = "JUEVES";
 
             //Mostrar tabla
             // Obtener tabla de horarios del dia actual

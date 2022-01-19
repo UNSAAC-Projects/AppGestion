@@ -17,38 +17,57 @@ namespace CapaDatos
         SqlConnection conexion = new SqlConnection(ConfigurationManager.ConnectionStrings["conectar"].ConnectionString);
         public DataTable ReporteAsistencia(string IdCatalogo,string FechaInicio,string FechaFin)
         {
-            DataTable tabla = new DataTable();
-            SqlCommand cmd = new SqlCommand("sp_ReporteAsistencia", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
+                DataTable tabla = new DataTable();
+                SqlCommand cmd = new SqlCommand("sp_ReporteAsistencia", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
 
-            cmd.Parameters.AddWithValue("@IdCatalogo", IdCatalogo);
-            cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
-            cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
+                cmd.Parameters.AddWithValue("@IdCatalogo", IdCatalogo);
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tabla);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
 
-            conexion.Close();
-            return tabla;
+                conexion.Close();
+                return tabla;
+            }
+            catch 
+            {
+                MessageBox.Show("No hay asistencias registradas o el rango de fechas es incorrecto");
+                conexion.Close();
+                return null;
+            }
+    
         }
         public string recuperarIdCat(string NombreAsig, string CodDocente,string Grupo)
         {
-            DataTable tabla = new DataTable();
-            SqlCommand cmd = new SqlCommand("sp_recuperarIdCat_Doc_y_Asignatura", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
+                DataTable tabla = new DataTable();
+                SqlCommand cmd = new SqlCommand("sp_recuperarIdCat_Doc_y_Asignatura", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
 
-            cmd.Parameters.AddWithValue("@NombreAsignatura", NombreAsig);
-            cmd.Parameters.AddWithValue("@CodDocente", CodDocente);
-            cmd.Parameters.AddWithValue("@Grupo", Grupo);
+                cmd.Parameters.AddWithValue("@NombreAsignatura", NombreAsig);
+                cmd.Parameters.AddWithValue("@CodDocente", CodDocente);
+                cmd.Parameters.AddWithValue("@Grupo", Grupo);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(tabla);
-            conexion.Close();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+                conexion.Close();
 
-            string id = tabla.Rows[0][0].ToString();
-            return id;
+                string id = tabla.Rows[0][0].ToString();
+                return id;
+            }
+            catch 
+            {
+                MessageBox.Show("El docente no cuenta un curso asignado");
+                conexion.Close();
+                return null;
+            }
         }
     }
 }
