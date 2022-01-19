@@ -140,7 +140,6 @@ INSERT INTO TCatalogo (IDCatalogo, SemestreLectivo, NroSemestre, CodAsignatura, 
 -- Aprendizaje Automatico
 ('C009','2021-2','08','IF652','A','IN208','D0025','D0025'),
 ('C010','2021-2','08','IF652','B','IN208','D0025','D0025');
-
 GO
 
 INSERT INTO TLogin VALUES 
