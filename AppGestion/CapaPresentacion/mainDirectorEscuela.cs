@@ -29,8 +29,6 @@ namespace CapaPresentacion
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
-       
-
         private void MostrarNombreUsuario(string CodDocente)
         {
             labelNombre.Text = oLogin.ObtenerNombreUsuario(CodDocente);
@@ -47,8 +45,6 @@ namespace CapaPresentacion
             this.Close();
         }
 
-
-
         private void pictureMaxDirectorEscuela_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
@@ -61,10 +57,6 @@ namespace CapaPresentacion
             }
         }
 
-        private void panelPrinciapl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private Form formActivado = null;
         private void AbrirFormulariosEnPanelContenedor(Form FormHijo)
         {
@@ -95,15 +87,16 @@ namespace CapaPresentacion
             PantallaOk();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timerHoraFecha_Tick(object sender, EventArgs e)
         {
             labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
             labelFecha.Text = DateTime.Now.ToString(" MMM dd yyyy");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Estas seguro de que quieres cerrar Sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                this.Close();
         }
     }
 }
