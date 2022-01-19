@@ -37,52 +37,45 @@ namespace CapaPresentacion
                 comboBoxCursosReporte.SelectedIndex = 0;
                 cbNombreCurso.SelectedIndex = 0;
                 cbGrupo.SelectedIndex = 0;
-                //comboBoxUnidad.SelectedIndex = 0;
+                dtpFechaInferior.Value = new DateTime(2022,1,1);
+                dtpFechaSuperior.Value = DateTime.Now;
             }
         }
 
         private void mostrarReporte()
         {
-            try
+            //recuperando valores del combo box fantasma
+            //cbGrupo.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+            //cbNombreCurso.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+            string NombreAsig = cbNombreCurso.Text;
+            string Grupo = cbGrupo.Text;
+            // recuperando el IdCatalogo del curso seleccionado
+            string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente, Grupo);
+            string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
+            string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
+            //mostrar el reporte de asistencias
+            dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
+            //Agregar la columna de porcentajes
+            dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+            int M;
+            string valorFila;
+            M = dgvReporteAsistencia.Columns.Count;
+            //calcular el procentaje de asistencias
+            foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
             {
-                cbGrupo.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
-                cbNombreCurso.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
-                string NombreAsig = cbNombreCurso.Text;
-                string Grupo = cbGrupo.Text;
-                string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente, Grupo);
-                string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
-                string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
-                dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
-                //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-                //if (!dgvReporteAsistencia.Columns.Contains("Porcentaje"))
-                //{
-                    dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-                //}
-                int M;
-                string valorFila;
-                M = dgvReporteAsistencia.Columns.Count;
-                foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
+                int asistencia;
+                asistencia = 0;
+                for (int i = 2; i < M - 1; i++)
                 {
-                    int asistencia;
-                    asistencia = 0;
-                    for (int i = 2; i < M - 1; i++)
+                    valorFila = m.Cells[i].Value.ToString();
+                    if (valorFila == "P")
                     {
-                        valorFila = m.Cells[i].Value.ToString();
-                        if (valorFila == "P")
-                        {
-                            asistencia++;
-                        }
+                        asistencia++;
                     }
-                    float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
-                    //float PORCENTAJE = 70;
-                    PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
-                    m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
                 }
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show("Aun no existe assitencias registradas...");
-                Close();
+                float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
+                PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
+                m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
             }
         }
 
@@ -90,6 +83,8 @@ namespace CapaPresentacion
         {
             dgvReporteAsistencia.Columns.Clear();
             comboBoxCursosReporte.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbGrupo.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
+            cbNombreCurso.SelectedIndex = comboBoxCursosReporte.SelectedIndex;
             mostrarReporte();
         }
         void MostrarItemsComboBox(DataTable tablaCursos)
