@@ -158,18 +158,6 @@
     <Compile Include="frmDocente.Designer.cs">
       <DependentUpon>frmDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsDirDep\frmListaDocentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsDirDep\frmListaDocentes.Designer.cs">
-      <DependentUpon>frmListaDocentes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormsDirDep\frmAsignarDocentev2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsDirDep\frmAsignarDocentev2.Designer.cs">
-      <DependentUpon>frmAsignarDocentev2.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsDirDep\frmHorarioDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,17 +226,11 @@
     <EmbeddedResource Include="FormsDirDep\frmAsignarDocente.resx">
       <DependentUpon>frmAsignarDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormsDirDep\frmAsignarDocentev2.resx">
-      <DependentUpon>frmAsignarDocentev2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmDirecDepAcade.resx">
       <DependentUpon>frmDirecDepAcade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmDistDocente.resx">
       <DependentUpon>frmDistDocente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsDirDep\frmListaDocentes.resx">
-      <DependentUpon>frmListaDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmHorarioDocente.resx">
       <DependentUpon>frmHorarioDocente.cs</DependentUpon>

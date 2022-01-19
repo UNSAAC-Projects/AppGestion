@@ -59,7 +59,6 @@ namespace CapaPresentacion
                 {
                     contador = contador + 1;
                 }
-               
             }
             
             lblAsistio.Text = contador.ToString();
