@@ -46,11 +46,6 @@ namespace CapaPresentacion
             Fecha = pFecha;
         }
 
-        private void btnMINIMIZAR_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
         private void btnCERRAR_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,7 +71,7 @@ namespace CapaPresentacion
         {
             N_CursoCatalogo oCursoCatalogo = new N_CursoCatalogo();
             Date = DateTime.Now;
-            //Date = new DateTime(2022, 01, 17);
+            Date = new DateTime(2022, 01, 20);
             dgvAsistencia.DataSource = oCursoCatalogo.ListarMatriculados(IdCatalogo, Date);
             foreach (DataGridViewRow row in dgvAsistencia.Rows)
             {
@@ -138,7 +133,7 @@ namespace CapaPresentacion
         {
             //var DateAndTime = DateTime.Now;
             //DateTime Date = DateTime.Now;
-            //DateTime Date = new DateTime(2022,01,17);
+            DateTime Fecha = new DateTime(2022,01,20);
 
             string name = NombreAsignatura;
             //Guardar asistencia de alumnos
@@ -234,8 +229,27 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnMaxAsistencia_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void pnlAsistencia_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+ 
             ContarAsistencia();
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;

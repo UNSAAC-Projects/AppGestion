@@ -124,7 +124,8 @@ namespace CapaPresentacion
         }
 
         private void dgvAsistenciaReporte_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {//Evento para mostrar numeración en el encabezado de la fila
+        {
+            //Evento para mostrar numeración en el encabezado de la fila
 
             var grid = sender as DataGridView; //dgv
             var rowIdx = (e.RowIndex + 1).ToString();
@@ -138,6 +139,10 @@ namespace CapaPresentacion
 
             var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
             e.Graphics.DrawString(rowIdx, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+
         }
+
+        //private void dgvAsistenciaReporte_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        //{       }
     }
 }

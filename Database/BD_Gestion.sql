@@ -37,6 +37,7 @@ CREATE TABLE TAsignatura
 	HorasPracticas varchar(2),
 	HorasTeoricas varchar(2),
 	Prerrequisitos varchar(100),
+	NroSemestre varchar(5),
 	PRIMARY KEY (CodAsignatura),
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
@@ -190,7 +191,7 @@ GO
 -----------procecedimiento alamcenado para listar las asignaturas-----------
 create proc SP_LISTARASIGNATURA
 as
-select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos from TAsignatura
+select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos,NroSemestre from TAsignatura
 go
 
 -----------procecedimiento alamcenado para Buscar una asignatura-----------
@@ -210,9 +211,10 @@ create proc SP_INSERTARASIGNATURA
 	@Categoria varchar(100),
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
-	@Prerrequisitos varchar(100)
+	@Prerrequisitos varchar(100),
+	@NroSemestre varchar(5)
 as
-insert into TAsignatura values(@CodAsignatura,@IDPlan,@Nombre,@Creditos,@Categoria,@HorasPracticas,@HorasTeoricas,@Prerrequisitos)
+insert into TAsignatura values(@CodAsignatura,@IDPlan,@Nombre,@Creditos,@Categoria,@HorasPracticas,@HorasTeoricas,@Prerrequisitos,@NroSemestre)
 go
 
 -----------procecedimiento alamcenado para Editar alguna asignatura-----------
@@ -224,10 +226,11 @@ create proc SP_EDITARASIGNATURA
 	@Categoria varchar(100),
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
-	@Prerrequisitos varchar(100)
+	@Prerrequisitos varchar(100),
+	@NroSemestre varchar(5)
 as 
 update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categoria=@Categoria,HorasPracticas=@HorasPracticas,
-		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
+		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos,NroSemestre=@NroSemestre
 where CodAsignatura =@CodAsignatura
 go
 -----------procecedimiento alamcenado para leliminar una asignatura----------

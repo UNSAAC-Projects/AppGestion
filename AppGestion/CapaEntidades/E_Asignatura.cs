@@ -16,12 +16,13 @@ namespace CapaEntidades
         private string _HorasPracticas;
         private string _HorasTeoricas;
         private string _Prerrequisitos;
+        private string _NroSemestre;
 
         private string buscar;
         public E_Asignatura()
         { }
         public E_Asignatura(string CodAsignatura, string IdPlan ,string Nombre, string Creditos,
-            string Categoria, string HorasPracticas, string HorasTeoricas, string Prerrequisitos)
+            string Categoria, string HorasPracticas, string HorasTeoricas, string Prerrequisitos, string NroSemestre)
         {
             _CodAsignatura = CodAsignatura;
             _IdPlan = IdPlan;
@@ -31,6 +32,7 @@ namespace CapaEntidades
             _HorasPracticas = HorasPracticas;
             _HorasTeoricas = HorasTeoricas;
             _Prerrequisitos = Prerrequisitos;
+            _NroSemestre = NroSemestre;
         }
 
         public string codAsigantura { get => _CodAsignatura; set => _CodAsignatura = value; }
@@ -41,6 +43,7 @@ namespace CapaEntidades
         public string horasPracticas { get => _HorasPracticas; set => _HorasPracticas = value; }
         public string horasTeoricas { get => _HorasTeoricas; set => _HorasTeoricas = value; }
         public string prerrequisitos { get => _Prerrequisitos; set => _Prerrequisitos = value; }
+        public string nroSemestre { get => _NroSemestre; set => _NroSemestre = value; }
         public string Buscar { get => buscar; set => buscar = value; }
     }
 }

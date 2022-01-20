@@ -27,6 +27,7 @@ namespace CapaPresentacion
         DataTable tabla = new DataTable();
         private string IDCatalogo;
         DataSet result;
+        bool cambios = false;
 
 
         public frmPlanDeSesiones(string CodCatalogo, string NombreAsignatura, string Grupo)
@@ -105,7 +106,16 @@ namespace CapaPresentacion
 
         private void btnClosePlanSesiones_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (cambios == true)
+            {
+                if (MessageBox.Show("Desea guardar los cambios antes de salir?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    btnGuardar.PerformClick();
+                    
+                }
+                
+            }
+            Close();
         }
 
         private void btnMinPlanSesiones_Click(object sender, EventArgs e)
@@ -124,12 +134,14 @@ namespace CapaPresentacion
                     tabla.Rows.RemoveAt(e.RowIndex);
                     dgvPlanSesiones.DataSource = tabla;
                 }
+
             }
 
-            if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Completado"].Selected)
+            else if (dgvPlanSesiones.Rows[e.RowIndex].Cells["Completado"].Selected)
             {
                 dgvPlanSesiones.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+            cambios = true;
         }
 
         private void dgvPlanSesiones_MouseMove(object sender, MouseEventArgs e)
@@ -244,6 +256,7 @@ namespace CapaPresentacion
             oPlanSesiones.GuardarPlanSesiones(tabla, IDCatalogo);
 
             MessageBox.Show("Los cambios se guardaron correctamente");
+            cambios = false;
         }
 
         private void dgvPlanSesiones_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -305,6 +318,7 @@ namespace CapaPresentacion
                         dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "-4";
                     }
                 }
+                cambios = true;
             }
            
         }
@@ -317,7 +331,7 @@ namespace CapaPresentacion
 
         private void btnImportarDatos_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls|Excel Workbook|*.xlsx", ValidateNames = true })
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook 97-2003|*.xls", ValidateNames = true })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {

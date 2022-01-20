@@ -59,6 +59,11 @@ namespace CapaPresentacion
                 MessageBox.Show("Ingrese Prerequisitos de la Asignatura");
                 M = false;
             }
+            else if (textBoxNroSemestre.Text == "")
+            {
+                MessageBox.Show("Ingrese Nro de Semestre");
+                M = false;
+            }
             return M;
         }
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -79,6 +84,7 @@ namespace CapaPresentacion
                         entities.horasPracticas = textHorasPracticas.Text;
                         entities.horasTeoricas = textHorasTeoricas.Text;
                         entities.prerrequisitos = textPrerrequisitos.Text;
+                        entities.nroSemestre = textBoxNroSemestre.Text;
                         business.CreandoAsignatura(entities);
 
                         MessageBox.Show("Agregado Exitosamente");
@@ -108,6 +114,7 @@ namespace CapaPresentacion
                         entities.horasPracticas = textHorasPracticas.Text;
                         entities.horasTeoricas = textHorasTeoricas.Text;
                         entities.prerrequisitos = textPrerrequisitos.Text;
+                        entities.nroSemestre = textBoxNroSemestre.Text;
 
 
                         business.EditandoAsignatura(entities);

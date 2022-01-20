@@ -196,15 +196,28 @@ namespace CapaPresentacion
                 //Dirigir a su formulario correspondiente
                 if (OpcionDocente)
                 {
-                    Program.SwitchMainForm(new frmDocente(codDocente));
+                    //Program.SwitchMainForm(new frmDocente(codDocente));
+                    frmDocente principalDocente = new frmDocente(codDocente);
+                    principalDocente.Show();
+                    principalDocente.FormClosed += Logout;
+                    this.Hide();
+
                 }
                 else if (OpcionDirEscuela)
                 {
-                    Program.SwitchMainForm(new mainDirectorEscuela(codDocente));
+                    //Program.SwitchMainForm(new mainDirectorEscuela(codDocente));
+                    mainDirectorEscuela principalDirectorEscuela = new mainDirectorEscuela(codDocente);
+                    principalDirectorEscuela.Show();
+                    principalDirectorEscuela.FormClosed += Logout;
+                    this.Hide();
                 }
                 else //DirDepartamento
                 {
-                    Program.SwitchMainForm(new frmDirecDepAcade(codDocente));
+                    //Program.SwitchMainForm(new frmDirecDepAcade(codDocente));
+                    frmDirecDepAcade principalDirectorAcademico = new frmDirecDepAcade(codDocente);
+                    principalDirectorAcademico.Show();
+                    principalDirectorAcademico.FormClosed += Logout;
+                    this.Hide();
                 }
             }
             else
@@ -214,6 +227,13 @@ namespace CapaPresentacion
                 textBoxUsuario.Text = "";
             }
         }
+        private void Logout(object sender, FormClosedEventArgs e) {
+            textBoxUsuario.Clear();
+            textBoxContraseña.Clear();
+            this.Show();
+            textBoxUsuario.Focus();
+        }
+
         #endregion
 
         #region Procedure to drag form
