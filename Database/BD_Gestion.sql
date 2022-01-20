@@ -192,7 +192,7 @@ GO
 -----------procecedimiento alamcenado para listar las asignaturas-----------
 create proc SP_LISTARASIGNATURA
 as
-select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos from TAsignatura
+select CodAsignatura, IDPlan,Nombre, Creditos, Categoria, HorasPracticas, HorasTeoricas, Prerrequisitos,NroSemestre from TAsignatura
 go
 
 -----------procecedimiento alamcenado para Buscar una asignatura-----------
