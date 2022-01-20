@@ -128,5 +128,10 @@ namespace CapaPresentacion
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
         }
+
+        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
