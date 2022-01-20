@@ -936,11 +936,10 @@ create OR ALTER proc sp_ReporteAsistencia
 @IdCatalogo varchar(6),@FechaInicio date,@FechaFin date
 as
 	SELECT  distinct  Fecha into #tablafecha from TAsistencia_Alumnos 
-	where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	where Fecha>=@FechaInicio and Fecha<=@FechaFin and IdCatalogo=@IdCatalogo
 	declare @columnas nvarchar (max),@consulta nvarchar(max)
 	set @columnas=''
 	
-
 	DECLARE @Fecha AS nvarchar(400)
 	DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
 	OPEN CURSORFECHA
@@ -961,7 +960,6 @@ as
 	set @columnas=substring(@columnas,1,len(@columnas)-1) 
 	--print @columnas
 	set @consulta='select *
-	--into #tablareporte
 	from #temp
 	pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
 	drop table if exists #tablafecha
@@ -969,15 +967,18 @@ as
 	drop table if exists #temp
 go
 
+
 create or alter proc sp_recuperarIdCat_Doc_y_Asignatura
 @NombreAsignatura varchar(100),
-@CodDocente varchar(10)
+@CodDocente varchar(10),
+@Grupo varchar(3)
 as
 	select CodAsignatura
 	into #tmp
 	from TAsignatura where Nombre=@NombreAsignatura
 
 	select IDCatalogo
-	from #tmp t INNER JOIN TCatalogo c on t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
+	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
 go
+
