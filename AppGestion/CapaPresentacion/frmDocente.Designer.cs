@@ -94,6 +94,7 @@ namespace CapaPresentacion
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(233, 685);
             this.ContenedorLogin.TabIndex = 2;
+            this.ContenedorLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorLogin_Paint);
             // 
             // btnCursosPorDia
             // 
