@@ -77,7 +77,7 @@ INSERT INTO TAsignatura (CodAsignatura, IDPlan, Nombre, Creditos,HorasPracticas,
 ('IF210','P001','PLANEAMIENTO ESTRATEGICO' ,'04','02','03','OE','IF209','10'),
 ('IF603','P001','ROBOTICA Y PROCESAMIENTO DE SEÃ‘AL','04','02','03','OE','IF601','10'),
 ('IF711','P001','SEMINARIO DE INVESTIGACION II','03','02','02','OEES','IF710','10');
-GO
+go
 
 INSERT INTO TDocente VALUES 
 ('D000','NO DEFINIDO' ,'','',''),
@@ -129,12 +129,12 @@ INSERT INTO TCatalogo (IDCatalogo, SemestreLectivo, NroSemestre, CodAsignatura, 
 ('C002','2021-2','02','IF468','B','IN202','D0028','D0028'),
 -- 5TO SEMESTRE
 -- Modelos Probabilisticos
-('C003','2021-2','05','IF650','A','IN205','D0025','D0021'),
-('C004','2021-2','05','IF650','B','IN205','D0025','D0021'),
+('C003','2021-2','05','IF650','A','IN205','D0021','D0021'),
+('C004','2021-2','05','IF650','B','IN205','D0021','D0021'),
 -- 6TO SEMESTRE
 -- Metodologia de desarrollo de software
-('C005','2021-2','06','IF611','A','IN206','D0033','D0033'),
-('C006','2021-2','06','IF611','B','IN206','D0033','D0033'),
+('C005','2021-2','06','IF611','A','IN206','D0032','D0032'),
+('C006','2021-2','06','IF611','B','IN206','D0032','D0032'),
 -- Fundamentos y disenio de bases de datos
 ('C007','2021-2','06','IF612','A','IN206','D0029','D0029'),
 -- 7MO SEMESTRE
@@ -188,12 +188,12 @@ INSERT INTO TLogin VALUES
 ('rony','rony','Docente','D0030'),
 ('vanesa','vanesa','Docente','D0031'),
 ('waldo_e','waldo_e','Docente','D0032'),
-('waldo','waldo','Docente','D0033'),
+('waldo_v','waldo_v','Docente','D0033'),
 ('willian','willian','Docente','D0034'),
 ('boris','boris','Docente','D0035'),
 ('jisbaj','jisbaj','Docente','D0036'),
-('carlos','jisbaj','Docente','D0037'),
-('urpy','urpy','Docente','D0038'),
+('urpy','urpy','Docente','D0037'),
+('fernando_m','fernando_m','Docente','D0038'),
 ('zonia','zonia','DirectorEscuela','D0028'),
 ('lauro','lauro','DirectorAcademico','D0021');
 
@@ -784,136 +784,788 @@ INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES
 ('C015',	'182940',	'	VILLASANTE-LEON','-AMARU');
 GO
 
-INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES 
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006',''),--Fundamentos de programacion(profe doris)
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C006',''),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C006',''),--semana0
+INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion,VariacionHora) VALUES
+-- C001 -> FUNDAMENTOS DE PROGRAMACION - GRUPO A (Prof. Zonia)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C001','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C006',''),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C006',''),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C006',''),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C006',''),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C006',''),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C006',''),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C006',''),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C006',''),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C006',''),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C006',''),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C006',''),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C006',''),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
-('1°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana5
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C001','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C001','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C001','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C001','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C001','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C001','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C001','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C006',''),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C006',''),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C006',''),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C006',''),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C006',''),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C006',''),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C006',''),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C006',''),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C006',''),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C006',''),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C006',''),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C006',''),--semana9
-('2°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
-('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
-('2°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana10
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C001','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C001','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C001','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C001','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C006','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C001','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C001','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C006',''),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C006',''),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C006',''),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C006',''),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C006',''),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C006',''),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C006',''),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C006',''),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C006',''),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C006',''),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C006',''),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C006',''),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','NO','C006',''),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006',''),
-('3°UNIDAD','---------','Entrega de Notas','01','NO','C006',''),--semana15
-
----C0010 -> MÉTODOS NUMÉRICOS
---(Unidad,Capitulo,Tema,HorasProgramadas,Fecha,Finalizado,IDCatalogo)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','SI','C010',''),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','SI','C010',''),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','SI','C010',''),
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C001','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C001','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C001','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C001','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C001','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C001','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','','0'),--semana15
+-- 
+-- C001 -> FUNDAMENTOS DE PROGRAMACION - GRUPO B (Prof. Zonia)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C002','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Introducción y Teoría de Errores','04','NO','C010',''),
-('1°UNIDAD','Capitulo2','Series de Taylor','04','NO','C010',''),
-('1°UNIDAD','Capitulo3','Resolución de Ecuaciones no Lineales','08','NO','C010',''),
-('1°UNIDAD','Capitulo4','Resolución de Sistemas de Ecuaciones Lineales','08','NO','C010',''),
-('1°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 1','04','NO','C010',''),
-('1°UNIDAD','','Examen Parcial I','02','NO','C010',''),
-('1°UNIDAD','','Revision Examen Parcial I','02','NO','C010',''),
-('1°UNIDAD','','Entrega de Notas','01','NO','C010',''),--semana15
-
--- 2°parcial
-('2°UNIDAD','Capitulo5','Aproximación Polinomial e Interpolación - Parte 2','04','NO','C010',''),
-('2°UNIDAD','Capitulo6','Diferenciación Numérica','04','NO','C010',''),
-('2°UNIDAD','Capitulo7','Integración Numérica','08','NO','C010',''),
-('2°UNIDAD','Capitulo8','Ecuaciones Diferenciales Ordinarias','08','NO','C010',''),
-('2°UNIDAD','','Examen Parcial II','02','NO','C010',''),
-('2°UNIDAD','','Revision Examen Parcial II','02','NO','C010',''),
-('2°UNIDAD','','Entrega de Notas','01','NO','C010','');--semana15
-
-INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCatalogo,Observacion) VALUES
--- C001 -> DEEP LEARNING
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C001',''),-- Deep Learning(profe Boris)
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C001',''),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C001',''),--semana0
--- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C001',''),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C001',''),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C001',''),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C001',''),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C001',''),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C001',''),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C001',''),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C001',''),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C001',''),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C001',''),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C001',''),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C001',''),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
-('1°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana5
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C002','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C002','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C002','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C002','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C002','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C002','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C002','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C002','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C001',''),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C001',''),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C001',''),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C001',''),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C001',''),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C001',''),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C001',''),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C001',''),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C001',''),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C001',''),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C001',''),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C006',''),--semana9
-('2°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
-('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
-('2°UNIDAD','---------','Entrega de Notas','01','NO','C001',''),--semana10
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C002','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C002','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C002','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C002','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C002','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C002','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C002','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C002','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C001',''),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C001',''),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C001',''),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C001',''),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C001',''),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C001',''),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C001',''),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C001',''),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C001',''),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C001',''),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C001',''),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C001',''),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','NO','C001',''),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C001',''),
-('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','');--semana15
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C002','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C002','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C002','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C002','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C002','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C002','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C002','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C002','','0'),
+-- MODELOS PROBABILISTICOS - GRUPO A (PROF. LAURO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C003','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C003','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C003','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C003','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C003','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C003','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C003','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C003','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C003','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C003','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C003','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C003','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C003','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C003','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C003','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C003','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C003','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C003','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C003','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),
+-- MODELOS PROBABILISTICOS - GRUPO B (PROF. LAURO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C004','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C004','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C004','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C004','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C004','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C004','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C004','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C004','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C004','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C004','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C004','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C004','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C004','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C004','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C004','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C004','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),
+-- METODOLOGIA DE DESARROLLO DE SOFTWARE - GRUPO A (PROF. WALDO IBARRA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C005','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C005','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C005','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C005','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C005','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C005','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C005','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C005','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C005','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C005','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C005','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C005','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C005','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C005','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C005','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C005','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C005','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C005','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C005','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C005','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C005','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C005','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C005','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C005','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C005','','0'),
+-- METODOLOGIA DE DESAROLLO DE SOFTWARE - GRUPO B (PROF. WALDO IBARRA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C006','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C006','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C006','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C006','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C006','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C006','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C006','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C006','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C006','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C006','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C006','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C006','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C006','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C006','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C006','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C006','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C006','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C006','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C006','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C006','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C006','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C006','','0'),
+-- FUNDAMENTOS Y DISENIO DE BASES DE DATOS - GRUPO A (PROF. ROBERT ALZAMORA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C007','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C007','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C007','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C007','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C007','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C007','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C007','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C007','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C007','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C007','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C007','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C007','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C007','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C007','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C007','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C007','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),
+-- COMPILADORES - GRUPO A (PROF. LINO PRISCILIANO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C008','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C008','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C008','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C008','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C008','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C008','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C008','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C008','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C008','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C008','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C008','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C008','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C008','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C008','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C008','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C008','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),
+-- COMPILADORES - GRUPO B (PROF. LINO PRISCILIANO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C009','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C009','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C009','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C009','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C009','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C009','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C009','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C009','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C009','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C009','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C009','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C009','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C009','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C009','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C009','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C009','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C009','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C009','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C009','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C009','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C009','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C009','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C009','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C009','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C009','','0'),
+-- ING. SE SOFTWARE I - GRUPO A (PROF. ROBERT ALZAMORA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C010','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C010','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C010','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C010','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C010','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C010','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C010','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C010','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C010','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C010','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C010','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C010','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C010','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C010','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C010','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C010','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),
+-- APRENDIZAJE AUTOMATICO -GRUPO A (PROF. LUIS PALMA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C011','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C011','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C011','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C011','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C011','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C011','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C011','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C011','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C011','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C011','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C011','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C011','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C011','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C011','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C011','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C011','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),
+-- APRENDIZAJE AUTOMATICO - GRUPO B (PROF. LUIS PALMA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C012','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C012','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C012','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C012','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C012','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C012','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C012','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C012','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C012','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C012','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C012','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C012','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C012','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C012','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C012','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C012','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C012','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C012','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C012','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C012','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C012','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C012','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C012','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C012','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C012','','0'),
+-- PLANEAMIENTO Y DIRECCION ESTRATEGICA DE TI - GRUPO A (PROF. EMILIO Y AURELIO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C013','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C013','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C013','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C013','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C013','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C013','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C013','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C013','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C013','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C013','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C013','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C013','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C013','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C013','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C013','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C013','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C013','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C013','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','','0'),
+-- PLANEAMIENTO Y DIRECCION ESTRATEGICA DE TI - GRUPO B (PROF. AURELIO)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C014','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C014','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C014','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C014','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C014','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C014','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C014','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C014','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C014','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C014','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C014','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C014','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C014','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C014','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C014','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C014','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C014','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C014','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C014','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C014','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C014','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C014','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C014','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C014','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C014','','0'),
+-- PROCESAMIENTO DEL LENGUAJE - GRUPO A (PROF. URPY Y FERNANDO MONTOYA)
+('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C015','','0'),--semana0
+-- 1°parcial
+('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C015','','0'),--semana1
+('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C015','','0'),--semana2
+('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C015','','0'),--semana3
+('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C015','','0'),
+('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C015','','0'),--semana4
+('1°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
+('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
+('1°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0'),--semana5
+--2° parcial
+('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C015','','0'),--semana6
+('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C015','','0'),--semana7
+('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C015','','0'),--semana8
+('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C015','','0'),
+('2°UNIDAD','Capitulo4','Repaso','01','NO','C015','','0'),--semana9
+('2°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
+('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
+('2°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0'),--semana10
+--3° parcial
+('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C015','','0'),--semana11
+('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C015','','0'),--semana12
+('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C015','','0'),--semana13
+('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C015','','0'),
+('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C015','','0'),--semana14
+('3°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
+('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
+('3°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0');
 GO
 
 ----Silabos insertar-
@@ -948,5 +1600,3 @@ GO
 --('05/01/2022','C006','170430','COVARRUBIAS AGUILAR GEREMY ANDRE','P',' '),
 --('07/01/2022','C006','170430','COVARRUBIAS AGUILAR GEREMY ANDRE','F',' ')
 --go
-
-

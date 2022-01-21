@@ -175,5 +175,10 @@ namespace CapaPresentacion
             if (MessageBox.Show("Estas seguro de que quieres cerrar Sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
         }
+
+        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

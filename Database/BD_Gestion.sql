@@ -37,7 +37,7 @@ CREATE TABLE TAsignatura
 	HorasPracticas varchar(2),
 	HorasTeoricas varchar(2),
 	Prerrequisitos varchar(100),
-	NroSemestre varchar(5),
+	NroSemestre varchar(2),
 	PRIMARY KEY (CodAsignatura),
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
@@ -94,6 +94,7 @@ create table TPlanSesiones
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
 	Observacion			varchar(100),
+	VariacionHora		varchar(2),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -212,7 +213,7 @@ create proc SP_INSERTARASIGNATURA
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
 	@Prerrequisitos varchar(100),
-	@NroSemestre varchar(5)
+	@NroSemestre varchar(2)
 as
 insert into TAsignatura values(@CodAsignatura,@IDPlan,@Nombre,@Creditos,@Categoria,@HorasPracticas,@HorasTeoricas,@Prerrequisitos,@NroSemestre)
 go
@@ -226,14 +227,13 @@ create proc SP_EDITARASIGNATURA
 	@Categoria varchar(100),
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
-	@Prerrequisitos varchar(100),
-	@NroSemestre varchar(5)
+	@Prerrequisitos varchar(100)
 as 
 update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categoria=@Categoria,HorasPracticas=@HorasPracticas,
-		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos,NroSemestre=@NroSemestre
+		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
 where CodAsignatura =@CodAsignatura
 go
------------procecedimiento alamcenado para leliminar una asignatura----------
+-----------procecedimiento alamcenado para eliminar una asignatura----------
 
 create proc SP_ELIMINARASIGNATURA
 @CodAsignatura varchar(10)
@@ -675,7 +675,8 @@ select
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
 	p.Finalizado,
-	p.Observacion
+	p.Observacion,
+	p.VariacionHora
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
@@ -717,18 +718,13 @@ CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
 AS
 	SET @IDTema = (
 		SELECT TOP 1 Id FROM TPlanSesiones 
-		WHERE IDCatalogo = @IDCatalogo AND Finalizado = 'NO'
+		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
 	) --Obtener id
 
-	IF @IDTema IS NULL
-		SET @IDTema = -1
-	ELSE
-		BEGIN
-		SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
-		WHERE Id = @IDTema 
-		--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
-		OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
-		END
+	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+	WHERE Id = @IDTema 
+	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
 GO
 
 --Agregar nuevo tema despues del ID especificado
@@ -754,7 +750,7 @@ AS
 	WHERE Id <= @IdAnterior
 
 	--Agregar nuevo tema
-	INSERT INTO TPlanSesiones VALUES ('','',@Tema,'02',@IDCatalogo,'NO','')
+	INSERT INTO TPlanSesiones VALUES ('','',@Tema,'02',@IDCatalogo,'NO','','')
 
 	--Agregar informacion posterior al ID
 	INSERT INTO TPlanSesiones
@@ -850,7 +846,7 @@ create proc SP_InsertarDatosAsistencia
 	@Fecha date,
 	@IDCatalogo varchar(6)
 as
---Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+--Si ya existe asistencia de esa fecha y se ese curso, actualizar tema
 if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
 	begin
 		update TListaAsistencias 
@@ -985,7 +981,4 @@ as
 	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
 go
-
-
-
 

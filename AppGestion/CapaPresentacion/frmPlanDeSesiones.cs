@@ -47,11 +47,11 @@ namespace CapaPresentacion
 
         private void MoverModificarColumnas()
         {
-            dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=6;
-            dgvPlanSesiones.Columns["Observacion"].DisplayIndex = 5;
-            dgvPlanSesiones.Columns["Completado"].DisplayIndex = 4;
-
-            dgvPlanSesiones.Columns["Finalizado"].Visible = false;      
+            dgvPlanSesiones.Columns["Eliminar"].DisplayIndex=8;
+            dgvPlanSesiones.Columns["VariacionH"].DisplayIndex = 7;
+            dgvPlanSesiones.Columns["Completado"].DisplayIndex = 5;
+            dgvPlanSesiones.Columns["Finalizado"].Visible = false;
+            dgvPlanSesiones.Columns["VariacionHora"].Visible = false;
         }
 
         public void MostrarPlanSesiones(string CodCatalogo)
@@ -64,6 +64,43 @@ namespace CapaPresentacion
                 {
                     fila.Cells["Completado"].Value = "SI";
                 }
+                if (fila.Cells["VariacionHora"].Value.ToString() == "+1")
+                {
+                    fila.Cells["VariacionH"].Value = "+1";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "+2")
+                {
+                    fila.Cells["VariacionH"].Value = "+2";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "+3")
+                {
+                    fila.Cells["VariacionH"].Value = "+3";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "+4")
+                {
+                    fila.Cells["VariacionH"].Value = "+4";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "0")
+                {
+                    fila.Cells["VariacionH"].Value = "0";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "-1")
+                {
+                    fila.Cells["VariacionH"].Value = "-1";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "-2")
+                {
+                    fila.Cells["VariacionH"].Value = "-2";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "-3")
+                {
+                    fila.Cells["VariacionH"].Value = "-3";
+                }
+                else if (fila.Cells["VariacionHora"].Value.ToString() == "-4")
+                {
+                    fila.Cells["VariacionH"].Value = "-4";
+                }
+                
             }
         }
 
@@ -203,6 +240,7 @@ namespace CapaPresentacion
                 tabla = dgvPlanSesiones.DataSource as DataTable;
                 DataRow fila = tabla.NewRow();
                 fila["Finalizado"]= "NO";
+                //fila["VariacionHora"] = "0";
                 tabla.Rows.InsertAt(fila, indice+1);
   
             }
@@ -235,6 +273,49 @@ namespace CapaPresentacion
                     else
                     {
                         dgvPlanSesiones.Rows[e.RowIndex].Cells["Finalizado"].Value = "NO";
+                    }
+                }
+
+                //
+
+                if (dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Selected)
+                {
+                    //ver el valor del checkbox
+                    if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() =="+1"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "+1";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "+2"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "+2";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "+3"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "+3";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "+4"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "+4";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "0"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "0";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "-1"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "-1";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "-2"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "-2";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "-3"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "-3";
+                    }
+                    else if ((dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionH"].Value.ToString() == "-4"))
+                    {
+                        dgvPlanSesiones.Rows[e.RowIndex].Cells["VariacionHora"].Value = "-4";
                     }
                 }
                 cambios = true;
