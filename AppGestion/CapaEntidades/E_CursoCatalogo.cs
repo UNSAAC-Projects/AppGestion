@@ -9,6 +9,7 @@ namespace CapaEntidades
     public class E_CursoCatalogo
     {
         private string _IdCatalogo;
+        private string _SemestreLectivo;
         private string _NroSemestre;
         private string _CodAsignatura;
         private string _Grupo;
@@ -20,10 +21,11 @@ namespace CapaEntidades
         {
 
         }
-        public E_CursoCatalogo(string idCatalogo, string nroSemestre, string codAsignatura, 
+        public E_CursoCatalogo(string idCatalogo,string semestreLectivo ,string nroSemestre, string codAsignatura, 
             string grupo, string codDocenteTeorico, string codDocentePractico, string aula)
         {
             _IdCatalogo = idCatalogo;
+            _SemestreLectivo = semestreLectivo;
             _NroSemestre = nroSemestre;
             _CodAsignatura = codAsignatura;
             _Grupo = grupo;
@@ -33,6 +35,7 @@ namespace CapaEntidades
             
         }
         public string IdCatalogo { get => _IdCatalogo; set => _IdCatalogo = value; }
+        public string SemestreLectivo { get => _SemestreLectivo; set => _SemestreLectivo = value; }
         public string NroSemestre { get => _NroSemestre; set => _NroSemestre = value; }
         public string CodAsignatura { get => _CodAsignatura; set => _CodAsignatura = value; }
         public string Grupo { get => _Grupo; set => _Grupo = value; }

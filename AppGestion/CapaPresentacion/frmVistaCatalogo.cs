@@ -23,31 +23,24 @@ namespace CapaPresentacion
         }
         public void OcultarMoverAncharColumnas()
         {
-            dgvCatalogo.Columns[0].DisplayIndex = 12;
-            dgvCatalogo.Columns[1].DisplayIndex = 12;
+            dgvCatalogo.Columns[0].DisplayIndex = 14;
+            dgvCatalogo.Columns[1].DisplayIndex = 14;
 
-            //dgvCatalogo.Columns[0].Width = 120;//70
-            //dgvCatalogo.Columns[1].Width = 120;//70
-            //dgvCatalogo.Columns[2].Visible = false;
-            //dgvCatalogo.Columns[3].Visible = false;
-            //dgvCatalogo.Columns[4].Width = 120;//100
-            //dgvCatalogo.Columns[5].Width = 360;//240
-            //dgvCatalogo.Columns[6].Width = 90;//70
-            //dgvCatalogo.Columns[7].Width = 120;//90
-            //dgvCatalogo.Columns[8].Width = 120;//90
-
-            dgvCatalogo.Columns["GrupoAsignatura"].Width = 90;
-            dgvCatalogo.Columns["Nombre"].Width = 190;
+            dgvCatalogo.Columns["GrupoAsignatura"].Visible = false;
+            dgvCatalogo.Columns["Nombre"].Width = 280;
             dgvCatalogo.Columns["Creditos"].Width = 60;
-            dgvCatalogo.Columns["Categoria"].Width = 70;
-            dgvCatalogo.Columns["NroSemestre"].Width = 70;
-            dgvCatalogo.Columns["Editar"].Width = 60;
+            //dgvCatalogo.Columns["Categoria"].Visible = false;
+            dgvCatalogo.Columns["NroSemestre"].Width = 80;
+            dgvCatalogo.Columns["Editar"].Width = 40;
             dgvCatalogo.Columns["Eliminar"].Width = 60;
-            dgvCatalogo.Columns["IdCatalogo"].Width = 80;
-
+            dgvCatalogo.Columns["IdCatalogo"].Visible=false;
+            dgvCatalogo.Columns["Aula"].Width = 45;
+            dgvCatalogo.Columns["DocentePractico"].Width = 110;
+            dgvCatalogo.Columns["DocenteTeorico"].Width = 110;
+            dgvCatalogo.Columns["Grupo"].Width = 45;
             dgvCatalogo.Columns["CodDocentePractico"].Visible = false;
             dgvCatalogo.Columns["CodDocenteTeorico"].Visible = false;
-
+            dgvCatalogo.Columns["CodAsignatura"].Width = 90;
         }
         public void MostrarVistaCatalogo()
         {
@@ -78,41 +71,47 @@ namespace CapaPresentacion
 
         private void dgvCatalogo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCatalogo.Rows[e.RowIndex].Cells["Editar"].Selected)
+            if (e.RowIndex >= 0) //Si no se hizo click en el encabezado
             {
-                EditCatalogo frm = new EditCatalogo();
-                frm.Update = true;
-                frm.textIdCatalogo.Text=dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
-                frm.textIdCatalogo.Enabled = false;
-                frm.textCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                frm.textNombreCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                frm.textNombreCurso.Enabled = false;
-                frm.textCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
-                frm.textNroSemestre.Text= dgvCatalogo.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
-                frm.textNroSemestre.Enabled = false;
-
-                if (Convert.ToInt32(dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                if (dgvCatalogo.Rows[e.RowIndex].Cells["Editar"].Selected)
                 {
-                    frm.cmbDia3.Enabled = false;
-                    frm.textHInicio3.Enabled = false;
-                    frm.textHFin3.Enabled = false;
-                    frm.cmbTipo3.Enabled = false;
-                }
-                frm.DocPractico= dgvCatalogo.Rows[e.RowIndex].Cells["CodDocentePractico"].Value.ToString();
-                frm.DocTeorico= dgvCatalogo.Rows[e.RowIndex].Cells["CodDocenteTeorico"].Value.ToString();
-                frm.ShowDialog();
-                MostrarVistaCatalogo();
-            }
-            else if(dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
-            {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    N_CursoCatalogo oVista = new N_CursoCatalogo();
-                    string delete = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
-                    oVista.EliminandoCursoCatalogo(delete);
+                    EditCatalogo frm = new EditCatalogo();
+                    frm.Update = true;
+                    frm.textIdCatalogo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
+                    frm.textIdCatalogo.Enabled = false;
+                    frm.textCodigo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                    frm.textNombreCurso.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    frm.textNombreCurso.Enabled = false;
+                    frm.textCreditos.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                    frm.textNroSemestre.Text = dgvCatalogo.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
+                    frm.textNroSemestre.Enabled = false;
+                    frm.textSemestreLectivo.Text= dgvCatalogo.Rows[e.RowIndex].Cells["SemestreLectivo"].Value.ToString();
+                    frm.cmbGrupo.Text= dgvCatalogo.Rows[e.RowIndex].Cells["Grupo"].Value.ToString();
+                    frm.textAula.Text= dgvCatalogo.Rows[e.RowIndex].Cells["Aula"].Value.ToString();
 
+                    if (Convert.ToInt32(dgvCatalogo.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                    {
+                        frm.cmbDia3.Enabled = false;
+                        frm.textHInicio3.Enabled = false;
+                        frm.textHFin3.Enabled = false;
+                        frm.cmbTipo3.Enabled = false;
+                    }
+                    frm.DocPractico = dgvCatalogo.Rows[e.RowIndex].Cells["CodDocentePractico"].Value.ToString();
+                    frm.DocTeorico = dgvCatalogo.Rows[e.RowIndex].Cells["CodDocenteTeorico"].Value.ToString();
+                    frm.ShowDialog();
                     MostrarVistaCatalogo();
+                }
+                else if (dgvCatalogo.Rows[e.RowIndex].Cells["Eliminar"].Selected)
+                {
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        N_CursoCatalogo oVista = new N_CursoCatalogo();
+                        string delete = dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
+                        oVista.EliminandoCursoCatalogo(delete);
+
+                        MostrarVistaCatalogo();
+                    }
                 }
             }
         }
