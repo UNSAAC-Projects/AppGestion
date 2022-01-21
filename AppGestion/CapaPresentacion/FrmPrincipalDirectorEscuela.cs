@@ -73,60 +73,63 @@ namespace CapaPresentacion
 
         private void dgvAsignaturas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvAsignaturas.Rows[e.RowIndex].Cells["CrearGrupo"].Selected)
+            if (e.RowIndex >= 0) //Si no se hizo click en el encabezado
             {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea crear un nuevo grupo?", "Alerta", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (dgvAsignaturas.Rows[e.RowIndex].Cells["CrearGrupo"].Selected)
                 {
-                    EditCatalogo frm = new EditCatalogo();
-
-                    N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
-                    frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                    frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                    frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
-                    frm.textIdCatalogo.Text = oAsignatura.New();
-                    if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea crear un nuevo grupo?", "Alerta", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        frm.cmbDia3.Enabled = false;
-                        frm.textHInicio3.Enabled = false;
-                        frm.textHFin3.Enabled = false;
-                        frm.cmbTipo3.Enabled = false;
-                        frm.textIdCatalogo.Enabled = false;
+                        EditCatalogo frm = new EditCatalogo();
+
+                        N_CursoCatalogo oAsignatura = new N_CursoCatalogo();
+                        frm.textCodigo.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                        frm.textNombreCurso.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                        frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                        frm.textIdCatalogo.Text = oAsignatura.New();
+                        if (Convert.ToInt32(dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value) < 4)
+                        {
+                            frm.cmbDia3.Enabled = false;
+                            frm.textHInicio3.Enabled = false;
+                            frm.textHFin3.Enabled = false;
+                            frm.cmbTipo3.Enabled = false;
+                            frm.textIdCatalogo.Enabled = false;
+                        }
+                        frm.textNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
+                        frm.Show();
                     }
-                    frm.textNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
-                    frm.Show();
+
                 }
-
-            }
-            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected)
-            {
-                DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                if (dgvAsignaturas.Rows[e.RowIndex].Cells["Eliminar"].Selected)
                 {
-                    string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                    oAsignatura.EliminandoAsignatura(delete);
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea eliminar?", "Alerta", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        string delete = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                        oAsignatura.EliminandoAsignatura(delete);
 
+                        MostrarTablaAsignatura();
+                    }
+                }
+                if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
+                {
+                    frmMantAsignatura frm = new frmMantAsignatura();
+                    frm.Update = true;
+                    frm.textCodAsignatura.Enabled = false;
+                    frm.textIDPlan.Enabled = false;
+                    frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
+                    frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
+                    frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
+                    frm.cmbCategoria.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
+                    frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
+                    frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
+                    frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
+
+                    frm.textBoxNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
+                    frm.ShowDialog();
                     MostrarTablaAsignatura();
                 }
-            }
-            if (dgvAsignaturas.Rows[e.RowIndex].Cells["Editar"].Selected)
-            {
-                frmMantAsignatura frm = new frmMantAsignatura();
-                frm.Update = true;
-                frm.textCodAsignatura.Enabled = false;
-                frm.textIDPlan.Enabled = false;
-                frm.textCodAsignatura.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["CodAsignatura"].Value.ToString();
-                frm.textIDPlan.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["IDPlan"].Value.ToString();
-                frm.textNombre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
-                frm.textCreditos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Creditos"].Value.ToString();
-                frm.cmbCategoria.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Categoria"].Value.ToString();
-                frm.textHorasPracticas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasPracticas"].Value.ToString();
-                frm.textHorasTeoricas.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["HorasTeoricas"].Value.ToString();
-                frm.textPrerrequisitos.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["Prerrequisitos"].Value.ToString();
-
-                frm.textBoxNroSemestre.Text = dgvAsignaturas.Rows[e.RowIndex].Cells["NroSemestre"].Value.ToString();
-                frm.ShowDialog();
-                MostrarTablaAsignatura();
             }
         }
 
