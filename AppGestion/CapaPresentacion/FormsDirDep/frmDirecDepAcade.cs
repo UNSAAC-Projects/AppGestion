@@ -22,6 +22,10 @@ namespace CapaPresentacion
         DataSet result;
         N_Login oLogin = new N_Login();
 
+        private bool OpcionCatalogo;
+        private bool OpcionLISTAR;
+        private bool OpcionDISTRIBUCION;
+
         //Constructor
         public frmDirecDepAcade(string CodDocente)
         {
@@ -102,6 +106,20 @@ namespace CapaPresentacion
             AbrirFormulariosEnPanelContenedor(new frmDistDocentes());
             //frmDistDocentes c = new frmDistDocentes();
             //c.Show();
+            //
+            OpcionCatalogo = false;
+            OpcionLISTAR = false;
+            OpcionDISTRIBUCION = true;
+
+            //Restaurar backcolors
+            btnCatalogo.BackColor = Color.FromArgb(33, 47, 60);
+            buttonLISTAR.BackColor = Color.FromArgb(33, 47, 60);
+            buttonDISTRIBUCION.BackColor = Color.WhiteSmoke;
+
+            //Restaurar forecolors
+            btnCatalogo.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonLISTAR.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonDISTRIBUCION.ForeColor = Color.FromArgb(33, 47, 60);
         }
 
         private void buttonLISTAR_Click(object sender, EventArgs e)
@@ -110,6 +128,20 @@ namespace CapaPresentacion
             AbrirFormulariosEnPanelContenedor(new frmAsistenciaDiariaDocentes());
             //frmListaDocentes p = new frmListaDocentes();
             //p.Show();
+            //
+            OpcionCatalogo = false;
+            OpcionLISTAR = true;
+            OpcionDISTRIBUCION = false;
+
+            //Restaurar backcolors
+            btnCatalogo.BackColor = Color.FromArgb(33, 47, 60);
+            buttonLISTAR.BackColor = Color.WhiteSmoke;
+            buttonDISTRIBUCION.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCatalogo.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonLISTAR.ForeColor = Color.FromArgb(33, 47, 60);
+            buttonDISTRIBUCION.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         
@@ -159,6 +191,20 @@ namespace CapaPresentacion
         private void btnCatalogo_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDirecAcademico());
+            //
+            OpcionCatalogo = true;
+            OpcionLISTAR = false;
+            OpcionDISTRIBUCION = false;
+
+            //Restaurar backcolors
+            btnCatalogo.BackColor = Color.WhiteSmoke;
+            buttonLISTAR.BackColor = Color.FromArgb(33, 47, 60);
+            buttonDISTRIBUCION.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCatalogo.ForeColor = Color.FromArgb(33, 47, 60);
+            buttonLISTAR.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonDISTRIBUCION.ForeColor = Color.FromArgb(212, 172, 13);
         }
         //mostrar Hora y Fecha
         private void timerHoraFecha_Tick(object sender, EventArgs e)
