@@ -59,7 +59,7 @@ GO
 CREATE TABLE TCatalogo
 (
 	IDCatalogo varchar(6),
-	SemestreLectivo varchar(6),
+	SemestreLectivo varchar(8),
 	NroSemestre varchar(2),
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
@@ -259,9 +259,9 @@ where NroSemestre like @BUSCAR + '%' or  CodAsignatura like @BUSCAR + '%'
 go
 
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
-create proc SP_INSERTARCATALOGO
+create or alter proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
-	@SemestreLectivo varchar(6),
+	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -273,8 +273,9 @@ insert into TCatalogo values(@IDCatalogo,@SemestreLectivo,@NroSemestre,@CodAsign
 go
 
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
-create proc SP_EDITARCATALOGO
+create or alter proc SP_EDITARCATALOGO
 	@IDCatalogo varchar(6),
+	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -283,7 +284,7 @@ create proc SP_EDITARCATALOGO
 	@CodDocentePractico varchar(6)
 as 
 delete from THorario where IDCatalogo=@IDCatalogo
-update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
+update TCatalogo set SemestreLectivo=@SemestreLectivo,NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
 where IDCatalogo =@IDCatalogo
 go
  
@@ -333,17 +334,17 @@ AS INSERT INTO THorario values (
 go
 
 ----------------------  PROCEDIMIENTOS ALMACENADOS PARA VISTA CATALOGO ------------------------------------------------------
-CREATE PROC SP_VISTACATALOGO
+CREATE or alter PROC SP_VISTACATALOGO
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
+select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 -------procedimiento almacenado para buscar curso-----
-CREATE PROC SP_BUSCARVISTACATALOGO
+CREATE or alter PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
+select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
