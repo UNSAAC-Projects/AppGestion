@@ -90,9 +90,9 @@ namespace CapaPresentacion
             this.pnlLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLateral.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlLateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlLateral.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlLateral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLateral.Name = "pnlLateral";
-            this.pnlLateral.Size = new System.Drawing.Size(228, 549);
+            this.pnlLateral.Size = new System.Drawing.Size(304, 676);
             this.pnlLateral.TabIndex = 0;
             // 
             // btnLogout
@@ -109,10 +109,11 @@ namespace CapaPresentacion
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(-5, 487);
+            this.btnLogout.Location = new System.Drawing.Point(-7, 599);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 55, 0);
-            this.btnLogout.Size = new System.Drawing.Size(238, 49);
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 73, 0);
+            this.btnLogout.Size = new System.Drawing.Size(317, 60);
             this.btnLogout.TabIndex = 17;
             this.btnLogout.Text = "CERRAR SESION";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -130,10 +131,10 @@ namespace CapaPresentacion
             this.btnCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogo.Image")));
             this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalogo.Location = new System.Drawing.Point(2, 340);
-            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCatalogo.Location = new System.Drawing.Point(3, 418);
+            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCatalogo.Name = "btnCatalogo";
-            this.btnCatalogo.Size = new System.Drawing.Size(230, 41);
+            this.btnCatalogo.Size = new System.Drawing.Size(307, 50);
             this.btnCatalogo.TabIndex = 12;
             this.btnCatalogo.Text = "CATALOGO";
             this.btnCatalogo.UseVisualStyleBackColor = true;
@@ -150,10 +151,10 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonDISTRIBUCION.Image = ((System.Drawing.Image)(resources.GetObject("buttonDISTRIBUCION.Image")));
             this.buttonDISTRIBUCION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(5, 430);
-            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(7, 529);
+            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
-            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(223, 57);
+            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(297, 70);
             this.buttonDISTRIBUCION.TabIndex = 11;
             this.buttonDISTRIBUCION.Text = "    DISTRIBUCION POR DOCENTE";
             this.buttonDISTRIBUCION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -171,10 +172,10 @@ namespace CapaPresentacion
             this.buttonLISTAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonLISTAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonLISTAR.Image")));
             this.buttonLISTAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLISTAR.Location = new System.Drawing.Point(3, 385);
-            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonLISTAR.Location = new System.Drawing.Point(4, 474);
+            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLISTAR.Name = "buttonLISTAR";
-            this.buttonLISTAR.Size = new System.Drawing.Size(230, 41);
+            this.buttonLISTAR.Size = new System.Drawing.Size(307, 50);
             this.buttonLISTAR.TabIndex = 3;
             this.buttonLISTAR.Text = "LISTA DOCENTE";
             this.buttonLISTAR.UseVisualStyleBackColor = true;
@@ -185,10 +186,9 @@ namespace CapaPresentacion
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelNombre.Location = new System.Drawing.Point(49, 288);
-            this.labelNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelNombre.Location = new System.Drawing.Point(65, 354);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(112, 16);
+            this.labelNombre.Size = new System.Drawing.Size(141, 18);
             this.labelNombre.TabIndex = 9;
             this.labelNombre.Text = "NOMBRE USUARIO";
             // 
@@ -197,20 +197,19 @@ namespace CapaPresentacion
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(2, 132);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(3, 162);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 16);
+            this.label4.Size = new System.Drawing.Size(295, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Director de Departamento Academico";
             // 
             // pictureBoxAdmi
             // 
             this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
-            this.pictureBoxAdmi.Location = new System.Drawing.Point(51, 162);
-            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxAdmi.Location = new System.Drawing.Point(68, 199);
+            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxAdmi.Name = "pictureBoxAdmi";
-            this.pictureBoxAdmi.Size = new System.Drawing.Size(102, 104);
+            this.pictureBoxAdmi.Size = new System.Drawing.Size(136, 128);
             this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxAdmi.TabIndex = 0;
             this.pictureBoxAdmi.TabStop = false;
@@ -218,19 +217,19 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(16, 320);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(21, 394);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 4);
+            this.panel2.Size = new System.Drawing.Size(251, 5);
             this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(16, 101);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(21, 124);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 4);
+            this.panel1.Size = new System.Drawing.Size(251, 5);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -238,10 +237,9 @@ namespace CapaPresentacion
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(91, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(121, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 15);
+            this.label2.Size = new System.Drawing.Size(102, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Y DE SISTEMAS";
             // 
@@ -250,20 +248,19 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(67, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(89, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 15);
+            this.label1.Size = new System.Drawing.Size(183, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "INGENERIA INFORMATICA ";
             // 
             // pictureBoxlogo
             // 
             this.pictureBoxlogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxlogo.Location = new System.Drawing.Point(9, 32);
-            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxlogo.Location = new System.Drawing.Point(12, 39);
+            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxlogo.Name = "pictureBoxlogo";
-            this.pictureBoxlogo.Size = new System.Drawing.Size(46, 47);
+            this.pictureBoxlogo.Size = new System.Drawing.Size(61, 58);
             this.pictureBoxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxlogo.TabIndex = 0;
             this.pictureBoxlogo.TabStop = false;
@@ -288,10 +285,10 @@ namespace CapaPresentacion
             this.pictureBoxMaxRest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMaxRest.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMaxRest.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMaxRest.Image")));
-            this.pictureBoxMaxRest.Location = new System.Drawing.Point(921, 4);
-            this.pictureBoxMaxRest.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxMaxRest.Location = new System.Drawing.Point(1228, 5);
+            this.pictureBoxMaxRest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMaxRest.Name = "pictureBoxMaxRest";
-            this.pictureBoxMaxRest.Size = new System.Drawing.Size(28, 28);
+            this.pictureBoxMaxRest.Size = new System.Drawing.Size(37, 34);
             this.pictureBoxMaxRest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMaxRest.TabIndex = 6;
             this.pictureBoxMaxRest.TabStop = false;
@@ -302,10 +299,10 @@ namespace CapaPresentacion
             this.btnMINIMIZAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMINIMIZAR.BackColor = System.Drawing.Color.Transparent;
             this.btnMINIMIZAR.Image = ((System.Drawing.Image)(resources.GetObject("btnMINIMIZAR.Image")));
-            this.btnMINIMIZAR.Location = new System.Drawing.Point(889, 4);
-            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMINIMIZAR.Location = new System.Drawing.Point(1185, 5);
+            this.btnMINIMIZAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMINIMIZAR.Name = "btnMINIMIZAR";
-            this.btnMINIMIZAR.Size = new System.Drawing.Size(28, 28);
+            this.btnMINIMIZAR.Size = new System.Drawing.Size(37, 34);
             this.btnMINIMIZAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMINIMIZAR.TabIndex = 6;
             this.btnMINIMIZAR.TabStop = false;
@@ -316,10 +313,10 @@ namespace CapaPresentacion
             this.btnCERRAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCERRAR.BackColor = System.Drawing.Color.Transparent;
             this.btnCERRAR.Image = ((System.Drawing.Image)(resources.GetObject("btnCERRAR.Image")));
-            this.btnCERRAR.Location = new System.Drawing.Point(953, 4);
-            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCERRAR.Location = new System.Drawing.Point(1271, 5);
+            this.btnCERRAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCERRAR.Name = "btnCERRAR";
-            this.btnCERRAR.Size = new System.Drawing.Size(28, 28);
+            this.btnCERRAR.Size = new System.Drawing.Size(37, 34);
             this.btnCERRAR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCERRAR.TabIndex = 4;
             this.btnCERRAR.TabStop = false;
@@ -337,10 +334,10 @@ namespace CapaPresentacion
             this.panelContenedor3.Controls.Add(this.label5);
             this.panelContenedor3.Controls.Add(this.label3);
             this.panelContenedor3.Controls.Add(this.label7);
-            this.panelContenedor3.Location = new System.Drawing.Point(232, 45);
-            this.panelContenedor3.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContenedor3.Location = new System.Drawing.Point(309, 55);
+            this.panelContenedor3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContenedor3.Name = "panelContenedor3";
-            this.panelContenedor3.Size = new System.Drawing.Size(752, 494);
+            this.panelContenedor3.Size = new System.Drawing.Size(1003, 608);
             this.panelContenedor3.TabIndex = 9;
             // 
             // label6
@@ -348,12 +345,13 @@ namespace CapaPresentacion
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(5, 395);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(7, 486);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(799, 28);
+            this.label6.Size = new System.Drawing.Size(991, 37);
             this.label6.TabIndex = 78;
             this.label6.Text = "Acreditada por el Comité de Acreditación de Computación ICACIT";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,10 +363,10 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(276, 203);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(394, 230);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(178, 183);
+            this.pictureBox3.Size = new System.Drawing.Size(221, 219);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 77;
             this.pictureBox3.TabStop = false;
@@ -380,10 +378,9 @@ namespace CapaPresentacion
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(62, 139);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(83, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(641, 30);
+            this.label5.Size = new System.Drawing.Size(776, 37);
             this.label5.TabIndex = 76;
             this.label5.Text = "Con alto contenido en Ciencias de la Computación";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -395,10 +392,9 @@ namespace CapaPresentacion
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(61, 87);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(81, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(636, 41);
+            this.label3.Size = new System.Drawing.Size(788, 49);
             this.label3.TabIndex = 75;
             this.label3.Text = "Ingenieria Informatica y de sistemas ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,10 +406,9 @@ namespace CapaPresentacion
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(229, 47);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(305, 58);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(283, 30);
+            this.label7.Size = new System.Drawing.Size(343, 37);
             this.label7.TabIndex = 74;
             this.label7.Text = "Escuela profesional de";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,10 +418,9 @@ namespace CapaPresentacion
             this.labelHora.AutoSize = true;
             this.labelHora.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHora.ForeColor = System.Drawing.Color.DimGray;
-            this.labelHora.Location = new System.Drawing.Point(280, 11);
-            this.labelHora.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelHora.Location = new System.Drawing.Point(373, 14);
             this.labelHora.Name = "labelHora";
-            this.labelHora.Size = new System.Drawing.Size(80, 25);
+            this.labelHora.Size = new System.Drawing.Size(99, 34);
             this.labelHora.TabIndex = 0;
             this.labelHora.Text = "label3";
             // 
@@ -435,10 +429,9 @@ namespace CapaPresentacion
             this.labelFecha.AutoSize = true;
             this.labelFecha.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFecha.ForeColor = System.Drawing.Color.DimGray;
-            this.labelFecha.Location = new System.Drawing.Point(458, 11);
-            this.labelFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFecha.Location = new System.Drawing.Point(611, 14);
             this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(80, 25);
+            this.labelFecha.Size = new System.Drawing.Size(99, 34);
             this.labelFecha.TabIndex = 10;
             this.labelFecha.Text = "label3";
             // 
@@ -450,10 +443,10 @@ namespace CapaPresentacion
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(232, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(309, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 36);
+            this.pictureBox1.Size = new System.Drawing.Size(57, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -461,20 +454,20 @@ namespace CapaPresentacion
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(403, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(537, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 36);
+            this.pictureBox2.Size = new System.Drawing.Size(57, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
             // frmDirecDepAcade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(988, 549);
+            this.ClientSize = new System.Drawing.Size(1317, 676);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelFecha);
@@ -486,7 +479,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pnlLateral);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDirecDepAcade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiecDepAcade";
