@@ -92,6 +92,7 @@ namespace CapaPresentacion
                 dgvCursosDocente.Visible = false; //Ocultar datagridview
                 labelMensaje.Visible = true; //Mostrar label
                 pictureBoxLibros.Visible = true; // Mostrar imagen
+                pictureBoxComputadora.Visible = false;
             }
         }
         //duplicado
@@ -142,6 +143,16 @@ namespace CapaPresentacion
             //Mostrar horario del docente o mensaje si no tiene ningun curso
             MostrarHorarioxDia(Docente);
             
+        }
+
+        private void pictureBoxLibros_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxComputadora_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

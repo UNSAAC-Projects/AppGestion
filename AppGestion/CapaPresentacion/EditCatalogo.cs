@@ -38,6 +38,11 @@ namespace CapaPresentacion
                     MessageBox.Show("Complete el grupo del curso");
                     M = false;
                 }
+                else if (textSemestreLectivo.Text == "")
+                {
+                    MessageBox.Show("Complete el semestre lectivo del curso");
+                    M = false;
+                }
                 else if (textAula.Text == "")
                 {
                     MessageBox.Show("Complete el aula del curso");
@@ -171,6 +176,7 @@ namespace CapaPresentacion
                     {
                         entities.IdCatalogo = textIdCatalogo.Text;
                         entities.NroSemestre = textNroSemestre.Text;
+                        entities.SemestreLectivo = textSemestreLectivo.Text;
                         entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
                         entities.Grupo = cmbGrupo.Text;
                         entities.Aula = textAula.Text;
@@ -224,14 +230,15 @@ namespace CapaPresentacion
             if (Update == true)
             {
 
-                try
-                {
+                //try
+                //{
                     int cred = Convert.ToInt32(textCreditos.Text);
                     if (validar(cred))
                     {
                         entities.IdCatalogo = textIdCatalogo.Text;
                         textIdCatalogo.Enabled = false;
                         entities.NroSemestre = textNroSemestre.Text;
+                        entities.SemestreLectivo = textSemestreLectivo.Text;
                         entities.CodAsignatura = textCodigo.Text;// + cmbGrupo.Text + "IN";
                         entities.Grupo = cmbGrupo.Text;
                         entities.Aula = textAula.Text;
@@ -276,11 +283,11 @@ namespace CapaPresentacion
                         Close();
                         Update = false;
                     }
-                }
-                catch
-                {
-                    MessageBox.Show("No es posible editar");
-                }
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("No es posible editar");
+                //}
             }
 
         }
@@ -308,6 +315,11 @@ namespace CapaPresentacion
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textIdCatalogo_TextChanged(object sender, EventArgs e)
         {
 
         }

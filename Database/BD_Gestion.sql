@@ -37,7 +37,7 @@ CREATE TABLE TAsignatura
 	HorasPracticas varchar(2),
 	HorasTeoricas varchar(2),
 	Prerrequisitos varchar(100),
-	NroSemestre varchar(5),
+	NroSemestre varchar(2),
 	PRIMARY KEY (CodAsignatura),
 	FOREIGN KEY (IDPlan) REFERENCES TPlanDeEstudios
 )
@@ -59,7 +59,7 @@ GO
 CREATE TABLE TCatalogo
 (
 	IDCatalogo varchar(6),
-	SemestreLectivo varchar(6),
+	SemestreLectivo varchar(8),
 	NroSemestre varchar(2),
 	CodAsignatura varchar(6),
 	Grupo varchar(1),
@@ -94,6 +94,7 @@ create table TPlanSesiones
 	IDCatalogo			varchar(6),
 	Finalizado			varchar(14),
 	Observacion			varchar(100),
+	VariacionHora		varchar(2),
 	foreign key(IDCatalogo) references TCatalogo
 )
 go
@@ -212,7 +213,7 @@ create proc SP_INSERTARASIGNATURA
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
 	@Prerrequisitos varchar(100),
-	@NroSemestre varchar(5)
+	@NroSemestre varchar(2)
 as
 insert into TAsignatura values(@CodAsignatura,@IDPlan,@Nombre,@Creditos,@Categoria,@HorasPracticas,@HorasTeoricas,@Prerrequisitos,@NroSemestre)
 go
@@ -226,14 +227,13 @@ create proc SP_EDITARASIGNATURA
 	@Categoria varchar(100),
 	@HorasPracticas varchar(2),
 	@HorasTeoricas varchar(2),
-	@Prerrequisitos varchar(100),
-	@NroSemestre varchar(5)
+	@Prerrequisitos varchar(100)
 as 
 update TAsignatura set IDPlan=@IDPlan, Nombre=@Nombre,Creditos=@Creditos,Categoria=@Categoria,HorasPracticas=@HorasPracticas,
-		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos,NroSemestre=@NroSemestre
+		HorasTeoricas=@HorasTeoricas,Prerrequisitos=@Prerrequisitos
 where CodAsignatura =@CodAsignatura
 go
------------procecedimiento alamcenado para leliminar una asignatura----------
+-----------procecedimiento alamcenado para eliminar una asignatura----------
 
 create proc SP_ELIMINARASIGNATURA
 @CodAsignatura varchar(10)
@@ -259,9 +259,9 @@ where NroSemestre like @BUSCAR + '%' or  CodAsignatura like @BUSCAR + '%'
 go
 
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
-create proc SP_INSERTARCATALOGO
+create or alter proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
-	@SemestreLectivo varchar(6),
+	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -273,8 +273,9 @@ insert into TCatalogo values(@IDCatalogo,@SemestreLectivo,@NroSemestre,@CodAsign
 go
 
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
-create proc SP_EDITARCATALOGO
+create or alter proc SP_EDITARCATALOGO
 	@IDCatalogo varchar(6),
+	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
 	@CodAsignatura varchar(6),
 	@Grupo varchar(1),
@@ -283,7 +284,7 @@ create proc SP_EDITARCATALOGO
 	@CodDocentePractico varchar(6)
 as 
 delete from THorario where IDCatalogo=@IDCatalogo
-update TCatalogo set NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
+update TCatalogo set SemestreLectivo=@SemestreLectivo,NroSemestre=@NroSemestre, CodAsignatura=@CodAsignatura,Grupo=@Grupo,Aula=@Aula,CodDocentePractico=@CodDocentePractico, CodDocenteTeorico=@CodDocenteTeorico
 where IDCatalogo =@IDCatalogo
 go
  
@@ -333,17 +334,17 @@ AS INSERT INTO THorario values (
 go
 
 ----------------------  PROCEDIMIENTOS ALMACENADOS PARA VISTA CATALOGO ------------------------------------------------------
-CREATE PROC SP_VISTACATALOGO
+CREATE or alter PROC SP_VISTACATALOGO
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
+select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 -------procedimiento almacenado para buscar curso-----
-CREATE PROC SP_BUSCARVISTACATALOGO
+CREATE or alter PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
-select C.IDCatalogo,C.CodAsignatura ,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , A.Categoria, C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico
+select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 where A.Nombre like @BUSCAR + '%'
 go
@@ -675,7 +676,8 @@ select
 	P.Tema, 
 	P.HorasProgramadas AS Horas,
 	p.Finalizado,
-	p.Observacion
+	p.Observacion,
+	p.VariacionHora
 from TPlanSesiones P
 where P.IDCatalogo=@CodCatalogo
 GO
@@ -717,18 +719,13 @@ CREATE PROC SP_OBTENER_TEMAS_PROXIMOS
 AS
 	SET @IDTema = (
 		SELECT TOP 1 Id FROM TPlanSesiones 
-		WHERE IDCatalogo = @IDCatalogo AND Finalizado = 'NO'
+		WHERE IDCatalogo = @IdCatalogo AND Finalizado = 'NO'
 	) --Obtener id
 
-	IF @IDTema IS NULL
-		SET @IDTema = -1
-	ELSE
-		BEGIN
-		SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
-		WHERE Id = @IDTema 
-		--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
-		OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
-		END
+	SELECT Id, Unidad, Capitulo, Tema FROM TPlanSesiones
+	WHERE Id = @IDTema 
+	--OR Id = (@IDTema-1) OR Id = (@IDTema-2) OR Id = (@IDTema-3) --Mostrar 3 temas anteriores
+	OR Id = (@IDTema+1) OR Id = (@IDTema+2) OR Id = (@IDTema+3) --Mostrar 3 temas posteriores
 GO
 
 --Agregar nuevo tema despues del ID especificado
@@ -754,7 +751,7 @@ AS
 	WHERE Id <= @IdAnterior
 
 	--Agregar nuevo tema
-	INSERT INTO TPlanSesiones VALUES ('','',@Tema,'02',@IDCatalogo,'NO','')
+	INSERT INTO TPlanSesiones VALUES ('','',@Tema,'02',@IDCatalogo,'NO','','')
 
 	--Agregar informacion posterior al ID
 	INSERT INTO TPlanSesiones
@@ -850,7 +847,7 @@ create proc SP_InsertarDatosAsistencia
 	@Fecha date,
 	@IDCatalogo varchar(6)
 as
---Si ya existe asisitencia de esa fecha y se ese curso, actualizar tema
+--Si ya existe asistencia de esa fecha y se ese curso, actualizar tema
 if exists (select * from TListaAsistencias where Fecha = @Fecha and IdCatalogo = @IDCatalogo)
 	begin
 		update TListaAsistencias 
@@ -985,7 +982,4 @@ as
 	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
 go
-
-
-
 

@@ -18,8 +18,6 @@ namespace CapaPresentacion
         public frmVistaHorarios()
         {
             InitializeComponent();
-            MostrarVistaCatalogo();
-            //OcultarMoverAncharColumnas();
         }
 
         public void MostrarVistaCatalogo()
@@ -28,10 +26,16 @@ namespace CapaPresentacion
             dgvHorarios.DataSource = ovista.ListandoHorarios();
 
         }
-        //public void OcultarMoverAncharColumnas()
-        //{
-        //    dgvHorarios.Columns[0].Width = 60;
-        //}
+        public void OcultarMoverAncharColumnas()
+        {
+            dgvHorarios.Columns["CodAsignatura"].Width = 130;
+            dgvHorarios.Columns["Nombre"].Width = 310;
+            dgvHorarios.Columns["Grupo"].Width = 90;
+            dgvHorarios.Columns["Dia"].Width = 90;
+            dgvHorarios.Columns["HoraInicio"].Width = 100;
+            dgvHorarios.Columns["HoraFin"].Width = 80;
+            dgvHorarios.Columns["Tipo"].Width = 80;
+        }
 
         private void btnMinVistaHorario_Click(object sender, EventArgs e)
         {
@@ -63,7 +67,8 @@ namespace CapaPresentacion
 
         private void frmVistaHorarios_Load(object sender, EventArgs e)
         {
-
+            MostrarVistaCatalogo();
+            OcultarMoverAncharColumnas();
         }
     }
 }
