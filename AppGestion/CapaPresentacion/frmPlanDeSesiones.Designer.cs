@@ -60,6 +60,7 @@ namespace CapaPresentacion
             this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VariacionH = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Tiempo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
@@ -159,7 +160,8 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.eliminar,
             this.Completado,
-            this.VariacionH});
+            this.VariacionH,
+            this.Tiempo});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -422,6 +424,18 @@ namespace CapaPresentacion
             this.VariacionH.Name = "VariacionH";
             this.VariacionH.Width = 87;
             // 
+            // Tiempo
+            // 
+            this.Tiempo.HeaderText = "Horas";
+            this.Tiempo.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04"});
+            this.Tiempo.MinimumWidth = 6;
+            this.Tiempo.Name = "Tiempo";
+            this.Tiempo.Width = 55;
+            // 
             // frmPlanDeSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -493,5 +507,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataGridViewImageColumn eliminar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
         private System.Windows.Forms.DataGridViewComboBoxColumn VariacionH;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Tiempo;
     }
 }

@@ -73,7 +73,7 @@ namespace CapaPresentacion
         {
             //Obtener día
             ObtenerTiempo(out _, out _, out string dia);
-            dia = "JUEVES";
+            dia = "VIERNES";
 
             //Mostrar tabla
             // Obtener tabla de horarios del dia actual
