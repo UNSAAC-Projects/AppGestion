@@ -887,6 +887,7 @@ else
 insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
 go
 
+
 -- Mostrar reporte de sesiones
 CREATE PROC SP_REPORTE_SESIONES
 	@IdCatalogo varchar(4)
@@ -897,11 +898,10 @@ select @Categoria = Categoria from TAsignatura
 	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
 -- Mostrar reporte
 select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
-	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes',VariacionHora
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
-
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
 @IdCatalogo VARCHAR(6),
