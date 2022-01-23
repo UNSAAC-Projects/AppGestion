@@ -983,3 +983,12 @@ as
 	drop table if exists #tmp
 go
 
+CREATE PROC SP_REPORTE_AVANCE_SESIONES
+@IdDocente varchar(6)
+AS
+select  C.CodAsignatura + Grupo + 'IN' as Asignatura,count(Finalizado) as CantidadAvance
+	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+	where  Finalizado='SI' and C.CodDocenteTeorico=@IdDocente
+	group by P.IDCatalogo,C.CodAsignatura,C.Grupo
+go
+
