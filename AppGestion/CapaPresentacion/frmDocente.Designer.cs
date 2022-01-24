@@ -58,7 +58,6 @@ namespace CapaPresentacion
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -77,7 +76,6 @@ namespace CapaPresentacion
             this.ContenedorLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.ContenedorLogin.Controls.Add(this.button1);
             this.ContenedorLogin.Controls.Add(this.btnLogout);
             this.ContenedorLogin.Controls.Add(this.btnCursosPorDia);
             this.ContenedorLogin.Controls.Add(this.buttonReporteSesiones);
@@ -113,7 +111,7 @@ namespace CapaPresentacion
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(-4, 764);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
             this.btnLogout.Size = new System.Drawing.Size(317, 60);
@@ -137,7 +135,7 @@ namespace CapaPresentacion
             this.btnCursosPorDia.Image = ((System.Drawing.Image)(resources.GetObject("btnCursosPorDia.Image")));
             this.btnCursosPorDia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCursosPorDia.Location = new System.Drawing.Point(3, 432);
-            this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4);
             this.btnCursosPorDia.Name = "btnCursosPorDia";
             this.btnCursosPorDia.Size = new System.Drawing.Size(304, 60);
             this.btnCursosPorDia.TabIndex = 15;
@@ -160,7 +158,7 @@ namespace CapaPresentacion
             this.buttonReporteSesiones.Image = ((System.Drawing.Image)(resources.GetObject("buttonReporteSesiones.Image")));
             this.buttonReporteSesiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonReporteSesiones.Location = new System.Drawing.Point(0, 702);
-            this.buttonReporteSesiones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReporteSesiones.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReporteSesiones.Name = "buttonReporteSesiones";
             this.buttonReporteSesiones.Size = new System.Drawing.Size(317, 60);
             this.buttonReporteSesiones.TabIndex = 14;
@@ -183,7 +181,7 @@ namespace CapaPresentacion
             this.btnREPORTEASISTENCIA.Image = ((System.Drawing.Image)(resources.GetObject("btnREPORTEASISTENCIA.Image")));
             this.btnREPORTEASISTENCIA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnREPORTEASISTENCIA.Location = new System.Drawing.Point(0, 633);
-            this.btnREPORTEASISTENCIA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnREPORTEASISTENCIA.Margin = new System.Windows.Forms.Padding(4);
             this.btnREPORTEASISTENCIA.Name = "btnREPORTEASISTENCIA";
             this.btnREPORTEASISTENCIA.Size = new System.Drawing.Size(337, 60);
             this.btnREPORTEASISTENCIA.TabIndex = 13;
@@ -206,7 +204,7 @@ namespace CapaPresentacion
             this.btnReporteCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCursos.Image")));
             this.btnReporteCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteCursos.Location = new System.Drawing.Point(0, 561);
-            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteCursos.Name = "btnReporteCursos";
             this.btnReporteCursos.Size = new System.Drawing.Size(337, 60);
             this.btnReporteCursos.TabIndex = 12;
@@ -218,7 +216,7 @@ namespace CapaPresentacion
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(3, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -263,7 +261,7 @@ namespace CapaPresentacion
             this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
             this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerCursosDocente.Location = new System.Drawing.Point(4, 494);
-            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCursosDocente.Name = "btnVerCursosDocente";
             this.btnVerCursosDocente.Size = new System.Drawing.Size(317, 60);
             this.btnVerCursosDocente.TabIndex = 11;
@@ -463,16 +461,6 @@ namespace CapaPresentacion
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick_1);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(113, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "btnReporteDocenteAvance";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -488,7 +476,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";
@@ -539,6 +527,5 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button button1;
     }
 }
