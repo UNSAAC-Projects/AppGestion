@@ -40,10 +40,10 @@
             this.labelNombre = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
             this.panelContenedor2 = new System.Windows.Forms.Panel();
+            this.PicBoxIndicador = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,11 +62,13 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
             this.panelContenedor2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -79,6 +81,7 @@
             // ContenedorLogin
             // 
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.panel3);
             this.ContenedorLogin.Controls.Add(this.btnLogout);
             this.ContenedorLogin.Controls.Add(this.btnVerCatalogos);
             this.ContenedorLogin.Controls.Add(this.btnASIGNATURA);
@@ -88,7 +91,6 @@
             this.ContenedorLogin.Controls.Add(this.labelNombre);
             this.ContenedorLogin.Controls.Add(this.panel2);
             this.ContenedorLogin.Controls.Add(this.panel1);
-            this.ContenedorLogin.Controls.Add(this.label1);
             this.ContenedorLogin.Controls.Add(this.pictureBox2);
             this.ContenedorLogin.Dock = System.Windows.Forms.DockStyle.Left;
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
@@ -99,22 +101,22 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(8, 642);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(0, 651);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(317, 49);
+            this.btnLogout.Size = new System.Drawing.Size(341, 54);
             this.btnLogout.TabIndex = 17;
             this.btnLogout.Text = "CERRAR SESION";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -122,8 +124,9 @@
             // 
             // btnVerCatalogos
             // 
-            this.btnVerCatalogos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnVerCatalogos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnVerCatalogos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnVerCatalogos.FlatAppearance.BorderSize = 0;
             this.btnVerCatalogos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnVerCatalogos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnVerCatalogos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -131,19 +134,20 @@
             this.btnVerCatalogos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnVerCatalogos.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCatalogos.Image")));
             this.btnVerCatalogos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCatalogos.Location = new System.Drawing.Point(9, 585);
+            this.btnVerCatalogos.Location = new System.Drawing.Point(0, 553);
             this.btnVerCatalogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerCatalogos.Name = "btnVerCatalogos";
-            this.btnVerCatalogos.Size = new System.Drawing.Size(323, 48);
+            this.btnVerCatalogos.Size = new System.Drawing.Size(332, 60);
             this.btnVerCatalogos.TabIndex = 13;
             this.btnVerCatalogos.Text = "VER CATALOGO";
-            this.btnVerCatalogos.UseVisualStyleBackColor = true;
+            this.btnVerCatalogos.UseVisualStyleBackColor = false;
             this.btnVerCatalogos.Click += new System.EventHandler(this.btnVerCatalogos_Click);
             // 
             // btnASIGNATURA
             // 
-            this.btnASIGNATURA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnASIGNATURA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnASIGNATURA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnASIGNATURA.FlatAppearance.BorderSize = 0;
             this.btnASIGNATURA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnASIGNATURA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnASIGNATURA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -151,20 +155,20 @@
             this.btnASIGNATURA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnASIGNATURA.Image = ((System.Drawing.Image)(resources.GetObject("btnASIGNATURA.Image")));
             this.btnASIGNATURA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnASIGNATURA.Location = new System.Drawing.Point(12, 529);
+            this.btnASIGNATURA.Location = new System.Drawing.Point(0, 491);
             this.btnASIGNATURA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnASIGNATURA.Name = "btnASIGNATURA";
-            this.btnASIGNATURA.Size = new System.Drawing.Size(311, 47);
+            this.btnASIGNATURA.Size = new System.Drawing.Size(323, 60);
             this.btnASIGNATURA.TabIndex = 12;
             this.btnASIGNATURA.Text = "ASIGNATURAS";
-            this.btnASIGNATURA.UseVisualStyleBackColor = true;
+            this.btnASIGNATURA.UseVisualStyleBackColor = false;
             this.btnASIGNATURA.Click += new System.EventHandler(this.btnASIGNATURA_Click);
             // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -188,7 +192,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(91, 53);
+            this.label3.Location = new System.Drawing.Point(91, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(207, 40);
             this.label3.TabIndex = 8;
@@ -218,27 +222,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(31, 140);
+            this.panel1.Location = new System.Drawing.Point(75, 140);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 2);
+            this.panel1.Size = new System.Drawing.Size(152, 2);
             this.panel1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(39, 482);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 30);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ADMINISTRADOR";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(79, 240);
+            this.pictureBox2.Location = new System.Drawing.Point(79, 243);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(131, 135);
@@ -265,6 +258,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelContenedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor2.BackgroundImage")));
+            this.panelContenedor2.Controls.Add(this.PicBoxIndicador);
             this.panelContenedor2.Controls.Add(this.label7);
             this.panelContenedor2.Controls.Add(this.label6);
             this.panelContenedor2.Controls.Add(this.label5);
@@ -276,6 +270,17 @@
             this.panelContenedor2.Size = new System.Drawing.Size(1067, 644);
             this.panelContenedor2.TabIndex = 12;
             // 
+            // PicBoxIndicador
+            // 
+            this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
+            this.PicBoxIndicador.Location = new System.Drawing.Point(113, 271);
+            this.PicBoxIndicador.Name = "PicBoxIndicador";
+            this.PicBoxIndicador.Size = new System.Drawing.Size(50, 24);
+            this.PicBoxIndicador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicBoxIndicador.TabIndex = 74;
+            this.PicBoxIndicador.TabStop = false;
+            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -285,7 +290,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(357, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(385, 40);
+            this.label7.Size = new System.Drawing.Size(378, 40);
             this.label7.TabIndex = 73;
             this.label7.Text = "Escuela profesional de";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,7 +304,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(-64, 545);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1131, 40);
+            this.label6.Size = new System.Drawing.Size(1097, 39);
             this.label6.TabIndex = 72;
             this.label6.Text = "Acreditada por el Comité de Acreditación de Computación ICACIT";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -313,7 +318,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(135, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(877, 40);
+            this.label5.Size = new System.Drawing.Size(854, 40);
             this.label5.TabIndex = 71;
             this.label5.Text = "Con alto contenido en Ciencias de la Computación";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,6 +498,16 @@
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(12, 642);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(287, 1);
+            this.panel3.TabIndex = 7;
+            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -513,6 +528,7 @@
             this.panelPrinciapl.ResumeLayout(false);
             this.panelContenedor2.ResumeLayout(false);
             this.panelContenedor2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
             this.panelMainDirEscuela.PerformLayout();
@@ -528,7 +544,6 @@
         #endregion
         private System.Windows.Forms.Panel ContenedorLogin;
         private System.Windows.Forms.Panel panelPrinciapl;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
@@ -558,5 +573,7 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox PicBoxIndicador;
+        private System.Windows.Forms.Panel panel3;
     }
 }

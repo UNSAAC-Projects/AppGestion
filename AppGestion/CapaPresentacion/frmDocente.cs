@@ -22,6 +22,13 @@ namespace CapaPresentacion
         DataTable tabla;
         public string Docente;
 
+        private bool OpcionCursosPorDia;
+        private bool OpcionVerCursosDocente;
+        private bool OpcionReporteCursos;
+        private bool OpcionREPORTEASISTENCIA;
+        private bool OpcionReporteSesiones;
+
+
         public frmDocente(string CodDocente)
         {
             InitializeComponent();
@@ -45,6 +52,27 @@ namespace CapaPresentacion
         private void btnVerCursosDocente_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmVistaCursosDocente(Docente));
+            //
+            OpcionCursosPorDia = false;
+            OpcionVerCursosDocente = true;
+            OpcionReporteCursos = false;
+            OpcionREPORTEASISTENCIA = false;
+            OpcionReporteSesiones = false;
+
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.BackColor = Color.WhiteSmoke;
+            btnReporteCursos.BackColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.BackColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(212, 172, 13);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.ForeColor = Color.FromArgb(212, 172, 13);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         private void btnMINIMIZAR_Click(object sender, EventArgs e)
@@ -88,6 +116,27 @@ namespace CapaPresentacion
         private void btnReporteCursos_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmListaAsistencias());
+            //
+            OpcionCursosPorDia = false;
+            OpcionVerCursosDocente = false;
+            OpcionReporteCursos = true;
+            OpcionREPORTEASISTENCIA = false;
+            OpcionReporteSesiones = false;
+
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.BackColor = Color.WhiteSmoke;
+            btnREPORTEASISTENCIA.BackColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(212, 172, 13);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(212, 172, 13);
+            btnReporteCursos.ForeColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         private void frmDocente_Load(object sender, EventArgs e)
@@ -108,11 +157,54 @@ namespace CapaPresentacion
             /*ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
             RAsistencia.CodDocente = datos.CodDocente;
             RAsistencia.ShowDialog();*/
+
+            //
+            OpcionCursosPorDia = false;
+            OpcionVerCursosDocente = false;
+            OpcionReporteCursos = false;
+            OpcionREPORTEASISTENCIA = true;
+            OpcionReporteSesiones = false;
+
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.BackColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.BackColor = Color.WhiteSmoke;
+            buttonReporteSesiones.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(212, 172, 13);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(212, 172, 13);
+            btnReporteCursos.ForeColor = Color.FromArgb(212, 172, 13);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         private void buttonReporteSesiones_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmReporteSesiones(Docente));
+            //
+            OpcionCursosPorDia = false;
+            OpcionVerCursosDocente = false;
+            OpcionReporteCursos = false;
+            OpcionREPORTEASISTENCIA = false;
+            OpcionReporteSesiones = true;
+
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.BackColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.BackColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.BackColor = Color.WhiteSmoke;
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(212, 172, 13);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(212, 172, 13);
+            btnReporteCursos.ForeColor = Color.FromArgb(212, 172, 13);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(33, 47, 60);
         }
         private Form formActivado = null;
         private void AbrirFormulariosEnPanelContenedor(Form FormHijo)
@@ -131,6 +223,27 @@ namespace CapaPresentacion
         private void btnCursosPorDia_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDocente(Docente));
+            //
+            OpcionCursosPorDia = true;
+            OpcionVerCursosDocente = false;
+            OpcionReporteCursos = false;
+            OpcionREPORTEASISTENCIA = false;
+            OpcionReporteSesiones = false;
+
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.WhiteSmoke;
+            btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.BackColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.BackColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(212, 172, 13);
+            btnReporteCursos.ForeColor = Color.FromArgb(212, 172, 13);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         private void panelContenedor_Paint(object sender, PaintEventArgs e)
