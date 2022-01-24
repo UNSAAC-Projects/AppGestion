@@ -54,5 +54,31 @@ namespace CapaDatos
             cmd.ExecuteNonQuery();
             conexion.Close();
         }
+        public DataTable ReporteAsistenciaDocenteDiaria(string FechaInicio, string FechaFin)
+        {
+            try
+            {
+                DataTable tabla = new DataTable();
+                SqlCommand cmd = new SqlCommand("sp_ReporteAsistenciaDocentes", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
+
+                cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio);
+                cmd.Parameters.AddWithValue("@FechaFin", FechaFin);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                conexion.Close();
+                return tabla;
+            }
+            catch
+            {
+                MessageBox.Show("No hay asistencias registradas o el rango de fechas es incorrecto");
+                conexion.Close();
+                return null;
+            }
+
+        }
     }
 }
