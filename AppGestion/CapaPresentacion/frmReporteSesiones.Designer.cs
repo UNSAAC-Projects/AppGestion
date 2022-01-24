@@ -94,9 +94,9 @@
             this.labelReporteAsistencia.Location = new System.Drawing.Point(356, 9);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
-            this.labelReporteAsistencia.Size = new System.Drawing.Size(345, 39);
+            this.labelReporteAsistencia.Size = new System.Drawing.Size(353, 39);
             this.labelReporteAsistencia.TabIndex = 1;
-            this.labelReporteAsistencia.Text = "REPORTE DE AVANCE";
+            this.labelReporteAsistencia.Text = "REPORTE DE SESIONES";
             // 
             // buttonExportar
             // 
