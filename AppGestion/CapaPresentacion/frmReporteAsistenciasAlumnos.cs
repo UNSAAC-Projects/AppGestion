@@ -11,13 +11,13 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class ReporteAsistenciasAlumnos : Form
+    public partial class frmReporteAsistenciasAlumnos : Form
     {
         readonly N_ReporteAsistencia oreporteasistencia = new N_ReporteAsistencia();
         readonly N_CursosDocente D = new N_CursosDocente();
 
         public string CodDocente;
-        public ReporteAsistenciasAlumnos()
+        public frmReporteAsistenciasAlumnos()
         {
             InitializeComponent();
         }
@@ -79,6 +79,40 @@ namespace CapaPresentacion
             //}
         }
 
+        public DataTable mostrarReporte(string fechaInferior, string fechaSuperior)
+        {
+            DataGridView dgvAux = new DataGridView();
+            //recuperando valores del combo box fantasma
+            string NombreAsig = cbNombreCurso.Text;
+            string Grupo = cbGrupo.Text;
+            // recuperando el IdCatalogo del curso seleccionado
+            string IdCat = oreporteasistencia.recuperarIdCat(NombreAsig, CodDocente, Grupo);
+            string limInferior = fechaInferior;
+            string limSuperior = fechaSuperior;
+            //mostrar el reporte de asistencias
+            dgvAux.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
+            //Agregar la columna de porcentajes
+            dgvAux.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+            int M;
+            string valorFila;
+            M = dgvAux.Columns.Count;
+            //calcular el procentaje de asistencias
+            foreach (DataGridViewRow m in dgvAux.Rows)
+            {
+                int asistencia;
+                asistencia = 0;
+                for (int i = 2; i < M - 1; i++)
+                {
+                    valorFila = m.Cells[i].Value.ToString();
+                    if (valorFila == "P") asistencia++;
+                }
+                float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
+                PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
+                m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
+            }
+            DataTable tabla = dgvAux.DataSource as DataTable;
+            return tabla;
+        }
         private void comboBoxCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
             dgvReporteAsistencia.Columns.Clear();

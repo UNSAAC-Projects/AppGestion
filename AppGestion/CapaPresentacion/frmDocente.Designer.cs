@@ -96,7 +96,6 @@ namespace CapaPresentacion
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(311, 861);
             this.ContenedorLogin.TabIndex = 2;
-            this.ContenedorLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorLogin_Paint);
             // 
             // btnLogout
             // 
@@ -335,7 +334,6 @@ namespace CapaPresentacion
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // labelHora
             // 
@@ -347,7 +345,6 @@ namespace CapaPresentacion
             this.labelHora.Size = new System.Drawing.Size(99, 34);
             this.labelHora.TabIndex = 13;
             this.labelHora.Text = "label3";
-            this.labelHora.Click += new System.EventHandler(this.labelHora_Click);
             // 
             // pictureBox1
             // 
@@ -359,7 +356,6 @@ namespace CapaPresentacion
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // labelFecha
             // 
@@ -371,7 +367,6 @@ namespace CapaPresentacion
             this.labelFecha.Size = new System.Drawing.Size(99, 34);
             this.labelFecha.TabIndex = 14;
             this.labelFecha.Text = "label3";
-            this.labelFecha.Click += new System.EventHandler(this.labelFecha_Click);
             // 
             // dataGridViewImageColumn1
             // 
@@ -457,7 +452,6 @@ namespace CapaPresentacion
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1003, 791);
             this.panelContenedor.TabIndex = 41;
-            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // timerHoraFecha
             // 
