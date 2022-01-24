@@ -55,28 +55,28 @@ namespace CapaPresentacion
             string limSuperior = dtpFechaSuperior.Value.ToString("yyyy-MM-dd");
             //mostrar el reporte de asistencias
             dgvReporteAsistencia.DataSource = oreporteasistencia.ReporteAsistencia(IdCat, limInferior, limSuperior);
-            //Agregar la columna de porcentajes
-            dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
-            int M;
-            string valorFila;
-            M = dgvReporteAsistencia.Columns.Count;
-            //calcular el procentaje de asistencias
-            foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
-            {
-                int asistencia;
-                asistencia = 0;
-                for (int i = 2; i < M - 1; i++)
-                {
-                    valorFila = m.Cells[i].Value.ToString();
-                    if (valorFila == "P")
-                    {
-                        asistencia++;
-                    }
-                }
-                float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
-                PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
-                m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
-            }
+            ////Agregar la columna de porcentajes
+            //dgvReporteAsistencia.Columns.Add("Porcentaje", "Porcentaje de Asistencia");
+            //int M;
+            //string valorFila;
+            //M = dgvReporteAsistencia.Columns.Count;
+            ////calcular el procentaje de asistencias
+            //foreach (DataGridViewRow m in dgvReporteAsistencia.Rows)
+            //{
+            //    int asistencia;
+            //    asistencia = 0;
+            //    for (int i = 2; i < M - 1; i++)
+            //    {
+            //        valorFila = m.Cells[i].Value.ToString();
+            //        if (valorFila == "P")
+            //        {
+            //            asistencia++;
+            //        }
+            //    }
+            //    float PORCENTAJE = (((float)asistencia * 100 / (float)(M - 3)));
+            //    PORCENTAJE = (float)Math.Round(PORCENTAJE, 2);
+            //    m.Cells["Porcentaje"].Value = PORCENTAJE.ToString() + "%";
+            //}
         }
 
         private void comboBoxCurso_SelectedIndexChanged(object sender, EventArgs e)
