@@ -44,6 +44,7 @@ namespace CapaPresentacion
                 dgvReporteSesiones.Columns["Total Asistentes"].Visible = false;
                 dgvReporteSesiones.Columns["Total faltantes"].Visible = false;
             }
+           
         }
 
         private void MostrarItemsComboBox(string[] Asignaturas)
@@ -100,6 +101,31 @@ namespace CapaPresentacion
         private void btnCerrarFrmReportesSesiones_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboTiemposCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //lista
+            string msg;
+
+            string filterField = "VariacionHora";
+            if(cboTiemposCursos.SelectedIndex-1 ==-1)
+            {
+                msg = "-";
+                ((DataTable)dgvReporteSesiones.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, msg);
+            }
+            else if(cboTiemposCursos.SelectedIndex - 1 == 0)
+            {
+                msg = "0";
+                ((DataTable)dgvReporteSesiones.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, msg);
+            }
+            else if (cboTiemposCursos.SelectedIndex - 1 == 1)
+            {
+                msg = "+";
+                ((DataTable)dgvReporteSesiones.DataSource).DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField,msg);
+            }
+
+
         }
 
         private void dgvReporteSesiones_CellContentClick(object sender, DataGridViewCellEventArgs e)

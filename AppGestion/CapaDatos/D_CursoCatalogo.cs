@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using CapaEntidades;
-
+using System.Windows.Forms;
 
 namespace CapaDatos
 {
@@ -65,14 +65,22 @@ namespace CapaDatos
         }
         public void EliminarCursoCatalogo(string idCatalogo)
         {
-            SqlCommand cmd = new SqlCommand("SP_ELIMINARCATALOGO", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_ELIMINARCATALOGO", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
 
-            cmd.Parameters.AddWithValue("@IDCatalogo", idCatalogo);
+                cmd.Parameters.AddWithValue("@IDCatalogo", idCatalogo);
 
-            cmd.ExecuteNonQuery();
-            conexion.Close();
+                cmd.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch 
+            {
+                string mensaje = "No se puede eliminar el curso del catalogo debido a que el curso ya esta en curso.";
+                MessageBox.Show(mensaje, "Error");
+            }
         }
 
         public void CrearCursoCatalogo(E_CursoCatalogo curso)
@@ -82,6 +90,7 @@ namespace CapaDatos
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
             cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
+            cmd.Parameters.AddWithValue("@SemestreLectivo", curso.SemestreLectivo);
             cmd.Parameters.AddWithValue("@NroSemestre", curso.NroSemestre);
             cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
             cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);
@@ -99,6 +108,7 @@ namespace CapaDatos
             cmd.CommandType = CommandType.StoredProcedure;
             conexion.Open();
             cmd.Parameters.AddWithValue("@IDCatalogo", curso.IdCatalogo);
+            cmd.Parameters.AddWithValue("@SemestreLectivo", curso.SemestreLectivo);
             cmd.Parameters.AddWithValue("@NroSemestre", curso.NroSemestre);
             cmd.Parameters.AddWithValue("@CodAsignatura", curso.CodAsignatura);
             cmd.Parameters.AddWithValue("@Grupo", curso.Grupo);

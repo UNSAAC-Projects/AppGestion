@@ -144,9 +144,10 @@ namespace CapaDatos
                 return null;
             }
         }
-        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo) {
+        public void GuardarPlanSesiones(DataTable tabla, string IDCatalogo) 
+        {
             
-            string Unidad, Capitulo, Tema, Horas, Finalizado, Observacion;
+            string Unidad, Capitulo, Tema, Horas, Finalizado, Observacion,VariacionHora;
 
             string ComandoSQL = $"exec SP_Eliminar_PLANXCATALOGO \'{IDCatalogo}\' \n";
 
@@ -157,12 +158,13 @@ namespace CapaDatos
                 Horas=fila["Horas"].ToString();
                 Finalizado=fila["Finalizado"].ToString();
                 Observacion=fila["Observacion"].ToString();
+                VariacionHora = fila["VariacionHora"].ToString();
 
                 //Observacion == "" ? "\'\'": fila["Observacion"].ToString();
 
                 //if (Observacion == "") { Observacion = "\'\'"; }
 
-                ComandoSQL +=$"Insert Into TPlanSesiones values (\'{Unidad}\',\'{Capitulo}\',\'{Tema}\',\'{Horas}\',\'{IDCatalogo}\',\'{Finalizado}\',\'{Observacion}\')\n";
+                ComandoSQL +=$"Insert Into TPlanSesiones values (\'{Unidad}\',\'{Capitulo}\',\'{Tema}\',\'{Horas}\',\'{IDCatalogo}\',\'{Finalizado}\',\'{Observacion}\' ,\'{VariacionHora}\')\n";
 
                 
             }
