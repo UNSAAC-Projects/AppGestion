@@ -1,6 +1,6 @@
 ﻿namespace CapaPresentacion
 {
-    partial class frmReporteEstadoAlumno
+    partial class frmReporteEstadoAlumnos
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,14 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCursosReporte = new System.Windows.Forms.ComboBox();
             this.dgvEstadoAlumnos = new System.Windows.Forms.DataGridView();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartReporte = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoAlumnos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartReporte)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -111,37 +112,48 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEstadoAlumnos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEstadoAlumnos.EnableHeadersVisualStyles = false;
-            this.dgvEstadoAlumnos.Location = new System.Drawing.Point(20, 84);
+            this.dgvEstadoAlumnos.Location = new System.Drawing.Point(11, 73);
             this.dgvEstadoAlumnos.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvEstadoAlumnos.Name = "dgvEstadoAlumnos";
             this.dgvEstadoAlumnos.RowHeadersVisible = false;
             this.dgvEstadoAlumnos.RowHeadersWidth = 51;
             this.dgvEstadoAlumnos.RowTemplate.Height = 24;
-            this.dgvEstadoAlumnos.Size = new System.Drawing.Size(463, 324);
+            this.dgvEstadoAlumnos.Size = new System.Drawing.Size(476, 369);
             this.dgvEstadoAlumnos.TabIndex = 26;
             // 
-            // chart1
+            // chartReporte
             // 
+            chartArea1.Area3DStyle.Inclination = 10;
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chartReporte.ChartAreas.Add(chartArea1);
+            legend1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(488, 84);
-            this.chart1.Name = "chart1";
+            this.chartReporte.Legends.Add(legend1);
+            this.chartReporte.Location = new System.Drawing.Point(511, 73);
+            this.chartReporte.Name = "chartReporte";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsValueShownAsLabel = true;
+            series1.LabelFormat = "#.##%";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 27;
-            this.chart1.Text = "chart1";
+            series1.Name = "Estado";
+            this.chartReporte.Series.Add(series1);
+            this.chartReporte.Size = new System.Drawing.Size(369, 300);
+            this.chartReporte.TabIndex = 27;
+            this.chartReporte.Text = "chart";
+            title1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.Name = "Title1";
+            title1.Text = "Reporte";
+            this.chartReporte.Titles.Add(title1);
             // 
             // frmReporteEstadoAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(902, 495);
+            this.Controls.Add(this.chartReporte);
             this.Controls.Add(this.dgvEstadoAlumnos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
@@ -150,7 +162,7 @@
             this.Text = "frmReporteEstadoAlumno";
             this.Load += new System.EventHandler(this.frmReporteEstadoAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoAlumnos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartReporte)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +173,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCursosReporte;
         private System.Windows.Forms.DataGridView dgvEstadoAlumnos;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartReporte;
     }
 }

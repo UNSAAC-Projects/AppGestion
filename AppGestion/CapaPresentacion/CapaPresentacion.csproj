@@ -195,11 +195,11 @@
     <Compile Include="FormsDirDep\frmReporteAsistenciaDocente.Designer.cs">
       <DependentUpon>frmReporteAsistenciaDocente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteEstadoAlumno.cs">
+    <Compile Include="frmReporteEstadoAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReporteEstadoAlumno.Designer.cs">
-      <DependentUpon>frmReporteEstadoAlumno.cs</DependentUpon>
+    <Compile Include="frmReporteEstadoAlumnos.Designer.cs">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReporteSesiones.cs">
       <SubType>Form</SubType>
@@ -300,8 +300,8 @@
     <EmbeddedResource Include="FormsDirDep\frmReporteAsistenciaDocente.resx">
       <DependentUpon>frmReporteAsistenciaDocente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteEstadoAlumno.resx">
-      <DependentUpon>frmReporteEstadoAlumno.cs</DependentUpon>
+    <EmbeddedResource Include="frmReporteEstadoAlumnos.resx">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteSesiones.resx">
       <DependentUpon>frmReporteSesiones.cs</DependentUpon>
