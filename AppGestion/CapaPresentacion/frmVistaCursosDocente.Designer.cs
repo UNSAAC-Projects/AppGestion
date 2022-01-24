@@ -89,7 +89,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursosDocente.EnableHeadersVisualStyles = false;
-            this.dgvCursosDocente.Location = new System.Drawing.Point(143, 310);
+            this.dgvCursosDocente.Location = new System.Drawing.Point(128, 310);
             this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvCursosDocente.Name = "dgvCursosDocente";
             this.dgvCursosDocente.ReadOnly = true;
@@ -161,7 +161,7 @@ namespace CapaPresentacion
             this.panel1.Location = new System.Drawing.Point(3, 607);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(898, 5);
+            this.panel1.Size = new System.Drawing.Size(612, 5);
             this.panel1.TabIndex = 36;
             // 
             // panel2
@@ -173,7 +173,7 @@ namespace CapaPresentacion
             this.panel2.Location = new System.Drawing.Point(3, 593);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(898, 5);
+            this.panel2.Size = new System.Drawing.Size(612, 5);
             this.panel2.TabIndex = 35;
             // 
             // panel8
@@ -230,7 +230,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESCARGAR.Image")));
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(621, 571);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(623, 571);
             this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
             this.buttonDESCARGAR.Size = new System.Drawing.Size(306, 45);

@@ -58,6 +58,7 @@ namespace CapaPresentacion
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -76,6 +77,7 @@ namespace CapaPresentacion
             this.ContenedorLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.panel3);
             this.ContenedorLogin.Controls.Add(this.btnLogout);
             this.ContenedorLogin.Controls.Add(this.btnCursosPorDia);
             this.ContenedorLogin.Controls.Add(this.buttonReporteSesiones);
@@ -92,29 +94,30 @@ namespace CapaPresentacion
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
             this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorLogin.Name = "ContenedorLogin";
-            this.ContenedorLogin.Size = new System.Drawing.Size(311, 843);
+            this.ContenedorLogin.Size = new System.Drawing.Size(311, 861);
             this.ContenedorLogin.TabIndex = 2;
             this.ContenedorLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.ContenedorLogin_Paint);
             // 
             // btnLogout
             // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(-4, 764);
+            this.btnLogout.Location = new System.Drawing.Point(0, 791);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
-            this.btnLogout.Size = new System.Drawing.Size(325, 60);
+            this.btnLogout.Size = new System.Drawing.Size(321, 60);
             this.btnLogout.TabIndex = 16;
             this.btnLogout.Text = "CERRAR SESION";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -122,11 +125,11 @@ namespace CapaPresentacion
             // 
             // btnCursosPorDia
             // 
-            this.btnCursosPorDia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnCursosPorDia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnCursosPorDia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCursosPorDia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCursosPorDia.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnCursosPorDia.FlatAppearance.BorderSize = 0;
             this.btnCursosPorDia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnCursosPorDia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnCursosPorDia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -134,10 +137,10 @@ namespace CapaPresentacion
             this.btnCursosPorDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnCursosPorDia.Image = ((System.Drawing.Image)(resources.GetObject("btnCursosPorDia.Image")));
             this.btnCursosPorDia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCursosPorDia.Location = new System.Drawing.Point(3, 432);
+            this.btnCursosPorDia.Location = new System.Drawing.Point(0, 447);
             this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCursosPorDia.Name = "btnCursosPorDia";
-            this.btnCursosPorDia.Size = new System.Drawing.Size(318, 60);
+            this.btnCursosPorDia.Size = new System.Drawing.Size(321, 62);
             this.btnCursosPorDia.TabIndex = 15;
             this.btnCursosPorDia.Text = "CURSOS POR DIA";
             this.btnCursosPorDia.UseVisualStyleBackColor = false;
@@ -145,11 +148,11 @@ namespace CapaPresentacion
             // 
             // buttonReporteSesiones
             // 
-            this.buttonReporteSesiones.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.buttonReporteSesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonReporteSesiones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonReporteSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReporteSesiones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonReporteSesiones.FlatAppearance.BorderSize = 0;
             this.buttonReporteSesiones.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.buttonReporteSesiones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonReporteSesiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -157,10 +160,10 @@ namespace CapaPresentacion
             this.buttonReporteSesiones.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonReporteSesiones.Image = ((System.Drawing.Image)(resources.GetObject("buttonReporteSesiones.Image")));
             this.buttonReporteSesiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReporteSesiones.Location = new System.Drawing.Point(0, 702);
+            this.buttonReporteSesiones.Location = new System.Drawing.Point(0, 699);
             this.buttonReporteSesiones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReporteSesiones.Name = "buttonReporteSesiones";
-            this.buttonReporteSesiones.Size = new System.Drawing.Size(317, 60);
+            this.buttonReporteSesiones.Size = new System.Drawing.Size(317, 62);
             this.buttonReporteSesiones.TabIndex = 14;
             this.buttonReporteSesiones.Text = "REPORTES SESIONES";
             this.buttonReporteSesiones.UseVisualStyleBackColor = false;
@@ -168,11 +171,11 @@ namespace CapaPresentacion
             // 
             // btnREPORTEASISTENCIA
             // 
-            this.btnREPORTEASISTENCIA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnREPORTEASISTENCIA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnREPORTEASISTENCIA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnREPORTEASISTENCIA.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnREPORTEASISTENCIA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnREPORTEASISTENCIA.FlatAppearance.BorderSize = 0;
             this.btnREPORTEASISTENCIA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnREPORTEASISTENCIA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnREPORTEASISTENCIA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -180,10 +183,10 @@ namespace CapaPresentacion
             this.btnREPORTEASISTENCIA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnREPORTEASISTENCIA.Image = ((System.Drawing.Image)(resources.GetObject("btnREPORTEASISTENCIA.Image")));
             this.btnREPORTEASISTENCIA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnREPORTEASISTENCIA.Location = new System.Drawing.Point(0, 633);
+            this.btnREPORTEASISTENCIA.Location = new System.Drawing.Point(0, 636);
             this.btnREPORTEASISTENCIA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnREPORTEASISTENCIA.Name = "btnREPORTEASISTENCIA";
-            this.btnREPORTEASISTENCIA.Size = new System.Drawing.Size(337, 60);
+            this.btnREPORTEASISTENCIA.Size = new System.Drawing.Size(337, 62);
             this.btnREPORTEASISTENCIA.TabIndex = 13;
             this.btnREPORTEASISTENCIA.Text = "REPORTES ASISTENCIAS";
             this.btnREPORTEASISTENCIA.UseVisualStyleBackColor = false;
@@ -191,11 +194,11 @@ namespace CapaPresentacion
             // 
             // btnReporteCursos
             // 
-            this.btnReporteCursos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnReporteCursos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnReporteCursos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnReporteCursos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporteCursos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteCursos.FlatAppearance.BorderSize = 0;
             this.btnReporteCursos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnReporteCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnReporteCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -203,10 +206,10 @@ namespace CapaPresentacion
             this.btnReporteCursos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnReporteCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCursos.Image")));
             this.btnReporteCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteCursos.Location = new System.Drawing.Point(0, 561);
+            this.btnReporteCursos.Location = new System.Drawing.Point(0, 573);
             this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReporteCursos.Name = "btnReporteCursos";
-            this.btnReporteCursos.Size = new System.Drawing.Size(337, 60);
+            this.btnReporteCursos.Size = new System.Drawing.Size(337, 62);
             this.btnReporteCursos.TabIndex = 12;
             this.btnReporteCursos.Text = "LISTA DE ASISTENCIAS";
             this.btnReporteCursos.UseVisualStyleBackColor = false;
@@ -239,7 +242,7 @@ namespace CapaPresentacion
             // 
             this.labelNombre.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNombre.ForeColor = System.Drawing.Color.White;
-            this.labelNombre.Location = new System.Drawing.Point(33, 352);
+            this.labelNombre.Location = new System.Drawing.Point(33, 356);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(229, 57);
             this.labelNombre.TabIndex = 7;
@@ -248,11 +251,11 @@ namespace CapaPresentacion
             // 
             // btnVerCursosDocente
             // 
-            this.btnVerCursosDocente.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnVerCursosDocente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.btnVerCursosDocente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnVerCursosDocente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerCursosDocente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnVerCursosDocente.FlatAppearance.BorderSize = 0;
             this.btnVerCursosDocente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnVerCursosDocente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnVerCursosDocente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -260,10 +263,10 @@ namespace CapaPresentacion
             this.btnVerCursosDocente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
             this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerCursosDocente.Location = new System.Drawing.Point(4, 494);
+            this.btnVerCursosDocente.Location = new System.Drawing.Point(0, 510);
             this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVerCursosDocente.Name = "btnVerCursosDocente";
-            this.btnVerCursosDocente.Size = new System.Drawing.Size(317, 60);
+            this.btnVerCursosDocente.Size = new System.Drawing.Size(321, 62);
             this.btnVerCursosDocente.TabIndex = 11;
             this.btnVerCursosDocente.Text = "TODOS MIS CURSOS";
             this.btnVerCursosDocente.UseVisualStyleBackColor = false;
@@ -272,7 +275,7 @@ namespace CapaPresentacion
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel2.Location = new System.Drawing.Point(25, 411);
+            this.panel2.Location = new System.Drawing.Point(25, 416);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(252, 2);
@@ -281,10 +284,10 @@ namespace CapaPresentacion
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.panel1.Location = new System.Drawing.Point(25, 137);
+            this.panel1.Location = new System.Drawing.Point(61, 137);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(252, 2);
+            this.panel1.Size = new System.Drawing.Size(182, 2);
             this.panel1.TabIndex = 5;
             // 
             // DOCENTE
@@ -435,7 +438,7 @@ namespace CapaPresentacion
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1091, 679);
+            this.pictureBox6.Location = new System.Drawing.Point(1091, 697);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(411, 238);
@@ -452,7 +455,7 @@ namespace CapaPresentacion
             this.panelContenedor.Location = new System.Drawing.Point(324, 52);
             this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1003, 773);
+            this.panelContenedor.Size = new System.Drawing.Size(1003, 791);
             this.panelContenedor.TabIndex = 41;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
@@ -461,12 +464,22 @@ namespace CapaPresentacion
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick_1);
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(12, 785);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(287, 1);
+            this.panel3.TabIndex = 17;
+            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1336, 837);
+            this.ClientSize = new System.Drawing.Size(1336, 855);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.ContenedorLogin);
             this.Controls.Add(this.btnMaxFrmDocente);
@@ -527,5 +540,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel panel3;
     }
 }
