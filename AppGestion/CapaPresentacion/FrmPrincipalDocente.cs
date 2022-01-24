@@ -72,6 +72,7 @@ namespace CapaPresentacion
         private void MostrarHorarioxDia(string codDocente)
         {
             //Obtener día
+           
             ObtenerTiempo(out _, out _, out string dia);
             dia = "LUNES";
 

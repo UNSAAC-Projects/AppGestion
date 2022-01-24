@@ -59,10 +59,9 @@ namespace CapaPresentacion
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 45);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(82, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 22);
+            this.label1.Size = new System.Drawing.Size(135, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtrar por :";
             // 
@@ -74,10 +73,10 @@ namespace CapaPresentacion
             this.cboAsistenciaCurso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAsistenciaCurso.ForeColor = System.Drawing.Color.Black;
             this.cboAsistenciaCurso.FormattingEnabled = true;
-            this.cboAsistenciaCurso.Location = new System.Drawing.Point(133, 45);
-            this.cboAsistenciaCurso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboAsistenciaCurso.Location = new System.Drawing.Point(256, 55);
+            this.cboAsistenciaCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAsistenciaCurso.Name = "cboAsistenciaCurso";
-            this.cboAsistenciaCurso.Size = new System.Drawing.Size(276, 25);
+            this.cboAsistenciaCurso.Size = new System.Drawing.Size(367, 28);
             this.cboAsistenciaCurso.TabIndex = 1;
             this.cboAsistenciaCurso.SelectedIndexChanged += new System.EventHandler(this.cboAsistenciaCurso_SelectedIndexChanged);
             // 
@@ -85,10 +84,10 @@ namespace CapaPresentacion
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(544, 479);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(883, 998);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(118, 76);
+            this.pictureBox2.Size = new System.Drawing.Size(157, 94);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -99,20 +98,20 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.ForeColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(-38, 516);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(-51, 1043);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(600, 4);
+            this.panel4.Size = new System.Drawing.Size(958, 5);
             this.panel4.TabIndex = 23;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-47, 496);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(-63, 1018);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(101, 76);
+            this.pictureBox3.Size = new System.Drawing.Size(135, 94);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 24;
             this.pictureBox3.TabStop = false;
@@ -123,10 +122,10 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.ForeColor = System.Drawing.Color.Gray;
-            this.panel2.Location = new System.Drawing.Point(46, 533);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(61, 1064);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(705, 4);
+            this.panel2.Size = new System.Drawing.Size(1098, 5);
             this.panel2.TabIndex = 24;
             // 
             // Asistencia
@@ -173,8 +172,8 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsistenciaReporte.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsistenciaReporte.EnableHeadersVisualStyles = false;
-            this.dgvAsistenciaReporte.Location = new System.Drawing.Point(38, 94);
-            this.dgvAsistenciaReporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAsistenciaReporte.Location = new System.Drawing.Point(51, 116);
+            this.dgvAsistenciaReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsistenciaReporte.Name = "dgvAsistenciaReporte";
             this.dgvAsistenciaReporte.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -187,7 +186,7 @@ namespace CapaPresentacion
             this.dgvAsistenciaReporte.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAsistenciaReporte.RowHeadersWidth = 51;
             this.dgvAsistenciaReporte.RowTemplate.Height = 24;
-            this.dgvAsistenciaReporte.Size = new System.Drawing.Size(691, 405);
+            this.dgvAsistenciaReporte.Size = new System.Drawing.Size(1079, 906);
             this.dgvAsistenciaReporte.TabIndex = 2;
             this.dgvAsistenciaReporte.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistenciaReporte_CellContentClick);
             this.dgvAsistenciaReporte.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvAsistenciaReporte_RowPostPaint);
@@ -197,10 +196,10 @@ namespace CapaPresentacion
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel5.BackColor = System.Drawing.Color.Silver;
-            this.panel5.Location = new System.Drawing.Point(38, 94);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Location = new System.Drawing.Point(51, 116);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(2, 405);
+            this.panel5.Size = new System.Drawing.Size(3, 906);
             this.panel5.TabIndex = 37;
             // 
             // panel6
@@ -208,20 +207,20 @@ namespace CapaPresentacion
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(38, 497);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Location = new System.Drawing.Point(51, 1020);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(600, 2);
+            this.panel6.Size = new System.Drawing.Size(958, 2);
             this.panel6.TabIndex = 40;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(596, 362);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(953, 854);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(163, 168);
+            this.pictureBox4.Size = new System.Drawing.Size(217, 207);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
@@ -230,10 +229,10 @@ namespace CapaPresentacion
             // 
             this.pictureBox11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(440, 1);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Location = new System.Drawing.Point(666, 1);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(131, 90);
+            this.pictureBox11.Size = new System.Drawing.Size(175, 111);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 50;
             this.pictureBox11.TabStop = false;
@@ -243,18 +242,18 @@ namespace CapaPresentacion
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Silver;
-            this.panel1.Location = new System.Drawing.Point(727, 94);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(1127, 116);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2, 266);
+            this.panel1.Size = new System.Drawing.Size(3, 735);
             this.panel1.TabIndex = 38;
             // 
             // frmListaAsistencias
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(752, 564);
+            this.ClientSize = new System.Drawing.Size(1161, 1102);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel6);
@@ -268,7 +267,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmListaAsistencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmReporteAsistencia";
