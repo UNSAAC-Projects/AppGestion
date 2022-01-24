@@ -58,7 +58,7 @@ namespace CapaPresentacion
                 //Obtener cod curso
                 string CodGrupoAsignatura = row.Cells["GrupoAsignatura"].Value.ToString();
                 string CodCatalogo  = ocursosDocente.ObtenerCodCatalogo(CodGrupoAsignatura) ;
-                string NombreAsignatura = row.Cells["Nombre......."].Value.ToString();
+                string NombreAsignatura = row.Cells["Nombre"].Value.ToString();
                 string Grupo = row.Cells["Grupo"].Value.ToString();
                 frmPlanDeSesiones form = new frmPlanDeSesiones(CodCatalogo, NombreAsignatura, Grupo);
                 
