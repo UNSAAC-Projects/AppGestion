@@ -23,5 +23,9 @@ namespace CapaNegocio
         {
             data.GuardarAsistenciasDiarias(tabla, fecha);
         }
+        public DataTable ReporteAsistenciaDocenteDiaria(string FechaInicio, string FechaFin)
+        {
+            return data.ReporteAsistenciaDocenteDiaria(FechaInicio, FechaFin);
+        }
     }
 }

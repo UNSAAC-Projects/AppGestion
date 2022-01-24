@@ -219,6 +219,11 @@ namespace CapaPresentacion
                 this.Close();
         }
 
+        private void buttonReporteAsistenciaDocentes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmReporteAsistenciaDocente());
+        }
+
 
         /* private void buttonIMPORTAR_Click(object sender, EventArgs e)
          {
