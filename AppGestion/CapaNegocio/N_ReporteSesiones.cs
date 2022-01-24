@@ -17,5 +17,9 @@ namespace CapaNegocio
         {
             return data.MostrarReporteSesiones(IdCatalogo);
         }
+        public DataTable MostrarReporteSesionesDocente(string IdDocente)
+        {
+            return data.MostrarReporteSesionesDocente(IdDocente);
+        }
     }
 }

@@ -31,5 +31,21 @@ namespace CapaDatos
             conexion.Close();
             return tabla;
         }
+
+        public DataTable MostrarReporteSesionesDocente(string IdDocente)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_REPORTE_AVANCE_SESIONES", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@IdDocente",IdDocente);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
     }
 }
