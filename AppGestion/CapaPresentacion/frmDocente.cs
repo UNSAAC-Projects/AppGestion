@@ -255,5 +255,13 @@ namespace CapaPresentacion
             if (MessageBox.Show("Estas seguro de que quieres cerrar Sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
         }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmReporteAvanceDocente D = new FrmReporteAvanceDocente();
+            D.ShowDialog();
+        }
     }
 }

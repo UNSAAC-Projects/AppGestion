@@ -183,6 +183,12 @@
     <Compile Include="frmMantCatalogo.Designer.cs">
       <DependentUpon>frmMantCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReporteAvanceDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteAvanceDocente.Designer.cs">
+      <DependentUpon>FrmReporteAvanceDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsDirDep\frmReporteAsistenciaDocente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMantCatalogo.resx">
       <DependentUpon>frmMantCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteAvanceDocente.resx">
+      <DependentUpon>FrmReporteAvanceDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\frmReporteAsistenciaDocente.resx">
       <DependentUpon>frmReporteAsistenciaDocente.cs</DependentUpon>

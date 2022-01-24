@@ -81,7 +81,7 @@
             this.dgvReporteSesiones.Name = "dgvReporteSesiones";
             this.dgvReporteSesiones.RowHeadersVisible = false;
             this.dgvReporteSesiones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dgvReporteSesiones.Size = new System.Drawing.Size(995, 361);
+            this.dgvReporteSesiones.Size = new System.Drawing.Size(1099, 361);
             this.dgvReporteSesiones.TabIndex = 0;
             // 
             // labelReporteAsistencia
@@ -91,7 +91,7 @@
             this.labelReporteAsistencia.BackColor = System.Drawing.Color.Transparent;
             this.labelReporteAsistencia.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReporteAsistencia.ForeColor = System.Drawing.Color.DimGray;
-            this.labelReporteAsistencia.Location = new System.Drawing.Point(356, 9);
+            this.labelReporteAsistencia.Location = new System.Drawing.Point(408, 9);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
             this.labelReporteAsistencia.Size = new System.Drawing.Size(353, 39);
@@ -107,7 +107,7 @@
             this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonExportar.Location = new System.Drawing.Point(546, 533);
+            this.buttonExportar.Location = new System.Drawing.Point(650, 533);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExportar.Name = "buttonExportar";
             this.buttonExportar.Size = new System.Drawing.Size(235, 41);
@@ -125,7 +125,7 @@
             this.buttonCerrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCerrrar.Location = new System.Drawing.Point(762, 533);
+            this.buttonCerrrar.Location = new System.Drawing.Point(866, 533);
             this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCerrrar.Name = "buttonCerrrar";
             this.buttonCerrrar.Size = new System.Drawing.Size(236, 41);
@@ -208,7 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 598);
+            this.ClientSize = new System.Drawing.Size(1160, 598);
             this.Controls.Add(this.cboTiemposCursos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelReporteAsistencia);
