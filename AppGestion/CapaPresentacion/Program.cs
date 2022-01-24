@@ -19,6 +19,7 @@ namespace CapaPresentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //AppContext = new ApplicationContext(new frmReporteEstadoAlumno("D0028"));
             AppContext = new ApplicationContext(new FrmLogin());
             Application.Run(AppContext);
             //Application.Run(Login1 = new FrmLogin());

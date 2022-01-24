@@ -14,9 +14,9 @@ namespace CapaPresentacion
 {
     public partial class frmReporteSesiones : Form
     {
-        N_ReporteSesiones oReporteSesiones = new N_ReporteSesiones();
-        N_CursosDocente oCursosDocente = new N_CursosDocente();
-        N_Docente oDocente = new N_Docente();
+        readonly N_ReporteSesiones oReporteSesiones = new N_ReporteSesiones();
+        readonly N_CursosDocente oCursosDocente = new N_CursosDocente();
+        readonly N_Docente oDocente = new N_Docente();
 
         private string CodDocente;
         public frmReporteSesiones(string pCodDocente)

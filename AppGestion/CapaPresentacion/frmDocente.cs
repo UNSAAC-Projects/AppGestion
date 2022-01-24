@@ -15,11 +15,11 @@ namespace CapaPresentacion
 {
     public partial class frmDocente : Form
     {
-        DataSet result;
+        //DataSet result;
         N_Login oLogin = new N_Login();
         N_Docente oDocente = new N_Docente();
         N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
-        DataTable tabla;
+        //DataTable tabla;
         public string Docente;
 
         private bool OpcionCursosPorDia;
@@ -41,7 +41,6 @@ namespace CapaPresentacion
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
-
 
         private void MostrarNombreUsuario(string codDocente)
         {
@@ -123,7 +122,6 @@ namespace CapaPresentacion
             OpcionREPORTEASISTENCIA = false;
             OpcionReporteSesiones = false;
 
-
             //Restaurar backcolors
             btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
             btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
@@ -150,7 +148,7 @@ namespace CapaPresentacion
 
         private void btnREPORTEASISTENCIA_Click(object sender, EventArgs e)
         {
-            ReporteAsistenciasAlumnos RAsistencia = new ReporteAsistenciasAlumnos();
+            frmReporteAsistenciasAlumnos RAsistencia = new frmReporteAsistenciasAlumnos();
             RAsistencia.CodDocente = datos.CodDocente;
             AbrirFormulariosEnPanelContenedor(RAsistencia);
 
@@ -230,7 +228,6 @@ namespace CapaPresentacion
             OpcionREPORTEASISTENCIA = false;
             OpcionReporteSesiones = false;
 
-
             //Restaurar backcolors
             btnCursosPorDia.BackColor = Color.WhiteSmoke;
             btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
@@ -246,41 +243,11 @@ namespace CapaPresentacion
             buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flecha_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHora_Click(object sender, EventArgs e)
-        {
-
-        }
         // mostrarhora y fecha
-
         private void timerHoraFecha_Tick_1(object sender, EventArgs e)
         {
             labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
             labelFecha.Text = DateTime.Now.ToString(" MMM dd yyyy");
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelFecha_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -289,10 +256,7 @@ namespace CapaPresentacion
                 this.Close();
         }
 
-        private void ContenedorLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -936,8 +936,90 @@ go
 create OR ALTER proc sp_ReporteAsistencia
 @IdCatalogo varchar(6),@FechaInicio date,@FechaFin date
 as
-	SELECT  distinct  Fecha into #tablafecha from TAsistencia_Alumnos 
+	SELECT  distinct Fecha into #tablafecha from TAsistencia_Alumnos
 	where Fecha>=@FechaInicio and Fecha<=@FechaFin and IdCatalogo=@IdCatalogo
+	declare @nfechas int
+	select @nfechas= count(Fecha) from #tablafecha 
+
+	select IdCatalogo,CodAlumno,Nombres,convert(decimal(5,2),
+	count(case Asistio when 'P' then Asistio end)*convert(decimal(5,2),100)/@nfechas)as Porcentaje 
+	into #tablap
+	from TAsistencia_Alumnos where Fecha>=@FechaInicio and Fecha<=@FechaFin and IdCatalogo=@IdCatalogo
+	group by IdCatalogo,CodAlumno,Nombres 
+	order by Nombres
+	----
+		declare @columnas nvarchar (max),@consulta nvarchar(max)
+		set @columnas=''
+	
+		DECLARE @Fecha AS nvarchar(400)
+		DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
+		OPEN CURSORFECHA
+		FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		WHILE @@fetch_status = 0
+		BEGIN
+			set @columnas=@columnas+'['+@Fecha+'],'
+			FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		END
+		CLOSE CURSORFECHA
+		DEALLOCATE CURSORFECHA
+	
+		set @columnas=substring(@columnas,1,len(@columnas)-1) 
+	---------
+		select Fecha,CodAlumno,Nombres,Asistio
+		into #temp
+		from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
+	
+		set @consulta='select *
+		INTO temporal
+		from #temp
+		pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
+		execute (@consulta)
+
+		alter table temporal add Porcentaje varchar(10)
+
+		declare @Porcentaje varchar(8)
+		declare @CodAlumno varchar(8)
+			DECLARE CURSORP CURSOR FOR SELECT CodAlumno,Porcentaje FROM #tablap
+		OPEN CURSORP
+		FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
+		WHILE @@fetch_status = 0
+		BEGIN
+			update temporal set Porcentaje=@Porcentaje+'%' where CodAlumno=@CodAlumno
+			FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
+		END
+		CLOSE CURSORP
+		DEALLOCATE CURSORP
+
+		select * from temporal
+
+		drop table IF EXISTS #tablafecha
+		drop table IF EXISTS #tablap
+		drop table if exists #tablafecha
+		drop table if exists #temp
+		drop table if exists temporal
+go
+
+-- Reporte para mostrar si un alumno desistió o no
+create OR ALTER proc sp_ReporteEstadoAlumno
+	@IdCatalogo varchar(6),
+	@FechaActual date
+as
+	--Obtener fecha de 20 dias atras al actual
+	declare @FechaInicio date
+	set @FechaInicio = (select DATEADD(DAY, -20, @FechaActual))
+	
+	SELECT  distinct Fecha into #tablafecha from TAsistencia_Alumnos
+	where Fecha>=@FechaInicio and Fecha<=@FechaActual and IdCatalogo=@IdCatalogo
+	declare @nfechas int
+	select @nfechas= count(Fecha) from #tablafecha 
+
+	select IdCatalogo,CodAlumno,Nombres,convert(decimal(5,2),
+	count(case Asistio when 'P' then Asistio end)*convert(decimal(5,2),100)/@nfechas)as Porcentaje 
+	into #tablap
+	from TAsistencia_Alumnos where Fecha>=@FechaInicio and Fecha<=@FechaActual and IdCatalogo=@IdCatalogo
+	group by IdCatalogo,CodAlumno,Nombres 
+	order by Nombres
+	----
 	declare @columnas nvarchar (max),@consulta nvarchar(max)
 	set @columnas=''
 	
@@ -947,27 +1029,50 @@ as
 	FETCH NEXT FROM CURSORFECHA INTO @Fecha
 	WHILE @@fetch_status = 0
 	BEGIN
-		--PRINT @Fecha
 		set @columnas=@columnas+'['+@Fecha+'],'
 		FETCH NEXT FROM CURSORFECHA INTO @Fecha
 	END
 	CLOSE CURSORFECHA
 	DEALLOCATE CURSORFECHA
 	
+	set @columnas=substring(@columnas,1,len(@columnas)-1) 
+---------
 	select Fecha,CodAlumno,Nombres,Asistio
 	into #temp
 	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
 	
-	set @columnas=substring(@columnas,1,len(@columnas)-1) 
-	--print @columnas
 	set @consulta='select *
+	INTO temporal
 	from #temp
 	pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
-	drop table if exists #tablafecha
 	execute (@consulta)
-	drop table if exists #temp
-go
 
+	alter table temporal add Porcentaje varchar(10)
+
+	declare @Porcentaje varchar(8)
+	declare @CodAlumno varchar(8)
+		DECLARE CURSORP CURSOR FOR SELECT CodAlumno,Porcentaje FROM #tablap
+	OPEN CURSORP
+	FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
+	WHILE @@fetch_status = 0
+	BEGIN
+		update temporal set Porcentaje=@Porcentaje+'%' where CodAlumno=@CodAlumno
+		FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
+	END
+	CLOSE CURSORP
+	DEALLOCATE CURSORP
+
+	-- Agregar estado del alumno
+	select CodAlumno, Nombres as 'Apellidos y Nombres', 
+		case when Porcentaje = '0.00%' then 'Desistió' else 'Normal' end as Estado
+	from temporal
+
+	drop table IF EXISTS #tablafecha
+	drop table IF EXISTS #tablap
+	drop table if exists #tablafecha
+	drop table if exists #temp
+	drop table if exists temporal
+go
 
 create or alter proc sp_recuperarIdCat_Doc_y_Asignatura
 @NombreAsignatura varchar(100),
@@ -986,9 +1091,76 @@ go
 CREATE PROC SP_REPORTE_AVANCE_SESIONES
 @IdDocente varchar(6)
 AS
-select  C.CodAsignatura + Grupo + 'IN' as Asignatura,count(Finalizado) as CantidadAvance
+select  C.CodAsignatura + Grupo + 'IN' as Asignatura,((count(Finalizado)*100)/48) as CantidadAvance
 	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 	where  Finalizado='SI' and C.CodDocenteTeorico=@IdDocente
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo
+go
+
+
+create OR ALTER proc sp_ReporteAsistenciaDocentes
+@FechaInicio date,@FechaFin date
+as
+	SELECT  distinct Fecha into #tablafecha from TAsistenciaDiariaDocentes
+	where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	declare @nfechas int
+	select @nfechas= count(Fecha) from #tablafecha 
+
+	select CodDocente,Nombres,convert(decimal(5,2),
+	count(case Asistio when 'P' then Asistio end)*convert(decimal(5,2),100)/@nfechas)as Porcentaje 
+	into #tablap
+	from TAsistenciaDiariaDocentes where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	group by CodDocente,Nombres 
+	order by Nombres
+	----
+		declare @columnas nvarchar (max),@consulta nvarchar(max)
+		set @columnas=''
+	
+		DECLARE @Fecha AS nvarchar(400)
+		DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
+		OPEN CURSORFECHA
+		FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		WHILE @@fetch_status = 0
+		BEGIN
+			set @columnas=@columnas+'['+@Fecha+'],'
+			FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		END
+		CLOSE CURSORFECHA
+		DEALLOCATE CURSORFECHA
+	
+		set @columnas=substring(@columnas,1,len(@columnas)-1) 
+	---------
+		select Fecha,CodDocente,Nombres,Asistio
+		into #temp
+		from TAsistenciaDiariaDocentes
+	
+		set @consulta='select *
+		INTO temporal
+		from #temp
+		pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
+		execute (@consulta)
+
+		alter table temporal add Porcentaje varchar(10)
+
+		declare @Porcentaje varchar(8)
+		declare @CodDocente varchar(8)
+			DECLARE CURSORP CURSOR FOR SELECT CodDocente,Porcentaje FROM #tablap
+		OPEN CURSORP
+		FETCH NEXT FROM CURSORP INTO @CodDocente,@Porcentaje
+		WHILE @@fetch_status = 0
+		BEGIN
+			update temporal set Porcentaje=@Porcentaje+'%' where CodDocente=@CodDocente
+			FETCH NEXT FROM CURSORP INTO @CodDocente,@Porcentaje
+		END
+		CLOSE CURSORP
+		DEALLOCATE CURSORP
+
+		select * from temporal
+
+		drop table IF EXISTS #tablafecha
+		drop table IF EXISTS #tablap
+		drop table if exists #tablafecha
+		drop table if exists #temp
+		drop table if exists temporal
 go
 
