@@ -17,6 +17,9 @@ namespace CapaPresentacion
     {
         N_Asignatura oAsignatura = new N_Asignatura();
         N_Login oLogin = new N_Login();
+
+        private bool OpcionAsignaturas;
+        private bool OpcionVerCatalogo;
         public mainDirectorEscuela(string CodDocente)
         {
             InitializeComponent();
@@ -75,11 +78,36 @@ namespace CapaPresentacion
         private void btnASIGNATURA_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new FrmPrincipalDirectorEscuela());
+            //
+            OpcionAsignaturas = true;
+            OpcionVerCatalogo = false;
+           
+
+            //Restaurar backcolors
+            btnASIGNATURA.BackColor = Color.WhiteSmoke;
+            btnVerCatalogos.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnASIGNATURA.ForeColor = Color.FromArgb(33, 47, 60);
+            btnVerCatalogos.ForeColor = Color.FromArgb(212, 172, 13);
+
+
         }
 
         private void btnVerCatalogos_Click(object sender, EventArgs e)
         {
             AbrirFormulariosEnPanelContenedor(new frmVistaCatalogo());
+            //
+            OpcionAsignaturas = false;
+            OpcionVerCatalogo = true;
+
+            //Restaurar backcolors
+            btnVerCatalogos.BackColor = Color.WhiteSmoke; ;
+            btnASIGNATURA.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnVerCatalogos.ForeColor = Color.FromArgb(33, 47, 60);
+            btnASIGNATURA.ForeColor = Color.FromArgb(212, 172, 13);
         }
 
         private void mainDirectorEscuela_Load(object sender, EventArgs e)
@@ -97,6 +125,11 @@ namespace CapaPresentacion
         {
             if (MessageBox.Show("¿Estas seguro de que quieres cerrar Sesion?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
+        }
+
+        private void PicBoxIndicador_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
