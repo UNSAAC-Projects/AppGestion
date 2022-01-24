@@ -28,8 +28,14 @@ namespace CapaPresentacion
             //Mostrar cursos
             cbCursosReporte.Items.AddRange(Asignaturas);
         }
-
         
+        private void MostrarReporte(string IdCatalogo)
+        {
+            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
+        }
+
+
+
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
             
@@ -44,13 +50,13 @@ namespace CapaPresentacion
                 string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
                 string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
                 MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
-            }
-            
-        }
 
-        private void MostrarReporte(string IdCatalogo)
-        {
-            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
+                //Mostrar datos en el PieChart
+                chartReporte.Series["Estado"].Points.AddXY("Normal", 0.534);
+                chartReporte.Series["Estado"].Points.AddXY("Desistió", 0.221);
+
+            }
+
         }
 
         private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
