@@ -62,6 +62,7 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.PicBoxIndicador = new System.Windows.Forms.PictureBox();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -74,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorLogin
@@ -112,7 +114,7 @@
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(8, 642);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(317, 49);
             this.btnLogout.TabIndex = 17;
@@ -144,6 +146,7 @@
             // 
             this.btnASIGNATURA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnASIGNATURA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnASIGNATURA.FlatAppearance.BorderSize = 0;
             this.btnASIGNATURA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnASIGNATURA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
             this.btnASIGNATURA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -164,7 +167,7 @@
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(0, 30);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,6 +268,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelContenedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor2.BackgroundImage")));
+            this.panelContenedor2.Controls.Add(this.PicBoxIndicador);
             this.panelContenedor2.Controls.Add(this.label7);
             this.panelContenedor2.Controls.Add(this.label6);
             this.panelContenedor2.Controls.Add(this.label5);
@@ -285,7 +289,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(357, 41);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(385, 40);
+            this.label7.Size = new System.Drawing.Size(378, 40);
             this.label7.TabIndex = 73;
             this.label7.Text = "Escuela profesional de";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,7 +303,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(-64, 545);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1131, 40);
+            this.label6.Size = new System.Drawing.Size(1097, 39);
             this.label6.TabIndex = 72;
             this.label6.Text = "Acreditada por el Comité de Acreditación de Computación ICACIT";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -313,7 +317,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(135, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(877, 40);
+            this.label5.Size = new System.Drawing.Size(854, 40);
             this.label5.TabIndex = 71;
             this.label5.Text = "Con alto contenido en Ciencias de la Computación";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -493,6 +497,17 @@
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
             // 
+            // PicBoxIndicador
+            // 
+            this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
+            this.PicBoxIndicador.Location = new System.Drawing.Point(113, 271);
+            this.PicBoxIndicador.Name = "PicBoxIndicador";
+            this.PicBoxIndicador.Size = new System.Drawing.Size(50, 24);
+            this.PicBoxIndicador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicBoxIndicador.TabIndex = 74;
+            this.PicBoxIndicador.TabStop = false;
+            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);
+            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -521,6 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureMaxDirectorEscuela)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMINIMIZE1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCANCEL1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -558,5 +574,6 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox PicBoxIndicador;
     }
 }

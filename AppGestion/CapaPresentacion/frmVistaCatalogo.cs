@@ -27,20 +27,20 @@ namespace CapaPresentacion
             dgvCatalogo.Columns[1].DisplayIndex = 14;
 
             dgvCatalogo.Columns["GrupoAsignatura"].Visible = false;
-            dgvCatalogo.Columns["Nombre"].Width = 280;
+            dgvCatalogo.Columns["Nombre"].Width = 430;//280
             dgvCatalogo.Columns["Creditos"].Width = 60;
-            //dgvCatalogo.Columns["Categoria"].Visible = false;
+            //dgvCatalogo.Columns["Categoria"].Visible = false;//
             dgvCatalogo.Columns["NroSemestre"].Width = 80;
             dgvCatalogo.Columns["Editar"].Width = 40;
             dgvCatalogo.Columns["Eliminar"].Width = 60;
             dgvCatalogo.Columns["IdCatalogo"].Visible=false;
-            dgvCatalogo.Columns["Aula"].Width = 45;
-            dgvCatalogo.Columns["DocentePractico"].Width = 110;
-            dgvCatalogo.Columns["DocenteTeorico"].Width = 110;
-            dgvCatalogo.Columns["Grupo"].Width = 45;
+            dgvCatalogo.Columns["Aula"].Width = 45;//45
+            dgvCatalogo.Columns["DocentePractico"].Width = 155;//110
+            dgvCatalogo.Columns["DocenteTeorico"].Width = 155;//110
+            dgvCatalogo.Columns["Grupo"].Width = 45;//45
             dgvCatalogo.Columns["CodDocentePractico"].Visible = false;
             dgvCatalogo.Columns["CodDocenteTeorico"].Visible = false;
-            dgvCatalogo.Columns["CodAsignatura"].Width = 90;
+            dgvCatalogo.Columns["CodAsignatura"].Width = 93;
         }
         public void MostrarVistaCatalogo()
         {

@@ -110,7 +110,7 @@ namespace CapaPresentacion
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogout.Location = new System.Drawing.Point(-7, 599);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 73, 0);
             this.btnLogout.Size = new System.Drawing.Size(317, 60);
@@ -131,7 +131,7 @@ namespace CapaPresentacion
             this.btnCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogo.Image")));
             this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalogo.Location = new System.Drawing.Point(3, 418);
+            this.btnCatalogo.Location = new System.Drawing.Point(0, 422);
             this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCatalogo.Name = "btnCatalogo";
             this.btnCatalogo.Size = new System.Drawing.Size(307, 50);
@@ -151,12 +151,12 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonDISTRIBUCION.Image = ((System.Drawing.Image)(resources.GetObject("buttonDISTRIBUCION.Image")));
             this.buttonDISTRIBUCION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(7, 529);
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(0, 530);
             this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
-            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(297, 70);
+            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(310, 70);
             this.buttonDISTRIBUCION.TabIndex = 11;
-            this.buttonDISTRIBUCION.Text = "    DISTRIBUCION POR DOCENTE";
+            this.buttonDISTRIBUCION.Text = "         DISTRIBUCION POR \r\n    DOCENTE";
             this.buttonDISTRIBUCION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDISTRIBUCION.UseVisualStyleBackColor = true;
             this.buttonDISTRIBUCION.Click += new System.EventHandler(this.buttonDISTRIBUCION_Click);
@@ -172,7 +172,7 @@ namespace CapaPresentacion
             this.buttonLISTAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonLISTAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonLISTAR.Image")));
             this.buttonLISTAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLISTAR.Location = new System.Drawing.Point(4, 474);
+            this.buttonLISTAR.Location = new System.Drawing.Point(0, 476);
             this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLISTAR.Name = "buttonLISTAR";
             this.buttonLISTAR.Size = new System.Drawing.Size(307, 50);
