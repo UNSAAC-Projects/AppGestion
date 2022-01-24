@@ -887,6 +887,7 @@ else
 insert into TAsistencia_Alumnos values(@Fecha,@IdCatalogo,@CodAlumno,@Nombres,@Asistio,@Observacion)
 go
 
+
 -- Mostrar reporte de sesiones
 CREATE PROC SP_REPORTE_SESIONES
 	@IdCatalogo varchar(4)
@@ -897,11 +898,10 @@ select @Categoria = Categoria from TAsignatura
 	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
 -- Mostrar reporte
 select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
-	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes'
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes',VariacionHora
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
-
 --- PROCEDIMIENTOS PARA MATRICULADOS -------
 create OR ALTER proc SP_ListarMatriculados 
 @IdCatalogo VARCHAR(6),
@@ -981,5 +981,14 @@ as
 	select IDCatalogo
 	from #tmp t INNER JOIN TCatalogo c on c.Grupo=@Grupo and t.CodAsignatura=c.CodAsignatura and (c.CodDocentePractico=@CodDocente or c.CodDocenteTeorico=@CodDocente)
 	drop table if exists #tmp
+go
+
+CREATE PROC SP_REPORTE_AVANCE_SESIONES
+@IdDocente varchar(6)
+AS
+select  C.CodAsignatura + Grupo + 'IN' as Asignatura,count(Finalizado) as CantidadAvance
+	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+	where  Finalizado='SI' and C.CodDocenteTeorico=@IdDocente
+	group by P.IDCatalogo,C.CodAsignatura,C.Grupo
 go
 
