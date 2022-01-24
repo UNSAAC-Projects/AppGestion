@@ -14,50 +14,52 @@ namespace CapaPresentacion
     public partial class frmReporteEstadoAlumno : Form
     {
         readonly N_ReporteEstadoAlumnos oReporteEstado = new N_ReporteEstadoAlumnos();
-
-        public frmReporteEstadoAlumno()
+        readonly N_CursosDocente oCursosDocente = new N_CursosDocente();
+        readonly N_Docente oDocente = new N_Docente();
+        private string CodDocente;
+        public frmReporteEstadoAlumno(string pCodDocente)
         {
             InitializeComponent();
+            CodDocente = pCodDocente;
         }
-        /*
-        void MostrarItemsComboBox(DataTable tablaCursos)
-        {
-            int n = tablaCursos.Rows.Count;
-            string grupoAsignatura, nombreAsignatura;
 
-            //Recorrer filas del DataTable
-            foreach (DataRow row in tablaCursos.Rows)
-            {
-                grupoAsignatura = row[0].ToString(); //GrupoAsignatura (ex: IF342)
-                nombreAsignatura = row[1].ToString(); //Nombre de la asignatura
-                cboAsistenciaCurso.Items.Add($"{grupoAsignatura} - {nombreAsignatura}");
-            }
-            //Seleccionar valor por defecto del combobox
-            cboAsistenciaCurso.SelectedIndex = 0;
+        private void MostrarItemsComboBox(string[] Asignaturas)
+        {
+            //Mostrar cursos
+            cbCursosReporte.Items.AddRange(Asignaturas);
         }
-        */
+
+        
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
-            /*
+            
             //Obtener cursos que dicta el docente
-            //string[] Asignaturas = oDocente.CursosDocente(CodDocente);
+            string[] Asignaturas = oDocente.CursosDocente(CodDocente);
             if (Asignaturas != null) //Si tiene asignaturas dictando
             {
-                //MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
-                //comboBoxAsignaturas.SelectedIndex = 0;
+                MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
+                cbCursosReporte.SelectedIndex = 0;
 
                 //Obtener codCursoAsignatura
-                string codCursoAsig = comboBoxAsignaturas.Text.Substring(0, 6);
+                string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
                 string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
                 MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
             }
-            */
+            
         }
 
-        private void MostrarReporte()
+        private void MostrarReporte(string IdCatalogo)
         {
-            //dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado();
+            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
         }
-        
+
+        private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Obtener codCursoAsignatura
+            string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
+            string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
+            //Actualizar reporte con los datos de la asignatura selecionada
+            MostrarReporte(codCatalogo);
+        }
     }
 }
