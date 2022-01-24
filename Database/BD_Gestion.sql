@@ -1021,3 +1021,71 @@ select  C.CodAsignatura + Grupo + 'IN' as Asignatura,((count(Finalizado)*100)/48
 	where  Finalizado='SI' and C.CodDocenteTeorico=@IdDocente
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo
 go
+
+
+create OR ALTER proc sp_ReporteAsistenciaDocentes
+@FechaInicio date,@FechaFin date
+as
+	SELECT  distinct Fecha into #tablafecha from TAsistenciaDiariaDocentes
+	where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	declare @nfechas int
+	select @nfechas= count(Fecha) from #tablafecha 
+
+	select CodDocente,Nombres,convert(decimal(5,2),
+	count(case Asistio when 'P' then Asistio end)*convert(decimal(5,2),100)/@nfechas)as Porcentaje 
+	into #tablap
+	from TAsistenciaDiariaDocentes where Fecha>=@FechaInicio and Fecha<=@FechaFin
+	group by CodDocente,Nombres 
+	order by Nombres
+	----
+		declare @columnas nvarchar (max),@consulta nvarchar(max)
+		set @columnas=''
+	
+		DECLARE @Fecha AS nvarchar(400)
+		DECLARE CURSORFECHA CURSOR FOR SELECT [Fecha] FROM #tablafecha
+		OPEN CURSORFECHA
+		FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		WHILE @@fetch_status = 0
+		BEGIN
+			set @columnas=@columnas+'['+@Fecha+'],'
+			FETCH NEXT FROM CURSORFECHA INTO @Fecha
+		END
+		CLOSE CURSORFECHA
+		DEALLOCATE CURSORFECHA
+	
+		set @columnas=substring(@columnas,1,len(@columnas)-1) 
+	---------
+		select Fecha,CodDocente,Nombres,Asistio
+		into #temp
+		from TAsistenciaDiariaDocentes
+	
+		set @consulta='select *
+		INTO temporal
+		from #temp
+		pivot (MIN (Asistio)for Fecha in ('+@columnas+')) as PVT'
+		execute (@consulta)
+
+		alter table temporal add Porcentaje varchar(10)
+
+		declare @Porcentaje varchar(8)
+		declare @CodDocente varchar(8)
+			DECLARE CURSORP CURSOR FOR SELECT CodDocente,Porcentaje FROM #tablap
+		OPEN CURSORP
+		FETCH NEXT FROM CURSORP INTO @CodDocente,@Porcentaje
+		WHILE @@fetch_status = 0
+		BEGIN
+			update temporal set Porcentaje=@Porcentaje+'%' where CodDocente=@CodDocente
+			FETCH NEXT FROM CURSORP INTO @CodDocente,@Porcentaje
+		END
+		CLOSE CURSORP
+		DEALLOCATE CURSORP
+
+		select * from temporal
+
+		drop table IF EXISTS #tablafecha
+		drop table IF EXISTS #tablap
+		drop table if exists #tablafecha
+		drop table if exists #temp
+		drop table if exists temporal
+go
+
