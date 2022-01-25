@@ -60,5 +60,9 @@ namespace CapaPresentacion
             dgvAvanceDocenteSesion.Columns["CantidadAvance"].Visible = false;
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
