@@ -1056,15 +1056,18 @@ as
 	FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
 	WHILE @@fetch_status = 0
 	BEGIN
-		update temporal set Porcentaje=@Porcentaje+'%' where CodAlumno=@CodAlumno
+		update temporal set Porcentaje=@Porcentaje where CodAlumno=@CodAlumno
 		FETCH NEXT FROM CURSORP INTO @CodAlumno,@Porcentaje
 	END
 	CLOSE CURSORP
 	DEALLOCATE CURSORP
 
 	-- Agregar estado del alumno
-	select CodAlumno, Nombres as 'Apellidos y Nombres', 
-		case when Porcentaje = '0.00%' then 'Desistió' else 'Normal' end as Estado
+	select CodAlumno, Nombres as 'Apellidos y Nombres',
+		case when CAST(Porcentaje as float) = 100.00 then 'Continuo' 
+		when CAST(Porcentaje as float) < 100.00 and CAST(Porcentaje as float) >= 50.00 then 'Regular'
+		when CAST(Porcentaje as float) < 50.00 and CAST(Porcentaje as float) > 0.00 then 'Irregular'
+		else 'Desistio' end as Estado
 	from temporal
 
 	drop table IF EXISTS #tablafecha
