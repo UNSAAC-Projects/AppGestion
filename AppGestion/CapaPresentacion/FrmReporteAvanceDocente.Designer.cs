@@ -38,14 +38,14 @@ namespace CapaPresentacion
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvAvanceDocenteSesion = new System.Windows.Forms.DataGridView();
             this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvanceDocenteSesion)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.chart1.BorderlineColor = System.Drawing.Color.WhiteSmoke;
@@ -55,7 +55,7 @@ namespace CapaPresentacion
             legend1.BackColor = System.Drawing.Color.WhiteSmoke;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(723, 276);
+            this.chart1.Location = new System.Drawing.Point(609, 184);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.BorderColor = System.Drawing.Color.Transparent;
@@ -68,7 +68,7 @@ namespace CapaPresentacion
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(452, 373);
+            this.chart1.Size = new System.Drawing.Size(716, 595);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -81,9 +81,8 @@ namespace CapaPresentacion
             this.dgvAvanceDocenteSesion.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvAvanceDocenteSesion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAvanceDocenteSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAvanceDocenteSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvAvanceDocenteSesion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAvanceDocenteSesion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAvanceDocenteSesion.BackgroundColor = System.Drawing.Color.White;
@@ -111,14 +110,14 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAvanceDocenteSesion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvanceDocenteSesion.EnableHeadersVisualStyles = false;
-            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(12, 82);
+            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(35, 123);
             this.dgvAvanceDocenteSesion.Name = "dgvAvanceDocenteSesion";
             this.dgvAvanceDocenteSesion.ReadOnly = true;
             this.dgvAvanceDocenteSesion.RowHeadersVisible = false;
             this.dgvAvanceDocenteSesion.RowHeadersWidth = 51;
             this.dgvAvanceDocenteSesion.RowTemplate.Height = 24;
             this.dgvAvanceDocenteSesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(690, 655);
+            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(888, 634);
             this.dgvAvanceDocenteSesion.TabIndex = 1;
             // 
             // Porcentaje
@@ -128,14 +127,28 @@ namespace CapaPresentacion
             this.Porcentaje.Name = "Porcentaje";
             this.Porcentaje.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(500, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(373, 47);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "REPORTE AVANCE ";
+            this.label1.UseMnemonic = false;
+            // 
             // FrmReporteAvanceDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1213, 791);
-            this.Controls.Add(this.dgvAvanceDocenteSesion);
+            this.ClientSize = new System.Drawing.Size(1323, 791);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
+            this.Controls.Add(this.dgvAvanceDocenteSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReporteAvanceDocente";
             this.Text = "FrmReporteAvanceDocente";
@@ -143,6 +156,7 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvanceDocenteSesion)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -151,5 +165,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataGridView dgvAvanceDocenteSesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
+        private System.Windows.Forms.Label label1;
     }
 }
