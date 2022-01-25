@@ -11,13 +11,13 @@ using CapaNegocio;
 
 namespace CapaPresentacion
 {
-    public partial class frmReporteEstadoAlumno : Form
+    public partial class frmReporteEstadoAlumnos : Form
     {
         readonly N_ReporteEstadoAlumnos oReporteEstado = new N_ReporteEstadoAlumnos();
         readonly N_CursosDocente oCursosDocente = new N_CursosDocente();
         readonly N_Docente oDocente = new N_Docente();
         private string CodDocente;
-        public frmReporteEstadoAlumno(string pCodDocente)
+        public frmReporteEstadoAlumnos(string pCodDocente)
         {
             InitializeComponent();
             CodDocente = pCodDocente;
@@ -28,8 +28,12 @@ namespace CapaPresentacion
             //Mostrar cursos
             cbCursosReporte.Items.AddRange(Asignaturas);
         }
-
         
+        private void MostrarReporte(string IdCatalogo)
+        {
+            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
+        }
+
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
             
@@ -44,13 +48,18 @@ namespace CapaPresentacion
                 string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
                 string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
                 MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
+
+                //Mostrar datos en el PieChart
+                MostrarPieChart();
             }
-            
+
         }
 
-        private void MostrarReporte(string IdCatalogo)
+        private void MostrarPieChart()
         {
-            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
+
+            //chartReporte.Series["Estado"].Points.AddXY("Normal", 0.534);
+            //chartReporte.Series["Estado"].Points.AddXY("Desistió", 0.221);
         }
 
         private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
