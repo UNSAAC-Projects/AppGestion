@@ -57,9 +57,25 @@ namespace CapaPresentacion
 
         private void MostrarPieChart()
         {
+            DataTable tabla = dgvEstadoAlumnos.DataSource as DataTable;
+            Dictionary<string, float> dictEstados = new Dictionary<string, float>();
+            string estado;
+            foreach (DataRow row in tabla.Rows)
+            {
+                estado = row[2].ToString();
+                if(dictEstados.ContainsKey(estado))
+                    dictEstados[estado]++;
+                else
+                    dictEstados[estado] = 1;
+            }
 
-            //chartReporte.Series["Estado"].Points.AddXY("Normal", 0.534);
-            //chartReporte.Series["Estado"].Points.AddXY("Desistió", 0.221);
+            // Obteniendo la suma de todos los valores
+            var total = dictEstados.Skip(0).Sum(v => v.Value);
+
+            foreach (string key in dictEstados.Keys)
+            {
+                chartReporte.Series["Estado"].Points.AddXY(key, dictEstados[key]/total);
+            }
         }
 
         private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
