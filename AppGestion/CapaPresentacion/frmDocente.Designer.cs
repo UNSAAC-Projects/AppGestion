@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.btnReporteAvanceDocentes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCursosPorDia = new System.Windows.Forms.Button();
@@ -90,17 +91,38 @@
             this.ContenedorLogin.Controls.Add(this.panel1);
             this.ContenedorLogin.Controls.Add(this.DOCENTE);
             this.ContenedorLogin.Controls.Add(this.pictureBoxImagen);
+            this.ContenedorLogin.Controls.Add(this.btnReporteAvanceDocentes);
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
             this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorLogin.Name = "ContenedorLogin";
-            this.ContenedorLogin.Size = new System.Drawing.Size(311, 861);
+            this.ContenedorLogin.Size = new System.Drawing.Size(311, 903);
             this.ContenedorLogin.TabIndex = 2;
+            // 
+            // btnReporteAvanceDocentes
+            // 
+            this.btnReporteAvanceDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteAvanceDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteAvanceDocentes.FlatAppearance.BorderSize = 0;
+            this.btnReporteAvanceDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteAvanceDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteAvanceDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteAvanceDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteAvanceDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteAvanceDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteAvanceDocentes.Image")));
+            this.btnReporteAvanceDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteAvanceDocentes.Location = new System.Drawing.Point(0, 762);
+            this.btnReporteAvanceDocentes.Name = "btnReporteAvanceDocentes";
+            this.btnReporteAvanceDocentes.Size = new System.Drawing.Size(363, 62);
+            this.btnReporteAvanceDocentes.TabIndex = 18;
+            this.btnReporteAvanceDocentes.Text = "REPORTE AVANCE DOCENTE";
+            this.btnReporteAvanceDocentes.UseVisualStyleBackColor = false;
+            this.btnReporteAvanceDocentes.Click += new System.EventHandler(this.btnReporteAvanceDocentes_Click);
             // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 785);
+            this.panel3.Location = new System.Drawing.Point(12, 827);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(287, 1);
@@ -121,7 +143,7 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 791);
+            this.btnLogout.Location = new System.Drawing.Point(0, 833);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
@@ -148,7 +170,7 @@
             this.btnCursosPorDia.Location = new System.Drawing.Point(0, 447);
             this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4);
             this.btnCursosPorDia.Name = "btnCursosPorDia";
-            this.btnCursosPorDia.Size = new System.Drawing.Size(321, 62);
+            this.btnCursosPorDia.Size = new System.Drawing.Size(317, 62);
             this.btnCursosPorDia.TabIndex = 15;
             this.btnCursosPorDia.Text = "CURSOS POR DIA";
             this.btnCursosPorDia.UseVisualStyleBackColor = false;
@@ -217,7 +239,7 @@
             this.btnReporteCursos.Location = new System.Drawing.Point(0, 573);
             this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteCursos.Name = "btnReporteCursos";
-            this.btnReporteCursos.Size = new System.Drawing.Size(337, 62);
+            this.btnReporteCursos.Size = new System.Drawing.Size(334, 62);
             this.btnReporteCursos.TabIndex = 12;
             this.btnReporteCursos.Text = "LISTA DE ASISTENCIAS";
             this.btnReporteCursos.UseVisualStyleBackColor = false;
@@ -442,7 +464,7 @@
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1091, 697);
+            this.pictureBox6.Location = new System.Drawing.Point(1091, 739);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(411, 238);
@@ -459,7 +481,7 @@
             this.panelContenedor.Location = new System.Drawing.Point(324, 52);
             this.panelContenedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1003, 791);
+            this.panelContenedor.Size = new System.Drawing.Size(1003, 833);
             this.panelContenedor.TabIndex = 41;
             // 
             // timerHoraFecha
@@ -472,7 +494,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1336, 855);
+            this.ClientSize = new System.Drawing.Size(1336, 897);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.ContenedorLogin);
             this.Controls.Add(this.btnMaxFrmDocente);
@@ -534,5 +556,6 @@
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnReporteAvanceDocentes;
     }
 }

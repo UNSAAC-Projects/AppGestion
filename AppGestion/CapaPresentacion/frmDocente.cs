@@ -269,5 +269,15 @@ namespace CapaPresentacion
         //    FrmReporteAvanceDocente D = new FrmReporteAvanceDocente();
         //    D.Show();
         //}
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    FrmReporteAvanceDocente D = new FrmReporteAvanceDocente();
+        //    D.ShowDialog();
+        //}
+
+        private void btnReporteAvanceDocentes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new FrmReporteAvanceDocente());
+        }
     }
 }

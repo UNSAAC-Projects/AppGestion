@@ -132,6 +132,7 @@
             this.chartReporte.Legends.Add(legend1);
             this.chartReporte.Location = new System.Drawing.Point(511, 73);
             this.chartReporte.Name = "chartReporte";
+            this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,6 +140,7 @@
             series1.LabelFormat = "#.##%";
             series1.Legend = "Legend1";
             series1.Name = "Estado";
+            series1.YValuesPerPoint = 4;
             this.chartReporte.Series.Add(series1);
             this.chartReporte.Size = new System.Drawing.Size(369, 300);
             this.chartReporte.TabIndex = 27;
@@ -148,7 +150,7 @@
             title1.Text = "Reporte";
             this.chartReporte.Titles.Add(title1);
             // 
-            // frmReporteEstadoAlumno
+            // frmReporteEstadoAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +160,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbCursosReporte);
-            this.Name = "frmReporteEstadoAlumno";
+            this.Name = "frmReporteEstadoAlumnos";
             this.Text = "frmReporteEstadoAlumno";
             this.Load += new System.EventHandler(this.frmReporteEstadoAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoAlumnos)).EndInit();
