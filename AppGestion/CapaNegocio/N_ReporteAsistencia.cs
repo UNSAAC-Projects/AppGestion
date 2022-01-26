@@ -19,6 +19,11 @@ namespace CapaNegocio
         {
             return data.ReporteAsistencia(IdCatalogo, FechaInicio, FechaFin);
         }
+
+        public DataTable BuscarReporteAvance(string buscar)
+        {
+            return data.BuscarReporteAvanceDocente(buscar);
+        }
         public DataTable ReporteAvanceDocente()
         {
             return data.ReporteAvacenDocenteDepartamento();

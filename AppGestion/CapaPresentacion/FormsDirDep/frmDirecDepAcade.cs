@@ -13,6 +13,7 @@ using CapaNegocio;
 using Excel;
 using CapaEntidades;
 using System.IO;
+using CapaPresentacion.FormsDirDep;
 
 namespace CapaPresentacion
 {
@@ -234,6 +235,17 @@ namespace CapaPresentacion
         private void panelContenedor3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+               
+        }
+
+        private void btnReporteDocenteAvance_Click(object sender, EventArgs e)
+        {
+            FrmReporteAvanceDocentesDepartamento O = new FrmReporteAvanceDocentesDepartamento();
+            O.ShowDialog();
         }
 
 
