@@ -450,7 +450,7 @@ namespace CapaPresentacion
             this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.buttonDISTRIBUCION.Image = ((System.Drawing.Image)(resources.GetObject("buttonDISTRIBUCION.Image")));
             this.buttonDISTRIBUCION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(0, 582);
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(0, 569);
             this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
             this.buttonDISTRIBUCION.Size = new System.Drawing.Size(307, 75);
