@@ -55,7 +55,7 @@ namespace CapaPresentacion
             legend1.BackColor = System.Drawing.Color.WhiteSmoke;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(609, 184);
+            this.chart1.Location = new System.Drawing.Point(609, 111);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.BorderColor = System.Drawing.Color.Transparent;
@@ -110,14 +110,13 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAvanceDocenteSesion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvanceDocenteSesion.EnableHeadersVisualStyles = false;
-            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(35, 123);
+            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(12, 111);
             this.dgvAvanceDocenteSesion.Name = "dgvAvanceDocenteSesion";
-            this.dgvAvanceDocenteSesion.ReadOnly = true;
             this.dgvAvanceDocenteSesion.RowHeadersVisible = false;
             this.dgvAvanceDocenteSesion.RowHeadersWidth = 51;
             this.dgvAvanceDocenteSesion.RowTemplate.Height = 24;
             this.dgvAvanceDocenteSesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(888, 634);
+            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(582, 634);
             this.dgvAvanceDocenteSesion.TabIndex = 1;
             // 
             // Porcentaje
@@ -125,7 +124,6 @@ namespace CapaPresentacion
             this.Porcentaje.HeaderText = "Porcentaje";
             this.Porcentaje.MinimumWidth = 6;
             this.Porcentaje.Name = "Porcentaje";
-            this.Porcentaje.ReadOnly = true;
             // 
             // label1
             // 
@@ -163,8 +161,8 @@ namespace CapaPresentacion
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataGridView dgvAvanceDocenteSesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView dgvAvanceDocenteSesion;
     }
 }

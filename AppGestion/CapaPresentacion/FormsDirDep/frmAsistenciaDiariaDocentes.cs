@@ -18,10 +18,6 @@ namespace CapaPresentacion
         public frmAsistenciaDiariaDocentes()
         {
             InitializeComponent();
-        }
-
-        private void frmAsistencia_Load(object sender, EventArgs e)
-        {
             // Mostrar los docentes activos en el semestre actual
             MostrarDocentesActivos();
             // Ocultar columna Asistio
@@ -32,6 +28,12 @@ namespace CapaPresentacion
             MostrarHoraFecha();
             //Contar asistentes y faltantes
             ContarAsistencia();
+        }
+
+        private void frmAsistencia_Load(object sender, EventArgs e)
+        {
+            
+
         }
         private void MostrarDocentesActivos()
         {
@@ -55,7 +57,7 @@ namespace CapaPresentacion
             int contador = 0;
             foreach (DataGridViewRow fila in dgvAsistencia .Rows)
             {
-                if (fila.Cells["Asistencia"].Value.ToString() == "P")
+                if (fila.Cells["Asistencia"].Value == "P")
                 {
                     contador = contador + 1;
                 }
@@ -121,12 +123,13 @@ namespace CapaPresentacion
 
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ContarAsistencia();
+           
 
             if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
             {
                 dgvAsistencia.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+            ContarAsistencia();
         }
 
         //Movimiento panel

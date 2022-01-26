@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
-            this.btnReporteAvanceDocentes = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCursosPorDia = new System.Windows.Forms.Button();
@@ -46,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.DOCENTE = new System.Windows.Forms.Label();
             this.pictureBoxImagen = new System.Windows.Forms.PictureBox();
+            this.btnReporteAvanceDocentes = new System.Windows.Forms.Button();
             this.pnlFrmDocente = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.labelHora = new System.Windows.Forms.Label();
@@ -97,26 +97,6 @@
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(311, 903);
             this.ContenedorLogin.TabIndex = 2;
-            // 
-            // btnReporteAvanceDocentes
-            // 
-            this.btnReporteAvanceDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnReporteAvanceDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteAvanceDocentes.FlatAppearance.BorderSize = 0;
-            this.btnReporteAvanceDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnReporteAvanceDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReporteAvanceDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteAvanceDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteAvanceDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.btnReporteAvanceDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteAvanceDocentes.Image")));
-            this.btnReporteAvanceDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteAvanceDocentes.Location = new System.Drawing.Point(0, 762);
-            this.btnReporteAvanceDocentes.Name = "btnReporteAvanceDocentes";
-            this.btnReporteAvanceDocentes.Size = new System.Drawing.Size(363, 62);
-            this.btnReporteAvanceDocentes.TabIndex = 18;
-            this.btnReporteAvanceDocentes.Text = "REPORTE AVANCE DOCENTE";
-            this.btnReporteAvanceDocentes.UseVisualStyleBackColor = false;
-            this.btnReporteAvanceDocentes.Click += new System.EventHandler(this.btnReporteAvanceDocentes_Click);
             // 
             // panel3
             // 
@@ -278,6 +258,7 @@
             this.labelNombre.TabIndex = 7;
             this.labelNombre.Text = "NOMBRE USUARIO";
             this.labelNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelNombre.Click += new System.EventHandler(this.labelNombre_Click);
             // 
             // btnVerCursosDocente
             // 
@@ -341,6 +322,26 @@
             this.pictureBoxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxImagen.TabIndex = 0;
             this.pictureBoxImagen.TabStop = false;
+            // 
+            // btnReporteAvanceDocentes
+            // 
+            this.btnReporteAvanceDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteAvanceDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteAvanceDocentes.FlatAppearance.BorderSize = 0;
+            this.btnReporteAvanceDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteAvanceDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteAvanceDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteAvanceDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteAvanceDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteAvanceDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteAvanceDocentes.Image")));
+            this.btnReporteAvanceDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteAvanceDocentes.Location = new System.Drawing.Point(0, 762);
+            this.btnReporteAvanceDocentes.Name = "btnReporteAvanceDocentes";
+            this.btnReporteAvanceDocentes.Size = new System.Drawing.Size(363, 62);
+            this.btnReporteAvanceDocentes.TabIndex = 18;
+            this.btnReporteAvanceDocentes.Text = "REPORTE AVANCE DOCENTE";
+            this.btnReporteAvanceDocentes.UseVisualStyleBackColor = false;
+            this.btnReporteAvanceDocentes.Click += new System.EventHandler(this.btnReporteAvanceDocentes_Click);
             // 
             // pnlFrmDocente
             // 
