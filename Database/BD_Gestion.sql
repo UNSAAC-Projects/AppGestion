@@ -1197,4 +1197,17 @@ select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura, 
 	where  Finalizado='SI'
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
+--Buscar
+CREATE PROC SP_BUSCARAVANCEDOCENTE
+@BUSCAR varchar(40)
+as
+select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos + D.Nombres as Docente,
+		str(((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) ) + '%' as Cantidad_Avance
+	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+	inner join TDocente D on C.CodDocenteTeorico=D.CodDocente 
+	where  Finalizado='SI' and(C.CodAsignatura like @BUSCAR + '%' or Grupo like @BUSCAR + '%' or A.Nombre like @BUSCAR + '%' 
+			or  D.Apellidos like @BUSCAR + '%' or D.Nombres like @BUSCAR + '%' )
+	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
+go
+
 
