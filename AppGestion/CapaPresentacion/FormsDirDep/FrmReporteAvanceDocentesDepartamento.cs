@@ -22,5 +22,10 @@ namespace CapaPresentacion.FormsDirDep
         {
             dgvAvanceDocentes.DataSource = oDocentes.ReporteAvanceDocente();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgvAvanceDocentes.DataSource = oDocentes.BuscarReporteAvance(txtBuscarAvanceDocente.Text);
+        }
     }
 }

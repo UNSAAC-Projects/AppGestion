@@ -42,6 +42,22 @@ namespace CapaDatos
             }
     
         }
+        public DataTable BuscarReporteAvanceDocente(string buscar)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_BUSCARAVANCEDOCENTE", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@BUSCAR", buscar);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+
+            conexion.Close();
+            return tabla;
+        }
+
         public DataTable ReporteAvacenDocenteDepartamento()
         {
             try
