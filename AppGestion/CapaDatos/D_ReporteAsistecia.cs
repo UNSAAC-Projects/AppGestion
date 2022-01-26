@@ -42,6 +42,31 @@ namespace CapaDatos
             }
     
         }
+        public DataTable ReporteAvacenDocenteDepartamento()
+        {
+            try
+            {
+                DataTable tablaDocentes = new DataTable();
+                SqlDataReader readRows;
+                SqlCommand cmd = new SqlCommand("SP_REPORTE_AVANCE_SESIONES_DOCENTE", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
+                readRows = cmd.ExecuteReader();
+                tablaDocentes.Load(readRows);
+
+                readRows.Close();
+                conexion.Close();
+
+                return tablaDocentes;
+            }
+            catch
+            {
+                MessageBox.Show("No hay avances...");
+                conexion.Close();
+                return null;
+            }
+
+        }
         public string recuperarIdCat(string NombreAsig, string CodDocente,string Grupo)
         {
             try
