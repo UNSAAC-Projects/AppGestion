@@ -83,6 +83,7 @@
             this.dgvReporteSesiones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dgvReporteSesiones.Size = new System.Drawing.Size(1099, 361);
             this.dgvReporteSesiones.TabIndex = 0;
+            this.dgvReporteSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReporteSesiones_CellContentClick_1);
             // 
             // labelReporteAsistencia
             // 

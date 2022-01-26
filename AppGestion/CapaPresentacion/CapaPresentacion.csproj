@@ -195,6 +195,12 @@
     <Compile Include="FormsDirDep\frmReporteAsistenciaDocente.Designer.cs">
       <DependentUpon>frmReporteAsistenciaDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteDetalladoAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteDetalladoAvance.Designer.cs">
+      <DependentUpon>frmReporteDetalladoAvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReporteEstadoAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +244,12 @@
     </Compile>
     <Compile Include="frmReporteAsistenciasAlumnos.Designer.cs">
       <DependentUpon>frmReporteAsistenciasAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDirecListaAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDirecListaAsignaturas.Designer.cs">
+      <DependentUpon>frmDirecListaAsignaturas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EditCatalogo.resx">
       <DependentUpon>EditCatalogo.cs</DependentUpon>
@@ -300,6 +312,9 @@
     <EmbeddedResource Include="FormsDirDep\frmReporteAsistenciaDocente.resx">
       <DependentUpon>frmReporteAsistenciaDocente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteDetalladoAvance.resx">
+      <DependentUpon>frmReporteDetalladoAvance.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteEstadoAlumnos.resx">
       <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteAsistenciasAlumnos.resx">
       <DependentUpon>frmReporteAsistenciasAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDirecListaAsignaturas.resx">
+      <DependentUpon>frmDirecListaAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
