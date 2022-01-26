@@ -224,6 +224,18 @@ namespace CapaPresentacion
             AbrirFormulariosEnPanelContenedor(new frmReporteAsistenciaDocente());
         }
 
+        private void btnReporteDetalladoA_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmDirecListaAsignaturas());
+            //
+           
+        }
+
+        private void panelContenedor3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
         /* private void buttonIMPORTAR_Click(object sender, EventArgs e)
          {

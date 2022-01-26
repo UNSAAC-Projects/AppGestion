@@ -132,5 +132,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dgvReporteSesiones_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
