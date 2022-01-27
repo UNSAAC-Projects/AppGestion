@@ -865,11 +865,17 @@ GO
 --GO
 
 -- Listar asistencias registradas por curso
-create proc SP_ListarAsistenciasCurso
+create or alter proc SP_ListarAsistenciasCurso
 @IdCatalogo varchar(6)
 as
-	select IdCatalogo, Tema, Fecha from TListaAsistencias
-	where IdCatalogo = @IdCatalogo
+	select Fecha,convert(varchar,convert(decimal(6,1),count(case Asistio when 'P' then Asistio end)*convert(decimal(6,1),100)/count(*)))+'%' as PorcentajeAsistencia 
+	into #t
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
+	group by Fecha 
+
+	select IdCatalogo, Tema, l.Fecha,PorcentajeAsistencia from TListaAsistencias l, #t t  
+	where IdCatalogo = @IdCatalogo and l.Fecha=t.Fecha
+	drop table #t
 GO
 
 -- Insertar la asistencia de un alumno a TAsistencia_Alumnos
