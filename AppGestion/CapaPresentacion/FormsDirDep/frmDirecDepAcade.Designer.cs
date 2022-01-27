@@ -32,12 +32,20 @@ namespace CapaPresentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDirecDepAcade));
             this.pnlLateral = new System.Windows.Forms.Panel();
+            this.btnReporteDetalladoA = new System.Windows.Forms.Button();
+            this.buttonReporteAsistenciaDocentes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnCatalogo = new System.Windows.Forms.Button();
+            this.buttonDISTRIBUCION = new System.Windows.Forms.Button();
+            this.buttonLISTAR = new System.Windows.Forms.Button();
             this.labelNombre = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBoxAdmi = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.labelHora = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
@@ -53,16 +61,11 @@ namespace CapaPresentacion
             this.pictureBoxMaxRest = new System.Windows.Forms.PictureBox();
             this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.btnCERRAR = new System.Windows.Forms.PictureBox();
-            this.btnReporteDetalladoA = new System.Windows.Forms.Button();
-            this.buttonReporteAsistenciaDocentes = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.btnCatalogo = new System.Windows.Forms.Button();
-            this.buttonDISTRIBUCION = new System.Windows.Forms.Button();
-            this.buttonLISTAR = new System.Windows.Forms.Button();
-            this.pictureBoxAdmi = new System.Windows.Forms.PictureBox();
-            this.pictureBoxlogo = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnReporteDocenteAvance = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelContenedor3.SuspendLayout();
@@ -70,13 +73,12 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaxRest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.pnlLateral.Controls.Add(this.btnReporteDocenteAvance);
             this.pnlLateral.Controls.Add(this.btnReporteDetalladoA);
             this.pnlLateral.Controls.Add(this.buttonReporteAsistenciaDocentes);
             this.pnlLateral.Controls.Add(this.label1);
@@ -99,6 +101,47 @@ namespace CapaPresentacion
             this.pnlLateral.Size = new System.Drawing.Size(304, 717);
             this.pnlLateral.TabIndex = 0;
             // 
+            // btnReporteDetalladoA
+            // 
+            this.btnReporteDetalladoA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteDetalladoA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteDetalladoA.FlatAppearance.BorderSize = 0;
+            this.btnReporteDetalladoA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteDetalladoA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteDetalladoA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteDetalladoA.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteDetalladoA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteDetalladoA.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteDetalladoA.Image")));
+            this.btnReporteDetalladoA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteDetalladoA.Location = new System.Drawing.Point(1, 629);
+            this.btnReporteDetalladoA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReporteDetalladoA.Name = "btnReporteDetalladoA";
+            this.btnReporteDetalladoA.Size = new System.Drawing.Size(286, 60);
+            this.btnReporteDetalladoA.TabIndex = 21;
+            this.btnReporteDetalladoA.Text = "REPORTE DETALLADO\r\n ASIGNATURAS";
+            this.btnReporteDetalladoA.UseVisualStyleBackColor = false;
+            this.btnReporteDetalladoA.Click += new System.EventHandler(this.btnReporteDetalladoA_Click);
+            // 
+            // buttonReporteAsistenciaDocentes
+            // 
+            this.buttonReporteAsistenciaDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonReporteAsistenciaDocentes.FlatAppearance.BorderSize = 0;
+            this.buttonReporteAsistenciaDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.buttonReporteAsistenciaDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonReporteAsistenciaDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReporteAsistenciaDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReporteAsistenciaDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonReporteAsistenciaDocentes.Image = ((System.Drawing.Image)(resources.GetObject("buttonReporteAsistenciaDocentes.Image")));
+            this.buttonReporteAsistenciaDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReporteAsistenciaDocentes.Location = new System.Drawing.Point(0, 515);
+            this.buttonReporteAsistenciaDocentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonReporteAsistenciaDocentes.Name = "buttonReporteAsistenciaDocentes";
+            this.buttonReporteAsistenciaDocentes.Size = new System.Drawing.Size(307, 70);
+            this.buttonReporteAsistenciaDocentes.TabIndex = 20;
+            this.buttonReporteAsistenciaDocentes.Text = "REPORTE ASISTENCIA \r\nDOCENTES\r\n";
+            this.buttonReporteAsistenciaDocentes.UseVisualStyleBackColor = false;
+            this.buttonReporteAsistenciaDocentes.Click += new System.EventHandler(this.buttonReporteAsistenciaDocentes_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -120,6 +163,93 @@ namespace CapaPresentacion
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(282, 1);
             this.panel3.TabIndex = 18;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(0, 670);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 73, 0);
+            this.btnLogout.Size = new System.Drawing.Size(310, 46);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Text = "CERRAR SESION";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // btnCatalogo
+            // 
+            this.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnCatalogo.FlatAppearance.BorderSize = 0;
+            this.btnCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCatalogo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogo.Image")));
+            this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCatalogo.Location = new System.Drawing.Point(0, 410);
+            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCatalogo.Name = "btnCatalogo";
+            this.btnCatalogo.Size = new System.Drawing.Size(307, 56);
+            this.btnCatalogo.TabIndex = 12;
+            this.btnCatalogo.Text = "CATALOGO";
+            this.btnCatalogo.UseVisualStyleBackColor = false;
+            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
+            // 
+            // buttonDISTRIBUCION
+            // 
+            this.buttonDISTRIBUCION.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDISTRIBUCION.FlatAppearance.BorderSize = 0;
+            this.buttonDISTRIBUCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.buttonDISTRIBUCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonDISTRIBUCION.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDISTRIBUCION.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonDISTRIBUCION.Image = ((System.Drawing.Image)(resources.GetObject("buttonDISTRIBUCION.Image")));
+            this.buttonDISTRIBUCION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(0, 569);
+            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
+            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(307, 75);
+            this.buttonDISTRIBUCION.TabIndex = 11;
+            this.buttonDISTRIBUCION.Text = "         DISTRIBUCION POR \r\n    DOCENTE";
+            this.buttonDISTRIBUCION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDISTRIBUCION.UseVisualStyleBackColor = false;
+            this.buttonDISTRIBUCION.Click += new System.EventHandler(this.buttonDISTRIBUCION_Click);
+            // 
+            // buttonLISTAR
+            // 
+            this.buttonLISTAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonLISTAR.FlatAppearance.BorderSize = 0;
+            this.buttonLISTAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.buttonLISTAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonLISTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLISTAR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLISTAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonLISTAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonLISTAR.Image")));
+            this.buttonLISTAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLISTAR.Location = new System.Drawing.Point(0, 470);
+            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonLISTAR.Name = "buttonLISTAR";
+            this.buttonLISTAR.Size = new System.Drawing.Size(307, 42);
+            this.buttonLISTAR.TabIndex = 3;
+            this.buttonLISTAR.Text = "LISTA DOCENTE";
+            this.buttonLISTAR.UseVisualStyleBackColor = false;
+            this.buttonLISTAR.Click += new System.EventHandler(this.buttonLISTAR_Click);
             // 
             // labelNombre
             // 
@@ -144,6 +274,17 @@ namespace CapaPresentacion
             this.label4.Text = "Director de Departamento \r\nAcademico";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBoxAdmi
+            // 
+            this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
+            this.pictureBoxAdmi.Location = new System.Drawing.Point(81, 226);
+            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxAdmi.Name = "pictureBoxAdmi";
+            this.pictureBoxAdmi.Size = new System.Drawing.Size(136, 128);
+            this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAdmi.TabIndex = 0;
+            this.pictureBoxAdmi.TabStop = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
@@ -161,6 +302,17 @@ namespace CapaPresentacion
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(251, 2);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBoxlogo
+            // 
+            this.pictureBoxlogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
+            this.pictureBoxlogo.Location = new System.Drawing.Point(0, 39);
+            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxlogo.Name = "pictureBoxlogo";
+            this.pictureBoxlogo.Size = new System.Drawing.Size(82, 81);
+            this.pictureBoxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxlogo.TabIndex = 0;
+            this.pictureBoxlogo.TabStop = false;
             // 
             // dataGridViewImageColumn1
             // 
@@ -352,156 +504,6 @@ namespace CapaPresentacion
             this.btnCERRAR.TabStop = false;
             this.btnCERRAR.Click += new System.EventHandler(this.btnCERRAR_Click);
             // 
-            // btnReporteDetalladoA
-            // 
-            this.btnReporteDetalladoA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnReporteDetalladoA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnReporteDetalladoA.FlatAppearance.BorderSize = 0;
-            this.btnReporteDetalladoA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnReporteDetalladoA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReporteDetalladoA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteDetalladoA.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteDetalladoA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.btnReporteDetalladoA.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteDetalladoA.Image")));
-            this.btnReporteDetalladoA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteDetalladoA.Location = new System.Drawing.Point(1, 629);
-            this.btnReporteDetalladoA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnReporteDetalladoA.Name = "btnReporteDetalladoA";
-            this.btnReporteDetalladoA.Size = new System.Drawing.Size(286, 60);
-            this.btnReporteDetalladoA.TabIndex = 21;
-            this.btnReporteDetalladoA.Text = "REPORTE DETALLADO\r\n ASIGNATURAS";
-            this.btnReporteDetalladoA.UseVisualStyleBackColor = false;
-            this.btnReporteDetalladoA.Click += new System.EventHandler(this.btnReporteDetalladoA_Click);
-            // 
-            // buttonReporteAsistenciaDocentes
-            // 
-            this.buttonReporteAsistenciaDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonReporteAsistenciaDocentes.FlatAppearance.BorderSize = 0;
-            this.buttonReporteAsistenciaDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.buttonReporteAsistenciaDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonReporteAsistenciaDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReporteAsistenciaDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReporteAsistenciaDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonReporteAsistenciaDocentes.Image = ((System.Drawing.Image)(resources.GetObject("buttonReporteAsistenciaDocentes.Image")));
-            this.buttonReporteAsistenciaDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonReporteAsistenciaDocentes.Location = new System.Drawing.Point(0, 515);
-            this.buttonReporteAsistenciaDocentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonReporteAsistenciaDocentes.Name = "buttonReporteAsistenciaDocentes";
-            this.buttonReporteAsistenciaDocentes.Size = new System.Drawing.Size(307, 70);
-            this.buttonReporteAsistenciaDocentes.TabIndex = 20;
-            this.buttonReporteAsistenciaDocentes.Text = "REPORTE ASISTENCIA \r\nDOCENTES\r\n";
-            this.buttonReporteAsistenciaDocentes.UseVisualStyleBackColor = false;
-            this.buttonReporteAsistenciaDocentes.Click += new System.EventHandler(this.buttonReporteAsistenciaDocentes_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 670);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 73, 0);
-            this.btnLogout.Size = new System.Drawing.Size(310, 46);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.Text = "CERRAR SESION";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // btnCatalogo
-            // 
-            this.btnCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnCatalogo.FlatAppearance.BorderSize = 0;
-            this.btnCatalogo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnCatalogo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCatalogo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCatalogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.btnCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCatalogo.Image")));
-            this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalogo.Location = new System.Drawing.Point(0, 410);
-            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCatalogo.Name = "btnCatalogo";
-            this.btnCatalogo.Size = new System.Drawing.Size(307, 56);
-            this.btnCatalogo.TabIndex = 12;
-            this.btnCatalogo.Text = "CATALOGO";
-            this.btnCatalogo.UseVisualStyleBackColor = false;
-            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
-            // 
-            // buttonDISTRIBUCION
-            // 
-            this.buttonDISTRIBUCION.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonDISTRIBUCION.FlatAppearance.BorderSize = 0;
-            this.buttonDISTRIBUCION.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.buttonDISTRIBUCION.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonDISTRIBUCION.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDISTRIBUCION.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDISTRIBUCION.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonDISTRIBUCION.Image = ((System.Drawing.Image)(resources.GetObject("buttonDISTRIBUCION.Image")));
-            this.buttonDISTRIBUCION.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonDISTRIBUCION.Location = new System.Drawing.Point(0, 582);
-            this.buttonDISTRIBUCION.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonDISTRIBUCION.Name = "buttonDISTRIBUCION";
-            this.buttonDISTRIBUCION.Size = new System.Drawing.Size(307, 75);
-            this.buttonDISTRIBUCION.TabIndex = 11;
-            this.buttonDISTRIBUCION.Text = "         DISTRIBUCION POR \r\n    DOCENTE";
-            this.buttonDISTRIBUCION.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDISTRIBUCION.UseVisualStyleBackColor = false;
-            this.buttonDISTRIBUCION.Click += new System.EventHandler(this.buttonDISTRIBUCION_Click);
-            // 
-            // buttonLISTAR
-            // 
-            this.buttonLISTAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonLISTAR.FlatAppearance.BorderSize = 0;
-            this.buttonLISTAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.buttonLISTAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonLISTAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLISTAR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLISTAR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonLISTAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonLISTAR.Image")));
-            this.buttonLISTAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLISTAR.Location = new System.Drawing.Point(0, 470);
-            this.buttonLISTAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonLISTAR.Name = "buttonLISTAR";
-            this.buttonLISTAR.Size = new System.Drawing.Size(307, 42);
-            this.buttonLISTAR.TabIndex = 3;
-            this.buttonLISTAR.Text = "LISTA DOCENTE";
-            this.buttonLISTAR.UseVisualStyleBackColor = false;
-            this.buttonLISTAR.Click += new System.EventHandler(this.buttonLISTAR_Click);
-            // 
-            // pictureBoxAdmi
-            // 
-            this.pictureBoxAdmi.Image = global::CapaPresentacion.Properties.Resources.administrador;
-            this.pictureBoxAdmi.Location = new System.Drawing.Point(81, 226);
-            this.pictureBoxAdmi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxAdmi.Name = "pictureBoxAdmi";
-            this.pictureBoxAdmi.Size = new System.Drawing.Size(136, 128);
-            this.pictureBoxAdmi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxAdmi.TabIndex = 0;
-            this.pictureBoxAdmi.TabStop = false;
-            // 
-            // pictureBoxlogo
-            // 
-            this.pictureBoxlogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBoxlogo.Location = new System.Drawing.Point(0, 39);
-            this.pictureBoxlogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxlogo.Name = "pictureBoxlogo";
-            this.pictureBoxlogo.Size = new System.Drawing.Size(82, 81);
-            this.pictureBoxlogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxlogo.TabIndex = 0;
-            this.pictureBoxlogo.TabStop = false;
-            // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.HeaderText = "EDITAR";
@@ -509,6 +511,16 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 6;
+            // 
+            // btnReporteDocenteAvance
+            // 
+            this.btnReporteDocenteAvance.Location = new System.Drawing.Point(14, 342);
+            this.btnReporteDocenteAvance.Name = "btnReporteDocenteAvance";
+            this.btnReporteDocenteAvance.Size = new System.Drawing.Size(75, 23);
+            this.btnReporteDocenteAvance.TabIndex = 22;
+            this.btnReporteDocenteAvance.Text = "button1";
+            this.btnReporteDocenteAvance.UseVisualStyleBackColor = true;
+            this.btnReporteDocenteAvance.Click += new System.EventHandler(this.btnReporteDocenteAvance_Click);
             // 
             // frmDirecDepAcade
             // 
@@ -534,6 +546,8 @@ namespace CapaPresentacion
             this.Load += new System.EventHandler(this.frmDirecDepAcade_Load);
             this.pnlLateral.ResumeLayout(false);
             this.pnlLateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelContenedor3.ResumeLayout(false);
@@ -542,8 +556,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaxRest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMINIMIZAR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCERRAR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -582,5 +594,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonReporteAsistenciaDocentes;
         private System.Windows.Forms.Button btnReporteDetalladoA;
+        private System.Windows.Forms.Button btnReporteDocenteAvance;
     }
 }

@@ -33,6 +33,7 @@ namespace CapaDatos
             return tabla;
         }
 
+       
         public void GuardarAsistenciasDiarias(DataTable tabla, string fecha)
         {
             //string Unidad, Capitulo, Tema, Horas, Finalizado, Observacion;

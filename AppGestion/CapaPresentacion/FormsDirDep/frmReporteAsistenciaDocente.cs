@@ -23,6 +23,7 @@ namespace CapaPresentacion
         {
             dtpFechaInferior.Value = new DateTime(2022, 1, 1);
             dtpFechaSuperior.Value = DateTime.Now;
+            mostrarReporte();
         }
         private void mostrarReporte()
         {
