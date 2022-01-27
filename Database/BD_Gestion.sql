@@ -1210,4 +1210,18 @@ select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura, 
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
 
+create or alter proc SP_InsertarAsistenciaDocentes
+@Fecha date,
+@CodDocente varchar(10),
+@Nombres varchar(200),
+@Asistio varchar(8),
+@Observacion varchar(40)
+as
+if exists (select* from TAsistenciaDiariaDocentes where Fecha=@Fecha and CodDocente=@CodDocente)
+update TAsistenciaDiariaDocentes set Asistio=@Asistio, Observacion=@Observacion where Fecha=@Fecha and CodDocente=@CodDocente
+else
+insert into  TAsistenciaDiariaDocentes values(@Fecha,@CodDocente,@Nombres,@Asistio,@Observacion)
+go
+
+
 
