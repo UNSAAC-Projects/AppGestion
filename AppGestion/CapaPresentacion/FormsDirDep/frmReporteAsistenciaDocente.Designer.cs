@@ -130,7 +130,7 @@ namespace CapaPresentacion
             this.dtpFechaSuperior.Name = "dtpFechaSuperior";
             this.dtpFechaSuperior.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaSuperior.TabIndex = 30;
-            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 20, 0, 0, 0, 0);
+            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 26, 19, 35, 44, 0);
             this.dtpFechaSuperior.ValueChanged += new System.EventHandler(this.dtpFechaSuperior_ValueChanged);
             // 
             // buttonExportar

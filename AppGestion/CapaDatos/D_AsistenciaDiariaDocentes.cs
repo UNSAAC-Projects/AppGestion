@@ -81,5 +81,19 @@ namespace CapaDatos
             }
 
         }
+        public void InsertarAsistenciaDocente(E_AsistenciaDiariaDocentes AsisDocentes)
+        {
+
+            SqlCommand cmd = new SqlCommand("SP_InsertarAsistenciaDocentes", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+            cmd.Parameters.AddWithValue("@Fecha", AsisDocentes.fecha);
+            cmd.Parameters.AddWithValue("@CodDocente", AsisDocentes.coddocente);
+            cmd.Parameters.AddWithValue("@Nombres", AsisDocentes.nombres);
+            cmd.Parameters.AddWithValue("@Asistio", AsisDocentes.asistio);
+            cmd.Parameters.AddWithValue("@Observacion", AsisDocentes.observacion);
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }
