@@ -172,7 +172,7 @@ namespace CapaPresentacion
             this.dtpFechaSuperior.Name = "dtpFechaSuperior";
             this.dtpFechaSuperior.Size = new System.Drawing.Size(200, 26);
             this.dtpFechaSuperior.TabIndex = 28;
-            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 20, 0, 0, 0, 0);
+            this.dtpFechaSuperior.Value = new System.DateTime(2022, 1, 26, 0, 0, 0, 0);
             this.dtpFechaSuperior.ValueChanged += new System.EventHandler(this.dtpFechaSuperior_ValueChanged);
             // 
             // buttonExportar
@@ -210,7 +210,7 @@ namespace CapaPresentacion
             this.cbNombreCurso.TabIndex = 31;
             this.cbNombreCurso.Visible = false;
             // 
-            // ReporteAsistenciasAlumnos
+            // frmReporteAsistenciasAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -226,7 +226,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.dgvReporteAsistencia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ReporteAsistenciasAlumnos";
+            this.Name = "frmReporteAsistenciasAlumnos";
             this.Text = "ReporteAsistenciasAlumnos";
             this.Load += new System.EventHandler(this.ReporteAsistenciasAlumnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteAsistencia)).EndInit();

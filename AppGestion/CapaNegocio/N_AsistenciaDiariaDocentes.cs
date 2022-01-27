@@ -27,5 +27,9 @@ namespace CapaNegocio
         {
             return data.ReporteAsistenciaDocenteDiaria(FechaInicio, FechaFin);
         }
+        public void InsertarAsistenciaDocente(E_AsistenciaDiariaDocentes asistencia_docente)
+        {
+            data.InsertarAsistenciaDocente(asistencia_docente);
+        }
     }
 }
