@@ -259,7 +259,7 @@ where NroSemestre like @BUSCAR + '%' or  CodAsignatura like @BUSCAR + '%'
 go
 
 ----------procecedimiento alamcenado para un Agregar un curso en el catalogo----------
-create proc SP_INSERTARCATALOGO
+create or alter proc SP_INSERTARCATALOGO
 	@IDCatalogo varchar(6),
 	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
@@ -273,7 +273,7 @@ insert into TCatalogo values(@IDCatalogo,@SemestreLectivo,@NroSemestre,@CodAsign
 go
 
 ----------procecedimiento alamcenado para un Editar un curso en el catalogo----------
-create proc SP_EDITARCATALOGO
+create or alter proc SP_EDITARCATALOGO
 	@IDCatalogo varchar(6),
 	@SemestreLectivo varchar(8),
 	@NroSemestre varchar(2),
@@ -334,14 +334,14 @@ AS INSERT INTO THorario values (
 go
 
 ----------------------  PROCEDIMIENTOS ALMACENADOS PARA VISTA CATALOGO ------------------------------------------------------
-CREATE PROC SP_VISTACATALOGO
+CREATE or alter PROC SP_VISTACATALOGO
 as
 select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
 from TAsignatura  A inner join TCatalogo C on C.CodAsignatura=A.CodAsignatura inner join TDocente D on D.CodDocente=C.CodDocentePractico and D.CodDocente=C.CodDocenteTeorico
 go
 
 -------procedimiento almacenado para buscar curso-----
-CREATE PROC SP_BUSCARVISTACATALOGO
+CREATE or alter PROC SP_BUSCARVISTACATALOGO
 @BUSCAR varchar(20)
 as
 select C.IDCatalogo,C.CodAsignatura,c.Grupo ,c.SemestreLectivo,C.CodAsignatura + C.Grupo +'IN' as GrupoAsignatura,A.Nombre, A.Creditos , C.NroSemestre, D.Nombres as DocentePractico, D.Nombres as DocenteTeorico, C.CodDocentePractico, c.CodDocenteTeorico,Aula
@@ -865,11 +865,17 @@ GO
 --GO
 
 -- Listar asistencias registradas por curso
-create proc SP_ListarAsistenciasCurso
+create or alter proc SP_ListarAsistenciasCurso
 @IdCatalogo varchar(6)
 as
-	select IdCatalogo, Tema, Fecha from TListaAsistencias
-	where IdCatalogo = @IdCatalogo
+	select Fecha,convert(varchar,convert(decimal(6,1),count(case Asistio when 'P' then Asistio end)*convert(decimal(6,1),100)/count(*)))+'%' as PorcentajeAsistencia 
+	into #t
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
+	group by Fecha 
+
+	select IdCatalogo, Tema, l.Fecha,PorcentajeAsistencia from TListaAsistencias l, #t t  
+	where IdCatalogo = @IdCatalogo and l.Fecha=t.Fecha
+	drop table #t
 GO
 
 -- Insertar la asistencia de un alumno a TAsistencia_Alumnos
@@ -1209,5 +1215,19 @@ select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura, 
 			or  D.Apellidos like @BUSCAR + '%' or D.Nombres like @BUSCAR + '%' )
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
+
+create or alter proc SP_InsertarAsistenciaDocentes
+@Fecha date,
+@CodDocente varchar(10),
+@Nombres varchar(200),
+@Asistio varchar(8),
+@Observacion varchar(40)
+as
+if exists (select* from TAsistenciaDiariaDocentes where Fecha=@Fecha and CodDocente=@CodDocente)
+update TAsistenciaDiariaDocentes set Asistio=@Asistio, Observacion=@Observacion where Fecha=@Fecha and CodDocente=@CodDocente
+else
+insert into  TAsistenciaDiariaDocentes values(@Fecha,@CodDocente,@Nombres,@Asistio,@Observacion)
+go
+
 
 

@@ -32,8 +32,8 @@ namespace CapaPresentacion
         {
             N_PlanSesiones pvista = new N_PlanSesiones();
             dgvAvanceDetallado.DataSource = pvista.ListandoPlanSesiones(CodCatalogo);
-            int NroSesionesCompletados = 0;
-            int NroSesionesNOCompletados = 0;
+            double NroSesionesCompletados = 0;
+            double NroSesionesNOCompletados = 0;
             foreach (DataGridViewRow fila in dgvAvanceDetallado.Rows)
             {
                 if (fila.Cells["Finalizado"].Value.ToString() == "SI")
@@ -47,8 +47,14 @@ namespace CapaPresentacion
                     NroSesionesNOCompletados++;
                 }
             }
-            nrocompletos.Text = NroSesionesCompletados.ToString();
-            nroNOcompletos.Text = NroSesionesNOCompletados.ToString();
+
+            double cantTemas = dgvAvanceDetallado.Rows.Count;
+            double TotalCompletos = (NroSesionesCompletados / cantTemas) * 100;
+            double TotalNOCompletos = (NroSesionesNOCompletados / cantTemas) * 100;
+
+            nrocompletos.Text = TotalCompletos.ToString() +  "%";
+            nroNOcompletos.Text = TotalNOCompletos.ToString() + "%";
+
 
         }
         private void MostrarNombreAsignatura(string nombreAsignatura, string grupo)
@@ -56,5 +62,14 @@ namespace CapaPresentacion
             lblNombreAsignatura.Text = nombreAsignatura + " - " + "GRUPO " + grupo;
         }
 
+        private void dgvAvanceDetallado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmReporteDetalladoAvance_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
