@@ -83,6 +83,7 @@ namespace CapaPresentacion.FormsDirDep
             this.dgvAvanceDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvAvanceDocentes.Size = new System.Drawing.Size(959, 454);
             this.dgvAvanceDocentes.TabIndex = 0;
+            this.dgvAvanceDocentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvanceDocentes_CellContentClick);
             // 
             // txtBuscarAvanceDocente
             // 
