@@ -904,7 +904,7 @@ select @Categoria = Categoria from TAsignatura
 	where CodAsignatura = (select CodAsignatura from TCatalogo where IDCatalogo = @IdCatalogo)
 -- Mostrar reporte
 select Unidad, Capitulo, Tema, '' as Fecha, HorasProgramadas as 'Horas Programadas', 
-	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes',VariacionHora
+	@Categoria as Categoria, Observacion, '' as 'Total Asistentes', '' as 'Total faltantes',VariacionHora + ' Horas' as VariacionHora
 from TPlanSesiones
 where IDCatalogo = @IdCatalogo
 GO
