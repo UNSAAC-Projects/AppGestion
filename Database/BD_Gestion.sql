@@ -1100,10 +1100,10 @@ go
 CREATE PROC SP_REPORTE_AVANCE_SESIONES
 @IdDocente varchar(6)
 AS
-select  C.CodAsignatura + Grupo + 'IN' as Asignatura,((count(Finalizado)*100)/48) as CantidadAvance
+select  C.CodAsignatura + Grupo + 'IN' as Codigo,A.Nombre as Asignatura,   ((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) as CantidadAvance
 	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 	where  Finalizado='SI' and C.CodDocenteTeorico=@IdDocente
-	group by P.IDCatalogo,C.CodAsignatura,C.Grupo
+	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre
 go
 
 
