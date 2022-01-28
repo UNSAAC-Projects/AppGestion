@@ -98,7 +98,7 @@ namespace CapaPresentacion
             this.dgvAvanceDetallado.Name = "dgvAvanceDetallado";
             this.dgvAvanceDetallado.RowHeadersVisible = false;
             this.dgvAvanceDetallado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dgvAvanceDetallado.Size = new System.Drawing.Size(1046, 361);
+            this.dgvAvanceDetallado.Size = new System.Drawing.Size(1046, 365);
             this.dgvAvanceDetallado.TabIndex = 25;
             // 
             // panel2
@@ -121,7 +121,7 @@ namespace CapaPresentacion
             this.buttonCerrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCerrrar.Location = new System.Drawing.Point(873, 516);
+            this.buttonCerrrar.Location = new System.Drawing.Point(872, 504);
             this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCerrrar.Name = "buttonCerrrar";
             this.buttonCerrrar.Size = new System.Drawing.Size(183, 41);
@@ -138,7 +138,7 @@ namespace CapaPresentacion
             this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonExportar.Location = new System.Drawing.Point(657, 516);
+            this.buttonExportar.Location = new System.Drawing.Point(666, 505);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExportar.Name = "buttonExportar";
             this.buttonExportar.Size = new System.Drawing.Size(182, 41);
@@ -168,6 +168,8 @@ namespace CapaPresentacion
             // 
             // completos
             // 
+            this.completos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.completos.AutoSize = true;
             this.completos.Location = new System.Drawing.Point(163, 516);
             this.completos.Name = "completos";
@@ -186,6 +188,7 @@ namespace CapaPresentacion
             // 
             // nocompletadas
             // 
+            this.nocompletadas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.nocompletadas.AutoSize = true;
             this.nocompletadas.Location = new System.Drawing.Point(376, 516);
             this.nocompletadas.Name = "nocompletadas";
@@ -206,7 +209,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 553);
+            this.ClientSize = new System.Drawing.Size(1094, 557);
             this.Controls.Add(this.nroNOcompletos);
             this.Controls.Add(this.nocompletadas);
             this.Controls.Add(this.nrocompletos);
@@ -218,6 +221,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.buttonCerrrar);
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReporteDetalladoAvance";
             this.Text = "frmReporteAvancePlanDetallado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAvanceDetallado)).EndInit();
