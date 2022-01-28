@@ -865,11 +865,17 @@ GO
 --GO
 
 -- Listar asistencias registradas por curso
-create proc SP_ListarAsistenciasCurso
+create or alter proc SP_ListarAsistenciasCurso
 @IdCatalogo varchar(6)
 as
-	select IdCatalogo, Tema, Fecha from TListaAsistencias
-	where IdCatalogo = @IdCatalogo
+	select Fecha,convert(varchar,convert(decimal(6,1),count(case Asistio when 'P' then Asistio end)*convert(decimal(6,1),100)/count(*)))+'%' as PorcentajeAsistencia 
+	into #t
+	from TAsistencia_Alumnos where IdCatalogo=@IdCatalogo
+	group by Fecha 
+
+	select IdCatalogo, Tema, l.Fecha,PorcentajeAsistencia from TListaAsistencias l, #t t  
+	where IdCatalogo = @IdCatalogo and l.Fecha=t.Fecha
+	drop table #t
 GO
 
 -- Insertar la asistencia de un alumno a TAsistencia_Alumnos
@@ -1191,10 +1197,37 @@ CREATE PROC SP_REPORTE_AVANCE_SESIONES_DOCENTE
 AS
 		
 select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos + D.Nombres as Docente,
-		((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) as CantidadAvance
+		((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) as Cantidad_Avance
 	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 	inner join TDocente D on C.CodDocenteTeorico=D.CodDocente 
 	where  Finalizado='SI'
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
+--Buscar
+CREATE PROC SP_BUSCARAVANCEDOCENTE
+@BUSCAR varchar(40)
+as
+select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos + D.Nombres as Docente,
+		str(((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) ) + '%' as Cantidad_Avance
+	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
+	inner join TDocente D on C.CodDocenteTeorico=D.CodDocente 
+	where  Finalizado='SI' and(C.CodAsignatura like @BUSCAR + '%' or Grupo like @BUSCAR + '%' or A.Nombre like @BUSCAR + '%' 
+			or  D.Apellidos like @BUSCAR + '%' or D.Nombres like @BUSCAR + '%' )
+	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
+go
+
+create or alter proc SP_InsertarAsistenciaDocentes
+@Fecha date,
+@CodDocente varchar(10),
+@Nombres varchar(200),
+@Asistio varchar(8),
+@Observacion varchar(40)
+as
+if exists (select* from TAsistenciaDiariaDocentes where Fecha=@Fecha and CodDocente=@CodDocente)
+update TAsistenciaDiariaDocentes set Asistio=@Asistio, Observacion=@Observacion where Fecha=@Fecha and CodDocente=@CodDocente
+else
+insert into  TAsistenciaDiariaDocentes values(@Fecha,@CodDocente,@Nombres,@Asistio,@Observacion)
+go
+
+
 

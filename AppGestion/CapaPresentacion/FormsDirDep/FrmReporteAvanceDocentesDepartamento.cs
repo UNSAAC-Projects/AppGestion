@@ -27,5 +27,10 @@ namespace CapaPresentacion.FormsDirDep
         {
             dgvAvanceDocentes.DataSource = oDocentes.BuscarReporteAvance(txtBuscarAvanceDocente.Text);
         }
+
+        private void dgvAvanceDocentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -8,16 +8,26 @@ namespace CapaPresentacion
 {
     public partial class frmAsistenciaDiariaDocentes : Form
     {
-        FrmLogin L = new FrmLogin();
-        E_ListaAsistencias entities = new E_ListaAsistencias();
-        N_PlanSesiones oPlanSesiones = new N_PlanSesiones();
         N_AsistenciaDiariaDocentes oADiariaDocentes = new N_AsistenciaDiariaDocentes();
-
-        public string CodAsignatura;
+        DateTime fecha = DateTime.Now;
 
         public frmAsistenciaDiariaDocentes()
         {
             InitializeComponent();
+            //// Mostrar los docentes activos en el semestre actual
+            //MostrarDocentesActivos();
+            //// Ocultar columna Asistio
+            //dgvAsistencia.Columns["Asistio"].Visible = false;
+            ////Mostrar nro de docentes
+            //labelNroDocentes.Text = dgvAsistencia.Rows.Count.ToString();
+            ////Mostrar hora  y fecha 
+            //MostrarHoraFecha();
+            ////Contar asistentes y faltantes
+            //ContarAsistencia();
+        }
+
+        private void frmAsistencia_Load(object sender, EventArgs e)
+        {
             // Mostrar los docentes activos en el semestre actual
             MostrarDocentesActivos();
             // Ocultar columna Asistio
@@ -28,12 +38,6 @@ namespace CapaPresentacion
             MostrarHoraFecha();
             //Contar asistentes y faltantes
             ContarAsistencia();
-        }
-
-        private void frmAsistencia_Load(object sender, EventArgs e)
-        {
-            
-
         }
         private void MostrarDocentesActivos()
         {
@@ -81,12 +85,31 @@ namespace CapaPresentacion
 
         public bool  GuardarDatos()
         {
-            //Recuperar tabla
-            DataTable tabla = dgvAsistencia.DataSource as DataTable;
-            //Obtener fecha en formato mes-dia-año
-            string fecha = DateTime.Now.ToString("MM-dd-yyyy");
-            //Guardar asistencias
-            oADiariaDocentes.GuardarAsistenciasDiarias(tabla, fecha);
+            ////Recuperar tabla
+            //DataTable tabla = dgvAsistencia.DataSource as DataTable;
+            ////Obtener fecha en formato mes-dia-año
+            //string fecha = DateTime.Now.ToString("MM-dd-yyyy");
+            ////Guardar asistencias
+            //oADiariaDocentes.GuardarAsistenciasDiarias(tabla, fecha);
+            //return true;
+
+            foreach (DataGridViewRow row in dgvAsistencia.Rows)
+            {
+                E_AsistenciaDiariaDocentes entities = new E_AsistenciaDiariaDocentes();
+                N_AsistenciaDiariaDocentes busines = new N_AsistenciaDiariaDocentes();
+
+                string asistencia = Convert.ToString(row.Cells["Asistencia"].Value);
+                string coddocente = Convert.ToString(row.Cells["CodDocente"].Value);
+                string nombres = Convert.ToString(row.Cells["Nombres"].Value);
+                string observacion = Convert.ToString(row.Cells["Observacion"].Value);
+                //insertar datos en la bd
+                entities.fecha = fecha;
+                entities.coddocente = coddocente;
+                entities.nombres = nombres;
+                entities.asistio = asistencia;
+                entities.observacion = observacion;
+                busines.InsertarAsistenciaDocente(entities);
+            }
             return true;
         }
         private void buttonGUARDAR_Click(object sender, EventArgs e)
@@ -161,7 +184,7 @@ namespace CapaPresentacion
                     {
                         dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "P";
                     }
-                    else
+                    if (valorAsistencia == "F")
                     {
                         dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "F";
                     }
