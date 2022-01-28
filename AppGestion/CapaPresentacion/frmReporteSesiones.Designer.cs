@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteSesiones));
             this.dgvReporteSesiones = new System.Windows.Forms.DataGridView();
             this.labelReporteAsistencia = new System.Windows.Forms.Label();
@@ -40,16 +40,18 @@
             this.labelAsignatura = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Avanzado = new System.Windows.Forms.Label();
             this.cboTiemposCursos = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReporteSesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvReporteSesiones
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvReporteSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvReporteSesiones.AllowUserToAddRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvReporteSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvReporteSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -59,29 +61,30 @@
             this.dgvReporteSesiones.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReporteSesiones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvReporteSesiones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReporteSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReporteSesiones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReporteSesiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReporteSesiones.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvReporteSesiones.Location = new System.Drawing.Point(28, 151);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReporteSesiones.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvReporteSesiones.Location = new System.Drawing.Point(26, 185);
             this.dgvReporteSesiones.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dgvReporteSesiones.Name = "dgvReporteSesiones";
+            this.dgvReporteSesiones.ReadOnly = true;
             this.dgvReporteSesiones.RowHeadersVisible = false;
             this.dgvReporteSesiones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            this.dgvReporteSesiones.Size = new System.Drawing.Size(1099, 361);
+            this.dgvReporteSesiones.Size = new System.Drawing.Size(1120, 380);
             this.dgvReporteSesiones.TabIndex = 0;
             this.dgvReporteSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReporteSesiones_CellContentClick_1);
             // 
@@ -92,7 +95,7 @@
             this.labelReporteAsistencia.BackColor = System.Drawing.Color.Transparent;
             this.labelReporteAsistencia.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelReporteAsistencia.ForeColor = System.Drawing.Color.DimGray;
-            this.labelReporteAsistencia.Location = new System.Drawing.Point(408, 9);
+            this.labelReporteAsistencia.Location = new System.Drawing.Point(424, 21);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
             this.labelReporteAsistencia.Size = new System.Drawing.Size(353, 39);
@@ -108,7 +111,7 @@
             this.buttonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonExportar.Location = new System.Drawing.Point(650, 533);
+            this.buttonExportar.Location = new System.Drawing.Point(681, 574);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExportar.Name = "buttonExportar";
             this.buttonExportar.Size = new System.Drawing.Size(235, 41);
@@ -126,7 +129,7 @@
             this.buttonCerrrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrrar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCerrrar.ForeColor = System.Drawing.Color.White;
-            this.buttonCerrrar.Location = new System.Drawing.Point(866, 533);
+            this.buttonCerrrar.Location = new System.Drawing.Point(897, 574);
             this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCerrrar.Name = "buttonCerrrar";
             this.buttonCerrrar.Size = new System.Drawing.Size(236, 41);
@@ -144,7 +147,7 @@
             this.comboBoxAsignaturas.Location = new System.Drawing.Point(328, 94);
             this.comboBoxAsignaturas.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxAsignaturas.Name = "comboBoxAsignaturas";
-            this.comboBoxAsignaturas.Size = new System.Drawing.Size(450, 28);
+            this.comboBoxAsignaturas.Size = new System.Drawing.Size(411, 28);
             this.comboBoxAsignaturas.TabIndex = 4;
             this.comboBoxAsignaturas.SelectedIndexChanged += new System.EventHandler(this.comboBoxAsignaturas_SelectedIndexChanged);
             // 
@@ -182,14 +185,14 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // Avanzado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(807, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Tiempos";
+            this.Avanzado.AutoSize = true;
+            this.Avanzado.Location = new System.Drawing.Point(776, 104);
+            this.Avanzado.Name = "Avanzado";
+            this.Avanzado.Size = new System.Drawing.Size(71, 17);
+            this.Avanzado.TabIndex = 23;
+            this.Avanzado.Text = "Avanzado";
             // 
             // cboTiemposCursos
             // 
@@ -199,19 +202,30 @@
             "Menos",
             "0",
             "Mas"});
-            this.cboTiemposCursos.Location = new System.Drawing.Point(886, 97);
+            this.cboTiemposCursos.Location = new System.Drawing.Point(870, 101);
             this.cboTiemposCursos.Name = "cboTiemposCursos";
-            this.cboTiemposCursos.Size = new System.Drawing.Size(121, 24);
+            this.cboTiemposCursos.Size = new System.Drawing.Size(78, 24);
             this.cboTiemposCursos.TabIndex = 24;
             this.cboTiemposCursos.SelectedIndexChanged += new System.EventHandler(this.cboTiemposCursos_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(970, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 17);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Horas de lo programado";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmReporteSesiones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1160, 598);
-            this.Controls.Add(this.cboTiemposCursos);
+            this.ClientSize = new System.Drawing.Size(1181, 617);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboTiemposCursos);
+            this.Controls.Add(this.Avanzado);
             this.Controls.Add(this.labelReporteAsistencia);
             this.Controls.Add(this.dgvReporteSesiones);
             this.Controls.Add(this.panel2);
@@ -242,7 +256,8 @@
         private System.Windows.Forms.Label labelAsignatura;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Avanzado;
         private System.Windows.Forms.ComboBox cboTiemposCursos;
+        private System.Windows.Forms.Label label1;
     }
 }
