@@ -48,20 +48,27 @@ namespace CapaPresentacion
            
             
             dt = oReporteSesiones.MostrarReporteSesionesDocente(datos.CodDocente);
+            
             int nroFilas = dt.Rows.Count;
-            chart1.Series["Series1"].IsValueShownAsLabel = true;
-            chart1.Titles.Add("Avacen por cursooooooo");
-            for ( int k=0;k<nroFilas;k++)
+
+            chart2.DataSource = oReporteSesiones.MostrarReporteSesionesDocente(datos.CodDocente);
+            chart2.Series["Series1"].XValueMember = "Codigo";
+            chart2.Series["Series1"].YValueMembers = "CantidadAvance";
+
+            for (int k = 0; k < nroFilas; k++)
             {
-                chart1.Series["Series1"].Points.AddXY(dt.Rows[k]["Asignatura"], dt.Rows[k]["CantidadAvance"]);
+                
+
                 string valor = dt.Rows[k]["CantidadAvance"].ToString();
 
                 dgvAvanceDocenteSesion.Rows[k].Cells["Porcentaje"].Value = valor + '%';
+               
             }
-             dgvAvanceDocenteSesion.Columns["CantidadAvance"].Visible = false;
-            dgvAvanceDocenteSesion.Columns["CantidadAvance"].DisplayIndex = 2;
-            dgvAvanceDocenteSesion.Columns["Porcentaje"].DisplayIndex = 1;
-            dgvAvanceDocenteSesion.Columns["Asignatura"].DisplayIndex = 0;
+            dgvAvanceDocenteSesion.Columns["CantidadAvance"].Visible = false;
+            dgvAvanceDocenteSesion.Columns["CantidadAvance"].DisplayIndex = 3;
+            dgvAvanceDocenteSesion.Columns["Porcentaje"].DisplayIndex = 2;
+            dgvAvanceDocenteSesion.Columns["Asignatura"].DisplayIndex = 1;
+            dgvAvanceDocenteSesion.Columns["Codigo"].DisplayIndex = 0;
 
         }
         private void MostrarReporte(string IdDocente)
