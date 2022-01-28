@@ -37,9 +37,9 @@ namespace CapaPresentacion
             this.btnHorarios = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
+            this.avance = new System.Windows.Forms.DataGridViewImageColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.btnDescargar = new System.Windows.Forms.Button();
-            this.avance = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,8 @@ namespace CapaPresentacion
             this.dgvAsignaturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAsignaturas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAsignaturas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAsignaturas.BackgroundColor = System.Drawing.Color.White;
             this.dgvAsignaturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsignaturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -132,6 +134,14 @@ namespace CapaPresentacion
             this.dgvAsignaturas.TabIndex = 53;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
             // 
+            // avance
+            // 
+            this.avance.HeaderText = "Avance Plan";
+            this.avance.Image = global::CapaPresentacion.Properties.Resources.form_24px;
+            this.avance.MinimumWidth = 6;
+            this.avance.Name = "avance";
+            this.avance.Width = 105;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -167,14 +177,6 @@ namespace CapaPresentacion
             this.btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescargar.UseVisualStyleBackColor = false;
             // 
-            // avance
-            // 
-            this.avance.HeaderText = "Avance Plan";
-            this.avance.Image = global::CapaPresentacion.Properties.Resources.form_24px;
-            this.avance.MinimumWidth = 6;
-            this.avance.Name = "avance";
-            this.avance.Width = 125;
-            // 
             // frmDirecListaAsignaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +188,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.dgvAsignaturas);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnDescargar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDirecListaAsignaturas";
             this.Text = "ReporteAvanDetallAsignatura";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();
