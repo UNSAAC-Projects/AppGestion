@@ -1229,5 +1229,11 @@ else
 insert into  TAsistenciaDiariaDocentes values(@Fecha,@CodDocente,@Nombres,@Asistio,@Observacion)
 go
 
-
+-------- LISTAR MATRICULADOS POR CURSO -----------------
+create or alter proc SP_ListarMatriculadosxCurso
+@IdCatalogo varchar(6)
+as
+select	CodAlumno,Apellidos+' '+Nombre as Nombre from TMatriculado where IDCatalogo=@IdCatalogo
+order by Nombre
+go
 
