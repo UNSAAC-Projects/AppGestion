@@ -284,5 +284,30 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnAlumnosMatriculados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmAlumnosMatriculados());
+            //
+            OpcionCursosPorDia = false;
+            OpcionVerCursosDocente = false;
+            OpcionReporteCursos = true;
+            OpcionREPORTEASISTENCIA = false;
+            OpcionReporteSesiones = false;
+
+            //Restaurar backcolors
+            btnCursosPorDia.BackColor = Color.FromArgb(33, 47, 60);
+            btnVerCursosDocente.BackColor = Color.FromArgb(33, 47, 60);
+            btnReporteCursos.BackColor = Color.WhiteSmoke;
+            btnREPORTEASISTENCIA.BackColor = Color.FromArgb(33, 47, 60);
+            buttonReporteSesiones.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnCursosPorDia.ForeColor = Color.FromArgb(212, 172, 13);
+            btnVerCursosDocente.ForeColor = Color.FromArgb(212, 172, 13);
+            btnReporteCursos.ForeColor = Color.FromArgb(33, 47, 60);
+            btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
+            buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
+        }
     }
 }

@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAlumnosMatriculados.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAXFJREFUSEvt
+        lktKxTAUhjNqItSJoGvQXagzXYQPUAduQNAF6CJ0C7qEJhd1Jr7AOxJ34OAK10Ef8U96Kn1EezuIxcv9
+        4IcmHM7fk+Y0YTN6IVF8M1X8CXotaZgMxA6F+AEmz5B2aEQhfoDBmzGioaU+Fyuxnipx0FVaBSuUokmb
+        sb5lC3jOzLizJH+wCV0goLVi871RwVlHncaRWKUUTWAwNCZQeXPF0JhC/JBXw0dQeZnGqQyOKWTK0Nds
+        PpFiP1XB0bckP9Q34RKF+CGT/Kq2zIXuKMQPMLA7uFKxEu9mjkL8UBjT0FKeQx/PmX7MX6arggub0MVE
+        xorfuxO3iZ/bhC4Kkz9f6kzxy9y4Ib+bS0csxE9kr1KxaadBuEghUwZ+HrtY1o/aMn+i8hMK8QNM+jkk
+        YPBrOxkSJbYqe2BCtR2LbX3c30UglmINve283vwkc/DoKFimFE1g0M9lL5F8AyaPUHlzveC7blPIjP8G
+        Y1+8On02r5kYGAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu

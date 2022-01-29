@@ -21,5 +21,9 @@ namespace CapaNegocio
         {
             return data.ObtenerCodCatalogo(GrupoAsignatura);
         }
+        public DataTable ListarMatriculados(string IdCatalogo)
+        {
+            return data.ListarMatriculados(IdCatalogo);
+        }
     }
 }
