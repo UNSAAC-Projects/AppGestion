@@ -1564,58 +1564,56 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('4°UNIDAD','---------','Revision Examen Parcial I','02','NO','C014','','0'),
 ('4°UNIDAD','---------','Entrega de Notas','01','NO','C014','','0'),
 --
--- PROCESAMIENTO DEL LENGUAJE - GRUPO A (PROF. URPY Y FERNANDO MONTOYA)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C015','','0'),--semana0
+-- C015 -> PROCESAMIENTO DEL LENGUAJE - GRUPO A (PROF. URPY Y FERNANDO MONTOYA)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C015','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C015','','0'),
+('1°UNIDAD','INTRODUCCION','Información complementaria','01','NO','C015','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C015','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C015','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C015','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C015','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C015','','0'),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
-('1°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0'),--semana5
+('1°UNIDAD','CAPITULO I','Introduccion al NLP','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Representacion del conocimiento','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Corpus Linguisticos','01','NO','C015','','0'),--semana1
+('1°UNIDAD','CAPITULO I','Tecnicas de recuperacion de informacion','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Crawling','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Consumo de APIs','01','NO','C015','','0'),--semana2
+('1°UNIDAD','CAPITULO I','Representacion de documentos','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Creacion de corpus','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Bolsa de palabras','01','NO','C015','','0'),--semana3
+('1°UNIDAD','CAPITULO I','Tokenizacion','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Analisis Sintactico','02','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Caracteristicas basado en la estadistica','01','NO','C015','','0'),
+('1°UNIDAD','CAPITULO I','Esquemas de frecuencia de terminos','01','NO','C015','','0'),--semana4
+('1°UNIDAD','-----------','Examen Parcial','02','NO','C015','','0'),
+('1°UNIDAD','-----------','Revision Examen Parcial I','02','NO','C015','','0'),
+('1°UNIDAD','-----------','Entrega de Notas','01','NO','C015','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C015','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C015','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C015','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C015','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C015','','0'),--semana9
-('2°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
-('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
-('2°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0'),--semana10
+('2°UNIDAD','CAPITULO II','Modelos de lenguaje probabilistico','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Latent Dirichlet Allocation','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','LDA','01','NO','C015','','0'),--semana6
+('2°UNIDAD','CAPITULO II','Part of speech tagging - POS tagging','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Analisis semantico','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Bloques de un sistema','01','NO','C015','','0'),--semana7
+('2°UNIDAD','CAPITULO II','Semantico','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Entidades','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Conceptos','01','NO','C015','','0'),--semana8
+('2°UNIDAD','CAPITULO II','Relaciones','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Predicados','02','NO','C015','','0'),
+('2°UNIDAD','CAPITULO II','Analisis de sentimiento','01','NO','C015','','0'),
+('2°UNIDAD','-----------','Examen Parcial','02','NO','C015','','0'),
+('2°UNIDAD','-----------','Revision Examen Parcial I','02','NO','C015','','0'),
+('2°UNIDAD','-----------','Entrega de Notas','01','NO','C015','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C015','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C015','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C015','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C015','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C015','','0'),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','NO','C015','','0'),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C015','','0'),
-('3°UNIDAD','---------','Entrega de Notas','01','NO','C015','','0');
+('3°UNIDAD','CAPITULO III','Semantica Lexica','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Relaciones lexicas','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Polisemia','01','NO','C015','','0'),--semana11
+('3°UNIDAD','CAPITULO III','Redes semanticas','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Etiquetado semantico','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Tagging con WordNet','01','NO','C015','','0'),--semana12
+('3°UNIDAD','CAPITULO III','Tagging con Wikipedia','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Etiquetado sintactico','02','NO','C015','','0'),
+('3°UNIDAD','CAPITULO III','Ingenieria de features','01','NO','C015','','0'),--semana13
+('3°UNIDAD','-----------','Examen Parcial','02','NO','C015','','0'),
+('3°UNIDAD','-----------','Revision Examen Parcial I','02','NO','C015','','0'),
+('3°UNIDAD','-----------','Entrega de Notas','01','NO','C015','','0');
 GO
 
 ----Silabos insertar-
