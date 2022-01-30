@@ -921,33 +921,33 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
 ('1°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),--semana5
 --2° parcial
-('2°UNIDAD','CAPITULO 2','Probabilidad y esperanza condicional','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Caso discreto y continuo','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Calculo de esperanza condicional','01','NO','C003','','0'),--semana6
-('2°UNIDAD','CAPITULO 2','Calculo de varianzas bajo condicion','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Calculo de probabilidades bajo condicion','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Grafo aleatorio','01','NO','C003','','0'),--semana7
-('2°UNIDAD','CAPITULO 2','Identidad para variables aleatorias','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Cadenas de Markov','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Definicion','01','NO','C003','','0'),--semana8
-('2°UNIDAD','CAPITULO 2','Ecuacion de chapman kolmogorov','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Clasificacion de estados','02','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Metodos de remuestro','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Validacion cruzada','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Bootstrap','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Laboratorio 5','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Seleccion de modelos lineales y regularizacion','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Seleccion de un subconjunto','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Metodo de reduccion','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Dimension de los metodos de reduccion','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Consideraciones en dimensiones grandes','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Laboratorio 6','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Linealidad con movimiento','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Regresion polinomial','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Regresion Spline','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Regresion local','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Modelos aditivos generalizados','01','NO','C003','','0'),
-('2°UNIDAD','CAPITULO 2','Laboratorio 7','01','NO','C003','','0'),--semana9
+('2°UNIDAD','CAPITULO II','Probabilidad y esperanza condicional','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Caso discreto y continuo','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Calculo de esperanza condicional','01','NO','C003','','0'),--semana6
+('2°UNIDAD','CAPITULO II','Calculo de varianzas bajo condicion','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Calculo de probabilidades bajo condicion','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Grafo aleatorio','01','NO','C003','','0'),--semana7
+('2°UNIDAD','CAPITULO II','Identidad para variables aleatorias','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Cadenas de Markov','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Definicion','01','NO','C003','','0'),--semana8
+('2°UNIDAD','CAPITULO II','Ecuacion de chapman kolmogorov','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Clasificacion de estados','02','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Metodos de remuestro','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Validacion cruzada','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Bootstrap','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Laboratorio 5','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Seleccion de modelos lineales y regularizacion','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Seleccion de un subconjunto','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Metodo de reduccion','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Dimension de los metodos de reduccion','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Consideraciones en dimensiones grandes','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Laboratorio 6','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Linealidad con movimiento','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Regresion polinomial','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Regresion Spline','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Regresion local','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Modelos aditivos generalizados','01','NO','C003','','0'),
+('2°UNIDAD','CAPITULO II','Laboratorio 7','01','NO','C003','','0'),--semana9
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C003','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),--semana10
