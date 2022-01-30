@@ -73,6 +73,7 @@
             resources.ApplyResources(this.dgvEstadoAlumnos, "dgvEstadoAlumnos");
             this.dgvEstadoAlumnos.AllowUserToAddRows = false;
             this.dgvEstadoAlumnos.AllowUserToDeleteRows = false;
+            this.dgvEstadoAlumnos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvEstadoAlumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEstadoAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;

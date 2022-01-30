@@ -50,6 +50,7 @@ namespace CapaPresentacion
             // 
             this.dgvReporteAsistencia.AllowUserToAddRows = false;
             this.dgvReporteAsistencia.AllowUserToDeleteRows = false;
+            this.dgvReporteAsistencia.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvReporteAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvReporteAsistencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -185,7 +186,7 @@ namespace CapaPresentacion
             this.buttonExportar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.buttonExportar.Location = new System.Drawing.Point(745, 48);
-            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExportar.Name = "buttonExportar";
             this.buttonExportar.Size = new System.Drawing.Size(235, 41);
             this.buttonExportar.TabIndex = 29;

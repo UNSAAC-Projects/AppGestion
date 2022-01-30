@@ -55,6 +55,7 @@ namespace CapaPresentacion
             this.dgvCursosDocente.AllowUserToAddRows = false;
             this.dgvCursosDocente.AllowUserToDeleteRows = false;
             this.dgvCursosDocente.AllowUserToOrderColumns = true;
+            this.dgvCursosDocente.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvCursosDocente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCursosDocente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 

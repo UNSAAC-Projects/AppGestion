@@ -40,6 +40,9 @@ namespace CapaPresentacion
             this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
             this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.VariacionH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelPlanSesiones = new System.Windows.Forms.Label();
             this.lblNombreAsignatura = new System.Windows.Forms.Label();
@@ -57,9 +60,6 @@ namespace CapaPresentacion
             this.pictureLibro2 = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnImportarDatos = new System.Windows.Forms.Button();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.VariacionH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.pnlPlanDeSeciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
@@ -138,6 +138,7 @@ namespace CapaPresentacion
             // 
             this.dgvPlanSesiones.AllowDrop = true;
             this.dgvPlanSesiones.AllowUserToAddRows = false;
+            this.dgvPlanSesiones.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvPlanSesiones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanSesiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -189,6 +190,40 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
+            // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.eliminar.MinimumWidth = 6;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Width = 72;
+            // 
+            // Completado
+            // 
+            this.Completado.FalseValue = "NO";
+            this.Completado.HeaderText = "Completado";
+            this.Completado.MinimumWidth = 6;
+            this.Completado.Name = "Completado";
+            this.Completado.TrueValue = "SI";
+            this.Completado.Width = 108;
+            // 
+            // VariacionH
+            // 
+            this.VariacionH.HeaderText = "Variacion";
+            this.VariacionH.Items.AddRange(new object[] {
+            "-4",
+            "-3",
+            "-2",
+            "-1",
+            "0",
+            "+1",
+            "+2",
+            "+3",
+            "+4"});
+            this.VariacionH.MinimumWidth = 6;
+            this.VariacionH.Name = "VariacionH";
+            this.VariacionH.Width = 87;
             // 
             // Observacion
             // 
@@ -387,40 +422,6 @@ namespace CapaPresentacion
             this.btnImportarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImportarDatos.UseVisualStyleBackColor = false;
             this.btnImportarDatos.Click += new System.EventHandler(this.btnImportarDatos_Click);
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.eliminar.MinimumWidth = 6;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
-            // 
-            // Completado
-            // 
-            this.Completado.FalseValue = "NO";
-            this.Completado.HeaderText = "Completado";
-            this.Completado.MinimumWidth = 6;
-            this.Completado.Name = "Completado";
-            this.Completado.TrueValue = "SI";
-            this.Completado.Width = 108;
-            // 
-            // VariacionH
-            // 
-            this.VariacionH.HeaderText = "Variacion";
-            this.VariacionH.Items.AddRange(new object[] {
-            "-4",
-            "-3",
-            "-2",
-            "-1",
-            "0",
-            "+1",
-            "+2",
-            "+3",
-            "+4"});
-            this.VariacionH.MinimumWidth = 6;
-            this.VariacionH.Name = "VariacionH";
-            this.VariacionH.Width = 87;
             // 
             // frmPlanDeSesiones
             // 
