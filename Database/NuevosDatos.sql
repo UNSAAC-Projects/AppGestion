@@ -1247,59 +1247,39 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),
 --
--- COMPILADORES - GRUPO A (PROF. LINO PRISCILIANO)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C008','','0'),--semana0
+-- C008 -> COMPILADORES - GRUPO A (PROF. LINO PRISCILIANO)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C008','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C008','','0'),
+('1°UNIDAD','INTRODUCCION','Información complementaria','01','NO','C008','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C008','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C008','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C008','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C008','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C008','','0'),--semana4
+('1°UNIDAD','CAPITULO I','Automatas finitos','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Expresiones regulares','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Analisis Lexicografico','01','NO','C008','','0'),--semana1
+('1°UNIDAD','CAPITULO I','Problemas del analisis lexico','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Reconocimiento de tokens','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Analisis sintactico','01','NO','C008','','0'),--semana2
+('1°UNIDAD','CAPITULO I','Analizadores sintacticos descendentes y ascendentes','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Gramaticas LL','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Analisis sintactico LL','01','NO','C008','','0'),--semana3
+('1°UNIDAD','CAPITULO I','Gramaticas LR','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Analisis sintactico LR','02','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Verificacion estatica','01','NO','C008','','0'),
+('1°UNIDAD','CAPITULO I','Gramaticas y atributos','01','NO','C008','','0'),--semana4
 ('1°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
 ('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
 ('1°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C008','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C008','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C008','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C008','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C008','','0'),--semana9
+('2°UNIDAD','CAPITULO II','Metodos de optimizacion de codigo','02','NO','C008','','0'),
+('2°UNIDAD','CAPITULO II','Verificacion estatica','02','NO','C008','','0'),
+('2°UNIDAD','CAPITULO II','Preparacion de codigo','01','NO','C008','','0'),--semana6
+('2°UNIDAD','CAPITULO II','Generacion de codigo intermedio','02','NO','C008','','0'),
+('2°UNIDAD','CAPITULO II','Utilizacion de triadas','02','NO','C008','','0'),
+('2°UNIDAD','CAPITULO II','Generacion de codigo objeto','01','NO','C008','','0'),--semana7
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),--semana10
---3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C008','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C008','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C008','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C008','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C008','','0'),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','NO','C008','','0'),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C008','','0'),
-('3°UNIDAD','---------','Entrega de Notas','01','NO','C008','','0'),
--- COMPILADORES - GRUPO B (PROF. LINO PRISCILIANO)
+--
+-- C009 -> COMPILADORES - GRUPO B (PROF. LINO PRISCILIANO)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C009','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C009','','0'),
 ('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C009','','0'),--semana0
