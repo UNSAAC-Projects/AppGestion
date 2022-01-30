@@ -327,6 +327,9 @@
     <EmbeddedResource Include="frmReporteEstadoAlumnos.resx">
       <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteEstadoAlumnos.zu-ZA.resx">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReporteSesiones.resx">
       <DependentUpon>frmReporteSesiones.cs</DependentUpon>
     </EmbeddedResource>

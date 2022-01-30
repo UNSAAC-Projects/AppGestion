@@ -126,6 +126,7 @@ namespace CapaPresentacion
             this.chart2.Size = new System.Drawing.Size(672, 634);
             this.chart2.TabIndex = 21;
             this.chart2.Text = "chart2";
+            this.chart2.UseWaitCursor = true;
             // 
             // FrmReporteAvanceDocente
             // 
