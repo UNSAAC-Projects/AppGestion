@@ -1480,58 +1480,48 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C012','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C012','','0'),
 --
--- PLANEAMIENTO Y DIRECCION ESTRATEGICA DE TI - GRUPO A (PROF. EMILIO Y AURELIO)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C013','','0'),--semana0
+-- C013 -> PLANEAMIENTO Y DIRECCION ESTRATEGICA DE TI - GRUPO A (PROF. EMILIO Y AURELIO)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C013','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C013','','0'),
+('1°UNIDAD','INTRODUCCION','Información complementaria','01','NO','C013','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C013','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C013','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C013','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C013','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C013','','0'),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
-('1°UNIDAD','---------','Entrega de Notas','01','NO','C013','','0'),--semana5
---2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C013','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C013','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C013','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C013','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C013','','0'),--semana9
+('1°UNIDAD','CAPITULO I','Administracion estrategica','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Fundamentos, naturaleza','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Etapas','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Terminos claves','01','NO','C013','','0'),--semana1
+('1°UNIDAD','CAPITULO I','Ventaja competitiva','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Estrategias','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Vision y mision','01','NO','C013','','0'),--semana2
+('1°UNIDAD','CAPITULO I','FODA','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Objetivos a largo plazo','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Objetivos anuales','01','NO','C013','','0'),--semana3
+('1°UNIDAD','CAPITULO I','Politicas','02','NO','C013','','0'),
+('1°UNIDAD','CAPITULO I','Casos','02','NO','C013','','0'),
+('2°UNIDAD','CAPITULO II','Formulacion de la estrategia','02','NO','C013','','0'),
+('2°UNIDAD','CAPITULO II','Declaraciones de vision y mision','02','NO','C013','','0'),
+('2°UNIDAD','CAPITULO II','FODA','01','NO','C013','','0'),--semana6
+('2°UNIDAD','CAPITULO II','Analisis y seleccion de la estrategia','02','NO','C013','','0'),
+('2°UNIDAD','CAPITULO II','Implementacion/implantacion de la estrategia','02','NO','C013','','0'),
+('2°UNIDAD','CAPITULO II','Evaluacion de la estrategia','01','NO','C013','','0'),--semana7
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C013','','0'),--semana10
---3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C013','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C013','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C013','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C013','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C013','','0'),--semana14
-('3°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
-('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
-('3°UNIDAD','---------','Entrega de Notas','01','NO','C001','','0'),
+--2° parcial
+('3°UNIDAD','CAPITULO III','Implementacion y evaluacion estrategica','02','NO','C013','','0'),
+('3°UNIDAD','CAPITULO III','Implementacion/implantacion de la estrategia','02','NO','C013','','0'),
+('3°UNIDAD','CAPITULO III','Evaluacion de la estrategia','02','NO','C013','','0'),
+('4°UNIDAD','CAPITULO IV','Planeamiento estrategico de los sitemas de informacion','01','NO','C013','','0'),--semana11
+('4°UNIDAD','CAPITULO IV','Concepto','02','NO','C013','','0'),
+('4°UNIDAD','CAPITULO IV','El proceso de planificacion estrategica de SI/TI','02','NO','C013','','0'),
+('4°UNIDAD','CAPITULO IV','Fases del plan','01','NO','C013','','0'),--semana12
+('4°UNIDAD','CAPITULO IV','Comprension de la estrategia de negocio','02','NO','C013','','0'),
+('4°UNIDAD','CAPITULO IV','Analisis de los SI/TI actuales','02','NO','C013','','0'),
+('4°UNIDAD','CAPITULO IV','Formulacion de la estrategia','01','NO','C013','','0'),--semana13
+('4°UNIDAD','CAPITULO IV','Plan de implantacion','02','NO','C013','','0'),
+('4°UNIDAD','---------','Examen Parcial','02','NO','C013','','0'),
+('4°UNIDAD','---------','Revision Examen Parcial I','02','NO','C013','','0'),
+('4°UNIDAD','---------','Entrega de Notas','01','NO','C013','','0'),
+--
 -- PLANEAMIENTO Y DIRECCION ESTRATEGICA DE TI - GRUPO B (PROF. AURELIO)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C014','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C014','','0'),
