@@ -1354,58 +1354,69 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),
 --
--- APRENDIZAJE AUTOMATICO -GRUPO A (PROF. LUIS PALMA)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C011','','0'),--semana0
+-- C011 -> APRENDIZAJE AUTOMATICO -GRUPO A (PROF. LUIS PALMA)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C011','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C011','','0'),
+('1°UNIDAD','INTRODUCCION','Información complememtaria','01','NO','C011','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C011','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C011','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C011','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C011','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C011','','0'),--semana4
+('1°UNIDAD','CAPITULO I','Inteligencia artificial y aprendizaje automatico','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO I','Induccion de hipotesis','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO I','Tareas de aprendizaje','01','NO','C011','','0'),--semana1
+('1°UNIDAD','CAPITULO I','Etapas de un proyecto de aprendizaje automatico','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO II','Analisis de datos','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO II','Caracteristicas de datos','01','NO','C011','','0'),--semana2
+('1°UNIDAD','CAPITULO II','Exploracion de datos','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO II','Practica de extraccion de caracteristicas de datos y exploracion','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Eliminacion manual de atributos','01','NO','C011','','0'),--semana3
+('1°UNIDAD','CAPITULO III','Integracion de datos','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Muestreo de datos','02','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Datos desbalanceados','01','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Transformacion de datos','01','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Reduccion de dimensionalidad','01','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Practica de preprocesamiento de datos','01','NO','C011','','0'),
+('1°UNIDAD','CAPITULO III','Revision de repositorios de conjunto de datos','01','NO','C011','','0'),--semana4
 ('1°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
 ('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
 ('1°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C011','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C011','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C011','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C011','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C011','','0'),--semana9
+('2°UNIDAD','CAPITULO IV','Metrica de clasificacion','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Modelos basados en distancia KNN','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Modelos probabilisticos, Naive Bayes','01','NO','C011','','0'),--semana6
+('2°UNIDAD','CAPITULO IV','Resolucion de ejercicios con Naive Bayes','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Implementacion de Naive Bayes','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Modelos de busqueda, arboles de decision','01','NO','C011','','0'),--semana7
+('2°UNIDAD','CAPITULO IV','Resolucion de ejercicios con arboles de decision','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Implementacion de arboles de decision','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Modelo de optimizacion, redes neuronales','01','NO','C011','','0'),--semana8
+('2°UNIDAD','CAPITULO IV','Perceptron','02','NO','C011','','0'),
+('2°UNIDAD','CAPITULO IV','Perceptron multicapa','02','NO','C011','','0'),--semana9
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C011','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C011','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C011','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C011','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C011','','0'),--semana14
+('3°UNIDAD','CAPITULO V','Redes convolucionales','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO V','Resolucion de ejercicios con diferentes modelos de redes neuronales','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO V','Implementacion de redes neuronales','01','NO','C011','','0'),--semana11
+('3°UNIDAD','CAPITULO V','Maquina de vector de soporte','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Metrica de regresion','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Modelos de regresion','01','NO','C011','','0'),--semana12
+('3°UNIDAD','CAPITULO VI','Regresion lineal','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Regresion logistica','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Regresion KNN','01','NO','C011','','0'),--semana13
+('3°UNIDAD','CAPITULO VI','Regresion MLP','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Regresion arbol decision','02','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VI','Ejercicios practicos','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Metricas descriptivas','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Modelos descriptivos de distancia K-means','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Ejercicios practicos k-means','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Modelo descriptivo de optimizacion , red neuronal hopfield','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Ejercicios practicos de red neuronal hopfield','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Basado en densidad DBSCAN','01','NO','C011','','0'),
+('3°UNIDAD','CAPITULO VII','Ejercicios practicos con DBSCAN','01','NO','C011','','0'),--semana14
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C011','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C011','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C011','','0'),
+--
 -- APRENDIZAJE AUTOMATICO - GRUPO B (PROF. LUIS PALMA)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C012','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C012','','0'),
