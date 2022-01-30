@@ -60,12 +60,15 @@ namespace CapaPresentacion
 
             lblNroAlumnos.Text = dgvAsistencia.Rows.Count.ToString();
             lblNombreAsignatura.Text = NombreAsignatura;
+           
+            ContarAsistencia();
+
 
             //Ocultar columna Asistio
             dgvAsistencia.Columns["Asistio"].Visible = false;
            
             ImprimirHoraFecha();
-            ContarAsistencia();
+           
         }
         private void MostrarListaMatriculados(DateTime Date)
         {
@@ -95,11 +98,12 @@ namespace CapaPresentacion
             int contador = 0;
             foreach (DataGridViewRow fila in dgvAsistencia .Rows)
             {
-                if (fila.Cells["Asistencia"].Value.ToString() == "P")
+                if (fila.Cells["Asistencia"].Value == "P")
                 {
                     contador = contador + 1;
                 }
             }
+            
             lblAsistio.Text = contador.ToString();
             long nro =UInt32.Parse(lblNroAlumnos.Text) - contador;
             lblFaltaron.Text = nro.ToString();
@@ -247,10 +251,40 @@ namespace CapaPresentacion
 
         }
 
+        private void dgvAsistencia_Click(object sender, EventArgs e)
+        {
+            ContarAsistencia();
+        }
+
+        private void dgvAsistencia_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
+                {
+                    //ver el valor del checkbox
+                    string valorAsistencia = dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Value.ToString();
+                    if (valorAsistencia == "P")
+                    {
+                        dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "P";
+                    }
+                    if (valorAsistencia == "F")
+                    {
+                        dgvAsistencia.Rows[e.RowIndex].Cells["Asistio"].Value = "F";
+                    }
+                }
+            }
+        }
+
         private void dgvAsistencia_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
- 
+            if (dgvAsistencia.Rows[e.RowIndex].Cells["Asistencia"].Selected)
+            {
+                dgvAsistencia.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
             ContarAsistencia();
+
             dgvAsistencia.Columns["CodAlumno"].ReadOnly = true;
             dgvAsistencia.Columns["Nombres"].ReadOnly = true;
         }

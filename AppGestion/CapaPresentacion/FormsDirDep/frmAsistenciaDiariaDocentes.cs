@@ -196,5 +196,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void dgvAsistencia_Click(object sender, EventArgs e)
+        {
+            ContarAsistencia();
+        }
     }
 }

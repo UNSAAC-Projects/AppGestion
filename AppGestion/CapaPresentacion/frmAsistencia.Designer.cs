@@ -346,6 +346,8 @@ namespace CapaPresentacion
             this.dgvAsistencia.Size = new System.Drawing.Size(775, 507);
             this.dgvAsistencia.TabIndex = 16;
             this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
+            this.dgvAsistencia.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellValueChanged);
+            this.dgvAsistencia.Click += new System.EventHandler(this.dgvAsistencia_Click);
             // 
             // Asistencia
             // 

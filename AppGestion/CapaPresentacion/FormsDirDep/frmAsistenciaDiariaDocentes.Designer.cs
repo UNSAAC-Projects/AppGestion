@@ -29,14 +29,11 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsistenciaDiariaDocentes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.buttonGUARDAR = new System.Windows.Forms.Button();
-            this.buttonDESMARCAR = new System.Windows.Forms.Button();
-            this.buttonMarcar = new System.Windows.Forms.Button();
             this.dgvAsistencia = new System.Windows.Forms.DataGridView();
             this.Asistencia = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labelTextoFecha = new System.Windows.Forms.Label();
@@ -56,76 +53,13 @@ namespace CapaPresentacion
             this.lblFaltaron = new System.Windows.Forms.Label();
             this.labelTextoHora = new System.Windows.Forms.Label();
             this.labelHora = new System.Windows.Forms.Label();
+            this.buttonGUARDAR = new System.Windows.Forms.Button();
+            this.buttonDESMARCAR = new System.Windows.Forms.Button();
+            this.buttonMarcar = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonGUARDAR
-            // 
-            this.buttonGUARDAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonGUARDAR.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.buttonGUARDAR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGUARDAR.BackgroundImage")));
-            this.buttonGUARDAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonGUARDAR.FlatAppearance.BorderSize = 0;
-            this.buttonGUARDAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonGUARDAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.buttonGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGUARDAR.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGUARDAR.ForeColor = System.Drawing.Color.DimGray;
-            this.buttonGUARDAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGUARDAR.Location = new System.Drawing.Point(769, 564);
-            this.buttonGUARDAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonGUARDAR.Name = "buttonGUARDAR";
-            this.buttonGUARDAR.Size = new System.Drawing.Size(70, 73);
-            this.buttonGUARDAR.TabIndex = 15;
-            this.buttonGUARDAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonGUARDAR.UseVisualStyleBackColor = false;
-            this.buttonGUARDAR.Click += new System.EventHandler(this.buttonGUARDAR_Click);
-            // 
-            // buttonDESMARCAR
-            // 
-            this.buttonDESMARCAR.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonDESMARCAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonDESMARCAR.FlatAppearance.BorderSize = 0;
-            this.buttonDESMARCAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonDESMARCAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.buttonDESMARCAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDESMARCAR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDESMARCAR.ForeColor = System.Drawing.Color.White;
-            this.buttonDESMARCAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESMARCAR.Image")));
-            this.buttonDESMARCAR.Location = new System.Drawing.Point(38, 319);
-            this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonDESMARCAR.Name = "buttonDESMARCAR";
-            this.buttonDESMARCAR.Size = new System.Drawing.Size(99, 142);
-            this.buttonDESMARCAR.TabIndex = 9;
-            this.buttonDESMARCAR.Text = "Desmarcar\r\ntodos";
-            this.buttonDESMARCAR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonDESMARCAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonDESMARCAR.UseVisualStyleBackColor = false;
-            this.buttonDESMARCAR.Click += new System.EventHandler(this.buttonDESMARCAR_Click);
-            // 
-            // buttonMarcar
-            // 
-            this.buttonMarcar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonMarcar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.buttonMarcar.FlatAppearance.BorderSize = 0;
-            this.buttonMarcar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.buttonMarcar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.buttonMarcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMarcar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMarcar.ForeColor = System.Drawing.Color.White;
-            this.buttonMarcar.Image = ((System.Drawing.Image)(resources.GetObject("buttonMarcar.Image")));
-            this.buttonMarcar.Location = new System.Drawing.Point(38, 174);
-            this.buttonMarcar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonMarcar.Name = "buttonMarcar";
-            this.buttonMarcar.Size = new System.Drawing.Size(99, 142);
-            this.buttonMarcar.TabIndex = 8;
-            this.buttonMarcar.Text = "Marcar \r\ntodos";
-            this.buttonMarcar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonMarcar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonMarcar.UseVisualStyleBackColor = false;
-            this.buttonMarcar.Click += new System.EventHandler(this.buttonMARCAR_Click);
             // 
             // dgvAsistencia
             // 
@@ -133,8 +67,8 @@ namespace CapaPresentacion
             this.dgvAsistencia.AllowUserToDeleteRows = false;
             this.dgvAsistencia.AllowUserToResizeColumns = false;
             this.dgvAsistencia.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.dgvAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.dgvAsistencia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAsistencia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvAsistencia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -143,26 +77,26 @@ namespace CapaPresentacion
             this.dgvAsistencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAsistencia.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvAsistencia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsistencia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAsistencia.ColumnHeadersHeight = 32;
             this.dgvAsistencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAsistencia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Asistencia});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsistencia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsistencia.EnableHeadersVisualStyles = false;
             this.dgvAsistencia.Location = new System.Drawing.Point(143, 22);
             this.dgvAsistencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -175,6 +109,7 @@ namespace CapaPresentacion
             this.dgvAsistencia.TabIndex = 16;
             this.dgvAsistencia.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellContentClick);
             this.dgvAsistencia.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsistencia_CellValueChanged);
+            this.dgvAsistencia.Click += new System.EventHandler(this.dgvAsistencia_Click);
             // 
             // Asistencia
             // 
@@ -406,6 +341,72 @@ namespace CapaPresentacion
             this.labelHora.Size = new System.Drawing.Size(18, 23);
             this.labelHora.TabIndex = 34;
             this.labelHora.Text = "-";
+            // 
+            // buttonGUARDAR
+            // 
+            this.buttonGUARDAR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonGUARDAR.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonGUARDAR.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGUARDAR.BackgroundImage")));
+            this.buttonGUARDAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonGUARDAR.FlatAppearance.BorderSize = 0;
+            this.buttonGUARDAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonGUARDAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.buttonGUARDAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGUARDAR.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGUARDAR.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonGUARDAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGUARDAR.Location = new System.Drawing.Point(769, 564);
+            this.buttonGUARDAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonGUARDAR.Name = "buttonGUARDAR";
+            this.buttonGUARDAR.Size = new System.Drawing.Size(70, 73);
+            this.buttonGUARDAR.TabIndex = 15;
+            this.buttonGUARDAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonGUARDAR.UseVisualStyleBackColor = false;
+            this.buttonGUARDAR.Click += new System.EventHandler(this.buttonGUARDAR_Click);
+            // 
+            // buttonDESMARCAR
+            // 
+            this.buttonDESMARCAR.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonDESMARCAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonDESMARCAR.FlatAppearance.BorderSize = 0;
+            this.buttonDESMARCAR.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonDESMARCAR.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.buttonDESMARCAR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDESMARCAR.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDESMARCAR.ForeColor = System.Drawing.Color.White;
+            this.buttonDESMARCAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESMARCAR.Image")));
+            this.buttonDESMARCAR.Location = new System.Drawing.Point(38, 319);
+            this.buttonDESMARCAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonDESMARCAR.Name = "buttonDESMARCAR";
+            this.buttonDESMARCAR.Size = new System.Drawing.Size(99, 142);
+            this.buttonDESMARCAR.TabIndex = 9;
+            this.buttonDESMARCAR.Text = "Desmarcar\r\ntodos";
+            this.buttonDESMARCAR.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonDESMARCAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonDESMARCAR.UseVisualStyleBackColor = false;
+            this.buttonDESMARCAR.Click += new System.EventHandler(this.buttonDESMARCAR_Click);
+            // 
+            // buttonMarcar
+            // 
+            this.buttonMarcar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonMarcar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonMarcar.FlatAppearance.BorderSize = 0;
+            this.buttonMarcar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.buttonMarcar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.buttonMarcar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMarcar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMarcar.ForeColor = System.Drawing.Color.White;
+            this.buttonMarcar.Image = ((System.Drawing.Image)(resources.GetObject("buttonMarcar.Image")));
+            this.buttonMarcar.Location = new System.Drawing.Point(38, 174);
+            this.buttonMarcar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMarcar.Name = "buttonMarcar";
+            this.buttonMarcar.Size = new System.Drawing.Size(99, 142);
+            this.buttonMarcar.TabIndex = 8;
+            this.buttonMarcar.Text = "Marcar \r\ntodos";
+            this.buttonMarcar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonMarcar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonMarcar.UseVisualStyleBackColor = false;
+            this.buttonMarcar.Click += new System.EventHandler(this.buttonMARCAR_Click);
             // 
             // pictureBox4
             // 
