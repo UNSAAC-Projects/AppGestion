@@ -1126,7 +1126,7 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C005','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C005','','0'),
 --
--- METODOLOGIA DE DESAROLLO DE SOFTWARE - GRUPO B (PROF. WALDO IBARRA)
+-- C006 -> METODOLOGIA DE DESAROLLO DE SOFTWARE - GRUPO B (PROF. WALDO IBARRA)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C006','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C006','','0'),
 ('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C006','','0'),--semana0
