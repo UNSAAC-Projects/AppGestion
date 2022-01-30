@@ -1178,58 +1178,75 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C006','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C006','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C006','','0'),
--- FUNDAMENTOS Y DISENIO DE BASES DE DATOS - GRUPO A (PROF. ROBERT ALZAMORA)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C007','','0'),--semana0
+--
+-- C007 -> FUNDAMENTOS Y DISENIO DE BASES DE DATOS - GRUPO A (PROF. ROBERT ALZAMORA)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C007','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C007','','0'),
+('1°UNIDAD','INTRODUCCION','Información complememtaria','01','NO','C007','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C007','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C007','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C007','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C007','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C007','','0'),--semana4
+('1°UNIDAD','CAPITULO I','Datos. Informacion. Sistemas de informacion','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO I','Sistemas de informacion orientados a los archivos','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO I','Sistemas de informacion orientados a los datos','01','NO','C007','','0'),--semana1
+('1°UNIDAD','CAPITULO I','Sistemas de base de datos','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO I','Componentes de sistemas de base de datos','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO I','Base de datos. Componentes.','01','NO','C007','','0'),--semana2
+('1°UNIDAD','CAPITULO I','Componentes y funciones de los sistemas de gestion de base de datos','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO II','Modelos de datos','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO II','Niveles de abstraccion de una base de datos','01','NO','C007','','0'),--semana3
+('1°UNIDAD','CAPITULO II','Modelo conceptual, modelo logico y modelo fisico','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Definicion formal del modelo relacional','02','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Estructuras: Relaciones, atributos, dominios y claves','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Restricciones de integridad','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Valores nulos, integridad de entidades, integridad referencial','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Paso del modelo conceptual al modelo logico','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','El modelo fisico','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Algebra relacional y calculo relacional','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Practicas de laboratorio de la unidad','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Lenguaje estructurado de consulta','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Lenguaje de definicion de datos','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Lenguaje de manipulacion de datos','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Estructura basica de las consultas SQL y funciones de agregacion','01','NO','C007','','0'),
+('1°UNIDAD','CAPITULO III','Consultas simples SQL','01','NO','C007','','0'),--semana4
 ('1°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
 ('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
 ('1°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C007','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C007','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C007','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C007','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C007','','0'),--semana9
+('2°UNIDAD','CAPITULO IV','Entidades y atributos','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO IV','Relaciones y relaciones binarias','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO IV','Diagramas entidad - relacion','01','NO','C007','','0'),--semana6
+('2°UNIDAD','CAPITULO V','Notacion UML','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Clases y objetos','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Atributos y operaciones','01','NO','C007','','0'),--semana7
+('2°UNIDAD','CAPITULO V','Generalizacion y herencia','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Agregacion','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Asociaciones','01','NO','C007','','0'),--semana8
+('2°UNIDAD','CAPITULO V','Diagramas de clases','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Practicas de laboratorio de la unidad','02','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Consultas avanzadas','01','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Cursores','01','NO','C007','','0'),
+('2°UNIDAD','CAPITULO V','Tablas cruzadas','01','NO','C007','','0'),--semana9
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C007','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C007','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C007','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C007','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C007','','0'),--semana14
+('3°UNIDAD','CAPITULO VI','Concepto de transaccion','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VI','Modelo de transaccion ANSI/ISO','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VI','Procesamiento de transacciones','01','NO','C007','','0'),--semana11
+('3°UNIDAD','CAPITULO VI','Control de concurrencia','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VI','Sistema de recuperacion','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VII','Arquitecturas centralizadas y cliente servidor','01','NO','C007','','0'),--semana12
+('3°UNIDAD','CAPITULO VII','Arquitectura paralela','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VII','Arquitectura distribuida','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VIII','Inteligencia de negocios','01','NO','C007','','0'),--semana13
+('3°UNIDAD','CAPITULO VIII','Herramientas de analisis de datos','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VIII','OLAP y cubos multidimensionales','02','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VIII','Practicas de laboratorio de la unidad','01','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VIII','Implementacion de servicios de bases de datos','01','NO','C007','','0'),
+('3°UNIDAD','CAPITULO VIII','Disparadores','01','NO','C007','','0'),--semana14
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C007','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C007','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C007','','0'),
+--
 -- COMPILADORES - GRUPO A (PROF. LINO PRISCILIANO)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C008','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C008','','0'),
