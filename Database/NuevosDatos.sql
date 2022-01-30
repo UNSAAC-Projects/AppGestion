@@ -977,58 +977,102 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),
 --
--- MODELOS PROBABILISTICOS - GRUPO B (PROF. LAURO)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C004','','0'),--semana0
+-- COO4 -> MODELOS PROBABILISTICOS - GRUPO B (PROF. LAURO)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C004','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C004','','0'),
+('1°UNIDAD','INTRODUCCION','Información complementaria','01','NO','C004','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C004','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C004','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C004','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C004','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C004','','0'),--semana4
+('1°UNIDAD','CAPITULO 1','Informacion','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Uso de LATEX Y Uso de Lenguaje R','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Laboratorio 1','01','NO','C004','','0'),--semana1
+('1°UNIDAD','CAPITULO 1','Introduccion a la teoria de probabilidades','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Probabilidades definidas en eventos','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Probabilidades condicionales','01','NO','C004','','0'),--semana2
+('1°UNIDAD','CAPITULO 1','Eventos independientes','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Teorema de bayes','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Variables aleatorias','01','NO','C004','','0'),--semana3
+('1°UNIDAD','CAPITULO 1','Variables aleatorias discretas','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Variables Aleatorias continuas','02','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Esperanza de variables aleatorias','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Variables aleatorias distribuidas conjuntas','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Covarianza y varianza de variables aleatorias','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Funcion generadora de momentos','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Teorema del limite central','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Funcionaes generadoras de momentos','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Aprendizaje estadistico','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Aprendizaje supervisado y no supervisado','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Regresion vs problemas de clasificacion','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Laboratorio 2','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Regresion lineal','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Regresion lineal simple y multiple','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Consideraciones del modelo lineal','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Comparaciones del modelo lineal y K-NN','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Laboratorio 3','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Clasificacion','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Regresion logistica','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Analisis lineal del discriminante','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Comparacion de metodos de clasificacion','01','NO','C004','','0'),
+('1°UNIDAD','CAPITULO 1','Laboratorio 4','01','NO','C004','','0'),--semana4
 ('1°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
 ('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
 ('1°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C004','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C004','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C004','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C004','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C004','','0'),--semana9
+('2°UNIDAD','CAPITULO 2','Probabilidad y esperanza condicional','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Caso discreto y continuo','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Calculo de esperanza condicional','01','NO','C004','','0'),--semana6
+('2°UNIDAD','CAPITULO 2','Calculo de varianzas bajo condicion','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Calculo de probabilidades bajo condicion','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Grafo aleatorio','01','NO','C004','','0'),--semana7
+('2°UNIDAD','CAPITULO 2','Identidad para variables aleatorias','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Cadenas de Markov','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Definicion','01','NO','C004','','0'),--semana8
+('2°UNIDAD','CAPITULO 2','Ecuacion de chapman kolmogorov','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Clasificacion de estados','02','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Metodos de remuestro','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Validacion cruzada','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Bootstrap','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Laboratorio 5','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Seleccion de modelos lineales y regularizacion','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Seleccion de un subconjunto','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Metodo de reduccion','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Dimension de los metodos de reduccion','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Consideraciones en dimensiones grandes','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Laboratorio 6','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Linealidad con movimiento','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Regresion polinomial','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Regresion Spline','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Regresion local','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Modelos aditivos generalizados','01','NO','C004','','0'),
+('2°UNIDAD','CAPITULO 2','Laboratorio 7','01','NO','C004','','0'),--semana9
 ('2°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C004','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C004','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C004','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C004','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C004','','0'),--semana14
+('3°UNIDAD','CAPITULO 3','Introduccion a procesos estadisticos','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Cadenas de Markov y Montecarlo','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Cadenas de Markov ocultas','01','NO','C004','','0'),--semana11
+('3°UNIDAD','CAPITULO 3','Prediccion de estados','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Cadenas de Markov continuas','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Funciones de transicion de probabilidades','01','NO','C004','','0'),--semana12
+('3°UNIDAD','CAPITULO 3','Probabilidades limites','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Metodos basados en arboles','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Arboles de decision','01','NO','C004','','0'),--semana13
+('3°UNIDAD','CAPITULO 3','Bagging random forest y Boosting','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Laboratorio 8','02','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Maquinas vectoriales de soporte','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Clasificacion del margen maximo','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Clasificadores vectoriales de soporte','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Maquinas de soporte vectorial','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','SVM con mas de 2 clases','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Laboratorio 9','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Aprendizaje No Supervisado','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Analisis del componente Principal','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Metodos de clustering','01','NO','C004','','0'),
+('3°UNIDAD','CAPITULO 3','Laboratorio 10','01','NO','C004','','0'),--semana14
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C004','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C004','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C004','','0'),
+--
 -- METODOLOGIA DE DESARROLLO DE SOFTWARE - GRUPO A (PROF. WALDO IBARRA)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C005','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C005','','0'),
