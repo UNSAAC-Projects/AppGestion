@@ -1311,58 +1311,49 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C009','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C009','','0'),--semana10
 --
--- ING. SE SOFTWARE I - GRUPO A (PROF. ROBERT ALZAMORA)
-('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo0','Información complememtaria','01','NO','C010','','0'),--semana0
+-- C010 -> ING. SE SOFTWARE I - GRUPO A (PROF. ROBERT ALZAMORA)
+('1°UNIDAD','INTRODUCCION','Presentacion de Silabo','02','NO','C010','','0'),
+('1°UNIDAD','INTRODUCCION','Examen de entrada','02','NO','C010','','0'),
+('1°UNIDAD','INTRODUCCION','Información complementaria','01','NO','C010','','0'),--semana0
 -- 1°parcial
-('1°UNIDAD','Capitulo1','Tema1_1_Teoria','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo1','Tema1_1_Laboratorio','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_1','01','NO','C010','','0'),--semana1
-('1°UNIDAD','Capitulo1','Tema1_2_Teoria_2','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo1','Tema1_2_Laboratorio','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo1','Repaso Capitulo1','01','NO','C010','','0'),--semana2
-('1°UNIDAD','Capitulo2','Tema2_1_Teoria_2','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo2','Tema2_1_Laboratorio','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_1','01','NO','C010','','0'),--semana3
-('1°UNIDAD','Capitulo2','Tema2_2_Teoria_2','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo2','Tema2_2_Laboratorio','02','NO','C010','','0'),
-('1°UNIDAD','Capitulo2','Repaso Capitulo2','01','NO','C010','','0'),--semana4
-('1°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
-('1°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
-('1°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),--semana5
+('1°UNIDAD','CAPITULO I','Conceptos generales','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO I','El software y la ingenieria del software','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','El proceso de desarrollo de software','01','NO','C010','','0'),--semana1
+('1°UNIDAD','CAPITULO II','Ingenieria de requerimientos','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','Modelado del sistema','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','Disenio arquitectonico','01','NO','C010','','0'),--semana2
+('1°UNIDAD','CAPITULO II','Disenio e implementacion','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','Pruebas de software','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','Verificacion y validacion','01','NO','C010','','0'),--semana3
+('1°UNIDAD','CAPITULO II','Evolucion del software','02','NO','C010','','0'),
+('1°UNIDAD','CAPITULO II','Laboratorio:  Ejecución del primer release','02','NO','C010','','0'),--semana4
+('1°UNIDAD','-----------','Examen Parcial','02','NO','C010','','0'),
+('1°UNIDAD','-----------','Revision Examen Parcial I','02','NO','C010','','0'),
+('1°UNIDAD','-----------','Entrega de Notas','01','NO','C010','','0'),--semana5
 --2° parcial
-('2°UNIDAD','Capitulo3','Tema3_1_Teoria','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo3','Tema3_1_Laboratorio','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_1','01','NO','C010','','0'),--semana6
-('2°UNIDAD','Capitulo3','Tema3_2_Teoria_2','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo3','Tema3_2_Laboratorio','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo3','Repaso Capitulo3','01','NO','C010','','0'),--semana7
-('2°UNIDAD','Capitulo4','Tema4_1_Teoria_2','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo4','Tema4_1_Laboratorio','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_1','01','NO','C010','','0'),--semana8
-('2°UNIDAD','Capitulo4','Tema4_2_Teoria_2','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo4','Tema4_2_Laboratorio','02','NO','C010','','0'),
-('2°UNIDAD','Capitulo4','Repaso','01','NO','C010','','0'),--semana9
-('2°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
-('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
-('2°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),--semana10
+('2°UNIDAD','CAPITULO III','Persona (peopleware)','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO III','Producto','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO III','Proceso','01','NO','C010','','0'),--semana6
+('2°UNIDAD','CAPITULO III','Proyecto','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO IV','Planeacion de proyectos','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO V','Metricas de proceso y proyecto','01','NO','C010','','0'),--semana7
+('2°UNIDAD','CAPITULO VI','Estimacion para proyectos de software','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO VII','Calendarizacion del proyecto','02','NO','C010','','0'),
+('2°UNIDAD','CAPITULO VII','Graficos de seguimiento','01','NO','C010','','0'),--semana8
+('2°UNIDAD','CAPITULO VII','Laboratorio: Ejecución del segundo release','02','NO','C010','','0'),
+('2°UNIDAD','-----------','Examen Parcial','02','NO','C010','','0'),
+('2°UNIDAD','-----------','Revision Examen Parcial I','02','NO','C010','','0'),
+('2°UNIDAD','-----------','Entrega de Notas','01','NO','C010','','0'),--semana10
 --3° parcial
-('3°UNIDAD','Capitulo5','Tema5_1_Teoria','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo5','Tema5_1_Laboratorio','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_1','01','NO','C010','','0'),--semana11
-('3°UNIDAD','Capitulo5','Tema5_2_Teoria_2','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo5','Tema5_2_Laboratorio','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo5','Repaso Capitulo5','01','NO','C010','','0'),--semana12
-('3°UNIDAD','Capitulo6','Tema6_1_Teoria_2','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo6','Tema6_1_Laboratorio','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_1','01','NO','C010','','0'),--semana13
-('3°UNIDAD','Capitulo6','Tema6_2_Teoria_2','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo6','Tema6_2_Laboratorio','02','NO','C010','','0'),
-('3°UNIDAD','Capitulo6','Repaso Capitulo6','01','NO','C010','','0'),--semana14
+('3°UNIDAD','CAPITULO VIII','Administracion del riesgo','02','NO','C010','','0'),
+('3°UNIDAD','CAPITULO IX','Gestion de la calidad','02','NO','C010','','0'),
+('3°UNIDAD','CAPITULO X','Administracion de la configuracion','01','NO','C010','','0'),--semana11
+('3°UNIDAD','CAPITULO XI','Mejora de procesos','02','NO','C010','','0'),
+('3°UNIDAD','CAPITULO XI','Laboratorio: Ejecución del tercer release del proyecto semestral','02','NO','C010','','0'),
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C010','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C010','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C010','','0'),
+--
 -- APRENDIZAJE AUTOMATICO -GRUPO A (PROF. LUIS PALMA)
 ('1°UNIDAD','Capitulo0','Presentacion de Silabo','02','NO','C011','','0'),
 ('1°UNIDAD','Capitulo0','Examen de entrada','02','NO','C011','','0'),
