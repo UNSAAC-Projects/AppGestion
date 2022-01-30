@@ -49,5 +49,25 @@ namespace CapaDatos
             conexion.Close();
             return CodCatalogo;
         }
+        public DataTable ListarMatriculados(string IdCatalogo)
+        {
+            DataTable tabla = new DataTable();
+            SqlCommand cmd = new SqlCommand("SP_ListarMatriculadosxCurso", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            cmd.Parameters.AddWithValue("@IdCatalogo", IdCatalogo);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(tabla);
+            conexion.Close();
+
+            //Verificar si existen datos en la tabla
+            //Nota: Si tabla siempre tendra una fila por los valores NULL
+            if (tabla.Rows.Count == 1 && tabla.Rows[0]["Nombre"].ToString() == "")
+                return null;
+            else
+                return tabla;
+        }
     }
 }
