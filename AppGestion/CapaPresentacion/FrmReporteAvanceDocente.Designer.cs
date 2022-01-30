@@ -86,7 +86,7 @@ namespace CapaPresentacion
             this.dgvAvanceDocenteSesion.RowHeadersWidth = 51;
             this.dgvAvanceDocenteSesion.RowTemplate.Height = 24;
             this.dgvAvanceDocenteSesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(598, 634);
+            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(621, 634);
             this.dgvAvanceDocenteSesion.TabIndex = 1;
             // 
             // Porcentaje
