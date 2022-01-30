@@ -952,27 +952,27 @@ INSERT INTO TPlanSesiones (Unidad,Capitulo,Tema,HorasProgramadas,Finalizado,IDCa
 ('2°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
 ('2°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),--semana10
 --3° parcial
-('3°UNIDAD','CAPITULO 3','Introduccion a procesos estadisticos','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Cadenas de Markov y Montecarlo','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Cadenas de Markov ocultas','01','NO','C003','','0'),--semana11
-('3°UNIDAD','CAPITULO 3','Prediccion de estados','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Cadenas de Markov continuas','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Funciones de transicion de probabilidades','01','NO','C003','','0'),--semana12
-('3°UNIDAD','CAPITULO 3','Probabilidades limites','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Metodos basados en arboles','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Arboles de decision','01','NO','C003','','0'),--semana13
-('3°UNIDAD','CAPITULO 3','Bagging random forest y Boosting','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Laboratorio 8','02','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Maquinas vectoriales de soporte','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Clasificacion del margen maximo','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Clasificadores vectoriales de soporte','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Maquinas de soporte vectorial','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','SVM con mas de 2 clases','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Laboratorio 9','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Aprendizaje No Supervisado','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Analisis del componente Principal','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Metodos de clustering','01','NO','C003','','0'),
-('3°UNIDAD','CAPITULO 3','Laboratorio 10','01','NO','C003','','0'),--semana14
+('3°UNIDAD','CAPITULO III','Introduccion a procesos estadisticos','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Cadenas de Markov y Montecarlo','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Cadenas de Markov ocultas','01','NO','C003','','0'),--semana11
+('3°UNIDAD','CAPITULO III','Prediccion de estados','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Cadenas de Markov continuas','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Funciones de transicion de probabilidades','01','NO','C003','','0'),--semana12
+('3°UNIDAD','CAPITULO III','Probabilidades limites','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Metodos basados en arboles','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Arboles de decision','01','NO','C003','','0'),--semana13
+('3°UNIDAD','CAPITULO III','Bagging random forest y Boosting','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Laboratorio 8','02','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Maquinas vectoriales de soporte','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Clasificacion del margen maximo','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Clasificadores vectoriales de soporte','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Maquinas de soporte vectorial','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','SVM con mas de 2 clases','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Laboratorio 9','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Aprendizaje No Supervisado','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Analisis del componente Principal','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Metodos de clustering','01','NO','C003','','0'),
+('3°UNIDAD','CAPITULO III','Laboratorio 10','01','NO','C003','','0'),--semana14
 ('3°UNIDAD','---------','Examen Parcial','02','NO','C003','','0'),
 ('3°UNIDAD','---------','Revision Examen Parcial I','02','NO','C003','','0'),
 ('3°UNIDAD','---------','Entrega de Notas','01','NO','C003','','0'),
