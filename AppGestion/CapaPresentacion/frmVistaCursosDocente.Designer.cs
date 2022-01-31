@@ -89,8 +89,8 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCursosDocente.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCursosDocente.EnableHeadersVisualStyles = false;
-            this.dgvCursosDocente.Location = new System.Drawing.Point(128, 310);
-            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.dgvCursosDocente.Location = new System.Drawing.Point(96, 252);
+            this.dgvCursosDocente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCursosDocente.Name = "dgvCursosDocente";
             this.dgvCursosDocente.ReadOnly = true;
             this.dgvCursosDocente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -99,7 +99,7 @@ namespace CapaPresentacion
             this.dgvCursosDocente.RowTemplate.Height = 24;
             this.dgvCursosDocente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCursosDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCursosDocente.Size = new System.Drawing.Size(814, 241);
+            this.dgvCursosDocente.Size = new System.Drawing.Size(610, 196);
             this.dgvCursosDocente.TabIndex = 10;
             this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick);
             // 
@@ -111,7 +111,7 @@ namespace CapaPresentacion
             this.PlanSesiones.MinimumWidth = 6;
             this.PlanSesiones.Name = "PlanSesiones";
             this.PlanSesiones.ReadOnly = true;
-            this.PlanSesiones.Width = 134;
+            this.PlanSesiones.Width = 108;
             // 
             // SubirSilabo
             // 
@@ -121,7 +121,7 @@ namespace CapaPresentacion
             this.SubirSilabo.MinimumWidth = 6;
             this.SubirSilabo.Name = "SubirSilabo";
             this.SubirSilabo.ReadOnly = true;
-            this.SubirSilabo.Width = 98;
+            this.SubirSilabo.Width = 78;
             // 
             // VerSilabo
             // 
@@ -131,7 +131,7 @@ namespace CapaPresentacion
             this.VerSilabo.MinimumWidth = 6;
             this.VerSilabo.Name = "VerSilabo";
             this.VerSilabo.ReadOnly = true;
-            this.VerSilabo.Width = 88;
+            this.VerSilabo.Width = 70;
             // 
             // label1
             // 
@@ -142,11 +142,10 @@ namespace CapaPresentacion
             this.label1.Font = new System.Drawing.Font("Century Gothic", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(545, 178);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(409, 145);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(642, 83);
+            this.label1.Size = new System.Drawing.Size(522, 69);
             this.label1.TabIndex = 11;
             this.label1.Text = "TUS CURSOS SON :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,10 +157,10 @@ namespace CapaPresentacion
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(3, 607);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 493);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 5);
+            this.panel1.Size = new System.Drawing.Size(459, 4);
             this.panel1.TabIndex = 36;
             // 
             // panel2
@@ -170,10 +169,10 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.ForeColor = System.Drawing.Color.Gray;
-            this.panel2.Location = new System.Drawing.Point(3, 593);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 482);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(612, 5);
+            this.panel2.Size = new System.Drawing.Size(459, 4);
             this.panel2.TabIndex = 35;
             // 
             // panel8
@@ -182,10 +181,10 @@ namespace CapaPresentacion
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.ForeColor = System.Drawing.Color.Gray;
-            this.panel8.Location = new System.Drawing.Point(0, 620);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel8.Location = new System.Drawing.Point(0, 504);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1108, 5);
+            this.panel8.Size = new System.Drawing.Size(831, 4);
             this.panel8.TabIndex = 34;
             // 
             // dataGridViewImageColumn1
@@ -230,32 +229,34 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESCARGAR.Image")));
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(623, 571);
-            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(467, 464);
+            this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
-            this.buttonDESCARGAR.Size = new System.Drawing.Size(306, 45);
+            this.buttonDESCARGAR.Size = new System.Drawing.Size(230, 37);
             this.buttonDESCARGAR.TabIndex = 13;
             this.buttonDESCARGAR.Text = "DESCARGAR";
             this.buttonDESCARGAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonDESCARGAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonDESCARGAR.UseVisualStyleBackColor = false;
+            this.buttonDESCARGAR.Click += new System.EventHandler(this.buttonDESCARGAR_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-74, -1);
+            this.pictureBox2.Location = new System.Drawing.Point(-56, -1);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(703, 455);
+            this.pictureBox2.Size = new System.Drawing.Size(527, 370);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
             // 
             // frmVistaCursosDocente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1002, 642);
+            this.ClientSize = new System.Drawing.Size(752, 522);
             this.Controls.Add(this.dgvCursosDocente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDESCARGAR);
@@ -264,7 +265,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmVistaCursosDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVistaCursosDocente";

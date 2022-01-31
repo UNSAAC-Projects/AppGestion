@@ -131,5 +131,12 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void buttonDESCARGAR_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                MessageBox.Show("No se pudo exportar.");
+        }
     }
 }
