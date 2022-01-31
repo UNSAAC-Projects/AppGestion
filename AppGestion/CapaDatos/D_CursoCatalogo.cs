@@ -235,6 +235,22 @@ namespace CapaDatos
             conexion.Close();
             return (string)cmd.Parameters["@RETURN_VALUE"].Value;
         }
+        public DataTable ListarCursosCatalogo2()
+        {
+            DataTable table = new DataTable();
+            SqlDataReader readRows;
+            SqlCommand cmd = new SqlCommand("ListarCursosCatalogo2", conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexion.Open();
+
+            readRows = cmd.ExecuteReader();
+            table.Load(readRows);
+
+            readRows.Close();
+            conexion.Close();
+
+            return table;
+        }
 
     }
 }
