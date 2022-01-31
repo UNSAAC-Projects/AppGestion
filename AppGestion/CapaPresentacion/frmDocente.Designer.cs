@@ -60,6 +60,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.btnReporteEstadoAlumnos = new System.Windows.Forms.Button();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -78,6 +79,7 @@
             this.ContenedorLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ContenedorLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.ContenedorLogin.Controls.Add(this.btnReporteEstadoAlumnos);
             this.ContenedorLogin.Controls.Add(this.btnAlumnosMatriculados);
             this.ContenedorLogin.Controls.Add(this.panel3);
             this.ContenedorLogin.Controls.Add(this.btnLogout);
@@ -516,6 +518,29 @@
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick_1);
             // 
+            // btnReporteEstadoAlumnos
+            // 
+            this.btnReporteEstadoAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteEstadoAlumnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReporteEstadoAlumnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteEstadoAlumnos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteEstadoAlumnos.FlatAppearance.BorderSize = 0;
+            this.btnReporteEstadoAlumnos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteEstadoAlumnos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteEstadoAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteEstadoAlumnos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEstadoAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteEstadoAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEstadoAlumnos.Image")));
+            this.btnReporteEstadoAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteEstadoAlumnos.Location = new System.Drawing.Point(4, 315);
+            this.btnReporteEstadoAlumnos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporteEstadoAlumnos.Name = "btnReporteEstadoAlumnos";
+            this.btnReporteEstadoAlumnos.Size = new System.Drawing.Size(317, 62);
+            this.btnReporteEstadoAlumnos.TabIndex = 20;
+            this.btnReporteEstadoAlumnos.Text = "REPORTES SESIONES";
+            this.btnReporteEstadoAlumnos.UseVisualStyleBackColor = false;
+            this.btnReporteEstadoAlumnos.Click += new System.EventHandler(this.btnReporteEstadoAlumnos_Click);
+            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -585,5 +610,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnReporteAvanceDocentes;
         private System.Windows.Forms.Button btnAlumnosMatriculados;
+        private System.Windows.Forms.Button btnReporteEstadoAlumnos;
     }
 }

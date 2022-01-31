@@ -249,6 +249,11 @@ namespace CapaPresentacion
             AbrirFormulariosEnPanelContenedor(new FrmReporteAvanceDocentesDepartamento());
         }
 
+        private void btnReporteEstadoDocentes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmReporteEstadoDocentes());
+        }
+
 
         /* private void buttonIMPORTAR_Click(object sender, EventArgs e)
          {
