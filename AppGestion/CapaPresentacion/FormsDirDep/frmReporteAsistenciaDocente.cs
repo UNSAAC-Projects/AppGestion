@@ -77,7 +77,9 @@ namespace CapaPresentacion
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvReporteAsistenciaDocentes);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvReporteAsistenciaDocentes);
         }
 
         private void dgvReporteAsistenciaDocentes_CellContentClick(object sender, DataGridViewCellEventArgs e)

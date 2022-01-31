@@ -161,7 +161,13 @@ namespace CapaPresentacion
             }
         }
 
-        private void buttonDESCARGAR_Click_1(object sender, EventArgs e) => ExportarDatos(dgvCatalogo);
+        private void buttonDESCARGAR_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvCatalogo);
+        }
+
 
         private void buttonActualizar_Click_1(object sender, EventArgs e)
         {
