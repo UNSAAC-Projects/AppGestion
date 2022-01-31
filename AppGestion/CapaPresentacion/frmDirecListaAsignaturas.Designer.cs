@@ -48,10 +48,10 @@ namespace CapaPresentacion
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.panel1.Location = new System.Drawing.Point(166, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(124, 63);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 2);
+            this.panel1.Size = new System.Drawing.Size(392, 2);
             this.panel1.TabIndex = 56;
             // 
             // btnHorarios
@@ -66,10 +66,9 @@ namespace CapaPresentacion
             this.btnHorarios.ForeColor = System.Drawing.Color.White;
             this.btnHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnHorarios.Image")));
             this.btnHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHorarios.Location = new System.Drawing.Point(610, 501);
-            this.btnHorarios.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHorarios.Location = new System.Drawing.Point(458, 407);
             this.btnHorarios.Name = "btnHorarios";
-            this.btnHorarios.Size = new System.Drawing.Size(176, 50);
+            this.btnHorarios.Size = new System.Drawing.Size(132, 41);
             this.btnHorarios.TabIndex = 55;
             this.btnHorarios.Text = "VER HORARIOS";
             this.btnHorarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,10 +79,10 @@ namespace CapaPresentacion
             this.txtBuscar.BackColor = System.Drawing.Color.White;
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(166, 50);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscar.Location = new System.Drawing.Point(124, 41);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(522, 25);
+            this.txtBuscar.Size = new System.Drawing.Size(392, 20);
             this.txtBuscar.TabIndex = 54;
             // 
             // dgvAsignaturas
@@ -124,14 +123,13 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAsignaturas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.EnableHeadersVisualStyles = false;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(47, 104);
-            this.dgvAsignaturas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAsignaturas.Location = new System.Drawing.Point(35, 84);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvAsignaturas.RowHeadersVisible = false;
             this.dgvAsignaturas.RowHeadersWidth = 51;
             this.dgvAsignaturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(1023, 375);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(767, 305);
             this.dgvAsignaturas.TabIndex = 53;
             this.dgvAsignaturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAsignaturas_CellContentClick);
             // 
@@ -141,7 +139,7 @@ namespace CapaPresentacion
             this.avance.Image = global::CapaPresentacion.Properties.Resources.form_24px;
             this.avance.MinimumWidth = 6;
             this.avance.Name = "avance";
-            this.avance.Width = 105;
+            this.avance.Width = 86;
             // 
             // label13
             // 
@@ -149,10 +147,11 @@ namespace CapaPresentacion
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.DimGray;
-            this.label13.Location = new System.Drawing.Point(41, 41);
+            this.label13.Location = new System.Drawing.Point(31, 33);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label13.Size = new System.Drawing.Size(119, 34);
+            this.label13.Size = new System.Drawing.Size(95, 25);
             this.label13.TabIndex = 52;
             this.label13.Text = "Buscar :";
             // 
@@ -169,20 +168,20 @@ namespace CapaPresentacion
             this.btnDescargar.ForeColor = System.Drawing.Color.White;
             this.btnDescargar.Image = ((System.Drawing.Image)(resources.GetObject("btnDescargar.Image")));
             this.btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDescargar.Location = new System.Drawing.Point(269, 501);
-            this.btnDescargar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDescargar.Location = new System.Drawing.Point(202, 407);
             this.btnDescargar.Name = "btnDescargar";
-            this.btnDescargar.Size = new System.Drawing.Size(192, 50);
+            this.btnDescargar.Size = new System.Drawing.Size(144, 41);
             this.btnDescargar.TabIndex = 51;
             this.btnDescargar.Text = "EXPORTAR EXCEL";
             this.btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDescargar.UseVisualStyleBackColor = false;
+            this.btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // frmDirecListaAsignaturas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 593);
+            this.ClientSize = new System.Drawing.Size(833, 482);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnHorarios);
             this.Controls.Add(this.txtBuscar);
@@ -190,6 +189,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnDescargar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmDirecListaAsignaturas";
             this.Text = "ReporteAvanDetallAsignatura";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignaturas)).EndInit();

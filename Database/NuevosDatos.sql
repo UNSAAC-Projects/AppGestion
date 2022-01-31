@@ -118,7 +118,8 @@ INSERT INTO TDocente VALUES
 ('D0035','BORIS','CHULLO LLAVE','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO'),
 ('D0036','JISBAJ','GAMARRA SALAS','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO'),
 ('D0037','LISETH URPY','SEGUNDO CARPIO','MAGISTER EN INFORMATICA','ACTIVO'),
-('D0038','CARLOS FERNANDO','MONTOYA CUBAS','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO');
+('D0038','CARLOS FERNANDO','MONTOYA CUBAS','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO'),
+('D0039','MARIA DEL PILAR','VENEGAS VERGARA','INGENIERO INFORMATICO Y DE SISTEMAS','ACTIVO');
 GO
 --*************************************************************************************************************************
 
@@ -127,6 +128,19 @@ INSERT INTO TCatalogo (IDCatalogo, SemestreLectivo, NroSemestre, CodAsignatura, 
 -- Fundamentos de programacion
 ('C001','2021-2','02','IF468','A','IN202','D0028','D0028'),
 ('C002','2021-2','02','IF468','B','IN202','D0028','D0028'),
+-- Tecnologias de la informacion y la comunicacion
+('C021','2021-2','02','IF902','A','IN202','D0011','D0011'),
+-- 3ER SEMESTRE
+-- Abstraccion de datos y objetos
+('C018','2021-2','02','IF450','A','IN204','D0016','D0016'),
+('C019','2021-2','02','IF450','B','IN204','D0039','D0039'),
+-- Programacion I
+('C022','2021-2','02','IF451','A','IN204','D0020','D0020'),
+('C023','2021-2','02','IF451','B','IN204','D0034','D0034'),
+-- 4TO SEMESTRE
+-- Algoritmos y Estructuras de datos
+('C020','2021-2','02','IF452','A','IN204','D0016','D0016'),
+('C016','2021-2','02','IF452','B','IN204','D0030','D0030'),
 -- 5TO SEMESTRE
 -- Modelos Probabilisticos
 ('C003','2021-2','05','IF650','A','IN205','D0021','D0021'),
@@ -137,10 +151,15 @@ INSERT INTO TCatalogo (IDCatalogo, SemestreLectivo, NroSemestre, CodAsignatura, 
 ('C006','2021-2','06','IF611','B','IN206','D0032','D0032'),
 -- Fundamentos y disenio de bases de datos
 ('C007','2021-2','06','IF612','A','IN206','D0029','D0029'),
+-- Sistemas operativos
+('C017','2021-2','06','IF551','A','IN206','D0030','D0030'),
 -- 7MO SEMESTRE
 -- Compiladores 
 ('C008','2021-2','07','IF466','A','IN207','D0023','D0023'),
 ('C009','2021-2','07','IF466','B','IN207','D0023','D0023'),
+-- Desarrollo de software I 
+('C024','2021-2','07','IF613','A','IN207','D0039','D0039'),
+('C025','2021-2','07','IF613','B','IN207','D0034','D0034'),
 -- 8VO SEMESTRE
 -- Ingenieria del software I
 ('C010','2021-2','08','IF614','A','IN208','D0029','D0029'),
@@ -152,7 +171,11 @@ INSERT INTO TCatalogo (IDCatalogo, SemestreLectivo, NroSemestre, CodAsignatura, 
 ('C014','2021-2','08','IF482','B','IN208','D0026','D0026'),
 -- 9NO SEMESTRE
 -- Procesamiento del lenguaje
-('C015','2021-2','08','IF656','A','IN209','D0038','D0037');
+('C015','2021-2','08','IF656','A','IN209','D0038','D0037'),
+-- Ingenieria de software II
+('C026','2021-2','08','IF617','A','IN209','D0034','D0034'),
+-- Formulacion de proyectos de TI
+('C027','2021-2','08','IF483','A','IN209','D0007','D0007');
 GO
 
 INSERT INTO TLogin VALUES 
@@ -194,6 +217,7 @@ INSERT INTO TLogin VALUES
 ('jisbaj','jisbaj','Docente','D0036'),
 ('urpy','urpy','Docente','D0037'),
 ('fernando_m','fernando_m','Docente','D0038'),
+('pilar_v','pilar_v','Docente','D0039'),
 ('zonia','zonia','DirectorEscuela','D0028'),
 ('lauro','lauro','DirectorAcademico','D0021');
 
@@ -271,8 +295,69 @@ INSERT INTO THorario VALUES
 -- A
 ('LUNES'    ,'7','9','C015','T'),
 ('MIERCOLES','7','9','C015','P'),
-('VIERNES'  ,'7','8','C015','T');
+('VIERNES'  ,'7','8','C015','T'),
 
+-- Algoritmos y Estructuras de Datos
+-- A
+('LUNES'    ,'9','11','C020','T'),
+('MIERCOLES','9','11','C020','P'),
+('VIERNES'  ,'10','11','C020','T'),
+
+-- Algoritmos y Estructuras de Datos
+-- B
+('LUNES'    ,'17','19','C016','T'),
+('MIERCOLES','17','19','C016','P'),
+('VIERNES'  ,'17','18','C016','T'),
+
+-- Sistemas Operativos
+-- B
+('LUNES'    ,'15','17','C017','T'),
+('MIERCOLES','15','17','C017','P'),
+('VIERNES'  ,'16','17','C017','T'),
+
+-- Abstraccion de datos y objetos
+-- A
+('MARTES'    ,'9','11','C018','T'),
+('JUEVES'    ,'9','11','C018','P'),
+('VIERNES'   ,'9','10','C018','T'),
+
+-- Abstraccion de datos y objetos
+-- B
+('MARTES'    ,'17','19','C019','T'),
+('JUEVES'    ,'17','19','C019','P'),
+('VIERNES'   ,'17','18','C019','T'),
+
+-- Tecnologias de la informcion y la comunicacion
+-- A
+('MARTES'    ,'14','16','C021','P'),
+('JUEVES'    ,'14','16','C021','P'),
+
+-- Programacion I
+-- P
+('LUNES'    ,'9','11','C022','T'),
+('MIERCOLES','9','11','C022','P'),
+
+-- Programacion I
+-- B
+('LUNES'    ,'17','19','C023','P'),
+('MIERCOLES','17','19','C023','P'),
+-- Desarrollo de software I
+-- A
+('LUNES'    ,'7','9','C024','P'),
+('MIERCOLES','7','9','C024','P'),
+-- Desarrollo de software I
+-- B
+('LUNES'    ,'15','17','C025','P'),
+('MIERCOLES','15','17','C025','P'),
+-- Ingenieria del SOFTWARE II
+-- A
+('LUNES'    ,'9','11','C026','T'),
+('MIERCOLES','9','11','C026','P'),
+('VIERNES'  ,'9','10','C026','T'),
+-- Formulacion de proyectos de TI
+-- A
+('LUNES'    ,'11','13','C027','T'),
+('MIERCOLES','11','13','C027','P');
 GO
 
 INSERT INTO TMatriculado(IDCatalogo, CodAlumno, Apellidos,Nombre) VALUES 

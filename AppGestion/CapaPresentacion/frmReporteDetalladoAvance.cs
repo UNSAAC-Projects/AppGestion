@@ -28,12 +28,12 @@ namespace CapaPresentacion
             dgvAvanceDetallado.Columns["VariacionHora"].Visible = false;
             
         }
-    public void MostrarPlanSesiones(string CodCatalogo)
+        public void MostrarPlanSesiones(string CodCatalogo)
         {
             N_PlanSesiones pvista = new N_PlanSesiones();
             dgvAvanceDetallado.DataSource = pvista.ListandoPlanSesiones(CodCatalogo);
-            double NroSesionesCompletados = 0;
-            double NroSesionesNOCompletados = 0;
+            decimal NroSesionesCompletados = 0;
+            decimal NroSesionesNOCompletados = 0;
             foreach (DataGridViewRow fila in dgvAvanceDetallado.Rows)
             {
                 if (fila.Cells["Finalizado"].Value.ToString() == "SI")
@@ -48,12 +48,12 @@ namespace CapaPresentacion
                 }
             }
 
-            double cantTemas = dgvAvanceDetallado.Rows.Count;
-            double TotalCompletos = (NroSesionesCompletados / cantTemas) * 100;
-            double TotalNOCompletos = (NroSesionesNOCompletados / cantTemas) * 100;
+            decimal cantTemas = dgvAvanceDetallado.Rows.Count;
+            decimal TotalCompletos = (NroSesionesCompletados / cantTemas) * 100;
+            decimal TotalNOCompletos = (NroSesionesNOCompletados / cantTemas) * 100;
 
-            nrocompletos.Text = TotalCompletos.ToString() +  "%";
-            nroNOcompletos.Text = TotalNOCompletos.ToString() + "%";
+            nrocompletos.Text =decimal.Round(TotalCompletos,2) .ToString() + "%";
+            nroNOcompletos.Text = decimal.Round(TotalNOCompletos,2).ToString() + "%";
 
 
         }
@@ -70,6 +70,47 @@ namespace CapaPresentacion
         private void frmReporteDetalladoAvance_Load(object sender, EventArgs e)
         {
             
+        }
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+
+            //Recorrer columnas y guardar valores
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                indexColumn++;
+                exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+            }
+            int indexfila = 0;
+
+            //Recorrer filas y guardar sus valores
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                }
+            }
+            exportarCatalogo.Visible = true;
+        }
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+            ExportarDatos(dgvAvanceDetallado);
+        }
+
+        private void buttonCerrrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void nrocompletos_Click(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -116,7 +157,9 @@ namespace CapaPresentacion
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                MessageBox.Show("No se pudo exportar.");
         }
     }
 }

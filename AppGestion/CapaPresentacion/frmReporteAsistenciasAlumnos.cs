@@ -38,7 +38,7 @@ namespace CapaPresentacion
                 cbNombreCurso.SelectedIndex = 0;
                 cbGrupo.SelectedIndex = 0;
                 dtpFechaInferior.Value = new DateTime(2022,1,1);
-                dtpFechaSuperior.Value = DateTime.Now;
+                //dtpFechaSuperior.Value = DateTime.Now;
             }
         }
 
@@ -154,7 +154,9 @@ namespace CapaPresentacion
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvReporteAsistencia);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvReporteAsistencia);
         }
 
     }

@@ -73,14 +73,14 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCatalogo.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCatalogo.EnableHeadersVisualStyles = false;
-            this.dgvCatalogo.Location = new System.Drawing.Point(30, 113);
-            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvCatalogo.Location = new System.Drawing.Point(27, 90);
+            this.dgvCatalogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCatalogo.Name = "dgvCatalogo";
             this.dgvCatalogo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvCatalogo.RowHeadersVisible = false;
             this.dgvCatalogo.RowHeadersWidth = 51;
             this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCatalogo.Size = new System.Drawing.Size(1169, 460);
+            this.dgvCatalogo.Size = new System.Drawing.Size(1175, 460);
             this.dgvCatalogo.TabIndex = 48;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
             // 
@@ -97,20 +97,21 @@ namespace CapaPresentacion
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(507, 42);
+            this.label2.Location = new System.Drawing.Point(510, 42);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 34);
+            this.label2.Size = new System.Drawing.Size(182, 30);
             this.label2.TabIndex = 49;
             this.label2.Text = "ASIGNATURAS ";
             // 
             // frmVistaCatalogo2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 587);
+            this.ClientSize = new System.Drawing.Size(1242, 587);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCatalogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmVistaCatalogo2";
             this.Text = "frmAlumnosMatriculadosPorCurso";
             this.Load += new System.EventHandler(this.frmAlumnosMatriculadosPorCurso_Load);

@@ -27,10 +27,17 @@ namespace CapaPresentacion
         void MostrarListaCursos()
         {
             dgvCatalogo.DataSource = ocurso.ListarCursoCatalogo2();
-            dgvCatalogo.Columns["AlumnosMatriculados"].DisplayIndex = 3;
-            dgvCatalogo.Columns["Nombre"].Width = 430;
-            dgvCatalogo.Columns["IdCatalogo"].Visible = false;
-            dgvCatalogo.Columns["CodigoAsignatura"].Width = 120;
+            if (dgvCatalogo.Rows.Count == 0)
+            {
+                MessageBox.Show("No existen Elementos");
+            }
+            else
+            {
+                dgvCatalogo.Columns["AlumnosMatriculados"].DisplayIndex = 3;
+                dgvCatalogo.Columns["Nombre"].Width = 430;
+                dgvCatalogo.Columns["IdCatalogo"].Visible = false;
+                dgvCatalogo.Columns["CodigoAsignatura"].Width = 120;
+            }
             
         }
 
@@ -44,6 +51,7 @@ namespace CapaPresentacion
                     string IdCatalogo= dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
                     matriculados.IdCatalogo = IdCatalogo;
                     matriculados.label1.Text= dgvCatalogo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    matriculados.labelGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Grupo"].Value.ToString();
                     matriculados.ShowDialog();
                 }
             }
