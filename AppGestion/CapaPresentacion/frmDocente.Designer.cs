@@ -116,10 +116,10 @@
             this.btnReporteEstadoAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.btnReporteEstadoAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEstadoAlumnos.Image")));
             this.btnReporteEstadoAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteEstadoAlumnos.Location = new System.Drawing.Point(0, 831);
+            this.btnReporteEstadoAlumnos.Location = new System.Drawing.Point(0, 819);
             this.btnReporteEstadoAlumnos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteEstadoAlumnos.Name = "btnReporteEstadoAlumnos";
-            this.btnReporteEstadoAlumnos.Size = new System.Drawing.Size(334, 62);
+            this.btnReporteEstadoAlumnos.Size = new System.Drawing.Size(363, 62);
             this.btnReporteEstadoAlumnos.TabIndex = 20;
             this.btnReporteEstadoAlumnos.Text = "REPORTE ESTADO ALUMNOS";
             this.btnReporteEstadoAlumnos.UseVisualStyleBackColor = false;

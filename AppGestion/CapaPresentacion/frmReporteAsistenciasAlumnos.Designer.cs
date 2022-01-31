@@ -99,7 +99,7 @@ namespace CapaPresentacion
             this.comboBoxCursosReporte.Location = new System.Drawing.Point(145, 48);
             this.comboBoxCursosReporte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCursosReporte.Name = "comboBoxCursosReporte";
-            this.comboBoxCursosReporte.Size = new System.Drawing.Size(475, 25);
+            this.comboBoxCursosReporte.Size = new System.Drawing.Size(532, 25);
             this.comboBoxCursosReporte.TabIndex = 2;
             this.comboBoxCursosReporte.SelectedIndexChanged += new System.EventHandler(this.comboBoxCurso_SelectedIndexChanged);
             // 
@@ -124,7 +124,7 @@ namespace CapaPresentacion
             this.panel2.Location = new System.Drawing.Point(145, 72);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(475, 1);
+            this.panel2.Size = new System.Drawing.Size(532, 1);
             this.panel2.TabIndex = 22;
             // 
             // label2
@@ -134,7 +134,7 @@ namespace CapaPresentacion
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(60, 118);
+            this.label2.Location = new System.Drawing.Point(49, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 19);
             this.label2.TabIndex = 25;
@@ -147,7 +147,7 @@ namespace CapaPresentacion
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(431, 118);
+            this.label3.Location = new System.Drawing.Point(420, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 19);
             this.label3.TabIndex = 26;
@@ -157,7 +157,7 @@ namespace CapaPresentacion
             // 
             this.dtpFechaInferior.CalendarFont = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInferior.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInferior.Location = new System.Drawing.Point(227, 117);
+            this.dtpFechaInferior.Location = new System.Drawing.Point(203, 117);
             this.dtpFechaInferior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaInferior.MaxDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpFechaInferior.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
@@ -172,7 +172,7 @@ namespace CapaPresentacion
             this.dtpFechaSuperior.CalendarFont = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaSuperior.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaSuperior.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaSuperior.Location = new System.Drawing.Point(608, 117);
+            this.dtpFechaSuperior.Location = new System.Drawing.Point(582, 117);
             this.dtpFechaSuperior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFechaSuperior.MaxDate = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.dtpFechaSuperior.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
@@ -193,10 +193,10 @@ namespace CapaPresentacion
             this.buttonExportar.ForeColor = System.Drawing.Color.White;
             this.buttonExportar.Image = ((System.Drawing.Image)(resources.GetObject("buttonExportar.Image")));
             this.buttonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonExportar.Location = new System.Drawing.Point(824, 25);
-            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExportar.Location = new System.Drawing.Point(834, 106);
+            this.buttonExportar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(221, 64);
+            this.buttonExportar.Size = new System.Drawing.Size(221, 42);
             this.buttonExportar.TabIndex = 29;
             this.buttonExportar.Text = "Exportar Excel";
             this.buttonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
