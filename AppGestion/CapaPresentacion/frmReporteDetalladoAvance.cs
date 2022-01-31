@@ -71,5 +71,10 @@ namespace CapaPresentacion
         {
             
         }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
