@@ -36,7 +36,6 @@ namespace CapaPresentacion
 
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
-            
             //Obtener cursos que dicta el docente
             string[] Asignaturas = oDocente.CursosDocente(CodDocente);
             if (Asignaturas != null) //Si tiene asignaturas dictando
@@ -52,7 +51,6 @@ namespace CapaPresentacion
                 //Mostrar datos en el PieChart
                 MostrarPieChart();
             }
-
         }
 
         private void MostrarPieChart()
@@ -78,6 +76,38 @@ namespace CapaPresentacion
             }
         }
 
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                if (columna.Name != "EDITAR")
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+                }
+            }
+            int indexfila = 0;
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    if (columna.Name != "EDITAR")
+                    {
+                        indexColumn++;
+                        exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                    }
+                }
+            }
+            exportarCatalogo.Visible = true;
+        }
+
+
+
         private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Obtener codCursoAsignatura
@@ -87,9 +117,16 @@ namespace CapaPresentacion
             MostrarReporte(codCatalogo);
         }
 
-        private void chartReporte_Click(object sender, EventArgs e)
+        private void buttonExportar_Click(object sender, EventArgs e)
         {
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvEstadoAlumnos);
+        }
 
+        private void buttonCerrrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

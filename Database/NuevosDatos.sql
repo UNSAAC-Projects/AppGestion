@@ -1,11 +1,11 @@
 /* Para ejecutar DB en la nube */
 
 /* -- Nube */
---Server name: sql5080.site4now.net
---Login: db_a7d2c3_appgestion_admin
---Password: AppGestion1
+--Server name: SQL5105.site4now.net
+--Login: db_a82488_dbgestion_admin
+--Password: unsaac2022
 
---use db_a7d2c3_appgestion
+--use db_a82488_dbgestion
 --go
 
 /* Para ejecutar BD de forma local */
@@ -1715,21 +1715,120 @@ GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 
---delete from TAsistencia_Alumnos
---insert into TAsistencia_Alumnos(Fecha,IdCatalogo,CodAlumno,Nombres,Asistio,Observacion) values
---('03/01/2022','C006','182898','CERATI CERILLO FIORELA','P',' '),
---('05/01/2022','C006','182898','CERATI CERILLO FIORELA','F',' '),
---('07/01/2022','C006','182898','CERATI CERILLO FIORELA','F',' '),
---('10/01/2022','C006','182898','CERATI CERILLO FIORELA','P',' '),
---('03/01/2022','C006','125156','CONDORI FLORES WILLIAMS DENNIS','P',' '),
---('05/01/2022','C006','125156','CONDORI FLORES WILLIAMS DENNIS','P',' '),
---('07/01/2022','C006','125156','CONDORI FLORES WILLIAMS DENNIS','P',' '),
---('10/01/2022','C006','125156','CONDORI FLORES WILLIAMS DENNIS','F',' '),
---('03/01/2022','C006','163839','CORAZAO HINOJOSA REISON DARIO','P',' '),
---('05/01/2022','C006','163839','CORAZAO HINOJOSA REISON DARIO','P',' '),
---('07/01/2022','C006','163839','CORAZAO HINOJOSA REISON DARIO','P',' '),
---('10/01/2022','C006','163839','CORAZAO HINOJOSA REISON DARIO','F',' '),
---('03/01/2022','C006','170430','COVARRUBIAS AGUILAR GEREMY ANDRE','P',' '),
---('05/01/2022','C006','170430','COVARRUBIAS AGUILAR GEREMY ANDRE','P',' '),
---('07/01/2022','C006','170430','COVARRUBIAS AGUILAR GEREMY ANDRE','F',' ')
---go
+insert into TAsistencia_Alumnos(Fecha,IdCatalogo,CodAlumno,Nombres,Asistio,Observacion) values
+('2022/01/31','C001',	'211355',	'AUCCACUSI-HUANCA PAUL ANDRÉ','P',''	),
+('2022/01/31','C001',	'210919',	'BIGGERSTAFF-PUMACAHUA MEI-LING','P',''	),
+('2022/01/31','C001',	'210920',	'BUENO-LESCANO ANDRIC JEREMY','P',''	),
+('2022/01/31','C001',	'151832',	'CASTELLANOS-AMANQUI GEORGE SANTIAGO','P',''	),
+('2022/01/31','C001',	'210928',	'ESTRADA-CUYTO BRANDON PAOLO','P',''	),
+('2022/01/31','C001',	'194920',	'HUAMANI-CRIOLLO JUVENAL','P',''	),
+('2022/01/31','C001',	'211857',	'HUISA-NINA YIMY YOHEL','P',''	),
+('2022/01/31','C001',	'193807',	'JANCCO-CONCHA CESAR AUGUSTO','P',''	),
+('2022/01/31','C001',	'200781',	'LIMPI-TINTA IVAN NESTOR','P',''	),
+('2022/01/31','C001',	'210935',	'MERMA-CHURA JEANPIER XILANDER','P',''	),
+('2022/01/31','C001',	'211858',	'MEZA-CHALLCO DYLAN PATRICK','P',''	),
+('2022/01/31','C001',	'210937',	'MOTTA-MENDOZA PAVEL ALVARO','P',''	),
+('2022/01/31','C001',	'211860',	'MUÑOZ-CENTENO MILDER','P',''	),
+('2022/01/31','C001',	'211356',	'PALACIOS-DURAND ORIOL FERNANDO','P',''	),
+('2022/01/31','C001',	'210939',	'PANTOJA-OLAVE GUSTAVO','P',''	),
+('2022/01/31','C001',	'210179',	'PRIETO-CARDOSO DAVID FERNANDO','P',''	),
+('2022/01/31','C001',	'211861',	'PUMA-CHAÑI JOSÉ LUIS','P',''	),
+('2022/01/31','C001',	'210940',	'PUMACHOQUE-CHOQUENAIRA JHON ESAU','P',''	),
+('2022/01/31','C001',	'211357',	'QQUENTE-ALVAREZ FRANK RODRIGO','P',''	),
+('2022/01/31','C001',	'113547',	'QUINAYA-MEJIA RONY WILSON','P',''),	
+('2022/01/31','C001',	'210941',	'QUISPE-CRUZ JOSE ARMAND','P',''),	
+('2022/01/31','C001',	'211359',	'QUISPE-VENTURA IAN LOGAN WILL','P',''),	
+('2022/01/31','C001',	'210411',	'RAMOS-ALVAREZ ISMAEL GERSON','P',''),	
+('2022/01/31','C001',	'210942',	'RODRIGUEZ-PAUCCARA CRISTIAN DIEGO','P',''),	
+('2022/01/31','C001',	'210412',	'ROMERO-BERNAL JHAMSID','P',''),	
+('2022/01/31','C001',	'210413',	'SANCHEZ-ENCISO HORUS HUGO','P',''),	
+('2022/01/31','C001',	'184210',	'TAPIA-QUISPE ANDRE WASHINGTON','P',''),	
+('2022/01/31','C001',	'204807',	'TINOCO-CCOTO LUIS MANUEL','P',''),	
+('2022/01/31','C001',	'211361',	'TORRE-CANO EDUARDO','P',''),	
+('2022/01/31','C001',	'192430',	'TTITO-QUISPE ABELARDO','P',''),	
+('2022/01/31','C001',	'211362',	'VALERIANO-HUACARPUMA LUIGUI FERNANDO','P',''),	
+('2022/01/31','C001',	'210180',	'VILLALOBOS-USCA ANGHELO','P','');
+
+go
+insert into TListaAsistencias(Tema, Fecha, IDCatalogo) values
+('Presentacion de Silabo','2022-01-31','C001'),
+('Examen de entrada','2022-01-31','C001'),
+('Información complementaria','2022-01-31','C001'),
+('Algoritmos y Programas','2022-01-31','C001'),
+('Representación de algoritmos','2022-01-31','C001'),
+('Operadores: Aritméticos, relación y lógicos.','2022-01-31','C001'),
+('Tipos de instrucciones básicos','2022-01-31','C001'),
+('Etapas en el desarrollo de programas','2022-01-31','C001'),
+('Presentacion de Silabo','2022-01-31','C001'),
+('Introducción a tipos de estructuras','2022-01-31','C001'),
+('Estructuras secuenciales','2022-01-31','C001'),
+('Estructuras selectivas: Sintaxis y semántica.','2022-01-31','C001'),
+('Selección: simple, compuesta y múltiple.','2022-01-31','C001'),
+('Selectivas anidadas.','2022-01-31','C001'),
+('Estructuras repetitivas: Sintaxis y semántica.','2022-01-31','C001'),
+('Sentencias repetitivas anidadas','2022-01-31','C001'),
+('Examen Parcial','2022-01-31','C001'),
+('Revision Examen Parcial I','2022-01-31','C001'),
+('Entrega de Notas','2022-01-31','C001'),
+
+('Presentacion de Silabo','2022-01-31','C002'),
+('Examen de entrada','2022-01-31','C002'),
+('Información complementaria','2022-01-31','C002'),
+('Algoritmos y Programas','2022-01-31','C002'),
+('Representación de algoritmos','2022-01-31','C002'),
+('Operadores: Aritméticos, relación y lógicos.','2022-01-31','C002'),
+('Tipos de instrucciones básicos','2022-01-31','C002'),
+('Etapas en el desarrollo de programas','2022-01-31','C002'),
+('Presentacion de Silabo','2022-01-31','C002'),
+('Introducción','2022-01-31','C002'),
+('Estructuras secuenciales','2022-01-31','C002'),
+('Estructuras selectivas: Sintaxis y semántica.','2022-01-31','C002'),
+('Selección: simple, compuesta y múltiple.','2022-01-31','C002'),
+('Selectivas anidadas.','2022-01-31','C002'),
+('Estructuras repetitivas: Sintaxis y semántica.','2022-01-31','C002'),
+('Sentencias repetitivas anidadas','2022-01-31','C002'),
+('Examen Parcial','2022-01-31','C002'),
+('Revision Examen Parcial I','2022-01-31','C002'),
+('Entrega de Notas','2022-01-31','C002'),
+
+('Presentacion de Silabo','2022-01-24','C008'),
+('Examen de entrada','2022-01-24','C008'),
+('Información complementaria','2022-01-24','C008'),
+('Algoritmos y Programas','2022-01-24','C008'),
+('Representación de algoritmos','2022-01-24','C008'),
+('Operadores: Aritméticos, relación y lógicos.','2022-01-24','C008'),
+('Tipos de instrucciones básicos','2022-01-24','C008'),
+('Etapas en el desarrollo de programas','2022-01-24','C008'),
+('Presentacion de Silabo','2022-01-24','C008'),
+('Introducción','2022-01-24','C008'),
+('Estructuras secuenciales','2022-01-24','C008'),
+('Estructuras selectivas: Sintaxis y semántica.','2022-01-24','C008'),
+('Selección: simple, compuesta y múltiple.','2022-01-24','C008'),
+('Selectivas anidadas.','2022-01-24','C008'),
+('Estructuras repetitivas: Sintaxis y semántica.','2022-01-24','C008'),
+('Sentencias repetitivas anidadas','2022-01-24','C008'),
+('Examen Parcial','2022-01-24','C008'),
+('Revision Examen Parcial I','2022-01-24','C008'),
+('Entrega de Notas','2022-01-24','C008'),
+
+('Presentacion de Silabo','2022-01-24','C009'),
+('Examen de entrada','2022-01-24','C009'),
+('Información complementaria','2022-01-24','C009'),
+('Algoritmos y Programas','2022-01-24','C009'),
+('Representación de algoritmos','2022-01-24','C009'),
+('Operadores: Aritméticos, relación y lógicos.','2022-01-24','C009'),
+('Tipos de instrucciones básicos','2022-01-24','C009'),
+('Etapas en el desarrollo de programas','2022-01-24','C009'),
+('Presentacion de Silabo','2022-01-24','C009'),
+('Introducción','2022-01-24','C009'),
+('Estructuras secuenciales','2022-01-24','C009'),
+('Estructuras selectivas: Sintaxis y semántica.','2022-01-24','C009'),
+('Selección: simple, compuesta y múltiple.','2022-01-24','C009'),
+('Selectivas anidadas.','2022-01-24','C002'),
+('Estructuras repetitivas: Sintaxis y semántica.','2022-01-24','C009'),
+('Sentencias repetitivas anidadas','2022-01-24','C009'),
+('Examen Parcial','2022-01-24','C009'),
+('Revision Examen Parcial I','2022-01-24','C009'),
+('Entrega de Notas','2022-01-24','C009');
+
+GO
