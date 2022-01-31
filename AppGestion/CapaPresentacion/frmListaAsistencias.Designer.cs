@@ -140,6 +140,7 @@ namespace CapaPresentacion
             // 
             this.dgvAsistenciaReporte.AllowUserToAddRows = false;
             this.dgvAsistenciaReporte.AllowUserToDeleteRows = false;
+            this.dgvAsistenciaReporte.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvAsistenciaReporte.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAsistenciaReporte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 

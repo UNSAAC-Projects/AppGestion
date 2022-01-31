@@ -72,9 +72,46 @@ namespace CapaPresentacion
             
         }
 
-        private void buttonExportar_Click(object sender, EventArgs e)
-        {
 
+        private void btnCerrarReporteDetAvance_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinReporteDetAvance_Click(object sender, EventArgs e)
+        {
+            //WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //Movimiento panel
+        int posY = 0;
+        int posX = 0;
+        private void panelReporteDetalladoAvance_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            {
+                posX = e.X;
+                posY = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posX);
+                Top = Top + (e.Y - posY);
+            }
+        }
+
+        private void btnMaxReporteDetAvance_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
         }
     }
 }

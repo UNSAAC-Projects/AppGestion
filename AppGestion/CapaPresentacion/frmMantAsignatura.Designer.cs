@@ -55,14 +55,12 @@ namespace CapaPresentacion
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxNroSemestre = new System.Windows.Forms.TextBox();
             this.panelMantAsignatura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -258,6 +256,7 @@ namespace CapaPresentacion
             this.panelMantAsignatura.Name = "panelMantAsignatura";
             this.panelMantAsignatura.Size = new System.Drawing.Size(992, 39);
             this.panelMantAsignatura.TabIndex = 63;
+            this.panelMantAsignatura.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelMantAsignatura_MouseMove);
             // 
             // btnMaxMantAsignatura
             // 
@@ -368,18 +367,6 @@ namespace CapaPresentacion
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(331, 126);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 258);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -433,7 +420,6 @@ namespace CapaPresentacion
             this.Controls.Add(this.textNombre);
             this.Controls.Add(this.textCodAsignatura);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMantAsignatura";
@@ -444,7 +430,6 @@ namespace CapaPresentacion
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,7 +461,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox textBoxNroSemestre;

@@ -309,5 +309,10 @@ namespace CapaPresentacion
             btnREPORTEASISTENCIA.ForeColor = Color.FromArgb(212, 172, 13);
             buttonReporteSesiones.ForeColor = Color.FromArgb(212, 172, 13);
         }
+
+        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

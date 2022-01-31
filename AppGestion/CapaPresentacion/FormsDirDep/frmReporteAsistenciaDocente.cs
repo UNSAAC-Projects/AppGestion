@@ -17,6 +17,7 @@ namespace CapaPresentacion
         public frmReporteAsistenciaDocente()
         {
             InitializeComponent();
+            
         }
 
         private void frmReporteAsistenciaDocente_Load(object sender, EventArgs e)
@@ -25,6 +26,7 @@ namespace CapaPresentacion
             dtpFechaSuperior.Value = DateTime.Now;
             mostrarReporte();
         }
+
         private void mostrarReporte()
         {
             string limInferior = dtpFechaInferior.Value.ToString("yyyy-MM-dd");
@@ -77,5 +79,11 @@ namespace CapaPresentacion
         {
             ExportarDatos(dgvReporteAsistenciaDocentes);
         }
+
+        private void dgvReporteAsistenciaDocentes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
