@@ -47,10 +47,10 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // label1
@@ -70,12 +70,12 @@
             // 
             // dgvEstadoAlumnos
             // 
-            resources.ApplyResources(this.dgvEstadoAlumnos, "dgvEstadoAlumnos");
             this.dgvEstadoAlumnos.AllowUserToAddRows = false;
             this.dgvEstadoAlumnos.AllowUserToDeleteRows = false;
             this.dgvEstadoAlumnos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvEstadoAlumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.dgvEstadoAlumnos, "dgvEstadoAlumnos");
             this.dgvEstadoAlumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvEstadoAlumnos.BackgroundColor = System.Drawing.Color.White;
             this.dgvEstadoAlumnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -105,7 +105,6 @@
             // 
             // chartReporte
             // 
-            resources.ApplyResources(this.chartReporte, "chartReporte");
             chartArea1.Area3DStyle.Inclination = 10;
             chartArea1.Name = "ChartArea1";
             this.chartReporte.ChartAreas.Add(chartArea1);
@@ -113,6 +112,7 @@
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.chartReporte.Legends.Add(legend1);
+            resources.ApplyResources(this.chartReporte, "chartReporte");
             this.chartReporte.Name = "chartReporte";
             this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
