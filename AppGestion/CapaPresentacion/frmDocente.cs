@@ -314,5 +314,10 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnReporteEstadoAlumnos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmReporteEstadoAlumnos(Docente));
+        }
     }
 }

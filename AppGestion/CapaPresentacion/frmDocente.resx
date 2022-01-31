@@ -118,6 +118,17 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReporteEstadoAlumnos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAVdJREFUSEvt
+        lcFOwzAMhnOAutVegQNC4ingAZAmcYHzXoMLB56Ep0BIwKFKkHZAe4GdEE/BJtoZu/FKmnYjYxkH6CdZ
+        ahw3f9wmturpCQHz9LA0yS2OVSauisLAsNTJtQzjgnl2UGp4JcOFgaeluBWFGft3Is5CCw2PVsCKFya5
+        /BKFGW9CwtdDO7xaZZThqYTV+OKOhYsyHQs4lt5IWAMWL3T64sZS5hcyHYb7ctu6hT9yOKP5dze20KDx
+        QQ0kJD7Ng0Sf18mcf4F/2qOAGo4borSJ1j+nqybhcbEHD+b0ac/FpfBeAYnfkf8Nn9MjcceHM5fHGs6c
+        77kMe/4wmKs9efw9pLBMd3Ky17fF+o5PcaL2ZWp7wtpiYLPgBVYZlcORhFX4VaqK+XlbtIt0W7tJOFXK
+        j29Us2/xs3TNz3hJqz5vkum2OJlvlmkMqvpsshMZ9vxblPoE/N2mF/tcXW0AAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnAlumnosMatriculados.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAXFJREFUSEvt
