@@ -80,7 +80,7 @@ namespace CapaPresentacion
             this.dgvCatalogo.RowHeadersVisible = false;
             this.dgvCatalogo.RowHeadersWidth = 51;
             this.dgvCatalogo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCatalogo.Size = new System.Drawing.Size(1169, 460);
+            this.dgvCatalogo.Size = new System.Drawing.Size(1175, 460);
             this.dgvCatalogo.TabIndex = 48;
             this.dgvCatalogo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCatalogo_CellContentClick);
             // 
@@ -97,7 +97,7 @@ namespace CapaPresentacion
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(507, 42);
+            this.label2.Location = new System.Drawing.Point(510, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(210, 34);
             this.label2.TabIndex = 49;
@@ -107,7 +107,7 @@ namespace CapaPresentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 587);
+            this.ClientSize = new System.Drawing.Size(1242, 587);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvCatalogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
