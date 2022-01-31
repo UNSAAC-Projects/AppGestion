@@ -1269,8 +1269,8 @@ go
 
 create or alter proc ListarCursosCatalogo2
 as
-	select IDCatalogo,A.CodAsignatura+Grupo+'IN' AS CodigoAsignatura, A.Nombre
-	from TCatalogo C, TAsignatura A where c.CodAsignatura=A.CodAsignatura
+	select IDCatalogo,A.CodAsignatura+Grupo+'IN' AS CodigoAsignatura, A.Nombre,Grupo ,D.Nombres as DocentePractico, D.Nombres as DocenteTeorico
+	from TCatalogo C, TAsignatura A, TDocente D where c.CodAsignatura=A.CodAsignatura and (D.CodDocente=C.CodDocentePractico or D.CodDocente=c.CodDocenteTeorico)
 go
 
 
