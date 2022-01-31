@@ -1238,3 +1238,10 @@ select	CodAlumno,Apellidos+' '+Nombre as Nombre from TMatriculado where IDCatalo
 order by Nombre
 go
 
+create or alter proc ListarCursosCatalogo2
+as
+	select IDCatalogo,A.CodAsignatura+Grupo+'IN' AS CodigoAsignatura, A.Nombre
+	from TCatalogo C, TAsignatura A where c.CodAsignatura=A.CodAsignatura
+go
+
+
