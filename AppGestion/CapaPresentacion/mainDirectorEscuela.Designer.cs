@@ -281,7 +281,7 @@
             // 
             // PicBoxIndicador
             // 
-            this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
+            /*this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
             this.PicBoxIndicador.Location = new System.Drawing.Point(127, 339);
             this.PicBoxIndicador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PicBoxIndicador.Name = "PicBoxIndicador";
@@ -289,7 +289,7 @@
             this.PicBoxIndicador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicBoxIndicador.TabIndex = 74;
             this.PicBoxIndicador.TabStop = false;
-            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);
+            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);*/
             // 
             // label7
             // 
