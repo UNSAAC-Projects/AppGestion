@@ -36,7 +36,6 @@ namespace CapaPresentacion
 
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
-            
             //Obtener cursos que dicta el docente
             string[] Asignaturas = oDocente.CursosDocente(CodDocente);
             if (Asignaturas != null) //Si tiene asignaturas dictando
@@ -52,7 +51,6 @@ namespace CapaPresentacion
                 //Mostrar datos en el PieChart
                 MostrarPieChart();
             }
-
         }
 
         private void MostrarPieChart()
