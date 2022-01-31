@@ -131,5 +131,21 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void btnMatriculados_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosEnPanelContenedor(new frmVistaCatalogo2());
+            //
+            OpcionAsignaturas = false;
+            OpcionVerCatalogo = true;
+
+            //Restaurar backcolors
+            btnVerCatalogos.BackColor = Color.WhiteSmoke; ;
+            btnASIGNATURA.BackColor = Color.FromArgb(33, 47, 60);
+
+            //Restaurar forecolors
+            btnVerCatalogos.ForeColor = Color.FromArgb(33, 47, 60);
+            btnASIGNATURA.ForeColor = Color.FromArgb(212, 172, 13);
+        }
     }
 }

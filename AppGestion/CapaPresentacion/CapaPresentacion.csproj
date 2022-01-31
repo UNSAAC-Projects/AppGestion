@@ -105,6 +105,30 @@
     <Compile Include="FormsDirDep\FrmReporteAvanceDocentesDepartamento.Designer.cs">
       <DependentUpon>FrmReporteAvanceDocentesDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsDirDep\frmReporteEstadoDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsDirDep\frmReporteEstadoDocentes.Designer.cs">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosMatriculados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosMatriculados.Designer.cs">
+      <DependentUpon>frmAlumnosMatriculados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosMatriculadosPorCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosMatriculadosPorCurso.Designer.cs">
+      <DependentUpon>frmAlumnosMatriculadosPorCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVistaCatalogo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVistaCatalogo2.Designer.cs">
+      <DependentUpon>frmVistaCatalogo2.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +298,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\FrmReporteAvanceDocentesDepartamento.resx">
       <DependentUpon>FrmReporteAvanceDocentesDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmReporteEstadoDocentes.resx">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmReporteEstadoDocentes.zu-ZA.resx">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosMatriculados.resx">
+      <DependentUpon>frmAlumnosMatriculados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosMatriculadosPorCurso.resx">
+      <DependentUpon>frmAlumnosMatriculadosPorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVistaCatalogo2.resx">
+      <DependentUpon>frmVistaCatalogo2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>

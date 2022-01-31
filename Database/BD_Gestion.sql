@@ -1097,6 +1097,35 @@ as
 	drop table if exists #tmp
 go
 
+--Reporte estado docentes (si está o no activo)
+CREATE or ALTER PROC SP_ReporteEstadoDocentes 
+AS
+--Seleccionar docentes activos
+select distinct
+	case when H.Tipo = 'T' then (DT.CodDocente) else (DP.CodDocente) end as CODIGO,
+	case when H.Tipo = 'T' then (DT.Nombres) else (DP.Nombres) end as NOMBRES,
+	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as APELLIDOS,
+	'Activo' as ESTADO
+	into #TActivos
+from TAsignatura A 
+inner join TCatalogo C on A.CodAsignatura = C.CodAsignatura
+inner join THorario H on C.IDCatalogo = H.IDCatalogo
+left join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
+left join TDocente DP on C.CodDocentePractico = DP.CodDocente
+
+--Seleccionar docentes no activos
+select CodDocente, Nombres, Apellidos, 'No activo' as Estado
+from TDocente where CodDocente in (
+	select CodDocente from TDocente where CodDocente <> 'D000'
+	except 
+	select CODIGO from #TActivos
+)
+union --Unir con docentes activos
+select * from #TActivos
+--Eliminar tabla temporal
+drop table if exists #TActivos
+GO
+
 CREATE PROC SP_REPORTE_AVANCE_SESIONES
 @IdDocente varchar(6)
 AS
@@ -1196,23 +1225,24 @@ GO
 CREATE PROC SP_REPORTE_AVANCE_SESIONES_DOCENTE
 AS
 		
-select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos + D.Nombres as Docente,
-		((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) as Cantidad_Avance
+select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos +' '+ D.Nombres as Docente,
+		str(((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) ) + '%'  as Cantidad_Avance
 	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 	inner join TDocente D on C.CodDocenteTeorico=D.CodDocente 
 	where  Finalizado='SI'
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
+--exec SP_REPORTE_AVANCE_SESIONES_DOCENTE
 --Buscar
 CREATE PROC SP_BUSCARAVANCEDOCENTE
 @BUSCAR varchar(40)
 as
-select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos + D.Nombres as Docente,
+select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura,   D.Apellidos +' '+ D.Nombres as Docente,
 		str(((count(Finalizado)*100)/dbo.CantidadSesionesCurso(P.IDCatalogo)) ) + '%' as Cantidad_Avance
 	from TPlanSesiones P inner join TCatalogo C on P.IDCatalogo=C.IDCatalogo inner join TAsignatura A on C.CodAsignatura=A.CodAsignatura
 	inner join TDocente D on C.CodDocenteTeorico=D.CodDocente 
 	where  Finalizado='SI' and(C.CodAsignatura like @BUSCAR + '%' or Grupo like @BUSCAR + '%' or A.Nombre like @BUSCAR + '%' 
-			or  D.Apellidos like @BUSCAR + '%' or D.Nombres like @BUSCAR + '%' )
+			or  D.Apellidos like @BUSCAR + '%' or D.Nombres like @BUSCAR + '%')
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
 
@@ -1229,5 +1259,18 @@ else
 insert into  TAsistenciaDiariaDocentes values(@Fecha,@CodDocente,@Nombres,@Asistio,@Observacion)
 go
 
+-------- LISTAR MATRICULADOS POR CURSO -----------------
+create or alter proc SP_ListarMatriculadosxCurso
+@IdCatalogo varchar(6)
+as
+select	CodAlumno,Apellidos+' '+Nombre as Nombre from TMatriculado where IDCatalogo=@IdCatalogo
+order by Nombre
+go
+
+create or alter proc ListarCursosCatalogo2
+as
+	select IDCatalogo,A.CodAsignatura+Grupo+'IN' AS CodigoAsignatura, A.Nombre
+	from TCatalogo C, TAsignatura A where c.CodAsignatura=A.CodAsignatura
+go
 
 
