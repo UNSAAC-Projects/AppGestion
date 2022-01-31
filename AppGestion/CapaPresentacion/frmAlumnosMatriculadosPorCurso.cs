@@ -24,11 +24,27 @@ namespace CapaPresentacion
         void MostrarMatriculados()
         {
             dgvMatriculados.DataSource = oCursosDocente.ListarMatriculados(IdCatalogo);
+            dgvMatriculados.Columns["Nombre"].Width = 530;
         }
 
         private void frmAlumnosMatriculadosPorCurso_Load(object sender, EventArgs e)
         {
             MostrarMatriculados();
+
+        }
+
+        private void labelGrupo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureCANCEL1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

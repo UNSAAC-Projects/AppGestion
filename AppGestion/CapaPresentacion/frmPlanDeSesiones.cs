@@ -38,6 +38,7 @@ namespace CapaPresentacion
             MostrarNombreAsignatura(NombreAsignatura, Grupo);
             MoverModificarColumnas();
             IDCatalogo = CodCatalogo;
+            AncharColumnas();
         }
 
         private void MostrarNombreAsignatura(string nombreAsignatura, string grupo)
@@ -52,6 +53,20 @@ namespace CapaPresentacion
             dgvPlanSesiones.Columns["Completado"].DisplayIndex = 5;
             dgvPlanSesiones.Columns["Finalizado"].Visible = false;
             dgvPlanSesiones.Columns["VariacionHora"].Visible = false;
+        }
+        public void AncharColumnas()
+        {
+
+            dgvPlanSesiones.Columns[0].Width = 70;//eliminar
+            dgvPlanSesiones.Columns[1].Width = 90;//completado
+            dgvPlanSesiones.Columns[2].Width = 70;//variacion
+            dgvPlanSesiones.Columns[3].Width = 80;//unidad
+            dgvPlanSesiones.Columns[4].Width = 80;//capitulo
+            dgvPlanSesiones.Columns[5].Width = 350;//tema
+            dgvPlanSesiones.Columns[6].Width = 50;//horas
+            //dgvPlanSesiones.Columns[7].Width = 300;//obs
+            dgvPlanSesiones.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
 
         public void MostrarPlanSesiones(string CodCatalogo)
@@ -355,5 +370,16 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnMaxPlanDeSeciones_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }

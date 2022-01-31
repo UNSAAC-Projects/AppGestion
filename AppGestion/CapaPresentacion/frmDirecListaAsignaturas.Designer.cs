@@ -90,6 +90,7 @@ namespace CapaPresentacion
             this.dgvAsignaturas.AllowUserToAddRows = false;
             this.dgvAsignaturas.AllowUserToDeleteRows = false;
             this.dgvAsignaturas.AllowUserToOrderColumns = true;
+            this.dgvAsignaturas.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvAsignaturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAsignaturas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
