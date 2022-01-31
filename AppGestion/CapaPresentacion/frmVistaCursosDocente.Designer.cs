@@ -100,7 +100,7 @@ namespace CapaPresentacion
             this.dgvCursosDocente.RowTemplate.Height = 24;
             this.dgvCursosDocente.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvCursosDocente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvCursosDocente.Size = new System.Drawing.Size(814, 241);
+            this.dgvCursosDocente.Size = new System.Drawing.Size(812, 241);
             this.dgvCursosDocente.TabIndex = 10;
             this.dgvCursosDocente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursosDocente_CellContentClick);
             // 
@@ -162,7 +162,7 @@ namespace CapaPresentacion
             this.panel1.Location = new System.Drawing.Point(3, 607);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(612, 5);
+            this.panel1.Size = new System.Drawing.Size(610, 5);
             this.panel1.TabIndex = 36;
             // 
             // panel2
@@ -174,7 +174,7 @@ namespace CapaPresentacion
             this.panel2.Location = new System.Drawing.Point(3, 593);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(612, 5);
+            this.panel2.Size = new System.Drawing.Size(610, 5);
             this.panel2.TabIndex = 35;
             // 
             // panel8
@@ -186,7 +186,7 @@ namespace CapaPresentacion
             this.panel8.Location = new System.Drawing.Point(0, 620);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1108, 5);
+            this.panel8.Size = new System.Drawing.Size(1106, 5);
             this.panel8.TabIndex = 34;
             // 
             // dataGridViewImageColumn1
@@ -231,7 +231,7 @@ namespace CapaPresentacion
             this.buttonDESCARGAR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDESCARGAR.ForeColor = System.Drawing.Color.White;
             this.buttonDESCARGAR.Image = ((System.Drawing.Image)(resources.GetObject("buttonDESCARGAR.Image")));
-            this.buttonDESCARGAR.Location = new System.Drawing.Point(623, 571);
+            this.buttonDESCARGAR.Location = new System.Drawing.Point(621, 571);
             this.buttonDESCARGAR.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonDESCARGAR.Name = "buttonDESCARGAR";
             this.buttonDESCARGAR.Size = new System.Drawing.Size(306, 45);
@@ -256,7 +256,7 @@ namespace CapaPresentacion
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1002, 642);
+            this.ClientSize = new System.Drawing.Size(1000, 642);
             this.Controls.Add(this.dgvCursosDocente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonDESCARGAR);

@@ -484,6 +484,7 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1003, 833);
             this.panelContenedor.TabIndex = 41;
+            this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
             // timerHoraFecha
             // 

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainDirectorEscuela));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnVerCatalogos = new System.Windows.Forms.Button();
             this.btnASIGNATURA = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
             this.panelContenedor2 = new System.Windows.Forms.Panel();
-            this.PicBoxIndicador = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -62,13 +62,11 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
             this.panelContenedor2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -98,6 +96,16 @@
             this.ContenedorLogin.Name = "ContenedorLogin";
             this.ContenedorLogin.Size = new System.Drawing.Size(311, 709);
             this.ContenedorLogin.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(12, 642);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(287, 1);
+            this.panel3.TabIndex = 7;
             // 
             // btnLogout
             // 
@@ -258,7 +266,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelContenedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor2.BackgroundImage")));
-            this.panelContenedor2.Controls.Add(this.PicBoxIndicador);
             this.panelContenedor2.Controls.Add(this.label7);
             this.panelContenedor2.Controls.Add(this.label6);
             this.panelContenedor2.Controls.Add(this.label5);
@@ -269,17 +276,6 @@
             this.panelContenedor2.Name = "panelContenedor2";
             this.panelContenedor2.Size = new System.Drawing.Size(1067, 644);
             this.panelContenedor2.TabIndex = 12;
-            // 
-            // PicBoxIndicador
-            // 
-            this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
-            this.PicBoxIndicador.Location = new System.Drawing.Point(113, 271);
-            this.PicBoxIndicador.Name = "PicBoxIndicador";
-            this.PicBoxIndicador.Size = new System.Drawing.Size(50, 24);
-            this.PicBoxIndicador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PicBoxIndicador.TabIndex = 74;
-            this.PicBoxIndicador.TabStop = false;
-            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);
             // 
             // label7
             // 
@@ -498,16 +494,6 @@
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick);
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 642);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(287, 1);
-            this.panel3.TabIndex = 7;
-            // 
             // mainDirectorEscuela
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -528,7 +514,6 @@
             this.panelPrinciapl.ResumeLayout(false);
             this.panelContenedor2.ResumeLayout(false);
             this.panelContenedor2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
             this.panelMainDirEscuela.PerformLayout();
@@ -573,7 +558,6 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.PictureBox PicBoxIndicador;
         private System.Windows.Forms.Panel panel3;
     }
 }

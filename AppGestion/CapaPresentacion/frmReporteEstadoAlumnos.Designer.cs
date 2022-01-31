@@ -128,6 +128,7 @@
             title1.Name = "Title1";
             title1.Text = "Reporte";
             this.chartReporte.Titles.Add(title1);
+            this.chartReporte.Click += new System.EventHandler(this.chartReporte_Click);
             // 
             // frmReporteEstadoAlumnos
             // 

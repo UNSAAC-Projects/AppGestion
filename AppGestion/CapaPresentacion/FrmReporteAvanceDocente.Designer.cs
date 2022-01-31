@@ -53,8 +53,6 @@ namespace CapaPresentacion
             this.dgvAvanceDocenteSesion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAvanceDocenteSesion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.dgvAvanceDocenteSesion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAvanceDocenteSesion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAvanceDocenteSesion.BackgroundColor = System.Drawing.Color.White;
             this.dgvAvanceDocenteSesion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAvanceDocenteSesion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -80,20 +78,22 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAvanceDocenteSesion.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAvanceDocenteSesion.EnableHeadersVisualStyles = false;
-            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(12, 111);
+            this.dgvAvanceDocenteSesion.Location = new System.Drawing.Point(36, 111);
             this.dgvAvanceDocenteSesion.Name = "dgvAvanceDocenteSesion";
             this.dgvAvanceDocenteSesion.RowHeadersVisible = false;
             this.dgvAvanceDocenteSesion.RowHeadersWidth = 51;
             this.dgvAvanceDocenteSesion.RowTemplate.Height = 24;
             this.dgvAvanceDocenteSesion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(621, 634);
+            this.dgvAvanceDocenteSesion.Size = new System.Drawing.Size(818, 634);
             this.dgvAvanceDocenteSesion.TabIndex = 1;
+            this.dgvAvanceDocenteSesion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvanceDocenteSesion_CellContentClick);
             // 
             // Porcentaje
             // 
             this.Porcentaje.HeaderText = "Porcentaje";
             this.Porcentaje.MinimumWidth = 6;
             this.Porcentaje.Name = "Porcentaje";
+            this.Porcentaje.Width = 818;
             // 
             // label1
             // 
@@ -101,15 +101,17 @@ namespace CapaPresentacion
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(500, 42);
+            this.label1.Location = new System.Drawing.Point(464, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 47);
+            this.label1.Size = new System.Drawing.Size(433, 47);
             this.label1.TabIndex = 20;
-            this.label1.Text = "REPORTE AVANCE ";
+            this.label1.Text = "REPORTE DE AVANCE ";
             this.label1.UseMnemonic = false;
             // 
             // chart2
             // 
+            this.chart2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
             this.chart2.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";

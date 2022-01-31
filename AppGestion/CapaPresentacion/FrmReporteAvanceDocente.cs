@@ -20,6 +20,7 @@ namespace CapaPresentacion
         {
             InitializeComponent();
             MostrarReporte(datos.CodDocente);
+            AncharColumnas();
         }
 
 
@@ -79,6 +80,19 @@ namespace CapaPresentacion
 
         private void chart1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dgvAvanceDocenteSesion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        public void AncharColumnas()
+        {
+
+            dgvAvanceDocenteSesion.Columns[0].Width = 110;//3
+            dgvAvanceDocenteSesion.Columns[1].Width = 110;//1
+            dgvAvanceDocenteSesion.Columns[2].Width = 400;//2
 
         }
     }
