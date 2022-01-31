@@ -61,7 +61,9 @@ namespace CapaPresentacion.FormsDirDep
         }
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvAvanceDocentes);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvAvanceDocentes);
         }
     }
 }

@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="cbCursosReporte.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -202,16 +202,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbCursosReporte.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="dgvEstadoAlumnos.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="dgvEstadoAlumnos.ColumnHeadersHeight" type="System.Int32, mscorlib">
-    <value>30</value>
-  </data>
   <data name="dgvEstadoAlumnos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 90</value>
+    <value>20, 111</value>
   </data>
   <data name="dgvEstadoAlumnos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 1</value>
@@ -220,7 +217,7 @@
     <value>51</value>
   </data>
   <data name="dgvEstadoAlumnos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>944, 454</value>
+    <value>635, 454</value>
   </data>
   <data name="dgvEstadoAlumnos.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -235,7 +232,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvEstadoAlumnos.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="chartReporte.Location" type="System.Drawing.Point, System.Drawing">
     <value>681, 90</value>
@@ -262,7 +259,85 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chartReporte.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonCerrrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonCerrrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonCerrrar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 10.2pt, style=Bold</value>
+  </data>
+  <data name="buttonCerrrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonCerrrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>951, 535</value>
+  </data>
+  <data name="buttonCerrrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="buttonCerrrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 41</value>
+  </data>
+  <data name="buttonCerrrar.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="buttonCerrrar.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="&gt;&gt;buttonCerrrar.Name" xml:space="preserve">
+    <value>buttonCerrrar</value>
+  </data>
+  <data name="&gt;&gt;buttonCerrrar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonCerrrar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonCerrrar.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="buttonExportar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="buttonExportar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonExportar.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9pt, style=Bold</value>
+  </data>
+  <data name="buttonExportar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonExportar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 535</value>
+  </data>
+  <data name="buttonExportar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 2, 4, 2</value>
+  </data>
+  <data name="buttonExportar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 41</value>
+  </data>
+  <data name="buttonExportar.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="buttonExportar.Text" xml:space="preserve">
+    <value>Exportar Excel</value>
+  </data>
+  <data name="&gt;&gt;buttonExportar.Name" xml:space="preserve">
+    <value>buttonExportar</value>
+  </data>
+  <data name="&gt;&gt;buttonExportar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonExportar.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonExportar.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -271,10 +346,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>591, 253</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>1203, 609</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
