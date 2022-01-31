@@ -63,6 +63,7 @@ namespace CapaPresentacion
             this.btnMINIMIZAR = new System.Windows.Forms.PictureBox();
             this.btnCERRAR = new System.Windows.Forms.PictureBox();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnReporteEstadoDocentes = new System.Windows.Forms.Button();
             this.pnlLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAdmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxlogo)).BeginInit();
@@ -78,6 +79,7 @@ namespace CapaPresentacion
             // pnlLateral
             // 
             this.pnlLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.pnlLateral.Controls.Add(this.btnReporteEstadoDocentes);
             this.pnlLateral.Controls.Add(this.btnReporteDocenteAvance);
             this.pnlLateral.Controls.Add(this.btnReporteDetalladoA);
             this.pnlLateral.Controls.Add(this.buttonReporteAsistenciaDocentes);
@@ -528,6 +530,26 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 6;
             // 
+            // btnReporteEstadoDocentes
+            // 
+            this.btnReporteEstadoDocentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteEstadoDocentes.FlatAppearance.BorderSize = 0;
+            this.btnReporteEstadoDocentes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteEstadoDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteEstadoDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteEstadoDocentes.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEstadoDocentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteEstadoDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEstadoDocentes.Image")));
+            this.btnReporteEstadoDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteEstadoDocentes.Location = new System.Drawing.Point(-1, 355);
+            this.btnReporteEstadoDocentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReporteEstadoDocentes.Name = "btnReporteEstadoDocentes";
+            this.btnReporteEstadoDocentes.Size = new System.Drawing.Size(307, 48);
+            this.btnReporteEstadoDocentes.TabIndex = 23;
+            this.btnReporteEstadoDocentes.Text = "CATALOGO";
+            this.btnReporteEstadoDocentes.UseVisualStyleBackColor = false;
+            this.btnReporteEstadoDocentes.Click += new System.EventHandler(this.btnReporteEstadoDocentes_Click);
+            // 
             // frmDirecDepAcade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -601,5 +623,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Button buttonReporteAsistenciaDocentes;
         private System.Windows.Forms.Button btnReporteDetalladoA;
         private System.Windows.Forms.Button btnReporteDocenteAvance;
+        private System.Windows.Forms.Button btnReporteEstadoDocentes;
     }
 }

@@ -113,5 +113,10 @@ namespace CapaPresentacion
                 WindowState = FormWindowState.Normal;
             }
         }
+
+        private void buttonExportar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
