@@ -231,12 +231,6 @@
     <Compile Include="frmReporteDetalladoAvance.Designer.cs">
       <DependentUpon>frmReporteDetalladoAvance.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteEstadoAlumnos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReporteEstadoAlumnos.Designer.cs">
-      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmReporteSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,12 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteDetalladoAvance.resx">
       <DependentUpon>frmReporteDetalladoAvance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteEstadoAlumnos.resx">
-      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReporteEstadoAlumnos.zu-ZA.resx">
-      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporteSesiones.resx">
       <DependentUpon>frmReporteSesiones.cs</DependentUpon>
