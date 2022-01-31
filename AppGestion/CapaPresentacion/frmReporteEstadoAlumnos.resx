@@ -134,8 +134,11 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 19</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1203, 609</value>
+  <data name="cbCursosReporte.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 7.8pt</value>
+  </data>
+  <data name="dgvEstadoAlumnos.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -195,9 +198,6 @@
   <data name="chartReporte.Text" xml:space="preserve">
     <value>chart</value>
   </data>
-  <data name="&gt;&gt;dgvEstadoAlumnos.Name" xml:space="preserve">
-    <value>dgvEstadoAlumnos</value>
-  </data>
   <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -213,8 +213,8 @@
   <data name="chartReporte.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="&gt;&gt;chartReporte.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="dgvEstadoAlumnos.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 1, 3, 1</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 38</value>
@@ -231,8 +231,8 @@
   <data name="dgvEstadoAlumnos.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
-  <data name="&gt;&gt;chartReporte.Name" xml:space="preserve">
-    <value>chartReporte</value>
+  <data name="dgvEstadoAlumnos.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
   </data>
   <data name="cbCursosReporte.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -264,7 +264,28 @@
   <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 1, 3, 1</value>
   </data>
-  <data name="&gt;&gt;cbCursosReporte.Parent" xml:space="preserve">
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;dgvEstadoAlumnos.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbCursosReporte.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbCursosReporte.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dgvEstadoAlumnos.ColumnHeadersHeight" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="dgvEstadoAlumnos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 90</value>
+  </data>
+  <data name="&gt;&gt;chartReporte.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="cbCursosReporte.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">

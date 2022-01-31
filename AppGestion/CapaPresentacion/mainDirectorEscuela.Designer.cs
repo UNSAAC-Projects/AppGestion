@@ -44,7 +44,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPrinciapl = new System.Windows.Forms.Panel();
             this.panelContenedor2 = new System.Windows.Forms.Panel();
-            this.PicBoxIndicador = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPrinciapl.SuspendLayout();
             this.panelContenedor2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMainDirEscuela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -270,7 +268,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelContenedor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelContenedor2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelContenedor2.BackgroundImage")));
-            this.panelContenedor2.Controls.Add(this.PicBoxIndicador);
             this.panelContenedor2.Controls.Add(this.label7);
             this.panelContenedor2.Controls.Add(this.label6);
             this.panelContenedor2.Controls.Add(this.label5);
@@ -284,7 +281,7 @@
             // 
             // PicBoxIndicador
             // 
-            this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
+            /*this.PicBoxIndicador.Image = ((System.Drawing.Image)(resources.GetObject("PicBoxIndicador.Image")));
             this.PicBoxIndicador.Location = new System.Drawing.Point(127, 339);
             this.PicBoxIndicador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PicBoxIndicador.Name = "PicBoxIndicador";
@@ -292,7 +289,7 @@
             this.PicBoxIndicador.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicBoxIndicador.TabIndex = 74;
             this.PicBoxIndicador.TabStop = false;
-            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);
+            this.PicBoxIndicador.Click += new System.EventHandler(this.PicBoxIndicador_Click);*/
             // 
             // label7
             // 
@@ -552,7 +549,6 @@
             this.panelPrinciapl.ResumeLayout(false);
             this.panelContenedor2.ResumeLayout(false);
             this.panelContenedor2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBoxIndicador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMainDirEscuela.ResumeLayout(false);
             this.panelMainDirEscuela.PerformLayout();
@@ -597,7 +593,6 @@
         private System.Windows.Forms.Label labelFecha;
         private System.Windows.Forms.Timer timerHoraFecha;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.PictureBox PicBoxIndicador;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnMatriculados;
     }
