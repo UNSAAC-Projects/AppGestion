@@ -168,6 +168,9 @@
   <data name="&gt;&gt;lblTitulo.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="chartReporte.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
   <data name="chartReporte.Location" type="System.Drawing.Point, System.Drawing">
     <value>511, 73</value>
   </data>
@@ -190,7 +193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chartReporte.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="dgvEstadoDocentes.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -220,7 +223,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvEstadoDocentes.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="labelTitulo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;labelTitulo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonCerrrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -268,7 +271,7 @@
     <value>Century Gothic, 10.2pt, style=Bold</value>
   </data>
   <data name="buttonCerrrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>743, 442</value>
+    <value>727, 436</value>
   </data>
   <data name="buttonCerrrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -292,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCerrrar.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="buttonExportar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -304,7 +307,7 @@
     <value>Century Gothic, 9pt, style=Bold</value>
   </data>
   <data name="buttonExportar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>589, 442</value>
+    <value>573, 436</value>
   </data>
   <data name="buttonExportar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -328,7 +331,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonExportar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

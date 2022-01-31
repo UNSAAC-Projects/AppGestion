@@ -1,11 +1,11 @@
 /* Para ejecutar DB en la nube */
 
 /* -- Nube */
---Server name: sql5080.site4now.net
---Login: db_a7d2c3_appgestion_admin
---Password: AppGestion1
+--Server name: SQL5105.site4now.net
+--Login: db_a82488_dbgestion_admin
+--Password: unsaac2022
 
---use db_a7d2c3_appgestion
+--use db_a82488_dbgestion
 --go
 
 /* Para ejecutar BD de forma local */
