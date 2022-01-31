@@ -33,7 +33,7 @@ namespace CapaPresentacion
             }
             else
             {
-                dgvCatalogo.Columns["AlumnosMatriculados"].DisplayIndex = 3;
+                dgvCatalogo.Columns["AlumnosMatriculados"].DisplayIndex = 6;
                 dgvCatalogo.Columns["Nombre"].Width = 430;
                 dgvCatalogo.Columns["IdCatalogo"].Visible = false;
                 dgvCatalogo.Columns["CodigoAsignatura"].Width = 120;
