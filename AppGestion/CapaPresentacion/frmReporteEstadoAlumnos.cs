@@ -36,21 +36,29 @@ namespace CapaPresentacion
 
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
-            //Obtener cursos que dicta el docente
-            string[] Asignaturas = oDocente.CursosDocente(CodDocente);
-            if (Asignaturas != null) //Si tiene asignaturas dictando
+            try
             {
-                MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
-                cbCursosReporte.SelectedIndex = 0;
+                //Obtener cursos que dicta el docente
+                string[] Asignaturas = oDocente.CursosDocente(CodDocente);
+                if (Asignaturas != null) //Si tiene asignaturas dictando
+                {
+                    MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
+                    cbCursosReporte.SelectedIndex = 0;
 
-                //Obtener codCursoAsignatura
-                string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
-                string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
-                MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
+                    //Obtener codCursoAsignatura
+                    string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
+                    string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
+                    MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
 
-                //Mostrar datos en el PieChart
-                MostrarPieChart();
+                    //Mostrar datos en el PieChart
+                    MostrarPieChart();
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("¡No existen asistencias registradas!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private void MostrarPieChart()
