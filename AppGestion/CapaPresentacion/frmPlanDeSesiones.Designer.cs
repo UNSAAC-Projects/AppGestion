@@ -35,12 +35,8 @@ namespace CapaPresentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
             this.pnlPlanDeSeciones = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
-            this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VariacionH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,24 +47,28 @@ namespace CapaPresentacion
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureLibro3 = new System.Windows.Forms.PictureBox();
             this.btnNuevaFila = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnImportarDatos = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureLibro3 = new System.Windows.Forms.PictureBox();
+            this.btnMaxPlanDeSeciones = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
+            this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.pictureLibro1 = new System.Windows.Forms.PictureBox();
             this.pictureLibro2 = new System.Windows.Forms.PictureBox();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnImportarDatos = new System.Windows.Forms.Button();
-            this.btnMaxPlanDeSeciones = new System.Windows.Forms.PictureBox();
             this.pnlPlanDeSeciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPlanDeSeciones
@@ -87,17 +87,6 @@ namespace CapaPresentacion
             this.pnlPlanDeSeciones.TabIndex = 10;
             this.pnlPlanDeSeciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPlanDeSeciones_MouseMove);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -108,34 +97,6 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(188, 23);
             this.label11.TabIndex = 32;
             this.label11.Text = "PLAN DE SESIONES";
-            // 
-            // btnClosePlanSesiones
-            // 
-            this.btnClosePlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
-            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1224, 4);
-            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
-            this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
-            this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClosePlanSesiones.TabIndex = 1;
-            this.btnClosePlanSesiones.TabStop = false;
-            this.btnClosePlanSesiones.Click += new System.EventHandler(this.btnClosePlanSesiones_Click);
-            // 
-            // btnMinPlanSesiones
-            // 
-            this.btnMinPlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
-            this.btnMinPlanSesiones.Location = new System.Drawing.Point(1183, 4);
-            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
-            this.btnMinPlanSesiones.Size = new System.Drawing.Size(36, 34);
-            this.btnMinPlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinPlanSesiones.TabIndex = 0;
-            this.btnMinPlanSesiones.TabStop = false;
-            this.btnMinPlanSesiones.Click += new System.EventHandler(this.btnMinPlanSesiones_Click);
             // 
             // dgvPlanSesiones
             // 
@@ -195,14 +156,6 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
             // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.eliminar.MinimumWidth = 6;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
-            // 
             // Completado
             // 
             this.Completado.FalseValue = "NO";
@@ -260,10 +213,10 @@ namespace CapaPresentacion
             // 
             this.pnlLineaLibros.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnlLineaLibros.BackColor = System.Drawing.Color.DarkGray;
-            this.pnlLineaLibros.Location = new System.Drawing.Point(82, 653);
+            this.pnlLineaLibros.Location = new System.Drawing.Point(4, 653);
             this.pnlLineaLibros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlLineaLibros.Name = "pnlLineaLibros";
-            this.pnlLineaLibros.Size = new System.Drawing.Size(1109, 6);
+            this.pnlLineaLibros.Size = new System.Drawing.Size(1256, 6);
             this.pnlLineaLibros.TabIndex = 22;
             // 
             // panel2
@@ -310,6 +263,77 @@ namespace CapaPresentacion
             this.panel4.Size = new System.Drawing.Size(3, 428);
             this.panel4.TabIndex = 37;
             // 
+            // btnNuevaFila
+            // 
+            this.btnNuevaFila.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevaFila.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNuevaFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNuevaFila.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNuevaFila.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnNuevaFila.FlatAppearance.BorderSize = 3;
+            this.btnNuevaFila.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnNuevaFila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnNuevaFila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaFila.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNuevaFila.Location = new System.Drawing.Point(1036, 65);
+            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(5);
+            this.btnNuevaFila.Name = "btnNuevaFila";
+            this.btnNuevaFila.Size = new System.Drawing.Size(170, 42);
+            this.btnNuevaFila.TabIndex = 23;
+            this.btnNuevaFila.Text = "AÑADIR NUEVA FILA";
+            this.btnNuevaFila.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevaFila.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNuevaFila.UseVisualStyleBackColor = false;
+            this.btnNuevaFila.Click += new System.EventHandler(this.btnNuevaFila_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 3;
+            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardar.Location = new System.Drawing.Point(853, 598);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(111, 46);
+            this.btnGuardar.TabIndex = 21;
+            this.btnGuardar.Text = "GUARDAR ";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnImportarDatos
+            // 
+            this.btnImportarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImportarDatos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnImportarDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnImportarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImportarDatos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnImportarDatos.FlatAppearance.BorderSize = 3;
+            this.btnImportarDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
+            this.btnImportarDatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.btnImportarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportarDatos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImportarDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnImportarDatos.Location = new System.Drawing.Point(984, 598);
+            this.btnImportarDatos.Margin = new System.Windows.Forms.Padding(5);
+            this.btnImportarDatos.Name = "btnImportarDatos";
+            this.btnImportarDatos.Size = new System.Drawing.Size(251, 46);
+            this.btnImportarDatos.TabIndex = 38;
+            this.btnImportarDatos.Text = "IMPORTAR PLAN DE SESIONES ";
+            this.btnImportarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImportarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnImportarDatos.UseVisualStyleBackColor = false;
+            this.btnImportarDatos.Click += new System.EventHandler(this.btnImportarDatos_Click);
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Editar";
@@ -330,51 +354,58 @@ namespace CapaPresentacion
             this.pictureLibro3.TabIndex = 32;
             this.pictureLibro3.TabStop = false;
             // 
-            // btnNuevaFila
+            // btnMaxPlanDeSeciones
             // 
-            this.btnNuevaFila.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNuevaFila.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnNuevaFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNuevaFila.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNuevaFila.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnNuevaFila.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnNuevaFila.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnNuevaFila.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevaFila.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevaFila.ForeColor = System.Drawing.Color.White;
-            this.btnNuevaFila.Location = new System.Drawing.Point(862, 598);
-            this.btnNuevaFila.Margin = new System.Windows.Forms.Padding(5);
-            this.btnNuevaFila.Name = "btnNuevaFila";
-            this.btnNuevaFila.Size = new System.Drawing.Size(215, 46);
-            this.btnNuevaFila.TabIndex = 23;
-            this.btnNuevaFila.Text = "AÑADIR NUEVA FILA";
-            this.btnNuevaFila.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevaFila.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNuevaFila.UseVisualStyleBackColor = false;
-            this.btnNuevaFila.Click += new System.EventHandler(this.btnNuevaFila_Click);
+            this.btnMaxPlanDeSeciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaxPlanDeSeciones.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaxPlanDeSeciones.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxPlanDeSeciones.Image")));
+            this.btnMaxPlanDeSeciones.Location = new System.Drawing.Point(1140, 2);
+            this.btnMaxPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaxPlanDeSeciones.Name = "btnMaxPlanDeSeciones";
+            this.btnMaxPlanDeSeciones.Size = new System.Drawing.Size(37, 34);
+            this.btnMaxPlanDeSeciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMaxPlanDeSeciones.TabIndex = 57;
+            this.btnMaxPlanDeSeciones.TabStop = false;
+            this.btnMaxPlanDeSeciones.Click += new System.EventHandler(this.btnMaxPlanDeSeciones_Click);
             // 
-            // btnGuardar
+            // pictureBox1
             // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(1087, 598);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(148, 46);
-            this.btnGuardar.TabIndex = 21;
-            this.btnGuardar.Text = "GUARDAR ";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClosePlanSesiones
+            // 
+            this.btnClosePlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
+            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1224, 4);
+            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
+            this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
+            this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClosePlanSesiones.TabIndex = 1;
+            this.btnClosePlanSesiones.TabStop = false;
+            this.btnClosePlanSesiones.Click += new System.EventHandler(this.btnClosePlanSesiones_Click);
+            // 
+            // btnMinPlanSesiones
+            // 
+            this.btnMinPlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
+            this.btnMinPlanSesiones.Location = new System.Drawing.Point(1183, 4);
+            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
+            this.btnMinPlanSesiones.Size = new System.Drawing.Size(36, 34);
+            this.btnMinPlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinPlanSesiones.TabIndex = 0;
+            this.btnMinPlanSesiones.TabStop = false;
+            this.btnMinPlanSesiones.Click += new System.EventHandler(this.btnMinPlanSesiones_Click);
             // 
             // pictureLibro1
             // 
@@ -400,6 +431,14 @@ namespace CapaPresentacion
             this.pictureLibro2.TabIndex = 34;
             this.pictureLibro2.TabStop = false;
             // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.eliminar.MinimumWidth = 6;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Width = 72;
+            // 
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.HeaderText = "Eliminar";
@@ -407,43 +446,6 @@ namespace CapaPresentacion
             this.dataGridViewImageColumn2.MinimumWidth = 6;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 72;
-            // 
-            // btnImportarDatos
-            // 
-            this.btnImportarDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImportarDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnImportarDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnImportarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImportarDatos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnImportarDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(102)))), ((int)(((byte)(8)))));
-            this.btnImportarDatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.btnImportarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportarDatos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImportarDatos.ForeColor = System.Drawing.Color.White;
-            this.btnImportarDatos.Location = new System.Drawing.Point(568, 598);
-            this.btnImportarDatos.Margin = new System.Windows.Forms.Padding(5);
-            this.btnImportarDatos.Name = "btnImportarDatos";
-            this.btnImportarDatos.Size = new System.Drawing.Size(284, 46);
-            this.btnImportarDatos.TabIndex = 38;
-            this.btnImportarDatos.Text = "IMPORTAR PLAN DE SESIONES ";
-            this.btnImportarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImportarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnImportarDatos.UseVisualStyleBackColor = false;
-            this.btnImportarDatos.Click += new System.EventHandler(this.btnImportarDatos_Click);
-            // 
-            // btnMaxPlanDeSeciones
-            // 
-            this.btnMaxPlanDeSeciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaxPlanDeSeciones.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaxPlanDeSeciones.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxPlanDeSeciones.Image")));
-            this.btnMaxPlanDeSeciones.Location = new System.Drawing.Point(1140, 2);
-            this.btnMaxPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaxPlanDeSeciones.Name = "btnMaxPlanDeSeciones";
-            this.btnMaxPlanDeSeciones.Size = new System.Drawing.Size(37, 34);
-            this.btnMaxPlanDeSeciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMaxPlanDeSeciones.TabIndex = 57;
-            this.btnMaxPlanDeSeciones.TabStop = false;
-            this.btnMaxPlanDeSeciones.Click += new System.EventHandler(this.btnMaxPlanDeSeciones_Click);
             // 
             // frmPlanDeSesiones
             // 
@@ -474,14 +476,14 @@ namespace CapaPresentacion
             this.Load += new System.EventHandler(this.frmPlanDeSesiones_Load);
             this.pnlPlanDeSeciones.ResumeLayout(false);
             this.pnlPlanDeSeciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
