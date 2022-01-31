@@ -32,5 +32,36 @@ namespace CapaPresentacion.FormsDirDep
         {
 
         }
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+
+            //Recorrer columnas y guardar valores
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                indexColumn++;
+                exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+            }
+            int indexfila = 0;
+
+            //Recorrer filas y guardar sus valores
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                }
+            }
+            exportarCatalogo.Visible = true;
+        }
+        private void btnExportar_Click(object sender, EventArgs e)
+        {
+            ExportarDatos(dgvAvanceDocentes);
+        }
     }
 }
