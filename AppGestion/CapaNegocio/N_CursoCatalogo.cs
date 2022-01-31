@@ -73,5 +73,9 @@ namespace CapaNegocio
         {
             return data.Nuevo();
         }
+        public DataTable ListarCursoCatalogo2()
+        {
+            return data.ListarCursosCatalogo2();
+        }
     }
 }
