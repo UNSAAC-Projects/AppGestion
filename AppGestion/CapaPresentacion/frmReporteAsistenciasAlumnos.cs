@@ -154,7 +154,9 @@ namespace CapaPresentacion
 
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvReporteAsistencia);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvReporteAsistencia);
         }
 
     }
