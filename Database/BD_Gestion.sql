@@ -1203,7 +1203,7 @@ select  C.CodAsignatura + Grupo + 'IN' as CodAsignatura,A.Nombre as Asignatura, 
 	where  Finalizado='SI'
 	group by P.IDCatalogo,C.CodAsignatura,C.Grupo,A.Nombre,D.Apellidos,D.Nombres
 go
-exec SP_REPORTE_AVANCE_SESIONES_DOCENTE
+--exec SP_REPORTE_AVANCE_SESIONES_DOCENTE
 --Buscar
 CREATE PROC SP_BUSCARAVANCEDOCENTE
 @BUSCAR varchar(40)
