@@ -70,7 +70,7 @@ namespace CapaPresentacion
             this.labelReporteAsistencia.Location = new System.Drawing.Point(367, 59);
             this.labelReporteAsistencia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelReporteAsistencia.Name = "labelReporteAsistencia";
-            this.labelReporteAsistencia.Size = new System.Drawing.Size(488, 39);
+            this.labelReporteAsistencia.Size = new System.Drawing.Size(403, 32);
             this.labelReporteAsistencia.TabIndex = 26;
             this.labelReporteAsistencia.Text = "REPORTE AVANCE DETALLADO";
             // 
@@ -128,7 +128,7 @@ namespace CapaPresentacion
             this.panel2.Location = new System.Drawing.Point(427, 156);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 1);
+            this.panel2.Size = new System.Drawing.Size(299, 2);
             this.panel2.TabIndex = 31;
             // 
             // buttonCerrrar
@@ -143,7 +143,7 @@ namespace CapaPresentacion
             this.buttonCerrrar.Location = new System.Drawing.Point(1057, 730);
             this.buttonCerrrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonCerrrar.Name = "buttonCerrrar";
-            this.buttonCerrrar.Size = new System.Drawing.Size(183, 41);
+            this.buttonCerrrar.Size = new System.Drawing.Size(137, 33);
             this.buttonCerrrar.TabIndex = 28;
             this.buttonCerrrar.Text = "Cerrar";
             this.buttonCerrrar.UseVisualStyleBackColor = false;
@@ -160,10 +160,11 @@ namespace CapaPresentacion
             this.buttonExportar.Location = new System.Drawing.Point(854, 730);
             this.buttonExportar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonExportar.Name = "buttonExportar";
-            this.buttonExportar.Size = new System.Drawing.Size(182, 41);
+            this.buttonExportar.Size = new System.Drawing.Size(136, 33);
             this.buttonExportar.TabIndex = 27;
             this.buttonExportar.Text = "Exportar Excel";
             this.buttonExportar.UseVisualStyleBackColor = false;
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
             // 
             // pictureBox1
             // 
@@ -182,7 +183,7 @@ namespace CapaPresentacion
             this.lblNombreAsignatura.AutoSize = true;
             this.lblNombreAsignatura.Location = new System.Drawing.Point(445, 131);
             this.lblNombreAsignatura.Name = "lblNombreAsignatura";
-            this.lblNombreAsignatura.Size = new System.Drawing.Size(16, 17);
+            this.lblNombreAsignatura.Size = new System.Drawing.Size(13, 13);
             this.lblNombreAsignatura.TabIndex = 33;
             this.lblNombreAsignatura.Text = "  ";
             // 
@@ -317,7 +318,7 @@ namespace CapaPresentacion
             // 
             // frmReporteDetalladoAvance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 783);
             this.Controls.Add(this.panelReporteDetalladoAvance);
@@ -331,6 +332,7 @@ namespace CapaPresentacion
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmReporteDetalladoAvance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmReporteAvancePlanDetallado";
