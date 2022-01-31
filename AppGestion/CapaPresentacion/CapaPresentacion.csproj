@@ -105,6 +105,12 @@
     <Compile Include="FormsDirDep\FrmReporteAvanceDocentesDepartamento.Designer.cs">
       <DependentUpon>FrmReporteAvanceDocentesDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsDirDep\frmReporteEstadoDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsDirDep\frmReporteEstadoDocentes.Designer.cs">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlumnosMatriculados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDirDep\FrmReporteAvanceDocentesDepartamento.resx">
       <DependentUpon>FrmReporteAvanceDocentesDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmReporteEstadoDocentes.resx">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsDirDep\frmReporteEstadoDocentes.zu-ZA.resx">
+      <DependentUpon>frmReporteEstadoDocentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnosMatriculados.resx">
       <DependentUpon>frmAlumnosMatriculados.cs</DependentUpon>
