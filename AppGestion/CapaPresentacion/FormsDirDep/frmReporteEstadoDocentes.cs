@@ -13,56 +13,35 @@ namespace CapaPresentacion
 {
     public partial class frmReporteEstadoDocentes : Form
     {
-        readonly N_ReporteEstadoAlumnos oReporteEstado = new N_ReporteEstadoAlumnos();
-        readonly N_CursosDocente oCursosDocente = new N_CursosDocente();
-        readonly N_Docente oDocente = new N_Docente();
-        private string CodDocente;
-        public frmReporteEstadoDocentes(string pCodDocente)
+        readonly N_ReporteEstadoDocentes oREstadoDocentes = new N_ReporteEstadoDocentes();
+
+        public frmReporteEstadoDocentes()
         {
             InitializeComponent();
-            CodDocente = pCodDocente;
-        }
-
-        private void MostrarItemsComboBox(string[] Asignaturas)
-        {
-            //Mostrar cursos
-            cbCursosReporte.Items.AddRange(Asignaturas);
         }
         
-        private void MostrarReporte(string IdCatalogo)
+        private void MostrarReporte()
         {
-            dgvEstadoAlumnos.DataSource = oReporteEstado.MostrarReporteEstado(IdCatalogo, DateTime.Now);
+            dgvEstadoDocentes.DataSource = oREstadoDocentes.MostrarReporteEstado();
         }
 
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
-            
-            //Obtener cursos que dicta el docente
-            string[] Asignaturas = oDocente.CursosDocente(CodDocente);
-            if (Asignaturas != null) //Si tiene asignaturas dictando
-            {
-                MostrarItemsComboBox(Asignaturas); //Mostrar opciones en comboBox
-                cbCursosReporte.SelectedIndex = 0;
+            //Mostrar reporte
+            MostrarReporte();
 
-                //Obtener codCursoAsignatura
-                string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
-                string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
-                MostrarReporte(codCatalogo); //Mostrar reporte de plan de sesiones
-
-                //Mostrar datos en el PieChart
-                MostrarPieChart();
-            }
-
+            //Mostrar datos en el PieChart
+            MostrarPieChart();      
         }
 
         private void MostrarPieChart()
         {
-            DataTable tabla = dgvEstadoAlumnos.DataSource as DataTable;
+            DataTable tabla = dgvEstadoDocentes.DataSource as DataTable;
             Dictionary<string, float> dictEstados = new Dictionary<string, float>();
             string estado;
             foreach (DataRow row in tabla.Rows)
             {
-                estado = row[2].ToString();
+                estado = row[3].ToString();
                 if(dictEstados.ContainsKey(estado))
                     dictEstados[estado]++;
                 else
@@ -76,15 +55,6 @@ namespace CapaPresentacion
             {
                 chartReporte.Series["Estado"].Points.AddXY(key, dictEstados[key]/total);
             }
-        }
-
-        private void cbCursosReporte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Obtener codCursoAsignatura
-            string codCursoAsig = cbCursosReporte.Text.Substring(0, 6);
-            string codCatalogo = oCursosDocente.ObtenerCodCatalogo(codCursoAsig);
-            //Actualizar reporte con los datos de la asignatura selecionada
-            MostrarReporte(codCatalogo);
         }
     }
 }

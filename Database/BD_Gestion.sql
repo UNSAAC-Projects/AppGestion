@@ -1097,6 +1097,35 @@ as
 	drop table if exists #tmp
 go
 
+--Reporte estado docentes (si está o no activo)
+CREATE or ALTER PROC SP_ReporteEstadoDocentes 
+AS
+--Seleccionar docentes activos
+select distinct
+	case when H.Tipo = 'T' then (DT.CodDocente) else (DP.CodDocente) end as CODIGO,
+	case when H.Tipo = 'T' then (DT.Nombres) else (DP.Nombres) end as NOMBRES,
+	case when H.Tipo = 'T' then (DT.Apellidos) else (DP.Apellidos) end as APELLIDOS,
+	'Activo' as ESTADO
+	into #TActivos
+from TAsignatura A 
+inner join TCatalogo C on A.CodAsignatura = C.CodAsignatura
+inner join THorario H on C.IDCatalogo = H.IDCatalogo
+left join TDocente DT on C.CodDocenteTeorico = DT.CodDocente
+left join TDocente DP on C.CodDocentePractico = DP.CodDocente
+
+--Seleccionar docentes no activos
+select CodDocente, Nombres, Apellidos, 'No activo' as Estado
+from TDocente where CodDocente in (
+	select CodDocente from TDocente where CodDocente <> 'D000'
+	except 
+	select CODIGO from #TActivos
+)
+union --Unir con docentes activos
+select * from #TActivos
+--Eliminar tabla temporal
+drop table if exists #TActivos
+GO
+
 CREATE PROC SP_REPORTE_AVANCE_SESIONES
 @IdDocente varchar(6)
 AS

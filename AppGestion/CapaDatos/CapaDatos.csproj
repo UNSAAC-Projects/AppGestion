@@ -61,6 +61,7 @@
     <Compile Include="D_PlanSesiones.cs" />
     <Compile Include="D_ReporteAsistecia.cs" />
     <Compile Include="D_ReporteEstadoAlumnos.cs" />
+    <Compile Include="D_ReporteEstadoDocentes.cs" />
     <Compile Include="D_ReporteSesiones.cs" />
     <Compile Include="D_Silabo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
