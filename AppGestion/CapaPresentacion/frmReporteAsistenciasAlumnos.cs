@@ -38,7 +38,7 @@ namespace CapaPresentacion
                 cbNombreCurso.SelectedIndex = 0;
                 cbGrupo.SelectedIndex = 0;
                 dtpFechaInferior.Value = new DateTime(2022,1,1);
-                dtpFechaSuperior.Value = DateTime.Now;
+                //dtpFechaSuperior.Value = DateTime.Now;
             }
         }
 
