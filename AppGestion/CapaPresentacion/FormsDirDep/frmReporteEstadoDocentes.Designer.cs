@@ -65,6 +65,7 @@
             // 
             // chartReporte
             // 
+            resources.ApplyResources(this.chartReporte, "chartReporte");
             chartArea1.Area3DStyle.Inclination = 10;
             chartArea1.Name = "ChartArea1";
             this.chartReporte.ChartAreas.Add(chartArea1);
@@ -72,7 +73,6 @@
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.chartReporte.Legends.Add(legend1);
-            resources.ApplyResources(this.chartReporte, "chartReporte");
             this.chartReporte.Name = "chartReporte";
             this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
@@ -156,13 +156,14 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chartReporte);
             this.Controls.Add(this.buttonCerrrar);
             this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.dgvEstadoDocentes);
-            this.Controls.Add(this.chartReporte);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReporteEstadoDocentes";
             this.Load += new System.EventHandler(this.frmReporteEstadoAlumno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartReporte)).EndInit();
