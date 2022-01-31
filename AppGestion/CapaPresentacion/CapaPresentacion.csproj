@@ -123,6 +123,12 @@
     <Compile Include="frmAlumnosMatriculadosPorCurso.Designer.cs">
       <DependentUpon>frmAlumnosMatriculadosPorCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReporteEstadoAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteEstadoAlumnos.designer.cs">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVistaCatalogo2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnosMatriculadosPorCurso.resx">
       <DependentUpon>frmAlumnosMatriculadosPorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteEstadoAlumnos.resx">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteEstadoAlumnos.zu-ZA.resx">
+      <DependentUpon>frmReporteEstadoAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVistaCatalogo2.resx">
       <DependentUpon>frmVistaCatalogo2.cs</DependentUpon>
