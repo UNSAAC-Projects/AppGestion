@@ -237,19 +237,29 @@ namespace CapaDatos
         }
         public DataTable ListarCursosCatalogo2()
         {
-            DataTable table = new DataTable();
-            SqlDataReader readRows;
-            SqlCommand cmd = new SqlCommand("ListarCursosCatalogo2", conexion);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conexion.Open();
+            try
+            {
 
-            readRows = cmd.ExecuteReader();
-            table.Load(readRows);
+                DataTable table = new DataTable();
+                SqlDataReader readRows;
+                SqlCommand cmd = new SqlCommand("ListarCursosCatalogo2", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
 
-            readRows.Close();
-            conexion.Close();
+                readRows = cmd.ExecuteReader();
+                table.Load(readRows);
 
-            return table;
+                readRows.Close();
+                conexion.Close();
+
+                return table;
+            }
+            catch (Exception ex)
+            {
+                
+                return null;
+
+            }
         }
 
     }

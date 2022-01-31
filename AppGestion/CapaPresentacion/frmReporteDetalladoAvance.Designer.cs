@@ -147,6 +147,7 @@ namespace CapaPresentacion
             this.buttonCerrrar.TabIndex = 28;
             this.buttonCerrrar.Text = "Cerrar";
             this.buttonCerrrar.UseVisualStyleBackColor = false;
+            this.buttonCerrrar.Click += new System.EventHandler(this.buttonCerrrar_Click);
             // 
             // buttonExportar
             // 
