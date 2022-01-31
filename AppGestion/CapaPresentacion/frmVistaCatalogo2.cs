@@ -51,6 +51,7 @@ namespace CapaPresentacion
                     string IdCatalogo= dgvCatalogo.Rows[e.RowIndex].Cells["IDCatalogo"].Value.ToString();
                     matriculados.IdCatalogo = IdCatalogo;
                     matriculados.label1.Text= dgvCatalogo.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
+                    matriculados.labelGrupo.Text = dgvCatalogo.Rows[e.RowIndex].Cells["Grupo"].Value.ToString();
                     matriculados.ShowDialog();
                 }
             }

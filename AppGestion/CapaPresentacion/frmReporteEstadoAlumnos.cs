@@ -86,5 +86,10 @@ namespace CapaPresentacion
             //Actualizar reporte con los datos de la asignatura selecionada
             MostrarReporte(codCatalogo);
         }
+
+        private void chartReporte_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

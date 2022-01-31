@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaNegocio;
+using Excel;
+using Microsoft.Office.Interop.Excel;
+using CapaEntidades;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -25,6 +29,37 @@ namespace CapaPresentacion
             dgvEstadoDocentes.DataSource = oREstadoDocentes.MostrarReporteEstado();
         }
 
+        public void ExportarDatos(DataGridView listadoCatalogo)
+        {
+            Microsoft.Office.Interop.Excel.Application exportarCatalogo = new Microsoft.Office.Interop.Excel.Application();
+            exportarCatalogo.Application.Workbooks.Add(true);
+            int indexColumn = 0;
+            foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+            {
+                if (columna.Name != "EDITAR")
+                {
+                    indexColumn++;
+                    exportarCatalogo.Cells[1, indexColumn] = columna.Name;
+                }
+            }
+            int indexfila = 0;
+            foreach (DataGridViewRow fila in listadoCatalogo.Rows)
+            {
+                indexfila++;
+                indexColumn = 0;
+                foreach (DataGridViewColumn columna in listadoCatalogo.Columns)
+                {
+                    if (columna.Name != "EDITAR")
+                    {
+                        indexColumn++;
+                        exportarCatalogo.Cells[indexfila + 1, indexColumn] = fila.Cells[columna.Name].Value;
+                    }
+                }
+            }
+            exportarCatalogo.Visible = true;
+        }
+
+
         private void frmReporteEstadoAlumno_Load(object sender, EventArgs e)
         {
             //Mostrar reporte
@@ -36,7 +71,7 @@ namespace CapaPresentacion
 
         private void MostrarPieChart()
         {
-            DataTable tabla = dgvEstadoDocentes.DataSource as DataTable;
+            System.Data.DataTable tabla = dgvEstadoDocentes.DataSource as System.Data.DataTable;
             Dictionary<string, float> dictEstados = new Dictionary<string, float>();
             string estado;
             foreach (DataRow row in tabla.Rows)
@@ -56,5 +91,9 @@ namespace CapaPresentacion
                 chartReporte.Series["Estado"].Points.AddXY(key, dictEstados[key]/total);
             }
         }
+
+        private void buttonCerrrar_Click(object sender, EventArgs e) => Close();
+
+        private void buttonExportar_Click(object sender, EventArgs e) => ExportarDatos(dgvEstadoDocentes);
     }
 }
