@@ -61,7 +61,9 @@ namespace CapaPresentacion
 
         private void btnDescargar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvCatalogo);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvCatalogo);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
