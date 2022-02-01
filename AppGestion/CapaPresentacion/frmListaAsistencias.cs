@@ -48,7 +48,7 @@ namespace CapaPresentacion
                 //Mostrar lista de asistencias
                 MostrarListaAsistencias();
                 //Mover columna
-                dgvAsistenciaReporte.Columns["Asistencia"].DisplayIndex = 3;
+                dgvAsistenciaReporte.Columns["Asistencia"].DisplayIndex = 4;
                 //Ocultar columna
                 dgvAsistenciaReporte.Columns["IdCatalogo"].Visible = false;
             }
