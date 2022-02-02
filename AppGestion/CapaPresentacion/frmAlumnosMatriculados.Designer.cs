@@ -74,7 +74,7 @@ namespace CapaPresentacion
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvMatriculados.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMatriculados.EnableHeadersVisualStyles = false;
-            this.dgvMatriculados.Location = new System.Drawing.Point(35, 158);
+            this.dgvMatriculados.Location = new System.Drawing.Point(31, 143);
             this.dgvMatriculados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvMatriculados.Name = "dgvMatriculados";
             this.dgvMatriculados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -86,35 +86,34 @@ namespace CapaPresentacion
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMatriculados.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvMatriculados.RowHeadersVisible = false;
             this.dgvMatriculados.RowHeadersWidth = 51;
             this.dgvMatriculados.RowTemplate.Height = 24;
-            this.dgvMatriculados.Size = new System.Drawing.Size(829, 438);
+            this.dgvMatriculados.Size = new System.Drawing.Size(737, 350);
             this.dgvMatriculados.TabIndex = 3;
             this.dgvMatriculados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMatriculados_CellContentClick);
             // 
             // cboAsistenciaCurso
             // 
-            this.cboAsistenciaCurso.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cboAsistenciaCurso.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cboAsistenciaCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboAsistenciaCurso.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboAsistenciaCurso.ForeColor = System.Drawing.Color.Black;
             this.cboAsistenciaCurso.FormattingEnabled = true;
-            this.cboAsistenciaCurso.Location = new System.Drawing.Point(260, 87);
+            this.cboAsistenciaCurso.Location = new System.Drawing.Point(165, 85);
             this.cboAsistenciaCurso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboAsistenciaCurso.Name = "cboAsistenciaCurso";
-            this.cboAsistenciaCurso.Size = new System.Drawing.Size(436, 29);
+            this.cboAsistenciaCurso.Size = new System.Drawing.Size(388, 28);
             this.cboAsistenciaCurso.TabIndex = 4;
             this.cboAsistenciaCurso.SelectedIndexChanged += new System.EventHandler(this.cboAsistenciaCurso_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 82);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 34);
+            this.label1.Size = new System.Drawing.Size(111, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Filtrar por :";
             // 
@@ -122,23 +121,25 @@ namespace CapaPresentacion
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(293, 27);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(190, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 34);
+            this.label2.Size = new System.Drawing.Size(395, 37);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Alumnos Matriculados";
+            this.label2.Text = "ALUMNOS MATRICULADOS";
             // 
             // frmAlumnosMatriculados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 661);
+            this.ClientSize = new System.Drawing.Size(801, 529);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboAsistenciaCurso);
             this.Controls.Add(this.dgvMatriculados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAlumnosMatriculados";
             this.Text = "frmAlumnosMatriculados";
             this.Load += new System.EventHandler(this.frmAlumnosMatriculados_Load);

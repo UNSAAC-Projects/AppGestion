@@ -41,6 +41,8 @@
             this.cbCursosReporte = new System.Windows.Forms.ComboBox();
             this.dgvEstadoAlumnos = new System.Windows.Forms.DataGridView();
             this.chartReporte = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.buttonCerrrar = new System.Windows.Forms.Button();
+            this.buttonExportar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstadoAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartReporte)).BeginInit();
             this.SuspendLayout();
@@ -71,8 +73,6 @@
             // dgvEstadoAlumnos
             // 
             this.dgvEstadoAlumnos.AllowUserToAddRows = false;
-            this.dgvEstadoAlumnos.AllowUserToDeleteRows = false;
-            this.dgvEstadoAlumnos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.dgvEstadoAlumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.dgvEstadoAlumnos, "dgvEstadoAlumnos");
@@ -82,14 +82,14 @@
             this.dgvEstadoAlumnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvEstadoAlumnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvEstadoAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEstadoAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEstadoAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,7 +114,7 @@
             this.chartReporte.Legends.Add(legend1);
             resources.ApplyResources(this.chartReporte, "chartReporte");
             this.chartReporte.Name = "chartReporte";
-            this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,13 +128,35 @@
             title1.Name = "Title1";
             title1.Text = "Reporte";
             this.chartReporte.Titles.Add(title1);
-            this.chartReporte.Click += new System.EventHandler(this.chartReporte_Click);
+            // 
+            // buttonCerrrar
+            // 
+            resources.ApplyResources(this.buttonCerrrar, "buttonCerrrar");
+            this.buttonCerrrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonCerrrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonCerrrar.FlatAppearance.BorderSize = 3;
+            this.buttonCerrrar.ForeColor = System.Drawing.Color.White;
+            this.buttonCerrrar.Name = "buttonCerrrar";
+            this.buttonCerrrar.UseVisualStyleBackColor = false;
+            this.buttonCerrrar.Click += new System.EventHandler(this.buttonCerrrar_Click);
+            // 
+            // buttonExportar
+            // 
+            resources.ApplyResources(this.buttonExportar, "buttonExportar");
+            this.buttonExportar.BackColor = System.Drawing.Color.Transparent;
+            this.buttonExportar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonExportar.FlatAppearance.BorderSize = 3;
+            this.buttonExportar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.buttonExportar.Name = "buttonExportar";
+            this.buttonExportar.UseVisualStyleBackColor = false;
+            this.buttonExportar.Click += new System.EventHandler(this.buttonExportar_Click);
             // 
             // frmReporteEstadoAlumnos
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.buttonCerrrar);
+            this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.chartReporte);
             this.Controls.Add(this.dgvEstadoAlumnos);
             this.Controls.Add(this.panel2);
@@ -156,5 +178,7 @@
         private System.Windows.Forms.ComboBox cbCursosReporte;
         private System.Windows.Forms.DataGridView dgvEstadoAlumnos;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartReporte;
+        private System.Windows.Forms.Button buttonCerrrar;
+        private System.Windows.Forms.Button buttonExportar;
     }
 }

@@ -98,9 +98,12 @@ namespace CapaPresentacion
             }
             exportarCatalogo.Visible = true;
         }
+
         private void buttonExportar_Click(object sender, EventArgs e)
         {
-            ExportarDatos(dgvAvanceDetallado);
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)//Cerrar ventana
+                ExportarDatos(dgvAvanceDetallado);
         }
 
         private void buttonCerrrar_Click(object sender, EventArgs e)
@@ -155,11 +158,11 @@ namespace CapaPresentacion
             }
         }
 
-        private void buttonExportar_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)//Cerrar ventana
-                MessageBox.Show("No se pudo exportar.");
-        }
+        //private void buttonExportar_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult dialogResult = MessageBox.Show("¿Seguro que desea exportar?", "Alerta", MessageBoxButtons.YesNo);
+        //    if (dialogResult == DialogResult.Yes)//Cerrar ventana
+        //        MessageBox.Show("No se pudo exportar.");
+        //}
     }
 }
