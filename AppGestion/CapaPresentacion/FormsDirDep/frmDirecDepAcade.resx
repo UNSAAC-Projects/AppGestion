@@ -120,19 +120,18 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnReporteEstadoDocentes.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="btnReporteDocenteAvance.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

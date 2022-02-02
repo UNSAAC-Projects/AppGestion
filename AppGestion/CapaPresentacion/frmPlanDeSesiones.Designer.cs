@@ -29,14 +29,18 @@ namespace CapaPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanDeSesiones));
             this.pnlPlanDeSeciones = new System.Windows.Forms.Panel();
+            this.btnMaxPlanDeSeciones = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
             this.dgvPlanSesiones = new System.Windows.Forms.DataGridView();
+            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.VariacionH = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,21 +56,15 @@ namespace CapaPresentacion
             this.btnImportarDatos = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureLibro3 = new System.Windows.Forms.PictureBox();
-            this.btnMaxPlanDeSeciones = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClosePlanSesiones = new System.Windows.Forms.PictureBox();
-            this.btnMinPlanSesiones = new System.Windows.Forms.PictureBox();
             this.pictureLibro1 = new System.Windows.Forms.PictureBox();
             this.pictureLibro2 = new System.Windows.Forms.PictureBox();
-            this.eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pnlPlanDeSeciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro2)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +76,6 @@ namespace CapaPresentacion
             this.pnlPlanDeSeciones.Controls.Add(this.pictureBox1);
             this.pnlPlanDeSeciones.Controls.Add(this.label11);
             this.pnlPlanDeSeciones.Controls.Add(this.btnClosePlanSesiones);
-            this.pnlPlanDeSeciones.Controls.Add(this.btnMinPlanSesiones);
             this.pnlPlanDeSeciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlPlanDeSeciones.Location = new System.Drawing.Point(0, 0);
             this.pnlPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -86,6 +83,31 @@ namespace CapaPresentacion
             this.pnlPlanDeSeciones.Size = new System.Drawing.Size(1272, 43);
             this.pnlPlanDeSeciones.TabIndex = 10;
             this.pnlPlanDeSeciones.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlPlanDeSeciones_MouseMove);
+            // 
+            // btnMaxPlanDeSeciones
+            // 
+            this.btnMaxPlanDeSeciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaxPlanDeSeciones.BackColor = System.Drawing.Color.Transparent;
+            this.btnMaxPlanDeSeciones.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxPlanDeSeciones.Image")));
+            this.btnMaxPlanDeSeciones.Location = new System.Drawing.Point(1181, 2);
+            this.btnMaxPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMaxPlanDeSeciones.Name = "btnMaxPlanDeSeciones";
+            this.btnMaxPlanDeSeciones.Size = new System.Drawing.Size(37, 34);
+            this.btnMaxPlanDeSeciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMaxPlanDeSeciones.TabIndex = 57;
+            this.btnMaxPlanDeSeciones.TabStop = false;
+            this.btnMaxPlanDeSeciones.Click += new System.EventHandler(this.btnMaxPlanDeSeciones_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
             // 
             // label11
             // 
@@ -97,6 +119,20 @@ namespace CapaPresentacion
             this.label11.Size = new System.Drawing.Size(188, 23);
             this.label11.TabIndex = 32;
             this.label11.Text = "PLAN DE SESIONES";
+            // 
+            // btnClosePlanSesiones
+            // 
+            this.btnClosePlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
+            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1224, 4);
+            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
+            this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
+            this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClosePlanSesiones.TabIndex = 1;
+            this.btnClosePlanSesiones.TabStop = false;
+            this.btnClosePlanSesiones.Click += new System.EventHandler(this.btnClosePlanSesiones_Click);
             // 
             // dgvPlanSesiones
             // 
@@ -155,6 +191,14 @@ namespace CapaPresentacion
             this.dgvPlanSesiones.TabIndex = 11;
             this.dgvPlanSesiones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellContentClick);
             this.dgvPlanSesiones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlanSesiones_CellValueChanged);
+            // 
+            // eliminar
+            // 
+            this.eliminar.HeaderText = "Eliminar";
+            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
+            this.eliminar.MinimumWidth = 6;
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Width = 72;
             // 
             // Completado
             // 
@@ -265,7 +309,7 @@ namespace CapaPresentacion
             // 
             // btnNuevaFila
             // 
-            this.btnNuevaFila.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNuevaFila.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNuevaFila.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnNuevaFila.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNuevaFila.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -300,13 +344,12 @@ namespace CapaPresentacion
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnGuardar.Location = new System.Drawing.Point(853, 598);
+            this.btnGuardar.Location = new System.Drawing.Point(717, 598);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(111, 46);
+            this.btnGuardar.Size = new System.Drawing.Size(201, 46);
             this.btnGuardar.TabIndex = 21;
             this.btnGuardar.Text = "GUARDAR ";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -323,13 +366,12 @@ namespace CapaPresentacion
             this.btnImportarDatos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportarDatos.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImportarDatos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnImportarDatos.Location = new System.Drawing.Point(984, 598);
+            this.btnImportarDatos.Location = new System.Drawing.Point(928, 598);
             this.btnImportarDatos.Margin = new System.Windows.Forms.Padding(5);
             this.btnImportarDatos.Name = "btnImportarDatos";
-            this.btnImportarDatos.Size = new System.Drawing.Size(251, 46);
+            this.btnImportarDatos.Size = new System.Drawing.Size(307, 46);
             this.btnImportarDatos.TabIndex = 38;
             this.btnImportarDatos.Text = "IMPORTAR PLAN DE SESIONES ";
-            this.btnImportarDatos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnImportarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnImportarDatos.UseVisualStyleBackColor = false;
             this.btnImportarDatos.Click += new System.EventHandler(this.btnImportarDatos_Click);
@@ -354,59 +396,6 @@ namespace CapaPresentacion
             this.pictureLibro3.TabIndex = 32;
             this.pictureLibro3.TabStop = false;
             // 
-            // btnMaxPlanDeSeciones
-            // 
-            this.btnMaxPlanDeSeciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaxPlanDeSeciones.BackColor = System.Drawing.Color.Transparent;
-            this.btnMaxPlanDeSeciones.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxPlanDeSeciones.Image")));
-            this.btnMaxPlanDeSeciones.Location = new System.Drawing.Point(1140, 2);
-            this.btnMaxPlanDeSeciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMaxPlanDeSeciones.Name = "btnMaxPlanDeSeciones";
-            this.btnMaxPlanDeSeciones.Size = new System.Drawing.Size(37, 34);
-            this.btnMaxPlanDeSeciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMaxPlanDeSeciones.TabIndex = 57;
-            this.btnMaxPlanDeSeciones.TabStop = false;
-            this.btnMaxPlanDeSeciones.Click += new System.EventHandler(this.btnMaxPlanDeSeciones_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnClosePlanSesiones
-            // 
-            this.btnClosePlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClosePlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClosePlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnClosePlanSesiones.Image")));
-            this.btnClosePlanSesiones.Location = new System.Drawing.Point(1224, 4);
-            this.btnClosePlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClosePlanSesiones.Name = "btnClosePlanSesiones";
-            this.btnClosePlanSesiones.Size = new System.Drawing.Size(36, 34);
-            this.btnClosePlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnClosePlanSesiones.TabIndex = 1;
-            this.btnClosePlanSesiones.TabStop = false;
-            this.btnClosePlanSesiones.Click += new System.EventHandler(this.btnClosePlanSesiones_Click);
-            // 
-            // btnMinPlanSesiones
-            // 
-            this.btnMinPlanSesiones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinPlanSesiones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinPlanSesiones.Image = ((System.Drawing.Image)(resources.GetObject("btnMinPlanSesiones.Image")));
-            this.btnMinPlanSesiones.Location = new System.Drawing.Point(1183, 4);
-            this.btnMinPlanSesiones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinPlanSesiones.Name = "btnMinPlanSesiones";
-            this.btnMinPlanSesiones.Size = new System.Drawing.Size(36, 34);
-            this.btnMinPlanSesiones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinPlanSesiones.TabIndex = 0;
-            this.btnMinPlanSesiones.TabStop = false;
-            this.btnMinPlanSesiones.Click += new System.EventHandler(this.btnMinPlanSesiones_Click);
-            // 
             // pictureLibro1
             // 
             this.pictureLibro1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -430,14 +419,6 @@ namespace CapaPresentacion
             this.pictureLibro2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureLibro2.TabIndex = 34;
             this.pictureLibro2.TabStop = false;
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Eliminar";
-            this.eliminar.Image = global::CapaPresentacion.Properties.Resources.eliminar_icono;
-            this.eliminar.MinimumWidth = 6;
-            this.eliminar.Name = "eliminar";
-            this.eliminar.Width = 72;
             // 
             // dataGridViewImageColumn2
             // 
@@ -476,12 +457,11 @@ namespace CapaPresentacion
             this.Load += new System.EventHandler(this.frmPlanDeSesiones_Load);
             this.pnlPlanDeSeciones.ResumeLayout(false);
             this.pnlPlanDeSeciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxPlanDeSeciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClosePlanSesiones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinPlanSesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanSesiones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureLibro3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureLibro2)).EndInit();
             this.ResumeLayout(false);
@@ -494,7 +474,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.Panel pnlPlanDeSeciones;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox btnClosePlanSesiones;
-        private System.Windows.Forms.PictureBox btnMinPlanSesiones;
         private System.Windows.Forms.DataGridView dgvPlanSesiones;
         private System.Windows.Forms.Label labelPlanSesiones;
         public System.Windows.Forms.Label lblNombreAsignatura;

@@ -32,7 +32,6 @@ namespace CapaPresentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantPlanSesiones));
             this.panelMantAsignatura = new System.Windows.Forms.Panel();
             this.btnMaxMantAsignatura = new System.Windows.Forms.PictureBox();
-            this.btnMinMantAsignatura = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblUnidad = new System.Windows.Forms.Label();
             this.lblCapitulo = new System.Windows.Forms.Label();
@@ -50,7 +49,6 @@ namespace CapaPresentacion
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelMantAsignatura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +56,6 @@ namespace CapaPresentacion
             // 
             this.panelMantAsignatura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
             this.panelMantAsignatura.Controls.Add(this.btnMaxMantAsignatura);
-            this.panelMantAsignatura.Controls.Add(this.btnMinMantAsignatura);
             this.panelMantAsignatura.Controls.Add(this.pictureBoxLogo);
             this.panelMantAsignatura.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMantAsignatura.Location = new System.Drawing.Point(0, 0);
@@ -78,18 +75,6 @@ namespace CapaPresentacion
             this.btnMaxMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMaxMantAsignatura.TabIndex = 66;
             this.btnMaxMantAsignatura.TabStop = false;
-            // 
-            // btnMinMantAsignatura
-            // 
-            this.btnMinMantAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinMantAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnMinMantAsignatura.Image")));
-            this.btnMinMantAsignatura.Location = new System.Drawing.Point(837, -1);
-            this.btnMinMantAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinMantAsignatura.Name = "btnMinMantAsignatura";
-            this.btnMinMantAsignatura.Size = new System.Drawing.Size(36, 37);
-            this.btnMinMantAsignatura.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnMinMantAsignatura.TabIndex = 65;
-            this.btnMinMantAsignatura.TabStop = false;
             // 
             // pictureBoxLogo
             // 
@@ -295,7 +280,6 @@ namespace CapaPresentacion
             this.Text = "frmMantPlanSesiones";
             this.panelMantAsignatura.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxMantAsignatura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinMantAsignatura)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,7 +290,6 @@ namespace CapaPresentacion
 
         private System.Windows.Forms.Panel panelMantAsignatura;
         private System.Windows.Forms.PictureBox btnMaxMantAsignatura;
-        private System.Windows.Forms.PictureBox btnMinMantAsignatura;
         private System.Windows.Forms.PictureBox pictureBoxLogo;
         private System.Windows.Forms.Label lblUnidad;
         private System.Windows.Forms.Label lblCapitulo;

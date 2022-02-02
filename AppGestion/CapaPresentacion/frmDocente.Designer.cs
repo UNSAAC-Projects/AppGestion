@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             this.ContenedorLogin = new System.Windows.Forms.Panel();
+            this.btnReporteEstadoAlumnos = new System.Windows.Forms.Button();
             this.btnAlumnosMatriculados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.timerHoraFecha = new System.Windows.Forms.Timer(this.components);
-            this.btnReporteEstadoAlumnos = new System.Windows.Forms.Button();
             this.ContenedorLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImagen)).BeginInit();
@@ -99,8 +99,31 @@
             this.ContenedorLogin.Location = new System.Drawing.Point(0, 0);
             this.ContenedorLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ContenedorLogin.Name = "ContenedorLogin";
-            this.ContenedorLogin.Size = new System.Drawing.Size(311, 903);
+            this.ContenedorLogin.Size = new System.Drawing.Size(311, 917);
             this.ContenedorLogin.TabIndex = 2;
+            // 
+            // btnReporteEstadoAlumnos
+            // 
+            this.btnReporteEstadoAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteEstadoAlumnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnReporteEstadoAlumnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporteEstadoAlumnos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
+            this.btnReporteEstadoAlumnos.FlatAppearance.BorderSize = 0;
+            this.btnReporteEstadoAlumnos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.btnReporteEstadoAlumnos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnReporteEstadoAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteEstadoAlumnos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteEstadoAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
+            this.btnReporteEstadoAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEstadoAlumnos.Image")));
+            this.btnReporteEstadoAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteEstadoAlumnos.Location = new System.Drawing.Point(0, 819);
+            this.btnReporteEstadoAlumnos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReporteEstadoAlumnos.Name = "btnReporteEstadoAlumnos";
+            this.btnReporteEstadoAlumnos.Size = new System.Drawing.Size(363, 62);
+            this.btnReporteEstadoAlumnos.TabIndex = 20;
+            this.btnReporteEstadoAlumnos.Text = "REPORTE ESTADO ALUMNOS";
+            this.btnReporteEstadoAlumnos.UseVisualStyleBackColor = false;
+            this.btnReporteEstadoAlumnos.Click += new System.EventHandler(this.btnReporteEstadoAlumnos_Click);
             // 
             // btnAlumnosMatriculados
             // 
@@ -117,7 +140,7 @@
             this.btnAlumnosMatriculados.Image = ((System.Drawing.Image)(resources.GetObject("btnAlumnosMatriculados.Image")));
             this.btnAlumnosMatriculados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlumnosMatriculados.Location = new System.Drawing.Point(0, 385);
-            this.btnAlumnosMatriculados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlumnosMatriculados.Margin = new System.Windows.Forms.Padding(4);
             this.btnAlumnosMatriculados.Name = "btnAlumnosMatriculados";
             this.btnAlumnosMatriculados.Size = new System.Drawing.Size(334, 62);
             this.btnAlumnosMatriculados.TabIndex = 19;
@@ -129,7 +152,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 827);
+            this.panel3.Location = new System.Drawing.Point(12, 841);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(287, 1);
@@ -150,8 +173,8 @@
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(0, 833);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Location = new System.Drawing.Point(0, 847);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Padding = new System.Windows.Forms.Padding(0, 0, 27, 0);
             this.btnLogout.Size = new System.Drawing.Size(321, 60);
@@ -175,7 +198,7 @@
             this.btnCursosPorDia.Image = ((System.Drawing.Image)(resources.GetObject("btnCursosPorDia.Image")));
             this.btnCursosPorDia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCursosPorDia.Location = new System.Drawing.Point(0, 447);
-            this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCursosPorDia.Margin = new System.Windows.Forms.Padding(4);
             this.btnCursosPorDia.Name = "btnCursosPorDia";
             this.btnCursosPorDia.Size = new System.Drawing.Size(317, 62);
             this.btnCursosPorDia.TabIndex = 15;
@@ -198,7 +221,7 @@
             this.buttonReporteSesiones.Image = ((System.Drawing.Image)(resources.GetObject("buttonReporteSesiones.Image")));
             this.buttonReporteSesiones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonReporteSesiones.Location = new System.Drawing.Point(0, 699);
-            this.buttonReporteSesiones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReporteSesiones.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReporteSesiones.Name = "buttonReporteSesiones";
             this.buttonReporteSesiones.Size = new System.Drawing.Size(317, 62);
             this.buttonReporteSesiones.TabIndex = 14;
@@ -221,7 +244,7 @@
             this.btnREPORTEASISTENCIA.Image = ((System.Drawing.Image)(resources.GetObject("btnREPORTEASISTENCIA.Image")));
             this.btnREPORTEASISTENCIA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnREPORTEASISTENCIA.Location = new System.Drawing.Point(0, 636);
-            this.btnREPORTEASISTENCIA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnREPORTEASISTENCIA.Margin = new System.Windows.Forms.Padding(4);
             this.btnREPORTEASISTENCIA.Name = "btnREPORTEASISTENCIA";
             this.btnREPORTEASISTENCIA.Size = new System.Drawing.Size(337, 62);
             this.btnREPORTEASISTENCIA.TabIndex = 13;
@@ -244,7 +267,7 @@
             this.btnReporteCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteCursos.Image")));
             this.btnReporteCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteCursos.Location = new System.Drawing.Point(0, 573);
-            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReporteCursos.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporteCursos.Name = "btnReporteCursos";
             this.btnReporteCursos.Size = new System.Drawing.Size(334, 62);
             this.btnReporteCursos.TabIndex = 12;
@@ -256,7 +279,7 @@
             // 
             this.pictureBoxLogo.Image = global::CapaPresentacion.Properties.Resources.Logo_Sistemas;
             this.pictureBoxLogo.Location = new System.Drawing.Point(4, 14);
-            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(83, 82);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -302,7 +325,7 @@
             this.btnVerCursosDocente.Image = ((System.Drawing.Image)(resources.GetObject("btnVerCursosDocente.Image")));
             this.btnVerCursosDocente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVerCursosDocente.Location = new System.Drawing.Point(0, 510);
-            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerCursosDocente.Margin = new System.Windows.Forms.Padding(4);
             this.btnVerCursosDocente.Name = "btnVerCursosDocente";
             this.btnVerCursosDocente.Size = new System.Drawing.Size(321, 62);
             this.btnVerCursosDocente.TabIndex = 11;
@@ -492,7 +515,7 @@
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(1091, 739);
+            this.pictureBox6.Location = new System.Drawing.Point(1091, 753);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(411, 238);
@@ -518,35 +541,12 @@
             this.timerHoraFecha.Enabled = true;
             this.timerHoraFecha.Tick += new System.EventHandler(this.timerHoraFecha_Tick_1);
             // 
-            // btnReporteEstadoAlumnos
-            // 
-            this.btnReporteEstadoAlumnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnReporteEstadoAlumnos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnReporteEstadoAlumnos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporteEstadoAlumnos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(47)))), ((int)(((byte)(60)))));
-            this.btnReporteEstadoAlumnos.FlatAppearance.BorderSize = 0;
-            this.btnReporteEstadoAlumnos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.btnReporteEstadoAlumnos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnReporteEstadoAlumnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporteEstadoAlumnos.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteEstadoAlumnos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(172)))), ((int)(((byte)(13)))));
-            this.btnReporteEstadoAlumnos.Image = ((System.Drawing.Image)(resources.GetObject("btnReporteEstadoAlumnos.Image")));
-            this.btnReporteEstadoAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteEstadoAlumnos.Location = new System.Drawing.Point(4, 315);
-            this.btnReporteEstadoAlumnos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReporteEstadoAlumnos.Name = "btnReporteEstadoAlumnos";
-            this.btnReporteEstadoAlumnos.Size = new System.Drawing.Size(317, 62);
-            this.btnReporteEstadoAlumnos.TabIndex = 20;
-            this.btnReporteEstadoAlumnos.Text = "REPORTES SESIONES";
-            this.btnReporteEstadoAlumnos.UseVisualStyleBackColor = false;
-            this.btnReporteEstadoAlumnos.Click += new System.EventHandler(this.btnReporteEstadoAlumnos_Click);
-            // 
             // frmDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1336, 882);
+            this.ClientSize = new System.Drawing.Size(1336, 896);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.ContenedorLogin);
             this.Controls.Add(this.btnMaxFrmDocente);
@@ -556,7 +556,7 @@
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDocente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDocente";

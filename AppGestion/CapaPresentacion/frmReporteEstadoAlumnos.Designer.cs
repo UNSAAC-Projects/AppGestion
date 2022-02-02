@@ -114,7 +114,7 @@
             this.chartReporte.Legends.Add(legend1);
             resources.ApplyResources(this.chartReporte, "chartReporte");
             this.chartReporte.Name = "chartReporte";
-            this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chartReporte.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
