@@ -1,11 +1,11 @@
 /* Para ejecutar DB en la nube */
 
 /* -- Nube */
---Server name: sql5080.site4now.net
---Login: db_a7d2c3_appgestion_admin
---Password: AppGestion1
+--Server name: SQL5105.site4now.net
+--Login: db_a82488_dbgestion_admin
+--Password: unsaac2022
 
---use db_a7d2c3_appgestion
+--use db_a82488_dbgestion
 --go
 
 /* Para ejecutar BD de forma local */
@@ -1715,6 +1715,7 @@ GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 
+/*
 insert into TAsistencia_Alumnos(Fecha,IdCatalogo,CodAlumno,Nombres,Asistio,Observacion) values
 ('2022/01/31','C001',	'211355',	'AUCCACUSI-HUANCA PAUL ANDRÉ','P',''	),
 ('2022/01/31','C001',	'210919',	'BIGGERSTAFF-PUMACAHUA MEI-LING','P',''	),
@@ -1748,7 +1749,7 @@ insert into TAsistencia_Alumnos(Fecha,IdCatalogo,CodAlumno,Nombres,Asistio,Obser
 ('2022/01/31','C001',	'192430',	'TTITO-QUISPE ABELARDO','P',''),	
 ('2022/01/31','C001',	'211362',	'VALERIANO-HUACARPUMA LUIGUI FERNANDO','P',''),	
 ('2022/01/31','C001',	'210180',	'VILLALOBOS-USCA ANGHELO','P','');
-
+*/
 go
 insert into TListaAsistencias(Tema, Fecha, IDCatalogo) values
 ('Presentacion de Silabo','2022-01-31','C001'),
