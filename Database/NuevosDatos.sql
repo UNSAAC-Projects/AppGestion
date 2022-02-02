@@ -1715,6 +1715,7 @@ GO
 --exec SP_ListarArchivo 'C006'
 --exec SP_LISTARCURSOSXDOCENTE 'D0004'
 
+/*
 insert into TAsistencia_Alumnos(Fecha,IdCatalogo,CodAlumno,Nombres,Asistio,Observacion) values
 -- Fundamentos de Programacion A
 ('2022/01/31','C001',	'211355',	'AUCCACUSI-HUANCA PAUL ANDRÉ','P',''	),
